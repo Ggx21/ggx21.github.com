@@ -164,50 +164,6 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/hello-world-1/"/>
-      <url>/2023/04/27/hello-world-1/</url>
-      
-        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
-      
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>ελληνικά</title>
       <link href="/2023/04/27/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"/>
       <url>/2023/04/27/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/</url>
@@ -246,6 +202,50 @@
             <tag> homework </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/hello-world-1/"/>
+      <url>/2023/04/27/hello-world-1/</url>
+      
+        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
       
     </entry>
     
