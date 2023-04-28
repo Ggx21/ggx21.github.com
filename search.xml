@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>hello 沸羊羊</title>
+      <title>Hello 沸羊羊</title>
       <link href="/2023/04/27/feiyangyang/"/>
       <url>/2023/04/27/feiyangyang/</url>
       
@@ -25,7 +25,7 @@
     
     
     <entry>
-      <title>hello YUX</title>
+      <title>Hello YUX</title>
       <link href="/2023/04/27/hello-YUX/"/>
       <url>/2023/04/27/hello-YUX/</url>
       
@@ -38,7 +38,7 @@
     
     
     <entry>
-      <title>crawler-sample</title>
+      <title>Crawler-Sample</title>
       <link href="/2023/04/27/code-test/"/>
       <url>/2023/04/27/code-test/</url>
       
@@ -57,24 +57,11 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/hello-world-1/"/>
-      <url>/2023/04/27/hello-world-1/</url>
-      
-        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>test-markdown</title>
+      <title>Test-Markdown</title>
       <link href="/2023/04/27/ful-test/"/>
       <url>/2023/04/27/ful-test/</url>
       
-        <content type="html"><![CDATA[<h1 id="标题示例"><a href="#标题示例" class="headerlink" title="标题示例"></a>标题示例</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 _斜体_。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <del>删除线</del>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： &#x3D;&#x3D;高亮&#x3D;&#x3D;。</p><h2 id="列表示例"><a href="#列表示例" class="headerlink" title="列表示例"></a>列表示例</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul><li>项目一</li><li>项目二</li><li>项目三</li></ul><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h3 id="可以使用嵌套列表："><a href="#可以使用嵌套列表：" class="headerlink" title="可以使用嵌套列表："></a>可以使用嵌套列表：</h3><ol><li>第一项<ul><li>嵌套项目</li><li>嵌套项目</li></ul></li><li>第二项<ol><li>嵌套有序项目</li><li>嵌套有序项目</li></ol></li><li>第三项</li></ol><h2 id="引用示例"><a href="#引用示例" class="headerlink" title="引用示例"></a>引用示例</h2><blockquote><p>这是一个引用。<br>引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例"><a href="#粗体和斜体示例" class="headerlink" title="粗体和斜体示例"></a>粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例"><a href="#链接和图片示例" class="headerlink" title="链接和图片示例"></a>链接和图片示例</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例"><a href="#代码块和公式块示例" class="headerlink" title="代码块和公式块示例"></a>代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) &#x3D; \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例"><a href="#分隔线示例" class="headerlink" title="分隔线示例"></a>分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例"><a href="#表格示例" class="headerlink" title="表格示例"></a>表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接"><a href="#文内链接" class="headerlink" title="文内链接"></a>文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例"><a href="#目录示例" class="headerlink" title="目录示例"></a>目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例"><a href="#表情符号示例" class="headerlink" title="表情符号示例"></a>表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>:+1: :sparkles: :camel: :tada: :rocket: :metal: :octocat:</p><h2 id="HTML-语法示例"><a href="#HTML-语法示例" class="headerlink" title="HTML 语法示例"></a>HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="标题示例"><a href="#标题示例" class="headerlink" title="标题示例"></a>标题示例</h1><h2 id="二级标题"><a href="#二级标题" class="headerlink" title="二级标题"></a>二级标题</h2><h3 id="三级标题"><a href="#三级标题" class="headerlink" title="三级标题"></a>三级标题</h3><h4 id="四级标题"><a href="#四级标题" class="headerlink" title="四级标题"></a>四级标题</h4><h5 id="五级标题"><a href="#五级标题" class="headerlink" title="五级标题"></a>五级标题</h5><h6 id="六级标题"><a href="#六级标题" class="headerlink" title="六级标题"></a>六级标题</h6><h2 id="段落和换行"><a href="#段落和换行" class="headerlink" title="段落和换行"></a>段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 _斜体_。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <del>删除线</del>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： &#x3D;&#x3D;高亮&#x3D;&#x3D;。</p><h2 id="列表示例"><a href="#列表示例" class="headerlink" title="列表示例"></a>列表示例</h2><h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><ul><li>项目一</li><li>项目二</li><li>项目三</li></ul><h3 id="有序列表"><a href="#有序列表" class="headerlink" title="有序列表"></a>有序列表</h3><ol><li>第一项</li><li>第二项</li><li>第三项</li></ol><h3 id="可以使用嵌套列表："><a href="#可以使用嵌套列表：" class="headerlink" title="可以使用嵌套列表："></a>可以使用嵌套列表：</h3><ol><li>第一项<ul><li>嵌套项目</li><li>嵌套项目</li></ul></li><li>第二项<ol><li>嵌套有序项目</li><li>嵌套有序项目</li></ol></li><li>第三项</li></ol><h2 id="引用示例"><a href="#引用示例" class="headerlink" title="引用示例"></a>引用示例</h2><blockquote><p>这是一个引用。<br>引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例"><a href="#粗体和斜体示例" class="headerlink" title="粗体和斜体示例"></a>粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例"><a href="#链接和图片示例" class="headerlink" title="链接和图片示例"></a>链接和图片示例</h2><h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h3><p>这是一个图片：</p><p><img src="img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例"><a href="#代码块和公式块示例" class="headerlink" title="代码块和公式块示例"></a>代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) &#x3D; \frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例"><a href="#分隔线示例" class="headerlink" title="分隔线示例"></a>分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例"><a href="#表格示例" class="headerlink" title="表格示例"></a>表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接"><a href="#文内链接" class="headerlink" title="文内链接"></a>文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例"><a href="#目录示例" class="headerlink" title="目录示例"></a>目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例"><a href="#表情符号示例" class="headerlink" title="表情符号示例"></a>表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>:+1: :sparkles: :camel: :tada: :rocket: :metal: :octocat:</p><h2 id="HTML-语法示例"><a href="#HTML-语法示例" class="headerlink" title="HTML 语法示例"></a>HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
       
       
       
@@ -83,6 +70,19 @@
             <tag> test </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2023/04/27/hello-world-1/"/>
+      <url>/2023/04/27/hello-world-1/</url>
+      
+        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
       
     </entry>
     
@@ -108,11 +108,11 @@
     
     
     <entry>
-      <title>network-homework</title>
+      <title>Network-Homework</title>
       <link href="/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/"/>
       <url>/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/</url>
       
-        <content type="html"><![CDATA[<h1 id="网原第五次作业"><a href="#网原第五次作业" class="headerlink" title="网原第五次作业"></a>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:&#x67;&#103;&#120;&#x32;&#x31;&#64;&#109;&#x61;&#105;&#108;&#x73;&#x2e;&#x74;&#115;&#x69;&#x6e;&#103;&#104;&#x75;&#x61;&#x2e;&#x65;&#100;&#117;&#46;&#x63;&#x6e;">&#x67;&#103;&#120;&#x32;&#x31;&#64;&#109;&#x61;&#105;&#108;&#x73;&#x2e;&#x74;&#115;&#x69;&#x6e;&#103;&#104;&#x75;&#x61;&#x2e;&#x65;&#100;&#117;&#46;&#x63;&#x6e;</a></p><h3 id="1-地球与一个遥远行星通信"><a href="#1-地球与一个遥远行星通信" class="headerlink" title="1.地球与一个遥远行星通信"></a>1.地球与一个遥远行星通信</h3><ol><li><p>路线单向延时<br>$$<br>T&#x3D;9\frac{10^{10}}{3\times10^8}&#x3D;300s<br>$$<br> 采用停等协议，利用率为<br>$$<br>32 * 1000 * 86&#x2F;(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) &#x3D; 6.66\times10^{-6}<br>$$</p></li><li><p>采用滑动窗口协议：</p><p>n &#x3D; 2 * 300s&#x2F;(32 * 1000 * 8b&#x2F;64 * 1000000bps) + 1 &#x3D; 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率"><a href="#2-地球同步卫星的最大信道利用率" class="headerlink" title="2.地球同步卫星的最大信道利用率"></a>2.地球同步卫星的最大信道利用率</h3><ol><li><p>停等式</p><p>1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 1&#x2F;542</p></li><li><p>协议5</p><p>7 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li><li><p>协议6</p><p>4 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li></ol><h3 id="3-卫星信道最大吞吐量"><a href="#3-卫星信道最大吞吐量" class="headerlink" title="3.卫星信道最大吞吐量"></a>3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T &#x3D; 512 * 86&#x2F;(64 * 1000bps) &#x3D; 0.064s</p><ul><li><p>窗口大小为1</p><p>512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 6781bps</p></li><li><p>窗口大小为7</p><p>7 * 512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 47467bps</p></li><li><p>窗口大小15</p><p>由于信道最多容量为n &#x3D; [(0.270 * 2 + 0.064)&#x2F;0.064] &#x3D;9  故吞吐量为64kbps</p></li><li><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数"><a href="#4-主机之间帧序号的比特数" class="headerlink" title="4.主机之间帧序号的比特数"></a>4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$&#x3D;$128\times{8b&#x2F;32kbps}&#x3D;0.032s$ ;$t_{max}$&#x3D;$512\times{8b&#x2F;32kbps}&#x3D;0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}&#x3D;2\times0.3s&#x2F;t_{max}&#x3D;6;l_{max}&#x3D;2\times0.3s&#x2F;t_{min}&#x3D;20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="网原第五次作业"><a href="#网原第五次作业" class="headerlink" title="网原第五次作业"></a>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:&#x67;&#x67;&#x78;&#50;&#49;&#x40;&#109;&#x61;&#x69;&#x6c;&#x73;&#46;&#116;&#115;&#x69;&#x6e;&#x67;&#104;&#x75;&#x61;&#46;&#x65;&#100;&#117;&#46;&#99;&#x6e;">&#x67;&#x67;&#x78;&#50;&#49;&#x40;&#109;&#x61;&#x69;&#x6c;&#x73;&#46;&#116;&#115;&#x69;&#x6e;&#x67;&#104;&#x75;&#x61;&#46;&#x65;&#100;&#117;&#46;&#99;&#x6e;</a></p><h3 id="1-地球与一个遥远行星通信"><a href="#1-地球与一个遥远行星通信" class="headerlink" title="1.地球与一个遥远行星通信"></a>1.地球与一个遥远行星通信</h3><ol><li><p>路线单向延时<br>$$<br>T&#x3D;9\frac{10^{10}}{3\times10^8}&#x3D;300s<br>$$<br> 采用停等协议，利用率为<br>$$<br>32 * 1000 * 86&#x2F;(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) &#x3D; 6.66\times10^{-6}<br>$$</p></li><li><p>采用滑动窗口协议：</p><p>n &#x3D; 2 * 300s&#x2F;(32 * 1000 * 8b&#x2F;64 * 1000000bps) + 1 &#x3D; 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率"><a href="#2-地球同步卫星的最大信道利用率" class="headerlink" title="2.地球同步卫星的最大信道利用率"></a>2.地球同步卫星的最大信道利用率</h3><ol><li><p>停等式</p><p>1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 1&#x2F;542</p></li><li><p>协议5</p><p>7 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li><li><p>协议6</p><p>4 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li></ol><h3 id="3-卫星信道最大吞吐量"><a href="#3-卫星信道最大吞吐量" class="headerlink" title="3.卫星信道最大吞吐量"></a>3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T &#x3D; 512 * 86&#x2F;(64 * 1000bps) &#x3D; 0.064s</p><ul><li><p>窗口大小为1</p><p>512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 6781bps</p></li><li><p>窗口大小为7</p><p>7 * 512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 47467bps</p></li><li><p>窗口大小15</p><p>由于信道最多容量为n &#x3D; [(0.270 * 2 + 0.064)&#x2F;0.064] &#x3D;9  故吞吐量为64kbps</p></li><li><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数"><a href="#4-主机之间帧序号的比特数" class="headerlink" title="4.主机之间帧序号的比特数"></a>4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$&#x3D;$128\times{8b&#x2F;32kbps}&#x3D;0.032s$ ;$t_{max}$&#x3D;$512\times{8b&#x2F;32kbps}&#x3D;0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}&#x3D;2\times0.3s&#x2F;t_{max}&#x3D;6;l_{max}&#x3D;2\times0.3s&#x2F;t_{min}&#x3D;20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
       
       
       
