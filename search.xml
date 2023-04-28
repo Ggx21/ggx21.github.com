@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>dream_talks_README</title>
+      <link href="/2023/04/28/dream-talk-0/"/>
+      <url>/2023/04/28/dream-talk-0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="README-README"><a href="#README-README" class="headerlink" title="README-README"></a>README-README</h1><p>正经人谁写日记呢？</p><blockquote><p> Create this blog just in case I want to write anything (well that may never happen :))</p></blockquote><p>我想每周更新一个文件是一个合理的频率。</p><p>大概想到什么就写点什么。</p><p>我是不是可以给自己评论一下，这样你不登录github也能给我点赞？</p><p>我不知道。我不知道。</p><p>意义是？……</p><p>估计也不会有什么排版。</p><p>也许以后我会把梦话和梦里的内容分开。</p><p>这个category完全是梦中的情节，都是假的，不是真的。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> dream talks </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU-daily </tag>
+            
+            <tag> dream talks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello 沸羊羊</title>
       <link href="/2023/04/27/feiyangyang/"/>
       <url>/2023/04/27/feiyangyang/</url>
@@ -85,25 +112,6 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/hello-world-1/"/>
-      <url>/2023/04/27/hello-world-1/</url>
-      
-        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>test-markdown</title>
       <link href="/2023/04/27/ful-test/"/>
       <url>/2023/04/27/ful-test/</url>
@@ -123,6 +131,25 @@
             <tag> test </tag>
             
         </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/hello-world-1/"/>
+      <url>/2023/04/27/hello-world-1/</url>
+      
+        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
       
     </entry>
     
@@ -177,7 +204,7 @@
       <link href="/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/"/>
       <url>/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/</url>
       
-        <content type="html"><![CDATA[<h1 id="网原第五次作业"><a href="#网原第五次作业" class="headerlink" title="网原第五次作业"></a>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:&#x67;&#103;&#120;&#x32;&#49;&#64;&#109;&#x61;&#x69;&#108;&#x73;&#x2e;&#x74;&#x73;&#x69;&#x6e;&#103;&#x68;&#x75;&#97;&#x2e;&#x65;&#100;&#117;&#46;&#x63;&#x6e;">&#x67;&#103;&#120;&#x32;&#49;&#64;&#109;&#x61;&#x69;&#108;&#x73;&#x2e;&#x74;&#x73;&#x69;&#x6e;&#103;&#x68;&#x75;&#97;&#x2e;&#x65;&#100;&#117;&#46;&#x63;&#x6e;</a></p><h3 id="1-地球与一个遥远行星通信"><a href="#1-地球与一个遥远行星通信" class="headerlink" title="1.地球与一个遥远行星通信"></a>1.地球与一个遥远行星通信</h3><ol><li><p>路线单向延时<br>$$<br>T&#x3D;9\frac{10^{10}}{3\times10^8}&#x3D;300s<br>$$<br> 采用停等协议，利用率为<br>$$<br>32 * 1000 * 86&#x2F;(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) &#x3D; 6.66\times10^{-6}<br>$$</p></li><li><p>采用滑动窗口协议：</p><p>n &#x3D; 2 * 300s&#x2F;(32 * 1000 * 8b&#x2F;64 * 1000000bps) + 1 &#x3D; 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率"><a href="#2-地球同步卫星的最大信道利用率" class="headerlink" title="2.地球同步卫星的最大信道利用率"></a>2.地球同步卫星的最大信道利用率</h3><ol><li><p>停等式</p><p>1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 1&#x2F;542</p></li><li><p>协议5</p><p>7 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li><li><p>协议6</p><p>4 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li></ol><h3 id="3-卫星信道最大吞吐量"><a href="#3-卫星信道最大吞吐量" class="headerlink" title="3.卫星信道最大吞吐量"></a>3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T &#x3D; 512 * 86&#x2F;(64 * 1000bps) &#x3D; 0.064s</p><ul><li><p>窗口大小为1</p><p>512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 6781bps</p></li><li><p>窗口大小为7</p><p>7 * 512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 47467bps</p></li><li><p>窗口大小15</p><p>由于信道最多容量为n &#x3D; [(0.270 * 2 + 0.064)&#x2F;0.064] &#x3D;9  故吞吐量为64kbps</p></li><li><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数"><a href="#4-主机之间帧序号的比特数" class="headerlink" title="4.主机之间帧序号的比特数"></a>4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$&#x3D;$128\times{8b&#x2F;32kbps}&#x3D;0.032s$ ;$t_{max}$&#x3D;$512\times{8b&#x2F;32kbps}&#x3D;0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}&#x3D;2\times0.3s&#x2F;t_{max}&#x3D;6;l_{max}&#x3D;2\times0.3s&#x2F;t_{min}&#x3D;20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="网原第五次作业"><a href="#网原第五次作业" class="headerlink" title="网原第五次作业"></a>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:&#x67;&#x67;&#120;&#x32;&#x31;&#x40;&#x6d;&#97;&#x69;&#108;&#x73;&#x2e;&#116;&#x73;&#x69;&#x6e;&#x67;&#x68;&#117;&#97;&#46;&#x65;&#100;&#117;&#46;&#x63;&#110;">&#x67;&#x67;&#120;&#x32;&#x31;&#x40;&#x6d;&#97;&#x69;&#108;&#x73;&#x2e;&#116;&#x73;&#x69;&#x6e;&#x67;&#x68;&#117;&#97;&#46;&#x65;&#100;&#117;&#46;&#x63;&#110;</a></p><h3 id="1-地球与一个遥远行星通信"><a href="#1-地球与一个遥远行星通信" class="headerlink" title="1.地球与一个遥远行星通信"></a>1.地球与一个遥远行星通信</h3><ol><li><p>路线单向延时<br>$$<br>T&#x3D;9\frac{10^{10}}{3\times10^8}&#x3D;300s<br>$$<br> 采用停等协议，利用率为<br>$$<br>32 * 1000 * 86&#x2F;(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) &#x3D; 6.66\times10^{-6}<br>$$</p></li><li><p>采用滑动窗口协议：</p><p>n &#x3D; 2 * 300s&#x2F;(32 * 1000 * 8b&#x2F;64 * 1000000bps) + 1 &#x3D; 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率"><a href="#2-地球同步卫星的最大信道利用率" class="headerlink" title="2.地球同步卫星的最大信道利用率"></a>2.地球同步卫星的最大信道利用率</h3><ol><li><p>停等式</p><p>1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 1&#x2F;542</p></li><li><p>协议5</p><p>7 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li><li><p>协议6</p><p>4 * 1000&#x2F;(1000 + 2 * 1000000 * 270 + 1000) &#x3D; 7&#x2F;542</p></li></ol><h3 id="3-卫星信道最大吞吐量"><a href="#3-卫星信道最大吞吐量" class="headerlink" title="3.卫星信道最大吞吐量"></a>3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T &#x3D; 512 * 86&#x2F;(64 * 1000bps) &#x3D; 0.064s</p><ul><li><p>窗口大小为1</p><p>512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 6781bps</p></li><li><p>窗口大小为7</p><p>7 * 512 * 86&#x2F;(0.064 + 0.270 * 2) &#x3D; 47467bps</p></li><li><p>窗口大小15</p><p>由于信道最多容量为n &#x3D; [(0.270 * 2 + 0.064)&#x2F;0.064] &#x3D;9  故吞吐量为64kbps</p></li><li><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数"><a href="#4-主机之间帧序号的比特数" class="headerlink" title="4.主机之间帧序号的比特数"></a>4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$&#x3D;$128\times{8b&#x2F;32kbps}&#x3D;0.032s$ ;$t_{max}$&#x3D;$512\times{8b&#x2F;32kbps}&#x3D;0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}&#x3D;2\times0.3s&#x2F;t_{max}&#x3D;6;l_{max}&#x3D;2\times0.3s&#x2F;t_{min}&#x3D;20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
       
       
       <categories>
