@@ -294,6 +294,25 @@
     
     <entry>
       <title>hello world</title>
+      <link href="/2023/04/27/hello-world-1/"/>
+      <url>/2023/04/27/hello-world-1/</url>
+      
+        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
       <link href="/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
       
@@ -312,25 +331,6 @@
             <tag> ελληνικά </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/hello-world-1/"/>
-      <url>/2023/04/27/hello-world-1/</url>
-      
-        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
       
     </entry>
     
