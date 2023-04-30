@@ -337,6 +337,25 @@
     
     
     <entry>
+      <title>tips</title>
+      <link href="/2023/04/27/tips/"/>
+      <url>/2023/04/27/tips/</url>
+      
+        <content type="html"><![CDATA[<h2 id="终端设置代理">终端设置代理</h2><p>要永久设置HTTP代理和HTTPS代理，可以将这些命令添加到PowerShell的配置文件中。</p><p>以下是在PowerShell中设置永久HTTP代理和HTTPS代理的步骤：</p><ol><li class="lvl-3"><p>打开PowerShell命令提示符，输入以下命令：<code>notepad $PROFILE</code></p></li><li class="lvl-3"><p>在打开的文件中，添加以下两行命令：</p></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$Env:http_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br><span class="line">$Env:https_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br></pre></td></tr></table></figure><ol start="3"><li class="lvl-3"><p>保存并关闭文件。</p></li></ol><p>现在，每次打开新的PowerShell窗口时，都会自动加载此配置文件，并在环境变量中设置HTTP代理和HTTPS代理。</p><p>请注意，如果您使用的是PowerShell Core，配置文件的位置可能不同，并且可能需要使用其他命令来编辑它。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> tips </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ελληνικά</title>
       <link href="/2023/04/27/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"/>
       <url>/2023/04/27/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/</url>
