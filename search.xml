@@ -5,8 +5,8 @@
     
     <entry>
       <title>comment</title>
-      <link href="/2023/04/30/comment/"/>
-      <url>/2023/04/30/comment/</url>
+      <link href="/2023/04/30/others/comment/"/>
+      <url>/2023/04/30/others/comment/</url>
       
         <content type="html"><![CDATA[<p>这里专门为了评论.</p><p>但是你需要登录一下GitHub.</p><p>有没有更好的方式呢?</p><p>😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️😶‍🌫️</p>]]></content>
       
@@ -30,8 +30,8 @@
     
     <entry>
       <title>Somniloquy_2</title>
-      <link href="/2023/04/30/dream-2/"/>
-      <url>/2023/04/30/dream-2/</url>
+      <link href="/2023/04/30/Somniloquy/dream-2/"/>
+      <url>/2023/04/30/Somniloquy/dream-2/</url>
       
         <content type="html"><![CDATA[<p>这是什么?<a href="/2023/04/28/dream-0/">这篇README</a>大概也不能告诉你.</p><h2 id="8：00">8：00</h2><p>昨天晚上被g44拉了壮丁，练了一晚上拔河。今早上勇夺亚军。挺好的，有点事干总比天天胡思乱想好.<br><img src="/img/dream-2/1.jpg" style="zoom: 25%;" /></p><h2 id="11-36">11:36</h2><p>天天搞这前端玩物丧志，搞个<a href="/2023/04/30/deadlines/">deadline页面</a>搞到现在。<br><strong>又没人看。</strong><br>一天到晚写些小学生流水帐😄中厅很安静。突然觉着这样写markdown与typora相比也挺舒服的。</p><h2 id="12：00">12：00</h2><p>看着窗外的云发呆。小时候天天看着云从这边飘到那边，现在一天到晚对着电子屏幕，为了什么呢？</p><p>昨天晚上还在和人说，感觉自己还是很有耐心。今天干了些事，发现耐心消耗殆尽了。<br>🤡🤡🤡<br><img src="/img/dream-2/2.jpg" style="zoom: 25%;" /></p><h2 id="15-05">15:05</h2><p>再写前端我就是那个<br>🐒🐒🐒🐒</p><h2 id="19：36">19：36</h2><p>本月只点了3次外卖。感觉生活变健康了。</p><p>但我是统计了红包使用次数得出来的数据，感觉大亏特亏。😿</p>]]></content>
       
@@ -59,10 +59,10 @@
     
     <entry>
       <title>deadlines</title>
-      <link href="/2023/04/30/deadlines/"/>
-      <url>/2023/04/30/deadlines/</url>
+      <link href="/2023/04/30/homework/deadlines/"/>
+      <url>/2023/04/30/homework/deadlines/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">希腊语第三次作业 本周</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">人智导第二次作业  本周</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">概统第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">毛概案例分析 十二周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">网原大作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">数电实验报告</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">2</label></p></li></ul></div></details>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">希腊语第三次作业 本周</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">人智导第二次作业  本周</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">概统第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">毛概案例分析 十二周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">网原大作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">数电实验报告</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">2</label></p></li></ul></div></details>]]></content>
       
       
       <categories>
@@ -84,15 +84,17 @@
     
     <entry>
       <title>network-homework-9</title>
-      <link href="/2023/04/29/network9/"/>
-      <url>/2023/04/29/network9/</url>
+      <link href="/2023/04/29/homework/network/network9/"/>
+      <url>/2023/04/29/homework/network/network9/</url>
       
-        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2>]]></content>
+        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
       
       
       <categories>
           
           <category> homework </category>
+          
+          <category> network </category>
           
       </categories>
       
@@ -100,6 +102,8 @@
         <tags>
             
             <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -109,15 +113,15 @@
     
     <entry>
       <title>有趣的事</title>
-      <link href="/2023/04/28/funny-things/"/>
-      <url>/2023/04/28/funny-things/</url>
+      <link href="/2023/04/28/articles/funny-things/"/>
+      <url>/2023/04/28/articles/funny-things/</url>
       
         <content type="html"><![CDATA[<h1>文采不错</h1><p>二零二一年的夏天，<s>xxx</s>十七岁，第一次鼓起勇气，和喜欢的女孩子告白。那是生命中美丽的一天，阳光还算得上明媚，楼宇间轻风阵阵，远处悠扬的蝉鸣声，抚慰少年胸怀。两人肩并肩坐在公园的长椅上，观察一张张年轻和老去的面孔。东风一劲，女孩身体靠近，发丝飞舞。几个月后，<s>xxx</s>发现对方不喜欢吃新鲜的胡萝卜，感到兴味索然，和她提出分手。霓虹灯下的哨兵 2023-04-28</p>]]></content>
       
       
       <categories>
           
-          <category> others </category>
+          <category> articles </category>
           
       </categories>
       
@@ -134,8 +138,8 @@
     
     <entry>
       <title>Somniloquy_1</title>
-      <link href="/2023/04/28/dream-1/"/>
-      <url>/2023/04/28/dream-1/</url>
+      <link href="/2023/04/28/Somniloquy/dream-1/"/>
+      <url>/2023/04/28/Somniloquy/dream-1/</url>
       
         <content type="html"><![CDATA[<p>这是什么?<a href="/2023/04/28/dream-0/">这篇README</a>大概也不能告诉你.</p><h1>周五</h1><img src="/img/dream-talk-1.assets/rainInBeijing.jpg" style="zoom: 25%;" /><p>北京下了大暴雨。我没有带伞，淋成了落汤鸡。</p><p>最近有些无聊了，淋雨、洗澡、敲代码时明明跟自己说了很多话，结果只剩上面两句了。</p><img src="/img/dream-talk-1.assets/breakfast.jpg" style="zoom: 25%;" /><p>对了，连着两天吃了早饭，挺好的；但是连着两天四小时充足睡眠，不太妙。<em>出现幻觉头晕目眩1:11</em> 😵</p><p>同学生日，大家聚餐了。我没去。</p><p>😄</p><h2 id="light-up-my-day">light up my day</h2><img src="\img\dream-talk-1.assets\Snipaste_2023-04-28_23-46-31.png" style="zoom: 85%;" /><h2 id="life-goes-on">life goes on</h2><blockquote><p>玩物丧志</p></blockquote><ul class="lvl-0"><li class="lvl-2"><p>这一切的意义是？</p></li><li class="lvl-2"><p>可听到雷声阵阵，可感到危险来临</p></li><li class="lvl-2"><p>真是下贱</p></li><li class="lvl-2"><p>微笑着就倒在血泊中,还在担心别人比我疼</p></li><li class="lvl-2"><p>其实我是个<a href="https://tool.liumingye.cn/music/#/search/M/song/%E8%A0%A2%E8%B4%A7">蠢货</a></p></li><li class="lvl-2"><p>time is up,deal is over</p></li><li class="lvl-2"><p>我应该更关注爱我的人才对</p></li><li class="lvl-2"><p>我被这么多人爱着,我真是天底下最幸福的小孩</p></li></ul>]]></content>
       
@@ -161,8 +165,8 @@
     
     <entry>
       <title>Somniloquy_README</title>
-      <link href="/2023/04/28/dream-0/"/>
-      <url>/2023/04/28/dream-0/</url>
+      <link href="/2023/04/28/Somniloquy/dream-0/"/>
+      <url>/2023/04/28/Somniloquy/dream-0/</url>
       
         <content type="html"><![CDATA[<h1>README-README</h1><p>正经人谁写日记呢？</p><blockquote><p>Create this blog just in case I want to write anything (well that may never happen 😃)</p></blockquote><p>我想每周更新一个文件是一个合理的频率。</p><p>大概想到什么就写点什么。</p><p>我是不是可以给自己评论一下，这样你不登录github也能给我点赞？</p><p>我不知道。我不知道。</p><p>意义是？……</p><p>估计也不会有什么排版。</p><p>也许以后我会把梦话和梦里的内容分开。</p><p>这个category完全是梦中的情节，都是假的，不是真的。</p>]]></content>
       
@@ -187,36 +191,9 @@
     
     
     <entry>
-      <title>hello YUX</title>
-      <link href="/2023/04/27/hello-YUX/"/>
-      <url>/2023/04/27/hello-YUX/</url>
-      
-        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> articles </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> THU </tag>
-            
-            <tag> THU-daily </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello 沸羊羊</title>
-      <link href="/2023/04/27/feiyangyang/"/>
-      <url>/2023/04/27/feiyangyang/</url>
+      <link href="/2023/04/27/articles/feiyangyang/"/>
+      <url>/2023/04/27/articles/feiyangyang/</url>
       
         <content type="html"><![CDATA[<p>我是沸羊羊，一只聪明又机智的羊。在这草原上，我被称为小霸王。可是，我有一颗温柔的心，曾经深深地爱上了美羊羊。</p><p>可惜，美羊羊看不到我这颗真挚的心。她总是被那些华丽而无脑的花瓶吸引，哪怕他们只会说些毫无意义的话语。我才不会像他们那样肤浅呢。</p><p>我曾经为了她的芳心不惜一切，可是她却视而不见。我想起这段经历，不禁感叹美羊羊真是没有眼光。毕竟，在这么多羊中，我沸羊羊才是最出色的啊！</p><p>不过，没关系，因为我也许早就准备好了面对这个结果。沸羊羊也许只有美羊羊才能陪伴我，可有些羊比美羊羊更加值得我去爱。我会欣然接受这个事实，因为我自信有一个真正的爱情会出现在我的身边。</p>]]></content>
       
@@ -243,9 +220,36 @@
     
     
     <entry>
+      <title>hello YUX</title>
+      <link href="/2023/04/27/articles/hello-YUX/"/>
+      <url>/2023/04/27/articles/hello-YUX/</url>
+      
+        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> articles </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU </tag>
+            
+            <tag> THU-daily </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>crawler-sample</title>
-      <link href="/2023/04/27/code-test/"/>
-      <url>/2023/04/27/code-test/</url>
+      <link href="/2023/04/27/others/code-test/"/>
+      <url>/2023/04/27/others/code-test/</url>
       
         <content type="html"><![CDATA[<h1>code-test</h1><blockquote><p>这是一个用来测试代码显示效果的页面。</p><p>你也可以用它爬点东西</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.service <span class="keyword">import</span> Service <span class="keyword">as</span> ChromeService</span><br><span class="line"><span class="keyword">from</span> webdriver_manager.chrome <span class="keyword">import</span> ChromeDriverManager</span><br><span class="line"><span class="comment"># from fake_useragent import UserAgent</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DynCrawler</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,url,theme</span>):</span><br><span class="line">        self.url = url</span><br><span class="line">        self.theme = theme</span><br><span class="line">        self.options=webdriver.ChromeOptions() <span class="comment"># 无头模式</span></span><br><span class="line">        self.options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()),options=self.options)</span><br><span class="line">        self.href_list=[]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_whole_page</span>(<span class="params">self</span>):</span><br><span class="line">        html_page=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//*[@class=&quot;list-t&quot;]/a&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> html_page:</span><br><span class="line">            url =page.get_attribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">            title=page.text</span><br><span class="line">            data = &#123;<span class="string">&quot;url&quot;</span>:<span class="built_in">str</span>(url),<span class="string">&quot;title&quot;</span>:<span class="built_in">str</span>(title)&#125;</span><br><span class="line">            self.href_list.append(data)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;get page: &quot;</span>,url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_images</span>(<span class="params">self,url,title</span>):</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        images=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//div[@class=&quot;content&quot;]/a/img&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> index,image <span class="keyword">in</span> <span class="built_in">enumerate</span>(images):</span><br><span class="line">            image_url=image.get_attribute(<span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(image_url)</span><br><span class="line">            <span class="keyword">if</span> image_url:</span><br><span class="line">                image_name=index+<span class="number">1</span></span><br><span class="line">                image_name=<span class="built_in">str</span>(image_name)+<span class="string">&#x27;.jpg&#x27;</span></span><br><span class="line">                image_path=<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/<span class="subst">&#123;image_name&#125;</span>&#x27;</span></span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(image_path,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        f.write(requests.get(image_url).content)</span><br><span class="line">                    <span class="keyword">except</span>:</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_title</span>(<span class="params">self,url</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;get title: &quot;</span>,url)</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        title=self.driver.find_element(By.XPATH,<span class="string">&#x27;//*[@id=&quot;app&quot;]/div/div[3]/div[1]/div[1]/h1&#x27;</span>)</span><br><span class="line">        title=title.text</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title: &quot;</span>,title)</span><br><span class="line">        <span class="keyword">return</span> title</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(self.theme):</span><br><span class="line">            os.mkdir(self.theme)</span><br><span class="line">        self.driver.get(self.url)</span><br><span class="line">        self.driver.implicitly_wait(<span class="number">2</span>)</span><br><span class="line">        self.get_whole_page()</span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> self.href_list:</span><br><span class="line">            url=data[<span class="string">&#x27;url&#x27;</span>]</span><br><span class="line">            title=data[<span class="string">&#x27;title&#x27;</span>]</span><br><span class="line">            title=title.replace(<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;|&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27; &#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;：&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            <span class="comment"># make dir</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>):</span><br><span class="line">                os.mkdir(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>)</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/url.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(url)</span><br><span class="line">                self.get_images(url,title)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请输入歌手名字：&#x27;</span>)</span><br><span class="line">    singername=<span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">8</span>):</span><br><span class="line">        url=<span class="string">f&#x27;http://www.echangwang.com/singer/<span class="subst">&#123;singername&#125;</span>_<span class="subst">&#123;index&#125;</span>.html&#x27;</span></span><br><span class="line">        crawler=DynCrawler(url,singername)</span><br><span class="line">        crawler.run()</span><br></pre></td></tr></table></figure>]]></content>
       
@@ -269,8 +273,8 @@
     
     <entry>
       <title>fool</title>
-      <link href="/2023/04/27/fool/"/>
-      <url>/2023/04/27/fool/</url>
+      <link href="/2023/04/27/others/fool/"/>
+      <url>/2023/04/27/others/fool/</url>
       
         <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox18"><label for="checkbox18">uog</label><br><input type="checkbox" id="checkbox17"><label for="checkbox17">sdf</label></p></li></ul>]]></content>
       
@@ -294,8 +298,8 @@
     
     <entry>
       <title>test-markdown</title>
-      <link href="/2023/04/27/ful-test/"/>
-      <url>/2023/04/27/ful-test/</url>
+      <link href="/2023/04/27/others/ful-test/"/>
+      <url>/2023/04/27/others/ful-test/</url>
       
         <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
       
@@ -319,8 +323,8 @@
     
     <entry>
       <title>hello world</title>
-      <link href="/2023/04/27/hello-world-1/"/>
-      <url>/2023/04/27/hello-world-1/</url>
+      <link href="/2023/04/27/others/hello-world-1/"/>
+      <url>/2023/04/27/others/hello-world-1/</url>
       
         <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
       
@@ -338,8 +342,8 @@
     
     <entry>
       <title>tips</title>
-      <link href="/2023/04/27/tips/"/>
-      <url>/2023/04/27/tips/</url>
+      <link href="/2023/04/27/others/tips/"/>
+      <url>/2023/04/27/others/tips/</url>
       
         <content type="html"><![CDATA[<h2 id="终端设置代理">终端设置代理</h2><p>要永久设置HTTP代理和HTTPS代理，可以将这些命令添加到PowerShell的配置文件中。</p><p>以下是在PowerShell中设置永久HTTP代理和HTTPS代理的步骤：</p><ol><li class="lvl-3"><p>打开PowerShell命令提示符，输入以下命令：<code>notepad $PROFILE</code></p></li><li class="lvl-3"><p>在打开的文件中，添加以下两行命令：</p></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$Env:http_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br><span class="line">$Env:https_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br></pre></td></tr></table></figure><ol start="3"><li class="lvl-3"><p>保存并关闭文件。</p></li></ol><p>现在，每次打开新的PowerShell窗口时，都会自动加载此配置文件，并在环境变量中设置HTTP代理和HTTPS代理。</p><p>请注意，如果您使用的是PowerShell Core，配置文件的位置可能不同，并且可能需要使用其他命令来编辑它。</p>]]></content>
       
@@ -356,9 +360,9 @@
     
     
     <entry>
-      <title>network-homework</title>
-      <link href="/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/"/>
-      <url>/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/</url>
+      <title>network-homework-5</title>
+      <link href="/2023/04/27/homework/network/network5/"/>
+      <url>/2023/04/27/homework/network/network5/</url>
       
         <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
       
@@ -367,12 +371,16 @@
           
           <category> homework </category>
           
+          <category> network </category>
+          
       </categories>
       
       
         <tags>
             
             <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -382,8 +390,8 @@
     
     <entry>
       <title>hello world</title>
-      <link href="/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
       
         <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table>]]></content>
       
@@ -407,8 +415,8 @@
     
     <entry>
       <title>ελληνικά</title>
-      <link href="/2023/04/27/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"/>
-      <url>/2023/04/27/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/</url>
+      <link href="/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"/>
+      <url>/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/</url>
       
         <content type="html"><![CDATA[<table><thead><tr><th>数字</th><th>希腊语</th><th>数字</th><th>希腊语</th></tr></thead><tbody><tr><td>1</td><td>μία (mía)</td><td>20</td><td>είκοσι (íkosi)</td></tr><tr><td>2</td><td>δύο (dýo)</td><td>30</td><td>τριάντα (triánta)</td></tr><tr><td>3</td><td>τρία (tría)</td><td>40</td><td>σαράντα (saránta)</td></tr><tr><td>4</td><td>τέσσερα (téssera)</td><td>50</td><td>πενήντα (penínta)</td></tr><tr><td>5</td><td>πέντε (pénte)</td><td>60</td><td>εξήντα (exínta)</td></tr><tr><td>6</td><td>έξι (éxi)</td><td>70</td><td>εβδομήντα (evdomínta)</td></tr><tr><td>7</td><td>εφτά (eftá)</td><td>80</td><td>ογδόντα (ogdónta)</td></tr><tr><td>8</td><td>οχτώ (ochtó)</td><td>90</td><td>ενενήντα (enenínta)</td></tr><tr><td>9</td><td>εννιά (ennéa)</td><td>100</td><td>εκατό (ekató)</td></tr><tr><td>10</td><td>δέκα (déka)</td><td>200</td><td>διακόσια (diakósia)</td></tr><tr><td>11</td><td>έντεκα (énteka)</td><td>300</td><td>τριακόσια (triakósia)</td></tr><tr><td>12</td><td>δώδεκα (dódeka)</td><td>400</td><td>τετρακόσια (tetrakósia)</td></tr><tr><td>13</td><td>δεκατρία (dekatría)</td><td>500</td><td>πεντακόσια (pentakósia)</td></tr><tr><td>14</td><td>δεκατέσσερα (dekatéssera)</td><td>600</td><td>εξακόσια (hexakósia)</td></tr><tr><td>15</td><td>δεκαπέντε (dekarpénte)</td><td>700</td><td>εφτακόσια (eftakósia)</td></tr><tr><td>16</td><td>δεκαέξι (dekaéxi)</td><td>800</td><td>οκτακόσια (oktakósia)</td></tr><tr><td>17</td><td>δεκαεφτά (dekaeftá)</td><td>900</td><td>εννιακόσια (enniakósia)</td></tr><tr><td>18</td><td>δεκαοχτώ (dekaochtó)</td><td>1000</td><td>χίλια</td></tr><tr><td>19</td><td>δεκαεννιά (dekaennéa)</td><td>0</td><td>μηδέν</td></tr></tbody></table><h3 id="以下是希腊语系动词和α-β1-β2型动词在六种人称下的变位规则：">以下是希腊语系动词和α, β1, β2型动词在六种人称下的变位规则：</h3><h4 id="系动词-μαι">系动词 (μαι)</h4><table><thead><tr><th>人称</th><th>一</th><th>二</th><th>三</th></tr></thead><tbody><tr><td>单数</td><td>εγώ είμαι</td><td>εσύ είσαι</td><td>αυτός/αυτή/αυτό είναι</td></tr><tr><td>复数</td><td>εμείς είμαστε</td><td>εσείς είστε</td><td>αυτοί/αυτές είναι</td></tr></tbody></table><h4 id="α动词-μαθαίνω，ω结尾，重音不在其上">α动词 (μαθαίνω，ω结尾，重音不在其上)</h4><table><thead><tr><th>人称</th><th>一</th><th>二</th><th>三</th></tr></thead><tbody><tr><td>单数</td><td>μαθαίνω -ω</td><td>μαθαίνεις -εις</td><td>μαθαίνει -ει</td></tr><tr><td>复数</td><td>μαθαίνουμε -ουμε</td><td>μαθαίνετε -ετε</td><td>μαθαίνουν -ουν</td></tr></tbody></table><h4 id="β1动词-γράφω，-άω结尾">β1动词 (γράφω，-άω结尾)</h4><table><thead><tr><th>人称</th><th>一</th><th>二</th><th>三</th></tr></thead><tbody><tr><td>单数</td><td>μιλάω -άω</td><td>μιλάς -άς</td><td>μιλάει -άει</td></tr><tr><td>复数</td><td>μιλάμε -άμε</td><td>μιλάτε -άτε</td><td>μιλάνε -άνε</td></tr></tbody></table><h4 id="β2动词-φέρω">β2动词 (φέρω)</h4><table><thead><tr><th>人称</th><th>一</th><th>二</th><th>三</th></tr></thead><tbody><tr><td>单数</td><td>φέρω (féro)</td><td>φέρεις (féreis)</td><td>φέρει (férei)</td></tr><tr><td>复数</td><td>φέρουμε (féroume)</td><td>φέρετε (férete)</td><td>φέρουν (féroun)</td></tr></tbody></table><h3 id="物主代词">物主代词</h3><table><thead><tr><th style="text-align:center">人称代词</th><th style="text-align:center">单数形式</th><th style="text-align:center">复数形式</th></tr></thead><tbody><tr><td style="text-align:center">第一人称</td><td style="text-align:center">μου (mou)</td><td style="text-align:center">μας (mas)</td></tr><tr><td style="text-align:center">第二人称</td><td style="text-align:center">σου (sou)</td><td style="text-align:center">σας (sas)</td></tr><tr><td style="text-align:center">第三人称</td><td style="text-align:center">του (tou)/της/του</td><td style="text-align:center">τους (tous)</td></tr></tbody></table><h3 id="希腊语问好">希腊语问好</h3><table><thead><tr><th>希腊语</th><th>中文</th><th>发音</th></tr></thead><tbody><tr><td>γεια σου</td><td>你好（单数）</td><td>yea soo</td></tr><tr><td>γεια σας</td><td>您好（复数或正式场合）</td><td>yea sas</td></tr><tr><td>καλημέρα</td><td>早上好 / 上午好</td><td>kah-lee-MER-ah</td></tr><tr><td>καλησπέρα</td><td>下午好 / 晚上好</td><td>ka-lee-SPER-ah</td></tr><tr><td>καληνύχτα</td><td>晚安</td><td>kah-lee-NEECH-tah</td></tr><tr><td>αντίο</td><td>再见</td><td></td></tr></tbody></table><h3 id="国家">国家</h3><table><thead><tr><th>希腊文</th><th>中文</th><th>希腊文</th><th>中文</th></tr></thead><tbody><tr><td>Γερμανία/γερμανικά</td><td>德国</td><td>Καναδά</td><td>加拿大</td></tr><tr><td>Ιαπωνία/γιαπωνέζικα</td><td>日本</td><td>Λίβανο</td><td>黎巴嫩</td></tr><tr><td>Κίνα/κινέζικα</td><td>中国</td><td>Αγγλία/αγγλικά</td><td>英国</td></tr><tr><td>Κορέα</td><td>韩国</td><td>Γαλλία</td><td>法国</td></tr><tr><td>Ιταλία\ιταλικά</td><td>意大利</td><td>Ρωσία</td><td>俄罗斯</td></tr><tr><td>Ισπανία\ισπανικά</td><td>西班牙</td><td>Αμερική</td><td>美国</td></tr><tr><td>Τουρκία</td><td>土耳其</td><td>Αυστραλία</td><td>澳大利亚</td></tr><tr><td>Κροατία</td><td>克罗地亚</td><td>Βέλγιο</td><td>比利时</td></tr><tr><td>Ελβετία</td><td>瑞士</td><td>Μεξικό</td><td>墨西哥</td></tr><tr><td>Κύπρος</td><td>塞浦路斯</td><td>Μαρόκο</td><td>摩洛哥</td></tr><tr><td>Ελλάδα/ελληνικά</td><td>希腊</td><td>Ιράν</td><td>伊朗</td></tr></tbody></table><table><thead><tr><th>亲人</th><th>单数形式</th><th>带有&quot;του&quot;所有格的名词</th><th>带有&quot;της&quot;所有格的名词</th></tr></thead><tbody><tr><td>父亲</td><td>πατέρας (patéras)</td><td>του πατέρα (tou patéra)</td><td>της μητέρας (tis miterás)</td></tr><tr><td>母亲</td><td>μητέρα (mitéra)</td><td>της μητέρας (tis miterás)</td><td>του πατέρα (tou patéra)</td></tr><tr><td>儿子</td><td>γιος (yios)\αγόρι</td><td>του γιου (tou yiou)</td><td>της κόρης (tis kóris)</td></tr><tr><td>女儿</td><td>κόρη (kóri)\Κορίτσι</td><td>της κόρης (tis kóris)</td><td>του γιου (tou yiou)</td></tr><tr><td>兄弟</td><td>αδελφός (adelfós)</td><td>του αδελφού (tou adelfoú)</td><td>της αδελφής (tis adelfís)</td></tr><tr><td>姐妹</td><td>αδελφή (adelfí)</td><td>της αδελφής (tis adelfís)</td><td>του αδελφού (tou adelfoú)</td></tr><tr><td>表哥/表姐</td><td>ξάδερφος/ξαδέρφη (ksáderfos/ksadérfi)</td><td>του ξαδέρφη/ξάδερφου (tou ksadérfou/ksáderfou)</td><td>της ξαδέρφης/ξαδέρφης (tis ksadérfis/ksadérfis)</td></tr><tr><td>丈夫</td><td>άντρας (ántras)</td><td>του άντρα (tou ántra)</td><td>της γυναίκας (tis gynaíkas)</td></tr><tr><td>妻子</td><td>γυναίκα (gynaíka)</td><td>της γυναίκας (tis gynaíkas)</td><td>του άντρα (tou ántra)</td></tr></tbody></table><p>同样的，希腊语中家庭成员名词的词形变化与所有格有关，需要根据具体语境而定。κορίτσια  ，αγόρι</p><h3 id="生词表">生词表</h3><table><thead><tr><th style="text-align:left">Καλήμέρα (σας)</th><th></th><th>Καλησπέρα (σας)</th><th></th></tr></thead><tbody><tr><td style="text-align:left">Γεια σας</td><td></td><td>Καληνύχτα</td><td></td></tr><tr><td style="text-align:left">Χαίρετε</td><td>Hello</td><td></td><td></td></tr><tr><td style="text-align:left">Αντίο (σας)</td><td>goodbye</td><td></td><td></td></tr><tr><td style="text-align:left">τώρα</td><td>现在</td><td></td><td></td></tr><tr><td style="text-align:left">δουλεύω</td><td>工作</td><td></td><td></td></tr><tr><td style="text-align:left">μένω</td><td>住</td><td></td><td></td></tr><tr><td style="text-align:left">παντρεμένη</td><td>已婚女性</td><td></td><td></td></tr><tr><td style="text-align:left">άντρας</td><td>男人</td><td></td><td></td></tr><tr><td style="text-align:left"><strong>Από ποιο μέρος;</strong></td><td>你来自哪里？</td><td></td><td></td></tr><tr><td style="text-align:left">πως λεγεστε</td><td>你叫什么名字？</td><td></td><td></td></tr><tr><td style="text-align:left">τηλέφωνο</td><td>电话</td><td></td><td></td></tr><tr><td style="text-align:left">παρακαλώ</td><td>请</td><td></td><td></td></tr><tr><td style="text-align:left">ακριβώς</td><td>正好</td><td></td><td></td></tr><tr><td style="text-align:left">Εντάξει</td><td>好</td><td></td><td></td></tr><tr><td style="text-align:left">Επίσης λέμε:</td><td>同样也说：</td><td></td><td></td></tr><tr><td style="text-align:left">μήπως</td><td>难道</td><td></td><td></td></tr><tr><td style="text-align:left">κινητό</td><td>手机</td><td></td><td></td></tr><tr><td style="text-align:left">λεπτό</td><td>分钟</td><td></td><td></td></tr><tr><td style="text-align:left">Συγνώμη</td><td>对不起</td><td></td><td></td></tr><tr><td style="text-align:left">καθηγητής/καθηγήτρια</td><td>教授</td><td>γιατρός</td><td>医生</td></tr><tr><td style="text-align:left">πωλητής/πωλήτρια</td><td>销售员</td><td>φωτογράφος</td><td>摄影师</td></tr><tr><td style="text-align:left">δάσκαλος/δασκάλα</td><td>老师</td><td>μηχανικός</td><td>工程师</td></tr><tr><td style="text-align:left">μαθητής/μαθήτρια</td><td>学生</td><td>γραμματέας</td><td>秘书</td></tr><tr><td style="text-align:left">εργάτης/εργάτρια</td><td>工人</td><td>συνταξιούχος</td><td>退休人员</td></tr><tr><td style="text-align:left">άνεργος/άνεργη</td><td>失业人员</td><td>φωτομοντέλο (!)</td><td>时装模特儿</td></tr><tr><td style="text-align:left">φοιτητής/φοιτήτρια</td><td>大学生</td><td></td><td></td></tr><tr><td style="text-align:left">Παντρεμένος ή <strong>ελεύθερος</strong>/χωρισμένη</td><td>已婚/未婚/离异</td><td></td><td></td></tr><tr><td style="text-align:left">Λίγο.</td><td>一点点</td><td></td><td></td></tr><tr><td style="text-align:left">καθόλου.</td><td>一点也不</td><td></td><td></td></tr><tr><td style="text-align:left">δε μιλάω καθόλου αραβικά.</td><td>我一点也不会阿拉伯语。</td><td></td><td></td></tr><tr><td style="text-align:left"><strong>διεύθυνσή</strong> τούς.</td><td>他们的地址</td><td></td><td></td></tr><tr><td style="text-align:left">νοσοκομείο.</td><td>医院</td><td></td><td></td></tr><tr><td style="text-align:left">καταλαωαίνει.</td><td>理解</td><td></td><td></td></tr><tr><td style="text-align:left">αρκετά.</td><td>相当的</td><td></td><td></td></tr><tr><td style="text-align:left">ακόμα.</td><td>还是</td><td></td><td></td></tr><tr><td style="text-align:left"></td><td></td><td></td><td></td></tr><tr><td style="text-align:left"></td><td></td><td></td><td></td></tr><tr><td style="text-align:left"></td><td></td><td></td><td></td></tr><tr><td style="text-align:left"></td><td></td><td></td><td></td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>yu语法</p><ul class="lvl-2"><li class="lvl-4"><p>σε+την=στην</p></li><li class="lvl-4"><p>p53:路名</p></li><li class="lvl-4"><p>+ = συν / και</p><p>— = πλην</p></li><li class="lvl-4"><p>Το τηλέφωνό μου στο σπίτι είναι 210 9511203 调和音节（如果一个名词的重音位置在倒数第三音节，且其后是表示所属的物主代词）</p><ul class="lvl-4"><li class="lvl-6">(καθηγήτριά σού)</li><li class="lvl-6">διεύθνσή τούς</li></ul></li><li class="lvl-4"><p>-ι结尾变复数：加α</p><table><thead><tr><th>ένα παιδί</th><th>δύο/τρία… παιδιά</th></tr></thead><tbody><tr><td>ένα κορίτσι</td><td>δύο/τρία… κορίτσια</td></tr></tbody></table></li></ul></li><li class="lvl-2"><p>例句</p><ol><li class="lvl-5">Η Κάρεν είναι από την Αγγλία;</li><li class="lvl-5">Μιλάει ελληνικά;</li><li class="lvl-5">Τι δουλειά κάνει;</li><li class="lvl-5">Πού δουλεύει τώρα;</li><li class="lvl-5">Ο Γιώργος είναι καθηγητής;</li><li class="lvl-5">Πού μένειη Κάρεν τώρα;</li><li class="lvl-5">Είναι παντρεμένη;</li><li class="lvl-5">Έχει παιδιά;</li><li class="lvl-5">Πού είναι ο άντρας της;</li><li class="lvl-6">Είναι παντρεμένη με τον Χουάν κι έχουν δύο παιδιά,ένα κορίτσι , την Ντολόρες , κι ένα αγόρι, τον<br>Αντόνιο.</li></ol></li></ul><p>你好，我是peter。我来自中国，北京。现在住在希腊，雅典，xx路xx号。我是一名大学生。我目前单身。但是我有一个姐姐，她的名字是海伦，她已婚，有两个孩子，一个儿子，一个女儿。我姐姐的工作是医生。我会说希腊语，我的中文说得很好。但是我的英语很糟糕，我能理解英语但是我不会说。我和我的妈妈住在一起。我们的家庭电话号码是xxxxx。我也有手机，它的号码是xxxx。</p><p>Γεια σου, είμαι ο Peter. Είμαι από την Κίνα, το Πεκίνο. Τώρα μένω στην Αθήνα, στη διεύθυνση xx, στην οδό xx. Είμαι φοιτητής. Παρόλα αυτά, είμαι ανύπαντρος. Έχω όμως μια αδελφή, την Ελένη. Είναι παντρεμένη και έχει δύο παιδιά, ένα γιο και μια κόρη. Η δουλειά της είναι γιατρός. Μιλάω Ελληνικά, ενώ τα Κινέζικά μου είναι πολύ καλά. Ωστόσο, τα Αγγλικά μου είναι πολύ άσχημα και δεν μπορώ να μιλήσω καθόλου. Ζω με τη μητέρα μου. Ο οικιακός τηλέφωνός μας είναι xxxx και έχω επίσης ένα κινητό τηλέφωνο με τον αριθμό xxxx.</p>]]></content>
       
