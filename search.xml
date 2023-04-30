@@ -4,6 +4,56 @@
   
     
     <entry>
+      <title>deadlines</title>
+      <link href="/2023/04/30/deadlines/"/>
+      <url>/2023/04/30/deadlines/</url>
+      
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，<br />​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><p>::: danger<br /><strong>紧急</strong><br />时间紧，任务重，I’m f**ked up<br />:::</p><p>::: warning<br /><strong>注意</strong><br />时间不多了,under pressure<br />:::</p><p>::: tips<br /><strong>还早</strong><br />时间还早,totally under control<br />:::</p><p>::: success<br /><strong>成功</strong><br />写完了😄<br />:::</p></details><h2 id="发现红框没有被check可以来压力我"><a class="markdownIt-Anchor" href="#发现红框没有被check可以来压力我"></a> 发现红框没有被check，可以来压力我😄</h2><p>+++ 点击折叠<br />::: danger</p><ul><li>[ ] 希腊语第三次作业 本周</li><li>[ ] 计图pa2</li><li>[ ] 人智导第二次作业  本周<br />:::</li></ul><p>+++</p><hr><p>+++ 点击折叠<br />:::warning</p><ul><li>[ ] 网原第九次作业</li><li>[ ] 概统第十次作业</li><li>[ ] 毛概案例分析 十二周周日</li><li>[ ] 网原大作业<br />:::<br />+++</li></ul><hr><p>+++ 点击折叠<br />:::tips</p><ul><li>[ ] 习概作业 17周周日</li><li>[ ] 1</li><li>[ ] 2</li><li>[ ] 计图pa3</li><li>[ ] 计图大作业<br />:::<br />+++</li></ul><p>+++ 点击折叠<br />:::success</p><ul><li>[ ] 2</li><li>[ ] 3</li><li>[ ] 1</li><li>[ ] 2<br />:::<br />+++</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-9</title>
+      <link href="/2023/04/29/network9/"/>
+      <url>/2023/04/29/network9/</url>
+      
+        <content type="html"><![CDATA[<h1 id="网原第九次作业"><a class="markdownIt-Anchor" href="#网原第九次作业"></a> 网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>有趣的事</title>
       <link href="/2023/04/28/funny-things/"/>
       <url>/2023/04/28/funny-things/</url>
@@ -190,6 +240,25 @@
     
     <entry>
       <title>hello world</title>
+      <link href="/2023/04/27/hello-world-1/"/>
+      <url>/2023/04/27/hello-world-1/</url>
+      
+        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
       <link href="/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
       
@@ -208,25 +277,6 @@
             <tag> ελληνικά </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/hello-world-1/"/>
-      <url>/2023/04/27/hello-world-1/</url>
-      
-        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
       
     </entry>
     
