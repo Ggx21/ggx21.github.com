@@ -33,7 +33,7 @@
       <link href="/2023/04/30/dream-2/"/>
       <url>/2023/04/30/dream-2/</url>
       
-        <content type="html"><![CDATA[<p>这是什么?<a href="/2023/04/28/dream-0/">这篇README</a>大概也不能告诉你.</p><h2 id="8：00">8：00</h2><p>昨天晚上被g44拉了壮丁，练了一晚上拔河。今早上勇夺亚军。挺好的，有点事干总比天天胡思乱想好.<br><img src="/img/dream-2/1.jpg" style="zoom: 25%;" /></p><h2 id="11-36">11:36</h2><p>天天搞这前端玩物丧志，搞个<a href="/2023/04/30/deadlines/">deadline页面</a>搞到现在。<br><strong>又没人看。</strong><br>一天到晚写些小学生流水帐😄中厅很安静。突然觉着这样写markdown与typora相比也挺舒服的。</p><h2 id="12：00">12：00</h2><p>看着窗外的云发呆。小时候天天看着云从这边飘到那边，现在一天到晚对着电子屏幕，为了什么呢？</p><p>昨天晚上还在和人说，感觉自己还是很有耐心。今天干了些事，发现耐心消耗殆尽了。<br>🤡🤡🤡<br><img src="/img/dream-2/2.jpg" style="zoom: 25%;" /></p><h2 id="15-05">15:05</h2><p>再写前端我就是那个<br>🐒🐒🐒🐒</p>]]></content>
+        <content type="html"><![CDATA[<p>这是什么?<a href="/2023/04/28/dream-0/">这篇README</a>大概也不能告诉你.</p><h2 id="8：00">8：00</h2><p>昨天晚上被g44拉了壮丁，练了一晚上拔河。今早上勇夺亚军。挺好的，有点事干总比天天胡思乱想好.<br><img src="/img/dream-2/1.jpg" style="zoom: 25%;" /></p><h2 id="11-36">11:36</h2><p>天天搞这前端玩物丧志，搞个<a href="/2023/04/30/deadlines/">deadline页面</a>搞到现在。<br><strong>又没人看。</strong><br>一天到晚写些小学生流水帐😄中厅很安静。突然觉着这样写markdown与typora相比也挺舒服的。</p><h2 id="12：00">12：00</h2><p>看着窗外的云发呆。小时候天天看着云从这边飘到那边，现在一天到晚对着电子屏幕，为了什么呢？</p><p>昨天晚上还在和人说，感觉自己还是很有耐心。今天干了些事，发现耐心消耗殆尽了。<br>🤡🤡🤡<br><img src="/img/dream-2/2.jpg" style="zoom: 25%;" /></p><h2 id="15-05">15:05</h2><p>再写前端我就是那个<br>🐒🐒🐒🐒</p><h2 id="19：36">19：36</h2><p>本月只点了3次外卖。感觉生活变健康了。</p><p>但我是统计了红包使用次数得出来的数据，感觉大亏特亏。😿</p>]]></content>
       
       
       <categories>
@@ -87,7 +87,7 @@
       <link href="/2023/04/29/network9/"/>
       <url>/2023/04/29/network9/</url>
       
-        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>]]></content>
+        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2>]]></content>
       
       
       <categories>
@@ -187,6 +187,33 @@
     
     
     <entry>
+      <title>hello YUX</title>
+      <link href="/2023/04/27/hello-YUX/"/>
+      <url>/2023/04/27/hello-YUX/</url>
+      
+        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> articles </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU </tag>
+            
+            <tag> THU-daily </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello 沸羊羊</title>
       <link href="/2023/04/27/feiyangyang/"/>
       <url>/2023/04/27/feiyangyang/</url>
@@ -208,33 +235,6 @@
             <tag> 美羊羊 </tag>
             
             <tag> gpt </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello YUX</title>
-      <link href="/2023/04/27/hello-YUX/"/>
-      <url>/2023/04/27/hello-YUX/</url>
-      
-        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> articles </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> THU </tag>
-            
-            <tag> THU-daily </tag>
             
         </tags>
       
@@ -356,31 +356,6 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
-      
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-homework</title>
       <link href="/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/"/>
       <url>/2023/04/27/%E7%AC%AC%E4%BA%94%E6%AC%A1%E4%BD%9C%E4%B8%9A/</url>
@@ -398,6 +373,31 @@
         <tags>
             
             <tag> homework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ελληνικά </tag>
             
         </tags>
       
