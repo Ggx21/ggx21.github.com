@@ -33,7 +33,7 @@
       <link href="/2023/04/30/Somniloquy/dream-2/"/>
       <url>/2023/04/30/Somniloquy/dream-2/</url>
       
-        <content type="html"><![CDATA[<p>这是什么?<a href="/2023/04/28/dream-0/">这篇README</a>大概也不能告诉你.</p><h2 id="8：00">8：00</h2><p>昨天晚上被g44拉了壮丁，练了一晚上拔河。今早上勇夺亚军。挺好的，有点事干总比天天胡思乱想好.<br><img src="/img/dream-2/1.jpg" style="zoom: 25%;" /></p><h2 id="11-36">11:36</h2><p>天天搞这前端玩物丧志，搞个<a href="/2023/04/30/deadlines/">deadline页面</a>搞到现在。<br><strong>又没人看。</strong><br>一天到晚写些小学生流水帐😄中厅很安静。突然觉着这样写markdown与typora相比也挺舒服的。</p><h2 id="12：00">12：00</h2><p>看着窗外的云发呆。小时候天天看着云从这边飘到那边，现在一天到晚对着电子屏幕，为了什么呢？</p><p>昨天晚上还在和人说，感觉自己还是很有耐心。今天干了些事，发现耐心消耗殆尽了。<br>🤡🤡🤡<br><img src="/img/dream-2/2.jpg" style="zoom: 25%;" /></p><h2 id="15-05">15:05</h2><p>再写前端我就是那个<br>🐒🐒🐒🐒</p><h2 id="19：36">19：36</h2><p>本月只点了3次外卖。感觉生活变健康了。</p><p>但我是统计了红包使用次数得出来的数据，感觉大亏特亏。😿</p>]]></content>
+        <content type="html"><![CDATA[<p>这是什么?<a href="/2023/04/28/Somniloquy/dream-0/">这篇README</a>大概也不能告诉你.</p><h2 id="8：00">8：00</h2><p>昨天晚上被g44拉了壮丁，练了一晚上拔河。今早上勇夺亚军。挺好的，有点事干总比天天胡思乱想好.<br><img src="/img/dream-2/1.jpg" style="zoom: 25%;" /></p><h2 id="11-36">11:36</h2><p>天天搞这前端玩物丧志，搞个<a href="/2023/04/30/homework/deadlines/">deadline页面</a>搞到现在。<br><strong>又没人看。</strong><br>一天到晚写些小学生流水帐😄中厅很安静。突然觉着这样写markdown与typora相比也挺舒服的。</p><h2 id="12：00">12：00</h2><p>看着窗外的云发呆。小时候天天看着云从这边飘到那边，现在一天到晚对着电子屏幕，为了什么呢？</p><p>昨天晚上还在和人说，感觉自己还是很有耐心。今天干了些事，发现耐心消耗殆尽了。<br>🤡🤡🤡<br><img src="/img/dream-2/2.jpg" style="zoom: 25%;" /></p><h2 id="15-05">15:05</h2><p>再写前端我就是那个<br>🐒🐒🐒🐒</p><h2 id="19：36">19：36</h2><p>本月只点了3次外卖。感觉生活变健康了。</p><p>但我是统计了红包使用次数得出来的数据，感觉大亏特亏。😿</p>]]></content>
       
       
       <categories>
@@ -62,7 +62,7 @@
       <link href="/2023/04/30/homework/deadlines/"/>
       <url>/2023/04/30/homework/deadlines/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">希腊语第三次作业 本周 </label><mark>next</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">人智导第二次作业  本周</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4" checked="true"><label for="checkbox4">概统第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">毛概案例分析 十二周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">网原大作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">2</label></p></li></ul></div></details>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">希腊语第三次作业 本周</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">计图pa2 </label><mark>next</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">人智导第二次作业  本周</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">概统第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">毛概案例分析 十二周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">网原大作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox18"><label for="checkbox18">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">2</label></p></li></ul></div></details>]]></content>
       
       
       <categories>
@@ -141,7 +141,7 @@
       <link href="/2023/04/28/Somniloquy/dream-1/"/>
       <url>/2023/04/28/Somniloquy/dream-1/</url>
       
-        <content type="html"><![CDATA[<p>这是什么?<a href="/2023/04/28/dream-0/">这篇README</a>大概也不能告诉你.</p><h1>周五</h1><img src="/img/dream-talk-1.assets/rainInBeijing.jpg" style="zoom: 25%;" /><p>北京下了大暴雨。我没有带伞，淋成了落汤鸡。</p><p>最近有些无聊了，淋雨、洗澡、敲代码时明明跟自己说了很多话，结果只剩上面两句了。</p><img src="/img/dream-talk-1.assets/breakfast.jpg" style="zoom: 25%;" /><p>对了，连着两天吃了早饭，挺好的；但是连着两天四小时充足睡眠，不太妙。<em>出现幻觉头晕目眩1:11</em> 😵</p><p>同学生日，大家聚餐了。我没去。</p><p>😄</p><h2 id="light-up-my-day">light up my day</h2><img src="\img\dream-talk-1.assets\Snipaste_2023-04-28_23-46-31.png" style="zoom: 85%;" /><h2 id="life-goes-on">life goes on</h2><blockquote><p>玩物丧志</p></blockquote><ul class="lvl-0"><li class="lvl-2"><p>这一切的意义是？</p></li><li class="lvl-2"><p>可听到雷声阵阵，可感到危险来临</p></li><li class="lvl-2"><p>真是下贱</p></li><li class="lvl-2"><p>微笑着就倒在血泊中,还在担心别人比我疼</p></li><li class="lvl-2"><p>其实我是个<a href="https://tool.liumingye.cn/music/#/search/M/song/%E8%A0%A2%E8%B4%A7">蠢货</a></p></li><li class="lvl-2"><p>time is up,deal is over</p></li><li class="lvl-2"><p>我应该更关注爱我的人才对</p></li><li class="lvl-2"><p>我被这么多人爱着,我真是天底下最幸福的小孩</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<p>这是什么?<a href="2023/04/28/Somniloquy/dream-0/">这篇README</a>大概也不能告诉你.</p><h1>周五</h1><img src="/img/dream-talk-1.assets/rainInBeijing.jpg" style="zoom: 25%;" /><p>北京下了大暴雨。我没有带伞，淋成了落汤鸡。</p><p>最近有些无聊了，淋雨、洗澡、敲代码时明明跟自己说了很多话，结果只剩上面两句了。</p><img src="/img/dream-talk-1.assets/breakfast.jpg" style="zoom: 25%;" /><p>对了，连着两天吃了早饭，挺好的；但是连着两天四小时充足睡眠，不太妙。<em>出现幻觉头晕目眩1:11</em> 😵</p><p>同学生日，大家聚餐了。我没去。</p><p>😄</p><h2 id="light-up-my-day">light up my day</h2><img src="\img\dream-talk-1.assets\Snipaste_2023-04-28_23-46-31.png" style="zoom: 85%;" /><h2 id="life-goes-on">life goes on</h2><blockquote><p>玩物丧志</p></blockquote><ul class="lvl-0"><li class="lvl-2"><p>这一切的意义是？</p></li><li class="lvl-2"><p>可听到雷声阵阵，可感到危险来临</p></li><li class="lvl-2"><p>真是下贱</p></li><li class="lvl-2"><p>微笑着就倒在血泊中,还在担心别人比我疼</p></li><li class="lvl-2"><p>其实我是个<a href="https://tool.liumingye.cn/music/#/search/M/song/%E8%A0%A2%E8%B4%A7">蠢货</a></p></li><li class="lvl-2"><p>time is up,deal is over</p></li><li class="lvl-2"><p>我应该更关注爱我的人才对</p></li><li class="lvl-2"><p>我被这么多人爱着,我真是天底下最幸福的小孩</p></li></ul>]]></content>
       
       
       <categories>
@@ -276,32 +276,7 @@
       <link href="/2023/04/27/others/fool/"/>
       <url>/2023/04/27/others/fool/</url>
       
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">uog</label><br><input type="checkbox" id="checkbox18"><label for="checkbox18">sdf</label></p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>test-markdown</title>
-      <link href="/2023/04/27/others/ful-test/"/>
-      <url>/2023/04/27/others/ful-test/</url>
-      
-        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">uog</label><br><input type="checkbox" id="checkbox0"><label for="checkbox0">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -360,27 +335,23 @@
     
     
     <entry>
-      <title>network-homework-5</title>
-      <link href="/2023/04/27/homework/network/network5/"/>
-      <url>/2023/04/27/homework/network/network5/</url>
+      <title>test-markdown</title>
+      <link href="/2023/04/27/others/ful-test/"/>
+      <url>/2023/04/27/others/ful-test/</url>
       
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
       
       
       <categories>
           
-          <category> homework </category>
-          
-          <category> network </category>
+          <category> others </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> homework </tag>
-            
-            <tag> network </tag>
+            <tag> test </tag>
             
         </tags>
       
@@ -425,6 +396,35 @@
         <tags>
             
             <tag> note </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-5</title>
+      <link href="/2023/04/27/homework/network/network5/"/>
+      <url>/2023/04/27/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
