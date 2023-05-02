@@ -8,7 +8,7 @@
       <link href="/2023/05/02/homework/EE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/2023/05/02/homework/EE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
       
-        <content type="html"><![CDATA[<h1>四位加法器REPORT</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="不同加法器的RTL与仿真结果">不同加法器的RTL与仿真结果</h2><h4 id="超前进位加法器">超前进位加法器</h4><h5 id="仿真结果">仿真结果</h5><img src="/img/fouradder.assets/1.png" alt="image-20230502202851109" style="zoom:65%;" /><p>超前进位加法器延迟：End-Start=17.33ns</p><h5 id="RTL">RTL</h5><img src="/img/fouradder.assets/2.png" alt="image-20230502202851109" style="zoom:65%;" /><h4 id="简单进位加法器">简单进位加法器</h4><h5 id="RTL-2">RTL</h5><img src="/img/fouradder.assets/3.png" alt="image-20230502202851109" style="zoom:65%;" /><h5 id="仿真结果-2">仿真结果</h5><img src="/img/fouradder.assets/4.png" alt="image-20230502202851109" style="zoom:65%;" /><p>超前进位加法器延迟：End-Start=17.96ns</p><h4 id="原生加法器">原生加法器</h4><h5 id="RTL-3">RTL</h5><img src="/img/fouradder.assets/5.png" alt="image-20230502202851109" style="zoom:65%;" /><h4 id="代码">代码</h4><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LIBRARY</span> ieee;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_1164.<span class="keyword">ALL</span>;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_arith.<span class="keyword">ALL</span>;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_unsigned.<span class="keyword">ALL</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ENTITY</span> native_adder <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">PORT</span> (</span><br><span class="line">a, b : <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c0 : <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>;</span><br><span class="line">f : <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c3 : <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">END</span> nativee_adder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ARCHITECTURE</span> plus <span class="keyword">OF</span> native_adder <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">signal</span> buf: <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">4</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">process</span>(a, b, c0)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">buf &lt;= <span class="string">&quot;00000&quot;</span>+ a + b + c0;</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">process</span> (buf)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">f &lt;= buf(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c3 &lt;= buf(<span class="number">4</span>);</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">END</span> plus;</span><br></pre></td></tr></table></figure><h5 id="仿真结果-3">仿真结果</h5><img src="/img/fouradder.assets/6.png" alt="image-20230502202851109" style="zoom:65%;" /><p>原生加法器延时：10.03ns</p><h3 id="总结：">总结：</h3><p>我实现的超前进位加法器比普通进位加法器延迟略小。但原生加法器延时远小于我实现的。</p><h2 id="电路功能测试的结果">电路功能测试的结果</h2><ul class="lvl-0"><li class="lvl-2"><p>实际功能测试结果从计算结果上来说和仿真测试结果相同</p></li></ul><h2 id="调试中遇到的问题">调试中遇到的问题</h2><ul class="lvl-0"><li class="lvl-2"><p>对仿真操作不够熟悉，在学习仿真时花费了很多时间。</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>四位加法器REPORT</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验目的">实验目的</h2><ul class="lvl-0"><li class="lvl-2"><p>掌握组合逻辑电路的基本分析方法与设计方法；</p></li><li class="lvl-2"><p>理解半加器、全加器、加法器的分析与设计方法；</p></li><li class="lvl-2"><p>学会元件例化；</p></li><li class="lvl-2"><p>学会利用软件仿真实现对数字电路的验证与分析</p></li></ul><h2 id="实验内容">实验内容</h2><ul class="lvl-0"><li class="lvl-2"><p>设计半加器</p></li><li class="lvl-2"><p>利用半加器构建全加器</p></li><li class="lvl-2"><p>使用全加器构造逐次进位加法器，超前进位加法器</p></li><li class="lvl-2"><p>使用 VHDL自带的加法运算实现一个 4 位全加器</p></li><li class="lvl-2"><p>查看逐次进位加法器、超前进位加法器和 VHDL 自带加法器在CPLD中生成的电路,并比较这三者的异同</p></li></ul><h2 id="不同加法器的RTL与仿真结果">不同加法器的RTL与仿真结果</h2><h4 id="超前进位加法器">超前进位加法器</h4><h5 id="仿真结果">仿真结果</h5><img src="/img/fouradder.assets/1.png" alt="image-20230502202851109" style="zoom:65%;" /><p>超前进位加法器延迟：End-Start=17.33ns</p><h5 id="RTL">RTL</h5><img src="/img/fouradder.assets/2.png" alt="image-20230502202851109" style="zoom:65%;" /><h4 id="简单进位加法器">简单进位加法器</h4><h5 id="RTL-2">RTL</h5><img src="/img/fouradder.assets/3.png" alt="image-20230502202851109" style="zoom:65%;" />##### 仿真结果<img src="/img/fouradder.assets/4.png" alt="image-20230502202851109" style="zoom:65%;" /><p>超前进位加法器延迟：End-Start=17.96ns</p><h4 id="原生加法器">原生加法器</h4><h5 id="RTL-3">RTL</h5><img src="/img/fouradder.assets/5.png" alt="image-20230502202851109" style="zoom:65%;" /><h4 id="代码">代码</h4><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LIBRARY</span> ieee;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_1164.<span class="keyword">ALL</span>;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_arith.<span class="keyword">ALL</span>;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_unsigned.<span class="keyword">ALL</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ENTITY</span> native_adder <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">PORT</span> (</span><br><span class="line">a, b : <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c0 : <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>;</span><br><span class="line">f : <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c3 : <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">END</span> nativee_adder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ARCHITECTURE</span> plus <span class="keyword">OF</span> native_adder <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">signal</span> buf: <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">4</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">process</span>(a, b, c0)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">buf &lt;= <span class="string">&quot;00000&quot;</span>+ a + b + c0;</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">process</span> (buf)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">f &lt;= buf(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c3 &lt;= buf(<span class="number">4</span>);</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">END</span> plus;</span><br></pre></td></tr></table></figure><h5 id="仿真结果-2">仿真结果</h5><img src="/img/fouradder.assets/6.png" alt="image-20230502202851109" style="zoom:65%;" /><p>原生加法器延时：10.03ns</p><h3 id="总结：">总结：</h3><p>我实现的超前进位加法器比普通进位加法器延迟略小。但原生加法器延时远小于我实现的。</p><h2 id="电路功能测试的结果">电路功能测试的结果</h2><ul class="lvl-0"><li class="lvl-2"><p>实际功能测试结果从计算结果上来说和仿真测试结果相同</p></li><li class="lvl-2"><p>实验时的延迟效果几乎都无法感知</p></li></ul><h2 id="调试中遇到的问题">调试中遇到的问题</h2><ul class="lvl-0"><li class="lvl-2"><p>对仿真操作不够熟悉，在学习仿真时花费了很多时间。</p></li></ul>]]></content>
       
       
       <categories>
@@ -355,11 +355,11 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/others/hello-world-1/"/>
-      <url>/2023/04/27/others/hello-world-1/</url>
+      <title>fool</title>
+      <link href="/2023/04/27/others/fool/"/>
+      <url>/2023/04/27/others/fool/</url>
       
-        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">uog</label><br><input type="checkbox" id="checkbox18"><label for="checkbox18">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -368,6 +368,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
       
     </entry>
     
@@ -399,31 +405,6 @@
     
     
     <entry>
-      <title>fool</title>
-      <link href="/2023/04/27/others/fool/"/>
-      <url>/2023/04/27/others/fool/</url>
-      
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">uog</label><br><input type="checkbox" id="checkbox18"><label for="checkbox18">sdf</label></p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>tips</title>
       <link href="/2023/04/27/others/tips/"/>
       <url>/2023/04/27/others/tips/</url>
@@ -434,6 +415,25 @@
       <categories>
           
           <category> tips </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/others/hello-world-1/"/>
+      <url>/2023/04/27/others/hello-world-1/</url>
+      
+        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
           
       </categories>
       
