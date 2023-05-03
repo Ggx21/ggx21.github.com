@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://ggx21.github.io/img/learn_torch.assets/6.9_deep-rnn.svg">
 <meta property="og:image" content="https://ggx21.github.io/img/learn_torch.assets/6.10_birnn.svg">
 <meta property="article:published_time" content="2023-05-03T08:25:01.000Z">
-<meta property="article:modified_time" content="2023-05-03T13:25:25.765Z">
+<meta property="article:modified_time" content="2023-05-03T18:20:55.211Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="PyTorch">
 <meta name="twitter:card" content="summary">
@@ -337,6 +337,11 @@ $$<br>
 </blockquote>
 <h2 id="5-训练模型">5.训练模型</h2>
 <p>将数据、模型、损失函数、优化器和学习率等组合在一起，循环执行前向计算、损失计算、反向传播和参数更新等步骤，即可训练模型。在每个epoch结束后，还需要对模型进行评估。</p>
+<div class="tips">
+<p>在训练之前可以测试输入形状比如：</p>
+<p>在训练ResNet之前，我们来观察一下输入形状在ResNet不同模块之间的变化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">X = torch.rand((<span class="number">1</span>, <span class="number">1</span>, <span class="number">224</span>, <span class="number">224</span>))</span><br><span class="line"><span class="keyword">for</span> name, layer <span class="keyword">in</span> net.named_children():</span><br><span class="line">    X = layer(X)</span><br><span class="line">    <span class="built_in">print</span>(name, <span class="string">&#x27; output shape:\t&#x27;</span>, X.shape)</span><br></pre></td></tr></table></figure>
+</div>
 <h2 id="6-使用模型进行预测">6.使用模型进行预测</h2>
 <p>在训练好模型后，可以使用它对新的数据进行预测，并输出预测结果或概率。</p>
 <h2 id="7-模型选择">7.模型选择</h2>
