@@ -164,35 +164,6 @@
     
     
     <entry>
-      <title>PA2 REPORT</title>
-      <link href="/2023/04/29/homework/graphics/PA2REPORT/"/>
-      <url>/2023/04/29/homework/graphics/PA2REPORT/</url>
-      
-        <content type="html"><![CDATA[<h1>图形学PA2 REPORT</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="曲线性质">曲线性质</h2><h3 id="两种曲线的异同">两种曲线的异同</h3><p>相同点：</p><ol><li class="lvl-3"><p>都是基于控制点构造出的曲线；</p></li><li class="lvl-3"><p>都是多项式参数曲线，不能表示圆等曲线</p></li><li class="lvl-3"><p>都可以表示一条平滑的曲线。</p></li></ol><p>不同点：</p><ol><li class="lvl-3"><p>局部修改：</p><ul class="lvl-2"><li class="lvl-5">B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。</li><li class="lvl-5">Bezier曲线/曲面不支持局部的修改和编辑。</li></ul></li><li class="lvl-3"><p>拼接：B样条曲线可以拼接，Bezier曲线/曲面拼接时，满足几何连续性条件是十分困难的。</p></li><li class="lvl-3"><p>B样条曲线具有下面一系列好的性质</p><ul class="lvl-2"><li class="lvl-5">仿射不变性</li><li class="lvl-5">直线保持性</li><li class="lvl-5">凸包性</li><li class="lvl-5">变差缩减性</li><li class="lvl-5">几何不变性</li><li class="lvl-5">etc.</li></ul></li></ol><h3 id="怎样绘制一个首尾相接且接点处也有连续性质的-B-样条">怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</h3><ul class="lvl-0"><li class="lvl-2"><p>首尾相接：</p><p>将控制点复制一遍，在第一组控制点前面加入最后一组控制点，最后一组控制点后面加入第一组控制点。</p></li><li class="lvl-2"><p>保持连续性质</p><p>通过设置相邻控制顶点的位置和导数值相等来保证一阶连续性</p></li></ul><h2 id="代码逻辑">代码逻辑</h2><ol><li class="lvl-3"><p>首先通过discretize获取我刚刚实现的curve（一系列点的三维坐标V以及曲线在这一点的切向量T）</p></li><li class="lvl-3"><p>指定旋转步数step，进而获得每次旋转的角度θ</p></li><li class="lvl-3"><p>旋转：</p><ol><li class="lvl-6">构造一个绕y轴（<strong>Vector3f</strong>::UP）旋转、$\theta$的rot</li><li class="lvl-6">获得曲线在该点的法向</li><li class="lvl-6">点的位置向量和法向量同rot进行乘法运算，得到新的点的位置向量和法向量</li><li class="lvl-6">循环上述过程一周</li></ol></li><li class="lvl-3"><p>将修改后控制点坐标pnew和法向量nnew存入到新构造的曲面数组(<a href="http://surface.xn--vvsurface-rw9o.vn/">surface.VV和surface.VN</a>)中，用于面片的绘制</p></li><li class="lvl-3"><p>生成的顶点和法向量，通过三角化将曲面中的所有三角面片存入一个面片数组(surface.VF)中</p></li><li class="lvl-3"><p>将面片数组输入opengl，就可以画出整个曲面</p></li></ol><h2 id="代码参考">代码参考</h2><p>本次实验代码几乎完全仿照了提供的python代码实现。</p><p>具体来说，两种曲线类has a <strong>Bernstein</strong> B；通过构造一个Bernstein类实例来进行计算。</p><p>除此之外没有和其他同学进行讨论/参考其他代码。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> graphics </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> graphics </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-homework-9</title>
       <link href="/2023/04/29/homework/network/network9/"/>
       <url>/2023/04/29/homework/network/network9/</url>
@@ -214,6 +185,35 @@
             <tag> homework </tag>
             
             <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>PA2 REPORT</title>
+      <link href="/2023/04/29/homework/graphics/PA2REPORT/"/>
+      <url>/2023/04/29/homework/graphics/PA2REPORT/</url>
+      
+        <content type="html"><![CDATA[<h1>图形学PA2 REPORT</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="曲线性质">曲线性质</h2><h3 id="两种曲线的异同">两种曲线的异同</h3><p>相同点：</p><ol><li class="lvl-3"><p>都是基于控制点构造出的曲线；</p></li><li class="lvl-3"><p>都是多项式参数曲线，不能表示圆等曲线</p></li><li class="lvl-3"><p>都可以表示一条平滑的曲线。</p></li></ol><p>不同点：</p><ol><li class="lvl-3"><p>局部修改：</p><ul class="lvl-2"><li class="lvl-5">B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。</li><li class="lvl-5">Bezier曲线/曲面不支持局部的修改和编辑。</li></ul></li><li class="lvl-3"><p>拼接：B样条曲线可以拼接，Bezier曲线/曲面拼接时，满足几何连续性条件是十分困难的。</p></li><li class="lvl-3"><p>B样条曲线具有下面一系列好的性质</p><ul class="lvl-2"><li class="lvl-5">仿射不变性</li><li class="lvl-5">直线保持性</li><li class="lvl-5">凸包性</li><li class="lvl-5">变差缩减性</li><li class="lvl-5">几何不变性</li><li class="lvl-5">etc.</li></ul></li></ol><h3 id="怎样绘制一个首尾相接且接点处也有连续性质的-B-样条">怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</h3><ul class="lvl-0"><li class="lvl-2"><p>首尾相接：</p><p>将控制点复制一遍，在第一组控制点前面加入最后一组控制点，最后一组控制点后面加入第一组控制点。</p></li><li class="lvl-2"><p>保持连续性质</p><p>通过设置相邻控制顶点的位置和导数值相等来保证一阶连续性</p></li></ul><h2 id="代码逻辑">代码逻辑</h2><ol><li class="lvl-3"><p>首先通过discretize获取我刚刚实现的curve（一系列点的三维坐标V以及曲线在这一点的切向量T）</p></li><li class="lvl-3"><p>指定旋转步数step，进而获得每次旋转的角度θ</p></li><li class="lvl-3"><p>旋转：</p><ol><li class="lvl-6">构造一个绕y轴（<strong>Vector3f</strong>::UP）旋转、$\theta$的rot</li><li class="lvl-6">获得曲线在该点的法向</li><li class="lvl-6">点的位置向量和法向量同rot进行乘法运算，得到新的点的位置向量和法向量</li><li class="lvl-6">循环上述过程一周</li></ol></li><li class="lvl-3"><p>将修改后控制点坐标pnew和法向量nnew存入到新构造的曲面数组(<a href="http://surface.xn--vvsurface-rw9o.vn/">surface.VV和surface.VN</a>)中，用于面片的绘制</p></li><li class="lvl-3"><p>生成的顶点和法向量，通过三角化将曲面中的所有三角面片存入一个面片数组(surface.VF)中</p></li><li class="lvl-3"><p>将面片数组输入opengl，就可以画出整个曲面</p></li></ol><h2 id="代码参考">代码参考</h2><p>本次实验代码几乎完全仿照了提供的python代码实现。</p><p>具体来说，两种曲线类has a <strong>Bernstein</strong> B；通过构造一个Bernstein类实例来进行计算。</p><p>除此之外没有和其他同学进行讨论/参考其他代码。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> graphics </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> graphics </tag>
             
         </tags>
       
@@ -407,25 +407,6 @@
     
     
     <entry>
-      <title>tips</title>
-      <link href="/2023/04/27/others/tips/"/>
-      <url>/2023/04/27/others/tips/</url>
-      
-        <content type="html"><![CDATA[<h2 id="终端设置代理">终端设置代理</h2><p>要永久设置HTTP代理和HTTPS代理，可以将这些命令添加到PowerShell的配置文件中。</p><p>以下是在PowerShell中设置永久HTTP代理和HTTPS代理的步骤：</p><ol><li class="lvl-3"><p>打开PowerShell命令提示符，输入以下命令：<code>notepad $PROFILE</code></p></li><li class="lvl-3"><p>在打开的文件中，添加以下两行命令：</p></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$Env:http_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br><span class="line">$Env:https_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br></pre></td></tr></table></figure><ol start="3"><li class="lvl-3"><p>保存并关闭文件。</p></li></ol><p>现在，每次打开新的PowerShell窗口时，都会自动加载此配置文件，并在环境变量中设置HTTP代理和HTTPS代理。</p><p>请注意，如果您使用的是PowerShell Core，配置文件的位置可能不同，并且可能需要使用其他命令来编辑它。</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> tips </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>test-markdown</title>
       <link href="/2023/04/27/others/ful-test/"/>
       <url>/2023/04/27/others/ful-test/</url>
@@ -451,6 +432,25 @@
     
     
     <entry>
+      <title>tips</title>
+      <link href="/2023/04/27/others/tips/"/>
+      <url>/2023/04/27/others/tips/</url>
+      
+        <content type="html"><![CDATA[<h2 id="终端设置代理">终端设置代理</h2><p>要永久设置HTTP代理和HTTPS代理，可以将这些命令添加到PowerShell的配置文件中。</p><p>以下是在PowerShell中设置永久HTTP代理和HTTPS代理的步骤：</p><ol><li class="lvl-3"><p>打开PowerShell命令提示符，输入以下命令：<code>notepad $PROFILE</code></p></li><li class="lvl-3"><p>在打开的文件中，添加以下两行命令：</p></li></ol><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$Env:http_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br><span class="line">$Env:https_proxy=&quot;http://127.0.0.1:&lt;你的代理端口&gt;&quot;</span><br></pre></td></tr></table></figure><ol start="3"><li class="lvl-3"><p>保存并关闭文件。</p></li></ol><p>现在，每次打开新的PowerShell窗口时，都会自动加载此配置文件，并在环境变量中设置HTTP代理和HTTPS代理。</p><p>请注意，如果您使用的是PowerShell Core，配置文件的位置可能不同，并且可能需要使用其他命令来编辑它。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> tips </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello world</title>
       <link href="/2023/04/27/others/hello-world-1/"/>
       <url>/2023/04/27/others/hello-world-1/</url>
@@ -470,27 +470,27 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      <title>network-homework-5</title>
+      <link href="/2023/04/27/homework/network/network5/"/>
+      <url>/2023/04/27/homework/network/network5/</url>
       
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p>]]></content>
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
       
       
       <categories>
           
-          <category> notes </category>
+          <category> homework </category>
           
-          <category> ελληνικά </category>
+          <category> network </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 生词表 </tag>
+            <tag> homework </tag>
             
-            <tag> ελληνικά </tag>
+            <tag> network </tag>
             
         </tags>
       
@@ -526,27 +526,27 @@
     
     
     <entry>
-      <title>network-homework-5</title>
-      <link href="/2023/04/27/homework/network/network5/"/>
-      <url>/2023/04/27/homework/network/network5/</url>
+      <title>hello world</title>
+      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
       
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p>]]></content>
       
       
       <categories>
           
-          <category> homework </category>
+          <category> notes </category>
           
-          <category> network </category>
+          <category> ελληνικά </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> homework </tag>
+            <tag> ελληνικά </tag>
             
-            <tag> network </tag>
+            <tag> 生词表 </tag>
             
         </tags>
       
