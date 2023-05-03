@@ -6,18 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="网原第五次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 1.地球与一个遥远行星通信   路线单向延时 $$ T&#x3D;9\frac{10{10}}{3\times108}&#x3D;300s $$ 采用停等协议，利用率为 $$ 32 * 1000 * 86&#x2F;(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) &#x3D; 6.66\tim">
+    <meta name="description" content="触发器 基本R-S触发器 电位触发方式的触发器 边沿触发方式的触发器   正边沿触发方式？  分析电路？我还不会。什么阻塞不阻塞的    负边沿触发方式？jk触发  可以等同于jk触发方式吗?讨厌jk,完全不会    主－从触发方式的触发器 由两级电位触发器（主触发器和从触发器）串连而成   CP&#x3D;1期间，主触发器接收数据，从触发器封锁   在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时">
 <meta property="og:type" content="article">
-<meta property="og:title" content="network-homework-5">
-<meta property="og:url" content="https://ggx21.github.io/2023/04/27/homework/network/network5/index.html">
+<meta property="og:title" content="DLC">
+<meta property="og:url" content="https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="网原第五次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 1.地球与一个遥远行星通信   路线单向延时 $$ T&#x3D;9\frac{10{10}}{3\times108}&#x3D;300s $$ 采用停等协议，利用率为 $$ 32 * 1000 * 86&#x2F;(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) &#x3D; 6.66\tim">
+<meta property="og:description" content="触发器 基本R-S触发器 电位触发方式的触发器 边沿触发方式的触发器   正边沿触发方式？  分析电路？我还不会。什么阻塞不阻塞的    负边沿触发方式？jk触发  可以等同于jk触发方式吗?讨厌jk,完全不会    主－从触发方式的触发器 由两级电位触发器（主触发器和从触发器）串连而成   CP&#x3D;1期间，主触发器接收数据，从触发器封锁   在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-27T14:25:01.000Z">
-<meta property="article:modified_time" content="2023-04-30T15:17:49.599Z">
+<meta property="article:published_time" content="2023-05-02T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-05-03T06:21:33.066Z">
 <meta property="article:author" content="Andy Gao">
-<meta property="article:tag" content="homework">
-<meta property="article:tag" content="network">
+<meta property="article:tag" content="DLC">
 <meta name="twitter:card" content="summary">
     
     
@@ -38,7 +37,7 @@
       
     
     <!-- title -->
-    <title>network-homework-5</title>
+    <title>DLC</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -115,7 +114,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"
+            href="/2023/05/02/homework/EE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -131,7 +130,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/2020/04/27/README/"
+            href="/2023/05/01/Somniloquy/dream-3/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -164,7 +163,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第五次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%B0%E7%90%83%E4%B8%8E%E4%B8%80%E4%B8%AA%E9%81%A5%E8%BF%9C%E8%A1%8C%E6%98%9F%E9%80%9A%E4%BF%A1"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.地球与一个遥远行星通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9C%B0%E7%90%83%E5%90%8C%E6%AD%A5%E5%8D%AB%E6%98%9F%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BF%A1%E9%81%93%E5%88%A9%E7%94%A8%E7%8E%87"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.地球同步卫星的最大信道利用率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8D%AB%E6%98%9F%E4%BF%A1%E9%81%93%E6%9C%80%E5%A4%A7%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.卫星信道最大吞吐量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%BB%E6%9C%BA%E4%B9%8B%E9%97%B4%E5%B8%A7%E5%BA%8F%E5%8F%B7%E7%9A%84%E6%AF%94%E7%89%B9%E6%95%B0"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.主机之间帧序号的比特数</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%ACR-S%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">基本R-S触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E4%BD%8D%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">电位触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">边沿触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%EF%BC%8D%E4%BB%8E%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">主－从触发方式的触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8ER-S%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E8%A1%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">主从R-S触发器的功能表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">同步时序逻辑电路的分析</span></a></li></ol></div>
   </span>
 </div>
 
@@ -179,7 +178,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        network-homework-5
+        DLC
     </h1>
 
 
@@ -198,7 +197,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-04-27T14:25:01.000Z" class="dt-published" itemprop="datePublished">2023-04-27</time>
+        <time datetime="2023-05-02T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-02</time>
         
       
     </div>
@@ -206,13 +205,13 @@
  
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/network/">network</a>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/DLC/">DLC</a>
     </div>
 
  
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/network/" rel="tag">network</a>
+        <a class="p-category" href="/tags/DLC/" rel="tag">DLC</a>
     </div>
 
 
@@ -221,67 +220,84 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>网原第五次作业</h1>
-<p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
-<h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3>
-<ol>
-<li class="lvl-3">
-<p>路线单向延时<br>
-$$<br>
-T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>
-$$<br>
-采用停等协议，利用率为<br>
-$$<br>
-32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>
-$$</p>
-</li>
-<li class="lvl-3">
-<p>采用滑动窗口协议：</p>
-<p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p>
-</li>
-</ol>
-<h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3>
-<ol>
-<li class="lvl-3">
-<p>停等式</p>
-<p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p>
-</li>
-<li class="lvl-3">
-<p>协议5</p>
-<p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p>
-</li>
-<li class="lvl-3">
-<p>协议6</p>
-<p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p>
-</li>
-</ol>
-<h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3>
-<p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p>
+    <h2 id="触发器">触发器</h2>
+<h3 id="基本R-S触发器">基本R-S触发器</h3>
+<h3 id="电位触发方式的触发器">电位触发方式的触发器</h3>
+<h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>窗口大小为1</p>
-<p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p>
+<p>正边沿触发方式？</p>
+<blockquote>
+<p>分析电路？我还不会。什么阻塞不阻塞的</p>
+</blockquote>
 </li>
 <li class="lvl-2">
-<p>窗口大小为7</p>
-<p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p>
-</li>
-<li class="lvl-2">
-<p>窗口大小15</p>
-<p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p>
-</li>
-<li class="lvl-2">
-<p>窗口大小127</p>
-<p>同上，吞吐量为64kbs</p>
+<p>负边沿触发方式？jk触发</p>
+<blockquote>
+<p>可以等同于jk触发方式吗?讨厌jk,完全不会</p>
+</blockquote>
 </li>
 </ul>
-<h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3>
-<p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p>
-<p>最小窗口大小范围<br>
-$$<br>
-l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>
-$$<br>
-故帧序号最少需要5个比特</p>
+<h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3>
+<p>由两级电位触发器（主触发器和从触发器）串连而成</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>CP=1期间，主触发器接收数据，从触发器封锁</p>
+</li>
+<li class="lvl-2">
+<p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p>
+</li>
+</ul>
+<h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4>
+<p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p>
+<h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2>
+<ol>
+<li class="lvl-3">
+<p>列出状态关系</p>
+<p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p>
+<blockquote>
+<ul class="lvl-3">
+<li class="lvl-2">
+<p>对于D触发器来说$Q_i’=D_i$</p>
+</li>
+<li class="lvl-2">
+<p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p>
+<blockquote>
+<p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>至于D\J\K等于什么就再说了</p>
+<blockquote>
+<p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p>列出状态表</p>
+<p>根据上面内容可以列出状态表</p>
+</li>
+<li class="lvl-3">
+<p>画出状态图</p>
+<ul class="lvl-2">
+<li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li>
+<li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>画出时序图</p>
+<ul class="lvl-2">
+<li class="lvl-5">每一帧CP都是高低</li>
+<li class="lvl-5">每一帧输入最多变一次</li>
+<li class="lvl-5">根据状态图画时序图</li>
+</ul>
+<blockquote>
+<p>这又不考虑延迟.都是理想状态,大概还挺简单的</p>
+</blockquote>
+</li>
+</ol>
 
   </div>
 </article>
@@ -329,22 +345,22 @@ $$<br>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第五次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%B0%E7%90%83%E4%B8%8E%E4%B8%80%E4%B8%AA%E9%81%A5%E8%BF%9C%E8%A1%8C%E6%98%9F%E9%80%9A%E4%BF%A1"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.地球与一个遥远行星通信</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9C%B0%E7%90%83%E5%90%8C%E6%AD%A5%E5%8D%AB%E6%98%9F%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BF%A1%E9%81%93%E5%88%A9%E7%94%A8%E7%8E%87"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.地球同步卫星的最大信道利用率</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8D%AB%E6%98%9F%E4%BF%A1%E9%81%93%E6%9C%80%E5%A4%A7%E5%90%9E%E5%90%90%E9%87%8F"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.卫星信道最大吞吐量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%BB%E6%9C%BA%E4%B9%8B%E9%97%B4%E5%B8%A7%E5%BA%8F%E5%8F%B7%E7%9A%84%E6%AF%94%E7%89%B9%E6%95%B0"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.主机之间帧序号的比特数</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%ACR-S%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">基本R-S触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E4%BD%8D%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">电位触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">边沿触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%EF%BC%8D%E4%BB%8E%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">主－从触发方式的触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8ER-S%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E8%A1%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">主从R-S触发器的功能表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">同步时序逻辑电路的分析</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/2023/04/27/homework/network/network5/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&text=network-homework-5"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&title=network-homework-5"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&is_video=false&description=network-homework-5"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=network-homework-5&body=Check out this article: https://ggx21.github.io/2023/04/27/homework/network/network5/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&title=network-homework-5"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&title=network-homework-5"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&title=network-homework-5"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&title=network-homework-5"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/2023/04/27/homework/network/network5/&name=network-homework-5&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/2023/04/27/homework/network/network5/&t=network-homework-5"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&text=DLC"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&is_video=false&description=DLC"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=DLC&body=Check out this article: https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&name=DLC&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&t=DLC"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
