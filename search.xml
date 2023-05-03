@@ -5,8 +5,8 @@
     
     <entry>
       <title>four-adder</title>
-      <link href="/2023/05/02/homework/EE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
-      <url>/2023/05/02/homework/EE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
+      <link href="/2023/05/02/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
+      <url>/2023/05/02/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
       
         <content type="html"><![CDATA[<h1>四位加法器REPORT</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验目的">实验目的</h2><ul class="lvl-0"><li class="lvl-2"><p>掌握组合逻辑电路的基本分析方法与设计方法；</p></li><li class="lvl-2"><p>理解半加器、全加器、加法器的分析与设计方法；</p></li><li class="lvl-2"><p>学会元件例化；</p></li><li class="lvl-2"><p>学会利用软件仿真实现对数字电路的验证与分析</p></li></ul><h2 id="实验内容">实验内容</h2><ul class="lvl-0"><li class="lvl-2"><p>设计半加器</p></li><li class="lvl-2"><p>利用半加器构建全加器</p></li><li class="lvl-2"><p>使用全加器构造逐次进位加法器，超前进位加法器</p></li><li class="lvl-2"><p>使用 VHDL自带的加法运算实现一个 4 位全加器</p></li><li class="lvl-2"><p>查看逐次进位加法器、超前进位加法器和 VHDL 自带加法器在CPLD中生成的电路,并比较这三者的异同</p></li></ul><h2 id="不同加法器的RTL与仿真结果">不同加法器的RTL与仿真结果</h2><h4 id="超前进位加法器">超前进位加法器</h4><h5 id="仿真结果">仿真结果</h5><img src="/img/fouradder.assets/1.png" alt="image-20230502202851109" style="zoom:65%;" /><p>超前进位加法器延迟：End-Start=17.33ns</p><h5 id="RTL">RTL</h5><img src="/img/fouradder.assets/2.png" alt="image-20230502202851109" style="zoom:65%;" /><h4 id="简单进位加法器">简单进位加法器</h4><h5 id="RTL-2">RTL</h5><img src="/img/fouradder.assets/3.png" alt="image-20230502202851109" style="zoom:65%;" />##### 仿真结果<img src="/img/fouradder.assets/4.png" alt="image-20230502202851109" style="zoom:65%;" /><p>超前进位加法器延迟：End-Start=17.96ns</p><h4 id="原生加法器">原生加法器</h4><h5 id="RTL-3">RTL</h5><img src="/img/fouradder.assets/5.png" alt="image-20230502202851109" style="zoom:65%;" /><h4 id="代码">代码</h4><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">LIBRARY</span> ieee;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_1164.<span class="keyword">ALL</span>;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_arith.<span class="keyword">ALL</span>;</span><br><span class="line"><span class="keyword">USE</span> ieee.std_logic_unsigned.<span class="keyword">ALL</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ENTITY</span> native_adder <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">PORT</span> (</span><br><span class="line">a, b : <span class="keyword">IN</span> <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c0 : <span class="keyword">IN</span> <span class="built_in">STD_LOGIC</span>;</span><br><span class="line">f : <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c3 : <span class="keyword">OUT</span> <span class="built_in">STD_LOGIC</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">END</span> nativee_adder;</span><br><span class="line"></span><br><span class="line"><span class="keyword">ARCHITECTURE</span> plus <span class="keyword">OF</span> native_adder <span class="keyword">IS</span></span><br><span class="line"><span class="keyword">signal</span> buf: <span class="built_in">STD_LOGIC_VECTOR</span>(<span class="number">4</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line"><span class="keyword">process</span>(a, b, c0)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">buf &lt;= <span class="string">&quot;00000&quot;</span>+ a + b + c0;</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">process</span> (buf)</span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">f &lt;= buf(<span class="number">3</span> <span class="keyword">DOWNTO</span> <span class="number">0</span>);</span><br><span class="line">c3 &lt;= buf(<span class="number">4</span>);</span><br><span class="line"><span class="keyword">end</span> <span class="keyword">process</span>;</span><br><span class="line"><span class="keyword">END</span> plus;</span><br></pre></td></tr></table></figure><h5 id="仿真结果-2">仿真结果</h5><img src="/img/fouradder.assets/6.png" alt="image-20230502202851109" style="zoom:65%;" /><p>原生加法器延时：10.03ns</p><h3 id="总结：">总结：</h3><p>我实现的超前进位加法器比普通进位加法器延迟略小。但原生加法器延时远小于我实现的。</p><h2 id="电路功能测试的结果">电路功能测试的结果</h2><ul class="lvl-0"><li class="lvl-2"><p>实际功能测试结果从计算结果上来说和仿真测试结果相同</p></li><li class="lvl-2"><p>实验时的延迟效果几乎都无法感知</p></li></ul><h2 id="调试中遇到的问题">调试中遇到的问题</h2><ul class="lvl-0"><li class="lvl-2"><p>对仿真操作不够熟悉，在学习仿真时花费了很多时间。</p></li></ul>]]></content>
       
@@ -143,7 +143,7 @@
       <link href="/2023/04/30/homework/deadlines/"/>
       <url>/2023/04/30/homework/deadlines/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">希腊语第三次作业 本周</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">人智导第二次作业  本周 </label><mark>next</mark></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4" checked="true"><label for="checkbox4">概统第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">毛概案例分析 十二周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">网原大作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">数电实验报告 </label><mark>next</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">数电作业 </label><mark>next</mark></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">2</label></p></li></ul></div></details>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">希腊语第三次作业 本周</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">人智导第二次作业  本周 </label><mark>next</mark></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4" checked="true"><label for="checkbox4">概统第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">毛概案例分析 十二周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">网原大作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7" checked="true"><label for="checkbox7">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8" checked="true"><label for="checkbox8">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">1</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">2</label></p></li></ul></div></details>]]></content>
       
       
       <categories>
@@ -156,35 +156,6 @@
         <tags>
             
             <tag> homework </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-9</title>
-      <link href="/2023/04/29/homework/network/network9/"/>
-      <url>/2023/04/29/homework/network/network9/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
             
         </tags>
       
@@ -214,6 +185,35 @@
             <tag> homework </tag>
             
             <tag> graphics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-9</title>
+      <link href="/2023/04/29/homework/network/network9/"/>
+      <url>/2023/04/29/homework/network/network9/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -301,33 +301,6 @@
     
     
     <entry>
-      <title>hello YUX</title>
-      <link href="/2023/04/27/articles/hello-YUX/"/>
-      <url>/2023/04/27/articles/hello-YUX/</url>
-      
-        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> articles </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> THU </tag>
-            
-            <tag> THU-daily </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello 沸羊羊</title>
       <link href="/2023/04/27/articles/feiyangyang/"/>
       <url>/2023/04/27/articles/feiyangyang/</url>
@@ -349,6 +322,33 @@
             <tag> 美羊羊 </tag>
             
             <tag> gpt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello YUX</title>
+      <link href="/2023/04/27/articles/hello-YUX/"/>
+      <url>/2023/04/27/articles/hello-YUX/</url>
+      
+        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> articles </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU </tag>
+            
+            <tag> THU-daily </tag>
             
         </tags>
       
@@ -386,7 +386,7 @@
       <link href="/2023/04/27/others/fool/"/>
       <url>/2023/04/27/others/fool/</url>
       
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">uog</label><br><input type="checkbox" id="checkbox18"><label for="checkbox18">sdf</label></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -407,11 +407,11 @@
     
     
     <entry>
-      <title>test-markdown</title>
-      <link href="/2023/04/27/others/ful-test/"/>
-      <url>/2023/04/27/others/ful-test/</url>
+      <title>hello world</title>
+      <link href="/2023/04/27/others/hello-world-1/"/>
+      <url>/2023/04/27/others/hello-world-1/</url>
       
-        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
+        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
       
       
       <categories>
@@ -420,12 +420,6 @@
           
       </categories>
       
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
       
     </entry>
     
@@ -451,11 +445,11 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/others/hello-world-1/"/>
-      <url>/2023/04/27/others/hello-world-1/</url>
+      <title>test-markdown</title>
+      <link href="/2023/04/27/others/ful-test/"/>
+      <url>/2023/04/27/others/ful-test/</url>
       
-        <content type="html"><![CDATA[<!-- Banner Image --><div class="banner">    <img src="/img/banner.png" alt="Banner Image">    <div class="banner-text">        <h1>Hello World</h1>        <p>A warm welcome to my blog!</p>    </div></div><!-- Introduction --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>Introduction</h2>            <p>Welcome to my blog! My name is YUX and I am passionate about NOTHING. This blog is my platform to share my thoughts and experiences with you.</p>        </div>    </div></div><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
       
       
       <categories>
@@ -464,6 +458,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
       
     </entry>
     
@@ -499,6 +499,35 @@
     
     
     <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> ελληνικά </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生词表 </tag>
+            
+            <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ελληνικά</title>
       <link href="/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"/>
       <url>/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/</url>
@@ -518,35 +547,6 @@
         <tags>
             
             <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
-      
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> ελληνικά </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ελληνικά </tag>
-            
-            <tag> 生词表 </tag>
             
         </tags>
       
