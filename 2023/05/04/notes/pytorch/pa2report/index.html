@@ -365,7 +365,13 @@
 <ul class="lvl-0">
 <li class="lvl-2">
 <h4 id="CNN-simple">CNN_simple</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">graph TB</span><br><span class="line">    A(batch_X) --&gt;|Conv2d| C(Batch,通道数=卷积核数目,)</span><br><span class="line">    C --&gt;|BatchNorm2d| D(Batch,对每一通道数据归一化处理)</span><br><span class="line">    D --&gt;|ReLU,MaxPool2d|F(Batch, kernel_num, 1, 1)</span><br><span class="line">    F --&gt;|View| G(Batch, kernel_num将输出拼接起来)</span><br><span class="line">    G --&gt;|Dropout| H(Batch, kernel_num)</span><br><span class="line">    H --&gt;|Linear and Softmax| I(全连接,将输出长度变为2,并对输出softmax)</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">  graph TB
+    A(batch_X) -->|Conv2d| C(Batch,通道数=卷积核数目,)
+    C -->|BatchNorm2d| D(Batch,对每一通道数据归一化处理)
+    D -->|ReLU,MaxPool2d|F(Batch, kernel_num, 1, 1)
+    F -->|View| G(Batch, kernel_num将输出拼接起来)
+    G -->|Dropout| H(Batch, kernel_num)
+    H -->|Linear and Softmax| I(全连接,将输出长度变为2,并对输出softmax)</pre>
 </li>
 </ul>
 <img src="/img/ai_pa2/image-20230505191146457.png" alt="image-20230505191146457" style="zoom:50%;" />
@@ -373,7 +379,9 @@
 <h4 id="CNN-complex">CNN_complex</h4>
 <p>使用了ppt中原始cnn模型前半部分作为一个模块cnn_net</p>
 <img src="/img/ai_pa2/image-20230505191959273.png" alt="image-20230505191959273" style="zoom: 33%;" />
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">    A(batch_X) --&gt;C(cnn_net1)--&gt;E(flattern)--&gt;G(maxpool1D)--&gt;I(view拼接)</span><br><span class="line">    A--&gt;B(cnn_net2)--&gt;F(flattern)--&gt;H(maxpool1D)--&gt;I--&gt;Z(全连接+softmax)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph LR
+    A(batch_X) -->C(cnn_net1)-->E(flattern)-->G(maxpool1D)-->I(view拼接)
+    A-->B(cnn_net2)-->F(flattern)-->H(maxpool1D)-->I-->Z(全连接+softmax)</pre>
 <ol>
 <li class="lvl-3">
 <p><em>将两个形状是(批量大小, 词数, 词向量维度)的嵌入层的输出按词向量连结</em></p>
@@ -389,7 +397,12 @@
 </li>
 </ol>
 <h4 id="RNN-我的实现也就是单层的LSTM">RNN(我的实现也就是单层的LSTM)</h4>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">input[Input] --&gt; encoder[LSTM layer]</span><br><span class="line">encoder --&gt; output[Output]</span><br><span class="line">encoder --&gt; concatenation[Concatenation]</span><br><span class="line">concatenation --&gt; decoder[Linear layer]</span><br><span class="line">decoder --&gt; result[Result]</span><br></pre></td></tr></table></figure>
+<pre class="mermaid">graph LR
+input[Input] --> encoder[LSTM layer]
+encoder --> output[Output]
+encoder --> concatenation[Concatenation]
+concatenation --> decoder[Linear layer]
+decoder --> result[Result]</pre>
 <p>具体结构解释：</p>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -835,6 +848,13 @@
           script.async = true;
           (document.getElementById('utterances_thread')).appendChild(script);
       }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
   </script>
 
 </body>
