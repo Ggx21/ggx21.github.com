@@ -8,7 +8,7 @@
       <link href="/2023/05/30/homework/deadlines/"/>
       <url>/2023/05/30/homework/deadlines/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">毛概案例分析 十二周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">第12周DLCE</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">数电12周作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">网原大作业(联机实验部分)</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">网原实验3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7" checked="true"><label for="checkbox7">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox10" checked="true"><label for="checkbox10">希腊语第三次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11" checked="true"><label for="checkbox11">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12" checked="true"><label for="checkbox12">人智导第二次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13" checked="true"><label for="checkbox13">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14" checked="true"><label for="checkbox14">网原第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15" checked="true"><label for="checkbox15">概统第十次作业</label></p></li><li class="lvl-2"><p>[ ]</p></li></ul></div></details>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">毛概案例分析 十二周周日 </label><mark>周末再说吧</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">第12周DLCE</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">数电12周作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">网原大作业(联机实验部分)</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7" checked="true"><label for="checkbox7">网原实验3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8" checked="true"><label for="checkbox8">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9" checked="true"><label for="checkbox9">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox12" checked="true"><label for="checkbox12">希腊语第三次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13" checked="true"><label for="checkbox13">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14" checked="true"><label for="checkbox14">人智导第二次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15" checked="true"><label for="checkbox15">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox16" checked="true"><label for="checkbox16">网原第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox17" checked="true"><label for="checkbox17">概统第十次作业</label></p></li><li class="lvl-2"><p>[ ]</p></li></ul></div></details>]]></content>
       
       
       <categories>
@@ -56,6 +56,33 @@
     
     
     <entry>
+      <title>CH6-3</title>
+      <link href="/2023/05/08/notes/network/week11/"/>
+      <url>/2023/05/08/notes/network/week11/</url>
+      
+        <content type="html"><![CDATA[<p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network-homework-10</title>
       <link href="/2023/05/08/homework/network/network10/"/>
       <url>/2023/05/08/homework/network/network10/</url>
@@ -85,16 +112,16 @@
     
     
     <entry>
-      <title>CH6-3</title>
-      <link href="/2023/05/08/notes/network/week11/"/>
-      <url>/2023/05/08/notes/network/week11/</url>
+      <title>network-E3</title>
+      <link href="/2023/05/08/homework/network/network-E3/"/>
+      <url>/2023/05/08/homework/network/network-E3/</url>
       
-        <content type="html"><![CDATA[<p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
+        <content type="html"><![CDATA[<h1>网原第三次小实验</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="抓包实验-1：">抓包实验 1：</h2><img src="/img/homeworks/network-E3.assets/image-20230508182726680.png" alt="image-20230508182726680" style="zoom: 80%;" /><p>Type字段为11，Code字段为0</p><h2 id="抓包实验2">抓包实验2</h2><h3 id="观察ICMPv4请求">观察ICMPv4请求</h3><img src="/img/homeworks/network-E3.assets/image-20230508184458514.png" alt="image-20230508184458514" style="zoom:67%;" /><p>Type字段是8，Code是0</p><h3 id="观察回显数据包头">观察回显数据包头</h3><img src="/img/homeworks/network-E3.assets/image-20230508184710176.png" alt="image-20230508184710176" style="zoom:67%;" /><p>Type字段为0，Code字段也为0</p><h3 id="观察一对请求和回显">观察一对请求和回显</h3><img src="/img/homeworks/network-E3.assets/image-20230508185019527.png" alt="image-20230508185019527" style="zoom:67%;" /><p>标识符，序号，Data都相等</p><h2 id="抓包实验-3：-观察-ARP-分组各式">抓包实验 3： 观察 ARP 分组各式</h2><h3 id=""><img src="/img/homeworks/network-E3.assets/image-20230508185440661.png" alt="image-20230508185440661"></h3><ol><li class="lvl-3"><p>ARP 协议在以太网帧头中载荷类型的编号是 ？</p><img src="/img/homeworks/network-E3.assets/image-20230508185700796.png" alt="image-20230508185700796" style="zoom:67%;" /><p>答：0x0806</p></li><li class="lvl-3"><p>ARP 分组头中，以太网硬件类型编号和 IP 协议类型编号分别是？</p><img src="/img/homeworks/network-E3.assets/image-20230508185717796.png" alt="image-20230508185717796" style="zoom:67%;" /><p>答：   arp.hw.type（Hardware type）：1；protocol type 0x0800</p></li><li class="lvl-3"><p>ARP 请求分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p>  <img src="/img/homeworks/network-E3.assets/image-20230508185831466.png" alt="image-20230508185831466" style="zoom:67%;" /><ul class="lvl-2"><li class="lvl-5"><p>Opcode是1，</p></li><li class="lvl-5"><p>源IP和MAC地址是本机地址</p></li><li class="lvl-5"><p>目的IP地址是请求的IP地址；MAC地址是广播地址</p></li></ul></li><li class="lvl-3"><p>ARP 回复分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p><img src="/img/homeworks/network-E3.assets/image-20230508185731913.png" alt="image-20230508185731913" style="zoom:80%;" /><p>答：</p><ul class="lvl-2"><li class="lvl-5"><p>Opcode是2</p></li><li class="lvl-5"><p>源IP和MAC是请求的IP地址和回复的MAC</p></li><li class="lvl-5"><p>目的IP和MAC是本机</p></li></ul></li></ol><h2 id="简述题：">简述题：</h2><h3 id="icmpv4的安全隐患">icmpv4的安全隐患</h3><ol><li class="lvl-3"><p>Ping Flood 攻击：黑客可以发送大量的 Ping 请求（ICMP Echo Request），导致被攻击的目标主机网络堵塞，以至于无法正常通信。</p></li><li class="lvl-3"><p>Smurf 攻击：黑客可以利用广播地址发送 ICMPv4 Request，让目标网络中的所有主机都回应，导致目标网络瘫痪。</p></li><li class="lvl-3"><p>ICMPv4 Redirect 攻击：黑客可以伪造 ICMPv4 Redirect 消息，使目标主机将数据包发送到攻击者的设备上，从而实现中间人攻击。</p></li><li class="lvl-3"><p>ICMPv4 Time Exceeded 攻击：黑客可以发送大量 ICMPv4 Time Exceeded 消息，让目标网络的路由器被迫处理大量无用信息而瘫痪。</p></li><li class="lvl-3"><p>Ping of Death 攻击：黑客可以向目标主机发送一个特别制作的超大 ICMPv4 报文（超过 65536 字节），导致目标主机崩溃或者重启。</p></li></ol><p>处于上述安全问题，很多系统都默认禁止发送某些icmpv4消息。比如</p><ol><li class="lvl-3"><p>Cisco 路由器默认情况下会禁止发送 ICMP Redirect 消息，以避免中间人攻击。</p></li><li class="lvl-3"><p>Solaris 操作系统默认情况下会禁止发送 ICMPv4 Timestamp 和 ICMPv4 Address Mask 消息。</p></li><li class="lvl-3"><p>Windows 防火墙默认情况下会阻止多个 ICMPv4 消息，比如 ICMP Echo Request（ping）、ICMP Timestamp，ICMP Traceroute 等。</p></li></ol><h3 id="ping-局域网内外的主机产生的arp报文有何不同">ping 局域网内外的主机产生的arp报文有何不同</h3><p>这是我ping局域网内（连接到我同一个路由器的ipad设备）的arp</p><p><img src="/img/homeworks/network-E3.assets/image-20230508192914176.png" alt="image-20230508192914176"></p><p>ping局域网外的主机不会产生arp报文。arp的作用范围在局域网内。</p><h3 id="arp滥用的危害及预防">arp滥用的危害及预防</h3><h4 id="arp滥用的例子">arp滥用的例子</h4><ol><li class="lvl-3"><p>网络拥塞：过量的 ARP 请求会增加网络的负载，导致网络拥塞，从而影响网络性能和吞吐量。</p></li><li class="lvl-3"><p>ARP 洪泛攻击：攻击者利用大量伪造的 ARP 请求数据包向网络广播，欺骗物理地址表中的信息，从而导致网络拥塞或服务故障，影响网络安全。</p></li><li class="lvl-3"><p>ARP 欺骗攻击：攻击者伪造 ARP 请求数据包，使其包含正确的 IP 地址和错误的 MAC 地址。当 ARP 请求被接收并响应时，攻击者就能欺骗网络设备，从而执行中间人攻击，获取敏感信息，甚至劫持通信。</p></li></ol><h4 id="预防">预防</h4><ol><li class="lvl-3"><p>监控网络流量：使用网络分析工具监测网络流量，识别异常的 ARP 请求和响应，判断是否存在 ARP 洪泛攻击或 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>过滤不必要的广播：在网络设备上设置合理的 ACL（访问控制列表），过滤不必要的广播。例如，可以限制 ARP 请求的范围，只允许目标设备响应有效的 ARP 请求。</p></li><li class="lvl-3"><p>配置静态 ARP 表项：在网络设备上配置静态 ARP 表项，避免频繁地进行 ARP 请求，降低网络负载和运行的安全风险。</p></li><li class="lvl-3"><p>使用防火墙：在网络的边界处使用防火墙，限制不必要的 ARP 请求和回应，防止 ARP 洪泛攻击和 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>更新网络设备和操作系统：最新版本的网络设备和操作系统中会修复已知的安全漏洞，更新这些设备和系统可以降低不必要的攻击和风险。</p></li></ol>]]></content>
       
       
       <categories>
           
-          <category> notes </category>
+          <category> homework </category>
           
           <category> network </category>
           
@@ -102,6 +129,8 @@
       
       
         <tags>
+            
+            <tag> homework </tag>
             
             <tag> network </tag>
             
@@ -270,6 +299,33 @@
     
     
     <entry>
+      <title>DLC</title>
+      <link href="/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>four-adder</title>
       <link href="/2023/05/02/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/2023/05/02/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -291,33 +347,6 @@
             <tag> homework </tag>
             
             <tag> DLCE </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC</title>
-      <link href="/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -405,35 +434,6 @@
     
     
     <entry>
-      <title>network-homework-9</title>
-      <link href="/2023/04/29/homework/network/network9/"/>
-      <url>/2023/04/29/homework/network/network9/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>PA2 REPORT</title>
       <link href="/2023/04/29/homework/graphics/PA2REPORT/"/>
       <url>/2023/04/29/homework/graphics/PA2REPORT/</url>
@@ -455,6 +455,35 @@
             <tag> homework </tag>
             
             <tag> graphics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-9</title>
+      <link href="/2023/04/29/homework/network/network9/"/>
+      <url>/2023/04/29/homework/network/network9/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -623,36 +652,11 @@
     
     
     <entry>
-      <title>test-markdown</title>
-      <link href="/2023/04/27/others/ful-test/"/>
-      <url>/2023/04/27/others/ful-test/</url>
-      
-        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>fool</title>
       <link href="/2023/04/27/others/fool/"/>
       <url>/2023/04/27/others/fool/</url>
       
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">uog</label><br><input type="checkbox" id="checkbox0"><label for="checkbox0">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -686,6 +690,31 @@
           
       </categories>
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>test-markdown</title>
+      <link href="/2023/04/27/others/ful-test/"/>
+      <url>/2023/04/27/others/ful-test/</url>
+      
+        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
       
     </entry>
     
