@@ -328,28 +328,16 @@ document.addEventListener("touchmove", (event) => {
   if (Math.abs(dx) > Math.abs(dy)) {
     // Horizontal swipe
     if (dx > 0) {
-      // Right swipe
-      if (direction !== "left") {
-        moveTiles("right");
-      }
+      moveTiles("right");
     } else {
-      // Left swipe
-      if (direction !== "right") {
-        moveTiles("left");
-      }
+      moveTiles("left");
     }
   } else {
     // Vertical swipe
     if (dy > 0) {
-      // Down swipe
-      if (direction !== "up") {
-        moveTiles("down");
-      }
+      moveTiles("down");
     } else {
-      // Up swipe
-      if (direction !== "down") {
-        moveTiles("up");
-      }
+      moveTiles("up");
     }
   }
 });
@@ -358,24 +346,16 @@ document.addEventListener("touchmove", (event) => {
 document.addEventListener("keydown", (event) => {
   switch (event.keyCode) {
     case 38: // up arrow
-      if (direction !== "down") {
         moveTiles("up");
-      }
       break;
     case 40: // down arrow
-      if (direction !== "up") {
         moveTiles("down");
-      }
       break;
     case 37: // left arrow
-      if (direction !== "right") {
         moveTiles("left");
-      }
       break;
     case 39: // right arrow
-      if (direction !== "left") {
         moveTiles("right");
-      }
       break;
   }
 });
