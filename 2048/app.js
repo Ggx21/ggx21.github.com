@@ -6,7 +6,6 @@ var score = document.getElementById("score");
 var rows = 4;
 var cols = 4;
 var grid = [];
-var emptyCells = [];
 var gameIsOver = false;
 var gameScore = 0;
 
@@ -15,7 +14,6 @@ for (var i = 0; i < rows; i++) {
   grid[i] = [];
   for (var j = 0; j < cols; j++) {
     grid[i][j] = 0;
-    emptyCells.push({ x: i, y: j });
   }
 }
 
@@ -25,7 +23,22 @@ addRandomTile();
 
 // 添加随机方块
 function addRandomTile() {
-  if (emptyCells.length > 0) {
+  var hasEmptyCell = false;
+  // 记录空位置的数组
+  var emptyCells = [];
+  // 遍历数组，找出空位置
+  for (var i = 0; i < rows; i++) {
+    for (var j = 0; j < cols; j++) {
+      // 如果该位置为空
+      if (grid[i][j] === 0) {
+        // 将该位置添加到空位置数组中
+        emptyCells.push({ x: i, y: j });
+        hasEmptyCell = true;
+      }
+    }
+  }
+  // 如果有空位置
+  if (hasEmptyCell) {
     // 从空位置中随机选择一个位置
     var randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
     // 80%的概率为2，20%的概率为4
@@ -37,6 +50,12 @@ function addRandomTile() {
     // 在该位置上绘制方块
     drawTile(randomCell.x, randomCell.y, tileValue);
   }
+}
+
+// 位置设置
+function positionTile(tile, x, y) {
+  tile.style.top = 50 + x * 100 + "px";
+  tile.style.left = 50 + y * 100 + "px";
 }
 
 // 绘制方块
@@ -61,35 +80,30 @@ function moveTiles(direction) {
   // 根据移动方向设置移动的行列下标顺序以及移动方向增量
   switch (direction) {
     case "left":
+      dirX = 0;
       dirY = -1;
-      for (var i = 0; i < rows; i++) {
-        rowsOrder.push(i);
-      }
+      rowsOrder = [0, 1, 2, 3];
       colsOrder = [0, 1, 2, 3];
       break;
     case "right":
+      dirX = 0;
       dirY = 1;
-      for (var i = 0; i < rows; i++) {
-        rowsOrder.push(i);
-      }
+      rowsOrder = [0, 1, 2, 3];
       colsOrder = [3, 2, 1, 0];
       break;
     case "up":
+      dirY = 0;
       dirX = -1;
-      for (var i = 0; i < cols; i++) {
-        colsOrder.push(i);
-      }
+      colsOrder = [0, 1, 2, 3];
       rowsOrder = [0, 1, 2, 3];
       break;
     case "down":
+      dirY = 0;
       dirX = 1;
-      for (var i = 0; i < cols; i++) {
-        colsOrder.push(i);
-      }
+      colsOrder = [0, 1, 2, 3];
       rowsOrder = [3, 2, 1, 0];
       break;
   }
-
   var tilesMoved = false;
 
   // 针对每个格子进行移动
@@ -98,68 +112,141 @@ function moveTiles(direction) {
       var row = rowsOrder[i];
       var col = colsOrder[j];
       var value = grid[row][col];
-
       if (value !== 0) {
-        // 确定下一个位置
-        var nextRow = row + dirX;
-        var nextCol = col + dirY;
-        var nextValue = nextRow >= 0 && nextRow < rows && nextCol >= 0 && nextCol < cols ? grid[nextRow][nextCol] : null;
-
-        // 如果下一个位置是空的，或者与当前方块值相等，则可以向该位置移动
-        if (nextValue === null || nextValue === value) {
-          grid[row][col] = 0;
-          grid[nextRow][nextCol] = value;
-
-          var tile = document.querySelector(".tile[data-value='" + value + "']");
-          positionTile(tile, nextRow, nextCol);
-
-          // 更新移动标记和分数
-          tilesMoved = true;
-          gameScore += value;
-
-          if (nextValue !== null) {
-            emptyCells.push({ x: row, y: col });
+        var nextRow = row;
+        var nextCol = col;
+        console.log("row:" + row + " col:" + col);
+        for (var step = 0; step < 4; step++) {
+          // 确定下一个位置
+          nextRow += dirX;
+          nextCol += dirY;
+          // 判断下一个位置是否越界
+          if (nextCol < 0) {
+            nextCol = 0;
+            break;
           }
-          emptyCells.splice(emptyCells.indexOf({ x: nextRow, y: nextCol }), 1);
+          if (nextCol > 3) {
+            nextCol = 3;
+            break;
+          }
+          if (nextRow < 0) {
+            nextRow = 0;
+            break;
+          }
+          if (nextRow > 3) {
+            nextRow = 3;
+            break;
+          }
+          if (grid[nextRow][nextCol] === value) {
+            break;
+          }
+          if (grid[nextRow][nextCol] !== 0) {
+            nextRow -= dirX;
+            nextCol -= dirY;
+            break;
+          }
+        }
+        console.log("nextRow:" + nextRow + " nextCol:" + nextCol);
+        var nextValue = grid[nextRow][nextCol];
+        //如果下一个位置是自己，continue
+        if (nextCol === col && nextRow === row) {
+          continue;
+        }
+        // 否则如果下一个位置是空的(0)，或者与当前方块值相等，则可以向该位置移动
+        if (nextValue === 0 || nextValue === value) {
+          // 更新移动标记和分数
+          if (nextValue !== 0) {
+            gameScore += 2 * value;
+          }
+          tilesMoved = true;
 
           // 并入下一个格子进行合并
-          if (nextValue === value) {
-            var nextTile = document.querySelector(".tile[data-value='" + nextValue + "']");
-            canvas.removeChild(nextTile);
-            gameScore += nextValue;
-            nextValue *= 2;
-            grid[nextRow][nextCol] = nextValue;
-            tilesMoved = true;
-
-          }
-          // 绘制新的方块
-          drawTile(nextRow, nextCol, nextValue);
+          grid[row][col] = 0;
+          grid[nextRow][nextCol] += value;
         }
       }
     }
   }
 
-  // 更新分数和判断游戏是否结束
+  // 更新分数和判断游戏是否结束，更新界面
   if (tilesMoved) {
     score.innerHTML = gameScore;
     gameIsOver = checkGameOver();
+    // 更新界面
+    // 去掉原有的方块
+    var tiles = document.querySelectorAll(".tile");
+    for (var i = 0; i < tiles.length; i++) {
+      canvas.removeChild(tiles[i]);
+    }
+    for (var i = 0; i < 4; i++) {
+      for (var j = 0; j < 4; j++) {
+        if (grid[i][j] !== 0) {
+          drawTile(i, j, grid[i][j]);
+        }
+      }
+    }
     addRandomTile();
+    console.log(
+      grid[0][0] +
+        " " +
+        grid[0][1] +
+        " " +
+        grid[0][2] +
+        " " +
+        grid[0][3] +
+        "\n" +
+        grid[1][0] +
+        " " +
+        grid[1][1] +
+        " " +
+        grid[1][2] +
+        " " +
+        grid[1][3] +
+        "\n" +
+        grid[2][0] +
+        " " +
+        grid[2][1] +
+        " " +
+        grid[2][2] +
+        " " +
+        grid[2][3] +
+        "\n" +
+        grid[3][0] +
+        " " +
+        grid[3][1] +
+        " " +
+        grid[3][2] +
+        " " +
+        grid[3][3] +
+        "\n"
+    );
   }
-}
-
-// 位置设置
-function positionTile(tile, x, y) {
-  tile.style.top = 50+ x * 100 + "px";
-  tile.style.left =50+ y * 100 + "px";
 }
 
 //判断游戏是否结束
 function checkGameOver() {
-  if (emptyCells.length === 0) {
+  // 如果还有空格子，游戏没有结束
+  var hasEmptyCell = false;
+  for (var i = 0; i < rows; i++) {
+    for (var j = 0; j < cols; j++) {
+      var value = grid[i][j];
+      if (value === 0) {
+        hasEmptyCell = true;
+        break;
+      }
+    }
+    if (hasEmptyCell) {
+      break;
+    }
+  }
+  if (!hasEmptyCell) {
     for (var i = 0; i < rows; i++) {
       for (var j = 0; j < cols; j++) {
         var value = grid[i][j];
-        if ((i < rows - 1 && grid[i + 1][j] === value) || (j < cols - 1 && grid[i][j + 1] === value)) {
+        if (
+          (i < rows - 1 && grid[i + 1][j] === value) ||
+          (j < cols - 1 && grid[i][j + 1] === value)
+        ) {
           return false;
         }
       }
@@ -210,18 +297,85 @@ function restartGame() {
 document.addEventListener("keydown", function (event) {
   if (!gameIsOver) {
     switch (event.key) {
-    case "ArrowLeft":
-        moveTiles("left");
-        break;
-    case "ArrowRight":
-        moveTiles("right");
-        break;
-    case "ArrowUp":
+      case "w":
         moveTiles("up");
         break;
-    case "ArrowDown":
+      case "a":
+        moveTiles("left");
+        break;
+      case "s":
         moveTiles("down");
         break;
+      case "d":
+        moveTiles("right");
+        break;
     }
+  }
+});
+
+// Add touch controls
+let touchStartX = 0;
+let touchStartY = 0;
+document.addEventListener("touchstart", (event) => {
+  touchStartX = event.touches[0].clientX;
+  touchStartY = event.touches[0].clientY;
+});
+document.addEventListener("touchmove", (event) => {
+  const touchEndX = event.touches[0].clientX;
+  const touchEndY = event.touches[0].clientY;
+  const dx = touchEndX - touchStartX;
+  const dy = touchEndY - touchStartY;
+  if (Math.abs(dx) > Math.abs(dy)) {
+    // Horizontal swipe
+    if (dx > 0) {
+      // Right swipe
+      if (direction !== "left") {
+        moveTiles("right");
+      }
+    } else {
+      // Left swipe
+      if (direction !== "right") {
+        moveTiles("left");
+      }
+    }
+  } else {
+    // Vertical swipe
+    if (dy > 0) {
+      // Down swipe
+      if (direction !== "up") {
+        moveTiles("down");
+      }
+    } else {
+      // Up swipe
+      if (direction !== "down") {
+        moveTiles("up");
+      }
+    }
+  }
+});
+
+// Set up the keyboard controls
+document.addEventListener("keydown", (event) => {
+  switch (event.keyCode) {
+    case 38: // up arrow
+      if (direction !== "down") {
+        moveTiles("up");
+      }
+      break;
+    case 40: // down arrow
+      if (direction !== "up") {
+        moveTiles("down");
+      }
+      break;
+    case 37: // left arrow
+      if (direction !== "right") {
+        moveTiles("left");
+      }
+      break;
+    case 39: // right arrow
+      if (direction !== "left") {
+        moveTiles("right");
+      }
+      break;
   }
 });
