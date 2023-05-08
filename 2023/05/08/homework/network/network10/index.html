@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="网原第九次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS 第一题 一个路由器刚接收到如下新的 IP 地址： 57.6.96.0&#x2F;21, 57.6.104.0&#x2F;21, 57.6.112.0&#x2F;21 和 57.6.120.0&#x2F;21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚">
+    <meta name="description" content="网原第10次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？  答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。 第二题  设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比">
 <meta property="og:type" content="article">
-<meta property="og:title" content="network-homework-9">
-<meta property="og:url" content="https://ggx21.github.io/2023/04/29/homework/network/network9/index.html">
+<meta property="og:title" content="network-homework-10">
+<meta property="og:url" content="https://ggx21.github.io/2023/05/08/homework/network/network10/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="网原第九次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS 第一题 一个路由器刚接收到如下新的 IP 地址： 57.6.96.0&#x2F;21, 57.6.104.0&#x2F;21, 57.6.112.0&#x2F;21 和 57.6.120.0&#x2F;21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚">
+<meta property="og:description" content="网原第10次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？  答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。 第二题  设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-29T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-04-30T15:24:33.173Z">
+<meta property="article:published_time" content="2023-05-08T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-05-08T05:05:39.399Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="homework">
 <meta property="article:tag" content="network">
@@ -38,7 +38,7 @@
       
     
     <!-- title -->
-    <title>network-homework-9</title>
+    <title>network-homework-10</title>
     <!-- async scripts -->
     <!-- Google Analytics -->
 
@@ -115,7 +115,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/2023/04/30/Somniloquy/dream-2/"
+            href="/2023/05/08/notes/DLC/week12/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -131,7 +131,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/2023/04/29/homework/graphics/PA2REPORT/"
+            href="/2023/05/08/notes/network/week11/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -164,7 +164,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第九次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第10次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -179,7 +179,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        network-homework-9
+        network-homework-10
     </h1>
 
 
@@ -198,7 +198,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-04-29T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-04-29</time>
+        <time datetime="2023-05-08T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-08</time>
         
       
     </div>
@@ -221,146 +221,47 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>网原第九次作业</h1>
+    <h1>网原第10次作业</h1>
 <p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
-<p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p>
 <h2 id="第一题">第一题</h2>
-<p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>
-57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p>
-<table>
-<thead>
-<tr>
-<th>00111001</th>
-<th>00000110</th>
-<th>01100000</th>
-<th>00000000</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>00111001</td>
-<td>00000110</td>
-<td>01101000</td>
-<td>00000000</td>
-</tr>
-<tr>
-<td>00111001</td>
-<td>00000110</td>
-<td>01110000</td>
-<td>00000000</td>
-</tr>
-<tr>
-<td>00111001</td>
-<td>00000110</td>
-<td>01111000</td>
-<td>00000000</td>
-</tr>
-</tbody>
-</table>
-<p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p>
+<blockquote>
+<p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p>
+</blockquote>
+<p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p>
 <h2 id="第二题">第二题</h2>
+<blockquote>
+<p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p>
+</blockquote>
+<p>答:不一定能保证.</p>
+<p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p>
+<p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p>
 <ul class="lvl-0">
 <li class="lvl-2">
-<p>更新后的路由表</p>
-<table>
-<thead>
-<tr>
-<th>目的网络</th>
-<th>距离</th>
-<th>下一跳</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>N1</td>
-<td>7</td>
-<td>A</td>
-</tr>
-<tr>
-<td>N3</td>
-<td>3</td>
-<td>C</td>
-</tr>
-<tr>
-<td>N4</td>
-<td>9</td>
-<td>C</td>
-</tr>
-<tr>
-<td>N6</td>
-<td>8</td>
-<td>F</td>
-</tr>
-<tr>
-<td>N7</td>
-<td>5</td>
-<td>C</td>
-</tr>
-<tr>
-<td>N8</td>
-<td>3</td>
-<td>C</td>
-</tr>
-<tr>
-<td>N9</td>
-<td>4</td>
-<td>D</td>
-</tr>
-</tbody>
-</table>
-<ol>
-<li class="lvl-5">
-<p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p>
-</li>
-<li class="lvl-5">
-<p>路由器 B 在更新它的路由表前，需要计算距离向量。</p>
-</li>
-<li class="lvl-5">
-<p>$$<br>
-\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>
-$$</p>
-</li>
-</ol>
+<p>区分服务模型为加速转发服务预留的带宽较小.</p>
 </li>
 <li class="lvl-2">
-<p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p>
+<p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p>
+</li>
+<li class="lvl-2">
+<p>常规数据包经过路径较短</p>
+</li>
+<li class="lvl-2">
+<p>链路质量、网络设备性能等因素的影响</p>
 </li>
 </ul>
 <h2 id="第三题">第三题</h2>
-<table>
-<thead>
-<tr>
-<th>目的网络</th>
-<th>下一跳</th>
-<th>接口</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>AS1</td>
-<td>153.14.3.2</td>
-<td>S0</td>
-</tr>
-<tr>
-<td>194.17.5.128/25</td>
-<td></td>
-<td>E0</td>
-</tr>
-<tr>
-<td>194.17.20.0/23</td>
-<td>194.17.24.2</td>
-<td>S1</td>
-</tr>
-</tbody>
-</table>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>根据最长前缀匹配原则，通过E0接口</p>
-</li>
-<li class="lvl-2">
-<p>BGP（eBGP），TCP协议，</p>
-</li>
-</ul>
+<blockquote>
+<p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p>
+</blockquote>
+<p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p>
+<p>大概能分配10万亿年</p>
+<h2 id="第四题">第四题</h2>
+<blockquote>
+<p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p>
+</blockquote>
+<p>答:技术上的改变.</p>
+<p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p>
+<p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>
 
   </div>
 </article>
@@ -408,22 +309,22 @@ $$</p>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第九次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第10次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/2023/04/29/homework/network/network9/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&text=network-homework-9"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&title=network-homework-9"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&is_video=false&description=network-homework-9"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=network-homework-9&body=Check out this article: https://ggx21.github.io/2023/04/29/homework/network/network9/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&title=network-homework-9"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&title=network-homework-9"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&title=network-homework-9"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&title=network-homework-9"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/2023/04/29/homework/network/network9/&name=network-homework-9&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/2023/04/29/homework/network/network9/&t=network-homework-9"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/2023/05/08/homework/network/network10/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&text=network-homework-10"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&title=network-homework-10"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&is_video=false&description=network-homework-10"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=network-homework-10&body=Check out this article: https://ggx21.github.io/2023/05/08/homework/network/network10/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&title=network-homework-10"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&title=network-homework-10"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&title=network-homework-10"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&title=network-homework-10"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/2023/05/08/homework/network/network10/&name=network-homework-10&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/2023/05/08/homework/network/network10/&t=network-homework-10"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
