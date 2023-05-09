@@ -73,16 +73,16 @@ canvas {
     justify-content: center;
     align-items: center;
     text-align: center;
-    z-index: 10;
     position: absolute;
-    left: 0;
-    top: 0;
+    z-index: 10;
+    left: 150px;
+    top: 170px;
 }
 
 .game-over p {
     font-size: 48px;
     font-weight: bold;
-    color: #fff;
+    color: #f00;
     margin-bottom: 20px;
 }
 

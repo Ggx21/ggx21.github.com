@@ -111,7 +111,6 @@ function colorTile(tile, value) {
   }
 }
 
-
 // 绘制方块
 function drawTile(x, y, value) {
   var tile = document.createElement("div");
@@ -170,7 +169,6 @@ function moveTiles(direction) {
       if (value !== 0) {
         var nextRow = row;
         var nextCol = col;
-        console.log("row:" + row + " col:" + col);
         for (var step = 0; step < 4; step++) {
           // 确定下一个位置
           nextRow += dirX;
@@ -201,7 +199,6 @@ function moveTiles(direction) {
             break;
           }
         }
-        console.log("nextRow:" + nextRow + " nextCol:" + nextCol);
         var nextValue = grid[nextRow][nextCol];
         //如果下一个位置是自己，continue
         if (nextCol === col && nextRow === row) {
@@ -226,7 +223,6 @@ function moveTiles(direction) {
   // 更新分数和判断游戏是否结束，更新界面
   if (tilesMoved) {
     score.innerHTML = gameScore;
-    gameIsOver = checkGameOver();
     // 更新界面
     // 去掉原有的方块
     var tiles = document.querySelectorAll(".tile");
@@ -241,59 +237,23 @@ function moveTiles(direction) {
       }
     }
     addRandomTile();
-    console.log(
-      grid[0][0] +
-        " " +
-        grid[0][1] +
-        " " +
-        grid[0][2] +
-        " " +
-        grid[0][3] +
-        "\n" +
-        grid[1][0] +
-        " " +
-        grid[1][1] +
-        " " +
-        grid[1][2] +
-        " " +
-        grid[1][3] +
-        "\n" +
-        grid[2][0] +
-        " " +
-        grid[2][1] +
-        " " +
-        grid[2][2] +
-        " " +
-        grid[2][3] +
-        "\n" +
-        grid[3][0] +
-        " " +
-        grid[3][1] +
-        " " +
-        grid[3][2] +
-        " " +
-        grid[3][3] +
-        "\n"
-    );
+    gameIsOver = checkGameOver();
   }
 }
 
 //判断游戏是否结束
 function checkGameOver() {
   // 如果还有空格子，游戏没有结束
-  var hasEmptyCell = false;
+  var hasEmptyCell = 0;
   for (var i = 0; i < rows; i++) {
     for (var j = 0; j < cols; j++) {
       var value = grid[i][j];
-      if (value === 0) {
-        hasEmptyCell = true;
-        break;
+      if (value == 0) {
+        hasEmptyCell++;
       }
     }
-    if (hasEmptyCell) {
-      break;
-    }
   }
+  console.log("hasEmptyCell:" + hasEmptyCell);
   if (!hasEmptyCell) {
     for (var i = 0; i < rows; i++) {
       for (var j = 0; j < cols; j++) {
@@ -315,7 +275,12 @@ function checkGameOver() {
 //游戏结束开关
 function toggleGameOver(state) {
   var gameover = document.querySelector(".game-over");
-  gameover.style.display = state ? "flex" : "none";
+  if (state) {
+    // 显示游戏结束界面
+    gameover.style.display = "block";
+  } else {
+    gameover.style.display = "none";
+  }
 }
 
 //重新开始游戏
@@ -379,20 +344,16 @@ document.addEventListener("touchstart", (event) => {
   touchStartY = event.touches[0].clientY;
   timer = setInterval(() => {
     moveTiles("down");
-  }
-    , 100);
+  }, 100);
   timer = setInterval(() => {
     moveTiles("up");
-  }
-    , 100);
+  }, 100);
   timer = setInterval(() => {
     moveTiles("left");
-  }
-    , 100);
+  }, 100);
   timer = setInterval(() => {
     moveTiles("right");
-  }
-    , 100);
+  }, 100);
 });
 document.addEventListener("touchmove", (event) => {
   const touchEndX = event.touches[0].clientX;
@@ -420,16 +381,16 @@ document.addEventListener("touchmove", (event) => {
 document.addEventListener("keydown", (event) => {
   switch (event.keyCode) {
     case 38: // up arrow
-        moveTiles("up");
+      moveTiles("up");
       break;
     case 40: // down arrow
-        moveTiles("down");
+      moveTiles("down");
       break;
     case 37: // left arrow
-        moveTiles("left");
+      moveTiles("left");
       break;
     case 39: // right arrow
-        moveTiles("right");
+      moveTiles("right");
       break;
   }
 });
