@@ -371,9 +371,28 @@ document.addEventListener("keydown", function (event) {
 // Add touch controls
 let touchStartX = 0;
 let touchStartY = 0;
+//timer
+let timer = null;
+// Set up the touch controls
 document.addEventListener("touchstart", (event) => {
   touchStartX = event.touches[0].clientX;
   touchStartY = event.touches[0].clientY;
+  timer = setInterval(() => {
+    moveTiles("down");
+  }
+    , 100);
+  timer = setInterval(() => {
+    moveTiles("up");
+  }
+    , 100);
+  timer = setInterval(() => {
+    moveTiles("left");
+  }
+    , 100);
+  timer = setInterval(() => {
+    moveTiles("right");
+  }
+    , 100);
 });
 document.addEventListener("touchmove", (event) => {
   const touchEndX = event.touches[0].clientX;
