@@ -344,16 +344,16 @@ document.addEventListener("touchstart", (event) => {
   touchStartY = event.touches[0].clientY;
   timer = setInterval(() => {
     moveTiles("down");
-  }, 100);
+  }, 1000);
   timer = setInterval(() => {
     moveTiles("up");
-  }, 100);
+  }, 1000);
   timer = setInterval(() => {
     moveTiles("left");
-  }, 100);
+  }, 1000);
   timer = setInterval(() => {
     moveTiles("right");
-  }, 100);
+  }, 1000);
 });
 document.addEventListener("touchmove", (event) => {
   const touchEndX = event.touches[0].clientX;
