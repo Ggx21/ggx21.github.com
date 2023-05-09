@@ -318,22 +318,22 @@ var scrollTimeout;
 document.addEventListener("keydown", function (event) {
   clearTimeout(scrollTimeout);
   scrollTimeout = setTimeout(function () {
-  if (!gameIsOver) {
-    switch (event.key) {
-      case "w":
-        moveTiles("up");
-        break;
-      case "a":
-        moveTiles("left");
-        break;
-      case "s":
-        moveTiles("down");
-        break;
-      case "d":
-        moveTiles("right");
-        break;
+    if (!gameIsOver) {
+      switch (event.key) {
+        case "w":
+          moveTiles("up");
+          break;
+        case "a":
+          moveTiles("left");
+          break;
+        case "s":
+          moveTiles("down");
+          break;
+        case "d":
+          moveTiles("right");
+          break;
+      }
     }
-  }
   }, 250);
 });
 
@@ -343,22 +343,22 @@ let touchStartY = 0;
 // 停止滑动事件
 
 // 防止滚动事件
-var preventScroll = function(event) {
+var preventScroll = function (event) {
   event.preventDefault();
 };
 
 // 绑定触摸开始事件
-canvas.addEventListener('touchstart', (event)=> {
+document.addEventListener("touchstart", (event) => {
   // 当画布被触摸时，禁用页面的滚动事件
-  document.body.addEventListener('touchmovePrevent', preventScroll, {
-    passive: false
+  document.body.addEventListener("touchmove", preventScroll, {
+    passive: false,
   });
 });
 
 // 绑定触摸结束事件
-canvas.addEventListener('touchend', (event)=> {
+document.addEventListener("touchend", (event) => {
   // 当画布被触摸结束时，恢复页面的滚动事件
-  document.body.removeEventListener("touchmovePrevent", preventScroll);
+  document.body.removeEventListener("touchmove", preventScroll);
 });
 
 // Set up the touch controls
