@@ -54,8 +54,8 @@ function addRandomTile() {
 
 // 位置设置
 function positionTile(tile, x, y) {
-  tile.style.top = 50 + x * 100 + "px";
-  tile.style.left = 50 + y * 100 + "px";
+  tile.style.top = 5 + x * 10 + "rem";
+  tile.style.left = 5 + y * 10 + "rem";
 }
 //颜色设置
 function colorTile(tile, value) {
