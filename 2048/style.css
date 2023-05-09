@@ -101,13 +101,18 @@ canvas {
     background-color: #b49a88;
 }
 
-@media (max-width: 400px) {
-    .container {
-        width: 90%;
-    }
 
+@media screen and (max-width: 500px) {
+    .container {
+        width: 100%;
+    }
     .game-grid {
-        width: calc(100% - 20px);
-        height: calc(100% - 150px);
+        width: 300px;
+        height: 300px;
+    }
+    .tile {
+        width: 75px;
+        height: 75px;
     }
 }
+```

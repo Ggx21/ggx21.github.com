@@ -57,6 +57,60 @@ function positionTile(tile, x, y) {
   tile.style.top = 50 + x * 100 + "px";
   tile.style.left = 50 + y * 100 + "px";
 }
+//颜色设置
+function colorTile(tile, value) {
+  switch (value) {
+    case 2:
+      tile.style.backgroundColor = "#eee4da";
+      tile.style.color = "#776e65";
+      break;
+    case 4:
+      tile.style.backgroundColor = "#ede0c8";
+      tile.style.color = "#776e65";
+      break;
+    case 8:
+      tile.style.backgroundColor = "#f2b179";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 16:
+      tile.style.backgroundColor = "#f59563";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 32:
+      tile.style.backgroundColor = "#f67c5f";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 64:
+      tile.style.backgroundColor = "#f65e3b";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 128:
+      tile.style.backgroundColor = "#edcf72";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 256:
+      tile.style.backgroundColor = "#edcc61";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 512:
+      tile.style.backgroundColor = "#edc850";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 1024:
+      tile.style.backgroundColor = "#edc53f";
+      tile.style.color = "#f9f6f2";
+      break;
+    case 2048:
+      tile.style.backgroundColor = "#edc22e";
+      tile.style.color = "#f9f6f2";
+      break;
+    default:
+      tile.style.backgroundColor = "#3c3a32";
+      tile.style.color = "#f9f6f2";
+      break;
+  }
+}
+
 
 // 绘制方块
 function drawTile(x, y, value) {
@@ -68,6 +122,7 @@ function drawTile(x, y, value) {
   tile.setAttribute("data-value", value);
   canvas.appendChild(tile);
   positionTile(tile, x, y);
+  colorTile(tile, value);
 }
 
 // 移动方块
