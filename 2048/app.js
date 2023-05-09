@@ -313,8 +313,11 @@ function restartGame() {
   gameIsOver = false;
 }
 
+var scrollTimeout;
 //添加键盘事件监听
 document.addEventListener("keydown", function (event) {
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(function () {
   if (!gameIsOver) {
     switch (event.key) {
       case "w":
@@ -331,50 +334,43 @@ document.addEventListener("keydown", function (event) {
         break;
     }
   }
+  }, 250);
 });
 
 // Add touch controls
 let touchStartX = 0;
 let touchStartY = 0;
-//timer
-let timer = null;
+// 停止滑动事件
+
+
 // Set up the touch controls
 document.addEventListener("touchstart", (event) => {
   touchStartX = event.touches[0].clientX;
   touchStartY = event.touches[0].clientY;
-  timer = setInterval(() => {
-    moveTiles("down");
-  }, 1000);
-  timer = setInterval(() => {
-    moveTiles("up");
-  }, 1000);
-  timer = setInterval(() => {
-    moveTiles("left");
-  }, 1000);
-  timer = setInterval(() => {
-    moveTiles("right");
-  }, 1000);
 });
 document.addEventListener("touchmove", (event) => {
   const touchEndX = event.touches[0].clientX;
   const touchEndY = event.touches[0].clientY;
   const dx = touchEndX - touchStartX;
   const dy = touchEndY - touchStartY;
-  if (Math.abs(dx) > Math.abs(dy)) {
-    // Horizontal swipe
-    if (dx > 0) {
-      moveTiles("right");
+  clearTimeout(scrollTimeout);
+  scrollTimeout = setTimeout(function () {
+    if (Math.abs(dx) > Math.abs(dy)) {
+      // Horizontal swipe
+      if (dx > 0) {
+        moveTiles("right");
+      } else {
+        moveTiles("left");
+      }
     } else {
-      moveTiles("left");
+      // Vertical swipe
+      if (dy > 0) {
+        moveTiles("down");
+      } else {
+        moveTiles("up");
+      }
     }
-  } else {
-    // Vertical swipe
-    if (dy > 0) {
-      moveTiles("down");
-    } else {
-      moveTiles("up");
-    }
-  }
+  }, 250);
 });
 
 // Set up the keyboard controls

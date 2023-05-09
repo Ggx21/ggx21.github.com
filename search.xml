@@ -652,11 +652,11 @@
     
     
     <entry>
-      <title>test-markdown</title>
-      <link href="/2023/04/27/others/ful-test/"/>
-      <url>/2023/04/27/others/ful-test/</url>
+      <title>fool</title>
+      <link href="/2023/04/27/others/fool/"/>
+      <url>/2023/04/27/others/fool/</url>
       
-        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -677,11 +677,11 @@
     
     
     <entry>
-      <title>fool</title>
-      <link href="/2023/04/27/others/fool/"/>
-      <url>/2023/04/27/others/fool/</url>
+      <title>test-markdown</title>
+      <link href="/2023/04/27/others/ful-test/"/>
+      <url>/2023/04/27/others/ful-test/</url>
       
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
       
       
       <categories>
@@ -769,6 +769,35 @@
     
     
     <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> ελληνικά </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生词表 </tag>
+            
+            <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ελληνικά</title>
       <link href="/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"/>
       <url>/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/</url>
@@ -788,35 +817,6 @@
         <tags>
             
             <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
-      
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> ελληνικά </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> ελληνικά </tag>
-            
-            <tag> 生词表 </tag>
             
         </tags>
       

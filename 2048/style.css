@@ -75,8 +75,8 @@ canvas {
     text-align: center;
     position: absolute;
     z-index: 10;
-    left: 15rem;
-    top: 17rem;
+    left: 2rem;
+    top: 13.5rem;
 }
 
 .game-over p {
