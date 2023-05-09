@@ -342,6 +342,24 @@ let touchStartX = 0;
 let touchStartY = 0;
 // 停止滑动事件
 
+// 防止滚动事件
+var preventScroll = function(event) {
+  event.preventDefault();
+};
+
+// 绑定触摸开始事件
+canvas.addEventListener('touchstart', (event)=> {
+  // 当画布被触摸时，禁用页面的滚动事件
+  document.body.addEventListener('touchmovePrevent', preventScroll, {
+    passive: false
+  });
+});
+
+// 绑定触摸结束事件
+canvas.addEventListener('touchend', (event)=> {
+  // 当画布被触摸结束时，恢复页面的滚动事件
+  document.body.removeEventListener("touchmovePrevent", preventScroll);
+});
 
 // Set up the touch controls
 document.addEventListener("touchstart", (event) => {

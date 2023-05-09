@@ -102,16 +102,4 @@ canvas {
 }
 
 
-/* @media screen and (max-width: 500px) {
-    .container {
-        width: 100%;
-    }
-    .game-grid {
-        width: 300px;
-        height: 300px;
-    }
-    .tile {
-        width: 75px;
-        height: 75px;
-    }
-} */
+
