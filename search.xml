@@ -30,12 +30,24 @@
     
     <entry>
       <title>slides</title>
-      <link href="/2023/05/10/slides/"/>
-      <url>/2023/05/10/slides/</url>
+      <link href="//slide/slide"/>
+      <url>//slide/slide</url>
       
         <content type="html"><![CDATA[]]></content>
       
       
+      <categories>
+          
+          <category> slides </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> slides </tag>
+            
+        </tags>
       
     </entry>
     
@@ -165,33 +177,6 @@
     
     
     <entry>
-      <title>CH6-3</title>
-      <link href="/2023/05/08/notes/network/week11/"/>
-      <url>/2023/05/08/notes/network/week11/</url>
-      
-        <content type="html"><![CDATA[<p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>DLC12</title>
       <link href="/2023/05/08/notes/DLC/week12/"/>
       <url>/2023/05/08/notes/DLC/week12/</url>
@@ -211,6 +196,33 @@
         <tags>
             
             <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CH6-3</title>
+      <link href="/2023/05/08/notes/network/week11/"/>
+      <url>/2023/05/08/notes/network/week11/</url>
+      
+        <content type="html"><![CDATA[<p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -847,35 +859,6 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
-      
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th></th><th></th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>ακριβός</td><td>贵的</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> ελληνικά </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 生词表 </tag>
-            
-            <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>ελληνικά</title>
       <link href="/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/"/>
       <url>/2023/04/27/notes/greece/%E4%BB%A5%E4%B8%8B%E6%98%AF%E5%B8%8C%E8%85%8A%E8%AF%AD%E7%B3%BB%E5%8A%A8%E8%AF%8D%E5%92%8C%CE%B1,%20%CE%B21,%20%CE%B22%E5%9E%8B%E5%8A%A8%E8%AF%8D%E5%9C%A8%E5%85%AD%E7%A7%8D%E4%BA%BA%E7%A7%B0%E4%B8%8B%E7%9A%84%E5%8F%98%E4%BD%8D%E8%A7%84%E5%88%99%EF%BC%9A/</url>
@@ -895,6 +878,35 @@
         <tags>
             
             <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th></th><th></th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>ακριβός</td><td>贵的</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> ελληνικά </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> ελληνικά </tag>
+            
+            <tag> 生词表 </tag>
             
         </tags>
       
