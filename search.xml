@@ -29,6 +29,46 @@
     
     
     <entry>
+      <title>slides</title>
+      <link href="/2023/05/10/slides/"/>
+      <url>/2023/05/10/slides/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CH7-0</title>
+      <link href="/2023/05/10/notes/network/week12/"/>
+      <url>/2023/05/10/notes/network/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>传输层基础</h1>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title></title>
       <link href="/2023/05/09/others/chart/"/>
       <url>/2023/05/09/others/chart/</url>
@@ -67,35 +107,6 @@
     
     
     <entry>
-      <title>network-homework-10</title>
-      <link href="/2023/05/08/homework/network/network10/"/>
-      <url>/2023/05/08/homework/network/network10/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第10次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p></blockquote><p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p><h2 id="第二题">第二题</h2><blockquote><p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p></blockquote><p>答:不一定能保证.</p><p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p><p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p><ul class="lvl-0"><li class="lvl-2"><p>区分服务模型为加速转发服务预留的带宽较小.</p></li><li class="lvl-2"><p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p></li><li class="lvl-2"><p>常规数据包经过路径较短</p></li><li class="lvl-2"><p>链路质量、网络设备性能等因素的影响</p></li></ul><h2 id="第三题">第三题</h2><blockquote><p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p></blockquote><p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p><p>大概能分配10万亿年</p><h2 id="第四题">第四题</h2><blockquote><p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p></blockquote><p>答:技术上的改变.</p><p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p><p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-E3</title>
       <link href="/2023/05/08/homework/network/network-E3/"/>
       <url>/2023/05/08/homework/network/network-E3/</url>
@@ -125,25 +136,27 @@
     
     
     <entry>
-      <title>DLC12</title>
-      <link href="/2023/05/08/notes/DLC/week12/"/>
-      <url>/2023/05/08/notes/DLC/week12/</url>
+      <title>network-homework-10</title>
+      <link href="/2023/05/08/homework/network/network10/"/>
+      <url>/2023/05/08/homework/network/network10/</url>
       
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>网原第10次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p></blockquote><p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p><h2 id="第二题">第二题</h2><blockquote><p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p></blockquote><p>答:不一定能保证.</p><p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p><p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p><ul class="lvl-0"><li class="lvl-2"><p>区分服务模型为加速转发服务预留的带宽较小.</p></li><li class="lvl-2"><p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p></li><li class="lvl-2"><p>常规数据包经过路径较短</p></li><li class="lvl-2"><p>链路质量、网络设备性能等因素的影响</p></li></ul><h2 id="第三题">第三题</h2><blockquote><p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p></blockquote><p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p><p>大概能分配10万亿年</p><h2 id="第四题">第四题</h2><blockquote><p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p></blockquote><p>答:技术上的改变.</p><p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p><p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>]]></content>
       
       
       <categories>
           
-          <category> notes </category>
+          <category> homework </category>
           
-          <category> DLC </category>
+          <category> network </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> DLC </tag>
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -171,6 +184,33 @@
         <tags>
             
             <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC12</title>
+      <link href="/2023/05/08/notes/DLC/week12/"/>
+      <url>/2023/05/08/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
             
         </tags>
       
@@ -472,35 +512,6 @@
     
     
     <entry>
-      <title>network-homework-9</title>
-      <link href="/2023/04/29/homework/network/network9/"/>
-      <url>/2023/04/29/homework/network/network9/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>PA2 REPORT</title>
       <link href="/2023/04/29/homework/graphics/PA2REPORT/"/>
       <url>/2023/04/29/homework/graphics/PA2REPORT/</url>
@@ -522,6 +533,35 @@
             <tag> homework </tag>
             
             <tag> graphics </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-9</title>
+      <link href="/2023/04/29/homework/network/network9/"/>
+      <url>/2023/04/29/homework/network/network9/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
