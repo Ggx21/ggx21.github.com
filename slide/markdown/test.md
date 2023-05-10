@@ -43,10 +43,12 @@
 ### 展望
 
 <div class="r-stack">
-    <img class="fragment" src="/slide/markdown/test.assets/011.png" style="zoom:30%;">
-    <img class="fragment" src="/slide/markdown/test.assets/012.png" style="zoom:30%;">
-    <img class="fragment" src="/slide/markdown/test.assets/013.png" style="zoom:30%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0011.jpg" style="zoom:30%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0012.jpg" style="zoom:30%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0013.jpg" style="zoom:30%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0014.jpg" style="zoom:30%;">
 </div>
+
 
 
 ---
@@ -58,7 +60,6 @@
 - 着力发挥农业农村新型基础设施在促进乡村振兴中的战略性基础性支撑作用
 - 明确乡镇政府的主体责任，加大监督力度和保障力度
 - 不断构建、完善网络服务体系，推动物联网深度应用
-
 
 
 

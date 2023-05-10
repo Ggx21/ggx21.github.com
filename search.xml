@@ -33,7 +33,7 @@
       <link href="/2023/05/10/slides/"/>
       <url>/2023/05/10/slides/</url>
       
-        <content type="html"><![CDATA[<h1>这里会放上我的一些slides</h1><ul class="lvl-0"><li class="lvl-2">[团日pre](<a href="https://ggx21.github.io/slide/slide">test (ggx21.github.io)</a>)</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>这里会放上我的一些slides</h1><ul class="lvl-0"><li class="lvl-2"><a href="https://ggx21.github.io/slide/slide">团日pre</a></li></ul>]]></content>
       
       
       <categories>
@@ -661,6 +661,33 @@
     
     
     <entry>
+      <title>hello YUX</title>
+      <link href="/2023/04/27/articles/hello-YUX/"/>
+      <url>/2023/04/27/articles/hello-YUX/</url>
+      
+        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> articles </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU </tag>
+            
+            <tag> THU-daily </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello 沸羊羊</title>
       <link href="/2023/04/27/articles/feiyangyang/"/>
       <url>/2023/04/27/articles/feiyangyang/</url>
@@ -682,33 +709,6 @@
             <tag> 美羊羊 </tag>
             
             <tag> gpt </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello YUX</title>
-      <link href="/2023/04/27/articles/hello-YUX/"/>
-      <url>/2023/04/27/articles/hello-YUX/</url>
-      
-        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> articles </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> THU </tag>
-            
-            <tag> THU-daily </tag>
             
         </tags>
       
