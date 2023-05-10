@@ -43,10 +43,10 @@
 ### 展望
 
 <div class="r-stack">
-    <img class="fragment" src="/slide/markdown/test.assets/0011.jpg" style="zoom:30%;">
-    <img class="fragment" src="/slide/markdown/test.assets/0012.jpg" style="zoom:30%;">
-    <img class="fragment" src="/slide/markdown/test.assets/0013.jpg" style="zoom:30%;">
-    <img class="fragment" src="/slide/markdown/test.assets/0014.jpg" style="zoom:30%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0011.jpg" style="zoom:10%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0012.jpg" style="zoom:10%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0013.jpg" style="zoom:10%;">
+    <img class="fragment" src="/slide/markdown/test.assets/0014.jpg" style="zoom:10%;">
 </div>
 
 
