@@ -33,7 +33,7 @@
       <link href="/2023/05/10/slides/"/>
       <url>/2023/05/10/slides/</url>
       
-        <content type="html"><![CDATA[<h1>这里会放上我的一些slides</h1><ul class="lvl-0"><li class="lvl-2"><a href="https://ggx21.github.io/slide/slide">团日pre</a></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>这里会放上我的一些slides</h1><ul class="lvl-0"><li class="lvl-2"><a href="https://ggx21.github.io/slide/demo">slide-demo</a></li><li class="lvl-2"><a href="https://ggx21.github.io/slide/slide">团日pre</a></li></ul>]]></content>
       
       
       <categories>
@@ -148,6 +148,33 @@
     
     
     <entry>
+      <title>DLC12</title>
+      <link href="/2023/05/08/notes/DLC/week12/"/>
+      <url>/2023/05/08/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network-homework-10</title>
       <link href="/2023/05/08/homework/network/network10/"/>
       <url>/2023/05/08/homework/network/network10/</url>
@@ -169,33 +196,6 @@
             <tag> homework </tag>
             
             <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC12</title>
-      <link href="/2023/05/08/notes/DLC/week12/"/>
-      <url>/2023/05/08/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
