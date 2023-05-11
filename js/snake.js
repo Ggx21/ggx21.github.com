@@ -110,7 +110,7 @@ document.addEventListener("touchmove", (event) => {
   if (Math.abs(dx) > Math.abs(dy)) {
     // Horizontal swipe
     if (dx > 0) {
-      // Right swipe
+      // Right swipe`1`
       if (direction !== "left") {
         direction = "right";
       }
