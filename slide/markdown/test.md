@@ -1,5 +1,7 @@
-# 我的图很大，
-# 请你忍一下
+# 团日-数字农村
+    B组
+---
+
 
 ---
 
@@ -11,47 +13,87 @@
 
 ### 成果
 
-- 新产业新业态竞相涌现，数字经济占农业增加值比重上升
-- 政策支持体系初步建立，数字农业农村政策体系初步构建
-- 设施装备条件改善，应用物联网监测设施持续上升
-- 科技创新能力不断提升，集成应用遥感技术和北斗自动导航取得重要突破
-Note: 党的十八大以来，我国持续推进农业信息化的进程，至今已经取得了一定的成果。党中央、国务院高度重视数字农业农村建设，作出实施大数据战略和数字乡村战略、大力推进“互联网+”现代农业等一系列重大部署安排。各地区、各部门认真贯彻落实，推进农业生产信息化，流通信息化，管理信息化和服务信息化，大力推进数字技术在农业农村应用。一，新产业新业态竞相涌现，“互联网+”农业社会化服务加快推进，农业数字经济占农业增加值的比重逐渐上升；二，政策支持体系初步建立，市场监测预警体系逐步完善，初步构建了数字农业农村建设的政策体系；三，设施装备条件明显改善，物联网监测设施加速推广，应用于农机深松整地作业面积持续上升；四，科技创新能力不断提升，集成应用卫星遥感、航空遥感、地面物联网的农情信息获取技术日臻成熟，基于北斗自动导航的农机作业监测技术取得重要突破。
+--
+
+新产业新业态竞相涌现，数字经济占农业增加值比重上升
+
+  <div class="r-stack">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (22).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (21).png" style="zoom:80%;">
+  </div>
 
 --
 
+政策支持体系初步建立，数字农业农村政策体系初步构建
+
+<div class="r-stack">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (26).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (36).png" style="zoom:80%;">
+  </div>
+
+--
+
+设施装备条件改善，应用物联网监测设施持续上升
+
+<div class="r-stack">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (10).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (12).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (22).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (13).png" style="zoom:80%;">
+</div>
+
+--
+
+科技创新能力不断提升，集成应用遥感技术和北斗自动导航取得重要突破
+
+<div class="r-stack">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (11).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (12).png" style="zoom:80%;">
+</div>
+
+Note: 党的十八大以来，我国持续推进农业信息化的进程，至今已经取得了一定的成果。党中央、国务院高度重视数字农业农村建设，作出实施大数据战略和数字乡村战略、大力推进“互联网+”现代农业等一系列重大部署安排。各地区、各部门认真贯彻落实，推进农业生产信息化，流通信息化，管理信息化和服务信息化，大力推进数字技术在农业农村应用。一，新产业新业态竞相涌现，“互联网+”农业社会化服务加快推进，农业数字经济占农业增加值的比重逐渐上升；二，政策支持体系初步建立，市场监测预警体系逐步完善，初步构建了数字农业农村建设的政策体系；三，设施装备条件明显改善，物联网监测设施加速推广，应用于农机深松整地作业面积持续上升；四，科技创新能力不断提升，集成应用卫星遥感、航空遥感、地面物联网的农情信息获取技术日臻成熟，基于北斗自动导航的农机作业监测技术取得重要突破。
+
+---
+
 ### 挑战
 
-- 农业信息采集体系不健全，农业数据资源分散，利用不足，标准化、实时化、一体化监测体系缺乏
-- 农村网络基础设施建设依然薄弱，信息技术的集成应用还缺乏支撑
-- 创新能力不足，农业数字化建设支撑软硬件条件薄弱
+农业信息采集体系不健全，农业数据资源分散，利用不足，标准化、实时化、一体化监测体系缺乏
+
+<div class="r-stack">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (30).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (32).png" style="zoom:80%;">
+</div>
+
+--
+
+农村网络基础设施建设依然薄弱，信息技术的集成应用还缺乏支撑
+
+<div class="r-stack">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (38).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (16).png" style="zoom:80%;">
+</div>
+
+--
+
+创新能力不足，农业数字化建设支撑软硬件条件薄弱
+
+<div class="r-stack">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (14).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (8).png" style="zoom:80%;">
+</div>
+
 Note:同时，数字农业农村的发展也面临诸多挑战。一，农业信息采集体系不健全，标准化、实时化、一体化监测体系缺乏，农业农村数字化基础整体薄弱，数据资源分散，农业数据价值要素低，数据利用不足。二，农村网络基础设施建设依然薄弱，城乡数字化发展仍旧有较大差距，农村互联网普及率仍然不足，农户种养殖基地通网比例低、网络信号差，信息技术的集成应用仍缺乏支撑。三，创新能力不足，关键核心技术研发滞后，支撑智慧农业的数据获取、传输、决策、控制的软硬件条件十分薄弱，数据作为生产要素作用不明显。
-
----
-
-### 数字农业农村建设的成果
-
-<img class="r-stretch" src="/slide/markdown/test.assets/wallhaven-vqgzql_5788x3260.png" alt="wallhaven-vqgzql_5788x3260" />
-
----
-
-### 数字农业农村建设的挑战
-
-这是一段文字
-
-<img class="r-stretch" src="/slide/markdown/test.assets/wallhaven-weq8y7_2560x1600.png" alt="wallhaven-weq8y7_2560x1600" style="zoom:33%;" />
 
 ---
 
 ### 展望
 
 <div class="r-stack">
-    <img class="fragment" src="/slide/markdown/test.assets/0011.jpg" style="zoom:10%;">
-    <img class="fragment" src="/slide/markdown/test.assets/0012.jpg" style="zoom:10%;">
-    <img class="fragment" src="/slide/markdown/test.assets/0013.jpg" style="zoom:10%;">
-    <img class="fragment" src="/slide/markdown/test.assets/0014.jpg" style="zoom:10%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (1).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (3).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (7).png" style="zoom:80%;">
+      <img class="fragment" src="/slide/markdown/test.assets/0 (23).png" style="zoom:80%;">
 </div>
-
-
 
 ---
 
