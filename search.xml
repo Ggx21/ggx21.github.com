@@ -119,33 +119,6 @@
     
     
     <entry>
-      <title>DLC12</title>
-      <link href="/2023/05/08/notes/DLC/week12/"/>
-      <url>/2023/05/08/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-E3</title>
       <link href="/2023/05/08/homework/network/network-E3/"/>
       <url>/2023/05/08/homework/network/network-E3/</url>
@@ -223,6 +196,33 @@
         <tags>
             
             <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC12</title>
+      <link href="/2023/05/08/notes/DLC/week12/"/>
+      <url>/2023/05/08/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
             
         </tags>
       
@@ -830,35 +830,6 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
-      
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th></th><th></th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>ακριβός</td><td>贵的</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> ελληνικά </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 生词表 </tag>
-            
-            <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-homework-5</title>
       <link href="/2023/04/27/homework/network/network5/"/>
       <url>/2023/04/27/homework/network/network5/</url>
@@ -880,6 +851,35 @@
             <tag> homework </tag>
             
             <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th></th><th></th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>ακριβός</td><td>贵的</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> ελληνικά </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生词表 </tag>
+            
+            <tag> ελληνικά </tag>
             
         </tags>
       
