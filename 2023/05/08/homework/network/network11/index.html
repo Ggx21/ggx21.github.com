@@ -9,22 +9,21 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="这是什么?这篇README大概也不能告诉你. 10：18 昨天晚上调整了本地文件的组织方式。这导致我页面的permalink基本全改变了。本来还有些评论的，这下全没了😢😢😢 16：00 太依赖gpt，已经丧失了动脑子的能力了。再也不能从代码里获得什么成就感了。是好是坏呢？总归是把graphics pa2干完了。这不就是把给的python参考翻译一遍。 19：20 桃李吃晚饭，土豆炖牛肉给我上">
+  <meta name="description" content="网原第11次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  为什么要发明一个新的抽象ID(端口号),而不用进程ID?  答:   传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。   传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销   进程可能使用多个端口   第二题  数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Somniloquy-3">
-<meta property="og:url" content="https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/index.html">
+<meta property="og:title" content="network-homework-11">
+<meta property="og:url" content="https://ggx21.github.io/2023/05/08/homework/network/network11/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="这是什么?这篇README大概也不能告诉你. 10：18 昨天晚上调整了本地文件的组织方式。这导致我页面的permalink基本全改变了。本来还有些评论的，这下全没了😢😢😢 16：00 太依赖gpt，已经丧失了动脑子的能力了。再也不能从代码里获得什么成就感了。是好是坏呢？总归是把graphics pa2干完了。这不就是把给的python参考翻译一遍。 19：20 桃李吃晚饭，土豆炖牛肉给我上">
+<meta property="og:description" content="网原第11次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  为什么要发明一个新的抽象ID(端口号),而不用进程ID?  答:   传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。   传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销   进程可能使用多个端口   第二题  数">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://ggx21.github.io/img/dream-3/1.jpg">
-<meta property="og:image" content="https://ggx21.github.io/img/dream-3/2.jpg">
-<meta property="article:published_time" content="2023-05-01T03:32:39.000Z">
-<meta property="article:modified_time" content="2023-05-07T15:02:30.117Z">
+<meta property="og:image" content="d:/py_works/new_blog/ggx21.github.com/docs/source/_posts/homework/network/network11.assets/image-20230512115040962.png">
+<meta property="article:published_time" content="2023-05-08T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-05-14T04:27:35.323Z">
 <meta property="article:author" content="Andy Gao">
-<meta property="article:tag" content="THU">
-<meta property="article:tag" content="Somniloquy">
+<meta property="article:tag" content="homework">
+<meta property="article:tag" content="network">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://ggx21.github.io/img/dream-3/1.jpg">
+<meta name="twitter:image" content="d:/py_works/new_blog/ggx21.github.com/docs/source/_posts/homework/network/network11.assets/image-20230512115040962.png">
      
   <link rel="shortcut icon" href="/images/favicon.ico" />
      
@@ -42,7 +41,7 @@
   />
     
   <!-- title -->
-  <title>Somniloquy-3</title>
+  <title>network-homework-11</title>
   <!-- async scripts -->
   <!-- Google Analytics -->
 
@@ -124,7 +123,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"
+            href="/2023/05/08/homework/network/network10/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -140,7 +139,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/2023/04/30/others/comment/"
+            href="/2023/05/08/notes/DLC/week12/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -173,7 +172,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#10%EF%BC%9A18"><span class="toc-number">1.</span> <span class="toc-text">10：18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16%EF%BC%9A00"><span class="toc-number">2.</span> <span class="toc-text">16：00</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19%EF%BC%9A20"><span class="toc-number">3.</span> <span class="toc-text">19：20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-32"><span class="toc-number">4.</span> <span class="toc-text">22:32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-32"><span class="toc-number">5.</span> <span class="toc-text">35:32</span></a></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第11次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%94"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">答:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -188,7 +187,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        Somniloquy-3
+        network-homework-11
     </h1>
 
 
@@ -207,7 +206,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-05-01T03:32:39.000Z" class="dt-published" itemprop="datePublished">2023-05-01</time>
+        <time datetime="2023-05-08T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-08</time>
         
       
     </div>
@@ -215,13 +214,13 @@
  
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/Somniloquy/">Somniloquy</a>
+        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/network/">network</a>
     </div>
 
  
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/Somniloquy/" rel="tag">Somniloquy</a>, <a class="p-category" href="/tags/THU/" rel="tag">THU</a>
+        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/network/" rel="tag">network</a>
     </div>
 
 
@@ -230,22 +229,58 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <p>这是什么?<a href="/2023/04/28/Somniloquy/dream-0/">这篇README</a>大概也不能告诉你.</p>
-<h2 id="10：18">10：18</h2>
-<p>昨天晚上调整了本地文件的组织方式。这导致我页面的permalink基本全改变了。本来还有些评论的，这下全没了😢😢😢</p>
-<h2 id="16：00">16：00</h2>
-<p>太依赖gpt，已经丧失了动脑子的能力了。再也不能从代码里获得什么成就感了。是好是坏呢？总归是把graphics pa2干完了。这不就是把给的python参考翻译一遍。</p>
-<h2 id="19：20">19：20</h2>
-<p>桃李吃晚饭，土豆炖牛肉给我上了个夹生的。看在他给我换了两道菜的情况下就不骂了。<br>
-<img src="\img\dream-3\1.jpg" style="zoom: 15%;" /></p>
-<p>土豆烧牛肉换辣子鸡+西红柿炒鸡蛋，还可以吗？</p>
-<p><strong>妈的，iai就给我92分。凭什么。</strong></p>
-<h2 id="22-32">22:32</h2>
-<p>心情突然很down，游戏也打不动了。意义是什么呢？在紫操溜溜，没有变好。<br>
-😿😿😿<br>
-<img src="\img\dream-3\2.jpg" style="zoom: 25%;" /></p>
-<h2 id="35-32">35:32</h2>
-<p>爬了会儿格子，感到心情平静了些。竟然有这闲心。🚭🚭🚭</p>
+    <h1>网原第11次作业</h1>
+<p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
+<h2 id="第一题">第一题</h2>
+<blockquote>
+<p>为什么要发明一个新的抽象ID(端口号),而不用进程ID?</p>
+</blockquote>
+<h5 id="答">答:</h5>
+<ol>
+<li class="lvl-3">
+<p>传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。</p>
+</li>
+<li class="lvl-3">
+<p>传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销</p>
+</li>
+<li class="lvl-3">
+<p>进程可能使用多个端口</p>
+</li>
+</ol>
+<h2 id="第二题">第二题</h2>
+<blockquote>
+<p>数据报的分段和重组机制由IP层来处理，对于TCP不可见。试问,这是否意味着TCP不用担心数据错序到达的问题</p>
+</blockquote>
+<p>答:不是</p>
+<ol>
+<li class="lvl-3">
+<p>数据报的分段和重组机制由IP层来处理，ip层只是保证了数据报的完整性，</p>
+</li>
+<li class="lvl-3">
+<p>TCP协议会通过TCP头的序号接收端进行有序地重组</p>
+</li>
+<li class="lvl-3">
+<p>TCP协议还会使用校验和机制来检测丢弃、重传不正确的数据报，</p>
+</li>
+</ol>
+<h2 id="第三题">第三题</h2>
+<blockquote>
+<p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/homework/network/network11.assets/image-20230512115040962.png" alt="image-20230512115040962"></p>
+</blockquote>
+<ol>
+<li class="lvl-3">
+<p>ABCDE同时增加，4，5线路到达瓶颈，BCDE停止增长</p>
+</li>
+<li class="lvl-3">
+<p>A继续增长直到1，2到达瓶颈</p>
+</li>
+<li class="lvl-3">
+<p>变化：原有ABCD流大小不变，新增一条E（R1-&gt;R2-&gt;R6）流量大小为1/3</p>
+</li>
+</ol>
+<h2 id="第四题">第四题</h2>
+<blockquote></blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
 
   </div>
 </article>
@@ -293,22 +328,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#10%EF%BC%9A18"><span class="toc-number">1.</span> <span class="toc-text">10：18</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#16%EF%BC%9A00"><span class="toc-number">2.</span> <span class="toc-text">16：00</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#19%EF%BC%9A20"><span class="toc-number">3.</span> <span class="toc-text">19：20</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-32"><span class="toc-number">4.</span> <span class="toc-text">22:32</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#35-32"><span class="toc-number">5.</span> <span class="toc-text">35:32</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第11次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%94"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">答:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&text=Somniloquy-3"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&title=Somniloquy-3"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&is_video=false&description=Somniloquy-3"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=Somniloquy-3&body=Check out this article: https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&title=Somniloquy-3"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&title=Somniloquy-3"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&title=Somniloquy-3"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&title=Somniloquy-3"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&name=Somniloquy-3&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/2023/05/01/Somniloquy/dream-3/&t=Somniloquy-3"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/2023/05/08/homework/network/network11/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&text=network-homework-11"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&title=network-homework-11"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&is_video=false&description=network-homework-11"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=network-homework-11&body=Check out this article: https://ggx21.github.io/2023/05/08/homework/network/network11/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&title=network-homework-11"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&title=network-homework-11"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&title=network-homework-11"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&title=network-homework-11"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/2023/05/08/homework/network/network11/&name=network-homework-11&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/2023/05/08/homework/network/network11/&t=network-homework-11"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

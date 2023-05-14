@@ -1,3 +1,16 @@
+// 该函数用来绘制方块
+function drawTile(x, y, value) {
+  // 在游戏画布上绘制方块
+  var tile = document.createElement("div");
+  tile.classList.add("tile");
+  tile.classList.add("tile-" + value);
+  tile.innerText = value;
+  canvas.appendChild(tile);
+  // 设置方块的位置
+  tile.style.top = x * 80 + "px";
+  tile.style.left = y * 80 + "px";
+}
+
 // 设置游戏画布和初始分数
 var canvas = document.getElementsByClassName("game-grid")[0];
 var score = document.getElementById("score");
