@@ -33,7 +33,7 @@
       <link href="/2023/05/19/Somniloquy/dream-7/"/>
       <url>/2023/05/19/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-bkXfkCXL" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-bkXfkCXL"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-MQRPTGkq" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-MQRPTGkq"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
       
       
       <categories>
@@ -215,89 +215,6 @@
     
     
     <entry>
-      <title>DLC12</title>
-      <link href="/2023/05/08/notes/DLC/week12/"/>
-      <url>/2023/05/08/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CH6-3</title>
-      <link href="/2023/05/08/notes/network/week11/"/>
-      <url>/2023/05/08/notes/network/week11/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-E3</title>
-      <link href="/2023/05/08/homework/network/network-E3/"/>
-      <url>/2023/05/08/homework/network/network-E3/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第三次小实验</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="抓包实验-1：">抓包实验 1：</h2><img src="/img/homeworks/network-E3.assets/image-20230508182726680.png" alt="image-20230508182726680" style="zoom: 80%;" /><p>Type字段为11，Code字段为0</p><h2 id="抓包实验2">抓包实验2</h2><h3 id="观察ICMPv4请求">观察ICMPv4请求</h3><img src="/img/homeworks/network-E3.assets/image-20230508184458514.png" alt="image-20230508184458514" style="zoom:67%;" /><p>Type字段是8，Code是0</p><h3 id="观察回显数据包头">观察回显数据包头</h3><img src="/img/homeworks/network-E3.assets/image-20230508184710176.png" alt="image-20230508184710176" style="zoom:67%;" /><p>Type字段为0，Code字段也为0</p><h3 id="观察一对请求和回显">观察一对请求和回显</h3><img src="/img/homeworks/network-E3.assets/image-20230508185019527.png" alt="image-20230508185019527" style="zoom:67%;" /><p>标识符，序号，Data都相等</p><h2 id="抓包实验-3：-观察-ARP-分组各式">抓包实验 3： 观察 ARP 分组各式</h2><h3 id=""><img src="/img/homeworks/network-E3.assets/image-20230508185440661.png" alt="image-20230508185440661"></h3><ol><li class="lvl-3"><p>ARP 协议在以太网帧头中载荷类型的编号是 ？</p><img src="/img/homeworks/network-E3.assets/image-20230508185700796.png" alt="image-20230508185700796" style="zoom:67%;" /><p>答：0x0806</p></li><li class="lvl-3"><p>ARP 分组头中，以太网硬件类型编号和 IP 协议类型编号分别是？</p><img src="/img/homeworks/network-E3.assets/image-20230508185717796.png" alt="image-20230508185717796" style="zoom:67%;" /><p>答：   arp.hw.type（Hardware type）：1；protocol type 0x0800</p></li><li class="lvl-3"><p>ARP 请求分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p>  <img src="/img/homeworks/network-E3.assets/image-20230508185831466.png" alt="image-20230508185831466" style="zoom:67%;" /><ul class="lvl-2"><li class="lvl-5"><p>Opcode是1，</p></li><li class="lvl-5"><p>源IP和MAC地址是本机地址</p></li><li class="lvl-5"><p>目的IP地址是请求的IP地址；MAC地址是广播地址</p></li></ul></li><li class="lvl-3"><p>ARP 回复分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p><img src="/img/homeworks/network-E3.assets/image-20230508185731913.png" alt="image-20230508185731913" style="zoom:80%;" /><p>答：</p><ul class="lvl-2"><li class="lvl-5"><p>Opcode是2</p></li><li class="lvl-5"><p>源IP和MAC是请求的IP地址和回复的MAC</p></li><li class="lvl-5"><p>目的IP和MAC是本机</p></li></ul></li></ol><h2 id="简述题：">简述题：</h2><h3 id="icmpv4的安全隐患">icmpv4的安全隐患</h3><ol><li class="lvl-3"><p>Ping Flood 攻击：黑客可以发送大量的 Ping 请求（ICMP Echo Request），导致被攻击的目标主机网络堵塞，以至于无法正常通信。</p></li><li class="lvl-3"><p>Smurf 攻击：黑客可以利用广播地址发送 ICMPv4 Request，让目标网络中的所有主机都回应，导致目标网络瘫痪。</p></li><li class="lvl-3"><p>ICMPv4 Redirect 攻击：黑客可以伪造 ICMPv4 Redirect 消息，使目标主机将数据包发送到攻击者的设备上，从而实现中间人攻击。</p></li><li class="lvl-3"><p>ICMPv4 Time Exceeded 攻击：黑客可以发送大量 ICMPv4 Time Exceeded 消息，让目标网络的路由器被迫处理大量无用信息而瘫痪。</p></li><li class="lvl-3"><p>Ping of Death 攻击：黑客可以向目标主机发送一个特别制作的超大 ICMPv4 报文（超过 65536 字节），导致目标主机崩溃或者重启。</p></li></ol><p>处于上述安全问题，很多系统都默认禁止发送某些icmpv4消息。比如</p><ol><li class="lvl-3"><p>Cisco 路由器默认情况下会禁止发送 ICMP Redirect 消息，以避免中间人攻击。</p></li><li class="lvl-3"><p>Solaris 操作系统默认情况下会禁止发送 ICMPv4 Timestamp 和 ICMPv4 Address Mask 消息。</p></li><li class="lvl-3"><p>Windows 防火墙默认情况下会阻止多个 ICMPv4 消息，比如 ICMP Echo Request（ping）、ICMP Timestamp，ICMP Traceroute 等。</p></li></ol><h3 id="ping-局域网内外的主机产生的arp报文有何不同">ping 局域网内外的主机产生的arp报文有何不同</h3><p>这是我ping局域网内（连接到我同一个路由器的ipad设备）的arp</p><p><img src="/img/homeworks/network-E3.assets/image-20230508192914176.png" alt="image-20230508192914176"></p><p>ping局域网外的主机不会产生arp报文。arp的作用范围在局域网内。</p><h3 id="arp滥用的危害及预防">arp滥用的危害及预防</h3><h4 id="arp滥用的例子">arp滥用的例子</h4><ol><li class="lvl-3"><p>网络拥塞：过量的 ARP 请求会增加网络的负载，导致网络拥塞，从而影响网络性能和吞吐量。</p></li><li class="lvl-3"><p>ARP 洪泛攻击：攻击者利用大量伪造的 ARP 请求数据包向网络广播，欺骗物理地址表中的信息，从而导致网络拥塞或服务故障，影响网络安全。</p></li><li class="lvl-3"><p>ARP 欺骗攻击：攻击者伪造 ARP 请求数据包，使其包含正确的 IP 地址和错误的 MAC 地址。当 ARP 请求被接收并响应时，攻击者就能欺骗网络设备，从而执行中间人攻击，获取敏感信息，甚至劫持通信。</p></li></ol><h4 id="预防">预防</h4><ol><li class="lvl-3"><p>监控网络流量：使用网络分析工具监测网络流量，识别异常的 ARP 请求和响应，判断是否存在 ARP 洪泛攻击或 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>过滤不必要的广播：在网络设备上设置合理的 ACL（访问控制列表），过滤不必要的广播。例如，可以限制 ARP 请求的范围，只允许目标设备响应有效的 ARP 请求。</p></li><li class="lvl-3"><p>配置静态 ARP 表项：在网络设备上配置静态 ARP 表项，避免频繁地进行 ARP 请求，降低网络负载和运行的安全风险。</p></li><li class="lvl-3"><p>使用防火墙：在网络的边界处使用防火墙，限制不必要的 ARP 请求和回应，防止 ARP 洪泛攻击和 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>更新网络设备和操作系统：最新版本的网络设备和操作系统中会修复已知的安全漏洞，更新这些设备和系统可以降低不必要的攻击和风险。</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-homework-10</title>
       <link href="/2023/05/08/homework/network/network10/"/>
       <url>/2023/05/08/homework/network/network10/</url>
@@ -346,6 +263,89 @@
         <tags>
             
             <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-E3</title>
+      <link href="/2023/05/08/homework/network/network-E3/"/>
+      <url>/2023/05/08/homework/network/network-E3/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第三次小实验</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="抓包实验-1：">抓包实验 1：</h2><img src="/img/homeworks/network-E3.assets/image-20230508182726680.png" alt="image-20230508182726680" style="zoom: 80%;" /><p>Type字段为11，Code字段为0</p><h2 id="抓包实验2">抓包实验2</h2><h3 id="观察ICMPv4请求">观察ICMPv4请求</h3><img src="/img/homeworks/network-E3.assets/image-20230508184458514.png" alt="image-20230508184458514" style="zoom:67%;" /><p>Type字段是8，Code是0</p><h3 id="观察回显数据包头">观察回显数据包头</h3><img src="/img/homeworks/network-E3.assets/image-20230508184710176.png" alt="image-20230508184710176" style="zoom:67%;" /><p>Type字段为0，Code字段也为0</p><h3 id="观察一对请求和回显">观察一对请求和回显</h3><img src="/img/homeworks/network-E3.assets/image-20230508185019527.png" alt="image-20230508185019527" style="zoom:67%;" /><p>标识符，序号，Data都相等</p><h2 id="抓包实验-3：-观察-ARP-分组各式">抓包实验 3： 观察 ARP 分组各式</h2><h3 id=""><img src="/img/homeworks/network-E3.assets/image-20230508185440661.png" alt="image-20230508185440661"></h3><ol><li class="lvl-3"><p>ARP 协议在以太网帧头中载荷类型的编号是 ？</p><img src="/img/homeworks/network-E3.assets/image-20230508185700796.png" alt="image-20230508185700796" style="zoom:67%;" /><p>答：0x0806</p></li><li class="lvl-3"><p>ARP 分组头中，以太网硬件类型编号和 IP 协议类型编号分别是？</p><img src="/img/homeworks/network-E3.assets/image-20230508185717796.png" alt="image-20230508185717796" style="zoom:67%;" /><p>答：   arp.hw.type（Hardware type）：1；protocol type 0x0800</p></li><li class="lvl-3"><p>ARP 请求分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p>  <img src="/img/homeworks/network-E3.assets/image-20230508185831466.png" alt="image-20230508185831466" style="zoom:67%;" /><ul class="lvl-2"><li class="lvl-5"><p>Opcode是1，</p></li><li class="lvl-5"><p>源IP和MAC地址是本机地址</p></li><li class="lvl-5"><p>目的IP地址是请求的IP地址；MAC地址是广播地址</p></li></ul></li><li class="lvl-3"><p>ARP 回复分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p><img src="/img/homeworks/network-E3.assets/image-20230508185731913.png" alt="image-20230508185731913" style="zoom:80%;" /><p>答：</p><ul class="lvl-2"><li class="lvl-5"><p>Opcode是2</p></li><li class="lvl-5"><p>源IP和MAC是请求的IP地址和回复的MAC</p></li><li class="lvl-5"><p>目的IP和MAC是本机</p></li></ul></li></ol><h2 id="简述题：">简述题：</h2><h3 id="icmpv4的安全隐患">icmpv4的安全隐患</h3><ol><li class="lvl-3"><p>Ping Flood 攻击：黑客可以发送大量的 Ping 请求（ICMP Echo Request），导致被攻击的目标主机网络堵塞，以至于无法正常通信。</p></li><li class="lvl-3"><p>Smurf 攻击：黑客可以利用广播地址发送 ICMPv4 Request，让目标网络中的所有主机都回应，导致目标网络瘫痪。</p></li><li class="lvl-3"><p>ICMPv4 Redirect 攻击：黑客可以伪造 ICMPv4 Redirect 消息，使目标主机将数据包发送到攻击者的设备上，从而实现中间人攻击。</p></li><li class="lvl-3"><p>ICMPv4 Time Exceeded 攻击：黑客可以发送大量 ICMPv4 Time Exceeded 消息，让目标网络的路由器被迫处理大量无用信息而瘫痪。</p></li><li class="lvl-3"><p>Ping of Death 攻击：黑客可以向目标主机发送一个特别制作的超大 ICMPv4 报文（超过 65536 字节），导致目标主机崩溃或者重启。</p></li></ol><p>处于上述安全问题，很多系统都默认禁止发送某些icmpv4消息。比如</p><ol><li class="lvl-3"><p>Cisco 路由器默认情况下会禁止发送 ICMP Redirect 消息，以避免中间人攻击。</p></li><li class="lvl-3"><p>Solaris 操作系统默认情况下会禁止发送 ICMPv4 Timestamp 和 ICMPv4 Address Mask 消息。</p></li><li class="lvl-3"><p>Windows 防火墙默认情况下会阻止多个 ICMPv4 消息，比如 ICMP Echo Request（ping）、ICMP Timestamp，ICMP Traceroute 等。</p></li></ol><h3 id="ping-局域网内外的主机产生的arp报文有何不同">ping 局域网内外的主机产生的arp报文有何不同</h3><p>这是我ping局域网内（连接到我同一个路由器的ipad设备）的arp</p><p><img src="/img/homeworks/network-E3.assets/image-20230508192914176.png" alt="image-20230508192914176"></p><p>ping局域网外的主机不会产生arp报文。arp的作用范围在局域网内。</p><h3 id="arp滥用的危害及预防">arp滥用的危害及预防</h3><h4 id="arp滥用的例子">arp滥用的例子</h4><ol><li class="lvl-3"><p>网络拥塞：过量的 ARP 请求会增加网络的负载，导致网络拥塞，从而影响网络性能和吞吐量。</p></li><li class="lvl-3"><p>ARP 洪泛攻击：攻击者利用大量伪造的 ARP 请求数据包向网络广播，欺骗物理地址表中的信息，从而导致网络拥塞或服务故障，影响网络安全。</p></li><li class="lvl-3"><p>ARP 欺骗攻击：攻击者伪造 ARP 请求数据包，使其包含正确的 IP 地址和错误的 MAC 地址。当 ARP 请求被接收并响应时，攻击者就能欺骗网络设备，从而执行中间人攻击，获取敏感信息，甚至劫持通信。</p></li></ol><h4 id="预防">预防</h4><ol><li class="lvl-3"><p>监控网络流量：使用网络分析工具监测网络流量，识别异常的 ARP 请求和响应，判断是否存在 ARP 洪泛攻击或 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>过滤不必要的广播：在网络设备上设置合理的 ACL（访问控制列表），过滤不必要的广播。例如，可以限制 ARP 请求的范围，只允许目标设备响应有效的 ARP 请求。</p></li><li class="lvl-3"><p>配置静态 ARP 表项：在网络设备上配置静态 ARP 表项，避免频繁地进行 ARP 请求，降低网络负载和运行的安全风险。</p></li><li class="lvl-3"><p>使用防火墙：在网络的边界处使用防火墙，限制不必要的 ARP 请求和回应，防止 ARP 洪泛攻击和 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>更新网络设备和操作系统：最新版本的网络设备和操作系统中会修复已知的安全漏洞，更新这些设备和系统可以降低不必要的攻击和风险。</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC12</title>
+      <link href="/2023/05/08/notes/DLC/week12/"/>
+      <url>/2023/05/08/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CH6-3</title>
+      <link href="/2023/05/08/notes/network/week11/"/>
+      <url>/2023/05/08/notes/network/week11/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
             
             <tag> network </tag>
             
@@ -514,33 +514,6 @@
     
     
     <entry>
-      <title>DLC</title>
-      <link href="/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>four-adder</title>
       <link href="/2023/05/02/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/2023/05/02/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -562,6 +535,33 @@
             <tag> homework </tag>
             
             <tag> DLCE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC</title>
+      <link href="/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/2023/05/02/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
             
         </tags>
       
@@ -955,6 +955,35 @@
     
     
     <entry>
+      <title>network-homework-5</title>
+      <link href="/2023/04/27/homework/network/network5/"/>
+      <url>/2023/04/27/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello world</title>
       <link href="/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/2023/04/27/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
@@ -1003,35 +1032,6 @@
         <tags>
             
             <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-5</title>
-      <link href="/2023/04/27/homework/network/network5/"/>
-      <url>/2023/04/27/homework/network/network5/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
             
         </tags>
       
