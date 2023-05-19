@@ -33,7 +33,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-lJsxltBK" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-lJsxltBK"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-BiMdpTmz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-BiMdpTmz"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
       
       
       <categories>
@@ -202,6 +202,60 @@
     
     
     <entry>
+      <title>DLC12</title>
+      <link href="/notes/DLC/week12/"/>
+      <url>/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CH6-3</title>
+      <link href="/notes/network/week11/"/>
+      <url>/notes/network/week11/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network-E3</title>
       <link href="/homework/network/network-E3/"/>
       <url>/homework/network/network-E3/</url>
@@ -279,60 +333,6 @@
         <tags>
             
             <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC12</title>
-      <link href="/notes/DLC/week12/"/>
-      <url>/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>CH6-3</title>
-      <link href="/notes/network/week11/"/>
-      <url>/notes/network/week11/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
             
             <tag> network </tag>
             
@@ -501,6 +501,33 @@
     
     
     <entry>
+      <title>DLC</title>
+      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>four-adder</title>
       <link href="/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -522,33 +549,6 @@
             <tag> homework </tag>
             
             <tag> DLCE </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC</title>
-      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -942,27 +942,27 @@
     
     
     <entry>
-      <title>network-homework-5</title>
-      <link href="/homework/network/network5/"/>
-      <url>/homework/network/network5/</url>
+      <title>hello world</title>
+      <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>che</td><td></td><td>το τηλέφωνο</td><td>电话</td></tr><tr><td>αναπτήρας</td><td>打火机</td><td>το πορτοφόλι</td><td>钱包</td></tr><tr><td>μηχανή</td><td>机器</td><td>η εφημερίδα</td><td>报纸</td></tr><tr><td>το βιβλίο</td><td>书</td><td>το σπίτι</td><td>房子</td></tr><tr><td>υπολογιστής</td><td>计算机</td><td>το αυτοκίνητο</td><td>汽车</td></tr><tr><td>ομπρέλα</td><td>雨伞</td><td>το μοτοποδήλατο</td><td>摩托车</td></tr><tr><td>ρολόι</td><td>手表</td><td></td><td></td></tr><tr><td>φάκελος</td><td>文件夹</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p><h3 id="生词表-2">生词表</h3><table><thead><tr><th>Ελληνικά</th><th>Κινέζικα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>Δυστυχώς</td><td>不幸的是</td><td></td><td></td></tr><tr><td>αγαπάει</td><td>爱</td><td></td><td></td></tr><tr><td>Έτσι είναι η ζωή.</td><td>这就是生活</td><td></td><td></td></tr><tr><td>όμως</td><td>however</td><td></td><td></td></tr><tr><td>θέλω</td><td>想</td><td></td><td></td></tr><tr><td>ξέρω</td><td>知道</td><td></td><td></td></tr><tr><td>ερωτευμένος</td><td>迷恋</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h1>第13周（1）</h1><ul class="lvl-0"><li class="lvl-2"><p>how old are you</p><blockquote><p>Πόσων Χρονών είσαι;-είναι;είστε…</p></blockquote></li><li class="lvl-2"><p>I am …</p><blockquote><p>ο έτος 年</p><p>1,-Είμαι ενός  <mark>έτονς</mark>单数属格</p><p>2-100-Είμαι δύο/τριών <mark>χρωνών/ετών</mark>复数属格 注意3，4等的变化</p><p>ο μήνας—月</p><p>1,-Είναι ενός  <mark>μήνα</mark>单数属格</p><p>2-12’Είναι-δύο/τριών <mark>μηνών</mark>复数属格 注意3，4等的变化</p></blockquote></li><li class="lvl-2"><p>Για την Τάνια μιλάς;</p><p>你说的是 Τάνια 吗？</p></li></ul><table><thead><tr><th>μολύβι</th><th>铅笔</th><th></th><th></th></tr></thead><tbody><tr><td>καρέκλα</td><td>椅子</td><td></td><td></td></tr><tr><td>to άγαλμα</td><td>雕像</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μ’ αρέσει   后加主格</p></li><li class="lvl-2"><p>Δεν μ’ αρέσει ο μικρός</p></li></ul><h3 id="口语考试">口语考试</h3><ul class="lvl-0"><li class="lvl-2"><p>Πώς σε λένε;——你叫什么？</p></li><li class="lvl-2"><p>Από πού είσαι;——你来自哪里？</p></li><li class="lvl-2"><p>Πού μένεις;——你住哪？</p></li><li class="lvl-2"><p>Ποιο είναι το κινητό σου;——你的手机号码是？</p></li><li class="lvl-2"><p>Τι δουλειά κάνεις;——你的工作是？</p></li><li class="lvl-2"><p>Πόσω χρονών είσαι;——你多大了</p></li><li class="lvl-2"><p>Είσαι παντρεμένος ή ελεύθερος:——你结婚了还是单身</p></li><li class="lvl-2"><p>Έχεις παιδιά;——你有孩子吗？</p></li><li class="lvl-2"><p>Πόσω χρονών είναι;——他多大了？</p></li><li class="lvl-2"><p>Μιλάς ελληνικά; Άλλη γλώσσα;——你说希腊语吗？其他语言呢？</p></li><li class="lvl-2"><p>Σ’ αρέσει η Ελλάδα;  ——你喜欢希腊吗?</p></li></ul><ol><li class="lvl-3"><p>问答</p></li><li class="lvl-3"><p>朗读新文章</p></li><li class="lvl-3"><p>给一个主题，持续说2分钟</p></li></ol>]]></content>
       
       
       <categories>
           
-          <category> homework </category>
+          <category> notes </category>
           
-          <category> network </category>
+          <category> ελληνικά </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> homework </tag>
+            <tag> 生词表 </tag>
             
-            <tag> network </tag>
+            <tag> ελληνικά </tag>
             
         </tags>
       
@@ -998,27 +998,27 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      <title>network-homework-5</title>
+      <link href="/homework/network/network5/"/>
+      <url>/homework/network/network5/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>che</td><td></td><td>το τηλέφωνο</td><td>电话</td></tr><tr><td>αναπτήρας</td><td>打火机</td><td>το πορτοφόλι</td><td>钱包</td></tr><tr><td>μηχανή</td><td>机器</td><td>η εφημερίδα</td><td>报纸</td></tr><tr><td>το βιβλίο</td><td>书</td><td>το σπίτι</td><td>房子</td></tr><tr><td>υπολογιστής</td><td>计算机</td><td>το αυτοκίνητο</td><td>汽车</td></tr><tr><td>ομπρέλα</td><td>雨伞</td><td>το μοτοποδήλατο</td><td>摩托车</td></tr><tr><td>ρολόι</td><td>手表</td><td></td><td></td></tr><tr><td>φάκελος</td><td>文件夹</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p><h3 id="生词表-2">生词表</h3><table><thead><tr><th>Ελληνικά</th><th>Κινέζικα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>Δυστυχώς</td><td>不幸的是</td><td></td><td></td></tr><tr><td>αγαπάει</td><td>爱</td><td></td><td></td></tr><tr><td>Έτσι είναι η ζωή.</td><td>这就是生活</td><td></td><td></td></tr><tr><td>όμως</td><td>however</td><td></td><td></td></tr><tr><td>θέλω</td><td>想</td><td></td><td></td></tr><tr><td>ξέρω</td><td>知道</td><td></td><td></td></tr><tr><td>ερωτευμένος</td><td>迷恋</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h1>第13周（1）</h1><ul class="lvl-0"><li class="lvl-2"><p>how old are you</p><blockquote><p>Πόσων Χρονών είσαι;-είναι;είστε…</p></blockquote></li><li class="lvl-2"><p>I am …</p><blockquote><p>ο έτος 年</p><p>1,-Είμαι ενός  <mark>έτονς</mark>单数属格</p><p>2-100-Είμαι δύο/τριών <mark>χρωνών/ετών</mark>复数属格 注意3，4等的变化</p><p>ο μήνας—月</p><p>1,-Είναι ενός  <mark>μήνα</mark>单数属格</p><p>2-12’Είναι-δύο/τριών <mark>μηνών</mark>复数属格 注意3，4等的变化</p></blockquote></li><li class="lvl-2"><p>Για την Τάνια μιλάς;</p><p>你说的是 Τάνια 吗？</p></li></ul><table><thead><tr><th>μολύβι</th><th>铅笔</th><th></th><th></th></tr></thead><tbody><tr><td>καρέκλα</td><td>椅子</td><td></td><td></td></tr><tr><td>to άγαλμα</td><td>雕像</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μ’ αρέσει   后加主格</p></li><li class="lvl-2"><p>Δεν μ’ αρέσει ο μικρός</p></li></ul><h3 id="口语考试">口语考试</h3><ul class="lvl-0"><li class="lvl-2"><p>Πώς σε λένε;——你叫什么？</p></li><li class="lvl-2"><p>Από πού είσαι;——你来自哪里？</p></li><li class="lvl-2"><p>Πού μένεις;——你住哪？</p></li><li class="lvl-2"><p>Ποιο είναι το κινητό σου;——你的手机号码是？</p></li><li class="lvl-2"><p>Τι δουλειά κάνεις;——你的工作是？</p></li><li class="lvl-2"><p>Πόσω χρονών είσαι;——你多大了</p></li><li class="lvl-2"><p>Είσαι παντρεμένος ή ελεύθερος:——你结婚了还是单身</p></li><li class="lvl-2"><p>Έχεις παιδιά;——你有孩子吗？</p></li><li class="lvl-2"><p>Πόσω χρονών είναι;——他多大了？</p></li><li class="lvl-2"><p>Μιλάς ελληνικά; Άλλη γλώσσα;——你说希腊语吗？其他语言呢？</p></li><li class="lvl-2"><p>Σ’ αρέσει η Ελλάδα;  ——你喜欢希腊吗?</p></li></ul><ol><li class="lvl-3"><p>问答</p></li><li class="lvl-3"><p>朗读新文章</p></li><li class="lvl-3"><p>给一个主题，持续说2分钟</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
       
       
       <categories>
           
-          <category> notes </category>
+          <category> homework </category>
           
-          <category> ελληνικά </category>
+          <category> network </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> ελληνικά </tag>
+            <tag> homework </tag>
             
-            <tag> 生词表 </tag>
+            <tag> network </tag>
             
         </tags>
       
