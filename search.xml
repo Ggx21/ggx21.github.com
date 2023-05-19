@@ -289,33 +289,6 @@
     
     
     <entry>
-      <title>CH6-3</title>
-      <link href="/notes/network/week11/"/>
-      <url>/notes/network/week11/</url>
-      
-        <content type="html"><![CDATA[<p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>DLC12</title>
       <link href="/notes/DLC/week12/"/>
       <url>/notes/DLC/week12/</url>
@@ -335,6 +308,33 @@
         <tags>
             
             <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>CH6-3</title>
+      <link href="/notes/network/week11/"/>
+      <url>/notes/network/week11/</url>
+      
+        <content type="html"><![CDATA[<p>[mpls](<a href="https://info.support.huawei.com/info-finder/encyclopedia/zh/MPLS.html">MPLS是什么？MPLS是如何工作的？ - 华为 (huawei.com)</a>)，参考电路转发，在 MPLS 域的入口处，给每一个 IP 数据报加上 标签，然后对加上标记的 IP 数据报用硬件进行转发</p><p>MPLS报文结构<br>• MPLS被称为2.5层协议<br>• “给 IP 数据报加标签”其实就是在以太网的帧首部和IP数据报的首部之间插入一个 4 字节的 MPLS 首部</p><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/notes/network/week11.assets/image-20230508101104162.png" alt="image-20230508101104162"></p><h2 id="路由协议小结（6-3-6-6）">路由协议小结（6.3-6.6）</h2><p>• RIP：距离向量，邻居交互最优下一跳，分布式计算；收敛速度较慢<br>• OSPF：链路状态，洪泛原始信息，集中计算最短路；带宽&amp;计算开销大<br>• BGP：融合RIP和OSPF设计经验，邻居交互路径向量；支撑大网路由<br>• MPLS：借鉴电路交换，面向连接；更强控制，实现VPN和TE</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> network </tag>
             
         </tags>
       
@@ -854,6 +854,31 @@
     
     
     <entry>
+      <title>fool</title>
+      <link href="/others/fool/"/>
+      <url>/others/fool/</url>
+      
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>test-markdown</title>
       <link href="/others/ful-test/"/>
       <url>/others/ful-test/</url>
@@ -892,31 +917,6 @@
           
       </categories>
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>fool</title>
-      <link href="/others/fool/"/>
-      <url>/others/fool/</url>
-      
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
       
     </entry>
     
