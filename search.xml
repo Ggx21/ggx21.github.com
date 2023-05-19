@@ -33,7 +33,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-tISAgHhc" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-tISAgHhc"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
+        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-BLivgfuX" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-BLivgfuX"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
       
       
       <categories>
@@ -202,93 +202,6 @@
     
     
     <entry>
-      <title>network-E3</title>
-      <link href="/homework/network/network-E3/"/>
-      <url>/homework/network/network-E3/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第三次小实验</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="抓包实验-1：">抓包实验 1：</h2><img src="/img/homeworks/network-E3.assets/image-20230508182726680.png" alt="image-20230508182726680" style="zoom: 80%;" /><p>Type字段为11，Code字段为0</p><h2 id="抓包实验2">抓包实验2</h2><h3 id="观察ICMPv4请求">观察ICMPv4请求</h3><img src="/img/homeworks/network-E3.assets/image-20230508184458514.png" alt="image-20230508184458514" style="zoom:67%;" /><p>Type字段是8，Code是0</p><h3 id="观察回显数据包头">观察回显数据包头</h3><img src="/img/homeworks/network-E3.assets/image-20230508184710176.png" alt="image-20230508184710176" style="zoom:67%;" /><p>Type字段为0，Code字段也为0</p><h3 id="观察一对请求和回显">观察一对请求和回显</h3><img src="/img/homeworks/network-E3.assets/image-20230508185019527.png" alt="image-20230508185019527" style="zoom:67%;" /><p>标识符，序号，Data都相等</p><h2 id="抓包实验-3：-观察-ARP-分组各式">抓包实验 3： 观察 ARP 分组各式</h2><h3 id=""><img src="/img/homeworks/network-E3.assets/image-20230508185440661.png" alt="image-20230508185440661"></h3><ol><li class="lvl-3"><p>ARP 协议在以太网帧头中载荷类型的编号是 ？</p><img src="/img/homeworks/network-E3.assets/image-20230508185700796.png" alt="image-20230508185700796" style="zoom:67%;" /><p>答：0x0806</p></li><li class="lvl-3"><p>ARP 分组头中，以太网硬件类型编号和 IP 协议类型编号分别是？</p><img src="/img/homeworks/network-E3.assets/image-20230508185717796.png" alt="image-20230508185717796" style="zoom:67%;" /><p>答：   arp.hw.type（Hardware type）：1；protocol type 0x0800</p></li><li class="lvl-3"><p>ARP 请求分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p>  <img src="/img/homeworks/network-E3.assets/image-20230508185831466.png" alt="image-20230508185831466" style="zoom:67%;" /><ul class="lvl-2"><li class="lvl-5"><p>Opcode是1，</p></li><li class="lvl-5"><p>源IP和MAC地址是本机地址</p></li><li class="lvl-5"><p>目的IP地址是请求的IP地址；MAC地址是广播地址</p></li></ul></li><li class="lvl-3"><p>ARP 回复分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p><img src="/img/homeworks/network-E3.assets/image-20230508185731913.png" alt="image-20230508185731913" style="zoom:80%;" /><p>答：</p><ul class="lvl-2"><li class="lvl-5"><p>Opcode是2</p></li><li class="lvl-5"><p>源IP和MAC是请求的IP地址和回复的MAC</p></li><li class="lvl-5"><p>目的IP和MAC是本机</p></li></ul></li></ol><h2 id="简述题：">简述题：</h2><h3 id="icmpv4的安全隐患">icmpv4的安全隐患</h3><ol><li class="lvl-3"><p>Ping Flood 攻击：黑客可以发送大量的 Ping 请求（ICMP Echo Request），导致被攻击的目标主机网络堵塞，以至于无法正常通信。</p></li><li class="lvl-3"><p>Smurf 攻击：黑客可以利用广播地址发送 ICMPv4 Request，让目标网络中的所有主机都回应，导致目标网络瘫痪。</p></li><li class="lvl-3"><p>ICMPv4 Redirect 攻击：黑客可以伪造 ICMPv4 Redirect 消息，使目标主机将数据包发送到攻击者的设备上，从而实现中间人攻击。</p></li><li class="lvl-3"><p>ICMPv4 Time Exceeded 攻击：黑客可以发送大量 ICMPv4 Time Exceeded 消息，让目标网络的路由器被迫处理大量无用信息而瘫痪。</p></li><li class="lvl-3"><p>Ping of Death 攻击：黑客可以向目标主机发送一个特别制作的超大 ICMPv4 报文（超过 65536 字节），导致目标主机崩溃或者重启。</p></li></ol><p>处于上述安全问题，很多系统都默认禁止发送某些icmpv4消息。比如</p><ol><li class="lvl-3"><p>Cisco 路由器默认情况下会禁止发送 ICMP Redirect 消息，以避免中间人攻击。</p></li><li class="lvl-3"><p>Solaris 操作系统默认情况下会禁止发送 ICMPv4 Timestamp 和 ICMPv4 Address Mask 消息。</p></li><li class="lvl-3"><p>Windows 防火墙默认情况下会阻止多个 ICMPv4 消息，比如 ICMP Echo Request（ping）、ICMP Timestamp，ICMP Traceroute 等。</p></li></ol><h3 id="ping-局域网内外的主机产生的arp报文有何不同">ping 局域网内外的主机产生的arp报文有何不同</h3><p>这是我ping局域网内（连接到我同一个路由器的ipad设备）的arp</p><p><img src="/img/homeworks/network-E3.assets/image-20230508192914176.png" alt="image-20230508192914176"></p><p>ping局域网外的主机不会产生arp报文。arp的作用范围在局域网内。</p><h3 id="arp滥用的危害及预防">arp滥用的危害及预防</h3><h4 id="arp滥用的例子">arp滥用的例子</h4><ol><li class="lvl-3"><p>网络拥塞：过量的 ARP 请求会增加网络的负载，导致网络拥塞，从而影响网络性能和吞吐量。</p></li><li class="lvl-3"><p>ARP 洪泛攻击：攻击者利用大量伪造的 ARP 请求数据包向网络广播，欺骗物理地址表中的信息，从而导致网络拥塞或服务故障，影响网络安全。</p></li><li class="lvl-3"><p>ARP 欺骗攻击：攻击者伪造 ARP 请求数据包，使其包含正确的 IP 地址和错误的 MAC 地址。当 ARP 请求被接收并响应时，攻击者就能欺骗网络设备，从而执行中间人攻击，获取敏感信息，甚至劫持通信。</p></li></ol><h4 id="预防">预防</h4><ol><li class="lvl-3"><p>监控网络流量：使用网络分析工具监测网络流量，识别异常的 ARP 请求和响应，判断是否存在 ARP 洪泛攻击或 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>过滤不必要的广播：在网络设备上设置合理的 ACL（访问控制列表），过滤不必要的广播。例如，可以限制 ARP 请求的范围，只允许目标设备响应有效的 ARP 请求。</p></li><li class="lvl-3"><p>配置静态 ARP 表项：在网络设备上配置静态 ARP 表项，避免频繁地进行 ARP 请求，降低网络负载和运行的安全风险。</p></li><li class="lvl-3"><p>使用防火墙：在网络的边界处使用防火墙，限制不必要的 ARP 请求和回应，防止 ARP 洪泛攻击和 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>更新网络设备和操作系统：最新版本的网络设备和操作系统中会修复已知的安全漏洞，更新这些设备和系统可以降低不必要的攻击和风险。</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-10</title>
-      <link href="/homework/network/network10/"/>
-      <url>/homework/network/network10/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第10次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p></blockquote><p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p><h2 id="第二题">第二题</h2><blockquote><p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p></blockquote><p>答:不一定能保证.</p><p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p><p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p><ul class="lvl-0"><li class="lvl-2"><p>区分服务模型为加速转发服务预留的带宽较小.</p></li><li class="lvl-2"><p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p></li><li class="lvl-2"><p>常规数据包经过路径较短</p></li><li class="lvl-2"><p>链路质量、网络设备性能等因素的影响</p></li></ul><h2 id="第三题">第三题</h2><blockquote><p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p></blockquote><p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p><p>大概能分配10万亿年</p><h2 id="第四题">第四题</h2><blockquote><p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p></blockquote><p>答:技术上的改变.</p><p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p><p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-11</title>
-      <link href="/homework/network/network11/"/>
-      <url>/homework/network/network11/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第11次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>为什么要发明一个新的抽象ID(端口号),而不用进程ID?</p></blockquote><h5 id="答">答:</h5><ol><li class="lvl-3"><p>传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。</p></li><li class="lvl-3"><p>传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销</p></li><li class="lvl-3"><p>进程可能使用多个端口</p></li></ol><h2 id="第二题">第二题</h2><blockquote><p>数据报的分段和重组机制由IP层来处理，对于TCP不可见。试问,这是否意味着TCP不用担心数据错序到达的问题</p></blockquote><p>答:不是</p><ol><li class="lvl-3"><p>数据报的分段和重组机制由IP层来处理，ip层只是保证了数据报的完整性，</p></li><li class="lvl-3"><p>TCP协议会通过TCP头的序号接收端进行有序地重组</p></li><li class="lvl-3"><p>TCP协议还会使用校验和机制来检测丢弃、重传不正确的数据报，</p></li></ol><h2 id="第三题">第三题</h2><blockquote><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/homework/network/network11.assets/image-20230512115040962.png" alt="image-20230512115040962"></p></blockquote><ol><li class="lvl-3"><p>ABCDE同时增加，4，5线路到达瓶颈，BCDE停止增长</p></li><li class="lvl-3"><p>A继续增长直到1，2到达瓶颈</p></li><li class="lvl-3"><p>变化：原有ABCD流大小不变，新增一条E（R1-&gt;R2-&gt;R6）流量大小为1/3</p></li></ol><h2 id="第四题">第四题</h2><blockquote></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>DLC12</title>
       <link href="/notes/DLC/week12/"/>
       <url>/notes/DLC/week12/</url>
@@ -333,6 +246,93 @@
       
       
         <tags>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-10</title>
+      <link href="/homework/network/network10/"/>
+      <url>/homework/network/network10/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第10次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p></blockquote><p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p><h2 id="第二题">第二题</h2><blockquote><p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p></blockquote><p>答:不一定能保证.</p><p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p><p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p><ul class="lvl-0"><li class="lvl-2"><p>区分服务模型为加速转发服务预留的带宽较小.</p></li><li class="lvl-2"><p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p></li><li class="lvl-2"><p>常规数据包经过路径较短</p></li><li class="lvl-2"><p>链路质量、网络设备性能等因素的影响</p></li></ul><h2 id="第三题">第三题</h2><blockquote><p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p></blockquote><p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p><p>大概能分配10万亿年</p><h2 id="第四题">第四题</h2><blockquote><p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p></blockquote><p>答:技术上的改变.</p><p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p><p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-E3</title>
+      <link href="/homework/network/network-E3/"/>
+      <url>/homework/network/network-E3/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第三次小实验</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="抓包实验-1：">抓包实验 1：</h2><img src="/img/homeworks/network-E3.assets/image-20230508182726680.png" alt="image-20230508182726680" style="zoom: 80%;" /><p>Type字段为11，Code字段为0</p><h2 id="抓包实验2">抓包实验2</h2><h3 id="观察ICMPv4请求">观察ICMPv4请求</h3><img src="/img/homeworks/network-E3.assets/image-20230508184458514.png" alt="image-20230508184458514" style="zoom:67%;" /><p>Type字段是8，Code是0</p><h3 id="观察回显数据包头">观察回显数据包头</h3><img src="/img/homeworks/network-E3.assets/image-20230508184710176.png" alt="image-20230508184710176" style="zoom:67%;" /><p>Type字段为0，Code字段也为0</p><h3 id="观察一对请求和回显">观察一对请求和回显</h3><img src="/img/homeworks/network-E3.assets/image-20230508185019527.png" alt="image-20230508185019527" style="zoom:67%;" /><p>标识符，序号，Data都相等</p><h2 id="抓包实验-3：-观察-ARP-分组各式">抓包实验 3： 观察 ARP 分组各式</h2><h3 id=""><img src="/img/homeworks/network-E3.assets/image-20230508185440661.png" alt="image-20230508185440661"></h3><ol><li class="lvl-3"><p>ARP 协议在以太网帧头中载荷类型的编号是 ？</p><img src="/img/homeworks/network-E3.assets/image-20230508185700796.png" alt="image-20230508185700796" style="zoom:67%;" /><p>答：0x0806</p></li><li class="lvl-3"><p>ARP 分组头中，以太网硬件类型编号和 IP 协议类型编号分别是？</p><img src="/img/homeworks/network-E3.assets/image-20230508185717796.png" alt="image-20230508185717796" style="zoom:67%;" /><p>答：   arp.hw.type（Hardware type）：1；protocol type 0x0800</p></li><li class="lvl-3"><p>ARP 请求分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p>  <img src="/img/homeworks/network-E3.assets/image-20230508185831466.png" alt="image-20230508185831466" style="zoom:67%;" /><ul class="lvl-2"><li class="lvl-5"><p>Opcode是1，</p></li><li class="lvl-5"><p>源IP和MAC地址是本机地址</p></li><li class="lvl-5"><p>目的IP地址是请求的IP地址；MAC地址是广播地址</p></li></ul></li><li class="lvl-3"><p>ARP 回复分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p><img src="/img/homeworks/network-E3.assets/image-20230508185731913.png" alt="image-20230508185731913" style="zoom:80%;" /><p>答：</p><ul class="lvl-2"><li class="lvl-5"><p>Opcode是2</p></li><li class="lvl-5"><p>源IP和MAC是请求的IP地址和回复的MAC</p></li><li class="lvl-5"><p>目的IP和MAC是本机</p></li></ul></li></ol><h2 id="简述题：">简述题：</h2><h3 id="icmpv4的安全隐患">icmpv4的安全隐患</h3><ol><li class="lvl-3"><p>Ping Flood 攻击：黑客可以发送大量的 Ping 请求（ICMP Echo Request），导致被攻击的目标主机网络堵塞，以至于无法正常通信。</p></li><li class="lvl-3"><p>Smurf 攻击：黑客可以利用广播地址发送 ICMPv4 Request，让目标网络中的所有主机都回应，导致目标网络瘫痪。</p></li><li class="lvl-3"><p>ICMPv4 Redirect 攻击：黑客可以伪造 ICMPv4 Redirect 消息，使目标主机将数据包发送到攻击者的设备上，从而实现中间人攻击。</p></li><li class="lvl-3"><p>ICMPv4 Time Exceeded 攻击：黑客可以发送大量 ICMPv4 Time Exceeded 消息，让目标网络的路由器被迫处理大量无用信息而瘫痪。</p></li><li class="lvl-3"><p>Ping of Death 攻击：黑客可以向目标主机发送一个特别制作的超大 ICMPv4 报文（超过 65536 字节），导致目标主机崩溃或者重启。</p></li></ol><p>处于上述安全问题，很多系统都默认禁止发送某些icmpv4消息。比如</p><ol><li class="lvl-3"><p>Cisco 路由器默认情况下会禁止发送 ICMP Redirect 消息，以避免中间人攻击。</p></li><li class="lvl-3"><p>Solaris 操作系统默认情况下会禁止发送 ICMPv4 Timestamp 和 ICMPv4 Address Mask 消息。</p></li><li class="lvl-3"><p>Windows 防火墙默认情况下会阻止多个 ICMPv4 消息，比如 ICMP Echo Request（ping）、ICMP Timestamp，ICMP Traceroute 等。</p></li></ol><h3 id="ping-局域网内外的主机产生的arp报文有何不同">ping 局域网内外的主机产生的arp报文有何不同</h3><p>这是我ping局域网内（连接到我同一个路由器的ipad设备）的arp</p><p><img src="/img/homeworks/network-E3.assets/image-20230508192914176.png" alt="image-20230508192914176"></p><p>ping局域网外的主机不会产生arp报文。arp的作用范围在局域网内。</p><h3 id="arp滥用的危害及预防">arp滥用的危害及预防</h3><h4 id="arp滥用的例子">arp滥用的例子</h4><ol><li class="lvl-3"><p>网络拥塞：过量的 ARP 请求会增加网络的负载，导致网络拥塞，从而影响网络性能和吞吐量。</p></li><li class="lvl-3"><p>ARP 洪泛攻击：攻击者利用大量伪造的 ARP 请求数据包向网络广播，欺骗物理地址表中的信息，从而导致网络拥塞或服务故障，影响网络安全。</p></li><li class="lvl-3"><p>ARP 欺骗攻击：攻击者伪造 ARP 请求数据包，使其包含正确的 IP 地址和错误的 MAC 地址。当 ARP 请求被接收并响应时，攻击者就能欺骗网络设备，从而执行中间人攻击，获取敏感信息，甚至劫持通信。</p></li></ol><h4 id="预防">预防</h4><ol><li class="lvl-3"><p>监控网络流量：使用网络分析工具监测网络流量，识别异常的 ARP 请求和响应，判断是否存在 ARP 洪泛攻击或 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>过滤不必要的广播：在网络设备上设置合理的 ACL（访问控制列表），过滤不必要的广播。例如，可以限制 ARP 请求的范围，只允许目标设备响应有效的 ARP 请求。</p></li><li class="lvl-3"><p>配置静态 ARP 表项：在网络设备上配置静态 ARP 表项，避免频繁地进行 ARP 请求，降低网络负载和运行的安全风险。</p></li><li class="lvl-3"><p>使用防火墙：在网络的边界处使用防火墙，限制不必要的 ARP 请求和回应，防止 ARP 洪泛攻击和 ARP 欺骗攻击。</p></li><li class="lvl-3"><p>更新网络设备和操作系统：最新版本的网络设备和操作系统中会修复已知的安全漏洞，更新这些设备和系统可以降低不必要的攻击和风险。</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-11</title>
+      <link href="/homework/network/network11/"/>
+      <url>/homework/network/network11/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第11次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>为什么要发明一个新的抽象ID(端口号),而不用进程ID?</p></blockquote><h5 id="答">答:</h5><ol><li class="lvl-3"><p>传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。</p></li><li class="lvl-3"><p>传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销</p></li><li class="lvl-3"><p>进程可能使用多个端口</p></li></ol><h2 id="第二题">第二题</h2><blockquote><p>数据报的分段和重组机制由IP层来处理，对于TCP不可见。试问,这是否意味着TCP不用担心数据错序到达的问题</p></blockquote><p>答:不是</p><ol><li class="lvl-3"><p>数据报的分段和重组机制由IP层来处理，ip层只是保证了数据报的完整性，</p></li><li class="lvl-3"><p>TCP协议会通过TCP头的序号接收端进行有序地重组</p></li><li class="lvl-3"><p>TCP协议还会使用校验和机制来检测丢弃、重传不正确的数据报，</p></li></ol><h2 id="第三题">第三题</h2><blockquote><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/homework/network/network11.assets/image-20230512115040962.png" alt="image-20230512115040962"></p></blockquote><ol><li class="lvl-3"><p>ABCDE同时增加，4，5线路到达瓶颈，BCDE停止增长</p></li><li class="lvl-3"><p>A继续增长直到1，2到达瓶颈</p></li><li class="lvl-3"><p>变化：原有ABCD流大小不变，新增一条E（R1-&gt;R2-&gt;R6）流量大小为1/3</p></li></ol><h2 id="第四题">第四题</h2><blockquote></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
             
             <tag> network </tag>
             
@@ -501,6 +501,33 @@
     
     
     <entry>
+      <title>DLC</title>
+      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>four-adder</title>
       <link href="/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -522,33 +549,6 @@
             <tag> homework </tag>
             
             <tag> DLCE </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC</title>
-      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -942,40 +942,11 @@
     
     
     <entry>
-      <title>network-homework-5</title>
-      <link href="/homework/network/network5/"/>
-      <url>/homework/network/network5/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello world</title>
       <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
       
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>che</td><td></td><td>το τηλέφωνο</td><td>电话</td></tr><tr><td>αναπτήρας</td><td>打火机</td><td>το πορτοφόλι</td><td>钱包</td></tr><tr><td>μηχανή</td><td>机器</td><td>η εφημερίδα</td><td>报纸</td></tr><tr><td>το βιβλίο</td><td>书</td><td>το σπίτι</td><td>房子</td></tr><tr><td>υπολογιστής</td><td>计算机</td><td>το αυτοκίνητο</td><td>汽车</td></tr><tr><td>ομπρέλα</td><td>雨伞</td><td>το μοτοποδήλατο</td><td>摩托车</td></tr><tr><td>ρολόι</td><td>手表</td><td></td><td></td></tr><tr><td>φάκελος</td><td>文件夹</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p><h3 id="生词表-2">生词表</h3><table><thead><tr><th>Ελληνικά</th><th>Κινέζικα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>Δυστυχώς</td><td>不幸的是</td><td></td><td></td></tr><tr><td>αγαπάει</td><td>爱</td><td></td><td></td></tr><tr><td>Έτσι είναι η ζωή.</td><td>这就是生活</td><td></td><td></td></tr><tr><td>όμως</td><td>however</td><td></td><td></td></tr><tr><td>θέλω</td><td>想</td><td></td><td></td></tr><tr><td>ξέρω</td><td>知道</td><td></td><td></td></tr><tr><td>ερωτευμένος</td><td>迷恋</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h1>第13周（1）</h1><ul class="lvl-0"><li class="lvl-2"><p>how old are you</p><blockquote><p>Πόσων Χρονών είσαι;-είναι;είστε…</p></blockquote></li><li class="lvl-2"><p>I am …</p><blockquote><p>ο έτος 年</p><p>1,-Είμαι ενός  <mark>έτονς</mark>单数属格</p><p>2-100-Είμαι δύο/τριών <mark>χρωνών/ετών</mark>复数属格 注意3，4等的变化</p><p>ο μήνας—月</p><p>1,-Είναι ενός  <mark>μήνα</mark>单数属格</p><p>2-12’Είναι-δύο/τριών <mark>μηνών</mark>复数属格 注意3，4等的变化</p></blockquote></li><li class="lvl-2"><p>Για την Τάνια μιλάς;</p><p>你说的是 Τάνια 吗？</p></li></ul><table><thead><tr><th>μολύβι</th><th>铅笔</th><th></th><th></th></tr></thead><tbody><tr><td>καρέκλα</td><td>椅子</td><td></td><td></td></tr><tr><td>to άγαλμα</td><td>雕像</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μ’ αρέσει   后加主格</p></li><li class="lvl-2"><p>Δεν μ’ αρέσει ο μικρός</p></li></ul><h3 id="口语考试">口语考试</h3><ul class="lvl-0"><li class="lvl-2"><p>Πώς σε λένε;——你叫什么？</p></li><li class="lvl-2"><p>Από πού είσαι;——你来自哪里？</p></li><li class="lvl-2"><p>Πού μένεις;——你住哪？</p></li><li class="lvl-2"><p>Ποιο είναι το κινητό σου;——你的手机号码是？</p></li><li class="lvl-2"><p>Τι δουλειά κάνεις;——你的工作是？</p></li><li class="lvl-2"><p>Πόσω χρονών είσαι;——你多大了</p></li><li class="lvl-2"><p>Είσαι παντρεμένος ή ελεύθερος:——你结婚了还是单身</p></li><li class="lvl-2"><p>Έχεις παιδιά;——你有孩子吗？</p></li><li class="lvl-2"><p>Πόσω χρονών είναι;——他多大了？</p></li><li class="lvl-2"><p>Μιλάς ελληνικά; Άλλη γλώσσα;——你说希腊语吗？其他语言呢？</p></li><li class="lvl-2"><p>Σ’ αρέσει η Ελλάδα;  ——你喜欢希腊吗?</p></li></ul><ol><li class="lvl-3"><p>问答</p></li><li class="lvl-3"><p>朗读新文章</p></li><li class="lvl-3"><p>给一个主题，持续说2分钟</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>che</td><td></td><td>το τηλέφωνο</td><td>电话</td></tr><tr><td>αναπτήρας</td><td>打火机</td><td>το πορτοφόλι</td><td>钱包</td></tr><tr><td>μηχανή</td><td>机器</td><td>η εφημερίδα</td><td>报纸</td></tr><tr><td>το βιβλίο</td><td>书</td><td>το σπίτι</td><td>房子</td></tr><tr><td>υπολογιστής</td><td>计算机</td><td>το αυτοκίνητο</td><td>汽车</td></tr><tr><td>ομπρέλα</td><td>雨伞</td><td>το μοτοποδήλατο</td><td>摩托车</td></tr><tr><td>ρολόι</td><td>手表</td><td></td><td></td></tr><tr><td>φάκελος</td><td>文件夹</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p><h3 id="生词表-2">生词表</h3><table><thead><tr><th>Ελληνικά</th><th>Κινέζικα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>Δυστυχώς</td><td>不幸的是</td><td></td><td></td></tr><tr><td>αγαπάει</td><td>爱</td><td></td><td></td></tr><tr><td>Έτσι είναι η ζωή.</td><td>这就是生活</td><td></td><td></td></tr><tr><td>όμως</td><td>however</td><td></td><td></td></tr><tr><td>θέλω</td><td>想</td><td></td><td></td></tr><tr><td>ξέρω</td><td>知道</td><td></td><td></td></tr><tr><td>ερωτευμένος</td><td>迷恋</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h1>第13周（1）</h1><ul class="lvl-0"><li class="lvl-2"><p>how old are you</p><blockquote><p>Πόσων Χρονών είσαι;-είναι;είστε…</p></blockquote></li><li class="lvl-2"><p>I am …</p><blockquote><p>ο έτος 年</p><p>1,-Είμαι ενός  <mark>έτονς</mark>单数属格</p><p>2-100-Είμαι δύο/τριών <mark>χρωνών/ετών</mark>复数属格 注意3，4等的变化</p><p>ο μήνας—月</p><p>1,-Είναι ενός  <mark>μήνα</mark>单数属格</p><p>2-12’Είναι-δύο/τριών <mark>μηνών</mark>复数属格 注意3，4等的变化</p></blockquote></li><li class="lvl-2"><p>Για την Τάνια μιλάς;</p><p>你说的是 Τάνια 吗？</p></li></ul><table><thead><tr><th>μολύβι</th><th>铅笔</th><th></th><th></th></tr></thead><tbody><tr><td>καρέκλα</td><td>椅子</td><td></td><td></td></tr><tr><td>to άγαλμα</td><td>雕像</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μ’ αρέσει   后加主格</p></li><li class="lvl-2"><p>Δεν μ’ αρέσει ο μικρός</p></li></ul><h3 id="口语考试">口语考试</h3><ul class="lvl-0"><li class="lvl-2"><p>Πώς σε λένε;——你叫什么？</p></li><li class="lvl-2"><p>Από πού είσαι;——你来自哪里？</p></li><li class="lvl-2"><p>Πού μένεις;——你住哪？</p></li><li class="lvl-2"><p>Ποιο είναι το κινητό σου;——你的手机号码是？</p></li><li class="lvl-2"><p>Τι δουλειά κάνεις;——你的工作是？</p></li><li class="lvl-2"><p>Πόσω χρονών είσαι;——你多大了</p></li><li class="lvl-2"><p>Είσαι παντρεμένος ή ελεύθερος:——你结婚了还是单身</p></li><li class="lvl-2"><p>Έχεις παιδιά;——你有孩子吗？</p></li><li class="lvl-2"><p>Πόσω χρονών είναι;——他多大了？</p></li><li class="lvl-2"><p>Μιλάς ελληνικά; Άλλη γλώσσα;——你说希腊语吗？其他语言呢？</p></li><li class="lvl-2"><p>Σ’ αρέσει η Ελλάδα;  ——你喜欢希腊吗?</p></li></ul><ol><li class="lvl-3"><p>问答</p></li><li class="lvl-3"><p>朗读新文章</p></li><li class="lvl-3"><p>给一个主题，持续说2分钟</p></li></ol><h2 id="第13周（1）">第13周（1）</h2><ul class="lvl-0"><li class="lvl-2"><p>Πάω (στο) σπίτι 只有很少的搭配中στο可以省去</p></li><li class="lvl-2"><p>Πάω σε + place : go somewhere</p></li><li class="lvl-2"><p>Τα λέμε : see you</p></li></ul><h3 id="被动性动词：">被动性动词：</h3><p>形式上是被动，但不一定表示被动涵义</p><ol><li class="lvl-3"><p>表被动</p></li><li class="lvl-3"><p>发出的动作作用于自己</p></li><li class="lvl-3"><p>互相</p></li><li class="lvl-3"><p>没有主动形式</p></li></ol><h2 id="what-time-is">what time is ?</h2><ul class="lvl-0"><li class="lvl-2"><p>Τι ώρα είναι / έχετε/έχεις</p></li><li class="lvl-2"><p>Είναι η ώρα μία/δύο/τρεις κτλ. ή Είναι μία/δύο/τρεις κτλ. η ώρα</p></li><li class="lvl-2"></li><li class="lvl-2"><table><thead><tr><th></th><th>我</th><th>你</th><th>他/她/它</th><th>我们</th><th>你们</th><th>他们/她们/它们</th></tr></thead><tbody><tr><td>πάω</td><td>πάω</td><td>πας</td><td>πάει</td><td>πάμε</td><td>πάτε</td><td>πάνε</td></tr><tr><td>λέω</td><td>λέω</td><td>λες</td><td>λέει</td><td>λέμε</td><td>λέτε</td><td>λένε</td></tr><tr><td>τρώω</td><td>τρώω</td><td>τρως</td><td>τρώει</td><td>τρώμε</td><td>τρώτε</td><td>τρώνε</td></tr><tr><td>ακούω</td><td>ακούω</td><td>ακούς</td><td>ακούει</td><td>ακούμε</td><td>ακούτε</td><td>ακούνε</td></tr><tr><td>έρχομαι</td><td>έρχομαι</td><td>έρχεσαι</td><td>έρχεται</td><td>έρχόμαστε</td><td>έρχεστε</td><td>έρχονται</td></tr><tr><td>γίνομαι</td><td>γίνομαι</td><td>γίνεσαι</td><td>γίνεται</td><td>γινόμαστε</td><td>γίνεστε</td><td>γίνονται</td></tr><tr><td>σκέφτομαι</td><td>σκέφτομαι</td><td>σκέφτεσαι</td><td>σκέφτεται</td><td>σκεφτόμαστε</td><td>σκέφτεστε</td><td>σκέφτονται</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></li></ul>]]></content>
       
       
       <categories>
@@ -1019,6 +990,35 @@
         <tags>
             
             <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-5</title>
+      <link href="/homework/network/network5/"/>
+      <url>/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
