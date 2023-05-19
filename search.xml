@@ -33,7 +33,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-aRbtzoDW" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-aRbtzoDW"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-oCAUvcvn" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-oCAUvcvn"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script>]]></content>
       
       
       <categories>
@@ -231,11 +231,11 @@
     
     
     <entry>
-      <title>network-homework-10</title>
-      <link href="/homework/network/network10/"/>
-      <url>/homework/network/network10/</url>
+      <title>network-homework-11</title>
+      <link href="/homework/network/network11/"/>
+      <url>/homework/network/network11/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第10次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p></blockquote><p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p><h2 id="第二题">第二题</h2><blockquote><p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p></blockquote><p>答:不一定能保证.</p><p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p><p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p><ul class="lvl-0"><li class="lvl-2"><p>区分服务模型为加速转发服务预留的带宽较小.</p></li><li class="lvl-2"><p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p></li><li class="lvl-2"><p>常规数据包经过路径较短</p></li><li class="lvl-2"><p>链路质量、网络设备性能等因素的影响</p></li></ul><h2 id="第三题">第三题</h2><blockquote><p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p></blockquote><p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p><p>大概能分配10万亿年</p><h2 id="第四题">第四题</h2><blockquote><p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p></blockquote><p>答:技术上的改变.</p><p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p><p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第11次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>为什么要发明一个新的抽象ID(端口号),而不用进程ID?</p></blockquote><h5 id="答">答:</h5><ol><li class="lvl-3"><p>传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。</p></li><li class="lvl-3"><p>传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销</p></li><li class="lvl-3"><p>进程可能使用多个端口</p></li></ol><h2 id="第二题">第二题</h2><blockquote><p>数据报的分段和重组机制由IP层来处理，对于TCP不可见。试问,这是否意味着TCP不用担心数据错序到达的问题</p></blockquote><p>答:不是</p><ol><li class="lvl-3"><p>数据报的分段和重组机制由IP层来处理，ip层只是保证了数据报的完整性，</p></li><li class="lvl-3"><p>TCP协议会通过TCP头的序号接收端进行有序地重组</p></li><li class="lvl-3"><p>TCP协议还会使用校验和机制来检测丢弃、重传不正确的数据报，</p></li></ol><h2 id="第三题">第三题</h2><blockquote><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/homework/network/network11.assets/image-20230512115040962.png" alt="image-20230512115040962"></p></blockquote><ol><li class="lvl-3"><p>ABCDE同时增加，4，5线路到达瓶颈，BCDE停止增长</p></li><li class="lvl-3"><p>A继续增长直到1，2到达瓶颈</p></li><li class="lvl-3"><p>变化：原有ABCD流大小不变，新增一条E（R1-&gt;R2-&gt;R6）流量大小为1/3</p></li></ol><h2 id="第四题">第四题</h2><blockquote></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -260,11 +260,11 @@
     
     
     <entry>
-      <title>network-homework-11</title>
-      <link href="/homework/network/network11/"/>
-      <url>/homework/network/network11/</url>
+      <title>network-homework-10</title>
+      <link href="/homework/network/network10/"/>
+      <url>/homework/network/network10/</url>
       
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第11次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>为什么要发明一个新的抽象ID(端口号),而不用进程ID?</p></blockquote><h5 id="答">答:</h5><ol><li class="lvl-3"><p>传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。</p></li><li class="lvl-3"><p>传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销</p></li><li class="lvl-3"><p>进程可能使用多个端口</p></li></ol><h2 id="第二题">第二题</h2><blockquote><p>数据报的分段和重组机制由IP层来处理，对于TCP不可见。试问,这是否意味着TCP不用担心数据错序到达的问题</p></blockquote><p>答:不是</p><ol><li class="lvl-3"><p>数据报的分段和重组机制由IP层来处理，ip层只是保证了数据报的完整性，</p></li><li class="lvl-3"><p>TCP协议会通过TCP头的序号接收端进行有序地重组</p></li><li class="lvl-3"><p>TCP协议还会使用校验和机制来检测丢弃、重传不正确的数据报，</p></li></ol><h2 id="第三题">第三题</h2><blockquote><p><img src="D:/py_works/new_blog/ggx21.github.com/docs/source/_posts/homework/network/network11.assets/image-20230512115040962.png" alt="image-20230512115040962"></p></blockquote><ol><li class="lvl-3"><p>ABCDE同时增加，4，5线路到达瓶颈，BCDE停止增长</p></li><li class="lvl-3"><p>A继续增长直到1，2到达瓶颈</p></li><li class="lvl-3"><p>变化：原有ABCD流大小不变，新增一条E（R1-&gt;R2-&gt;R6）流量大小为1/3</p></li></ol><h2 id="第四题">第四题</h2><blockquote></blockquote><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>网原第10次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p></blockquote><p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p><h2 id="第二题">第二题</h2><blockquote><p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p></blockquote><p>答:不一定能保证.</p><p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p><p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p><ul class="lvl-0"><li class="lvl-2"><p>区分服务模型为加速转发服务预留的带宽较小.</p></li><li class="lvl-2"><p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p></li><li class="lvl-2"><p>常规数据包经过路径较短</p></li><li class="lvl-2"><p>链路质量、网络设备性能等因素的影响</p></li></ul><h2 id="第三题">第三题</h2><blockquote><p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p></blockquote><p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p><p>大概能分配10万亿年</p><h2 id="第四题">第四题</h2><blockquote><p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p></blockquote><p>答:技术上的改变.</p><p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p><p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>]]></content>
       
       
       <categories>
@@ -773,33 +773,6 @@
     
     
     <entry>
-      <title>hello YUX</title>
-      <link href="/articles/hello-YUX/"/>
-      <url>/articles/hello-YUX/</url>
-      
-        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> articles </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> THU </tag>
-            
-            <tag> THU-daily </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello 沸羊羊</title>
       <link href="/articles/feiyangyang/"/>
       <url>/articles/feiyangyang/</url>
@@ -821,6 +794,33 @@
             <tag> 美羊羊 </tag>
             
             <tag> gpt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello YUX</title>
+      <link href="/articles/hello-YUX/"/>
+      <url>/articles/hello-YUX/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> articles </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU </tag>
+            
+            <tag> THU-daily </tag>
             
         </tags>
       
