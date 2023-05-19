@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="网原第九次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS 第一题 一个路由器刚接收到如下新的 IP 地址： 57.6.96.0&#x2F;21, 57.6.104.0&#x2F;21, 57.6.112.0&#x2F;21 和 57.6.120.0&#x2F;21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚">
+<meta property="og:type" content="article">
+<meta property="og:title" content="network-homework-9">
+<meta property="og:url" content="https://ggx21.github.io/homework/network/network9/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="网原第九次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS 第一题 一个路由器刚接收到如下新的 IP 地址： 57.6.96.0&#x2F;21, 57.6.104.0&#x2F;21, 57.6.112.0&#x2F;21 和 57.6.120.0&#x2F;21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-29T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-04-30T15:24:33.173Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="homework">
+<meta property="article:tag" content="network">
+<meta name="twitter:card" content="summary">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>network-homework-9</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/homework/graphics/PA2REPORT/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/articles/funny-things/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第九次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        network-homework-9
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-04-29T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-04-29</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/network/">network</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/network/" rel="tag">network</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>网原第九次作业</h1>
+<p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
+<p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p>
+<h2 id="第一题">第一题</h2>
+<p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>
+57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p>
+<table>
+<thead>
+<tr>
+<th>00111001</th>
+<th>00000110</th>
+<th>01100000</th>
+<th>00000000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>00111001</td>
+<td>00000110</td>
+<td>01101000</td>
+<td>00000000</td>
+</tr>
+<tr>
+<td>00111001</td>
+<td>00000110</td>
+<td>01110000</td>
+<td>00000000</td>
+</tr>
+<tr>
+<td>00111001</td>
+<td>00000110</td>
+<td>01111000</td>
+<td>00000000</td>
+</tr>
+</tbody>
+</table>
+<p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p>
+<h2 id="第二题">第二题</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>更新后的路由表</p>
+<table>
+<thead>
+<tr>
+<th>目的网络</th>
+<th>距离</th>
+<th>下一跳</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N1</td>
+<td>7</td>
+<td>A</td>
+</tr>
+<tr>
+<td>N3</td>
+<td>3</td>
+<td>C</td>
+</tr>
+<tr>
+<td>N4</td>
+<td>9</td>
+<td>C</td>
+</tr>
+<tr>
+<td>N6</td>
+<td>8</td>
+<td>F</td>
+</tr>
+<tr>
+<td>N7</td>
+<td>5</td>
+<td>C</td>
+</tr>
+<tr>
+<td>N8</td>
+<td>3</td>
+<td>C</td>
+</tr>
+<tr>
+<td>N9</td>
+<td>4</td>
+<td>D</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li class="lvl-5">
+<p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p>
+</li>
+<li class="lvl-5">
+<p>路由器 B 在更新它的路由表前，需要计算距离向量。</p>
+</li>
+<li class="lvl-5">
+<p>$$<br>
+\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>
+$$</p>
+</li>
+</ol>
+</li>
+<li class="lvl-2">
+<p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p>
+</li>
+</ul>
+<h2 id="第三题">第三题</h2>
+<table>
+<thead>
+<tr>
+<th>目的网络</th>
+<th>下一跳</th>
+<th>接口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AS1</td>
+<td>153.14.3.2</td>
+<td>S0</td>
+</tr>
+<tr>
+<td>194.17.5.128/25</td>
+<td></td>
+<td>E0</td>
+</tr>
+<tr>
+<td>194.17.20.0/23</td>
+<td>194.17.24.2</td>
+<td>S1</td>
+</tr>
+</tbody>
+</table>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>根据最长前缀匹配原则，通过E0接口</p>
+</li>
+<li class="lvl-2">
+<p>BGP（eBGP），TCP协议，</p>
+</li>
+</ul>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第九次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/homework/network/network9/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/homework/network/network9/&text=network-homework-9"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/homework/network/network9/&title=network-homework-9"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/homework/network/network9/&is_video=false&description=network-homework-9"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=network-homework-9&body=Check out this article: https://ggx21.github.io/homework/network/network9/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/homework/network/network9/&title=network-homework-9"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/homework/network/network9/&title=network-homework-9"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/homework/network/network9/&title=network-homework-9"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/homework/network/network9/&title=network-homework-9"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/homework/network/network9/&name=network-homework-9&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/homework/network/network9/&t=network-homework-9"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+
+
+</body>
+</html>

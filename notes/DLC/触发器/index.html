@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="触发器 基本R-S触发器 电位触发方式的触发器 边沿触发方式的触发器   正边沿触发方式？  分析电路？我还不会。什么阻塞不阻塞的    负边沿触发方式？jk触发  可以等同于jk触发方式吗?讨厌jk,完全不会    主－从触发方式的触发器 由两级电位触发器（主触发器和从触发器）串连而成   CP&#x3D;1期间，主触发器接收数据，从触发器封锁   在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DLC">
+<meta property="og:url" content="https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="触发器 基本R-S触发器 电位触发方式的触发器 边沿触发方式的触发器   正边沿触发方式？  分析电路？我还不会。什么阻塞不阻塞的    负边沿触发方式？jk触发  可以等同于jk触发方式吗?讨厌jk,完全不会    主－从触发方式的触发器 由两级电位触发器（主触发器和从触发器）串连而成   CP&#x3D;1期间，主触发器接收数据，从触发器封锁   在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-02T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-05-03T06:21:33.066Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="DLC">
+<meta name="twitter:card" content="summary">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>DLC</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/Somniloquy/dream-3/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%ACR-S%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">基本R-S触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E4%BD%8D%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">电位触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">边沿触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%EF%BC%8D%E4%BB%8E%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">主－从触发方式的触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8ER-S%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E8%A1%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">主从R-S触发器的功能表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">同步时序逻辑电路的分析</span></a></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        DLC
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-05-02T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-02</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/DLC/">DLC</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/DLC/" rel="tag">DLC</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="触发器">触发器</h2>
+<h3 id="基本R-S触发器">基本R-S触发器</h3>
+<h3 id="电位触发方式的触发器">电位触发方式的触发器</h3>
+<h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>正边沿触发方式？</p>
+<blockquote>
+<p>分析电路？我还不会。什么阻塞不阻塞的</p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>负边沿触发方式？jk触发</p>
+<blockquote>
+<p>可以等同于jk触发方式吗?讨厌jk,完全不会</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3>
+<p>由两级电位触发器（主触发器和从触发器）串连而成</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>CP=1期间，主触发器接收数据，从触发器封锁</p>
+</li>
+<li class="lvl-2">
+<p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p>
+</li>
+</ul>
+<h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4>
+<p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p>
+<h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2>
+<ol>
+<li class="lvl-3">
+<p>列出状态关系</p>
+<p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p>
+<blockquote>
+<ul class="lvl-3">
+<li class="lvl-2">
+<p>对于D触发器来说$Q_i’=D_i$</p>
+</li>
+<li class="lvl-2">
+<p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p>
+<blockquote>
+<p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>至于D\J\K等于什么就再说了</p>
+<blockquote>
+<p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p>
+</blockquote>
+</li>
+</ul>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p>列出状态表</p>
+<p>根据上面内容可以列出状态表</p>
+</li>
+<li class="lvl-3">
+<p>画出状态图</p>
+<ul class="lvl-2">
+<li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li>
+<li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>画出时序图</p>
+<ul class="lvl-2">
+<li class="lvl-5">每一帧CP都是高低</li>
+<li class="lvl-5">每一帧输入最多变一次</li>
+<li class="lvl-5">根据状态图画时序图</li>
+</ul>
+<blockquote>
+<p>这又不考虑延迟.都是理想状态,大概还挺简单的</p>
+</blockquote>
+</li>
+</ol>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.</span> <span class="toc-text">触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%ACR-S%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">基本R-S触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E4%BD%8D%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.2.</span> <span class="toc-text">电位触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E6%B2%BF%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.3.</span> <span class="toc-text">边沿触发方式的触发器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%EF%BC%8D%E4%BB%8E%E8%A7%A6%E5%8F%91%E6%96%B9%E5%BC%8F%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="toc-number">1.4.</span> <span class="toc-text">主－从触发方式的触发器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E4%BB%8ER-S%E8%A7%A6%E5%8F%91%E5%99%A8%E7%9A%84%E5%8A%9F%E8%83%BD%E8%A1%A8"><span class="toc-number">1.4.1.</span> <span class="toc-text">主从R-S触发器的功能表</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-number">2.</span> <span class="toc-text">同步时序逻辑电路的分析</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&text=DLC"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&is_video=false&description=DLC"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=DLC&body=Check out this article: https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&title=DLC"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&name=DLC&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggx21.github.io/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/&t=DLC"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+<link rel="stylesheet"href="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer@1.10/dist/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@1.2/dist/Meting.min.js"></script>
+
+
+
+</body>
+</html>
