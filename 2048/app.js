@@ -1,4 +1,4 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>// 该函数用来绘制方块
+// 该函数用来绘制方块
 function drawTile(x, y, value) {
   // 在游戏画布上绘制方块
   var tile = document.createElement("div");
