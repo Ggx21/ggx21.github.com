@@ -17,7 +17,7 @@
 <meta property="og:description" content="终端设置代理 要永久设置HTTP代理和HTTPS代理，可以将这些命令添加到PowerShell的配置文件中。 以下是在PowerShell中设置永久HTTP代理和HTTPS代理的步骤：   打开PowerShell命令提示符，输入以下命令：notepad $PROFILE   在打开的文件中，添加以下两行命令：   12$Env:http_proxy&#x3D;&quot;http:&#x2F;&#x2F;127.0.0.1:">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-27T14:25:01.000Z">
-<meta property="article:modified_time" content="2023-04-30T07:14:12.336Z">
+<meta property="article:modified_time" content="2023-05-22T05:50:00.613Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="生活、代码、思考、技术、创新、灵感、分享、教程、个人成长、文化、娱乐、社交">
 <meta name="twitter:card" content="summary">
@@ -173,7 +173,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">终端设置代理</span></a></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">终端设置代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%85%B3%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">网关代理模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">2.0.1.</span> <span class="toc-text">举个简单的例子</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -244,6 +244,79 @@
 </ol>
 <p>现在，每次打开新的PowerShell窗口时，都会自动加载此配置文件，并在环境变量中设置HTTP代理和HTTPS代理。</p>
 <p>请注意，如果您使用的是PowerShell Core，配置文件的位置可能不同，并且可能需要使用其他命令来编辑它。</p>
+<h2 id="网关代理模式">网关代理模式</h2>
+<p>当涉及到网络通信和数据交换时，网关代理模式（Gateway Proxy Mode）是一种常见的架构模式。在这种模式下，网关作为客户端和服务器之间的中间代理，处理客户端的请求并转发给服务器，同时接收服务器的响应并返回给客户端。这种模式在网络安全、负载均衡和数据转换等方面具有重要作用。</p>
+<div class="tips">
+<p>在计算机网络中，网关（Gateway）是连接不同网络之间的节点或设备。它充当了网络之间的中继站点，用于转发数据包和信息。网关可以是硬件设备（如路由器）或软件实体（如计算机上的网络接口）。</p>
+</div>
+<p>以下是网关代理模式的一般工作流程：</p>
+<ol>
+<li class="lvl-3">
+<p>客户端发送请求：客户端向网关发送请求，将其视为目标服务器。</p>
+</li>
+<li class="lvl-3">
+<p>网关接收请求：网关接收到客户端的请求，并代表客户端向服务器发送请求。</p>
+</li>
+<li class="lvl-3">
+<p>请求转发：网关将请求转发给目标服务器，可以根据特定的规则或策略来选择目标服务器。这个过程通常涉及路由选择和数据包转发。</p>
+</li>
+<li class="lvl-3">
+<p>目标服务器处理请求：目标服务器接收到网关发送的请求，并处理请求。</p>
+</li>
+<li class="lvl-3">
+<p>响应返回：目标服务器生成响应，并将其发送回网关。</p>
+</li>
+<li class="lvl-3">
+<p>网关接收响应：网关接收到来自目标服务器的响应。</p>
+</li>
+<li class="lvl-3">
+<p>响应传递给客户端：网关将响应传递给客户端，客户端认为响应是直接来自服务器的。</p>
+</li>
+</ol>
+<pre class="mermaid">graph TD
+    A[互联网] --> B[路由器]
+    B --> C[手机]
+    B --> D[电脑]
+    B --> E[VR头显]
+    B --> F[NS]
+    B --> G[iPad]</pre>
+<h4 id="举个简单的例子">举个简单的例子</h4>
+<p>上图中，电脑访问互联网的路径是电脑–&gt;路由器–&gt;互联网</p>
+<pre class="mermaid">graph TD
+    A[互联网] --> B[路由器]
+    B --> C[手机]
+    B --> D[电脑]
+    B --> E[VR头显]
+    B --> F[NS]
+    B --> G[iPad]
+    D -.-> |req|B
+    B -.->|req|A</pre>
+<p>而当手机开启代理,可以将这个路径改变为电脑–&gt;手机–&gt;路由器–&gt;互联网.</p>
+<pre class="mermaid">graph TD
+    A[互联网] --> B[路由器]
+    B --> C[手机]
+    
+    subgraph 局域网设备
+    D -.-> C
+    E -.-> C
+    F -.-> C
+    G -.-> C
+    end
+    C -.-> B
+    B -.-> A
+    D[电脑]
+    E[VR头显]
+    F[NS]
+    G[iPad]</pre>
+<p>这样把开启了代理的手机作为电脑的网关,也代理了电脑的请求.</p>
+<blockquote>
+<p>为什么这样设置后ping 不到Google?</p>
+</blockquote>
+<p>当你使用类似 Clash 的代理工具时，它通常是在<strong>应用层</strong>工作，并且只有经过代理工具指定的端口或代理规则的流量才会被代理。像 ping 等工具运行的网络流量通常是在操作系统的<strong>网络层</strong>处理，而不会经过应用层代理。</p>
+<p>这些代理工具一般通过<strong>配置代理规则或端口</strong>来确定哪些流量需要经过代理。当你在代理工具中配置了代理规则或指定了特定的代理端口，只有匹配这些规则或端口的流量才会被发送到代理工具，并由代理工具进行转发。</p>
+<p>其他未匹配代理规则或端口的流量将绕过代理工具，直接通过正常的网络路径发送。这意味着只有符合代理规则的流量才会被真正代理。</p>
+<p>这种应用层代理的方式通常用于代理特定的应用程序流量，而不是整个系统的网络流量。通过配置代理规则或端口，你可以选择性地将特定应用程序的流量经过代理，以实现隐私保护、访问控制或其他需求。</p>
+<p>总而言之,能用就行…</p>
 
   </div>
 </article>
@@ -291,7 +364,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">终端设置代理</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">终端设置代理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E5%85%B3%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">网关代理模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BE%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">2.0.1.</span> <span class="toc-text">举个简单的例子</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
