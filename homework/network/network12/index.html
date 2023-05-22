@@ -9,17 +9,18 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="t 同步时序电路的分析与设计方法   作原始状态表👈  就是一大状态机？    化简原始状态表  就是自动机化简?    求出激励函数  根据化简后的状态机给出$input,Q_i与Q_i’$的关系 从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$) 给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难 卡诺图,给出$D_i与input,Q_i$之间的关系    画">
+  <meta name="description" content="网原第12次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点">
 <meta property="og:type" content="article">
-<meta property="og:title" content="DLC12">
-<meta property="og:url" content="https://ggxloveslife.top/notes/DLC/week12/index.html">
+<meta property="og:title" content="network-homework-12">
+<meta property="og:url" content="https://ggxloveslife.top/homework/network/network12/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="t 同步时序电路的分析与设计方法   作原始状态表👈  就是一大状态机？    化简原始状态表  就是自动机化简?    求出激励函数  根据化简后的状态机给出$input,Q_i与Q_i’$的关系 从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$) 给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难 卡诺图,给出$D_i与input,Q_i$之间的关系    画">
+<meta property="og:description" content="网原第12次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-08T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-05-08T04:29:44.152Z">
+<meta property="article:modified_time" content="2023-05-22T14:46:53.817Z">
 <meta property="article:author" content="Andy Gao">
-<meta property="article:tag" content="DLC">
+<meta property="article:tag" content="homework">
+<meta property="article:tag" content="network">
 <meta name="twitter:card" content="summary">
      
   <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -38,7 +39,7 @@
   />
     
   <!-- title -->
-  <title>DLC12</title>
+  <title>network-homework-12</title>
   <!-- async scripts -->
   <!-- Google Analytics -->
 
@@ -124,7 +125,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/homework/network/network12/"
+            href="/homework/network/network11/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -140,7 +141,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/notes/network/week11/"
+            href="/notes/DLC/week12/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -173,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">t</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">同步时序电路的分析与设计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%AE%A1%E6%95%B0%E5%99%A8%E6%97%B6%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.0.1.</span> <span class="toc-text">设计计数器时应该注意的问题</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第12次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -188,7 +189,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        DLC12
+        network-homework-12
     </h1>
 
 
@@ -215,13 +216,13 @@
  
     <div class="article-category">
         <i class="fa-solid fa-archive"></i>
-        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/DLC/">DLC</a>
+        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/network/">network</a>
     </div>
 
  
     <div class="article-tag">
         <i class="fa-solid fa-tag"></i>
-        <a class="p-category" href="/tags/DLC/" rel="tag">DLC</a>
+        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/network/" rel="tag">network</a>
     </div>
 
 
@@ -230,43 +231,12 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>t</h1>
-<h1>同步时序电路的分析与设计方法</h1>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>作原始状态表👈</p>
+    <h1>网原第12次作业</h1>
+<p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
+<h2 id="第一题">第一题</h2>
 <blockquote>
-<p>就是一大状态机？</p>
+<p>Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点</p>
 </blockquote>
-</li>
-<li class="lvl-2">
-<p>化简原始状态表</p>
-<blockquote>
-<p>就是自动机化简?</p>
-</blockquote>
-</li>
-<li class="lvl-2">
-<p>求出激励函数</p>
-<blockquote>
-<p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p>
-<p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p>
-<p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p>
-<p>卡诺图,给出$D_i与input,Q_i$之间的关系</p>
-</blockquote>
-</li>
-<li class="lvl-2">
-<p>画逻辑图</p>
-<blockquote>
-<p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>将技术循环外的状态修改后,自动进入计数循环/</p>
-</li>
-</ul>
 
   </div>
 </article>
@@ -314,22 +284,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">t</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">同步时序电路的分析与设计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%AE%A1%E6%95%B0%E5%99%A8%E6%97%B6%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.0.1.</span> <span class="toc-text">设计计数器时应该注意的问题</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第12次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/DLC/week12/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/DLC/week12/&text=DLC12"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/DLC/week12/&title=DLC12"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/DLC/week12/&is_video=false&description=DLC12"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=DLC12&body=Check out this article: https://ggxloveslife.top/notes/DLC/week12/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/DLC/week12/&title=DLC12"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/DLC/week12/&title=DLC12"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/DLC/week12/&title=DLC12"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/DLC/week12/&title=DLC12"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/DLC/week12/&name=DLC12&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/DLC/week12/&t=DLC12"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/network/network12/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/network/network12/&text=network-homework-12"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/network/network12/&title=network-homework-12"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/network/network12/&is_video=false&description=network-homework-12"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=network-homework-12&body=Check out this article: https://ggxloveslife.top/homework/network/network12/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/network/network12/&title=network-homework-12"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/network/network12/&title=network-homework-12"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/network/network12/&title=network-homework-12"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/network/network12/&title=network-homework-12"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/network/network12/&name=network-homework-12&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/network/network12/&t=network-homework-12"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
