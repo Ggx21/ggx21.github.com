@@ -9,15 +9,15 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="网原第12次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点">
+  <meta name="description" content="网原第12次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点    延迟反应：基于丢包的拥塞控制算法在判断链路拥塞时需要等待丢包事件的发生，然后才能采取相应的措施。这意味着它们的反应时间相对较慢。   误判和误解退：基于丢包的拥塞控制算法可能">
 <meta property="og:type" content="article">
 <meta property="og:title" content="network-homework-12">
 <meta property="og:url" content="https://ggxloveslife.top/homework/network/network12/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="网原第12次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点">
+<meta property="og:description" content="网原第12次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点    延迟反应：基于丢包的拥塞控制算法在判断链路拥塞时需要等待丢包事件的发生，然后才能采取相应的措施。这意味着它们的反应时间相对较慢。   误判和误解退：基于丢包的拥塞控制算法可能">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-08T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-05-22T14:46:53.817Z">
+<meta property="article:published_time" content="2023-05-22T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-05-22T15:31:37.886Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="homework">
 <meta property="article:tag" content="network">
@@ -125,7 +125,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/homework/network/network11/"
+            href="/homework/network/network-E4/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -141,7 +141,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/notes/DLC/week12/"
+            href="/Somniloquy/dream-7/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第12次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第12次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题:</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -208,7 +208,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-05-08T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-08</time>
+        <time datetime="2023-05-22T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-22</time>
         
       
     </div>
@@ -237,6 +237,59 @@
 <blockquote>
 <p>Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点</p>
 </blockquote>
+<ol>
+<li class="lvl-3">
+<p>延迟反应：基于丢包的拥塞控制算法在判断链路拥塞时需要等待丢包事件的发生，然后才能采取相应的措施。这意味着它们的反应时间相对较慢。</p>
+</li>
+<li class="lvl-3">
+<p>误判和误解退：基于丢包的拥塞控制算法可能会误判某些丢包事件。丢包并不总是意味着链路发生了拥塞。例如，丢包可能是由于网络噪声、传输错误或临时网络抖动等原因引起的。</p>
+</li>
+<li class="lvl-3">
+<p>面临丢包恢复问题：基于丢包判断链路拥塞的算法通常采用的策略是减小发送速度以降低拥塞，即减小拥塞窗口（CWND）。然而，一旦发生丢包，发送方会降低发送速率，这可能导致网络带宽未被充分利用。</p>
+</li>
+</ol>
+<blockquote>
+<p>BBR忽略丢包信号，但主动探测什么其他指标来判断链路状态</p>
+</blockquote>
+<p>瓶颈带宽与时延</p>
+<h2 id="第二题">第二题</h2>
+<ol>
+<li class="lvl-3">
+<p>TCP多流复用加剧了队头阻塞,QUIC建立相互独立的多个子流,一个子流数据包丢失不影响其他子流</p>
+</li>
+<li class="lvl-3">
+<p>TCP的重传包使用和原包相同的序号,返回的ACK不能确定是对原包还是重传包,导致RTT计算错误.</p>
+<p>QUIC的packet number单调递增，对于重传包也会递增packet number， 避免RTO</p>
+</li>
+<li class="lvl-3">
+<p>TCP基于ip:端口,QUIC基于connection id,支持ip/端口切换</p>
+</li>
+<li class="lvl-3">
+<p>整个QUIC包被加密传输</p>
+</li>
+</ol>
+<h2 id="第三题">第三题</h2>
+<ol>
+<li class="lvl-3">
+<p>多径带宽聚合  可以利用设备的多个网口实现多路径传输,带来更好的带宽与吞吐量</p>
+</li>
+<li class="lvl-3">
+<p>负载均衡：MPTCP可以将数据流分散到多个路径上，实现负载均衡。它可以动态选择和调整数据传输路径，根据路径的质量和拥塞情况来决定发送数据的路径，从而均衡地利用可用的网络资源。</p>
+</li>
+<li class="lvl-3">
+<p>更加可靠,一条路径故障可以在其他路径上继续传输数据</p>
+</li>
+<li class="lvl-3">
+<p>将属于同一个数据流的数据包调度到不同的路径上传输.,降低数据乱序到达对网络性能产生的不利影响</p>
+</li>
+<li class="lvl-3">
+<p>支持链路的平滑切换,多路径传输方式允许终端在不同接入网络间快速、平滑地切换 选取链路质量最好的路径传输数据</p>
+</li>
+</ol>
+<h2 id="第四题">第四题:</h2>
+<p>小流关心延迟,大流关心带宽.</p>
+<p>根据拥塞程度精细调整发送窗口</p>
+<p>DCTCP: 𝑐𝑤𝑛𝑑 ← 𝑐𝑤𝑛𝑑 × (1 - 𝛼/2),  𝛼: 使用显示拥塞信号得到的“拥塞程度”</p>
 
   </div>
 </article>
@@ -284,7 +337,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第12次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第12次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题:</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
