@@ -9,15 +9,15 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="网原第10次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？  答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。 第二题  设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比">
+  <meta name="description" content="网原第13次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 1. B 2. 如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？   可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。   客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="network-homework-10">
-<meta property="og:url" content="https://ggxloveslife.top/homework/network/network10/index.html">
+<meta property="og:title" content="network-homework-13">
+<meta property="og:url" content="https://ggxloveslife.top/homework/network/network13/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="网原第10次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？  答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。 第二题  设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比">
+<meta property="og:description" content="网原第13次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 1. B 2. 如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？   可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。   客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-05-08T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-05-08T05:05:39.399Z">
+<meta property="article:published_time" content="2023-05-31T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-05-31T16:24:53.822Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="homework">
 <meta property="article:tag" content="network">
@@ -39,7 +39,7 @@
   />
     
   <!-- title -->
-  <title>network-homework-10</title>
+  <title>network-homework-13</title>
   <!-- async scripts -->
   <!-- Google Analytics -->
 
@@ -125,7 +125,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/homework/network/network-E3/"
+            href="/homework/network/network14/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -141,7 +141,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/notes/network/week11/"
+            href="/notes/pytorch/connect-4/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第10次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第13次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-C"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.C</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%EF%BC%9AD"><span class="toc-number">1.0.5.</span> <span class="toc-text">思考题：D</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -189,7 +189,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        network-homework-10
+        network-homework-13
     </h1>
 
 
@@ -208,7 +208,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-05-08T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-08</time>
+        <time datetime="2023-05-31T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-05-31</time>
         
       
     </div>
@@ -231,47 +231,35 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>网原第10次作业</h1>
+    <h1>网原第13次作业</h1>
 <p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
-<h2 id="第一题">第一题</h2>
-<blockquote>
-<p>这是否意味着虚电路网络不需要具备将单个数据包从任意源端路由到任意接收方的能力呢？</p>
-</blockquote>
-<p>答:不是,如果某一源端路由到某一接收方没有建立虚电路.对于这单个数据包仍然要进行虚电路入口到出口的路由选择。</p>
-<h2 id="第二题">第二题</h2>
-<blockquote>
-<p>设网络采用区分服务模型。考虑使用加速转发服务的用户。试问是否可以保证加速型数据包比常规数据包的延迟更短？为什么是，或者为什么不是？</p>
-</blockquote>
-<p>答:不一定能保证.</p>
-<p>区分服务模型可能为加速转发服务预留一些带宽,所以加速型数据包通常延迟较短.</p>
-<p>但实际情况比较复杂,不能保证加速型数据包延迟一定短,比如:</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>区分服务模型为加速转发服务预留的带宽较小.</p>
+<h3 id="1-B">1. B</h3>
+<h3 id="2">2.</h3>
+<p>如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？</p>
+<ol>
+<li class="lvl-3">
+<p>可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。</p>
 </li>
-<li class="lvl-2">
-<p>同时使用加速转发服务的用户非常多,导致网络拥塞.</p>
+<li class="lvl-3">
+<p>客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，使查询更可靠</p>
 </li>
-<li class="lvl-2">
-<p>常规数据包经过路径较短</p>
+</ol>
+<h3 id="3">3.</h3>
+<ol>
+<li class="lvl-3">
+<p>SMTP，http</p>
 </li>
-<li class="lvl-2">
-<p>链路质量、网络设备性能等因素的影响</p>
+<li class="lvl-3">
+<p>SMTP</p>
 </li>
-</ul>
-<h2 id="第三题">第三题</h2>
-<blockquote>
-<p>IPv6 使用 16 个字节的地址。如果每隔 ps 就分配掉一百万个地址，试问整个地址空间可以持续分配多久？</p>
-</blockquote>
-<p>答:16个字节约有$2^{128}\approx 10<sup>{38.4}$个地址,可以分配$10</sup>{32.4}ps \approx 2.5\times 10^ {20}s \approx 10^{13}y$</p>
-<p>大概能分配10万亿年</p>
-<h2 id="第四题">第四题</h2>
-<blockquote>
-<p>IPv6 协议被引入时， ARP 协议需要作相应的改变吗？如果需要，这种改变是概念性的还是技术性的</p>
-</blockquote>
-<p>答:技术上的改变.</p>
-<p>arp协议的作用是将IP翻译成MAC.概念上不发生变化.</p>
-<p>但是IPV6的地址变长了,所以ARP协议需要区分IPv6与IPv4</p>
+<li class="lvl-3">
+<p>POP3，IMAP，webmail，http</p>
+</li>
+</ol>
+<h3 id="4-C">4.C</h3>
+<h3 id="思考题：D">思考题：D</h3>
+<p>最短时间：本地存有域名到ip的记录。只需要TCP建立连接与请求资源两个RTT</p>
+<p>最长时间：加上主机到本地域名服务器，本地域名服务器迭代查找根、顶级、次级的3个rtt</p>
 
   </div>
 </article>
@@ -319,22 +307,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第10次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第13次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-C"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.C</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%EF%BC%9AD"><span class="toc-number">1.0.5.</span> <span class="toc-text">思考题：D</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/network/network10/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/network/network10/&text=network-homework-10"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/network/network10/&title=network-homework-10"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/network/network10/&is_video=false&description=network-homework-10"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=network-homework-10&body=Check out this article: https://ggxloveslife.top/homework/network/network10/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/network/network10/&title=network-homework-10"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/network/network10/&title=network-homework-10"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/network/network10/&title=network-homework-10"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/network/network10/&title=network-homework-10"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/network/network10/&name=network-homework-10&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/network/network10/&t=network-homework-10"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/network/network13/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/network/network13/&text=network-homework-13"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/network/network13/&title=network-homework-13"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/network/network13/&is_video=false&description=network-homework-13"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=network-homework-13&body=Check out this article: https://ggxloveslife.top/homework/network/network13/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/network/network13/&title=network-homework-13"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/network/network13/&title=network-homework-13"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/network/network13/&title=network-homework-13"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/network/network13/&title=network-homework-13"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/network/network13/&name=network-homework-13&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/network/network13/&t=network-homework-13"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>

@@ -4,6 +4,64 @@
   
     
     <entry>
+      <title>network-homework-14</title>
+      <link href="/homework/network/network14/"/>
+      <url>/homework/network/network14/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第14次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1">1</h3><ol><li class="lvl-3"><p>SMTP，http</p></li><li class="lvl-3"><p>SMTP</p></li><li class="lvl-3"><p>POP3，IMAP，webmail，http</p></li></ol><h3 id="2-C">2.C</h3><h3 id="3">3.</h3><p>0.1mb</p><p>15.9mb</p><h3 id="4">4.</h3><ol><li class="lvl-3"><p>用户发送请求： 当用户在浏览器中输入网址或点击链接访问一个网站时，请求将被发送到最接近用户位置的DNS服务器。DNS服务器将返回一个CDN的负载均衡器的IP地址。</p></li><li class="lvl-3"><p>CDN负载均衡器： 用户请求到达CDN的负载均衡器，它的作用是选择最适合响应请求的边缘服务器。负载均衡器会考虑到用户的位置、服务器的负载情况和网络条件等因素，选择一个最佳的边缘服务器。</p></li><li class="lvl-3"><p>边缘服务器： 负载均衡器将用户请求转发到最合适的边缘服务器。边缘服务器位于离用户最近的物理位置或网络接入点，它们存储着网站的静态内容的副本。</p></li><li class="lvl-3"><p>边缘服务器处理请求： 边缘服务器接收到用户请求后，会检查自己是否已经缓存了请求的内容。如果有缓存，边缘服务器直接返回缓存的内容给用户。如果没有缓存，边缘服务器会向源服务器发起请求。</p></li><li class="lvl-3"><p>源服务器响应： 边缘服务器向源服务器发送请求，源服务器是原始网站的主机服务器。源服务器响应请求并返回所需的内容给边缘服务器。</p></li><li class="lvl-3"><p>边缘服务器返回内容： 边缘服务器接收到源服务器的响应后，将内容缓存起来，并将响应内容返回给用户。</p></li><li class="lvl-3"><p>用户获取内容： 用户浏览器接收到来自边缘服务器的响应后，显示网页或加载所请求的内容。用户可以享受较低的延迟和更快的加载速度，因为边缘服务器位于较接近用户的位置。</p></li></ol><h3 id="5">5.</h3><ol><li class="lvl-3"><p>主机A解析URL： 主机A首先解析URL（<a href="ftp://ftp.abc.edu.cn/file%EF%BC%89%E4%BB%A5%E8%8E%B7%E5%8F%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E4%B8%BB%E6%9C%BA%E5%90%8D%EF%BC%88ftp.abc.edu.cn%EF%BC%89%E5%92%8C%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%84%EF%BC%88/file%EF%BC%89">ftp://ftp.abc.edu.cn/file）以获取服务器的主机名（ftp.abc.edu.cn）和文件路径（/file）</a></p></li><li class="lvl-3"><p>通过DNS或检查本地域名与ip关系获得服务器ip</p></li><li class="lvl-3"><p>客户进程与服务器TCP21端口三次握手建立TCP连接,整个会话期间一直保持,用来控制连接</p></li><li class="lvl-3"><p>客户进程发出文件传输请求到服务器TCP21端口</p></li><li class="lvl-3"><p>服务器控制进程创建数据传输进程（TCP20端口）  和客户端数据传输进程建立新的TCP连接</p></li><li class="lvl-3"><p>数据连接用来连接客户进程和服务器数据传输进程， 实际完成文件的传输</p></li><li class="lvl-3"><p>完成下载： 一旦文件传输完成，服务器发送一个成功的响应。主机A收到响应后，关闭数据连接和控制连接，表示下载过程结束。</p></li></ol><h3 id="思考题1">思考题1</h3><p>C,</p><h3 id="1-C">1.C</h3><p>c能够收到A的RTS维护NAV,D不能</p><h3 id="2">2.</h3><ol><li class="lvl-3"><p>00-12-34-56-78-9b</p></li><li class="lvl-3"><p>00-12-34-56-78-9a</p></li><li class="lvl-3"><p>00-12-34-56-78-9c</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-13</title>
+      <link href="/homework/network/network13/"/>
+      <url>/homework/network/network13/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第13次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-B">1. B</h3><h3 id="2">2.</h3><p>如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？</p><ol><li class="lvl-3"><p>可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。</p></li><li class="lvl-3"><p>客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，使查询更可靠</p></li></ol><h3 id="3">3.</h3><ol><li class="lvl-3"><p>SMTP，http</p></li><li class="lvl-3"><p>SMTP</p></li><li class="lvl-3"><p>POP3，IMAP，webmail，http</p></li></ol><h3 id="4-C">4.C</h3><h3 id="思考题：D">思考题：D</h3><p>最短时间：本地存有域名到ip的记录。只需要TCP建立连接与请求资源两个RTT</p><p>最长时间：加上主机到本地域名服务器，本地域名服务器迭代查找根、顶级、次级的3个rtt</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>人智导PA3实验报告</title>
       <link href="/notes/pytorch/connect-4/"/>
       <url>/notes/pytorch/connect-4/</url>
@@ -150,7 +208,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-emYIcDqm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-emYIcDqm"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-hiQzopdD" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-hiQzopdD"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-giqufavL" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-giqufavL"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-PhqiBmtN" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-PhqiBmtN"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
       
       
       <categories>
@@ -335,6 +393,33 @@
     
     
     <entry>
+      <title>DLC12</title>
+      <link href="/notes/DLC/week12/"/>
+      <url>/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network-E3</title>
       <link href="/homework/network/network-E3/"/>
       <url>/homework/network/network-E3/</url>
@@ -385,33 +470,6 @@
             <tag> homework </tag>
             
             <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC12</title>
-      <link href="/notes/DLC/week12/"/>
-      <url>/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -958,11 +1016,11 @@
     
     
     <entry>
-      <title>fool</title>
-      <link href="/others/fool/"/>
-      <url>/others/fool/</url>
+      <title>test-markdown</title>
+      <link href="/others/ful-test/"/>
+      <url>/others/ful-test/</url>
       
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
       
       
       <categories>
@@ -983,11 +1041,11 @@
     
     
     <entry>
-      <title>test-markdown</title>
-      <link href="/others/ful-test/"/>
-      <url>/others/ful-test/</url>
+      <title>fool</title>
+      <link href="/others/fool/"/>
+      <url>/others/fool/</url>
       
-        <content type="html"><![CDATA[<h1>标题示例</h1><h2 id="二级标题">二级标题</h2><h3 id="三级标题">三级标题</h3><h4 id="四级标题">四级标题</h4><h5 id="五级标题">五级标题</h5><h6 id="六级标题">六级标题</h6><h2 id="段落和换行">段落和换行</h2><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>这是一个段落，可以写一些文字。这个段落有两行。</p><p>这是第二个段落。使用两个以上的空格加上一个回车可以进行换行。</p><p>使用 <code>**</code> 包裹的文字会变成 <strong>加粗</strong>。使用 <code>_</code> 包裹的文字会变成 <em>斜体</em>。可以在一段文字中混合使用。</p><p>使用 <code>~</code> 包裹的文字会变成 <s>删除线</s>。</p><p>使用 <code>==</code> 包裹的文字会变成高亮，如： <mark>高亮</mark>。</p><h2 id="列表示例">列表示例</h2><h3 id="无序列表">无序列表</h3><ul class="lvl-0"><li class="lvl-2"><p>项目一</p></li><li class="lvl-2"><p>项目二</p></li><li class="lvl-2"><p>项目三</p></li></ul><h3 id="有序列表">有序列表</h3><ol><li class="lvl-3"><p>第一项</p></li><li class="lvl-3"><p>第二项</p></li><li class="lvl-3"><p>第三项</p></li></ol><h3 id="可以使用嵌套列表：">可以使用嵌套列表：</h3><ol><li class="lvl-3"><p>第一项</p><ul class="lvl-2"><li class="lvl-5">嵌套项目</li><li class="lvl-5">嵌套项目</li></ul></li><li class="lvl-3"><p>第二项</p><ol><li class="lvl-6">嵌套有序项目</li><li class="lvl-6">嵌套有序项目</li></ol></li><li class="lvl-3"><p>第三项</p></li></ol><h2 id="引用示例">引用示例</h2><blockquote><p>这是一个引用。引用可以有多行。</p><blockquote><p>引用可以嵌套。</p></blockquote></blockquote><h2 id="粗体和斜体示例">粗体和斜体示例</h2><p>这里是 <strong>粗体</strong> 和 <em>斜体</em> 的示例。同样可以使用 <strong>粗体</strong> 和 <em>斜体</em>。</p><h2 id="链接和图片示例">链接和图片示例</h2><h3 id="链接">链接</h3><p>这是一个<a href="https://www.example.com/">链接</a>。</p><p>可以给链接加上标题：</p><p>这是一个<a href="https://www.example.com/" title="示例链接">链接</a>。</p><h3 id="图片">图片</h3><p>这是一个图片：</p><p><img src="/img/test.png" alt="图片描述"></p><p>也可以给图片加上标题：</p><p><img src="/img/test_profile.png" alt="图片描述" title="示例图片"></p><h2 id="代码块和公式块示例">代码块和公式块示例</h2><p>这是一个代码块：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">hello</span>():</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><p>也可以使用单行代码块： <code>print(&quot;Hello World!&quot;)</code></p><p>这是一个公式块：<br>$$<br>f(x) = \frac{1}{\sqrt{2\pi}\sigma}e<sup>{-\frac{(x-\mu)</sup>2}{2\sigma^2}}<br>$$</p><h2 id="分隔线示例">分隔线示例</h2><p>这是一条分隔线：</p><hr><h2 id="表格示例">表格示例</h2><table><thead><tr><th>名称</th><th>价格</th></tr></thead><tbody><tr><td>商品 A</td><td>$20</td></tr><tr><td>商品 B</td><td>$30</td></tr><tr><td>商品 C</td><td>$40</td></tr></tbody></table><h2 id="文内链接">文内链接</h2><p>这是一个 <a href="#%E6%A0%87%E9%A2%98%E7%A4%BA%E4%BE%8B">内部链接</a> 到标题示例。</p><h2 id="目录示例">目录示例</h2><p>可以使用 <code>[toc]</code> 来生成目录，需要使用一些 Markdown 工具来渲染生成的目录。</p><p>[toc]</p><h2 id="表情符号示例">表情符号示例</h2><p>可以使用表情符号来增加一些个性化的元素：</p><p>👍 ✨ 🐫 🎉 🚀 🤘 :octocat:</p><h2 id="HTML-语法示例">HTML 语法示例</h2><p>Markdown 还支持 HTML 语法，如下面的加粗文字：</p><p><b>这是一段加粗的文字</b></p>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -1027,35 +1085,6 @@
     
     
     <entry>
-      <title>hello world</title>
-      <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
-      <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
-      
-        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>che</td><td></td><td>το τηλέφωνο</td><td>电话</td></tr><tr><td>αναπτήρας</td><td>打火机</td><td>το πορτοφόλι</td><td>钱包</td></tr><tr><td>μηχανή</td><td>机器</td><td>η εφημερίδα</td><td>报纸</td></tr><tr><td>το βιβλίο</td><td>书</td><td>το σπίτι</td><td>房子</td></tr><tr><td>υπολογιστής</td><td>计算机</td><td>το αυτοκίνητο</td><td>汽车</td></tr><tr><td>ομπρέλα</td><td>雨伞</td><td>το μοτοποδήλατο</td><td>摩托车</td></tr><tr><td>ρολόι</td><td>手表</td><td></td><td></td></tr><tr><td>φάκελος</td><td>文件夹</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p><h3 id="生词表-2">生词表</h3><table><thead><tr><th>Ελληνικά</th><th>Κινέζικα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>Δυστυχώς</td><td>不幸的是</td><td></td><td></td></tr><tr><td>αγαπάει</td><td>爱</td><td></td><td></td></tr><tr><td>Έτσι είναι η ζωή.</td><td>这就是生活</td><td></td><td></td></tr><tr><td>όμως</td><td>however</td><td></td><td></td></tr><tr><td>θέλω</td><td>想</td><td></td><td></td></tr><tr><td>ξέρω</td><td>知道</td><td></td><td></td></tr><tr><td>ερωτευμένος</td><td>迷恋</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h1>第13周（1）</h1><ul class="lvl-0"><li class="lvl-2"><p>how old are you</p><blockquote><p>Πόσων Χρονών είσαι;-είναι;είστε…</p></blockquote></li><li class="lvl-2"><p>I am …</p><blockquote><p>ο έτος 年</p><p>1,-Είμαι ενός  <mark>έτονς</mark>单数属格</p><p>2-100-Είμαι δύο/τριών <mark>χρωνών/ετών</mark>复数属格 注意3，4等的变化</p><p>ο μήνας—月</p><p>1,-Είναι ενός  <mark>μήνα</mark>单数属格</p><p>2-12’Είναι-δύο/τριών <mark>μηνών</mark>复数属格 注意3，4等的变化</p></blockquote></li><li class="lvl-2"><p>Για την Τάνια μιλάς;</p><p>你说的是 Τάνια 吗？</p></li></ul><table><thead><tr><th>μολύβι</th><th>铅笔</th><th></th><th></th></tr></thead><tbody><tr><td>καρέκλα</td><td>椅子</td><td></td><td></td></tr><tr><td>to άγαλμα</td><td>雕像</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μ’ αρέσει   后加主格</p></li><li class="lvl-2"><p>Δεν μ’ αρέσει ο μικρός</p></li></ul><h3 id="口语考试">口语考试</h3><ul class="lvl-0"><li class="lvl-2"><p>Πώς σε λένε;——你叫什么？</p></li><li class="lvl-2"><p>Από πού είσαι;——你来自哪里？</p></li><li class="lvl-2"><p>Πού μένεις;——你住哪？</p></li><li class="lvl-2"><p>Ποιο είναι το κινητό σου;——你的手机号码是？</p></li><li class="lvl-2"><p>Τι δουλειά κάνεις;——你的工作是？</p></li><li class="lvl-2"><p>Πόσω χρονών είσαι;——你多大了</p></li><li class="lvl-2"><p>Είσαι παντρεμένος ή ελεύθερος:——你结婚了还是单身</p></li><li class="lvl-2"><p>Έχεις παιδιά;——你有孩子吗？</p></li><li class="lvl-2"><p>Πόσω χρονών είναι;——他多大了？</p></li><li class="lvl-2"><p>Μιλάς ελληνικά; Άλλη γλώσσα;——你说希腊语吗？其他语言呢？</p></li><li class="lvl-2"><p>Σ’ αρέσει η Ελλάδα;  ——你喜欢希腊吗?</p></li></ul><ol><li class="lvl-3"><p>问答</p></li><li class="lvl-3"><p>朗读新文章</p></li><li class="lvl-3"><p>给一个主题，持续说2分钟</p></li></ol><h2 id="第13周（1）">第13周（1）</h2><ul class="lvl-0"><li class="lvl-2"><p>Πάω (στο) σπίτι 只有很少的搭配中στο可以省去</p></li><li class="lvl-2"><p>Πάω σε + place : go somewhere</p></li><li class="lvl-2"><p>Τα λέμε : see you</p></li></ul><h3 id="被动性动词：">被动性动词：</h3><p>形式上是被动，但不一定表示被动涵义</p><ol><li class="lvl-3"><p>表被动</p></li><li class="lvl-3"><p>发出的动作作用于自己</p></li><li class="lvl-3"><p>互相</p></li><li class="lvl-3"><p>没有主动形式</p></li></ol><h2 id="what-time-is">what time is ?</h2><ul class="lvl-0"><li class="lvl-2"><p>Τι ώρα είναι / έχετε/έχεις</p></li><li class="lvl-2"><p>Είναι η ώρα μία/δύο/τρεις κτλ. ή Είναι μία/δύο/τρεις κτλ. η ώρα</p></li><li class="lvl-2"></li><li class="lvl-2"><table><thead><tr><th></th><th>我</th><th>你</th><th>他/她/它</th><th>我们</th><th>你们</th><th>他们/她们/它们</th></tr></thead><tbody><tr><td>πάω</td><td>πάω</td><td>πας</td><td>πάει</td><td>πάμε</td><td>πάτε</td><td>πάνε</td></tr><tr><td>λέω</td><td>λέω</td><td>λες</td><td>λέει</td><td>λέμε</td><td>λέτε</td><td>λένε</td></tr><tr><td>τρώω</td><td>τρώω</td><td>τρως</td><td>τρώει</td><td>τρώμε</td><td>τρώτε</td><td>τρώνε</td></tr><tr><td>ακούω</td><td>ακούω</td><td>ακούς</td><td>ακούει</td><td>ακούμε</td><td>ακούτε</td><td>ακούνε</td></tr><tr><td>έρχομαι</td><td>έρχομαι</td><td>έρχεσαι</td><td>έρχεται</td><td>έρχόμαστε</td><td>έρχεστε</td><td>έρχονται</td></tr><tr><td>γίνομαι</td><td>γίνομαι</td><td>γίνεσαι</td><td>γίνεται</td><td>γινόμαστε</td><td>γίνεστε</td><td>γίνονται</td></tr><tr><td>σκέφτομαι</td><td>σκέφτομαι</td><td>σκέφτεσαι</td><td>σκέφτεται</td><td>σκεφτόμαστε</td><td>σκέφτεστε</td><td>σκέφτονται</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></li></ul><h2 id="Τι-ώρα-είναι">Τι ώρα είναι;</h2><p>Άννα Βρε Μάρθα, τι μέρα είναι σήμερα;<br>Μάρθα Παρασκευή.<br>Άννα Παρασκευή; Πόπο, έχω ραντεβού με τον Βασίλη. Και δε θυμάμαι τι ώρα.<br>Πού είναι η ατζέντα μου; Λοιπόν… Παρασκευή… Βασίλης… στις δέκα και μισή.<br>Μήπως ξέρεις τι ώρα είναι τώρα;<br>Μάρθα Δέκα και δέκα ακριβώς.<br>Άννα Φεύγω.<br>Μάρθα Καλά, πού είναι το ραντεβού σου;<br>Άννα Στο Μουσείο. Έρχεσαι μαζί μου;<br>Μάρθα Δεν μπορώ. Έχω δουλειά ακόμα. Λυπάμαι.<br>Άννα Δεν πειράζει. Έλα, γεια, εμείς τα λέμε τη Δευτέρα.<br>Μάρθα Εντάξει. Καλό σαββατοκύριακο.<br>Άννα Ευχαριστώ, επίσης</p><table><thead><tr><th>希腊语</th><th>中文</th><th></th><th></th></tr></thead><tbody><tr><td>ώρα</td><td>时间</td><td>Λυπάμαι</td><td>抱歉</td></tr><tr><td>ημέρα</td><td>天</td><td>Εντάξει</td><td>没问题&quot;</td></tr><tr><td>Παρασκευή</td><td>星期五</td><td>στις 3:00</td><td>在3点</td></tr><tr><td>ραντεβού</td><td>约会</td><td>αρχίζω</td><td>开始</td></tr><tr><td>Βασίλης</td><td>希腊男名</td><td>τελειώνω</td><td>结束</td></tr><tr><td>ατζέντα</td><td>日程</td><td>σούπερ μάρκετ</td><td>超市</td></tr><tr><td>μουσείο</td><td>博物馆</td><td>τρένο</td><td>火车</td></tr><tr><td>Δευτέρα</td><td>星期一</td><td>αεροπλάνο</td><td>飞机</td></tr><tr><td>Σαββατοκύριακο</td><td>周末</td><td>ανοίγει</td><td>开门</td></tr><tr><td></td><td></td><td>κλείνει</td><td>关门</td></tr><tr><td>μέχρι τις</td><td>直到</td><td>τράπεζα</td><td>银行</td></tr><tr><td></td><td></td><td>π.μ.</td><td>a.m</td></tr><tr><td></td><td></td><td>μ.μ.</td><td>p.m</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μπορώ ：can</p></li><li class="lvl-2"><p>Δεν  <mark>μπορώ να</mark> το κάνω ： i can‘t do it</p></li></ul><table><thead><tr><th>Ώρα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>3:00-12:00</td><td>πρωί</td><td>早上</td></tr><tr><td>12:00-15:00</td><td>μεσημέρι</td><td>中午</td></tr><tr><td>15:00-19:00</td><td>απόγευμα</td><td>下午</td></tr><tr><td>19:00-24:00</td><td>βράδυ</td><td>晚上</td></tr><tr><td>24:00</td><td>μεσάνυχτα</td><td>午夜</td></tr></tbody></table><h4 id="希腊语直接用宾格做时间状语。（由于全部是中性，所以和主格的形式都不变）">希腊语直接用宾格做时间状语。（由于全部是中性，所以和主格的形式都不变）</h4><ol><li class="lvl-3"><p>Το μάθημα αρχίζει στις εννιάμισι το πρωί. 这节课早上九点半开始。</p></li><li class="lvl-3"><p>Το σινεμά τελειώνει στις έντεκα το βράδυ. 电影院晚上十一点结束(关门)。</p></li><li class="lvl-3"><p>Το σούπερ μάρκετ ανοίγει στις οκτώ το πρωί. 超市早上八点开门。</p></li><li class="lvl-3"><p>Η τράπεζα κλείνει στις δύο το μεσημέρι. 银行中午两点关门。</p></li><li class="lvl-3"><p>Το τρένο φτάνει στις εννιά και τέταρτο το βράδυ. 火车晚上九点十五分到达。</p></li><li class="lvl-3"><p>Το αεροπλάνο φεύγει <mark>στη μία το μεσημέρι</mark>. 飞机中午一点起飞。</p></li><li class="lvl-3"><p>στη μία 需要加上早上或者中午</p></li><li class="lvl-3"><p><mark>τα</mark>,μεσάνυχτα 零点</p></li><li class="lvl-3"></li><li class="lvl-3"><p>7:40,7.40 π.μ.</p></li><li class="lvl-3"><p>16:00,4 μ.μ.</p></li><li class="lvl-3"><p>9:45,9.45 π.μ.</p></li><li class="lvl-3"><p>2:30 2.30 π.μ.</p></li><li class="lvl-3"><p>10:40 ,10.40 π.μ.</p></li><li class="lvl-3"><p>9:20 9.20 μ.μ</p></li><li class="lvl-3"><p>2:40 2:40 μ.μ.</p></li></ol><h3 id="希腊语的星期">希腊语的星期</h3><ul class="lvl-0"><li class="lvl-2"><p>Δευτέρα（Deftéra） - 星期一</p></li><li class="lvl-2"><p>Τρίτη（Tríti） - 星期二</p></li><li class="lvl-2"><p>Τετάρτη（Tetárti） - 星期三</p></li><li class="lvl-2"><p>Πέμπτη（Pémpti） - 星期四</p></li><li class="lvl-2"><p>Παρασκευή（Paraskeví） - 星期五</p></li><li class="lvl-2"><p>Σάββατο（Sábbato） - 星期六</p></li><li class="lvl-2"><p>Κυριακή（Kyriakí） - 星期日</p></li></ul><p>μετά:after</p><p>πριν ：before</p><table><thead><tr><th>希腊语</th><th>冠词</th><th>中文翻译</th></tr></thead><tbody><tr><td>η Δευτέρα</td><td>η (i)</td><td>星期一</td></tr><tr><td>η Τρίτη</td><td>η (i)</td><td>星期二</td></tr><tr><td>η Τετάρτη</td><td>η (i)</td><td>星期三</td></tr><tr><td>η Πέμπτη</td><td>η (i)</td><td>星期四</td></tr><tr><td>η Παρασκευή</td><td>η (i)</td><td>星期五</td></tr><tr><td>το Σάββατο</td><td>το (to)</td><td>星期六</td></tr><tr><td>η Κυριακή</td><td>η (i)</td><td>星期日</td></tr></tbody></table><p>在xx，直接换成宾格即可</p><p>την Τετάρτη :在周三</p><p>μέχρι = ώς = έως：直到</p><ol><li class="lvl-3"></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> ελληνικά </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 生词表 </tag>
-            
-            <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-homework-5</title>
       <link href="/homework/network/network5/"/>
       <url>/homework/network/network5/</url>
@@ -1077,6 +1106,35 @@
             <tag> homework </tag>
             
             <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
+      <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
+      <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
+      
+        <content type="html"><![CDATA[<table><thead><tr><th>το ποτήρι 🥃</th><th>水杯</th><th>το ψωμί 🥖</th><th>面包</th></tr></thead><tbody><tr><td><s>ο δίσκος 🛸</s></td><td>碟片</td><td>το τραπέζι</td><td>桌子</td></tr><tr><td><s>το τασάκι</s></td><td>烟灰缸</td><td><s>η ζώνη</s></td><td>皮带</td></tr><tr><td>η σοκολάτα 🍫</td><td>巧克力</td><td>το παγωτό 🍦</td><td>冰淇淋</td></tr></tbody></table><p>注意在回答对方&quot;Πως λέγεται αυτό το πράγμα στα ελληνικά;&quot;时回答不需要加冠词，同时要加书名号或双引号。注意Πώς要加重音符号</p><h1>第12周（1）</h1><table><thead><tr><th>Ερώτηση</th><th>Απάντηση</th><th>Γένος</th></tr></thead><tbody><tr><td>“Ποιος είναι αυτός;”</td><td>“Αυτός είναι + ο + name.”</td><td>Αρσενικό</td></tr><tr><td>“Ποια είναι αυτή;”</td><td>“Αυτή είναι + η + name.”</td><td>Θηλυκό</td></tr><tr><td>“Ποιος/Ποια είναι αυτό/αυτή;”</td><td>“Αυτός/Αυτή είναι + name.”</td><td>Ουδέτερο</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>κτλ. / κ.τλ. ==   <a href="http://e.tc">e.tc</a></p></li><li class="lvl-2"><p>国家，国籍与语言</p><table><thead><tr><th>Χώρα</th><th>Άνδρας</th><th>Γυναίκα</th><th>Γλώσσα</th></tr></thead><tbody><tr><td><strong>Ελλάδα</strong></td><td><strong>Έλληνας</strong></td><td><strong>Ελληνίδα</strong></td><td><strong>Ελληνικά</strong></td></tr><tr><td><strong>Ιταλία</strong></td><td><strong>Ιταλός</strong></td><td><strong>Ιταλίδα</strong></td><td><strong>Ιταλικά</strong></td></tr><tr><td><strong>Αγγλία</strong></td><td><strong>Άγγλος</strong></td><td><strong>Αγγλίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Αμερική</strong></td><td><strong>Αμερικανός</strong></td><td><strong>Αμερικανίδα</strong></td><td><strong>Αγγλικά</strong></td></tr><tr><td><strong>Ρωσία</strong></td><td><strong>Ρώσος</strong></td><td><strong>Ρωσίδα</strong></td><td><strong>Ρωσικά</strong></td></tr><tr><td><strong>Γερμανία</strong></td><td><strong>Γερμανός</strong></td><td><strong>Γερμανίδα</strong></td><td><strong>Γερμανικά</strong></td></tr><tr><td><strong>Γαλλία</strong></td><td><strong>Γάλλος</strong></td><td><strong>Γαλλίδα</strong></td><td><strong>Γαλλικά</strong></td></tr><tr><td>Πολωνία</td><td>Πολωνός</td><td>Πολωνέζα</td><td>Πολωνικά</td></tr><tr><td><em>Αυστραλία</em></td><td><em>Αυστραλός</em></td><td><em>Αυστραλέζα</em></td><td><em>Αγγλικά</em></td></tr><tr><td><strong>Κίνα</strong></td><td><strong>Κινέζος</strong></td><td><strong>Κινέζα</strong></td><td><strong>Κινέζικα</strong></td></tr><tr><td><strong>Ιαπωνία</strong></td><td><strong>Γιαπωνέζος</strong></td><td><strong>Γιαπωνέζα</strong></td><td><strong>γιαπωνέζικα</strong></td></tr><tr><td>Ινδία</td><td>Ινδός</td><td>Ινδή</td><td>Ινδικά</td></tr><tr><td>Αλβανία</td><td>Αλβανός</td><td>Αλβανίδα</td><td>Αλβανικά</td></tr><tr><td>Ισραήλ</td><td>Ισραηλινός</td><td>Ισραηλινή</td><td>Εβραϊκά</td></tr><tr><td>Ρουμανία</td><td>Ρουμάνος</td><td>Ρουμάνα</td><td>Ρουμανικά</td></tr><tr><td>Βουλγαρία</td><td>Βούλγαρος</td><td>Βουλγάρα</td><td>Βουλγαρικά</td></tr><tr><td>Κύπρος</td><td>Κύπριος</td><td>Κύπρια</td><td>Ελληνικά, Τουρκικά</td></tr><tr><td>Παλαιστίνη</td><td>Παλαιστίνιος</td><td>Παλαιστίνια</td><td>Αραβικά</td></tr><tr><td><strong>Τουρκία</strong></td><td><strong>Τούρκος</strong></td><td><strong>Τουρκάλα</strong></td><td><strong>Τουρκικά</strong></td></tr></tbody></table></li></ul><h3 id="生词表">生词表</h3><table><thead><tr><th>ο φίλος /η φίλη</th><th>朋友</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>δημοσιογράφος</td><td>记者</td><td></td><td></td></tr><tr><td>che</td><td></td><td>το τηλέφωνο</td><td>电话</td></tr><tr><td>αναπτήρας</td><td>打火机</td><td>το πορτοφόλι</td><td>钱包</td></tr><tr><td>μηχανή</td><td>机器</td><td>η εφημερίδα</td><td>报纸</td></tr><tr><td>το βιβλίο</td><td>书</td><td>το σπίτι</td><td>房子</td></tr><tr><td>υπολογιστής</td><td>计算机</td><td>το αυτοκίνητο</td><td>汽车</td></tr><tr><td>ομπρέλα</td><td>雨伞</td><td>το μοτοποδήλατο</td><td>摩托车</td></tr><tr><td>ρολόι</td><td>手表</td><td></td><td></td></tr><tr><td>φάκελος</td><td>文件夹</td><td></td><td></td></tr></tbody></table><table><thead><tr><th>Αρσενικό</th><th>Θηλυκό</th><th>Ουδέτερο</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>-ος</td><td>-η</td><td>-ο</td><td></td></tr><tr><td>ακριβός</td><td>ακριβή</td><td>ακριβό</td><td>昂贵的</td></tr><tr><td>φτηνός</td><td>φτηνή</td><td>φτηνό</td><td>便宜的</td></tr><tr><td>μικρός</td><td>μικρή</td><td>μικρό</td><td>小的</td></tr><tr><td>μεγάλος</td><td>μεγάλη</td><td>μεγάλο</td><td>大的</td></tr><tr><td>καθαρός</td><td>καθαρή</td><td>καθαρό</td><td>干净的</td></tr><tr><td>βρόμικος</td><td>βρόμικη</td><td>βρόμικο</td><td>肮脏的</td></tr><tr><td>άσχημος</td><td>άσχημη</td><td>άσχημο</td><td>丑陋的</td></tr><tr><td>-ος</td><td>‘α’</td><td>‘ο’</td><td></td></tr><tr><td>ωραίος</td><td>ωραία</td><td>ωραίο</td><td>漂亮的</td></tr><tr><td>καινούργιος</td><td>καινούργια</td><td>καινούργιο</td><td>新的</td></tr><tr><td>παλιός</td><td>παλιά</td><td>παλιό</td><td>旧的</td></tr></tbody></table><p>形容词变格和名词是一样的，而且形容词重音不变</p><p>Αυτή η ζώνη είναι λίγο μικρός  ¨λίγο 形容词副词形式一样</p><h3 id="生词表-2">生词表</h3><table><thead><tr><th>Ελληνικά</th><th>Κινέζικα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>Δυστυχώς</td><td>不幸的是</td><td></td><td></td></tr><tr><td>αγαπάει</td><td>爱</td><td></td><td></td></tr><tr><td>Έτσι είναι η ζωή.</td><td>这就是生活</td><td></td><td></td></tr><tr><td>όμως</td><td>however</td><td></td><td></td></tr><tr><td>θέλω</td><td>想</td><td></td><td></td></tr><tr><td>ξέρω</td><td>知道</td><td></td><td></td></tr><tr><td>ερωτευμένος</td><td>迷恋</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><h1>第13周（1）</h1><ul class="lvl-0"><li class="lvl-2"><p>how old are you</p><blockquote><p>Πόσων Χρονών είσαι;-είναι;είστε…</p></blockquote></li><li class="lvl-2"><p>I am …</p><blockquote><p>ο έτος 年</p><p>1,-Είμαι ενός  <mark>έτονς</mark>单数属格</p><p>2-100-Είμαι δύο/τριών <mark>χρωνών/ετών</mark>复数属格 注意3，4等的变化</p><p>ο μήνας—月</p><p>1,-Είναι ενός  <mark>μήνα</mark>单数属格</p><p>2-12’Είναι-δύο/τριών <mark>μηνών</mark>复数属格 注意3，4等的变化</p></blockquote></li><li class="lvl-2"><p>Για την Τάνια μιλάς;</p><p>你说的是 Τάνια 吗？</p></li></ul><table><thead><tr><th>μολύβι</th><th>铅笔</th><th></th><th></th></tr></thead><tbody><tr><td>καρέκλα</td><td>椅子</td><td></td><td></td></tr><tr><td>to άγαλμα</td><td>雕像</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μ’ αρέσει   后加主格</p></li><li class="lvl-2"><p>Δεν μ’ αρέσει ο μικρός</p></li></ul><h3 id="口语考试">口语考试</h3><ul class="lvl-0"><li class="lvl-2"><p>Πώς σε λένε;——你叫什么？</p></li><li class="lvl-2"><p>Από πού είσαι;——你来自哪里？</p></li><li class="lvl-2"><p>Πού μένεις;——你住哪？</p></li><li class="lvl-2"><p>Ποιο είναι το κινητό σου;——你的手机号码是？</p></li><li class="lvl-2"><p>Τι δουλειά κάνεις;——你的工作是？</p></li><li class="lvl-2"><p>Πόσω χρονών είσαι;——你多大了</p></li><li class="lvl-2"><p>Είσαι παντρεμένος ή ελεύθερος:——你结婚了还是单身</p></li><li class="lvl-2"><p>Έχεις παιδιά;——你有孩子吗？</p></li><li class="lvl-2"><p>Πόσω χρονών είναι;——他多大了？</p></li><li class="lvl-2"><p>Μιλάς ελληνικά; Άλλη γλώσσα;——你说希腊语吗？其他语言呢？</p></li><li class="lvl-2"><p>Σ’ αρέσει η Ελλάδα;  ——你喜欢希腊吗?</p></li></ul><ol><li class="lvl-3"><p>问答</p></li><li class="lvl-3"><p>朗读新文章</p></li><li class="lvl-3"><p>给一个主题，持续说2分钟</p></li></ol><h2 id="第13周（1）">第13周（1）</h2><ul class="lvl-0"><li class="lvl-2"><p>Πάω (στο) σπίτι 只有很少的搭配中στο可以省去</p></li><li class="lvl-2"><p>Πάω σε + place : go somewhere</p></li><li class="lvl-2"><p>Τα λέμε : see you</p></li></ul><h3 id="被动性动词：">被动性动词：</h3><p>形式上是被动，但不一定表示被动涵义</p><ol><li class="lvl-3"><p>表被动</p></li><li class="lvl-3"><p>发出的动作作用于自己</p></li><li class="lvl-3"><p>互相</p></li><li class="lvl-3"><p>没有主动形式</p></li></ol><h2 id="what-time-is">what time is ?</h2><ul class="lvl-0"><li class="lvl-2"><p>Τι ώρα είναι / έχετε/έχεις</p></li><li class="lvl-2"><p>Είναι η ώρα μία/δύο/τρεις κτλ. ή Είναι μία/δύο/τρεις κτλ. η ώρα</p></li><li class="lvl-2"></li><li class="lvl-2"><table><thead><tr><th></th><th>我</th><th>你</th><th>他/她/它</th><th>我们</th><th>你们</th><th>他们/她们/它们</th></tr></thead><tbody><tr><td>πάω</td><td>πάω</td><td>πας</td><td>πάει</td><td>πάμε</td><td>πάτε</td><td>πάνε</td></tr><tr><td>λέω</td><td>λέω</td><td>λες</td><td>λέει</td><td>λέμε</td><td>λέτε</td><td>λένε</td></tr><tr><td>τρώω</td><td>τρώω</td><td>τρως</td><td>τρώει</td><td>τρώμε</td><td>τρώτε</td><td>τρώνε</td></tr><tr><td>ακούω</td><td>ακούω</td><td>ακούς</td><td>ακούει</td><td>ακούμε</td><td>ακούτε</td><td>ακούνε</td></tr><tr><td>έρχομαι</td><td>έρχομαι</td><td>έρχεσαι</td><td>έρχεται</td><td>έρχόμαστε</td><td>έρχεστε</td><td>έρχονται</td></tr><tr><td>γίνομαι</td><td>γίνομαι</td><td>γίνεσαι</td><td>γίνεται</td><td>γινόμαστε</td><td>γίνεστε</td><td>γίνονται</td></tr><tr><td>σκέφτομαι</td><td>σκέφτομαι</td><td>σκέφτεσαι</td><td>σκέφτεται</td><td>σκεφτόμαστε</td><td>σκέφτεστε</td><td>σκέφτονται</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table></li></ul><h2 id="Τι-ώρα-είναι">Τι ώρα είναι;</h2><p>Άννα Βρε Μάρθα, τι μέρα είναι σήμερα;<br>Μάρθα Παρασκευή.<br>Άννα Παρασκευή; Πόπο, έχω ραντεβού με τον Βασίλη. Και δε θυμάμαι τι ώρα.<br>Πού είναι η ατζέντα μου; Λοιπόν… Παρασκευή… Βασίλης… στις δέκα και μισή.<br>Μήπως ξέρεις τι ώρα είναι τώρα;<br>Μάρθα Δέκα και δέκα ακριβώς.<br>Άννα Φεύγω.<br>Μάρθα Καλά, πού είναι το ραντεβού σου;<br>Άννα Στο Μουσείο. Έρχεσαι μαζί μου;<br>Μάρθα Δεν μπορώ. Έχω δουλειά ακόμα. Λυπάμαι.<br>Άννα Δεν πειράζει. Έλα, γεια, εμείς τα λέμε τη Δευτέρα.<br>Μάρθα Εντάξει. Καλό σαββατοκύριακο.<br>Άννα Ευχαριστώ, επίσης</p><table><thead><tr><th>希腊语</th><th>中文</th><th></th><th></th></tr></thead><tbody><tr><td>ώρα</td><td>时间</td><td>Λυπάμαι</td><td>抱歉</td></tr><tr><td>ημέρα</td><td>天</td><td>Εντάξει</td><td>没问题&quot;</td></tr><tr><td>Παρασκευή</td><td>星期五</td><td>στις 3:00</td><td>在3点</td></tr><tr><td>ραντεβού</td><td>约会</td><td>αρχίζω</td><td>开始</td></tr><tr><td>Βασίλης</td><td>希腊男名</td><td>τελειώνω</td><td>结束</td></tr><tr><td>ατζέντα</td><td>日程</td><td>σούπερ μάρκετ</td><td>超市</td></tr><tr><td>μουσείο</td><td>博物馆</td><td>τρένο</td><td>火车</td></tr><tr><td>Δευτέρα</td><td>星期一</td><td>αεροπλάνο</td><td>飞机</td></tr><tr><td>Σαββατοκύριακο</td><td>周末</td><td>ανοίγει</td><td>开门</td></tr><tr><td></td><td></td><td>κλείνει</td><td>关门</td></tr><tr><td>μέχρι τις</td><td>直到</td><td>τράπεζα</td><td>银行</td></tr><tr><td></td><td></td><td>π.μ.</td><td>a.m</td></tr><tr><td></td><td></td><td>μ.μ.</td><td>p.m</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>μπορώ ：can</p></li><li class="lvl-2"><p>Δεν  <mark>μπορώ να</mark> το κάνω ： i can‘t do it</p></li></ul><table><thead><tr><th>Ώρα</th><th>Ελληνικά</th><th>Κινέζικα</th></tr></thead><tbody><tr><td>3:00-12:00</td><td>πρωί</td><td>早上</td></tr><tr><td>12:00-15:00</td><td>μεσημέρι</td><td>中午</td></tr><tr><td>15:00-19:00</td><td>απόγευμα</td><td>下午</td></tr><tr><td>19:00-24:00</td><td>βράδυ</td><td>晚上</td></tr><tr><td>24:00</td><td>μεσάνυχτα</td><td>午夜</td></tr></tbody></table><h4 id="希腊语直接用宾格做时间状语。（由于全部是中性，所以和主格的形式都不变）">希腊语直接用宾格做时间状语。（由于全部是中性，所以和主格的形式都不变）</h4><ol><li class="lvl-3"><p>Το μάθημα αρχίζει στις εννιάμισι το πρωί. 这节课早上九点半开始。</p></li><li class="lvl-3"><p>Το σινεμά τελειώνει στις έντεκα το βράδυ. 电影院晚上十一点结束(关门)。</p></li><li class="lvl-3"><p>Το σούπερ μάρκετ ανοίγει στις οκτώ το πρωί. 超市早上八点开门。</p></li><li class="lvl-3"><p>Η τράπεζα κλείνει στις δύο το μεσημέρι. 银行中午两点关门。</p></li><li class="lvl-3"><p>Το τρένο φτάνει στις εννιά και τέταρτο το βράδυ. 火车晚上九点十五分到达。</p></li><li class="lvl-3"><p>Το αεροπλάνο φεύγει <mark>στη μία το μεσημέρι</mark>. 飞机中午一点起飞。</p></li><li class="lvl-3"><p>στη μία 需要加上早上或者中午</p></li><li class="lvl-3"><p><mark>τα</mark>,μεσάνυχτα 零点</p></li><li class="lvl-3"></li><li class="lvl-3"><p>7:40,7.40 π.μ.</p></li><li class="lvl-3"><p>16:00,4 μ.μ.</p></li><li class="lvl-3"><p>9:45,9.45 π.μ.</p></li><li class="lvl-3"><p>2:30 2.30 π.μ.</p></li><li class="lvl-3"><p>10:40 ,10.40 π.μ.</p></li><li class="lvl-3"><p>9:20 9.20 μ.μ</p></li><li class="lvl-3"><p>2:40 2:40 μ.μ.</p></li></ol><h3 id="希腊语的星期">希腊语的星期</h3><ul class="lvl-0"><li class="lvl-2"><p>Δευτέρα（Deftéra） - 星期一</p></li><li class="lvl-2"><p>Τρίτη（Tríti） - 星期二</p></li><li class="lvl-2"><p>Τετάρτη（Tetárti） - 星期三</p></li><li class="lvl-2"><p>Πέμπτη（Pémpti） - 星期四</p></li><li class="lvl-2"><p>Παρασκευή（Paraskeví） - 星期五</p></li><li class="lvl-2"><p>Σάββατο（Sábbato） - 星期六</p></li><li class="lvl-2"><p>Κυριακή（Kyriakí） - 星期日</p></li></ul><p>μετά:after</p><p>πριν ：before</p><table><thead><tr><th>希腊语</th><th>冠词</th><th>中文翻译</th></tr></thead><tbody><tr><td>η Δευτέρα</td><td>η (i)</td><td>星期一</td></tr><tr><td>η Τρίτη</td><td>η (i)</td><td>星期二</td></tr><tr><td>η Τετάρτη</td><td>η (i)</td><td>星期三</td></tr><tr><td>η Πέμπτη</td><td>η (i)</td><td>星期四</td></tr><tr><td>η Παρασκευή</td><td>η (i)</td><td>星期五</td></tr><tr><td>το Σάββατο</td><td>το (to)</td><td>星期六</td></tr><tr><td>η Κυριακή</td><td>η (i)</td><td>星期日</td></tr></tbody></table><p>在xx，直接换成宾格即可</p><p>την Τετάρτη :在周三</p><p>μέχρι = ώς = έως：直到</p><ol><li class="lvl-3"></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> ελληνικά </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生词表 </tag>
+            
+            <tag> ελληνικά </tag>
             
         </tags>
       
