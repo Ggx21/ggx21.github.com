@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="统计4：假设检验 $H_0 : \theta\in\Theta_0~~~ vs~~~ H_1 : \theta\in\Theta_1$ 假设检验是一种统计方法，用于评估关于总体参数的假设是否与观察到的样本数据一致。 总的原理是假如试验结果与假设日发生矛盾就拒绝原假设 也否则就接受原假设.  定义   (统计)假设检验问题 这是在给定总体与样本下 ，要求对命题做出判断。   (统计)假设 统计学中两">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计4：假设检验">
+<meta property="og:url" content="https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="统计4：假设检验 $H_0 : \theta\in\Theta_0~~~ vs~~~ H_1 : \theta\in\Theta_1$ 假设检验是一种统计方法，用于评估关于总体参数的假设是否与观察到的样本数据一致。 总的原理是假如试验结果与假设日发生矛盾就拒绝原假设 也否则就接受原假设.  定义   (统计)假设检验问题 这是在给定总体与样本下 ，要求对命题做出判断。   (统计)假设 统计学中两">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230607195628247.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230531180954677.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230531181013647.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230531173915668.png">
+<meta property="article:published_time" content="2023-06-08T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-06-07T15:11:52.130Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="gaitong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230607195628247.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>统计4：假设检验</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">统计4：假设检验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        统计4：假设检验
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-08T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-06-08</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/gaitong/">gaitong</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/gaitong/" rel="tag">gaitong</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>统计4：假设检验</h1>
+<p>$H_0 : \theta\in\Theta_0~~~ vs~~~ H_1 : \theta\in\Theta_1$</p>
+<p>假设检验是一种统计方法，用于评估关于总体参数的假设是否与观察到的样本数据一致。</p>
+<p>总的原理是<strong>假如试验结果与假设日发生矛盾就拒绝原假设 也否则就接受原假设.</strong></p>
+<p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230607195628247.png" alt="image-20230607195628247"></p>
+<h2 id="定义">定义</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>(统计)假设检验问题</strong></p>
+<p>这是在给定总体与样本下 ，要求对命题做出判断。</p>
+</li>
+<li class="lvl-2">
+<p><strong>(统计)假设</strong></p>
+<p>统计学中两个非空不相交参数集合$\Theta_0,\Theta_1$,命题成立对应$\theta\in\Theta_0$,否则$\theta\in\Theta_1$</p>
+</li>
+<li class="lvl-2">
+<p><strong>参数假设检验问题</strong></p>
+<p>假设可用一个参数的集合表示的假设检验问题</p>
+<p>例子:</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>均值是否大于4是参数假设检验问题</p>
+</li>
+<li class="lvl-4">
+<p>是否为正态分布不是,不能用一个参数的集合检验</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>检验(法则)</strong></p>
+</li>
+</ul>
+<p>通过样本对假设做出判断</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>原(零)假设$\Theta_0$与对立(备择)假设$\Theta_1$</strong></p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>如果$\Theta_0$只含一个点则称为是简单的,否则是复杂的</p>
+</li>
+<li class="lvl-4">
+<p>$H_0 : \theta\in\Theta_0~~~ vs~~~ H_1 : \theta\in\Theta_1$</p>
+</li>
+<li class="lvl-4">
+<p><strong>接受域</strong>:样本空间接受H_0的区域</p>
+<blockquote>
+<p>确定了接受域和拒绝域,只需要看样本属于哪个样本空间就完成检验了</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p><strong>错误</strong></p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p><strong>第一类错误</strong></p>
+<p>本应接受,结果拒绝,犯错概率称为α(θ)</p>
+</li>
+<li class="lvl-4">
+<p><strong>第二类错误</strong></p>
+<p>本应拒绝,结果接受，犯错概率称为β(θ)</p>
+</li>
+</ul>
+<p>由于不可能同时降低这两个错误,所以我们仅控制第一类错误.宁肯放过一千,也不错杀一个.</p>
+</li>
+<li class="lvl-2">
+<p><strong>势函数g(θ)</strong></p>
+<p>样本落在拒绝域内的概率<br>
+$$<br>
+\theta\in\Theta_0,g(\theta)=\alpha(\theta),\<br>
+\theta\in\Theta_1,g(\theta)=1-\beta(\theta)<br>
+$$</p>
+</li>
+<li class="lvl-2">
+<p><strong>显著性水平</strong>$\alpha$</p>
+<p>对任意的$\Theta_0$中$\theta$,都有势函数$\leq$α</p>
+<blockquote>
+<p>控制第一类犯错的概率在α内</p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p><strong>U检验</strong></p>
+<p>方差已知，对正态总体均值进行检验</p>
+<p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230531180954677.png" alt="image-20230531180954677"></p>
+</li>
+<li class="lvl-2">
+<p><strong>t检验</strong></p>
+<p>方差未知，对正态总体均值进行检验</p>
+<p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230531181013647.png" alt="image-20230531181013647"></p>
+</li>
+<li class="lvl-2">
+<p><strong>p值</strong></p>
+</li>
+<li class="lvl-2">
+<p>利用样本观测值能够做出拒绝原假设的最小显著性水平</p>
+<p>原假设成立条件下，检验统计量出现在比观测值更异常的范围的概率的最大值</p>
+</li>
+</ul>
+<h2 id="基本步骤">基本步骤</h2>
+<ol>
+<li class="lvl-3">
+<p>建立假设</p>
+<ul class="lvl-2">
+<li class="lvl-5">$H_0 : \theta\in\Theta_0~~~ vs~~~ H_1 : \theta\in\Theta_1$</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>选择检验统计量，给出拒绝域的形式</p>
+</li>
+<li class="lvl-3">
+<p>选择显著性水平，给出拒绝域的具体范围</p>
+</li>
+</ol>
+<h4 id="例题">例题<img src="/img/gaitong//%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C.assets/image-20230531173915668.png" alt="image-20230531173915668"></h4>
+<ol>
+<li class="lvl-3">
+<p>建立假设（H_0,优质,μ$\geq$10）</p>
+<p><strong>注意这里优劣并不一定对应原假设/对立假设。</strong></p>
+<div class="tips">
+<p>按照过去长时间的记录，商店的检验人员相信该厂的产品质量很好，可能选择μ&gt;10为原假设</p>
+<p>如果认为不好也可能选择μ&lt;10为原假设</p>
+</div>
+</li>
+<li class="lvl-3">
+<p>选择检验统计量</p>
+<p>$\bar x\sim N(\mu,\frac {2^2} {16} )$,拒绝域形式为{(样本),$\bar x$&lt;c}</p>
+</li>
+<li class="lvl-3">
+<p>确定显著性水平<br>
+$$<br>
+P(\bar x&lt;c|\mu = 10)=\alpha\<br>
+P\left(\frac {\bar x-10} {1/2}&lt;\frac {c-10} {1/2}\right)=\alpha，\frac {\bar x-10} {1/2}\sim N(0,1)<br>
+$$<br>
+如果这里α取0.05，那么可以求得</p>
+<p>c=10+$2u_{0.05}$</p>
+</li>
+<li class="lvl-3">
+<p>$\bar x&gt;c$时，接受原假设，否则拒绝</p>
+</li>
+</ol>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">统计4：假设检验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.2.</span> <span class="toc-text">基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">例题</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&text=统计4：假设检验"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&title=统计4：假设检验"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&is_video=false&description=统计4：假设检验"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=统计4：假设检验&body=Check out this article: https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&title=统计4：假设检验"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&title=统计4：假设检验"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&title=统计4：假设检验"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&title=统计4：假设检验"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&name=统计4：假设检验&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A14-%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/&t=统计4：假设检验"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>

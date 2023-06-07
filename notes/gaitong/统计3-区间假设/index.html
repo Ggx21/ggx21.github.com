@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="统计3：区间估计 置信水平 一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数 基本方法   构造枢轴量pivot，$G(x_1,\ldots,x_n,\theta)$ 要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式   找到G的边界适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$   求解$c\leq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="统计3：区间估计">
+<meta property="og:url" content="https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="统计3：区间估计 置信水平 一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数 基本方法   构造枢轴量pivot，$G(x_1,\ldots,x_n,\theta)$ 要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式   找到G的边界适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$   求解$c\leq">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png">
+<meta property="og:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png">
+<meta property="article:published_time" content="2023-06-08T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-06-07T15:11:56.025Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="gaitong">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ggxloveslife.top/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>统计3：区间估计</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">统计3：区间估计</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">置信水平</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.1.</span> <span class="toc-text">基本方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">预知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83"><span class="toc-number">1.1.1.</span> <span class="toc-text">卡方分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#t%E5%88%86%E5%B8%83%EF%BC%88t-distribution%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">t分布（t-distribution）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F%E5%88%86%E5%B8%83%EF%BC%88F-distribution%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">F分布（F-distribution）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">解题方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E5%B0%B1%E5%AE%8C%E4%BA%8B%E4%BA%86"><span class="toc-number">2.0.1.</span> <span class="toc-text">背就完事了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-N-mu-sigma2-sigma2%E5%B7%B2%E7%9F%A5-mu%E6%9C%AA%E7%9F%A5-%E6%B1%82-mu"><span class="toc-number">2.0.1.1.</span> <span class="toc-text">$1.N(\mu,\sigma2),\sigma2已知,\mu未知,求\mu$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-N-mu-sigma2-sigma2%E6%9C%AA%E7%9F%A5-mu%E6%9C%AA%E7%9F%A5-%E6%B1%82-mu"><span class="toc-number">2.0.1.2.</span> <span class="toc-text">$2.N(\mu,\sigma2),\sigma2未知,\mu未知,求\mu$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-N-mu-sigma2-sigma2%E6%9C%AA%E7%9F%A5-mu%E6%9C%AA%E7%9F%A5-%E6%B1%82-sigma-2"><span class="toc-number">2.0.1.3.</span> <span class="toc-text">$3.N(\mu,\sigma2),\sigma2未知,\mu未知,求\sigma^2$</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4"><span class="toc-number">2.0.2.</span> <span class="toc-text">4.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A0%B7%E6%9C%AC%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="toc-number">2.0.3.</span> <span class="toc-text">大样本区间估计</span></a></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        统计3：区间估计
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-08T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-06-08</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/gaitong/">gaitong</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/gaitong/" rel="tag">gaitong</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>统计3：区间估计</h1>
+<h5 id="置信水平">置信水平</h5>
+<p>一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数</p>
+<h3 id="基本方法">基本方法</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>构造枢轴量</strong>pivot，$G(x_1,\ldots,x_n,\theta)$</p>
+<p>要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式</p>
+</li>
+<li class="lvl-3">
+<p><strong>找到G的边界</strong>适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$</p>
+</li>
+<li class="lvl-3">
+<p><strong>求解</strong>$c\leq G(x_1,\ldots,x_n,\theta)\leq d$,得到$\theta$的两个估计值边界</p>
+</li>
+</ol>
+<h2 id="预知识">预知识</h2>
+<h3 id="卡方分布">卡方分布</h3>
+<p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p>
+<p>数学公式表示为：<br>
+$Y \sim \chi^2(k)$</p>
+<p>其中，X是符合卡方分布的随机变量，k是自由度。</p>
+<h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3>
+<p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p>
+<p>数学公式表示为： $T \sim t(k)$</p>
+<p>其中，T是符合t分布的随机变量，k是自由度。</p>
+<h3 id="F分布（F-distribution）">F分布（F-distribution）</h3>
+<p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p>
+<p>数学公式表示为： $F \sim F(k1, k2)$</p>
+<p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>
+<h1>解题方法</h1>
+<h3 id="背就完事了">背就完事了</h3>
+<h4 id="1-N-mu-sigma2-sigma2已知-mu未知-求-mu">$1.N(\mu,\sigma<sup>2),\sigma</sup>2已知,\mu未知,求\mu$</h4>
+<p>$G=\frac {\sqrt n (\bar x - \mu)} \sigma \sim N(0,1)$,$d=u_{1-\alpha/2},c=u_{\alpha/2}=-u_{1-\alpha/2}$</p>
+<p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png" alt="image-20230607193734916"></p>
+<h4 id="2-N-mu-sigma2-sigma2未知-mu未知-求-mu">$2.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\mu$</h4>
+<p>由于$\sigma$未知,所以想办法约掉$\sigma$:<br>
+$$<br>
+\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>
+$$<br>
+<img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png" alt="image-20230607193937549" style="zoom:80%;" /></p>
+<p>$d=t_{1-\alpha/2}(n-1),c=-t_{1-\alpha/2}(n-1)$</p>
+<p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png" alt="image-20230607194203682"></p>
+<h4 id="3-N-mu-sigma2-sigma2未知-mu未知-求-sigma-2">$3.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\sigma^2$</h4>
+<p>$$<br>
+\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>
+$$</p>
+<img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png" alt="image-20230607194622743" style="zoom: 67%;" />
+<h3 id="4">4.</h3>
+<img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png" alt="image-20230607195007278" style="zoom:67%;" />
+<h3 id="大样本区间估计">大样本区间估计</h3>
+<p>样本容量足够大时,用样本统计量替换总体统计量</p>
+<img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png" alt="image-20230607195154548" style="zoom:67%;" />
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">统计3：区间估计</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%AE%E4%BF%A1%E6%B0%B4%E5%B9%B3"><span class="toc-number">1.0.0.0.1.</span> <span class="toc-text">置信水平</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.1.</span> <span class="toc-text">基本方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">预知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83"><span class="toc-number">1.1.1.</span> <span class="toc-text">卡方分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#t%E5%88%86%E5%B8%83%EF%BC%88t-distribution%EF%BC%89"><span class="toc-number">1.1.2.</span> <span class="toc-text">t分布（t-distribution）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F%E5%88%86%E5%B8%83%EF%BC%88F-distribution%EF%BC%89"><span class="toc-number">1.1.3.</span> <span class="toc-text">F分布（F-distribution）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">解题方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E5%B0%B1%E5%AE%8C%E4%BA%8B%E4%BA%86"><span class="toc-number">2.0.1.</span> <span class="toc-text">背就完事了</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-N-mu-sigma2-sigma2%E5%B7%B2%E7%9F%A5-mu%E6%9C%AA%E7%9F%A5-%E6%B1%82-mu"><span class="toc-number">2.0.1.1.</span> <span class="toc-text">$1.N(\mu,\sigma2),\sigma2已知,\mu未知,求\mu$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-N-mu-sigma2-sigma2%E6%9C%AA%E7%9F%A5-mu%E6%9C%AA%E7%9F%A5-%E6%B1%82-mu"><span class="toc-number">2.0.1.2.</span> <span class="toc-text">$2.N(\mu,\sigma2),\sigma2未知,\mu未知,求\mu$</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-N-mu-sigma2-sigma2%E6%9C%AA%E7%9F%A5-mu%E6%9C%AA%E7%9F%A5-%E6%B1%82-sigma-2"><span class="toc-number">2.0.1.3.</span> <span class="toc-text">$3.N(\mu,\sigma2),\sigma2未知,\mu未知,求\sigma^2$</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4"><span class="toc-number">2.0.2.</span> <span class="toc-text">4.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%A7%E6%A0%B7%E6%9C%AC%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="toc-number">2.0.3.</span> <span class="toc-text">大样本区间估计</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&text=统计3：区间估计"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&title=统计3：区间估计"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&is_video=false&description=统计3：区间估计"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=统计3：区间估计&body=Check out this article: https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&title=统计3：区间估计"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&title=统计3：区间估计"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&title=统计3：区间估计"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&title=统计3：区间估计"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&name=统计3：区间估计&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/&t=统计3：区间估计"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
