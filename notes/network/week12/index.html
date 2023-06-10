@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ggxloveslife.top/img/network/week12.assets/image-20230522185158157.png">
 <meta property="article:published_time" content="2023-05-10T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-06-10T16:46:50.687Z">
+<meta property="article:modified_time" content="2023-06-10T17:03:10.336Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="network">
 <meta name="twitter:card" content="summary">
@@ -452,6 +452,10 @@
 </li>
 <li class="lvl-3">
 <p>快速重传（Fast Retransmit）：如果发送方连续收到3个重复的确认，这表明有一个数据包丢失，发送方会立即重传该数据包，而不必等待超时。</p>
+<div class="tips">
+<p>重复的ACK：当接收方收到乱序的数据包时，它会发送重复的ACK，其中确认序列号与之前已经确认过的数据包的序列号相同。这是因为接收方只需告知发送方它已经收到数据，并期望接收(按照顺序的)下一个数据包。</p>
+<p>接收方只在收到连续的、按顺序的数据包时才会发送连续的ACK。如果发送方接收到重复的ACK，意味着接收方收到了后续的数据包，但未收到之前的某个数据包。</p>
+</div>
 </li>
 <li class="lvl-3">
 <p><strong>快速恢复</strong>（Fast Recovery）：在进行快速重传后，发送方会将<strong>拥塞窗口减半</strong>，然后逐渐增加。这有助于减少拥塞的影响，并在不必等待超时的情况下恢复发送速率。</p>
