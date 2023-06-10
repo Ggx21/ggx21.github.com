@@ -58,10 +58,10 @@ https://ggxloveslife.top/tags/README/
 https://ggxloveslife.top/tags/slides/
 https://ggxloveslife.top/tags/THU/
 https://ggxloveslife.top/tags/Somniloquy/
-https://ggxloveslife.top/tags/nsfw/
 https://ggxloveslife.top/tags/%E6%B2%B8%E7%BE%8A%E7%BE%8A/
 https://ggxloveslife.top/tags/%E7%BE%8E%E7%BE%8A%E7%BE%8A/
 https://ggxloveslife.top/tags/gpt/
+https://ggxloveslife.top/tags/nsfw/
 https://ggxloveslife.top/tags/THU-daily/
 https://ggxloveslife.top/tags/homework/
 https://ggxloveslife.top/tags/game/
@@ -89,6 +89,6 @@ https://ggxloveslife.top/categories/notes/
 https://ggxloveslife.top/categories/notes/DLC/
 https://ggxloveslife.top/categories/notes/gaitong/
 https://ggxloveslife.top/categories/notes/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/
-https://ggxloveslife.top/categories/notes/network/
 https://ggxloveslife.top/categories/notes/iAi/
 https://ggxloveslife.top/categories/notes/PyTorch/
+https://ggxloveslife.top/categories/notes/network/

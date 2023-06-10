@@ -534,13 +534,6 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/tags/nsfw/</loc>
-    <lastmod>2023-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ggxloveslife.top/tags/%E6%B2%B8%E7%BE%8A%E7%BE%8A/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -556,6 +549,13 @@
   
   <url>
     <loc>https://ggxloveslife.top/tags/gpt/</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/tags/nsfw/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -753,13 +753,6 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/categories/notes/network/</loc>
-    <lastmod>2023-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ggxloveslife.top/categories/notes/iAi/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -768,6 +761,13 @@
   
   <url>
     <loc>https://ggxloveslife.top/categories/notes/PyTorch/</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/categories/notes/network/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
