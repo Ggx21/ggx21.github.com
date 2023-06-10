@@ -520,20 +520,6 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/tags/THU/</loc>
-    <lastmod>2023-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/tags/Somniloquy/</loc>
-    <lastmod>2023-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ggxloveslife.top/tags/%E6%B2%B8%E7%BE%8A%E7%BE%8A/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -562,7 +548,21 @@
   </url>
   
   <url>
+    <loc>https://ggxloveslife.top/tags/THU/</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ggxloveslife.top/tags/THU-daily/</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/tags/Somniloquy/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -611,14 +611,14 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/tags/network/</loc>
+    <loc>https://ggxloveslife.top/tags/DLC/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/tags/DLC/</loc>
+    <loc>https://ggxloveslife.top/tags/network/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -676,14 +676,14 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/categories/Somniloquy/</loc>
+    <loc>https://ggxloveslife.top/categories/articles/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/categories/articles/</loc>
+    <loc>https://ggxloveslife.top/categories/Somniloquy/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -704,6 +704,20 @@
   </url>
   
   <url>
+    <loc>https://ggxloveslife.top/categories/notes/</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/categories/homework/network/</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ggxloveslife.top/categories/homework/DLCE/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
@@ -718,14 +732,7 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/categories/homework/network/</loc>
-    <lastmod>2023-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/categories/notes/</loc>
+    <loc>https://ggxloveslife.top/categories/notes/gaitong/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -733,13 +740,6 @@
   
   <url>
     <loc>https://ggxloveslife.top/categories/notes/DLC/</loc>
-    <lastmod>2023-06-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/categories/notes/gaitong/</loc>
     <lastmod>2023-06-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
