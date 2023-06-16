@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="第三章:对抗搜索  α-β剪枝 基于max-min 根本思想是如果知道这条路很差,那么不需要知道这条路究竟有多差 所以当一个max结点发现自己找到了一条路,这条路比它祖先的任意一个(已经有值的)min结点的值($\beta$)要好,就直接放弃继续搜索.这叫(因为)$\beta$剪枝 因为作为max结点我肯定会选择这条看上去的比较好的路,可是他的这个min祖先一定不会最终选择这条路.(如果真的选择了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人智导第三章笔记">
+<meta property="og:url" content="https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="第三章:对抗搜索  α-β剪枝 基于max-min 根本思想是如果知道这条路很差,那么不需要知道这条路究竟有多差 所以当一个max结点发现自己找到了一条路,这条路比它祖先的任意一个(已经有值的)min结点的值($\beta$)要好,就直接放弃继续搜索.这叫(因为)$\beta$剪枝 因为作为max结点我肯定会选择这条看上去的比较好的路,可是他的这个min祖先一定不会最终选择这条路.(如果真的选择了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/ad66c389194db9b0426cc0244e73b0d8/202306161254085.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/569deb73a14a60102d58c2eee7439904/202306161254315.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/27a4312acc544cca314e4fe9a42255e7/202306161254521.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fb4f1d6cf22666a9f2871b6f6757b7c3/202306161254311.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/46d9d1acbcfebe6b618e8aee442c8ee5/202306161254390.png">
+<meta property="article:published_time" content="2023-06-15T08:25:01.000Z">
+<meta property="article:modified_time" content="2023-06-16T04:54:38.922Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="iAi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/ad66c389194db9b0426cc0244e73b0d8/202306161254085.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>人智导第三章笔记</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0%E5%AF%B9%E6%8A%97%E6%90%9C%E7%B4%A2/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/network/%E5%BA%94%E7%94%A8%E5%B1%82/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第三章:对抗搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%CE%B1-%CE%B2%E5%89%AA%E6%9E%9D"><span class="toc-number">1.1.</span> <span class="toc-text">α-β剪枝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.1.</span> <span class="toc-text">模拟算法实现时的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9BMCTS-Monte-Carlo-Tree-Search"><span class="toc-number">1.2.</span> <span class="toc-text">蒙特卡洛MCTS: Monte Carlo Tree Search</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UCT-%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E4%BB%A5%E4%B8%8B%E5%9B%9B%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">UCT 主要包括以下四个步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BF%E5%B0%94%E6%B3%95%E7%8B%97"><span class="toc-number">1.3.</span> <span class="toc-text">阿尔法狗</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MCTS%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.1.</span> <span class="toc-text">MCTS的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%96%E7%95%A5%E7%BD%91%E7%BB%9C"><span class="toc-number">1.3.2.</span> <span class="toc-text">策略网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%B0%E5%80%BC%E7%BD%91%E7%BB%9C"><span class="toc-number">1.3.3.</span> <span class="toc-text">估值网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8EMCTS%E8%9E%8D%E5%90%88"><span class="toc-number">1.3.4.</span> <span class="toc-text">与MCTS融合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.4.</span> <span class="toc-text">强化学习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%B0%B1%E6%98%AF%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8F%8D%E4%B9%89%E8%AF%8D"><span class="toc-number">1.4.0.0.1.</span> <span class="toc-text">强化学习就是监督学习的反义词</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.4.1.</span> <span class="toc-text">深度强化学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">三个方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AlphaGo-Zero"><span class="toc-number">1.4.3.</span> <span class="toc-text">AlphaGo Zero</span></a></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        人智导第三章笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-15T08:25:01.000Z" class="dt-published" itemprop="datePublished">2023-06-15</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/iAi/">iAi</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/iAi/" rel="tag">iAi</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>第三章:对抗搜索</h1>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ad66c389194db9b0426cc0244e73b0d8/202306161254085.png" alt="image-20230615212012526"></p>
+<h2 id="α-β剪枝">α-β剪枝</h2>
+<p>基于max-min</p>
+<p>根本思想是如果知道这条路很差,那么不需要知道这条路究竟有多差</p>
+<p>所以当一个max结点发现自己找到了一条路,这条路比它祖先的<strong>任意</strong>一个(已经有值的)min结点的值($\beta$)要好,就直接放弃继续搜索.这叫(因为)$\beta$剪枝</p>
+<p>因为作为max结点我肯定会选择这条看上去的比较好的路,可是他的这个min祖先一定不会最终选择这条路.(如果真的选择了,这条路的最终值会一直传上去,直到在和那个坏蛋min结点的另一个孩子竞争时失败)</p>
+<h3 id="模拟算法实现时的注意事项">模拟算法实现时的注意事项</h3>
+<p>其实α-β剪枝理解起来是很直观的,就和人类对局面的思考差不多.不知道为什么看了ppt什么<code>极大节点的下界为a。极小节点的上界为b。</code>反而变糊涂了</p>
+<p>主要是注意一下结点发生剪枝时至少进行了一次搜索,所谓的剪枝实际上是剪掉了<strong>剩下的所有儿子</strong>,而不是直接剪掉了自己</p>
+<p>在祖先没有已经计算过的另一种结点时,不会发生剪枝,所以左起这个2不应该被剪掉,同时父亲也应该更新</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/569deb73a14a60102d58c2eee7439904/202306161254315.png" alt="image-20230615215559423"></p>
+<p>但是更新到爷爷时,应该在箭头位置进行$\beta$剪枝</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/27a4312acc544cca314e4fe9a42255e7/202306161254521.png" alt="image-20230615215720463"></p>
+<h2 id="蒙特卡洛MCTS-Monte-Carlo-Tree-Search">蒙特卡洛MCTS: Monte Carlo Tree Search</h2>
+<h3 id="定义">定义</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>蒙特卡洛算法</strong>: 这是一种统计模拟方法，通过从概率分布中随机抽样或使用随机数来近似复杂过程的结果。蒙特卡洛方法广泛应用于各种领域，从物理学到金融，当然还有游戏。</p>
+</li>
+<li class="lvl-3">
+<p><strong>蒙特卡洛树搜索 (MCTS)</strong>: 这是一种在很多游戏和决策过程中使用的搜索算法，它使用蒙特卡洛方法来评估每个动作的潜在价值。它通过重复模拟游戏的玩法来构建一个搜索树，并使用统计数据来选择最有希望的移动。MCTS 主要包括四个步骤：选择(Selection)、扩展(Expansion)、模拟(Simulation)和回传(Backpropagation)。</p>
+</li>
+<li class="lvl-3">
+<p><strong>UCT (Upper Confidence Bounds for Trees) 算法</strong>: 这是 MCTS 的一个变种，它在选择步骤中使用 UCB 策略。UCB 考虑了两个因素：一个节点的平均奖励和该节点被访问的次数。通过使用 UCB，UCT 在探索（搜索未知的部分）和利用（聚焦于已知的好动作）之间找到平衡。</p>
+</li>
+</ol>
+<p>简单说来,MCTS就是选择-拓展-模拟-回传,而UCT是MCTS的一个特例</p>
+<h3 id="UCT-主要包括以下四个步骤：">UCT 主要包括以下四个步骤：</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>选择(Selection)</strong>: 从根节点开始，使用 UCB 公式选择子节点，直到找到一个可以扩展的节点（即没有完全展开或游戏结束的节点）。UCB 公式是这样的：</p>
+<p><code>UCB = X + C * sqrt(2ln(n) / ni)</code></p>
+<p>其中 <code>X</code> 是节点的平均奖励值(比如胜率)，<code>n</code> 是总的访问次数，<code>ni</code> 是当前节点的访问次数，<code>C</code> 是一个常数，控制探索与利用的平衡。较高的值会增加探索，而较低的值会强调利用。</p>
+<blockquote>
+<p>利用就是X,探索就是sqrt(2ln(n) / ni),如果当前访问次数较小,探索值就会偏大</p>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p><strong>扩展(Expansion)</strong>: 如果找到的节点不是一个游戏结束的状态，那么创建一个或多个子节点并选择其中一个。通常，这一步是随机地选择一个尚未尝试过的动作。</p>
+</li>
+<li class="lvl-3">
+<p><strong>模拟(Simulation)</strong>: 从选定的节点开始，通过随机地选择动作，模拟游戏直到达到游戏结束状态.</p>
+</li>
+<li class="lvl-3">
+<p><strong>回传(Backpropagation)</strong>: 一旦模拟结束，根据模拟的结果（赢、输或平局），更新从所选节点一直到根节点的所有节点的统计数据。</p>
+</li>
+</ol>
+<h2 id="阿尔法狗">阿尔法狗</h2>
+<p>使用神经网络+MCTS</p>
+<p>其中神经网络包括策略神经网络和估值神经网络</p>
+<h3 id="MCTS的问题">MCTS的问题</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>生成所有子节点</p>
+</li>
+<li class="lvl-2">
+<p>模拟具有盲目性</p>
+</li>
+</ul>
+<p>就是说:<mark>盲目</mark></p>
+<h3 id="策略网络">策略网络</h3>
+<p>损失函数L(w)=$-t_a log(p_a)$</p>
+<p>​    $t_a$：当前棋局下棋手落子在a处时为1，否则为0</p>
+<p>​    $p_a$：策略网络在a出落子的概率</p>
+<p>就是说,如果棋手落在a位置,希望策略网络也在a处落子</p>
+<h3 id="估值网络">估值网络</h3>
+<p>损失函数L(w)=$(R-V)^2$</p>
+<p>R为棋局的胜负</p>
+<p>V为估值网络的输出(-1,1)</p>
+<h3 id="与MCTS融合">与MCTS融合</h3>
+<p>AlphaGo增加了第三个原则<strong>经验</strong>：落子概率高的节点</p>
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/fb4f1d6cf22666a9f2871b6f6757b7c3/202306161254311.png" alt="image-20230616005919473" style="zoom:67%;" />
+<p>上面的图不用记.只需要知道最后选择的点是根子节点中被拓展过最多次的点.</p>
+<blockquote>
+<p>还有一个要注意的点是最后回传的价值:奇数层和偶数层之间正负号要切换.因为一方得利就是另一方失利</p>
+</blockquote>
+<h2 id="强化学习">强化学习</h2>
+<h5 id="强化学习就是监督学习的反义词">强化学习就是监督学习的反义词</h5>
+<p>强化学习是机器学习的一个子领域，它关注的是如何基于环境反馈来采取最优的行动。</p>
+<p>在强化学习中，我们设有一个智能体（Agent），它在某个环境（Environment）中进行行动。每一次行动之后，环境都会对智能体的状态造成变化，并给予一定的回馈（Reward）。智能体的目标就是通过学习，寻找一种策略，使得随着时间的推移，其能获取最多的回馈。</p>
+<p>为了实现这个目标，智能体需要通过探索（Exploration）和利用（Exploitation）之间进行平衡。探索是指尝试新的行动以获取更多信息，利用是指根据已有的知识采取最佳行动。如果智能体只是利用当前的知识，可能会错过那些长远看有更大回馈的行动；但是如果过多地探索新的行动，也可能会付出更多代价。</p>
+<h3 id="深度强化学习">深度强化学习</h3>
+<p>基于神经网络的强化学习方法</p>
+<h3 id="三个方法">三个方法</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>基于策略梯度</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>假设获胜者的行为都是正确的，负者行为都是不正确的</p>
+</li>
+<li class="lvl-4">
+<p>假设获负时对权重的修改量大小与获胜时一样，方向相反</p>
+</li>
+<li class="lvl-4">
+<p>流程</p>
+<ol>
+<li class="lvl-7">自己和自己下棋</li>
+<li class="lvl-7">下完棋的数据用来训练新模型</li>
+<li class="lvl-7">新的自己和过去的自己下棋</li>
+<li class="lvl-7">如果赢了则更新自己的版本</li>
+<li class="lvl-7">jump to 1</li>
+</ol>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>基于价值评估</p>
+</li>
+</ul>
+<p>实际上前两种方法就是把监督学习的MCTS的<strong>策略网络</strong>和<strong>估值网络</strong>迁移过来给出了一个深度学习的版本而已</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>演员评价方法</p>
+</li>
+</ul>
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/46d9d1acbcfebe6b618e8aee442c8ee5/202306161254390.png" alt="image-20230616012023947" style="zoom:67%;" />
+<p>实际上演员评价方法就是把上面两个网络变成两个通道,最后再通过一定的权重组合</p>
+<h3 id="AlphaGo-Zero"><strong>AlphaGo</strong> <strong>Zero</strong></h3>
+<p>在第三步的模拟过程中,用估值网络的输出取代模拟过程</p>
+<p>引入多样性:人为引入噪声.</p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第三章:对抗搜索</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%CE%B1-%CE%B2%E5%89%AA%E6%9E%9D"><span class="toc-number">1.1.</span> <span class="toc-text">α-β剪枝</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E6%8B%9F%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0%E6%97%B6%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.1.1.</span> <span class="toc-text">模拟算法实现时的注意事项</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9BMCTS-Monte-Carlo-Tree-Search"><span class="toc-number">1.2.</span> <span class="toc-text">蒙特卡洛MCTS: Monte Carlo Tree Search</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UCT-%E4%B8%BB%E8%A6%81%E5%8C%85%E6%8B%AC%E4%BB%A5%E4%B8%8B%E5%9B%9B%E4%B8%AA%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">UCT 主要包括以下四个步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%BF%E5%B0%94%E6%B3%95%E7%8B%97"><span class="toc-number">1.3.</span> <span class="toc-text">阿尔法狗</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MCTS%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.1.</span> <span class="toc-text">MCTS的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%96%E7%95%A5%E7%BD%91%E7%BB%9C"><span class="toc-number">1.3.2.</span> <span class="toc-text">策略网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%B0%E5%80%BC%E7%BD%91%E7%BB%9C"><span class="toc-number">1.3.3.</span> <span class="toc-text">估值网络</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8EMCTS%E8%9E%8D%E5%90%88"><span class="toc-number">1.3.4.</span> <span class="toc-text">与MCTS融合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.4.</span> <span class="toc-text">强化学习</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%B0%B1%E6%98%AF%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E7%9A%84%E5%8F%8D%E4%B9%89%E8%AF%8D"><span class="toc-number">1.4.0.0.1.</span> <span class="toc-text">强化学习就是监督学习的反义词</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.4.1.</span> <span class="toc-text">深度强化学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">三个方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AlphaGo-Zero"><span class="toc-number">1.4.3.</span> <span class="toc-text">AlphaGo Zero</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&text=人智导第三章笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&title=人智导第三章笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&is_video=false&description=人智导第三章笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=人智导第三章笔记&body=Check out this article: https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&title=人智导第三章笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&title=人智导第三章笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&title=人智导第三章笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&title=人智导第三章笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&name=人智导第三章笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/&t=人智导第三章笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
