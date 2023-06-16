@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="第四章:支持向量机 在超平面的表达式$f(x) &#x3D; w^Tx + b &#x3D; 0$中：   $x$: 是数据点在特征空间中的向量表示。例如，如果每个数据点有两个特征（如长和宽），那么$x$就是一个二元素向量，包含了数据点的长和宽。   $w$: 是权重向量，和$x$有相同的维数。权重向量决定了最优超平面的方向。几何意义上，可以理解为超平面的法线向量。   $b$: 是偏置项，影响最优超平面的位置（即与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="人智导第四章笔记">
+<meta property="og:url" content="https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="第四章:支持向量机 在超平面的表达式$f(x) &#x3D; w^Tx + b &#x3D; 0$中：   $x$: 是数据点在特征空间中的向量表示。例如，如果每个数据点有两个特征（如长和宽），那么$x$就是一个二元素向量，包含了数据点的长和宽。   $w$: 是权重向量，和$x$有相同的维数。权重向量决定了最优超平面的方向。几何意义上，可以理解为超平面的法线向量。   $b$: 是偏置项，影响最优超平面的位置（即与">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/cb92b20dfe48ae21d2ed72d8da5759a7/202306161638006.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/ee359d17d4380f4abe31a358d5e73d54/202306161637145.png">
+<meta property="article:published_time" content="2023-06-15T08:25:01.000Z">
+<meta property="article:modified_time" content="2023-06-16T09:44:35.479Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="iAi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/cb92b20dfe48ae21d2ed72d8da5759a7/202306161638006.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>人智导第四章笔记</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/pytorch/%E7%AC%AC%E4%B8%89%E7%AB%A0/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/network/%E5%BA%94%E7%94%A8%E5%B1%82/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第四章:支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%B4%E9%9A%94"><span class="toc-number">1.0.1.</span> <span class="toc-text">间隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96w"><span class="toc-number">1.0.2.</span> <span class="toc-text">如何优化w?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">什么是支持向量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">拉格朗日方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%80%83%E8%99%91%E5%88%B0%E8%BD%AF%E5%88%86%E7%B1%BB%E4%BC%98%E5%8C%96"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">考虑到软分类优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA"><span class="toc-number">1.0.3.</span> <span class="toc-text">非线性支持向量机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text">决策树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E9%9D%A2%E6%98%AFID3%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">下面是ID3算法的基本步骤：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C4-5"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">C4.5</span></a></li></ol></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        人智导第四章笔记
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-06-15T08:25:01.000Z" class="dt-published" itemprop="datePublished">2023-06-15</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/iAi/">iAi</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/iAi/" rel="tag">iAi</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>第四章:支持向量机</h1>
+<p>在超平面的表达式$f(x) = w^Tx + b = 0$中：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>$x$: 是数据点在特征空间中的向量表示。例如，如果每个数据点有两个特征（如长和宽），那么$x$就是一个二元素向量，包含了数据点的长和宽。</p>
+</li>
+<li class="lvl-2">
+<p>$w$: 是权重向量，和$x$有相同的维数。权重向量决定了最优超平面的方向。几何意义上，可以理解为超平面的法线向量。</p>
+</li>
+<li class="lvl-2">
+<p>$b$: 是偏置项，影响最优超平面的位置（即与原点的距离）。</p>
+</li>
+</ul>
+<p>在二维空间中，超平面就是一条直线，而在三维空间中，超平面就是一个平面，以此类推。</p>
+<p>权重向量$w$的方向正交于超平面。也就是说，任意在超平面上的两点$x_1$和$x_2$，都满足方向向量$(x_2-x_1)$与$w$的点积为零，即$|(x_2-x_1)w|=0$。</p>
+<p>权重向量$w$的模长（即欧几里得长度）与超平面的间隔成反比。模长越小，间隔越大。因此优化$w$的目标就是让其模长尽量小，从而使间隔尽量大。</p>
+<div class="tips">
+<h3 id="间隔">间隔</h3>
+<p>函数间隔和几何间隔都是在超平面（决策边界）划分数据集时定义出的两个重要概念：</p>
+<ol>
+<li class="lvl-3">
+<p>函数间隔（Functional Margin）: 对于给定的训练数据集$\mathrm{T}$和超平面$(w, b)$，定义超平面$(w, b)$关于样本点$(x_i, y_i)$的函数间隔为$y_i(w^T x_i + b)$。规定如果样本点被正确分类，那么函数间隔需为正。这对应了数据点到超平面的“原始距离”。</p>
+</li>
+<li class="lvl-3">
+<p>几何间隔（Geometrical Margin）: 对于给定的训练数据集$\mathrm{T}$和超平面$(w, b)$，定义超平面$(w, b)$关于样本点$(x_i, y_i)$的几何间隔为$y_i(w^T x_i + b)/||w||$。也就是在函数间隔的基础上，采用单位化权重向量来消除权重向量长度的影响，从而得到的数据点到超平面的真实距离。</p>
+</li>
+</ol>
+<p>在最优化问题中，SVM主要的目标是寻求得到最大的<mark>几何间隔</mark>，从而最小化模型的泛化误差，提高模型的分类性能。</p>
+</div>
+<p>而偏置项$b$决定了超平面距离原点的远近。比如在二维空间中，假设超平面是一条直线，那么$b$就是直线在y轴上的截距。增大$b$的绝对值会使直线沿着与$w$方向正交的方向移动，但并不会改变直线的方向。</p>
+<h3 id="如何优化w">如何优化w?</h3>
+<div class="tips">
+<h4 id="什么是支持向量">什么是支持向量</h4>
+<p>在支持向量机(SVM)的标准形式中，所有的数据点都会形成一些约束条件，但在实践中，大部分的数据点对最终的最优解影响不大。那些真正影响到SVM的最优解（即最优超平面）的数据点是那些离分割超平面最近的点，也就是被称为&quot;支持向量&quot;的数据点。换言之，最优解依赖于那些位于或者在最优超平面附近的点，它们被称为&quot;支持向量&quot;。这是因为这些点满足 $y_i(w^T x_i+b) -1 = 0$ 或者 $y_i (w^T x_i+b) +1 = 0$ ，是损失函数（即上述的拉格朗日函数）的<strong>活跃约束</strong>，同时也是我们判定间隔边界的点。所以，<strong>SVM只关心那些离超平面近的点，即支持向量，而对其他的点则不敏感。</strong></p>
+</div>
+<h4 id="拉格朗日方法">拉格朗日方法</h4>
+<p>选取最优化平面问题作为例子，我们知道，这是支持向量机(SVM)的基本思想。要找到一个最优的超平面，使得所有样本到该平面的间隔最大。用拉格朗日乘数法的语言来描述，就是我们希望求解以下原始问题：</p>
+<p><strong>最小化目标函数</strong></p>
+<p>$$\frac{1}{2} ||w||^2$$</p>
+<p><strong>约束条件</strong></p>
+<p>$$y_i (w^T x_i + b) - 1 \geq 0, \text{ } \forall i$$</p>
+<p>其中，$w$维度的向量，是我们要找的超平面的法向量；$x_i$是样本的特征向量；$y_i$是样本的类别标签，取值为-1或+1；and $b$是超平面的截距。</p>
+<p><strong>由上述原问题，我们可以构建出以下拉格朗日函数</strong>：“</p>
+<p>$$L(w, b, \alpha) = \frac{1}{2} ||w||^2  - \sum_{i=1}^{m} \alpha <em>{i} [y</em>{i}(w^T x_i + b) - 1]$$</p>
+<p>其中，$\alpha _{i}$就是拉格朗日乘数，M为样本数。</p>
+<p>通过对w和b求导，令其等于零，得到w和b的表达式，将这个表达式带入到拉格朗日函数中，我们可以得到对偶问题。</p>
+<p><strong>对偶问题的优化目标就变为，求以下函数最大值</strong>：</p>
+<p>$$\max_{\alpha} \sum_{i=1}^m \alpha_i - \frac{1}{2} \sum_{i=1}^m \sum_{j=1}^m y_i y_j \alpha_i \alpha_j &lt;x_i,x_j&gt;$$</p>
+<p>约束条件为：</p>
+<p>$$\sum_{i=1}^m \alpha_i y_i = 0 \quad \text{ and } \quad \alpha_i \geq 0 , i=1,2,3,…,m$$</p>
+<p>之所以要构建对偶问题，是因为它一般情况下要比原问题更容易求解，并且能自然地引入核函数，处理逻辑非线性可分的情况。在求解了对偶问题之后，我们能通过拉格朗日乘数法得到w、b参数，然后得到分类平面。</p>
+<h4 id="考虑到软分类优化">考虑到软分类优化</h4>
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/cb92b20dfe48ae21d2ed72d8da5759a7/202306161638006.png" alt="image-20230616163823956" style="zoom: 50%;" />
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/ee359d17d4380f4abe31a358d5e73d54/202306161637145.png" alt="image-20230616163703036" style="zoom: 50%;" />
+<h3 id="非线性支持向量机">非线性支持向量机</h3>
+<p><strong>使用一个变换，将原空间数据映射到新空间</strong></p>
+<h2 id="决策树">决策树</h2>
+<h4 id="下面是ID3算法的基本步骤：">下面是ID3算法的基本步骤：</h4>
+<ol>
+<li class="lvl-3">
+<p><strong>计算信息增益</strong>：对于数据集中的每个特征，计算使用该特征来划分数据集的信息增益。</p>
+</li>
+<li class="lvl-3">
+<p><strong>选择最佳特征</strong>：选择具有最高信息增益的特征。</p>
+</li>
+<li class="lvl-3">
+<p><strong>分裂数据集</strong>：使用选定的特征，根据该特征的所有可能值来分裂数据集。</p>
+</li>
+<li class="lvl-3">
+<p><strong>递归构建子树</strong>：对于分裂后的每个子数据集，重复步骤1-3，直到满足停止条件（如，数据集中的所有实例都属于同一类别，或达到预定的树的深度）。</p>
+</li>
+<li class="lvl-3">
+<p><strong>生成决策树</strong>：一旦达到停止条件，每个子数据集都将被分配一个类标签，这个类标签通常是该子数据集中最常见的类。</p>
+</li>
+</ol>
+<h4 id="C4-5">C4.5</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>信息增益比</strong>:相比于ID3,增加了增益比,在选择最佳特征时在考虑n个最高信息增益的特征时<strong>额外</strong>考虑信息增益比(倾向于使分类不平均)</p>
+</li>
+<li class="lvl-2">
+<p><strong>后剪枝</strong>:生成决策树后为防止过拟合,进行后剪枝:将所有的子孙叶节点合并到自己,自己成为新的叶节点</p>
+</li>
+</ul>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第四章:支持向量机</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%B4%E9%9A%94"><span class="toc-number">1.0.1.</span> <span class="toc-text">间隔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BC%98%E5%8C%96w"><span class="toc-number">1.0.2.</span> <span class="toc-text">如何优化w?</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">什么是支持向量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E6%B3%95"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">拉格朗日方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%80%83%E8%99%91%E5%88%B0%E8%BD%AF%E5%88%86%E7%B1%BB%E4%BC%98%E5%8C%96"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">考虑到软分类优化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%BA%BF%E6%80%A7%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA"><span class="toc-number">1.0.3.</span> <span class="toc-text">非线性支持向量机</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%B3%E7%AD%96%E6%A0%91"><span class="toc-number">1.1.</span> <span class="toc-text">决策树</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8B%E9%9D%A2%E6%98%AFID3%E7%AE%97%E6%B3%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">下面是ID3算法的基本步骤：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#C4-5"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">C4.5</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&text=人智导第四章笔记"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&title=人智导第四章笔记"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&is_video=false&description=人智导第四章笔记"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=人智导第四章笔记&body=Check out this article: https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&title=人智导第四章笔记"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&title=人智导第四章笔记"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&title=人智导第四章笔记"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&title=人智导第四章笔记"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&name=人智导第四章笔记&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/pytorch/%E7%AC%AC%E5%9B%9B%E7%AB%A0/&t=人智导第四章笔记"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
