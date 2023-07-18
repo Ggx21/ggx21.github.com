@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>新的一天</title>
+      <link href="/Somniloquy/dream-8/"/>
+      <url>/Somniloquy/dream-8/</url>
+      
+        <content type="html"><![CDATA[<h1>新的一天</h1><p>今天真开心。</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/2eb002949858768f5b42a4a5496ffbf3/202307181555340.png" alt="image-20230718155556215"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Somniloquy </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU </tag>
+            
+            <tag> Somniloquy </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>how to use proxy</title>
       <link href="/others/proxy/"/>
       <url>/others/proxy/</url>
@@ -30,6 +57,33 @@
         <content type="html"><![CDATA[<h1>第四章:<strong>统计机器学习方法</strong></h1><h3 id="统计学习的三个基本要素">统计学习的三个基本要素</h3><p>统计学习的三个基本要素包括：模型、策略和算法。</p><ol><li class="lvl-3"><p>模型：在统计学习中，我们要假设或构造一个模型来表示数据的生成过程。模型的复杂性影响着学习的难度和效果。例如，线性模型是比较简单的模型，而神经网络是一种复杂的模型。</p></li><li class="lvl-3"><p>策略：策略是指在模型的所有可能性中，我们如何选择一个最好的模型。这个“最好”通常是通过一个损失函数或评价指标来定义的，如均方误差、交叉熵损失等。我们的目标就是找到一个模型，使得这个损失函数或评价指标达到最优。</p></li><li class="lvl-3"><p>算法：算法就是如何找到这个最优模型的计算方法。在一些简单的情况下，我们可以直接求解得到最优模型。但在许多复杂的情况下，我们需要借助一些优化算法，如梯度下降、牛顿法等，来迭代求解最优模型。</p></li></ol><p>所以说模型是统计学习的对象，策略是选择模型的准则，算法是实现策略和求解模型的工具。三者缺一不可，共同构成了统计学习的基本框架。</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/98b93a9bbaa1abaaad4ba903f2e90f37/202306160003519.jpg" alt="photo_2023-06-12_22-54-53.jpg"></p><p>hello?</p>]]></content>
       
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC-总复习</title>
+      <link href="/notes/DLC/%E6%80%BB%E5%A4%8D%E4%B9%A0/"/>
+      <url>/notes/DLC/%E6%80%BB%E5%A4%8D%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1>数字逻辑电路总复习</h1><ul class="lvl-0"><li class="lvl-2"><h3 id="全书一句话">全书一句话</h3><p>表达式+触发器</p><ul class="lvl-2"><li class="lvl-4"><p>组合逻辑:表达式</p></li><li class="lvl-4"><p>时序逻辑:表达式+触发器</p></li><li class="lvl-4"><p>集成电路(可编程逻辑):表达式+触发器的具体应用</p></li></ul><h4 id="表达式">表达式</h4><ul class="lvl-2"><li class="lvl-4"><p>手工化简:公式法与卡诺图</p></li><li class="lvl-4"><p>计算机化简:表格法</p></li></ul></li><li class="lvl-2"><h3 id="组合逻辑一句话">组合逻辑一句话</h3><p>$$<br>表达式\equiv 真值表\equiv 逻辑图<br>$$</p><p>用表达式表示全部组合逻辑</p><ul class="lvl-2"><li class="lvl-4"><p>译码器</p></li><li class="lvl-4"><p>编码器</p></li><li class="lvl-4"><p>数据选择器</p></li><li class="lvl-4"><p>数据比较器</p></li><li class="lvl-4"><p>奇偶校验器</p></li><li class="lvl-4"><p>加法器</p></li></ul></li><li class="lvl-2"><h3 id="时序逻辑一句话">时序逻辑一句话</h3><p><strong>触发器结构和原理</strong></p><ul class="lvl-2"><li class="lvl-4"><p>基本RS触发器</p></li><li class="lvl-4"><p>电位型触发器</p><ul class="lvl-4"><li class="lvl-6"><p>D触发器</p></li><li class="lvl-6"><p>RS触发器</p></li></ul></li><li class="lvl-4"><p>边沿触发器</p><ul class="lvl-4"><li class="lvl-6">D触发器</li><li class="lvl-6">JK触发器</li></ul></li><li class="lvl-4"><p>会灵活运用以上触发器</p><p>基本概念：功能表，现态Qn，次态Qn+1 ，状态表与状态图，状态方程，激励表</p></li></ul></li><li class="lvl-2"><h3 id="可编程逻辑一句话">可编程逻辑一句话</h3></li></ul><h2 id="组合逻辑">组合逻辑</h2><p>当输入线为2根（标记为$x$和$y$），输出线为4根（标记为$Y_0$、$Y_1$、$Y_2$和$Y_3$）时，2-4译码器的逻辑表达式如下：</p><p>$$<br>\begin{align*}<br>Y_0 &amp;= \bar{x} \cdot \bar{y} \<br>Y_1 &amp;= \bar{x} \cdot y \<br>Y_2 &amp;= x \cdot \bar{y} \<br>Y_3 &amp;= x \cdot y \<br>\end{align*}<br>$$<br>其中，符号 $\bar{x}$ 表示非$x$，$\cdot$ 表示与，$+$ 表示或。</p><p>这些逻辑表达式描述了译码器的输出如何根据输入进行编码。例如，当输入$x$为低电平（0），输入$y$为低电平（0）时，输出$Y_0$为高电平（1），而其他输出线为低电平（0）。当输入信号发生变化时，输出线的状态将相应地改变，以反映输入的变化。这样，2-4译码器可以将2个输入线的组合状态映射到4个输出线上。</p><h2 id="触发器结构和原理"><strong>触发器结构和原理</strong></h2><ul class="lvl-0"><li class="lvl-2"><p>基本RS触发器</p><img src="https://gitlab.com/ggx-blog/imglab/uploads/c8aead3528634185ef5198d0465e3d82/202306172259218.png" alt="image-20230617225904163" style="zoom: 50%;" /><ul class="lvl-2"><li class="lvl-4"><p>S-R=0-1:RESET,Q’置零</p></li><li class="lvl-4"><p>S-R=1-0:SET,Q’置1</p></li><li class="lvl-4"><p>S-R=1-1:保持</p></li><li class="lvl-4"><p>S-R=0-0:异常(Q’,$\bar Q’$)=(1,1)</p></li><li class="lvl-4"><p>0-0转1-1:保持?不定态!</p></li></ul><p>为了解决上面问题,引入控制端E:</p></li><li class="lvl-2"><p>电位型触发器</p><p>当E=0时保持,E=1时接受输入</p><ul class="lvl-2"><li class="lvl-4"><p>RS触发器</p><p><strong>两个问题</strong>:</p><ol><li class="lvl-7"><p>RS=11保持功能与控制端E重复</p></li><li class="lvl-7"><p>当控制端启用的时候,RS=00仍然会异常</p></li></ol><p>所以去掉这两个状态后,只剩下(set)与(reset);则可以只用一个输入D表示</p></li><li class="lvl-4"><p>D触发器</p></li></ul></li><li class="lvl-2"><p>边沿触发器</p><p>当E上升沿时接受输入,其他状态保持</p><ul class="lvl-2"><li class="lvl-4"><p>D触发器</p><div class="warning"><img src="https://gitlab.com/ggx-blog/imglab/uploads/8c25881da02ec3efa792e32f71907890/202306172326118.png" alt="image-20230617232641045" style="zoom: 50%;" /><p>什么是维持阻塞?</p><ul class="lvl-5"><li class="lvl-6"><p>多个触发器组成的电路最高时钟频率</p></li><li class="lvl-6"><p>正沿D触发器的开关特性</p></li><li class="lvl-6"><p>见第九次课件</p></li></ul></div></li><li class="lvl-4"><p>JK触发器</p><ul class="lvl-4"><li class="lvl-6">特性方程<br>$$<br>Q^*=J\overline Q + \overline K Q<br>$$</li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
       
     </entry>
     
@@ -117,11 +171,11 @@
     
     
     <entry>
-      <title>统计2：参数点估计</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/</url>
+      <title>统计3：区间估计</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/</url>
       
-        <content type="html"><![CDATA[<h1>统计2：参数点估计</h1><p>参数估计:就是用样本来估计总体分布的参数$\theta$<br>$$<br>\hat\theta=\theta(X_1,X_2,\ldots,X_n)<br>$$<br>加一个hat,i.e$.\hat \theta$,就表示估计</p><p>两种最常用的点估计方法是<strong>矩估计</strong>和<strong>极大似然估计</strong></p><h3 id="矩估计">矩估计</h3><p>就是用样本矩估计理论矩</p><h4 id="基本方法">基本方法:</h4><ul class="lvl-0"><li class="lvl-2"><p>$$<br>E(X)=\mu\simeq\bar x<br>$$</p></li><li class="lvl-2"><p>$$<br>Var(x)=\sigma^2\simeq S^2=\frac 1 {n-1} \sum \limits_{i=1}^n(x-\bar x)^2<br>$$</p></li></ul><p><img src="/img/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1.assets/image-20230607170740516.png" alt="image-20230607170740516"></p><h3 id="极大似然估计">极大似然估计</h3><p>基于一个简单的思想：寻找最有可能产生观测数据的参数值。</p><p>设总体概率函数为$p(x;\theta),\theta$为参数，$x_1,x_2,\ldots,x_k$为样本,则样本联合概率分布函数$L(\theta)=\prod\limits_{k=1}^np(x_k;\theta)$,我们找到$\hat\theta$使得$L(\theta)$取得最大值</p><p>操作上,由于对连乘求导不方便,我们常常对L(θ)取对数得到$l(\theta)$</p><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>]]></content>
+        <content type="html"><![CDATA[<h1>统计3：区间估计</h1><h5 id="置信水平">置信水平</h5><p>一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数</p><h3 id="基本方法">基本方法</h3><ol><li class="lvl-3"><p><strong>构造枢轴量</strong>pivot，$G(x_1,\ldots,x_n,\theta)$</p><p>要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式</p></li><li class="lvl-3"><p><strong>找到G的边界</strong>适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$</p></li><li class="lvl-3"><p><strong>求解</strong>$c\leq G(x_1,\ldots,x_n,\theta)\leq d$,得到$\theta$的两个估计值边界</p></li></ol><h2 id="预知识">预知识</h2><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p><h1>解题方法</h1><h3 id="背就完事了">背就完事了</h3><h4 id="1-N-mu-sigma2-sigma2已知-mu未知-求-mu">$1.N(\mu,\sigma<sup>2),\sigma</sup>2已知,\mu未知,求\mu$</h4><p>$G=\frac {\sqrt n (\bar x - \mu)} \sigma \sim N(0,1)$,$d=u_{1-\alpha/2},c=u_{\alpha/2}=-u_{1-\alpha/2}$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png" alt="image-20230607193734916"></p><h4 id="2-N-mu-sigma2-sigma2未知-mu未知-求-mu">$2.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\mu$</h4><p>由于$\sigma$未知,所以想办法约掉$\sigma$:<br>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$<br><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png" alt="image-20230607193937549" style="zoom:80%;" /></p><p>$d=t_{1-\alpha/2}(n-1),c=-t_{1-\alpha/2}(n-1)$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png" alt="image-20230607194203682"></p><h4 id="3-N-mu-sigma2-sigma2未知-mu未知-求-sigma-2">$3.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\sigma^2$</h4><p>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png" alt="image-20230607194622743" style="zoom: 67%;" /><h3 id="4">4.</h3><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png" alt="image-20230607195007278" style="zoom:67%;" /><h3 id="大样本区间估计">大样本区间估计</h3><p>样本容量足够大时,用样本统计量替换总体统计量</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png" alt="image-20230607195154548" style="zoom:67%;" />]]></content>
       
       
       <categories>
@@ -144,11 +198,11 @@
     
     
     <entry>
-      <title>统计3：区间估计</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/</url>
+      <title>统计2：参数点估计</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/</url>
       
-        <content type="html"><![CDATA[<h1>统计3：区间估计</h1><h5 id="置信水平">置信水平</h5><p>一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数</p><h3 id="基本方法">基本方法</h3><ol><li class="lvl-3"><p><strong>构造枢轴量</strong>pivot，$G(x_1,\ldots,x_n,\theta)$</p><p>要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式</p></li><li class="lvl-3"><p><strong>找到G的边界</strong>适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$</p></li><li class="lvl-3"><p><strong>求解</strong>$c\leq G(x_1,\ldots,x_n,\theta)\leq d$,得到$\theta$的两个估计值边界</p></li></ol><h2 id="预知识">预知识</h2><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p><h1>解题方法</h1><h3 id="背就完事了">背就完事了</h3><h4 id="1-N-mu-sigma2-sigma2已知-mu未知-求-mu">$1.N(\mu,\sigma<sup>2),\sigma</sup>2已知,\mu未知,求\mu$</h4><p>$G=\frac {\sqrt n (\bar x - \mu)} \sigma \sim N(0,1)$,$d=u_{1-\alpha/2},c=u_{\alpha/2}=-u_{1-\alpha/2}$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png" alt="image-20230607193734916"></p><h4 id="2-N-mu-sigma2-sigma2未知-mu未知-求-mu">$2.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\mu$</h4><p>由于$\sigma$未知,所以想办法约掉$\sigma$:<br>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$<br><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png" alt="image-20230607193937549" style="zoom:80%;" /></p><p>$d=t_{1-\alpha/2}(n-1),c=-t_{1-\alpha/2}(n-1)$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png" alt="image-20230607194203682"></p><h4 id="3-N-mu-sigma2-sigma2未知-mu未知-求-sigma-2">$3.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\sigma^2$</h4><p>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png" alt="image-20230607194622743" style="zoom: 67%;" /><h3 id="4">4.</h3><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png" alt="image-20230607195007278" style="zoom:67%;" /><h3 id="大样本区间估计">大样本区间估计</h3><p>样本容量足够大时,用样本统计量替换总体统计量</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png" alt="image-20230607195154548" style="zoom:67%;" />]]></content>
+        <content type="html"><![CDATA[<h1>统计2：参数点估计</h1><p>参数估计:就是用样本来估计总体分布的参数$\theta$<br>$$<br>\hat\theta=\theta(X_1,X_2,\ldots,X_n)<br>$$<br>加一个hat,i.e$.\hat \theta$,就表示估计</p><p>两种最常用的点估计方法是<strong>矩估计</strong>和<strong>极大似然估计</strong></p><h3 id="矩估计">矩估计</h3><p>就是用样本矩估计理论矩</p><h4 id="基本方法">基本方法:</h4><ul class="lvl-0"><li class="lvl-2"><p>$$<br>E(X)=\mu\simeq\bar x<br>$$</p></li><li class="lvl-2"><p>$$<br>Var(x)=\sigma^2\simeq S^2=\frac 1 {n-1} \sum \limits_{i=1}^n(x-\bar x)^2<br>$$</p></li></ul><p><img src="/img/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1.assets/image-20230607170740516.png" alt="image-20230607170740516"></p><h3 id="极大似然估计">极大似然估计</h3><p>基于一个简单的思想：寻找最有可能产生观测数据的参数值。</p><p>设总体概率函数为$p(x;\theta),\theta$为参数，$x_1,x_2,\ldots,x_k$为样本,则样本联合概率分布函数$L(\theta)=\prod\limits_{k=1}^np(x_k;\theta)$,我们找到$\hat\theta$使得$L(\theta)$取得最大值</p><p>操作上,由于对连乘求导不方便,我们常常对L(θ)取对数得到$l(\theta)$</p><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>]]></content>
       
       
       <categories>
@@ -456,7 +510,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-QHFUaABT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-QHFUaABT"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-qvdPyPLR" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-qvdPyPLR"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-nalamVGM" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-nalamVGM"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-FbHwsdhC" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-FbHwsdhC"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
       
       
       <categories>
@@ -1239,31 +1293,6 @@
     
     
     <entry>
-      <title>fool</title>
-      <link href="/others/fool/"/>
-      <url>/others/fool/</url>
-      
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>crawler-sample</title>
       <link href="/others/code-test/"/>
       <url>/others/code-test/</url>
@@ -1281,6 +1310,31 @@
         <tags>
             
             <tag> homework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>fool</title>
+      <link href="/others/fool/"/>
+      <url>/others/fool/</url>
+      
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">uog</label><br><input type="checkbox" id="checkbox16"><label for="checkbox16">sdf</label></p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> test </tag>
             
         </tags>
       
