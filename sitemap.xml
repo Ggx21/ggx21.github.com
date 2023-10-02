@@ -65,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/notes/flower_identification/%E8%8A%B1%E5%8D%89%E9%89%B4%E8%B5%8F%E7%AC%94%E8%AE%B00/</loc>
+    <loc>https://ggxloveslife.top/homework/flower_identification/%E8%8A%B1%E5%8D%89%E9%89%B4%E8%B5%8F%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2023-09-18</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/homework/flower_identification/%E8%8A%B1%E5%8D%89%E9%89%B4%E8%B5%8F%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://ggxloveslife.top/notes/flower_identification/%E8%8A%B1%E5%8D%89%E9%89%B4%E8%B5%8F%E7%AC%94%E8%AE%B00/</loc>
     
     <lastmod>2023-09-18</lastmod>
     
@@ -695,14 +695,14 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/tags/game/</loc>
+    <loc>https://ggxloveslife.top/tags/homework/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/tags/homework/</loc>
+    <loc>https://ggxloveslife.top/tags/game/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -723,6 +723,34 @@
   </url>
   
   <url>
+    <loc>https://ggxloveslife.top/tags/DLCE/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/tags/cod/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/tags/graphics/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/tags/network/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ggxloveslife.top/tags/DLC/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -731,13 +759,6 @@
   
   <url>
     <loc>https://ggxloveslife.top/tags/signal/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/tags/cod/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -779,13 +800,6 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/tags/network/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ggxloveslife.top/tags/iAi/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -794,20 +808,6 @@
   
   <url>
     <loc>https://ggxloveslife.top/tags/PyTorch/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/tags/DLCE/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/tags/graphics/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -844,6 +844,13 @@
   </url>
   
   <url>
+    <loc>https://ggxloveslife.top/categories/homework/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://ggxloveslife.top/categories/tips/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -851,7 +858,7 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/categories/homework/</loc>
+    <loc>https://ggxloveslife.top/categories/homework/DLCE/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -865,7 +872,21 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/categories/notes/database/</loc>
+    <loc>https://ggxloveslife.top/categories/homework/graphics/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/categories/homework/network/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/categories/notes/cod/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -873,6 +894,20 @@
   
   <url>
     <loc>https://ggxloveslife.top/categories/notes/DLC/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/categories/notes/signal/</loc>
+    <lastmod>2023-10-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://ggxloveslife.top/categories/notes/database/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -893,21 +928,7 @@
   </url>
   
   <url>
-    <loc>https://ggxloveslife.top/categories/notes/signal/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://ggxloveslife.top/categories/notes/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/categories/notes/cod/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -929,27 +950,6 @@
   
   <url>
     <loc>https://ggxloveslife.top/categories/notes/PyTorch/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/categories/homework/DLCE/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/categories/homework/graphics/</loc>
-    <lastmod>2023-10-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://ggxloveslife.top/categories/homework/network/</loc>
     <lastmod>2023-10-02</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
