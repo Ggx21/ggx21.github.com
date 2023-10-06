@@ -8,7 +8,7 @@
       <link href="/homework/ddls-2023%E7%A7%8B/"/>
       <url>/homework/ddls-2023%E7%A7%8B/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details> <summary><b>紧急任务</summary>::: danger<ul class="lvl-0"><li class="lvl-2"><p>[ ]</p></li></ul><p>:::</p></details><hr><details> <summary><b>实验</summary>:::warning<ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">计原大实验——12/15</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">计原lab3——10/24</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">计原lab4——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">计原lab5——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">计原lab6——11/21</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">编原stage2实验报告——10/29</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">编原stage3实验报告——11/12</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">编原stage4实验报告——11/26</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">编原stage5——12/24</label></p></li></ul><p>:::</p></details><hr><details> <summary><b>花卉鉴赏</summary>:::tips<ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">花卉调查报告——11/05</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">课程论文——10/22</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">每日花卉赏析——10/19</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">鹅掌楸的果实–C楼附近</label></p></li></ul><p>:::</p></details><hr><details> <summary><b>完成项目</summary>:::success<ul class="lvl-0"><li class="lvl-2"><p>[ ]</p></li></ul><p>:::</p></details><hr>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details> <summary><b>紧急任务</summary>::: danger<ul class="lvl-0"><li class="lvl-2"><p>[ ]</p></li></ul><p>:::</p></details><hr><details> <summary><b>实验</summary>:::warning<ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">计原大实验——12/15</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">计原lab3——10/24</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">计原lab4——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">计原lab5——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">计原lab6——11/21</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">编原stage2实验报告——10/29</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">编原stage3实验报告——11/12</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">编原stage4实验报告——11/26</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">编原stage5——12/24</label></p></li></ul><p>:::</p></details><hr><details> <summary><b>花卉鉴赏</summary>:::tips<ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">花卉调查报告——11/05</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">课程论文——10/22</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">每日花卉赏析——10/19</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">鹅掌楸的果实–C楼附近</label></p></li></ul><p>:::</p></details><hr><details> <summary><b>完成项目</summary>:::success<ul class="lvl-0"><li class="lvl-2"><p>[ ]</p></li></ul><p>:::</p></details><hr>]]></content>
       
       
       <categories>
@@ -177,11 +177,11 @@
     
     
     <entry>
-      <title>week1</title>
-      <link href="/homework/computer_orgnization/week1-2/"/>
-      <url>/homework/computer_orgnization/week1-2/</url>
+      <title>week1-2</title>
+      <link href="/notes/computer_orgnization/week1-2/"/>
+      <url>/notes/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -204,11 +204,11 @@
     
     
     <entry>
-      <title>week1-2</title>
-      <link href="/notes/computer_orgnization/week1-2/"/>
-      <url>/notes/computer_orgnization/week1-2/</url>
+      <title>week1</title>
+      <link href="/homework/computer_orgnization/week1-2/"/>
+      <url>/homework/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
       
       
       <categories>
@@ -662,7 +662,7 @@
       <link href="/homework/deadlines/"/>
       <url>/homework/deadlines/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">毛概案例分析 十二周周日 </label><mark>周末再说吧</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">第12周DLCE</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">数电12周作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">网原大作业(联机实验部分)</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox18" checked="true"><label for="checkbox18">网原实验3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox19" checked="true"><label for="checkbox19">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox20" checked="true"><label for="checkbox20">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox21"><label for="checkbox21">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox22"><label for="checkbox22">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox23" checked="true"><label for="checkbox23">希腊语第三次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox24" checked="true"><label for="checkbox24">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox25" checked="true"><label for="checkbox25">人智导第二次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox26" checked="true"><label for="checkbox26">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox27" checked="true"><label for="checkbox27">网原第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox28" checked="true"><label for="checkbox28">概统第十次作业</label></p></li><li class="lvl-2"><p>[ ]</p></li></ul></div></details>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">毛概案例分析 十二周周日 </label><mark>周末再说吧</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">第12周DLCE</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">数电12周作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox18"><label for="checkbox18">网原大作业(联机实验部分)</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox20" checked="true"><label for="checkbox20">网原实验3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox21" checked="true"><label for="checkbox21">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox22" checked="true"><label for="checkbox22">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox23"><label for="checkbox23">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox24"><label for="checkbox24">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox25" checked="true"><label for="checkbox25">希腊语第三次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox26" checked="true"><label for="checkbox26">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox27" checked="true"><label for="checkbox27">人智导第二次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox28" checked="true"><label for="checkbox28">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox29" checked="true"><label for="checkbox29">网原第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox30" checked="true"><label for="checkbox30">概统第十次作业</label></p></li><li class="lvl-2"><p>[ ]</p></li></ul></div></details>]]></content>
       
       
       <categories>
@@ -777,7 +777,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-CeFErtIU" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-CeFErtIU"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-iRDJQdny" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-iRDJQdny"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-JSkZDkxH" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-JSkZDkxH"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-asGISnPx" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-asGISnPx"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
       
       
       <categories>
@@ -991,6 +991,33 @@
     
     
     <entry>
+      <title>DLC12</title>
+      <link href="/notes/DLC/week12/"/>
+      <url>/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network-E3</title>
       <link href="/homework/network/network-E3/"/>
       <url>/homework/network/network-E3/</url>
@@ -1041,33 +1068,6 @@
             <tag> homework </tag>
             
             <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC12</title>
-      <link href="/notes/DLC/week12/"/>
-      <url>/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -1234,6 +1234,33 @@
     
     
     <entry>
+      <title>DLC</title>
+      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>four-adder</title>
       <link href="/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -1255,33 +1282,6 @@
             <tag> homework </tag>
             
             <tag> DLCE </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC</title>
-      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -1591,7 +1591,7 @@
       <link href="/others/fool/"/>
       <url>/others/fool/</url>
       
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox30"><label for="checkbox30">uog</label><br><input type="checkbox" id="checkbox29"><label for="checkbox29">sdf</label></p></li></ul>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">uog</label><br><input type="checkbox" id="checkbox0"><label for="checkbox0">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -1656,35 +1656,6 @@
     
     
     <entry>
-      <title>network-homework-5</title>
-      <link href="/homework/network/network5/"/>
-      <url>/homework/network/network5/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello world</title>
       <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
@@ -1733,6 +1704,35 @@
         <tags>
             
             <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-5</title>
+      <link href="/homework/network/network5/"/>
+      <url>/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
