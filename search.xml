@@ -206,11 +206,11 @@
     
     
     <entry>
-      <title>week1-2</title>
-      <link href="/notes/computer_orgnization/week1-2/"/>
-      <url>/notes/computer_orgnization/week1-2/</url>
+      <title>week1</title>
+      <link href="/homework/computer_orgnization/week1-2/"/>
+      <url>/homework/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
       
       
       <categories>
@@ -233,11 +233,11 @@
     
     
     <entry>
-      <title>week1</title>
-      <link href="/homework/computer_orgnization/week1-2/"/>
-      <url>/homework/computer_orgnization/week1-2/</url>
+      <title>week1-2</title>
+      <link href="/notes/computer_orgnization/week1-2/"/>
+      <url>/notes/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -467,11 +467,65 @@
     
     
     <entry>
+      <title>统计5：拟合优度检验</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
+      
+        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> gaitong </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gaitong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>统计2：参数点估计</title>
       <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"/>
       <url>/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/</url>
       
         <content type="html"><![CDATA[<h1>统计2：参数点估计</h1><p>参数估计:就是用样本来估计总体分布的参数$\theta$<br>$$<br>\hat\theta=\theta(X_1,X_2,\ldots,X_n)<br>$$<br>加一个hat,i.e$.\hat \theta$,就表示估计</p><p>两种最常用的点估计方法是<strong>矩估计</strong>和<strong>极大似然估计</strong></p><h3 id="矩估计">矩估计</h3><p>就是用样本矩估计理论矩</p><h4 id="基本方法">基本方法:</h4><ul class="lvl-0"><li class="lvl-2"><p>$$<br>E(X)=\mu\simeq\bar x<br>$$</p></li><li class="lvl-2"><p>$$<br>Var(x)=\sigma^2\simeq S^2=\frac 1 {n-1} \sum \limits_{i=1}^n(x-\bar x)^2<br>$$</p></li></ul><p><img src="/img/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1.assets/image-20230607170740516.png" alt="image-20230607170740516"></p><h3 id="极大似然估计">极大似然估计</h3><p>基于一个简单的思想：寻找最有可能产生观测数据的参数值。</p><p>设总体概率函数为$p(x;\theta),\theta$为参数，$x_1,x_2,\ldots,x_k$为样本,则样本联合概率分布函数$L(\theta)=\prod\limits_{k=1}^np(x_k;\theta)$,我们找到$\hat\theta$使得$L(\theta)$取得最大值</p><p>操作上,由于对连乘求导不方便,我们常常对L(θ)取对数得到$l(\theta)$</p><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> gaitong </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gaitong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>统计3：区间估计</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/</url>
+      
+        <content type="html"><![CDATA[<h1>统计3：区间估计</h1><h5 id="置信水平">置信水平</h5><p>一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数</p><h3 id="基本方法">基本方法</h3><ol><li class="lvl-3"><p><strong>构造枢轴量</strong>pivot，$G(x_1,\ldots,x_n,\theta)$</p><p>要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式</p></li><li class="lvl-3"><p><strong>找到G的边界</strong>适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$</p></li><li class="lvl-3"><p><strong>求解</strong>$c\leq G(x_1,\ldots,x_n,\theta)\leq d$,得到$\theta$的两个估计值边界</p></li></ol><h2 id="预知识">预知识</h2><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p><h1>解题方法</h1><h3 id="背就完事了">背就完事了</h3><h4 id="1-N-mu-sigma2-sigma2已知-mu未知-求-mu">$1.N(\mu,\sigma<sup>2),\sigma</sup>2已知,\mu未知,求\mu$</h4><p>$G=\frac {\sqrt n (\bar x - \mu)} \sigma \sim N(0,1)$,$d=u_{1-\alpha/2},c=u_{\alpha/2}=-u_{1-\alpha/2}$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png" alt="image-20230607193734916"></p><h4 id="2-N-mu-sigma2-sigma2未知-mu未知-求-mu">$2.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\mu$</h4><p>由于$\sigma$未知,所以想办法约掉$\sigma$:<br>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$<br><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png" alt="image-20230607193937549" style="zoom:80%;" /></p><p>$d=t_{1-\alpha/2}(n-1),c=-t_{1-\alpha/2}(n-1)$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png" alt="image-20230607194203682"></p><h4 id="3-N-mu-sigma2-sigma2未知-mu未知-求-sigma-2">$3.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\sigma^2$</h4><p>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png" alt="image-20230607194622743" style="zoom: 67%;" /><h3 id="4">4.</h3><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png" alt="image-20230607195007278" style="zoom:67%;" /><h3 id="大样本区间估计">大样本区间估计</h3><p>样本容量足够大时,用样本统计量替换总体统计量</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png" alt="image-20230607195154548" style="zoom:67%;" />]]></content>
       
       
       <categories>
@@ -521,65 +575,11 @@
     
     
     <entry>
-      <title>统计5：拟合优度检验</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
-      
-        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> gaitong </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> gaitong </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>概率论部分（单变量）</title>
       <link href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"/>
       <url>/notes/gaitong/%E9%9A%8F%E6%9C%BA/</url>
       
         <content type="html"><![CDATA[<h1>概率论部分（单变量）</h1><h2 id="一、-随机现象的数学描述和概率论的基本思想">一、 随机现象的数学描述和概率论的基本思想</h2><ol><li class="lvl-3"><p>随机事件之间的关系和事件的基本运算。</p></li><li class="lvl-3"><p>理解条件概率的直观含义和数学定义，掌握条件概率在概率计算中的应用（乘法公式、全概率公式、Bayes 公式）。</p><p>乘法公式：<br>$$<br>P(A \cap B) = P(B|A) \cdot P(A)<br>$$<br>全概率公式：<br>$$<br>P(B) = \sum_i P(B|A_i) \cdot P(A_i)<br>$$<br>Bayes公式：设$A_1,\dots,A_n$为样本空间的一个分割<br>$$<br>P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum_j P(B|A_j) \cdot P(A_j)}<br>$$<br>其中，A和B是事件，P(A)表示事件A发生的概率，P(B)表示事件B发生的概率，P(B|A)表示在事件A发生的条件下事件B发生的概率，A_i表示一系列互斥且完备的事件。</p></li><li class="lvl-3"><p>理解事件的独立性的定义和有关性质。</p><p>事件独立性的定义： 事件A和事件B被称为独立事件，如果满足以下条件：P(A∩B)=P(A)⋅P(B)</p><p>否则称A与B不独立或相关</p><p>如果事件A和事件B是独立事件，则事件A与事件B的并集的概率等于事件A的概率加上事件B的概率减去事件A和事件B的交集的概率：P*(<em>A</em>∪<em>B</em>)=<em>P</em>(<em>A</em>)+<em>P</em>(<em>B</em>)−<em>P</em>(<em>A</em>∩*B)</p></li></ol><h3 id="tips：">tips：</h3><p>抽签模型与次序无关：第一次抽中白球的概率和第二次抽中白球的概率是相同的，无论放不放回。</p><h2 id="随机变量的概率分布">随机变量的概率分布</h2><ol><li class="lvl-3"><p>理解随机变量及其概率分布函数的定义，理解随机变量概率分布函数的性质，掌握概率分布函数的计算。</p><p>分布函数：$F(x)=P(X\leq x)$</p></li><li class="lvl-3"><p>理解离散型随机变量、连续型随机变量的定义，掌握概率分布列、概率密度函数及概率分布函数的关系，掌握有关的计算。</p></li><li class="lvl-3"><p>理解多维随机变量的定义，理解联合概率分布（分布函数、分布列、概率密度）与边缘分布（分布函数、分布列、概率密度），掌握有关计算。</p></li><li class="lvl-3"><p>理解随机变量的独立性的定义和性质，掌握判断独立和不独立的方法</p></li></ol><h2 id="三、-随机变量的数字特征">三、 随机变量的数字特征</h2><ol><li class="lvl-3"><h3 id="单个随机变量的数字特征">单个随机变量的数字特征</h3></li></ol><p>a) 数学期望和方差：<br>i. 理解数学期望的定义，理解数学期望的存在性，掌握数学期望的性质和计算。<br>ii. 理解方差的定义和直观含义，掌握方差的性质和计算。<br>iii. 理解如何线性变换对随机变量进行期望=0，方差=1 的标准化。<br>iv. 理解期望、方差的下述性质：<br>b) 原点矩和中心矩。<br>c) 切比雪夫（Chebyshev）不等式。</p><p>对于任意随机变量X，具有有限方差E[(X-μ)²] = σ²，其中μ是X的均值，σ²是X的方差。对于任意正数ε &gt; 0，切比雪夫不等式给出：</p><p>$$<br>P(|X - \mu| \geq \epsilon) \leq \frac<br>$$<br>即随机变量X偏离其均值μ超过ε的概率不会超过方差σ²除以ε²。</p><ol start="2"><li class="lvl-3"><h3 id="涉及多个随机变量的数字特征">涉及多个随机变量的数字特征</h3></li></ol><p>a) 协方差：理解协方差的定义和性质，掌握协方差的计算。</p><p>b) 相关系数：理解相关系数的定义和性质，掌握有关计算。正确理解不相关和独立的联系与区别。知道线性相关系数为 1 或-1 时的概率含义。</p><p>当涉及到协方差和相关系数时，以下是它们的公式：</p><p>协方差（Covariance）的公式：<br>$$<br>\text{Cov}(X, Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right]=E(XY)-E(X)E(Y)<br>$$<br>相关系数（Correlation coefficient）的公式：<br>$$</p><p>$$<br>其中，$\text{Cov}(X, Y)$ 表示随机变量X和Y的协方差，$\mu_X 和 \mu_Y$ 分别是X和Y的均值(期望)，($\sigma_X$) 和 ($\sigma_Y$) 分别是X和Y的标准差。($\rho(X, Y)$) 表示随机变量X和Y的相关系数。</p><p>c) 条件数学期望：理解定义和有关计算，掌握全（重）期望公式，包括随机和（指求和的随机变量的个数为某随机变量）的期望。<br>$$<br>E(X) = E(X|B) \cdot P(B) + E(X|B^c) \cdot P(B^c)<br>$$</p><h2 id="四、-常见的概率分布">四、 常见的概率分布</h2><h3 id="离散型分布">离散型分布</h3><p><strong>a) 二项分布</strong>：分布列，期望、方差。<br><strong>b) 几何分布</strong>：分布列，期望、方差，无记忆性。<br><strong>c) 泊松分布</strong>：分布列，期望、方差，泊松定理（特殊二项分布的泊松近似）。</p><p>当二项分布中的试验次数<em>n</em>趋向于无穷大，且成功概率<em>p</em>趋向于0，但同时满足np接近一个常数λ时，二项分布可以近似为泊松分布。</p><p><strong>d) 负二项分布</strong>：定义，与几何分布的关系，期望，方差。</p><p>定义：单次成功概率为p成功次数达r时失败次数的<a href="https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">离散概率分布</a>。注意当r取1时即为几何分布</p><table><thead><tr><th>分布</th><th>分布列</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>二项分布</td><td>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</td><td>$np$</td><td>$np(1-p)$</td></tr><tr><td>几何分布</td><td>$P(X=k) = (1-p)^{k-1} p$</td><td>$\frac{1}{p}$</td><td>$\frac{1-p}{p^2}$</td></tr><tr><td>泊松分布</td><td>$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$</td><td>$\lambda$</td><td>$\lambda$</td></tr><tr><td>负二项分布</td><td>$P(X=k+r) = \binom{k+r-1}{r-1} p^r (1-p)^{k}$</td><td>$\frac{r}{p}$</td><td>$\frac{r(1-p)}{p^2}$</td></tr></tbody></table><h3 id="连续型分布">连续型分布</h3><p>a) 均匀分布：一维均匀分布的分布函数、概率密度、期望和方差；多维均匀分布与几何概型的关系。<br>b) 指数分布：分布函数、概率密度、期望、方差，无记忆性。<br>c) 正态分布：一维正态分布的概率密度、期望、方差、标准化；二维正态分布的概率密度及参数的概率含义。正态分布的独立可加性，二元正态分布随机变量相互独立和不相关等价的性质。</p><h2 id="五、-极限定理">五、 极限定理</h2><ol><li class="lvl-3"><p>（伯努利、切比雪夫）（弱）大数定律，依概率收敛的定义，利用切比雪夫不等式验证依概率收敛。</p><p><strong>伯努利大数定律</strong>：伯努利实验中，随着试验次数增加，频率落在概率附近的概率趋于1</p><p><strong>切比雪夫大数定律</strong>：利用切比雪夫不等式，两两不相关的随机变量序列，方差有界，随着序列项数增加，随机变量均值落在期望附近的概率趋于1</p><p>切比雪夫的</p><img src="/img/gaitong//%E5%8D%95%E5%8F%98%E9%87%8F%E9%9A%8F%E6%9C%BA.assets/image-20230607163414308.png" alt="image-20230607163414308" style="zoom:80%;" /><p>$$Var(\frac 1 n \sum X_k)\rarr0$$为马尔可夫条件</p><p><strong>依概率收敛</strong></p><p>当一个随机变量序列以概率1逐渐接近另一个随机变量时，我们称该序列依概率收敛于该随机变量。</p></li><li class="lvl-3"><p>中心极限定理（掌握独立同分布情形 De Moivre-Laplace，林德伯格-勒维）及应用</p><h5 id="中心极限定理">中心极限定理</h5><p>$X_1, X_2, \ldots, X_k$是独立同分布（iid）<br>$$<br>X_1+X_2+ \ldots+X_k\overset{.}{\sim}N(n\mu,n\sigma^2)\<br>\frac {X_1+X_2+ \ldots+X_k -n\mu}{\sigma\sqrt n}\overset{.}{\sim}N(0,1)<br>$$<br>一般地,$b(n,p)\overset{.}{\sim}N(np,npq)$</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> gaitong </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> gaitong </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>统计3：区间估计</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/</url>
-      
-        <content type="html"><![CDATA[<h1>统计3：区间估计</h1><h5 id="置信水平">置信水平</h5><p>一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数</p><h3 id="基本方法">基本方法</h3><ol><li class="lvl-3"><p><strong>构造枢轴量</strong>pivot，$G(x_1,\ldots,x_n,\theta)$</p><p>要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式</p></li><li class="lvl-3"><p><strong>找到G的边界</strong>适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$</p></li><li class="lvl-3"><p><strong>求解</strong>$c\leq G(x_1,\ldots,x_n,\theta)\leq d$,得到$\theta$的两个估计值边界</p></li></ol><h2 id="预知识">预知识</h2><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p><h1>解题方法</h1><h3 id="背就完事了">背就完事了</h3><h4 id="1-N-mu-sigma2-sigma2已知-mu未知-求-mu">$1.N(\mu,\sigma<sup>2),\sigma</sup>2已知,\mu未知,求\mu$</h4><p>$G=\frac {\sqrt n (\bar x - \mu)} \sigma \sim N(0,1)$,$d=u_{1-\alpha/2},c=u_{\alpha/2}=-u_{1-\alpha/2}$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png" alt="image-20230607193734916"></p><h4 id="2-N-mu-sigma2-sigma2未知-mu未知-求-mu">$2.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\mu$</h4><p>由于$\sigma$未知,所以想办法约掉$\sigma$:<br>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$<br><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png" alt="image-20230607193937549" style="zoom:80%;" /></p><p>$d=t_{1-\alpha/2}(n-1),c=-t_{1-\alpha/2}(n-1)$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png" alt="image-20230607194203682"></p><h4 id="3-N-mu-sigma2-sigma2未知-mu未知-求-sigma-2">$3.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\sigma^2$</h4><p>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png" alt="image-20230607194622743" style="zoom: 67%;" /><h3 id="4">4.</h3><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png" alt="image-20230607195007278" style="zoom:67%;" /><h3 id="大样本区间估计">大样本区间估计</h3><p>样本容量足够大时,用样本统计量替换总体统计量</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png" alt="image-20230607195154548" style="zoom:67%;" />]]></content>
       
       
       <categories>
@@ -806,7 +806,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-nsvPMtPb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-nsvPMtPb"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-hZskdIJi" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-hZskdIJi"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-nRjBMQDb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-nRjBMQDb"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-HNfzYOap" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-HNfzYOap"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
       
       
       <categories>
@@ -1049,33 +1049,6 @@
     
     
     <entry>
-      <title>DLC12</title>
-      <link href="/notes/DLC/week12/"/>
-      <url>/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-E3</title>
       <link href="/homework/network/network-E3/"/>
       <url>/homework/network/network-E3/</url>
@@ -1126,6 +1099,33 @@
             <tag> homework </tag>
             
             <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC12</title>
+      <link href="/notes/DLC/week12/"/>
+      <url>/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
             
         </tags>
       
@@ -1292,33 +1292,6 @@
     
     
     <entry>
-      <title>DLC</title>
-      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>four-adder</title>
       <link href="/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -1340,6 +1313,33 @@
             <tag> homework </tag>
             
             <tag> DLCE </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC</title>
+      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
             
         </tags>
       
@@ -1620,11 +1620,11 @@
     
     
     <entry>
-      <title>crawler-sample</title>
-      <link href="/others/code-test/"/>
-      <url>/others/code-test/</url>
+      <title>fool</title>
+      <link href="/others/fool/"/>
+      <url>/others/fool/</url>
       
-        <content type="html"><![CDATA[<h1>code-test</h1><blockquote><p>这是一个用来测试代码显示效果的页面。</p><p>你也可以用它爬点东西</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.service <span class="keyword">import</span> Service <span class="keyword">as</span> ChromeService</span><br><span class="line"><span class="keyword">from</span> webdriver_manager.chrome <span class="keyword">import</span> ChromeDriverManager</span><br><span class="line"><span class="comment"># from fake_useragent import UserAgent</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DynCrawler</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,url,theme</span>):</span><br><span class="line">        self.url = url</span><br><span class="line">        self.theme = theme</span><br><span class="line">        self.options=webdriver.ChromeOptions() <span class="comment"># 无头模式</span></span><br><span class="line">        self.options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()),options=self.options)</span><br><span class="line">        self.href_list=[]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_whole_page</span>(<span class="params">self</span>):</span><br><span class="line">        html_page=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//*[@class=&quot;list-t&quot;]/a&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> html_page:</span><br><span class="line">            url =page.get_attribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">            title=page.text</span><br><span class="line">            data = &#123;<span class="string">&quot;url&quot;</span>:<span class="built_in">str</span>(url),<span class="string">&quot;title&quot;</span>:<span class="built_in">str</span>(title)&#125;</span><br><span class="line">            self.href_list.append(data)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;get page: &quot;</span>,url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_images</span>(<span class="params">self,url,title</span>):</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        images=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//div[@class=&quot;content&quot;]/a/img&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> index,image <span class="keyword">in</span> <span class="built_in">enumerate</span>(images):</span><br><span class="line">            image_url=image.get_attribute(<span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(image_url)</span><br><span class="line">            <span class="keyword">if</span> image_url:</span><br><span class="line">                image_name=index+<span class="number">1</span></span><br><span class="line">                image_name=<span class="built_in">str</span>(image_name)+<span class="string">&#x27;.jpg&#x27;</span></span><br><span class="line">                image_path=<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/<span class="subst">&#123;image_name&#125;</span>&#x27;</span></span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(image_path,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        f.write(requests.get(image_url).content)</span><br><span class="line">                    <span class="keyword">except</span>:</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_title</span>(<span class="params">self,url</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;get title: &quot;</span>,url)</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        title=self.driver.find_element(By.XPATH,<span class="string">&#x27;//*[@id=&quot;app&quot;]/div/div[3]/div[1]/div[1]/h1&#x27;</span>)</span><br><span class="line">        title=title.text</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title: &quot;</span>,title)</span><br><span class="line">        <span class="keyword">return</span> title</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(self.theme):</span><br><span class="line">            os.mkdir(self.theme)</span><br><span class="line">        self.driver.get(self.url)</span><br><span class="line">        self.driver.implicitly_wait(<span class="number">2</span>)</span><br><span class="line">        self.get_whole_page()</span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> self.href_list:</span><br><span class="line">            url=data[<span class="string">&#x27;url&#x27;</span>]</span><br><span class="line">            title=data[<span class="string">&#x27;title&#x27;</span>]</span><br><span class="line">            title=title.replace(<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;|&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27; &#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;：&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            <span class="comment"># make dir</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>):</span><br><span class="line">                os.mkdir(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>)</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/url.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(url)</span><br><span class="line">                self.get_images(url,title)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请输入歌手名字：&#x27;</span>)</span><br><span class="line">    singername=<span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">8</span>):</span><br><span class="line">        url=<span class="string">f&#x27;http://www.echangwang.com/singer/<span class="subst">&#123;singername&#125;</span>_<span class="subst">&#123;index&#125;</span>.html&#x27;</span></span><br><span class="line">        crawler=DynCrawler(url,singername)</span><br><span class="line">        crawler.run()</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox32"><label for="checkbox32">uog</label><br><input type="checkbox" id="checkbox31"><label for="checkbox31">sdf</label></p></li></ul>]]></content>
       
       
       <categories>
@@ -1636,7 +1636,7 @@
       
         <tags>
             
-            <tag> homework </tag>
+            <tag> test </tag>
             
         </tags>
       
@@ -1670,31 +1670,6 @@
     
     
     <entry>
-      <title>fool</title>
-      <link href="/others/fool/"/>
-      <url>/others/fool/</url>
-      
-        <content type="html"><![CDATA[<div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div><ul class="lvl-0"><li class="lvl-2"><p><input type="checkbox" id="checkbox32"><label for="checkbox32">uog</label><br><input type="checkbox" id="checkbox31"><label for="checkbox31">sdf</label></p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> test </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello world</title>
       <link href="/others/hello-world-1/"/>
       <url>/others/hello-world-1/</url>
@@ -1708,6 +1683,60 @@
           
       </categories>
       
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>crawler-sample</title>
+      <link href="/others/code-test/"/>
+      <url>/others/code-test/</url>
+      
+        <content type="html"><![CDATA[<h1>code-test</h1><blockquote><p>这是一个用来测试代码显示效果的页面。</p><p>你也可以用它爬点东西</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.service <span class="keyword">import</span> Service <span class="keyword">as</span> ChromeService</span><br><span class="line"><span class="keyword">from</span> webdriver_manager.chrome <span class="keyword">import</span> ChromeDriverManager</span><br><span class="line"><span class="comment"># from fake_useragent import UserAgent</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DynCrawler</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,url,theme</span>):</span><br><span class="line">        self.url = url</span><br><span class="line">        self.theme = theme</span><br><span class="line">        self.options=webdriver.ChromeOptions() <span class="comment"># 无头模式</span></span><br><span class="line">        self.options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()),options=self.options)</span><br><span class="line">        self.href_list=[]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_whole_page</span>(<span class="params">self</span>):</span><br><span class="line">        html_page=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//*[@class=&quot;list-t&quot;]/a&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> html_page:</span><br><span class="line">            url =page.get_attribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">            title=page.text</span><br><span class="line">            data = &#123;<span class="string">&quot;url&quot;</span>:<span class="built_in">str</span>(url),<span class="string">&quot;title&quot;</span>:<span class="built_in">str</span>(title)&#125;</span><br><span class="line">            self.href_list.append(data)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;get page: &quot;</span>,url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_images</span>(<span class="params">self,url,title</span>):</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        images=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//div[@class=&quot;content&quot;]/a/img&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> index,image <span class="keyword">in</span> <span class="built_in">enumerate</span>(images):</span><br><span class="line">            image_url=image.get_attribute(<span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(image_url)</span><br><span class="line">            <span class="keyword">if</span> image_url:</span><br><span class="line">                image_name=index+<span class="number">1</span></span><br><span class="line">                image_name=<span class="built_in">str</span>(image_name)+<span class="string">&#x27;.jpg&#x27;</span></span><br><span class="line">                image_path=<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/<span class="subst">&#123;image_name&#125;</span>&#x27;</span></span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(image_path,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        f.write(requests.get(image_url).content)</span><br><span class="line">                    <span class="keyword">except</span>:</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_title</span>(<span class="params">self,url</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;get title: &quot;</span>,url)</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        title=self.driver.find_element(By.XPATH,<span class="string">&#x27;//*[@id=&quot;app&quot;]/div/div[3]/div[1]/div[1]/h1&#x27;</span>)</span><br><span class="line">        title=title.text</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title: &quot;</span>,title)</span><br><span class="line">        <span class="keyword">return</span> title</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(self.theme):</span><br><span class="line">            os.mkdir(self.theme)</span><br><span class="line">        self.driver.get(self.url)</span><br><span class="line">        self.driver.implicitly_wait(<span class="number">2</span>)</span><br><span class="line">        self.get_whole_page()</span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> self.href_list:</span><br><span class="line">            url=data[<span class="string">&#x27;url&#x27;</span>]</span><br><span class="line">            title=data[<span class="string">&#x27;title&#x27;</span>]</span><br><span class="line">            title=title.replace(<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;|&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27; &#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;：&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            <span class="comment"># make dir</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>):</span><br><span class="line">                os.mkdir(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>)</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/url.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(url)</span><br><span class="line">                self.get_images(url,title)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请输入歌手名字：&#x27;</span>)</span><br><span class="line">    singername=<span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">8</span>):</span><br><span class="line">        url=<span class="string">f&#x27;http://www.echangwang.com/singer/<span class="subst">&#123;singername&#125;</span>_<span class="subst">&#123;index&#125;</span>.html&#x27;</span></span><br><span class="line">        crawler=DynCrawler(url,singername)</span><br><span class="line">        crawler.run()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-5</title>
+      <link href="/homework/network/network5/"/>
+      <url>/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
       
     </entry>
     
@@ -1762,35 +1791,6 @@
         <tags>
             
             <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-5</title>
-      <link href="/homework/network/network5/"/>
-      <url>/homework/network/network5/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
             
         </tags>
       
