@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title></title>
+      <link href="/notes/flower_identification/%E5%A6%82%E4%BD%95%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%AA%E8%A1%8C%E4%B8%9A/"/>
+      <url>/notes/flower_identification/%E5%A6%82%E4%BD%95%E4%BA%86%E8%A7%A3%E4%B8%80%E4%B8%AA%E8%A1%8C%E4%B8%9A/</url>
+      
+        <content type="html"><![CDATA[<h1>如何了解一个行业</h1><ul class="lvl-0"><li class="lvl-2"><p>商品分类</p><ul class="lvl-2"><li class="lvl-4"><p>周期品:上游大宗,价格是核心驱动因素</p><p>回报率比较低,回报周期比较长</p><blockquote><p>回报周期比较长,难以停止生产,产能过剩</p></blockquote></li><li class="lvl-4"><p>非周期品:下游消费品</p><p>消费品:看不见的手控制</p><p>具备差异化–&gt;来源于xx因素</p></li><li class="lvl-4"><p>其他:金融\科技等</p></li></ul></li><li class="lvl-2"><p>重资产,后发优势(产品无差异性?)–&gt;垃圾</p><p>后面的容易通过更重资产拍死前浪</p></li><li class="lvl-2"><p>关注行业成长的不同时期,行业的位置并不固定</p></li></ul><p>制造业和科技业的差异是很大的</p><ul class="lvl-0"><li class="lvl-2"><p>制造业在于证实</p></li><li class="lvl-2"><p>非制造业在于不能证伪</p></li></ul>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>deadlines</title>
       <link href="/homework/ddls-2023%E7%A7%8B/"/>
       <url>/homework/ddls-2023%E7%A7%8B/</url>
@@ -56,6 +69,33 @@
     
     
     <entry>
+      <title>lab2</title>
+      <link href="/homework/computer_orgnization/lab2/"/>
+      <url>/homework/computer_orgnization/lab2/</url>
+      
+        <content type="html"><![CDATA[<h1>实验二</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="仿真截图">仿真截图</h4><img src="https://gitlab.com/ggx-blog/imglab/uploads/c17e96e795aff020dcc4ea8c0d80ca73/202310021713613.png" alt="image-20231002145428181" style="zoom: 50%;" /></li><li class="lvl-2"><h3 id="在线实验平台">在线实验平台</h3><img src="https://gitlab.com/ggx-blog/imglab/uploads/51e50fc87612f90a9ae1c529704ffd0e/202310021458363.png" alt="image-20231002145843251" style="zoom: 50%;" /></li></ul><h2 id="思考题">思考题</h2><ul class="lvl-0"><li class="lvl-2"><h3 id="同步逻辑的电路原理图">同步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/913ac109bd94ea7abf17f78b9278a05b/202310021619164.png" alt=""></p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a0c159e24a93fca321af418a21732ae1/202310021622970.png" alt="image-20231002162245902"></p></li><li class="lvl-2"><h3 id="异步逻辑的电路原理图">异步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ba129e270f1b57944dc06edf1e90730a/202310021628504.png" alt="image-20231002162808433"></p></li><li class="lvl-2"><h3 id="异步逻辑和同步逻辑的异同">异步逻辑和同步逻辑的异同</h3><p>从图像中可以看出，两种逻辑实现经 Vivado 综合后的电路原理图有较大不同。同步逻辑实现中，counter模块和trigger模块<strong>并联</strong>同时接受clock_gen生成的clk信号驱动，这意味着它们在同一个时钟域中操作，所有的触发器在时钟的上升沿或下降沿触发，确保了时序一致性。；而异步实现中，则是类似于<strong>串联</strong>结构，clockgen并不直接接入counter模块，而是通过驱动trigger模块，再有trigger模块产生的trigger信号接入counter模块。</p><p><strong>异步逻辑设计</strong>，没有全局统一时钟驱动的逻辑设计。异步逻辑在复杂的项目中，会导致静态时序分析失败，造成在硬件上难以调试的时序问题，此外，在异步逻辑中，通常需要使用额外的逻辑电路（如触发器或者双边缘触发器）来协调计数器模块和触发器模块之间的时序关系。这可能导致电路结构更加复杂，需要特殊的电路设计技巧来解决时序问题。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> cod </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cod </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>stage1</title>
       <link href="/homework/compiler_construction/stage1/"/>
       <url>/homework/compiler_construction/stage1/</url>
@@ -77,33 +117,6 @@
             <tag> lab </tag>
             
             <tag> 编原 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>lab2</title>
-      <link href="/homework/computer_orgnization/lab2/"/>
-      <url>/homework/computer_orgnization/lab2/</url>
-      
-        <content type="html"><![CDATA[<h1>实验二</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="仿真截图">仿真截图</h4><img src="https://gitlab.com/ggx-blog/imglab/uploads/c17e96e795aff020dcc4ea8c0d80ca73/202310021713613.png" alt="image-20231002145428181" style="zoom: 50%;" /></li><li class="lvl-2"><h3 id="在线实验平台">在线实验平台</h3><img src="https://gitlab.com/ggx-blog/imglab/uploads/51e50fc87612f90a9ae1c529704ffd0e/202310021458363.png" alt="image-20231002145843251" style="zoom: 50%;" /></li></ul><h2 id="思考题">思考题</h2><ul class="lvl-0"><li class="lvl-2"><h3 id="同步逻辑的电路原理图">同步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/913ac109bd94ea7abf17f78b9278a05b/202310021619164.png" alt=""></p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a0c159e24a93fca321af418a21732ae1/202310021622970.png" alt="image-20231002162245902"></p></li><li class="lvl-2"><h3 id="异步逻辑的电路原理图">异步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ba129e270f1b57944dc06edf1e90730a/202310021628504.png" alt="image-20231002162808433"></p></li><li class="lvl-2"><h3 id="异步逻辑和同步逻辑的异同">异步逻辑和同步逻辑的异同</h3><p>从图像中可以看出，两种逻辑实现经 Vivado 综合后的电路原理图有较大不同。同步逻辑实现中，counter模块和trigger模块<strong>并联</strong>同时接受clock_gen生成的clk信号驱动，这意味着它们在同一个时钟域中操作，所有的触发器在时钟的上升沿或下降沿触发，确保了时序一致性。；而异步实现中，则是类似于<strong>串联</strong>结构，clockgen并不直接接入counter模块，而是通过驱动trigger模块，再有trigger模块产生的trigger信号接入counter模块。</p><p><strong>异步逻辑设计</strong>，没有全局统一时钟驱动的逻辑设计。异步逻辑在复杂的项目中，会导致静态时序分析失败，造成在硬件上难以调试的时序问题，此外，在异步逻辑中，通常需要使用额外的逻辑电路（如触发器或者双边缘触发器）来协调计数器模块和触发器模块之间的时序关系。这可能导致电路结构更加复杂，需要特殊的电路设计技巧来解决时序问题。</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> cod </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> cod </tag>
             
         </tags>
       
@@ -143,7 +156,7 @@
       <link href="/notes/compiler_construction/code/"/>
       <url>/notes/compiler_construction/code/</url>
       
-        <content type="html"><![CDATA[<h1>编原命令</h1><p>输出前中后端编译内容</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python main.py --input <span class="built_in">test</span>/example.c --parse</span><br><span class="line">python main.py --input <span class="built_in">test</span>/example.c --<span class="built_in">tac</span></span><br><span class="line">python main.py --input <span class="built_in">test</span>/example.c --riscv</span><br></pre></td></tr></table></figure><p>测试</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/2021010803/lab/minidecaf-2021010803/minidecaf-tests</span><br><span class="line">STEP_FROM=4 STEP_UNTIL=4 ./check.sh</span><br></pre></td></tr></table></figure><p>生成riscv汇编代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">riscv64-unknown-elf-gcc -march=rv32im -mabi=ilp32 <span class="built_in">test</span>/test.c -S -O3 -o <span class="built_in">test</span>/test.s</span><br></pre></td></tr></table></figure><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/0ad550f5c4f8c110c953f019cca136a8/202309272040816.png" alt="image-20230927204028463"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ABCDEFGHIJKLMNOPQRSTUVWXYZ  tOafs  </span><br><span class="line">no g  ta  l    efs hw imyd   </span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1>编原命令</h1><p>输出前中后端编译内容</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python main.py --input <span class="built_in">test</span>/example.c --parse</span><br><span class="line">python main.py --input <span class="built_in">test</span>/example.c --<span class="built_in">tac</span></span><br><span class="line">python main.py --input <span class="built_in">test</span>/example.c --riscv</span><br></pre></td></tr></table></figure><p>测试</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/2021010803/lab/minidecaf-2021010803/minidecaf-tests</span><br><span class="line">STEP_FROM=4 STEP_UNTIL=4 ./check.sh</span><br></pre></td></tr></table></figure><p>生成riscv汇编代码</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">riscv64-unknown-elf-gcc -march=rv32im -mabi=ilp32 <span class="built_in">test</span>/test.c -S -O3 -o <span class="built_in">test</span>/test.s</span><br></pre></td></tr></table></figure><h2 id="asm的生成过程">asm的生成过程</h2><ol><li class="lvl-3"><h3 id="main-py"><a href="http://main.py">main.py</a></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Target code generation stage: Three-address code -&gt; RISC-V assembly code</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">step_asm</span>(<span class="params">p: TACProg</span>):</span><br><span class="line">    riscvAsmEmitter = RiscvAsmEmitter(Riscv.AllocatableRegs, Riscv.CallerSaved)</span><br><span class="line">    asm = Asm(riscvAsmEmitter, BruteRegAlloc(riscvAsmEmitter))</span><br><span class="line">    prog = asm.transform(p)</span><br><span class="line">    <span class="keyword">return</span> prog</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p><strong>RiscvAsmEmitter</strong></p><blockquote><p>这是生成全局risc-v asm代码的类</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RiscvAsmEmitter</span>(<span class="title class_ inherited__">AsmEmitter</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params"></span></span><br><span class="line"><span class="params">        self,</span></span><br><span class="line"><span class="params">        allocatableRegs: <span class="built_in">list</span>[Reg],</span></span><br><span class="line"><span class="params">        callerSaveRegs: <span class="built_in">list</span>[Reg],</span></span><br><span class="line"><span class="params">    </span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="built_in">super</span>().__init__(allocatableRegs, callerSaveRegs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># the START of the asm code</span></span><br><span class="line">        <span class="comment"># int step10, you need to add the declaration of global var here</span></span><br><span class="line">        self.printer.println(<span class="string">&quot;.text&quot;</span>)</span><br><span class="line">        self.printer.println(<span class="string">&quot;.global main&quot;</span>)</span><br><span class="line">        self.printer.println(<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p><strong>Asm</strong>.transform</p><blockquote><p>Asm的构造需要<code>RiscvAsmEmitter</code>,<code>BruteRegAlloc</code></p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transform</span>(<span class="params">self, prog: TACProg</span>):</span><br><span class="line">    analyzer = LivenessAnalyzer()</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">for</span> func <span class="keyword">in</span> prog.funcs:</span><br><span class="line">     <span class="comment">#遍历函数的每一条指令，然后调用相应的visit函数</span></span><br><span class="line">        pair = self.emitter.selectInstr(func)</span><br><span class="line">     <span class="comment">#构造CFG</span></span><br><span class="line">        builder = CFGBuilder()</span><br><span class="line">        cfg: CFG = builder.buildFrom(pair[<span class="number">0</span>])</span><br><span class="line">        analyzer.accept(cfg)</span><br><span class="line">     <span class="comment">#为变量分配寄存器</span></span><br><span class="line">        self.regAlloc.accept(cfg, pair[<span class="number">1</span>])</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> self.emitter.emitEnd()</span><br></pre></td></tr></table></figure></li></ol>]]></content>
       
       
       
@@ -467,11 +480,11 @@
     
     
     <entry>
-      <title>统计5：拟合优度检验</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
+      <title>统计2：参数点估计</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/</url>
       
-        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
+        <content type="html"><![CDATA[<h1>统计2：参数点估计</h1><p>参数估计:就是用样本来估计总体分布的参数$\theta$<br>$$<br>\hat\theta=\theta(X_1,X_2,\ldots,X_n)<br>$$<br>加一个hat,i.e$.\hat \theta$,就表示估计</p><p>两种最常用的点估计方法是<strong>矩估计</strong>和<strong>极大似然估计</strong></p><h3 id="矩估计">矩估计</h3><p>就是用样本矩估计理论矩</p><h4 id="基本方法">基本方法:</h4><ul class="lvl-0"><li class="lvl-2"><p>$$<br>E(X)=\mu\simeq\bar x<br>$$</p></li><li class="lvl-2"><p>$$<br>Var(x)=\sigma^2\simeq S^2=\frac 1 {n-1} \sum \limits_{i=1}^n(x-\bar x)^2<br>$$</p></li></ul><p><img src="/img/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1.assets/image-20230607170740516.png" alt="image-20230607170740516"></p><h3 id="极大似然估计">极大似然估计</h3><p>基于一个简单的思想：寻找最有可能产生观测数据的参数值。</p><p>设总体概率函数为$p(x;\theta),\theta$为参数，$x_1,x_2,\ldots,x_k$为样本,则样本联合概率分布函数$L(\theta)=\prod\limits_{k=1}^np(x_k;\theta)$,我们找到$\hat\theta$使得$L(\theta)$取得最大值</p><p>操作上,由于对连乘求导不方便,我们常常对L(θ)取对数得到$l(\theta)$</p><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>]]></content>
       
       
       <categories>
@@ -494,11 +507,11 @@
     
     
     <entry>
-      <title>统计2：参数点估计</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/</url>
+      <title>概率论部分（单变量）</title>
+      <link href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"/>
+      <url>/notes/gaitong/%E9%9A%8F%E6%9C%BA/</url>
       
-        <content type="html"><![CDATA[<h1>统计2：参数点估计</h1><p>参数估计:就是用样本来估计总体分布的参数$\theta$<br>$$<br>\hat\theta=\theta(X_1,X_2,\ldots,X_n)<br>$$<br>加一个hat,i.e$.\hat \theta$,就表示估计</p><p>两种最常用的点估计方法是<strong>矩估计</strong>和<strong>极大似然估计</strong></p><h3 id="矩估计">矩估计</h3><p>就是用样本矩估计理论矩</p><h4 id="基本方法">基本方法:</h4><ul class="lvl-0"><li class="lvl-2"><p>$$<br>E(X)=\mu\simeq\bar x<br>$$</p></li><li class="lvl-2"><p>$$<br>Var(x)=\sigma^2\simeq S^2=\frac 1 {n-1} \sum \limits_{i=1}^n(x-\bar x)^2<br>$$</p></li></ul><p><img src="/img/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1.assets/image-20230607170740516.png" alt="image-20230607170740516"></p><h3 id="极大似然估计">极大似然估计</h3><p>基于一个简单的思想：寻找最有可能产生观测数据的参数值。</p><p>设总体概率函数为$p(x;\theta),\theta$为参数，$x_1,x_2,\ldots,x_k$为样本,则样本联合概率分布函数$L(\theta)=\prod\limits_{k=1}^np(x_k;\theta)$,我们找到$\hat\theta$使得$L(\theta)$取得最大值</p><p>操作上,由于对连乘求导不方便,我们常常对L(θ)取对数得到$l(\theta)$</p><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>]]></content>
+        <content type="html"><![CDATA[<h1>概率论部分（单变量）</h1><h2 id="一、-随机现象的数学描述和概率论的基本思想">一、 随机现象的数学描述和概率论的基本思想</h2><ol><li class="lvl-3"><p>随机事件之间的关系和事件的基本运算。</p></li><li class="lvl-3"><p>理解条件概率的直观含义和数学定义，掌握条件概率在概率计算中的应用（乘法公式、全概率公式、Bayes 公式）。</p><p>乘法公式：<br>$$<br>P(A \cap B) = P(B|A) \cdot P(A)<br>$$<br>全概率公式：<br>$$<br>P(B) = \sum_i P(B|A_i) \cdot P(A_i)<br>$$<br>Bayes公式：设$A_1,\dots,A_n$为样本空间的一个分割<br>$$<br>P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum_j P(B|A_j) \cdot P(A_j)}<br>$$<br>其中，A和B是事件，P(A)表示事件A发生的概率，P(B)表示事件B发生的概率，P(B|A)表示在事件A发生的条件下事件B发生的概率，A_i表示一系列互斥且完备的事件。</p></li><li class="lvl-3"><p>理解事件的独立性的定义和有关性质。</p><p>事件独立性的定义： 事件A和事件B被称为独立事件，如果满足以下条件：P(A∩B)=P(A)⋅P(B)</p><p>否则称A与B不独立或相关</p><p>如果事件A和事件B是独立事件，则事件A与事件B的并集的概率等于事件A的概率加上事件B的概率减去事件A和事件B的交集的概率：P*(<em>A</em>∪<em>B</em>)=<em>P</em>(<em>A</em>)+<em>P</em>(<em>B</em>)−<em>P</em>(<em>A</em>∩*B)</p></li></ol><h3 id="tips：">tips：</h3><p>抽签模型与次序无关：第一次抽中白球的概率和第二次抽中白球的概率是相同的，无论放不放回。</p><h2 id="随机变量的概率分布">随机变量的概率分布</h2><ol><li class="lvl-3"><p>理解随机变量及其概率分布函数的定义，理解随机变量概率分布函数的性质，掌握概率分布函数的计算。</p><p>分布函数：$F(x)=P(X\leq x)$</p></li><li class="lvl-3"><p>理解离散型随机变量、连续型随机变量的定义，掌握概率分布列、概率密度函数及概率分布函数的关系，掌握有关的计算。</p></li><li class="lvl-3"><p>理解多维随机变量的定义，理解联合概率分布（分布函数、分布列、概率密度）与边缘分布（分布函数、分布列、概率密度），掌握有关计算。</p></li><li class="lvl-3"><p>理解随机变量的独立性的定义和性质，掌握判断独立和不独立的方法</p></li></ol><h2 id="三、-随机变量的数字特征">三、 随机变量的数字特征</h2><ol><li class="lvl-3"><h3 id="单个随机变量的数字特征">单个随机变量的数字特征</h3></li></ol><p>a) 数学期望和方差：<br>i. 理解数学期望的定义，理解数学期望的存在性，掌握数学期望的性质和计算。<br>ii. 理解方差的定义和直观含义，掌握方差的性质和计算。<br>iii. 理解如何线性变换对随机变量进行期望=0，方差=1 的标准化。<br>iv. 理解期望、方差的下述性质：<br>b) 原点矩和中心矩。<br>c) 切比雪夫（Chebyshev）不等式。</p><p>对于任意随机变量X，具有有限方差E[(X-μ)²] = σ²，其中μ是X的均值，σ²是X的方差。对于任意正数ε &gt; 0，切比雪夫不等式给出：</p><p>$$<br>P(|X - \mu| \geq \epsilon) \leq \frac<br>$$<br>即随机变量X偏离其均值μ超过ε的概率不会超过方差σ²除以ε²。</p><ol start="2"><li class="lvl-3"><h3 id="涉及多个随机变量的数字特征">涉及多个随机变量的数字特征</h3></li></ol><p>a) 协方差：理解协方差的定义和性质，掌握协方差的计算。</p><p>b) 相关系数：理解相关系数的定义和性质，掌握有关计算。正确理解不相关和独立的联系与区别。知道线性相关系数为 1 或-1 时的概率含义。</p><p>当涉及到协方差和相关系数时，以下是它们的公式：</p><p>协方差（Covariance）的公式：<br>$$<br>\text{Cov}(X, Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right]=E(XY)-E(X)E(Y)<br>$$<br>相关系数（Correlation coefficient）的公式：<br>$$</p><p>$$<br>其中，$\text{Cov}(X, Y)$ 表示随机变量X和Y的协方差，$\mu_X 和 \mu_Y$ 分别是X和Y的均值(期望)，($\sigma_X$) 和 ($\sigma_Y$) 分别是X和Y的标准差。($\rho(X, Y)$) 表示随机变量X和Y的相关系数。</p><p>c) 条件数学期望：理解定义和有关计算，掌握全（重）期望公式，包括随机和（指求和的随机变量的个数为某随机变量）的期望。<br>$$<br>E(X) = E(X|B) \cdot P(B) + E(X|B^c) \cdot P(B^c)<br>$$</p><h2 id="四、-常见的概率分布">四、 常见的概率分布</h2><h3 id="离散型分布">离散型分布</h3><p><strong>a) 二项分布</strong>：分布列，期望、方差。<br><strong>b) 几何分布</strong>：分布列，期望、方差，无记忆性。<br><strong>c) 泊松分布</strong>：分布列，期望、方差，泊松定理（特殊二项分布的泊松近似）。</p><p>当二项分布中的试验次数<em>n</em>趋向于无穷大，且成功概率<em>p</em>趋向于0，但同时满足np接近一个常数λ时，二项分布可以近似为泊松分布。</p><p><strong>d) 负二项分布</strong>：定义，与几何分布的关系，期望，方差。</p><p>定义：单次成功概率为p成功次数达r时失败次数的<a href="https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">离散概率分布</a>。注意当r取1时即为几何分布</p><table><thead><tr><th>分布</th><th>分布列</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>二项分布</td><td>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</td><td>$np$</td><td>$np(1-p)$</td></tr><tr><td>几何分布</td><td>$P(X=k) = (1-p)^{k-1} p$</td><td>$\frac{1}{p}$</td><td>$\frac{1-p}{p^2}$</td></tr><tr><td>泊松分布</td><td>$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$</td><td>$\lambda$</td><td>$\lambda$</td></tr><tr><td>负二项分布</td><td>$P(X=k+r) = \binom{k+r-1}{r-1} p^r (1-p)^{k}$</td><td>$\frac{r}{p}$</td><td>$\frac{r(1-p)}{p^2}$</td></tr></tbody></table><h3 id="连续型分布">连续型分布</h3><p>a) 均匀分布：一维均匀分布的分布函数、概率密度、期望和方差；多维均匀分布与几何概型的关系。<br>b) 指数分布：分布函数、概率密度、期望、方差，无记忆性。<br>c) 正态分布：一维正态分布的概率密度、期望、方差、标准化；二维正态分布的概率密度及参数的概率含义。正态分布的独立可加性，二元正态分布随机变量相互独立和不相关等价的性质。</p><h2 id="五、-极限定理">五、 极限定理</h2><ol><li class="lvl-3"><p>（伯努利、切比雪夫）（弱）大数定律，依概率收敛的定义，利用切比雪夫不等式验证依概率收敛。</p><p><strong>伯努利大数定律</strong>：伯努利实验中，随着试验次数增加，频率落在概率附近的概率趋于1</p><p><strong>切比雪夫大数定律</strong>：利用切比雪夫不等式，两两不相关的随机变量序列，方差有界，随着序列项数增加，随机变量均值落在期望附近的概率趋于1</p><p>切比雪夫的</p><img src="/img/gaitong//%E5%8D%95%E5%8F%98%E9%87%8F%E9%9A%8F%E6%9C%BA.assets/image-20230607163414308.png" alt="image-20230607163414308" style="zoom:80%;" /><p>$$Var(\frac 1 n \sum X_k)\rarr0$$为马尔可夫条件</p><p><strong>依概率收敛</strong></p><p>当一个随机变量序列以概率1逐渐接近另一个随机变量时，我们称该序列依概率收敛于该随机变量。</p></li><li class="lvl-3"><p>中心极限定理（掌握独立同分布情形 De Moivre-Laplace，林德伯格-勒维）及应用</p><h5 id="中心极限定理">中心极限定理</h5><p>$X_1, X_2, \ldots, X_k$是独立同分布（iid）<br>$$<br>X_1+X_2+ \ldots+X_k\overset{.}{\sim}N(n\mu,n\sigma^2)\<br>\frac {X_1+X_2+ \ldots+X_k -n\mu}{\sigma\sqrt n}\overset{.}{\sim}N(0,1)<br>$$<br>一般地,$b(n,p)\overset{.}{\sim}N(np,npq)$</p></li></ol>]]></content>
       
       
       <categories>
@@ -575,11 +588,11 @@
     
     
     <entry>
-      <title>概率论部分（单变量）</title>
-      <link href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"/>
-      <url>/notes/gaitong/%E9%9A%8F%E6%9C%BA/</url>
+      <title>统计5：拟合优度检验</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
       
-        <content type="html"><![CDATA[<h1>概率论部分（单变量）</h1><h2 id="一、-随机现象的数学描述和概率论的基本思想">一、 随机现象的数学描述和概率论的基本思想</h2><ol><li class="lvl-3"><p>随机事件之间的关系和事件的基本运算。</p></li><li class="lvl-3"><p>理解条件概率的直观含义和数学定义，掌握条件概率在概率计算中的应用（乘法公式、全概率公式、Bayes 公式）。</p><p>乘法公式：<br>$$<br>P(A \cap B) = P(B|A) \cdot P(A)<br>$$<br>全概率公式：<br>$$<br>P(B) = \sum_i P(B|A_i) \cdot P(A_i)<br>$$<br>Bayes公式：设$A_1,\dots,A_n$为样本空间的一个分割<br>$$<br>P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum_j P(B|A_j) \cdot P(A_j)}<br>$$<br>其中，A和B是事件，P(A)表示事件A发生的概率，P(B)表示事件B发生的概率，P(B|A)表示在事件A发生的条件下事件B发生的概率，A_i表示一系列互斥且完备的事件。</p></li><li class="lvl-3"><p>理解事件的独立性的定义和有关性质。</p><p>事件独立性的定义： 事件A和事件B被称为独立事件，如果满足以下条件：P(A∩B)=P(A)⋅P(B)</p><p>否则称A与B不独立或相关</p><p>如果事件A和事件B是独立事件，则事件A与事件B的并集的概率等于事件A的概率加上事件B的概率减去事件A和事件B的交集的概率：P*(<em>A</em>∪<em>B</em>)=<em>P</em>(<em>A</em>)+<em>P</em>(<em>B</em>)−<em>P</em>(<em>A</em>∩*B)</p></li></ol><h3 id="tips：">tips：</h3><p>抽签模型与次序无关：第一次抽中白球的概率和第二次抽中白球的概率是相同的，无论放不放回。</p><h2 id="随机变量的概率分布">随机变量的概率分布</h2><ol><li class="lvl-3"><p>理解随机变量及其概率分布函数的定义，理解随机变量概率分布函数的性质，掌握概率分布函数的计算。</p><p>分布函数：$F(x)=P(X\leq x)$</p></li><li class="lvl-3"><p>理解离散型随机变量、连续型随机变量的定义，掌握概率分布列、概率密度函数及概率分布函数的关系，掌握有关的计算。</p></li><li class="lvl-3"><p>理解多维随机变量的定义，理解联合概率分布（分布函数、分布列、概率密度）与边缘分布（分布函数、分布列、概率密度），掌握有关计算。</p></li><li class="lvl-3"><p>理解随机变量的独立性的定义和性质，掌握判断独立和不独立的方法</p></li></ol><h2 id="三、-随机变量的数字特征">三、 随机变量的数字特征</h2><ol><li class="lvl-3"><h3 id="单个随机变量的数字特征">单个随机变量的数字特征</h3></li></ol><p>a) 数学期望和方差：<br>i. 理解数学期望的定义，理解数学期望的存在性，掌握数学期望的性质和计算。<br>ii. 理解方差的定义和直观含义，掌握方差的性质和计算。<br>iii. 理解如何线性变换对随机变量进行期望=0，方差=1 的标准化。<br>iv. 理解期望、方差的下述性质：<br>b) 原点矩和中心矩。<br>c) 切比雪夫（Chebyshev）不等式。</p><p>对于任意随机变量X，具有有限方差E[(X-μ)²] = σ²，其中μ是X的均值，σ²是X的方差。对于任意正数ε &gt; 0，切比雪夫不等式给出：</p><p>$$<br>P(|X - \mu| \geq \epsilon) \leq \frac<br>$$<br>即随机变量X偏离其均值μ超过ε的概率不会超过方差σ²除以ε²。</p><ol start="2"><li class="lvl-3"><h3 id="涉及多个随机变量的数字特征">涉及多个随机变量的数字特征</h3></li></ol><p>a) 协方差：理解协方差的定义和性质，掌握协方差的计算。</p><p>b) 相关系数：理解相关系数的定义和性质，掌握有关计算。正确理解不相关和独立的联系与区别。知道线性相关系数为 1 或-1 时的概率含义。</p><p>当涉及到协方差和相关系数时，以下是它们的公式：</p><p>协方差（Covariance）的公式：<br>$$<br>\text{Cov}(X, Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right]=E(XY)-E(X)E(Y)<br>$$<br>相关系数（Correlation coefficient）的公式：<br>$$</p><p>$$<br>其中，$\text{Cov}(X, Y)$ 表示随机变量X和Y的协方差，$\mu_X 和 \mu_Y$ 分别是X和Y的均值(期望)，($\sigma_X$) 和 ($\sigma_Y$) 分别是X和Y的标准差。($\rho(X, Y)$) 表示随机变量X和Y的相关系数。</p><p>c) 条件数学期望：理解定义和有关计算，掌握全（重）期望公式，包括随机和（指求和的随机变量的个数为某随机变量）的期望。<br>$$<br>E(X) = E(X|B) \cdot P(B) + E(X|B^c) \cdot P(B^c)<br>$$</p><h2 id="四、-常见的概率分布">四、 常见的概率分布</h2><h3 id="离散型分布">离散型分布</h3><p><strong>a) 二项分布</strong>：分布列，期望、方差。<br><strong>b) 几何分布</strong>：分布列，期望、方差，无记忆性。<br><strong>c) 泊松分布</strong>：分布列，期望、方差，泊松定理（特殊二项分布的泊松近似）。</p><p>当二项分布中的试验次数<em>n</em>趋向于无穷大，且成功概率<em>p</em>趋向于0，但同时满足np接近一个常数λ时，二项分布可以近似为泊松分布。</p><p><strong>d) 负二项分布</strong>：定义，与几何分布的关系，期望，方差。</p><p>定义：单次成功概率为p成功次数达r时失败次数的<a href="https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">离散概率分布</a>。注意当r取1时即为几何分布</p><table><thead><tr><th>分布</th><th>分布列</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>二项分布</td><td>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</td><td>$np$</td><td>$np(1-p)$</td></tr><tr><td>几何分布</td><td>$P(X=k) = (1-p)^{k-1} p$</td><td>$\frac{1}{p}$</td><td>$\frac{1-p}{p^2}$</td></tr><tr><td>泊松分布</td><td>$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$</td><td>$\lambda$</td><td>$\lambda$</td></tr><tr><td>负二项分布</td><td>$P(X=k+r) = \binom{k+r-1}{r-1} p^r (1-p)^{k}$</td><td>$\frac{r}{p}$</td><td>$\frac{r(1-p)}{p^2}$</td></tr></tbody></table><h3 id="连续型分布">连续型分布</h3><p>a) 均匀分布：一维均匀分布的分布函数、概率密度、期望和方差；多维均匀分布与几何概型的关系。<br>b) 指数分布：分布函数、概率密度、期望、方差，无记忆性。<br>c) 正态分布：一维正态分布的概率密度、期望、方差、标准化；二维正态分布的概率密度及参数的概率含义。正态分布的独立可加性，二元正态分布随机变量相互独立和不相关等价的性质。</p><h2 id="五、-极限定理">五、 极限定理</h2><ol><li class="lvl-3"><p>（伯努利、切比雪夫）（弱）大数定律，依概率收敛的定义，利用切比雪夫不等式验证依概率收敛。</p><p><strong>伯努利大数定律</strong>：伯努利实验中，随着试验次数增加，频率落在概率附近的概率趋于1</p><p><strong>切比雪夫大数定律</strong>：利用切比雪夫不等式，两两不相关的随机变量序列，方差有界，随着序列项数增加，随机变量均值落在期望附近的概率趋于1</p><p>切比雪夫的</p><img src="/img/gaitong//%E5%8D%95%E5%8F%98%E9%87%8F%E9%9A%8F%E6%9C%BA.assets/image-20230607163414308.png" alt="image-20230607163414308" style="zoom:80%;" /><p>$$Var(\frac 1 n \sum X_k)\rarr0$$为马尔可夫条件</p><p><strong>依概率收敛</strong></p><p>当一个随机变量序列以概率1逐渐接近另一个随机变量时，我们称该序列依概率收敛于该随机变量。</p></li><li class="lvl-3"><p>中心极限定理（掌握独立同分布情形 De Moivre-Laplace，林德伯格-勒维）及应用</p><h5 id="中心极限定理">中心极限定理</h5><p>$X_1, X_2, \ldots, X_k$是独立同分布（iid）<br>$$<br>X_1+X_2+ \ldots+X_k\overset{.}{\sim}N(n\mu,n\sigma^2)\<br>\frac {X_1+X_2+ \ldots+X_k -n\mu}{\sigma\sqrt n}\overset{.}{\sim}N(0,1)<br>$$<br>一般地,$b(n,p)\overset{.}{\sim}N(np,npq)$</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
       
       
       <categories>
@@ -806,7 +819,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-nRjBMQDb" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-nRjBMQDb"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-HNfzYOap" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-HNfzYOap"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-YjaZhMxs" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-YjaZhMxs"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-cLhzrrrr" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-cLhzrrrr"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
       
       
       <categories>
@@ -918,7 +931,7 @@
       <link href="/homework/flower_identification/%E5%A4%8D%E5%8F%B6%E9%89%B4%E8%B5%8F/"/>
       <url>/homework/flower_identification/%E5%A4%8D%E5%8F%B6%E9%89%B4%E8%B5%8F/</url>
       
-        <content type="html"><![CDATA[<h1>叶的形态</h1><ul class="lvl-0"><li class="lvl-2"><h3 id="羽状复叶：栾树">羽状复叶：栾树</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/dd611818350c4feb8b9351da4fd74f12/202310071834831.png" alt="image-20231007183418698"></p></li><li class="lvl-2"><h3 id="羽状复叶2-华北珍珠梅">羽状复叶2:华北珍珠梅</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/49e4228c914e1e46d9a90586519cea1e/202310071838594.png" alt="image-20231007183804342"></p></li><li class="lvl-2"><p>掌状复叶1：七叶树</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a58c35b6d061970ff6dfde92fb87dd8b/202310071830900.png" alt="image-20231007183058684"></p></li><li class="lvl-2"><p>掌状复叶2</p></li><li class="lvl-2"><p>羽状分裂叶片1：山楂</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ea1b9841e35a3d92233010cc051cbd1b/202310071842909.png" alt="image-20231007184206866"></p></li><li class="lvl-2"><p>羽状分裂叶片2：沼生栎–&gt;绿园</p></li><li class="lvl-2"><p>掌状分裂叶片1：梧桐</p></li><li class="lvl-2"><p>掌状分裂叶片2：</p></li><li class="lvl-2"><p>三出复叶1</p></li><li class="lvl-2"><p>多回复叶1</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>叶的形态</h1><ul class="lvl-0"><li class="lvl-2"><h3 id="羽状复叶：栾树">羽状复叶：栾树</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/dd611818350c4feb8b9351da4fd74f12/202310071834831.png" alt="image-20231007183418698"></p></li><li class="lvl-2"><h3 id="羽状复叶2-华北珍珠梅">羽状复叶2:华北珍珠梅</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/49e4228c914e1e46d9a90586519cea1e/202310071838594.png" alt="image-20231007183804342"></p></li><li class="lvl-2"><p>掌状复叶1：七叶树</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a58c35b6d061970ff6dfde92fb87dd8b/202310071830900.png" alt="image-20231007183058684"></p></li><li class="lvl-2"><p>掌状复叶2：五叶地锦</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/777499aa0d706543751c9ee01d447e87/202310081017886.jpg" alt="fd3e6f179d4a7b48cbb2562dd2a0f4a"></p></li><li class="lvl-2"><p>羽状分裂叶片1：山楂</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ea1b9841e35a3d92233010cc051cbd1b/202310071842909.png" alt="image-20231007184206866"></p></li><li class="lvl-2"><p>羽状分裂叶片2：沼生栎–&gt;绿园</p></li><li class="lvl-2"><p>掌状分裂叶片1：梧桐</p></li><li class="lvl-2"><p>掌状分裂叶片2：</p></li><li class="lvl-2"><p>三出复叶1</p></li><li class="lvl-2"><p>多回复叶1</p></li></ul>]]></content>
       
       
       <categories>
@@ -1049,6 +1062,33 @@
     
     
     <entry>
+      <title>DLC12</title>
+      <link href="/notes/DLC/week12/"/>
+      <url>/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network-E3</title>
       <link href="/homework/network/network-E3/"/>
       <url>/homework/network/network-E3/</url>
@@ -1099,33 +1139,6 @@
             <tag> homework </tag>
             
             <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC12</title>
-      <link href="/notes/DLC/week12/"/>
-      <url>/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -1620,6 +1633,31 @@
     
     
     <entry>
+      <title>crawler-sample</title>
+      <link href="/others/code-test/"/>
+      <url>/others/code-test/</url>
+      
+        <content type="html"><![CDATA[<h1>code-test</h1><blockquote><p>这是一个用来测试代码显示效果的页面。</p><p>你也可以用它爬点东西</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.service <span class="keyword">import</span> Service <span class="keyword">as</span> ChromeService</span><br><span class="line"><span class="keyword">from</span> webdriver_manager.chrome <span class="keyword">import</span> ChromeDriverManager</span><br><span class="line"><span class="comment"># from fake_useragent import UserAgent</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DynCrawler</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,url,theme</span>):</span><br><span class="line">        self.url = url</span><br><span class="line">        self.theme = theme</span><br><span class="line">        self.options=webdriver.ChromeOptions() <span class="comment"># 无头模式</span></span><br><span class="line">        self.options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()),options=self.options)</span><br><span class="line">        self.href_list=[]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_whole_page</span>(<span class="params">self</span>):</span><br><span class="line">        html_page=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//*[@class=&quot;list-t&quot;]/a&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> html_page:</span><br><span class="line">            url =page.get_attribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">            title=page.text</span><br><span class="line">            data = &#123;<span class="string">&quot;url&quot;</span>:<span class="built_in">str</span>(url),<span class="string">&quot;title&quot;</span>:<span class="built_in">str</span>(title)&#125;</span><br><span class="line">            self.href_list.append(data)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;get page: &quot;</span>,url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_images</span>(<span class="params">self,url,title</span>):</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        images=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//div[@class=&quot;content&quot;]/a/img&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> index,image <span class="keyword">in</span> <span class="built_in">enumerate</span>(images):</span><br><span class="line">            image_url=image.get_attribute(<span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(image_url)</span><br><span class="line">            <span class="keyword">if</span> image_url:</span><br><span class="line">                image_name=index+<span class="number">1</span></span><br><span class="line">                image_name=<span class="built_in">str</span>(image_name)+<span class="string">&#x27;.jpg&#x27;</span></span><br><span class="line">                image_path=<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/<span class="subst">&#123;image_name&#125;</span>&#x27;</span></span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(image_path,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        f.write(requests.get(image_url).content)</span><br><span class="line">                    <span class="keyword">except</span>:</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_title</span>(<span class="params">self,url</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;get title: &quot;</span>,url)</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        title=self.driver.find_element(By.XPATH,<span class="string">&#x27;//*[@id=&quot;app&quot;]/div/div[3]/div[1]/div[1]/h1&#x27;</span>)</span><br><span class="line">        title=title.text</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title: &quot;</span>,title)</span><br><span class="line">        <span class="keyword">return</span> title</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(self.theme):</span><br><span class="line">            os.mkdir(self.theme)</span><br><span class="line">        self.driver.get(self.url)</span><br><span class="line">        self.driver.implicitly_wait(<span class="number">2</span>)</span><br><span class="line">        self.get_whole_page()</span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> self.href_list:</span><br><span class="line">            url=data[<span class="string">&#x27;url&#x27;</span>]</span><br><span class="line">            title=data[<span class="string">&#x27;title&#x27;</span>]</span><br><span class="line">            title=title.replace(<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;|&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27; &#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;：&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            <span class="comment"># make dir</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>):</span><br><span class="line">                os.mkdir(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>)</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/url.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(url)</span><br><span class="line">                self.get_images(url,title)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请输入歌手名字：&#x27;</span>)</span><br><span class="line">    singername=<span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">8</span>):</span><br><span class="line">        url=<span class="string">f&#x27;http://www.echangwang.com/singer/<span class="subst">&#123;singername&#125;</span>_<span class="subst">&#123;index&#125;</span>.html&#x27;</span></span><br><span class="line">        crawler=DynCrawler(url,singername)</span><br><span class="line">        crawler.run()</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> others </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>fool</title>
       <link href="/others/fool/"/>
       <url>/others/fool/</url>
@@ -1689,60 +1727,6 @@
     
     
     <entry>
-      <title>crawler-sample</title>
-      <link href="/others/code-test/"/>
-      <url>/others/code-test/</url>
-      
-        <content type="html"><![CDATA[<h1>code-test</h1><blockquote><p>这是一个用来测试代码显示效果的页面。</p><p>你也可以用它爬点东西</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.common.by <span class="keyword">import</span> By</span><br><span class="line"><span class="keyword">from</span> selenium.webdriver.chrome.service <span class="keyword">import</span> Service <span class="keyword">as</span> ChromeService</span><br><span class="line"><span class="keyword">from</span> webdriver_manager.chrome <span class="keyword">import</span> ChromeDriverManager</span><br><span class="line"><span class="comment"># from fake_useragent import UserAgent</span></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">DynCrawler</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self,url,theme</span>):</span><br><span class="line">        self.url = url</span><br><span class="line">        self.theme = theme</span><br><span class="line">        self.options=webdriver.ChromeOptions() <span class="comment"># 无头模式</span></span><br><span class="line">        self.options.add_argument(<span class="string">&#x27;--headless&#x27;</span>)</span><br><span class="line">        self.driver = webdriver.Chrome(service=ChromeService(executable_path=ChromeDriverManager().install()),options=self.options)</span><br><span class="line">        self.href_list=[]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_whole_page</span>(<span class="params">self</span>):</span><br><span class="line">        html_page=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//*[@class=&quot;list-t&quot;]/a&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> page <span class="keyword">in</span> html_page:</span><br><span class="line">            url =page.get_attribute(<span class="string">&#x27;href&#x27;</span>)</span><br><span class="line">            title=page.text</span><br><span class="line">            data = &#123;<span class="string">&quot;url&quot;</span>:<span class="built_in">str</span>(url),<span class="string">&quot;title&quot;</span>:<span class="built_in">str</span>(title)&#125;</span><br><span class="line">            self.href_list.append(data)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;get page: &quot;</span>,url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_images</span>(<span class="params">self,url,title</span>):</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        images=self.driver.find_elements(By.XPATH,<span class="string">&#x27;//div[@class=&quot;content&quot;]/a/img&#x27;</span>)</span><br><span class="line">        <span class="keyword">for</span> index,image <span class="keyword">in</span> <span class="built_in">enumerate</span>(images):</span><br><span class="line">            image_url=image.get_attribute(<span class="string">&#x27;src&#x27;</span>)</span><br><span class="line">            <span class="built_in">print</span>(image_url)</span><br><span class="line">            <span class="keyword">if</span> image_url:</span><br><span class="line">                image_name=index+<span class="number">1</span></span><br><span class="line">                image_name=<span class="built_in">str</span>(image_name)+<span class="string">&#x27;.jpg&#x27;</span></span><br><span class="line">                image_path=<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/<span class="subst">&#123;image_name&#125;</span>&#x27;</span></span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(image_path,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    <span class="keyword">try</span>:</span><br><span class="line">                        f.write(requests.get(image_url).content)</span><br><span class="line">                    <span class="keyword">except</span>:</span><br><span class="line">                        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_title</span>(<span class="params">self,url</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;get title: &quot;</span>,url)</span><br><span class="line">        self.driver.get(url)</span><br><span class="line">        time.sleep(<span class="number">0.5</span>)</span><br><span class="line">        title=self.driver.find_element(By.XPATH,<span class="string">&#x27;//*[@id=&quot;app&quot;]/div/div[3]/div[1]/div[1]/h1&#x27;</span>)</span><br><span class="line">        title=title.text</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;title: &quot;</span>,title)</span><br><span class="line">        <span class="keyword">return</span> title</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">run</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(self.theme):</span><br><span class="line">            os.mkdir(self.theme)</span><br><span class="line">        self.driver.get(self.url)</span><br><span class="line">        self.driver.implicitly_wait(<span class="number">2</span>)</span><br><span class="line">        self.get_whole_page()</span><br><span class="line">        <span class="keyword">for</span> data <span class="keyword">in</span> self.href_list:</span><br><span class="line">            url=data[<span class="string">&#x27;url&#x27;</span>]</span><br><span class="line">            title=data[<span class="string">&#x27;title&#x27;</span>]</span><br><span class="line">            title=title.replace(<span class="string">&#x27;/&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;|&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27; &#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            title=title.replace(<span class="string">&#x27;：&#x27;</span>,<span class="string">&#x27;-&#x27;</span>)</span><br><span class="line">            <span class="comment"># make dir</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>):</span><br><span class="line">                os.mkdir(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>&#x27;</span>)</span><br><span class="line">                <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&#x27;./<span class="subst">&#123;self.theme&#125;</span>/<span class="subst">&#123;title&#125;</span>/url.txt&#x27;</span>,<span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">                    f.write(url)</span><br><span class="line">                self.get_images(url,title)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;请输入歌手名字：&#x27;</span>)</span><br><span class="line">    singername=<span class="built_in">input</span>()</span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">8</span>):</span><br><span class="line">        url=<span class="string">f&#x27;http://www.echangwang.com/singer/<span class="subst">&#123;singername&#125;</span>_<span class="subst">&#123;index&#125;</span>.html&#x27;</span></span><br><span class="line">        crawler=DynCrawler(url,singername)</span><br><span class="line">        crawler.run()</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> others </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-5</title>
-      <link href="/homework/network/network5/"/>
-      <url>/homework/network/network5/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello world</title>
       <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
@@ -1791,6 +1775,35 @@
         <tags>
             
             <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-5</title>
+      <link href="/homework/network/network5/"/>
+      <url>/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       

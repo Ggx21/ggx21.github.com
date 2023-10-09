@@ -16,13 +16,11 @@
 <meta property="og:site_name" content="Hello From YUX">
 <meta property="og:description" content="编原命令 输出前中后端编译内容 123python main.py --input test&#x2F;example.c --parsepython main.py --input test&#x2F;example.c --tacpython main.py --input test&#x2F;example.c --riscv 测试 12cd &#x2F;home&#x2F;2021010803&#x2F;lab&#x2F;minidecaf-20210108">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/0ad550f5c4f8c110c953f019cca136a8/202309272040816.png">
 <meta property="article:published_time" content="2023-09-27T07:41:34.347Z">
-<meta property="article:modified_time" content="2023-09-28T03:40:35.062Z">
+<meta property="article:modified_time" content="2023-10-09T07:43:35.356Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="生活、代码、思考、技术、创新、灵感、分享、教程、个人成长、文化、娱乐、社交">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/0ad550f5c4f8c110c953f019cca136a8/202309272040816.png">
      
   <link rel="shortcut icon" href="/images/favicon.ico" />
      
@@ -175,7 +173,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">编原命令</span></a></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">编原命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#asm%E7%9A%84%E7%94%9F%E6%88%90%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">asm的生成过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#main-py"><span class="toc-number">1.1.1.</span> <span class="toc-text">main.py</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -229,8 +227,27 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /home/2021010803/lab/minidecaf-2021010803/minidecaf-tests</span><br><span class="line">STEP_FROM=4 STEP_UNTIL=4 ./check.sh</span><br></pre></td></tr></table></figure>
 <p>生成riscv汇编代码</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">riscv64-unknown-elf-gcc -march=rv32im -mabi=ilp32 <span class="built_in">test</span>/test.c -S -O3 -o <span class="built_in">test</span>/test.s</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/0ad550f5c4f8c110c953f019cca136a8/202309272040816.png" alt="image-20230927204028463"></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ABCDEFGHIJKLMNOPQRSTUVWXYZ  tOafs  </span><br><span class="line">no g  ta  l    efs hw imyd   </span><br></pre></td></tr></table></figure>
+<h2 id="asm的生成过程">asm的生成过程</h2>
+<ol>
+<li class="lvl-3">
+<h3 id="main-py"><a target="_blank" rel="noopener" href="http://main.py">main.py</a></h3>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Target code generation stage: Three-address code -&gt; RISC-V assembly code</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">step_asm</span>(<span class="params">p: TACProg</span>):</span><br><span class="line">    riscvAsmEmitter = RiscvAsmEmitter(Riscv.AllocatableRegs, Riscv.CallerSaved)</span><br><span class="line">    asm = Asm(riscvAsmEmitter, BruteRegAlloc(riscvAsmEmitter))</span><br><span class="line">    prog = asm.transform(p)</span><br><span class="line">    <span class="keyword">return</span> prog</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-3">
+<p><strong>RiscvAsmEmitter</strong></p>
+<blockquote>
+<p>这是生成全局risc-v asm代码的类</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">RiscvAsmEmitter</span>(<span class="title class_ inherited__">AsmEmitter</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params"></span></span><br><span class="line"><span class="params">        self,</span></span><br><span class="line"><span class="params">        allocatableRegs: <span class="built_in">list</span>[Reg],</span></span><br><span class="line"><span class="params">        callerSaveRegs: <span class="built_in">list</span>[Reg],</span></span><br><span class="line"><span class="params">    </span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        <span class="built_in">super</span>().__init__(allocatableRegs, callerSaveRegs)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># the START of the asm code</span></span><br><span class="line">        <span class="comment"># int step10, you need to add the declaration of global var here</span></span><br><span class="line">        self.printer.println(<span class="string">&quot;.text&quot;</span>)</span><br><span class="line">        self.printer.println(<span class="string">&quot;.global main&quot;</span>)</span><br><span class="line">        self.printer.println(<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-3">
+<p><strong>Asm</strong>.transform</p>
+<blockquote>
+<p>Asm的构造需要<code>RiscvAsmEmitter</code>,<code>BruteRegAlloc</code></p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">transform</span>(<span class="params">self, prog: TACProg</span>):</span><br><span class="line">    analyzer = LivenessAnalyzer()</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">for</span> func <span class="keyword">in</span> prog.funcs:</span><br><span class="line">     <span class="comment">#遍历函数的每一条指令，然后调用相应的visit函数</span></span><br><span class="line">        pair = self.emitter.selectInstr(func)</span><br><span class="line">     <span class="comment">#构造CFG</span></span><br><span class="line">        builder = CFGBuilder()</span><br><span class="line">        cfg: CFG = builder.buildFrom(pair[<span class="number">0</span>])</span><br><span class="line">        analyzer.accept(cfg)</span><br><span class="line">     <span class="comment">#为变量分配寄存器</span></span><br><span class="line">        self.regAlloc.accept(cfg, pair[<span class="number">1</span>])</span><br><span class="line">   </span><br><span class="line">    <span class="keyword">return</span> self.emitter.emitEnd()</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
 
   </div>
 </article>
@@ -278,7 +295,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">编原命令</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">编原命令</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#asm%E7%9A%84%E7%94%9F%E6%88%90%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.</span> <span class="toc-text">asm的生成过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#main-py"><span class="toc-number">1.1.1.</span> <span class="toc-text">main.py</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
