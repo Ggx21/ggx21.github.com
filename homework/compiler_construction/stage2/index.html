@@ -9,15 +9,15 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="stage-2 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 思考题 1.写出一段 risc-v 汇编代码，将栈帧空间扩大 16 字节 1addi sp, sp, -16 2.如何修改以允许多次定义同名变量   目前declaration实现  语义检查（namer）中  ​    1. Use ctx.lookup to find if a va">
+  <meta name="description" content="stage-2 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 增加变量，实现对变量的声明和赋值。同时增加变量相关的语义检查，不能重复声明变量，不能使用未声明的变量 前端   lex&amp;parser 此部分内容框架已经提供，通过这里表达出ast树   语义分析 修改namer中 visitDeclaration,visitAssignment,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stage2">
 <meta property="og:url" content="https://ggxloveslife.top/homework/compiler_construction/stage2/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="stage-2 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 思考题 1.写出一段 risc-v 汇编代码，将栈帧空间扩大 16 字节 1addi sp, sp, -16 2.如何修改以允许多次定义同名变量   目前declaration实现  语义检查（namer）中  ​    1. Use ctx.lookup to find if a va">
+<meta property="og:description" content="stage-2 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 增加变量，实现对变量的声明和赋值。同时增加变量相关的语义检查，不能重复声明变量，不能使用未声明的变量 前端   lex&amp;parser 此部分内容框架已经提供，通过这里表达出ast树   语义分析 修改namer中 visitDeclaration,visitAssignment,">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-12T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-10-12T03:14:15.427Z">
+<meta property="article:modified_time" content="2023-10-12T16:26:20.140Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="lab">
 <meta property="article:tag" content="编原">
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%86%99%E5%87%BA%E4%B8%80%E6%AE%B5-risc-v-%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B0%86%E6%A0%88%E5%B8%A7%E7%A9%BA%E9%97%B4%E6%89%A9%E5%A4%A7-16-%E5%AD%97%E8%8A%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.写出一段 risc-v 汇编代码，将栈帧空间扩大 16 字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E4%BB%A5%E5%85%81%E8%AE%B8%E5%A4%9A%E6%AC%A1%E5%AE%9A%E4%B9%89%E5%90%8C%E5%90%8D%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.如何修改以允许多次定义同名变量</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text">前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#lex-parser"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">lex&amp;parser</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">语义分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%86%99%E5%87%BA%E4%B8%80%E6%AE%B5-risc-v-%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B0%86%E6%A0%88%E5%B8%A7%E7%A9%BA%E9%97%B4%E6%89%A9%E5%A4%A7-16-%E5%AD%97%E8%8A%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.写出一段 risc-v 汇编代码，将栈帧空间扩大 16 字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E4%BB%A5%E5%85%81%E8%AE%B8%E5%A4%9A%E6%AC%A1%E5%AE%9A%E4%B9%89%E5%90%8C%E5%90%8D%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.如何修改以允许多次定义同名变量</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -234,6 +234,74 @@
     <h1>stage-2</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
 <h2 id="实验内容">实验内容</h2>
+<p>增加变量，实现对变量的声明和赋值。同时增加变量相关的语义检查，不能重复声明变量，不能使用未声明的变量</p>
+<h3 id="前端">前端</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h4 id="lex-parser">lex&amp;parser</h4>
+<p>此部分内容框架已经提供，通过这里表达出ast树</p>
+</li>
+<li class="lvl-2">
+<h4 id="语义分析">语义分析</h4>
+<p>修改namer中 <code>visitDeclaration</code>,<code>visitAssignment</code>,<code>visitIdentifier</code>三个函数</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>visitDeclaration</p>
+<ol>
+<li class="lvl-7">使用 <code>ctx.lookup</code> 来查找是否已经声明了具有相同名称的变量。</li>
+<li class="lvl-7">如果有，报错。如果没有，创建一个新的 <code>VarSymbol</code>，并使用 <code>ctx.declare</code> 将其放入当前作用域。</li>
+<li class="lvl-7">设置 <code>decl</code> 的 ‘symbol’ 属性。</li>
+<li class="lvl-7">如果存在初始值，对其进行访问。</li>
+</ol>
+</li>
+<li class="lvl-4">
+<p>visitIdentifier</p>
+<ol>
+<li class="lvl-7">使用 <code>ctx.lookup</code> 来查找是否已经声明了具有相同名称的变量。</li>
+<li class="lvl-7">如果没有，报错。否则将该标识符同样标记为已存在的变量</li>
+</ol>
+</li>
+<li class="lvl-4">
+<p>visitAssignment</p>
+<ol>
+<li class="lvl-7">visit赋值语句的lhs（ident）</li>
+<li class="lvl-7">visit赋值语句的rhs （expression）</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="中端">中端</h3>
+<p>补充tacgen中的类似上述三个函数，由于已经通过了语义检查，这里的工作相对较少，基本上是tac寄存器的分配。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>visitDeclaration</p>
+<ol>
+<li class="lvl-5">获取 <code>decl</code> 的 ‘symbol’ 属性。</li>
+<li class="lvl-5">使用 <code>mv.freshTemp</code> 获取一个新的临时变量用于该符号。</li>
+<li class="lvl-5">如果声明具有初始值，使用 <code>mv.visitAssignment</code> 来设置它。</li>
+</ol>
+</li>
+<li class="lvl-2">
+<p>visitIdentifier</p>
+<p>将标识符 <code>ident</code> 的 ‘val’ 属性设置为标识符 <code>ident</code> 的 ‘symbol’ 属性的临时变量。</p>
+</li>
+<li class="lvl-2">
+<p>visitAssignment</p>
+<ol>
+<li class="lvl-5">访问表达式 <code>expr</code> 的右值，并获取左侧的临时变量。</li>
+<li class="lvl-5">使用 <code>mv.visitAssignment</code> 发出一个赋值指令。</li>
+<li class="lvl-5">将表达式 <code>expr</code> 的 ‘val’ 属性设置为赋值指令的值。</li>
+</ol>
+</li>
+</ul>
+<h3 id="后端">后端</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>assign语句实际上是特殊的binary操作，所以在riscvasmemitter中补充visitAssign即可，其他内容后端代码均已提供</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">visitAssign</span>(<span class="params">self, instr: Assign</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">    self.seq.append(Riscv.Move(instr.dst, instr.src))</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h2 id="思考题">思考题</h2>
 <h3 id="1-写出一段-risc-v-汇编代码，将栈帧空间扩大-16-字节">1.写出一段 <strong>risc-v 汇编代码</strong>，将栈帧空间扩大 16 字节</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addi sp, sp, -16</span><br></pre></td></tr></table></figure>
@@ -307,7 +375,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%86%99%E5%87%BA%E4%B8%80%E6%AE%B5-risc-v-%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B0%86%E6%A0%88%E5%B8%A7%E7%A9%BA%E9%97%B4%E6%89%A9%E5%A4%A7-16-%E5%AD%97%E8%8A%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.写出一段 risc-v 汇编代码，将栈帧空间扩大 16 字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E4%BB%A5%E5%85%81%E8%AE%B8%E5%A4%9A%E6%AC%A1%E5%AE%9A%E4%B9%89%E5%90%8C%E5%90%8D%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.如何修改以允许多次定义同名变量</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text">前端</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#lex-parser"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">lex&amp;parser</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">语义分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%86%99%E5%87%BA%E4%B8%80%E6%AE%B5-risc-v-%E6%B1%87%E7%BC%96%E4%BB%A3%E7%A0%81%EF%BC%8C%E5%B0%86%E6%A0%88%E5%B8%A7%E7%A9%BA%E9%97%B4%E6%89%A9%E5%A4%A7-16-%E5%AD%97%E8%8A%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.写出一段 risc-v 汇编代码，将栈帧空间扩大 16 字节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9%E4%BB%A5%E5%85%81%E8%AE%B8%E5%A4%9A%E6%AC%A1%E5%AE%9A%E4%B9%89%E5%90%8C%E5%90%8D%E5%8F%98%E9%87%8F"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.如何修改以允许多次定义同名变量</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
