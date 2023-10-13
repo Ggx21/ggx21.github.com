@@ -9,15 +9,15 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="stage-5 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 思考题">
+  <meta name="description" content="stage-5 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 支持多函数，支持函数的声明和定义（functionDef），支持函数调用（fuctionCall），本次实验基本上完整地走了一遍编译器的前端中端后端过程，真是收获满满呢😄😄 前端： lex： 增加了comma, parse： ​	重新设计AST树结点   function：添加par">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stage5">
 <meta property="og:url" content="https://ggxloveslife.top/homework/compiler_construction/stage5/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="stage-5 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 思考题">
+<meta property="og:description" content="stage-5 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 支持多函数，支持函数的声明和定义（functionDef），支持函数调用（fuctionCall），本次实验基本上完整地走了一遍编译器的前端中端后端过程，真是收获满满呢😄😄 前端： lex： 增加了comma, parse： ​	重新设计AST树结点   function：添加par">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-15T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-10-12T03:22:48.530Z">
+<meta property="article:modified_time" content="2023-10-13T02:53:12.049Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="lab">
 <meta property="article:tag" content="编原">
@@ -158,7 +158,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">前端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Q1%EF%BC%9A"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">Q1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A1%EF%BC%9A"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">A1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q2%EF%BC%9A"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">Q2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A2%EF%BC%9A"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">A2：</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -218,7 +218,173 @@
     <h1>stage-5</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
 <h2 id="实验内容">实验内容</h2>
+<p>支持多函数，支持函数的声明和定义（functionDef），支持函数调用（fuctionCall），本次实验基本上完整地走了一遍编译器的前端中端后端过程，真是收获满满呢😄😄</p>
+<h3 id="前端：">前端：</h3>
+<p>lex：</p>
+<p>增加了comma<code>,</code></p>
+<p>parse：</p>
+<p>​	重新设计AST树结点</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>function：添加<code>params: ParameterList</code>属性</p>
+</li>
+<li class="lvl-2">
+<p>ParameterList：新增结点，实际上是declaration的列表</p>
+</li>
+<li class="lvl-2">
+<p>functionCall：函数调用结点</p>
+</li>
+<li class="lvl-2">
+<p>expressionList:函数参数结点</p>
+</li>
+</ul>
+<p>​	按照规范对新增结点添加parser</p>
+<p>namer:</p>
+<ol>
+<li class="lvl-3">
+<p><strong>visitFunctionDef</strong>:这个一方面基本可以参考变量定义的实现(检查是否重定义),另一方面需要注意函数的参数列表和body实际上位于同一个Scope,在依次访问这两处时,要保证ScopeStack里只开了一个Scope,因此我修改了visitBlock的逻辑,在发现上一个Scope是函数参数列表时,不另开scope</p>
+</li>
+<li class="lvl-3">
+<p>ParameterList,ExpressionList:依次visit其children即可</p>
+</li>
+<li class="lvl-3">
+<p>visitFunctionCall:</p>
+<p>使用 <code>ctx.lookupGlobalScope</code> 来检查是否已经声明了一个同名的函数。如果没有声明，则引发 <code>DecafUndefinedFuncError</code>。设置 <code>expr.visit</code> 的参数列表的 ‘symbol’ 属性。</p>
+<p>此外还添加了对<code>var shadow function</code>的检查以及对参数不匹配的检查</p>
+</li>
+</ol>
+<h3 id="中端">中端</h3>
+<p>设计functionCall语句的表示方法,</p>
+<p>简单而言就是新建一个temp作为functionCall的目的,遍历访问callee的ExpressionList求得函数调用的srcTemps</p>
+<p>还有需要注意的是在Tacgen.transform,开始生成tac树时(每个函数开始生成tac时),需要采用真实的参数计数,以及首先访问函数的参数列表.</p>
+<h3 id="后端">后端</h3>
+<p>这一部分是项目目前为之比较复杂的部分</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>utils/riscv.py</code>:新增了Call指令和Addi指令的翻译</p>
+</li>
+<li class="lvl-2">
+<p><code>backend/riscv/riscvasmemitter.py</code></p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>class <strong>RiscvInstrSelector</strong>(<strong>TACVisitor</strong>):</p>
+<p>这个类是将tac码翻译为介于tac和asm码之间的类,指令类似于asm但是操作数是tac的temp,在这里增加了对Call指令的支持,实际上就是将<code>T0 = CALL foo(T1, T2)</code>翻译成<code>call foo</code>与<code>move A0 to T0</code>两句(e.g.)</p>
+</li>
+<li class="lvl-4">
+<p>class RiscvSubroutineEmitter(SubroutineEmitter):</p>
+<p>这个类是最终输出asm码的类,已经由bruteregalloc将上面类生成的中间代码中的temp转换成了reg.</p>
+<ul class="lvl-4">
+<li class="lvl-6">
+<p>修改了压栈入栈逻辑,由于框架代码的栈分配比较暴力,而且暂时不需要考虑性能,所以我的实现方法是:将ra,fp存到栈底,将中间变量从栈顶开始向栈底分配(而不是原来的相反实现,这样不会影响ra</p>
+</li>
+<li class="lvl-6">
+<p>prologue:新增存ra,fp</p>
+</li>
+<li class="lvl-6">
+<p>body:主要是在遇到函数调用时:存储caller-saved寄存器,执行函数调用(函数传参部分在emit之前我放在下面<code>bruteregalloc.py</code>寄存器分配时处理),恢复caller-saved寄存器</p>
+</li>
+<li class="lvl-6">
+<p>epilogue:恢复ra,fp,calleesaved寄存器</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p><code>backend/reg/bruteregalloc.py</code></p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>localAlloc：根据数据流对一个 BasicBlock 内的指令进行寄存器分配,</p>
+<p>在这里对callee的参数列表里的temp进行reg的绑定(传参),具体而言就是按照调用约定,按照顺序从寄存器或者栈上取出参数,move到参数列表中声明的temp</p>
+</li>
+<li class="lvl-4">
+<p>allocForLoc：每一条指令进行寄存器分配</p>
+<p>在这里如果发现指令为Call,就和上面的localAlloc执行相反操作,把函数srcs中的temp绑定到reg然后再按照调用约定存入寄存器或者栈</p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="思考题">思考题</h2>
+<h4 id="Q1：">Q1：</h4>
+<p>你更倾向采纳哪一种中间表示中的函数调用指令的设计（一整条函数调用 vs 传参和调用分离）？写一些你认为两种设计方案各自的优劣之处。</p>
+<h4 id="A1：">A1：</h4>
+<p>我实际上两种中间表示都尝试了，最终还是选择了一整条函数调用。这主要是一些操作上的问题，我在尝试传参调用分离的时候感觉没有必要，反而会增加传参时寄存器与栈分配的代码逻辑复杂度。</p>
+<ol>
+<li class="lvl-3">
+<p>一整条函数调用：</p>
+<p>优势</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>更贴近源语言，便于生成</p>
+</li>
+<li class="lvl-5">
+<p>代码更加简洁直观</p>
+</li>
+<li class="lvl-5">
+<p>紧凑性：一整条指令可以将参数传递和函数调用合并在一起，减少了指令的数量，节省了内存和提高了缓存性能。</p>
+</li>
+<li class="lvl-5">
+<p>有利于集中计算分配函数调用中函数参数的分配</p>
+</li>
+<li class="lvl-5">
+<p>节省指令解码时间：一整条指令可以在解码阶段一次性解析，而不需要分别解析传参和调用指令。</p>
+</li>
+</ul>
+<p>劣势</p>
+<ol>
+<li class="lvl-6">
+<p><strong>限制性</strong>：一整条指令可能会限制编译器的优化机会，因为它需要在单条指令中包含参数传递和调用信息，这可能使得某些优化更加复杂。</p>
+</li>
+<li class="lvl-6">
+<p><strong>可维护性</strong>：一整条指令的可读性和可维护性可能较低，因为它需要一次性表达多个概念，不容易理解和调试。</p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p>传参和调用分离</p>
+<p>优势</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>更贴目标语言（riscv），便于生成目标语言</p>
+</li>
+<li class="lvl-5">
+<p>灵活性：将参数传递和函数调用分离可以允许编译器更自由地进行优化。它可以根据具体情况选择不同的策略来传递参数，以获得更好的性能,适应不同的后端</p>
+</li>
+<li class="lvl-5">
+<p>可读性：分离的设计可以提高代码的可读性和可维护性，因为每个步骤都以清晰的方式表达，易于理解和调试。</p>
+</li>
+</ul>
+<p>劣势</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>指令数量增加：分离参数传递和函数调用通常需要更多的指令，因此可能会导致更多的代码大小和执行时间开销。</p>
+</li>
+<li class="lvl-5">
+<p>增加传参时寄存器与栈分配的代码逻辑复杂度</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="Q2：">Q2：</h4>
+<p>为何 RISC-V 标准调用约定中要引入 callee-saved 和 caller-saved 两类寄存器，而不是要求所有寄存器完全由 caller/callee 中的一方保存？为何保存返回地址的 ra 寄存器是 caller-saved 寄存器？</p>
+<h4 id="A2：">A2：</h4>
+<ol>
+<li class="lvl-3">
+<p>这保证了寄存器分配的灵活性，主要是尽可能减少寄存器压栈出栈的次数。caller-saved和calllee-saved实际上规定了caller和callee对寄存器保护的责任。这样每一subroutine在自己的作用域里总是有一些寄存器可以随意更改，也有另一些寄存器负责保护。</p>
+<p>而全部caller/callee-saved,尽管实际上确实可以work但是</p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>如果全部callersaved，考虑到一个caller可能有大量callee，那么调用callee前后会大量入栈出栈</p>
+</li>
+<li class="lvl-5">
+<p>如果全部calleesaved，参见下一问的回答多个callee都需要存储恢复caller本应保持的寄存器，也会造成浪费。</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>一个caller可能有多个callee，反之则不可能。那么多个callee储存/恢复caller的ra，会造成浪费。</p>
+</li>
+</ol>
 
   </div>
 </article>
@@ -266,7 +432,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-5</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">前端：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Q1%EF%BC%9A"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">Q1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A1%EF%BC%9A"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">A1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q2%EF%BC%9A"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">Q2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A2%EF%BC%9A"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">A2：</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
