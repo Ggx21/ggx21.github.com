@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="语法分析 核心问题是识别，解析上下文无关文法G &#x3D; (V ， T ， P， S ) 两种实现途径   自顶向下（从S到句子）   自底向上   自顶向下的语法分析 问题是容易出现回溯 两类非确定性   非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）   仅有产生式选择是非确定的   解决产生式选择的不确定性：lookahead 唯一目的就是避免回溯，所以要看得足够多 一个不太好的例">
+<meta property="og:type" content="article">
+<meta property="og:title" content="语法分析">
+<meta property="og:url" content="https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="语法分析 核心问题是识别，解析上下文无关文法G &#x3D; (V ， T ， P， S ) 两种实现途径   自顶向下（从S到句子）   自底向上   自顶向下的语法分析 问题是容易出现回溯 两类非确定性   非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）   仅有产生式选择是非确定的   解决产生式选择的不确定性：lookahead 唯一目的就是避免回溯，所以要看得足够多 一个不太好的例">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-10-16T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-10-16T14:37:02.077Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="compiler">
+<meta name="twitter:card" content="summary">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>语法分析</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/homework/compiler_construction/stage5/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E9%80%94%E5%BE%84"><span class="toc-number">1.0.1.</span> <span class="toc-text">两种实现途径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">自顶向下的语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%B1%BB%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">两类非确定性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%A7%E7%94%9F%E5%BC%8F%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%9Alookahead"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">解决产生式选择的不确定性：lookahead</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A4%AA%E5%A5%BD%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">一个不太好的例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E6%96%87%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">LL(1)文法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#First%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">First集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">计算方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Follow%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Follow集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-Follow-%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">计算 Follow 集合</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        语法分析
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-10-16T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-10-16</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/compiler/">compiler</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/compiler/" rel="tag">compiler</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>语法分析</h1>
+<p>核心问题是<strong>识别</strong>，<strong>解析</strong>上下文无关文法G = (V ， T ， P， S )</p>
+<h3 id="两种实现途径">两种实现途径</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>自顶向下（从S到句子）</p>
+</li>
+<li class="lvl-2">
+<p>自底向上</p>
+</li>
+</ul>
+<h2 id="自顶向下的语法分析">自顶向下的语法分析</h2>
+<p>问题是容易出现回溯</p>
+<h4 id="两类非确定性">两类非确定性</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）</p>
+</li>
+<li class="lvl-2">
+<p>仅有产生式选择是非确定的</p>
+</li>
+</ul>
+<h4 id="解决产生式选择的不确定性：lookahead">解决产生式选择的不确定性：lookahead</h4>
+<p>唯一目的就是避免回溯，所以要看得足够多</p>
+<h4 id="一个不太好的例子">一个不太好的例子</h4>
+<p>考虑下列文法识别 $ba^n$ 的分析过程,  <code>S → Sa  ,S → b  </code></p>
+<div class="tips">
+<p>看到下一个是a,然后选择<code>S → Sa</code>是不够的,因为a后可能还有a,要确定还要不要a只能继续向后看,所以无论向前看多远,这个句子后面总可能还是有a,所以还是不能确定.</p>
+</div>
+<blockquote>
+<p>这启发我们lookahead的表现需要依赖于文法</p>
+</blockquote>
+<h3 id="LL-1-文法">LL(1)文法</h3>
+<p>文法 G 是 LL（1）文法，当且仅当下面的条件成立：</p>
+<div class="warning">
+<p>对于每一个生成符,其所有产生式的预测集合不相交</p>
+</div>
+<p>First集合与Follow集合,$G =（V_T， V_N， P， S）$ 是上下文无关文法</p>
+<h4 id="First集合">First集合</h4>
+<p>first集合是求下述符号可能产生的<strong>首终结符</strong></p>
+<p>first集合针对的是在LL推导中可能出现的三类符号的并集</p>
+<ol>
+<li class="lvl-3">
+<p>终结符与$\epsilon$</p>
+</li>
+<li class="lvl-3">
+<p>生成符</p>
+</li>
+<li class="lvl-3">
+<p>文法右边的符号串</p>
+</li>
+</ol>
+<h5 id="计算方法">计算方法</h5>
+<ol>
+<li class="lvl-3">
+<p>1类集合元素为本身,剩下的是空集</p>
+</li>
+<li class="lvl-3">
+<p>如果生成符能生成$\epsilon$,则其集合加入$\epsilon$</p>
+</li>
+<li class="lvl-3">
+<p>对于3类符号串,首先加入串首符号对应集合元素</p>
+</li>
+<li class="lvl-3">
+<p>从左向右分析,如果first集合中有$\epsilon$,则集合并上此处符号的后继符号的first集合</p>
+</li>
+<li class="lvl-3">
+<p>如果停止,则3类符号串first集中删去$\epsilon$</p>
+</li>
+<li class="lvl-3">
+<p>如果生成符能生成3,则集合取并</p>
+</li>
+<li class="lvl-3">
+<p>重复3-6,直到所有集合不变</p>
+</li>
+</ol>
+<h4 id="Follow集合">Follow集合</h4>
+<p>follow集合是在求$V_N$的直接后继终结符</p>
+<h5 id="计算-Follow-集合">计算 Follow 集合</h5>
+<ol>
+<li class="lvl-3">
+<p>置 Follow(S) =</p>
+</li>
+</ol>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E9%80%94%E5%BE%84"><span class="toc-number">1.0.1.</span> <span class="toc-text">两种实现途径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">自顶向下的语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%B1%BB%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">两类非确定性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%A7%E7%94%9F%E5%BC%8F%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%9Alookahead"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">解决产生式选择的不确定性：lookahead</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A4%AA%E5%A5%BD%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">一个不太好的例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E6%96%87%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">LL(1)文法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#First%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">First集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">计算方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Follow%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Follow集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-Follow-%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">计算 Follow 集合</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&text=语法分析"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&title=语法分析"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&is_video=false&description=语法分析"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=语法分析&body=Check out this article: https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&title=语法分析"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&title=语法分析"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&title=语法分析"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&title=语法分析"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&name=语法分析&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/&t=语法分析"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
