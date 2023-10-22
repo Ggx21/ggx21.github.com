@@ -9,24 +9,27 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="实验二 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图    在线实验平台    思考题   同步逻辑的电路原理图     异步逻辑的电路原理图    异步逻辑和同步逻辑的异同 从图像中可以看出，两种逻辑实现经 Vivado 综合后的电路原理图有较大不同。同步逻辑实现中，counter模块和trigger模块并联同时接受clock_ge">
+  <meta name="description" content="实验三 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lab2">
+<meta property="og:title" content="lab3">
 <meta property="og:url" content="https://ggxloveslife.top/homework/computer_orgnization/lab3/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="实验二 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图    在线实验平台    思考题   同步逻辑的电路原理图     异步逻辑的电路原理图    异步逻辑和同步逻辑的异同 从图像中可以看出，两种逻辑实现经 Vivado 综合后的电路原理图有较大不同。同步逻辑实现中，counter模块和trigger模块并联同时接受clock_ge">
+<meta property="og:description" content="实验三 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/c17e96e795aff020dcc4ea8c0d80ca73/202310021713613.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/51e50fc87612f90a9ae1c529704ffd0e/202310021458363.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/913ac109bd94ea7abf17f78b9278a05b/202310021619164.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/a0c159e24a93fca321af418a21732ae1/202310021622970.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/ba129e270f1b57944dc06edf1e90730a/202310021628504.png">
-<meta property="article:published_time" content="2023-10-02T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-10-02T09:13:59.055Z">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png">
+<meta property="article:published_time" content="2023-10-22T04:25:01.000Z">
+<meta property="article:modified_time" content="2023-10-22T08:47:58.259Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="cod">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/c17e96e795aff020dcc4ea8c0d80ca73/202310021713613.png">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png">
      
   <link rel="shortcut icon" href="/images/favicon.ico" />
      
@@ -44,7 +47,7 @@
   />
     
   <!-- title -->
-  <title>lab2</title>
+  <title>lab3</title>
   <!-- async scripts -->
   <!-- Google Analytics -->
 
@@ -125,28 +128,12 @@
             >回到主页</span
           >
         </li>
-        
-        <li>
-          <a
-            class="icon"
-            aria-label="上一篇"
-            href="/homework/computer_orgnization/lab2/"
-            ><i
-              class="fa-solid fa-chevron-left"
-              aria-hidden="true"
-              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
-              onmouseout="document.getElementById('i-prev').style.display = 'none';"
-            ></i></a
-          ><span id="i-prev" class="info" style="display: none"
-            >上一篇</span
-          >
-        </li>
          
         <li>
           <a
             class="icon"
             aria-label="下一篇"
-            href="/homework/compiler_construction/stage1/"
+            href="/notes/signal_processing/%E4%BA%B2%E7%88%B1%E7%9A%84%E4%B8%81%E5%A5%B3%E5%A3%AB/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -179,7 +166,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验二</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E9%80%BB%E8%BE%91%E7%9A%84%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.2.1.</span> <span class="toc-text">同步逻辑的电路原理图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E9%80%BB%E8%BE%91%E7%9A%84%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">异步逻辑的电路原理图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E9%80%BB%E8%BE%91%E5%92%8C%E5%90%8C%E6%AD%A5%E9%80%BB%E8%BE%91%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">1.2.3.</span> <span class="toc-text">异步逻辑和同步逻辑的异同</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -194,7 +181,7 @@
   <header>
     
     <h1 class="posttitle p-name" itemprop="name headline">
-        lab2
+        lab3
     </h1>
 
 
@@ -213,7 +200,7 @@
       
     <div class="postdate">
       
-        <time datetime="2023-10-02T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-10-02</time>
+        <time datetime="2023-10-22T04:25:01.000Z" class="dt-published" itemprop="datePublished">2023-10-22</time>
         
       
     </div>
@@ -236,36 +223,83 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>实验二</h1>
+    <h1>实验三</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
 <h2 id="实验报告">实验报告</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
 <h4 id="仿真截图">仿真截图</h4>
-<img src="https://gitlab.com/ggx-blog/imglab/uploads/c17e96e795aff020dcc4ea8c0d80ca73/202310021713613.png" alt="image-20231002145428181" style="zoom: 50%;" />
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。</p>
+</li>
+<li class="lvl-4">
+<p>assert(alu_a==rdata_a),assert(alu_b==rdata_b)，assert(alu_y==wdata)</p>
+</li>
+<li class="lvl-4">
+<pre><code class="language-cpp">    //验证ALU功能
+    for (int i = 1; i &lt; 32; i = i + 1) begin
+      #100;
+      rd = i;   // only lower 5 bits
+      rs1 = $urandom_range(0, 32);
+      rs2 = $urandom_range(0, 32);
+      opcode = $urandom_range(1, 11);
+      dip_sw = `inst_rtype(rd, rs1, rs2, opcode);
+      push_btn = 1;
+
+      #100;
+      push_btn = 0;
+
+      // 展示结果
+      #100;
+      rd = i;   // only lower 5 bits
+      dip_sw = `inst_peek(rd, 0);
+      push_btn = 1;
+
+      #100;
+      push_btn = 0;
+
+
+      #1000;
+</code></pre>
+</li>
+</ul>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png" alt="image-20231022000429920"></p>
+<p>此外还设计了peek指令验证每个寄存器存储值正确</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png" alt="image-20231022002957251"></p>
 </li>
 <li class="lvl-2">
 <h3 id="在线实验平台">在线实验平台</h3>
-<img src="https://gitlab.com/ggx-blog/imglab/uploads/51e50fc87612f90a9ae1c529704ffd0e/202310021458363.png" alt="image-20231002145843251" style="zoom: 50%;" />
+<ul class="lvl-2">
+<li class="lvl-4">POKE imm<strong>7</strong> into r1 then PEEK r1，正常显示7</li>
+</ul>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png" alt="image-20231022001257034"></p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>poke 8 into r2 ,  add r1 r2 to r3 ,then peek r3:正常得到15</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png" alt="image-20231022002321205"></p>
+</li>
+<li class="lvl-4">
+<p>not r1 to r3,peek r3结果正确</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png" alt="image-20231022002505841"></p>
+</li>
+<li class="lvl-4">
+<p>r1逻辑左移r2位的结果，正确</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png" alt="image-20231022002630826"></p>
+</li>
+<li class="lvl-4">
+<p>循环左移结果</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png" alt="image-20231022002728947"></p>
+</li>
+<li class="lvl-4">
+<p>所有操作在板子上均得到正确结果</p>
+</li>
+</ul>
 </li>
 </ul>
 <h2 id="思考题">思考题</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<h3 id="同步逻辑的电路原理图">同步逻辑的电路原理图</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/913ac109bd94ea7abf17f78b9278a05b/202310021619164.png" alt=""></p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a0c159e24a93fca321af418a21732ae1/202310021622970.png" alt="image-20231002162245902"></p>
-</li>
-<li class="lvl-2">
-<h3 id="异步逻辑的电路原理图">异步逻辑的电路原理图</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ba129e270f1b57944dc06edf1e90730a/202310021628504.png" alt="image-20231002162808433"></p>
-</li>
-<li class="lvl-2">
-<h3 id="异步逻辑和同步逻辑的异同">异步逻辑和同步逻辑的异同</h3>
-<p>从图像中可以看出，两种逻辑实现经 Vivado 综合后的电路原理图有较大不同。同步逻辑实现中，counter模块和trigger模块<strong>并联</strong>同时接受clock_gen生成的clk信号驱动，这意味着它们在同一个时钟域中操作，所有的触发器在时钟的上升沿或下降沿触发，确保了时序一致性。；而异步实现中，则是类似于<strong>串联</strong>结构，clockgen并不直接接入counter模块，而是通过驱动trigger模块，再有trigger模块产生的trigger信号接入counter模块。</p>
-<p><strong>异步逻辑设计</strong>，没有全局统一时钟驱动的逻辑设计。异步逻辑在复杂的项目中，会导致静态时序分析失败，造成在硬件上难以调试的时序问题，此外，在异步逻辑中，通常需要使用额外的逻辑电路（如触发器或者双边缘触发器）来协调计数器模块和触发器模块之间的时序关系。这可能导致电路结构更加复杂，需要特殊的电路设计技巧来解决时序问题。</p>
-</li>
-</ul>
+<p>如果读取到乘除法运算，则在decode时根据操作数的位数计算出需要的时钟周期，给CALC过程添加一个自环，每次操作CLK_CNT–，直到得0（所有位数计算完成）退出自环，进入WRITE模式</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png" alt="image-20231022004352614"></p>
 
   </div>
 </article>
@@ -313,22 +347,22 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验二</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E9%80%BB%E8%BE%91%E7%9A%84%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.2.1.</span> <span class="toc-text">同步逻辑的电路原理图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E9%80%BB%E8%BE%91%E7%9A%84%E7%94%B5%E8%B7%AF%E5%8E%9F%E7%90%86%E5%9B%BE"><span class="toc-number">1.2.2.</span> <span class="toc-text">异步逻辑的电路原理图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E6%AD%A5%E9%80%BB%E8%BE%91%E5%92%8C%E5%90%8C%E6%AD%A5%E9%80%BB%E8%BE%91%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">1.2.3.</span> <span class="toc-text">异步逻辑和同步逻辑的异同</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
       <ul>
   <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/computer_orgnization/lab3/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&text=lab2"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab2"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&is_video=false&description=lab2"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=lab2&body=Check out this article: https://ggxloveslife.top/homework/computer_orgnization/lab3/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab2"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab2"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab2"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab2"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&name=lab2&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/computer_orgnization/lab3/&t=lab2"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&text=lab3"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab3"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&is_video=false&description=lab3"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=lab3&body=Check out this article: https://ggxloveslife.top/homework/computer_orgnization/lab3/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab3"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab3"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab3"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&title=lab3"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/computer_orgnization/lab3/&name=lab3&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/computer_orgnization/lab3/&t=lab3"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
 </ul>
 
     </div>
