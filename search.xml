@@ -8,7 +8,7 @@
       <link href="/notes/database_intro/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"/>
       <url>/notes/database_intro/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/</url>
       
-        <content type="html"><![CDATA[<h1>数据库笔记</h1><h2 id="什么是数据库">什么是数据库</h2><p>数据抽象：数据的定义与应用程序相分离。</p><h3 id="ER图：实体与属性">ER图：实体与属性</h3><p>可以用ER图表示数据库，包括：</p><ol><li class="lvl-3"><p>实体</p></li><li class="lvl-3"><p>联系</p></li><li class="lvl-3"><p>属性</p></li></ol><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7bbd854b09125295dd310fef19a83f80/202310281537772.png" alt="image-20231028153746706"></p><h3 id="视图机制">视图机制</h3><blockquote><p>一个<code>视图</code>实际上是数据库的一个<strong>子集</strong></p></blockquote><p>不是所有人都想/应该看到数据的全部，视图机制提供：</p><ul class="lvl-0"><li class="lvl-2"><p>保密级别</p></li><li class="lvl-2"><p>自定义数据库外观</p></li><li class="lvl-2"><p>程序数据独立性：数据库已经被改变，但外观仍保持一致</p></li></ul><h3 id="数据库的结构">数据库的结构</h3><ol><li class="lvl-3"><p>数据表（Tables）：数据表是数据库中的主要组成部分，用于存储数据。每个数据表包含多个列，用于定义数据的结构。</p></li><li class="lvl-3"><p>列（Columns）：列是数据表中的字段，用于存储特定类型的数据。每列都有一个数据类型和约束，以定义它可以存储的数据内容。</p></li><li class="lvl-3"><p>数据行（Rows）：数据行是实际存储在数据表中的数据记录。每一行包含了表中各列的具体数据值。</p></li><li class="lvl-3"><p>主键（Primary Key）：主键是一个唯一标识数据表中每行数据的列。它确保每行都有唯一的标识符，用于快速检索和关联数据。</p></li><li class="lvl-3"><p>外键（Foreign Key）：外键是一个列或一组列，用于建立不同数据表之间的关系。它们用于维护表之间的引用完整性，确保关联的数据的一致性。</p></li><li class="lvl-3"><p>索引（Indexes）：索引是一种优化数据库性能的结构，它加速了数据的检索操作。索引可以建立在一个或多个列上，允许快速查找数据。</p></li><li class="lvl-3"><p>视图（Views）：视图是一个虚拟表，它是基于一个或多个实际数据表的查询结果。视图可以简化数据访问，并提供安全性和数据抽象。</p></li><li class="lvl-3"><p>存储过程（Stored Procedures）：存储过程是一组SQL语句的集合，可以被数据库执行。它们可以用于实现业务逻辑、数据转换和数据验证。</p></li><li class="lvl-3"><p>触发器（Triggers）：触发器是与数据表相关联的一段代码，它会在表上的特定事件发生时自动触发。触发器用于实现自动化操作和数据约束。</p></li><li class="lvl-4"><p>索引（Functions）：函数是数据库中可重复使用的程序代码块，用于执行特定操作或计算。数据库可以提供内置函数，也可以创建用户自定义函数。</p></li></ol><h2 id="chap2-数据库环境">chap2 数据库环境</h2><h3 id="ANSI-SPARC三层体系结构">ANSI-SPARC三层体系结构</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/778345fba766af2c76773023cc04a8ef/202310281808982.png" alt="image-20231028180833931"></p><h3 id="数据库语言">数据库语言</h3><ul class="lvl-0"><li class="lvl-2"><p>数据定义语言（DDL）</p></li><li class="lvl-2"><p>数据操作语言（DML）</p><ul class="lvl-2"><li class="lvl-4">过程化DML：检索嵌套依赖</li><li class="lvl-4">非过程化DML：一步得出结果</li></ul></li></ul><h3 id="数据模型">数据模型</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="基于对象的数据模型">基于对象的数据模型</h4><ul class="lvl-2"><li class="lvl-4">实体<ul class="lvl-4"><li class="lvl-6">属性</li><li class="lvl-6">行为</li></ul></li></ul></li><li class="lvl-2"><p>基于记录的数据模型</p><ul class="lvl-2"><li class="lvl-4"><p>关系数据模型</p><p>数据按照表格组织，每个表格有Unique的列，表格间通过相同的内容可以建立间接连接，但没有显示连接。</p><p>关系数据模型只适用于外部层和概念层</p></li><li class="lvl-4"><p>网状数据模型</p><p>数据被表示为一组<code>record</code>成为图的节点,联系通常用指针实现被表示为<code>set</code>成为图的边</p></li><li class="lvl-4"><p>层次数据模型</p><p>一个节点只能有一个父节点,成为树形结构</p></li></ul><h3 id="chap3-数据库的结构与web">chap3 数据库的结构与web</h3><h3 id="DBMS的组件">DBMS的组件</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cdc864d6403c57ce452f6235c49fcea0/202310281857138.png" alt="image-20231028185718067"></p></li></ul><blockquote><p>系统目录（System Catalog）是数据库管理系统（DBMS）内部的元数据（metadata）存储区域，用于描述和记录数据库中的对象、结构、关系和属性等信息。系统目录是DBMS的内部数据库，其中存储了有关数据库自身的信息，以便DBMS能够有效地管理和操作数据库。</p></blockquote><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/958312d55d7d09ea025588a74cd18829/202310281906662.png" alt="image-20231028190649606"></p>]]></content>
+        <content type="html"><![CDATA[<h1>数据库笔记</h1><h2 id="什么是数据库">什么是数据库</h2><p>数据抽象：数据的定义与应用程序相分离。</p><h3 id="ER图：实体与属性">ER图：实体与属性</h3><p>可以用ER图表示数据库，包括：</p><ol><li class="lvl-3"><p>实体</p></li><li class="lvl-3"><p>联系</p></li><li class="lvl-3"><p>属性</p></li></ol><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7bbd854b09125295dd310fef19a83f80/202310281537772.png" alt="image-20231028153746706"></p><h3 id="视图机制">视图机制</h3><blockquote><p>一个<code>视图</code>实际上是数据库的一个<strong>子集</strong></p></blockquote><p>不是所有人都想/应该看到数据的全部，视图机制提供：</p><ul class="lvl-0"><li class="lvl-2"><p>保密级别</p></li><li class="lvl-2"><p>自定义数据库外观</p></li><li class="lvl-2"><p>程序数据独立性：数据库已经被改变，但外观仍保持一致</p></li></ul><h3 id="数据库的结构">数据库的结构</h3><ol><li class="lvl-3"><p>数据表（Tables）：数据表是数据库中的主要组成部分，用于存储数据。每个数据表包含多个列，用于定义数据的结构。</p></li><li class="lvl-3"><p>列（Columns）：列是数据表中的字段，用于存储特定类型的数据。每列都有一个数据类型和约束，以定义它可以存储的数据内容。</p></li><li class="lvl-3"><p>数据行（Rows）：数据行是实际存储在数据表中的数据记录。每一行包含了表中各列的具体数据值。</p></li><li class="lvl-3"><p>主键（Primary Key）：主键是一个唯一标识数据表中每行数据的列。它确保每行都有唯一的标识符，用于快速检索和关联数据。</p></li><li class="lvl-3"><p>外键（Foreign Key）：外键是一个列或一组列，用于建立不同数据表之间的关系。它们用于维护表之间的引用完整性，确保关联的数据的一致性。</p></li><li class="lvl-3"><p>索引（Indexes）：索引是一种优化数据库性能的结构，它加速了数据的检索操作。索引可以建立在一个或多个列上，允许快速查找数据。</p></li><li class="lvl-3"><p>视图（Views）：视图是一个虚拟表，它是基于一个或多个实际数据表的查询结果。视图可以简化数据访问，并提供安全性和数据抽象。</p></li><li class="lvl-3"><p>存储过程（Stored Procedures）：存储过程是一组SQL语句的集合，可以被数据库执行。它们可以用于实现业务逻辑、数据转换和数据验证。</p></li><li class="lvl-3"><p>触发器（Triggers）：触发器是与数据表相关联的一段代码，它会在表上的特定事件发生时自动触发。触发器用于实现自动化操作和数据约束。</p></li><li class="lvl-4"><p>索引（Functions）：函数是数据库中可重复使用的程序代码块，用于执行特定操作或计算。数据库可以提供内置函数，也可以创建用户自定义函数。</p></li></ol><h2 id="chap2-数据库环境">chap2 数据库环境</h2><h3 id="ANSI-SPARC三层体系结构">ANSI-SPARC三层体系结构</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/778345fba766af2c76773023cc04a8ef/202310281808982.png" alt="image-20231028180833931"></p><h3 id="数据库语言">数据库语言</h3><ul class="lvl-0"><li class="lvl-2"><p>数据定义语言（DDL）</p></li><li class="lvl-2"><p>数据操作语言（DML）</p><ul class="lvl-2"><li class="lvl-4">过程化DML：检索嵌套依赖</li><li class="lvl-4">非过程化DML：一步得出结果</li></ul></li></ul><h3 id="数据模型">数据模型</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="基于对象的数据模型">基于对象的数据模型</h4><ul class="lvl-2"><li class="lvl-4">实体<ul class="lvl-4"><li class="lvl-6">属性</li><li class="lvl-6">行为</li></ul></li></ul></li><li class="lvl-2"><p>基于记录的数据模型</p><ul class="lvl-2"><li class="lvl-4"><p>关系数据模型</p><p>数据按照表格组织，每个表格有Unique的列，表格间通过相同的内容可以建立间接连接，但没有显示连接。</p><p>关系数据模型只适用于外部层和概念层</p></li><li class="lvl-4"><p>网状数据模型</p><p>数据被表示为一组<code>record</code>成为图的节点,联系通常用指针实现被表示为<code>set</code>成为图的边</p></li><li class="lvl-4"><p>层次数据模型</p><p>一个节点只能有一个父节点,成为树形结构</p></li></ul><h3 id="chap3-数据库的结构与web">chap3 数据库的结构与web</h3><h3 id="DBMS的组件">DBMS的组件</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cdc864d6403c57ce452f6235c49fcea0/202310281857138.png" alt="image-20231028185718067"></p></li></ul><blockquote><p>系统目录（System Catalog）是数据库管理系统（DBMS）内部的元数据（metadata）存储区域，用于描述和记录数据库中的对象、结构、关系和属性等信息。系统目录是DBMS的内部数据库，其中存储了有关数据库自身的信息，以便DBMS能够有效地管理和操作数据库。</p></blockquote><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/958312d55d7d09ea025588a74cd18829/202310281906662.png" alt="image-20231028190649606"></p><h2 id="chap5：关系代数与关系演算">chap5：关系代数与关系演算</h2><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/011919b0a47656ed0be3dbe74daa59b9/202310291454124.png" alt="image-20231029145403952"></p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -t -p 10002 2021010803@166.111.121.61 mysql -hdb -u2021010803 -p</span><br></pre></td></tr></table></figure><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h166.111.121.61 -P10001 -u2021010803 -p fde4dbf05ccfc9234b0bf26f853fa051</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -284,62 +284,35 @@
     
     <entry>
       <title>内容预览</title>
-      <link href="/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/"/>
-      <url>/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/</url>
-      
-        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> compiler </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> compiler </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>内容预览</title>
-      <link href="/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/"/>
-      <url>/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/</url>
-      
-        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> compiler </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> compiler </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>内容预览</title>
       <link href="/notes/compiler_construction/%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/"/>
       <url>/notes/compiler_construction/%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> compiler </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> compiler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内容预览</title>
+      <link href="/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/"/>
+      <url>/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/</url>
       
         <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
       
@@ -396,6 +369,33 @@
       <url>/notes/compiler_construction/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%BB%84%E7%BB%87/</url>
       
         <content type="html"><![CDATA[<h1>词法分析</h1><p>识别单词<code>Lexemes </code> ，返回单词记录<code>tokens&amp;attrs</code></p><h3 id="常用工具">常用工具</h3><ul class="lvl-0"><li class="lvl-2"><p>EBNF</p></li><li class="lvl-2"><p>状态转移图</p></li><li class="lvl-2"><p>正规表达式</p></li><li class="lvl-2"><p>有限状态自动机</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> compiler </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> compiler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内容预览</title>
+      <link href="/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/"/>
+      <url>/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
       
       
       <categories>
@@ -1105,65 +1105,11 @@
     
     
     <entry>
-      <title>统计3：区间估计</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/</url>
+      <title>统计5：拟合优度检验</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
       
-        <content type="html"><![CDATA[<h1>统计3：区间估计</h1><h5 id="置信水平">置信水平</h5><p>一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数</p><h3 id="基本方法">基本方法</h3><ol><li class="lvl-3"><p><strong>构造枢轴量</strong>pivot，$G(x_1,\ldots,x_n,\theta)$</p><p>要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式</p></li><li class="lvl-3"><p><strong>找到G的边界</strong>适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$</p></li><li class="lvl-3"><p><strong>求解</strong>$c\leq G(x_1,\ldots,x_n,\theta)\leq d$,得到$\theta$的两个估计值边界</p></li></ol><h2 id="预知识">预知识</h2><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p><h1>解题方法</h1><h3 id="背就完事了">背就完事了</h3><h4 id="1-N-mu-sigma2-sigma2已知-mu未知-求-mu">$1.N(\mu,\sigma<sup>2),\sigma</sup>2已知,\mu未知,求\mu$</h4><p>$G=\frac {\sqrt n (\bar x - \mu)} \sigma \sim N(0,1)$,$d=u_{1-\alpha/2},c=u_{\alpha/2}=-u_{1-\alpha/2}$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png" alt="image-20230607193734916"></p><h4 id="2-N-mu-sigma2-sigma2未知-mu未知-求-mu">$2.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\mu$</h4><p>由于$\sigma$未知,所以想办法约掉$\sigma$:<br>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$<br><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png" alt="image-20230607193937549" style="zoom:80%;" /></p><p>$d=t_{1-\alpha/2}(n-1),c=-t_{1-\alpha/2}(n-1)$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png" alt="image-20230607194203682"></p><h4 id="3-N-mu-sigma2-sigma2未知-mu未知-求-sigma-2">$3.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\sigma^2$</h4><p>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png" alt="image-20230607194622743" style="zoom: 67%;" /><h3 id="4">4.</h3><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png" alt="image-20230607195007278" style="zoom:67%;" /><h3 id="大样本区间估计">大样本区间估计</h3><p>样本容量足够大时,用样本统计量替换总体统计量</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png" alt="image-20230607195154548" style="zoom:67%;" />]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> gaitong </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> gaitong </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>概率论部分（单变量）</title>
-      <link href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"/>
-      <url>/notes/gaitong/%E9%9A%8F%E6%9C%BA/</url>
-      
-        <content type="html"><![CDATA[<h1>概率论部分（单变量）</h1><h2 id="一、-随机现象的数学描述和概率论的基本思想">一、 随机现象的数学描述和概率论的基本思想</h2><ol><li class="lvl-3"><p>随机事件之间的关系和事件的基本运算。</p></li><li class="lvl-3"><p>理解条件概率的直观含义和数学定义，掌握条件概率在概率计算中的应用（乘法公式、全概率公式、Bayes 公式）。</p><p>乘法公式：<br>$$<br>P(A \cap B) = P(B|A) \cdot P(A)<br>$$<br>全概率公式：<br>$$<br>P(B) = \sum_i P(B|A_i) \cdot P(A_i)<br>$$<br>Bayes公式：设$A_1,\dots,A_n$为样本空间的一个分割<br>$$<br>P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum_j P(B|A_j) \cdot P(A_j)}<br>$$<br>其中，A和B是事件，P(A)表示事件A发生的概率，P(B)表示事件B发生的概率，P(B|A)表示在事件A发生的条件下事件B发生的概率，A_i表示一系列互斥且完备的事件。</p></li><li class="lvl-3"><p>理解事件的独立性的定义和有关性质。</p><p>事件独立性的定义： 事件A和事件B被称为独立事件，如果满足以下条件：P(A∩B)=P(A)⋅P(B)</p><p>否则称A与B不独立或相关</p><p>如果事件A和事件B是独立事件，则事件A与事件B的并集的概率等于事件A的概率加上事件B的概率减去事件A和事件B的交集的概率：P*(<em>A</em>∪<em>B</em>)=<em>P</em>(<em>A</em>)+<em>P</em>(<em>B</em>)−<em>P</em>(<em>A</em>∩*B)</p></li></ol><h3 id="tips：">tips：</h3><p>抽签模型与次序无关：第一次抽中白球的概率和第二次抽中白球的概率是相同的，无论放不放回。</p><h2 id="随机变量的概率分布">随机变量的概率分布</h2><ol><li class="lvl-3"><p>理解随机变量及其概率分布函数的定义，理解随机变量概率分布函数的性质，掌握概率分布函数的计算。</p><p>分布函数：$F(x)=P(X\leq x)$</p></li><li class="lvl-3"><p>理解离散型随机变量、连续型随机变量的定义，掌握概率分布列、概率密度函数及概率分布函数的关系，掌握有关的计算。</p></li><li class="lvl-3"><p>理解多维随机变量的定义，理解联合概率分布（分布函数、分布列、概率密度）与边缘分布（分布函数、分布列、概率密度），掌握有关计算。</p></li><li class="lvl-3"><p>理解随机变量的独立性的定义和性质，掌握判断独立和不独立的方法</p></li></ol><h2 id="三、-随机变量的数字特征">三、 随机变量的数字特征</h2><ol><li class="lvl-3"><h3 id="单个随机变量的数字特征">单个随机变量的数字特征</h3></li></ol><p>a) 数学期望和方差：<br>i. 理解数学期望的定义，理解数学期望的存在性，掌握数学期望的性质和计算。<br>ii. 理解方差的定义和直观含义，掌握方差的性质和计算。<br>iii. 理解如何线性变换对随机变量进行期望=0，方差=1 的标准化。<br>iv. 理解期望、方差的下述性质：<br>b) 原点矩和中心矩。<br>c) 切比雪夫（Chebyshev）不等式。</p><p>对于任意随机变量X，具有有限方差E[(X-μ)²] = σ²，其中μ是X的均值，σ²是X的方差。对于任意正数ε &gt; 0，切比雪夫不等式给出：</p><p>$$<br>P(|X - \mu| \geq \epsilon) \leq \frac<br>$$<br>即随机变量X偏离其均值μ超过ε的概率不会超过方差σ²除以ε²。</p><ol start="2"><li class="lvl-3"><h3 id="涉及多个随机变量的数字特征">涉及多个随机变量的数字特征</h3></li></ol><p>a) 协方差：理解协方差的定义和性质，掌握协方差的计算。</p><p>b) 相关系数：理解相关系数的定义和性质，掌握有关计算。正确理解不相关和独立的联系与区别。知道线性相关系数为 1 或-1 时的概率含义。</p><p>当涉及到协方差和相关系数时，以下是它们的公式：</p><p>协方差（Covariance）的公式：<br>$$<br>\text{Cov}(X, Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right]=E(XY)-E(X)E(Y)<br>$$<br>相关系数（Correlation coefficient）的公式：<br>$$</p><p>$$<br>其中，$\text{Cov}(X, Y)$ 表示随机变量X和Y的协方差，$\mu_X 和 \mu_Y$ 分别是X和Y的均值(期望)，($\sigma_X$) 和 ($\sigma_Y$) 分别是X和Y的标准差。($\rho(X, Y)$) 表示随机变量X和Y的相关系数。</p><p>c) 条件数学期望：理解定义和有关计算，掌握全（重）期望公式，包括随机和（指求和的随机变量的个数为某随机变量）的期望。<br>$$<br>E(X) = E(X|B) \cdot P(B) + E(X|B^c) \cdot P(B^c)<br>$$</p><h2 id="四、-常见的概率分布">四、 常见的概率分布</h2><h3 id="离散型分布">离散型分布</h3><p><strong>a) 二项分布</strong>：分布列，期望、方差。<br><strong>b) 几何分布</strong>：分布列，期望、方差，无记忆性。<br><strong>c) 泊松分布</strong>：分布列，期望、方差，泊松定理（特殊二项分布的泊松近似）。</p><p>当二项分布中的试验次数<em>n</em>趋向于无穷大，且成功概率<em>p</em>趋向于0，但同时满足np接近一个常数λ时，二项分布可以近似为泊松分布。</p><p><strong>d) 负二项分布</strong>：定义，与几何分布的关系，期望，方差。</p><p>定义：单次成功概率为p成功次数达r时失败次数的<a href="https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">离散概率分布</a>。注意当r取1时即为几何分布</p><table><thead><tr><th>分布</th><th>分布列</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>二项分布</td><td>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</td><td>$np$</td><td>$np(1-p)$</td></tr><tr><td>几何分布</td><td>$P(X=k) = (1-p)^{k-1} p$</td><td>$\frac{1}{p}$</td><td>$\frac{1-p}{p^2}$</td></tr><tr><td>泊松分布</td><td>$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$</td><td>$\lambda$</td><td>$\lambda$</td></tr><tr><td>负二项分布</td><td>$P(X=k+r) = \binom{k+r-1}{r-1} p^r (1-p)^{k}$</td><td>$\frac{r}{p}$</td><td>$\frac{r(1-p)}{p^2}$</td></tr></tbody></table><h3 id="连续型分布">连续型分布</h3><p>a) 均匀分布：一维均匀分布的分布函数、概率密度、期望和方差；多维均匀分布与几何概型的关系。<br>b) 指数分布：分布函数、概率密度、期望、方差，无记忆性。<br>c) 正态分布：一维正态分布的概率密度、期望、方差、标准化；二维正态分布的概率密度及参数的概率含义。正态分布的独立可加性，二元正态分布随机变量相互独立和不相关等价的性质。</p><h2 id="五、-极限定理">五、 极限定理</h2><ol><li class="lvl-3"><p>（伯努利、切比雪夫）（弱）大数定律，依概率收敛的定义，利用切比雪夫不等式验证依概率收敛。</p><p><strong>伯努利大数定律</strong>：伯努利实验中，随着试验次数增加，频率落在概率附近的概率趋于1</p><p><strong>切比雪夫大数定律</strong>：利用切比雪夫不等式，两两不相关的随机变量序列，方差有界，随着序列项数增加，随机变量均值落在期望附近的概率趋于1</p><p>切比雪夫的</p><img src="/img/gaitong//%E5%8D%95%E5%8F%98%E9%87%8F%E9%9A%8F%E6%9C%BA.assets/image-20230607163414308.png" alt="image-20230607163414308" style="zoom:80%;" /><p>$$Var(\frac 1 n \sum X_k)\rarr0$$为马尔可夫条件</p><p><strong>依概率收敛</strong></p><p>当一个随机变量序列以概率1逐渐接近另一个随机变量时，我们称该序列依概率收敛于该随机变量。</p></li><li class="lvl-3"><p>中心极限定理（掌握独立同分布情形 De Moivre-Laplace，林德伯格-勒维）及应用</p><h5 id="中心极限定理">中心极限定理</h5><p>$X_1, X_2, \ldots, X_k$是独立同分布（iid）<br>$$<br>X_1+X_2+ \ldots+X_k\overset{.}{\sim}N(n\mu,n\sigma^2)\<br>\frac {X_1+X_2+ \ldots+X_k -n\mu}{\sigma\sqrt n}\overset{.}{\sim}N(0,1)<br>$$<br>一般地,$b(n,p)\overset{.}{\sim}N(np,npq)$</p></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> gaitong </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> gaitong </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>统计2：参数点估计</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/</url>
-      
-        <content type="html"><![CDATA[<h1>统计2：参数点估计</h1><p>参数估计:就是用样本来估计总体分布的参数$\theta$<br>$$<br>\hat\theta=\theta(X_1,X_2,\ldots,X_n)<br>$$<br>加一个hat,i.e$.\hat \theta$,就表示估计</p><p>两种最常用的点估计方法是<strong>矩估计</strong>和<strong>极大似然估计</strong></p><h3 id="矩估计">矩估计</h3><p>就是用样本矩估计理论矩</p><h4 id="基本方法">基本方法:</h4><ul class="lvl-0"><li class="lvl-2"><p>$$<br>E(X)=\mu\simeq\bar x<br>$$</p></li><li class="lvl-2"><p>$$<br>Var(x)=\sigma^2\simeq S^2=\frac 1 {n-1} \sum \limits_{i=1}^n(x-\bar x)^2<br>$$</p></li></ul><p><img src="/img/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1.assets/image-20230607170740516.png" alt="image-20230607170740516"></p><h3 id="极大似然估计">极大似然估计</h3><p>基于一个简单的思想：寻找最有可能产生观测数据的参数值。</p><p>设总体概率函数为$p(x;\theta),\theta$为参数，$x_1,x_2,\ldots,x_k$为样本,则样本联合概率分布函数$L(\theta)=\prod\limits_{k=1}^np(x_k;\theta)$,我们找到$\hat\theta$使得$L(\theta)$取得最大值</p><p>操作上,由于对连乘求导不方便,我们常常对L(θ)取对数得到$l(\theta)$</p><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>]]></content>
+        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
       
       
       <categories>
@@ -1213,11 +1159,65 @@
     
     
     <entry>
-      <title>统计5：拟合优度检验</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
+      <title>概率论部分（单变量）</title>
+      <link href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"/>
+      <url>/notes/gaitong/%E9%9A%8F%E6%9C%BA/</url>
       
-        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
+        <content type="html"><![CDATA[<h1>概率论部分（单变量）</h1><h2 id="一、-随机现象的数学描述和概率论的基本思想">一、 随机现象的数学描述和概率论的基本思想</h2><ol><li class="lvl-3"><p>随机事件之间的关系和事件的基本运算。</p></li><li class="lvl-3"><p>理解条件概率的直观含义和数学定义，掌握条件概率在概率计算中的应用（乘法公式、全概率公式、Bayes 公式）。</p><p>乘法公式：<br>$$<br>P(A \cap B) = P(B|A) \cdot P(A)<br>$$<br>全概率公式：<br>$$<br>P(B) = \sum_i P(B|A_i) \cdot P(A_i)<br>$$<br>Bayes公式：设$A_1,\dots,A_n$为样本空间的一个分割<br>$$<br>P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum_j P(B|A_j) \cdot P(A_j)}<br>$$<br>其中，A和B是事件，P(A)表示事件A发生的概率，P(B)表示事件B发生的概率，P(B|A)表示在事件A发生的条件下事件B发生的概率，A_i表示一系列互斥且完备的事件。</p></li><li class="lvl-3"><p>理解事件的独立性的定义和有关性质。</p><p>事件独立性的定义： 事件A和事件B被称为独立事件，如果满足以下条件：P(A∩B)=P(A)⋅P(B)</p><p>否则称A与B不独立或相关</p><p>如果事件A和事件B是独立事件，则事件A与事件B的并集的概率等于事件A的概率加上事件B的概率减去事件A和事件B的交集的概率：P*(<em>A</em>∪<em>B</em>)=<em>P</em>(<em>A</em>)+<em>P</em>(<em>B</em>)−<em>P</em>(<em>A</em>∩*B)</p></li></ol><h3 id="tips：">tips：</h3><p>抽签模型与次序无关：第一次抽中白球的概率和第二次抽中白球的概率是相同的，无论放不放回。</p><h2 id="随机变量的概率分布">随机变量的概率分布</h2><ol><li class="lvl-3"><p>理解随机变量及其概率分布函数的定义，理解随机变量概率分布函数的性质，掌握概率分布函数的计算。</p><p>分布函数：$F(x)=P(X\leq x)$</p></li><li class="lvl-3"><p>理解离散型随机变量、连续型随机变量的定义，掌握概率分布列、概率密度函数及概率分布函数的关系，掌握有关的计算。</p></li><li class="lvl-3"><p>理解多维随机变量的定义，理解联合概率分布（分布函数、分布列、概率密度）与边缘分布（分布函数、分布列、概率密度），掌握有关计算。</p></li><li class="lvl-3"><p>理解随机变量的独立性的定义和性质，掌握判断独立和不独立的方法</p></li></ol><h2 id="三、-随机变量的数字特征">三、 随机变量的数字特征</h2><ol><li class="lvl-3"><h3 id="单个随机变量的数字特征">单个随机变量的数字特征</h3></li></ol><p>a) 数学期望和方差：<br>i. 理解数学期望的定义，理解数学期望的存在性，掌握数学期望的性质和计算。<br>ii. 理解方差的定义和直观含义，掌握方差的性质和计算。<br>iii. 理解如何线性变换对随机变量进行期望=0，方差=1 的标准化。<br>iv. 理解期望、方差的下述性质：<br>b) 原点矩和中心矩。<br>c) 切比雪夫（Chebyshev）不等式。</p><p>对于任意随机变量X，具有有限方差E[(X-μ)²] = σ²，其中μ是X的均值，σ²是X的方差。对于任意正数ε &gt; 0，切比雪夫不等式给出：</p><p>$$<br>P(|X - \mu| \geq \epsilon) \leq \frac<br>$$<br>即随机变量X偏离其均值μ超过ε的概率不会超过方差σ²除以ε²。</p><ol start="2"><li class="lvl-3"><h3 id="涉及多个随机变量的数字特征">涉及多个随机变量的数字特征</h3></li></ol><p>a) 协方差：理解协方差的定义和性质，掌握协方差的计算。</p><p>b) 相关系数：理解相关系数的定义和性质，掌握有关计算。正确理解不相关和独立的联系与区别。知道线性相关系数为 1 或-1 时的概率含义。</p><p>当涉及到协方差和相关系数时，以下是它们的公式：</p><p>协方差（Covariance）的公式：<br>$$<br>\text{Cov}(X, Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right]=E(XY)-E(X)E(Y)<br>$$<br>相关系数（Correlation coefficient）的公式：<br>$$</p><p>$$<br>其中，$\text{Cov}(X, Y)$ 表示随机变量X和Y的协方差，$\mu_X 和 \mu_Y$ 分别是X和Y的均值(期望)，($\sigma_X$) 和 ($\sigma_Y$) 分别是X和Y的标准差。($\rho(X, Y)$) 表示随机变量X和Y的相关系数。</p><p>c) 条件数学期望：理解定义和有关计算，掌握全（重）期望公式，包括随机和（指求和的随机变量的个数为某随机变量）的期望。<br>$$<br>E(X) = E(X|B) \cdot P(B) + E(X|B^c) \cdot P(B^c)<br>$$</p><h2 id="四、-常见的概率分布">四、 常见的概率分布</h2><h3 id="离散型分布">离散型分布</h3><p><strong>a) 二项分布</strong>：分布列，期望、方差。<br><strong>b) 几何分布</strong>：分布列，期望、方差，无记忆性。<br><strong>c) 泊松分布</strong>：分布列，期望、方差，泊松定理（特殊二项分布的泊松近似）。</p><p>当二项分布中的试验次数<em>n</em>趋向于无穷大，且成功概率<em>p</em>趋向于0，但同时满足np接近一个常数λ时，二项分布可以近似为泊松分布。</p><p><strong>d) 负二项分布</strong>：定义，与几何分布的关系，期望，方差。</p><p>定义：单次成功概率为p成功次数达r时失败次数的<a href="https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">离散概率分布</a>。注意当r取1时即为几何分布</p><table><thead><tr><th>分布</th><th>分布列</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>二项分布</td><td>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</td><td>$np$</td><td>$np(1-p)$</td></tr><tr><td>几何分布</td><td>$P(X=k) = (1-p)^{k-1} p$</td><td>$\frac{1}{p}$</td><td>$\frac{1-p}{p^2}$</td></tr><tr><td>泊松分布</td><td>$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$</td><td>$\lambda$</td><td>$\lambda$</td></tr><tr><td>负二项分布</td><td>$P(X=k+r) = \binom{k+r-1}{r-1} p^r (1-p)^{k}$</td><td>$\frac{r}{p}$</td><td>$\frac{r(1-p)}{p^2}$</td></tr></tbody></table><h3 id="连续型分布">连续型分布</h3><p>a) 均匀分布：一维均匀分布的分布函数、概率密度、期望和方差；多维均匀分布与几何概型的关系。<br>b) 指数分布：分布函数、概率密度、期望、方差，无记忆性。<br>c) 正态分布：一维正态分布的概率密度、期望、方差、标准化；二维正态分布的概率密度及参数的概率含义。正态分布的独立可加性，二元正态分布随机变量相互独立和不相关等价的性质。</p><h2 id="五、-极限定理">五、 极限定理</h2><ol><li class="lvl-3"><p>（伯努利、切比雪夫）（弱）大数定律，依概率收敛的定义，利用切比雪夫不等式验证依概率收敛。</p><p><strong>伯努利大数定律</strong>：伯努利实验中，随着试验次数增加，频率落在概率附近的概率趋于1</p><p><strong>切比雪夫大数定律</strong>：利用切比雪夫不等式，两两不相关的随机变量序列，方差有界，随着序列项数增加，随机变量均值落在期望附近的概率趋于1</p><p>切比雪夫的</p><img src="/img/gaitong//%E5%8D%95%E5%8F%98%E9%87%8F%E9%9A%8F%E6%9C%BA.assets/image-20230607163414308.png" alt="image-20230607163414308" style="zoom:80%;" /><p>$$Var(\frac 1 n \sum X_k)\rarr0$$为马尔可夫条件</p><p><strong>依概率收敛</strong></p><p>当一个随机变量序列以概率1逐渐接近另一个随机变量时，我们称该序列依概率收敛于该随机变量。</p></li><li class="lvl-3"><p>中心极限定理（掌握独立同分布情形 De Moivre-Laplace，林德伯格-勒维）及应用</p><h5 id="中心极限定理">中心极限定理</h5><p>$X_1, X_2, \ldots, X_k$是独立同分布（iid）<br>$$<br>X_1+X_2+ \ldots+X_k\overset{.}{\sim}N(n\mu,n\sigma^2)\<br>\frac {X_1+X_2+ \ldots+X_k -n\mu}{\sigma\sqrt n}\overset{.}{\sim}N(0,1)<br>$$<br>一般地,$b(n,p)\overset{.}{\sim}N(np,npq)$</p></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> gaitong </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gaitong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>统计3：区间估计</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE/</url>
+      
+        <content type="html"><![CDATA[<h1>统计3：区间估计</h1><h5 id="置信水平">置信水平</h5><p>一个置信水平1-α的区间估计的含义是，得到的区间以1-α覆盖被估的参数</p><h3 id="基本方法">基本方法</h3><ol><li class="lvl-3"><p><strong>构造枢轴量</strong>pivot，$G(x_1,\ldots,x_n,\theta)$</p><p>要求,G的分布不依赖于参数$\theta$,否则第2步无法解出不等式</p></li><li class="lvl-3"><p><strong>找到G的边界</strong>适当选取两个常数c,d,对给定的$\alpha有P(c\leq G\leq d)\geq 1- α$</p></li><li class="lvl-3"><p><strong>求解</strong>$c\leq G(x_1,\ldots,x_n,\theta)\leq d$,得到$\theta$的两个估计值边界</p></li></ol><h2 id="预知识">预知识</h2><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p><h1>解题方法</h1><h3 id="背就完事了">背就完事了</h3><h4 id="1-N-mu-sigma2-sigma2已知-mu未知-求-mu">$1.N(\mu,\sigma<sup>2),\sigma</sup>2已知,\mu未知,求\mu$</h4><p>$G=\frac {\sqrt n (\bar x - \mu)} \sigma \sim N(0,1)$,$d=u_{1-\alpha/2},c=u_{\alpha/2}=-u_{1-\alpha/2}$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193734916.png" alt="image-20230607193734916"></p><h4 id="2-N-mu-sigma2-sigma2未知-mu未知-求-mu">$2.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\mu$</h4><p>由于$\sigma$未知,所以想办法约掉$\sigma$:<br>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$<br><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607193937549.png" alt="image-20230607193937549" style="zoom:80%;" /></p><p>$d=t_{1-\alpha/2}(n-1),c=-t_{1-\alpha/2}(n-1)$</p><p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194203682.png" alt="image-20230607194203682"></p><h4 id="3-N-mu-sigma2-sigma2未知-mu未知-求-sigma-2">$3.N(\mu,\sigma<sup>2),\sigma</sup>2未知,\mu未知,求\sigma^2$</h4><p>$$<br>\frac {(n-1)s<sup>2}{\sigma</sup>2}\sim \chi^2(n-1)<br>$$</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607194622743.png" alt="image-20230607194622743" style="zoom: 67%;" /><h3 id="4">4.</h3><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195007278.png" alt="image-20230607195007278" style="zoom:67%;" /><h3 id="大样本区间估计">大样本区间估计</h3><p>样本容量足够大时,用样本统计量替换总体统计量</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A13-%E5%8C%BA%E9%97%B4%E5%81%87%E8%AE%BE.assets/image-20230607195154548.png" alt="image-20230607195154548" style="zoom:67%;" />]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> gaitong </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gaitong </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>统计2：参数点估计</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1/</url>
+      
+        <content type="html"><![CDATA[<h1>统计2：参数点估计</h1><p>参数估计:就是用样本来估计总体分布的参数$\theta$<br>$$<br>\hat\theta=\theta(X_1,X_2,\ldots,X_n)<br>$$<br>加一个hat,i.e$.\hat \theta$,就表示估计</p><p>两种最常用的点估计方法是<strong>矩估计</strong>和<strong>极大似然估计</strong></p><h3 id="矩估计">矩估计</h3><p>就是用样本矩估计理论矩</p><h4 id="基本方法">基本方法:</h4><ul class="lvl-0"><li class="lvl-2"><p>$$<br>E(X)=\mu\simeq\bar x<br>$$</p></li><li class="lvl-2"><p>$$<br>Var(x)=\sigma^2\simeq S^2=\frac 1 {n-1} \sum \limits_{i=1}^n(x-\bar x)^2<br>$$</p></li></ul><p><img src="/img/gaitong/%E7%BB%9F%E8%AE%A12-%E5%8F%82%E6%95%B0%E7%82%B9%E4%BC%B0%E8%AE%A1.assets/image-20230607170740516.png" alt="image-20230607170740516"></p><h3 id="极大似然估计">极大似然估计</h3><p>基于一个简单的思想：寻找最有可能产生观测数据的参数值。</p><p>设总体概率函数为$p(x;\theta),\theta$为参数，$x_1,x_2,\ldots,x_k$为样本,则样本联合概率分布函数$L(\theta)=\prod\limits_{k=1}^np(x_k;\theta)$,我们找到$\hat\theta$使得$L(\theta)$取得最大值</p><p>操作上,由于对连乘求导不方便,我们常常对L(θ)取对数得到$l(\theta)$</p><h3 id="卡方分布">卡方分布</h3><p>假设$X_1, X_2, \ldots, X_k$是独立同分布（iid）的标准正态分布（即均值为0，方差为1），那么定义随机变量($Y = X_1^2 + X_2^2 + \ldots + X_k^2$)，则(Y)服从自由度为(k)的卡方分布。</p><p>数学公式表示为：<br>$Y \sim \chi^2(k)$</p><p>其中，X是符合卡方分布的随机变量，k是自由度。</p><h3 id="t分布（t-distribution）"><strong>t分布（t-distribution）</strong></h3><p>假设X是来自标准正态分布的随机变量，Y是来自卡方分布的自由度为k的随机变量（独立于X），则定义随机变量$T = \frac{X}{\sqrt {Y/k} }$，则T服从自由度为k的t分布。</p><p>数学公式表示为： $T \sim t(k)$</p><p>其中，T是符合t分布的随机变量，k是自由度。</p><h3 id="F分布（F-distribution）">F分布（F-distribution）</h3><p>假设Y1是来自自由度为k1的卡方分布的随机变量，Y2是来自自由度为k2的卡方分布的随机变量（两者独立），则定义随机变量$F = \frac{ {Y1}/{k1} } { {Y2}/ {k2} }$，则F服从自由度为k1和k2的F分布。</p><p>数学公式表示为： $F \sim F(k1, k2)$</p><p>其中，F是符合F分布的随机变量，k1和k2是自由度。</p>]]></content>
       
       
       <categories>
@@ -1444,7 +1444,7 @@
       <link href="/Somniloquy/dream-7/"/>
       <url>/Somniloquy/dream-7/</url>
       
-        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-kaIZAKJZ" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-kaIZAKJZ"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-ccuKCrrd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-ccuKCrrd"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="24：09">24：09</h2><p>又是一周这样错过，不知道说什么好。给你放首歌听吧。</p>        <div id="aplayer-VTWmKXhV" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-VTWmKXhV"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "蠢货",              author: "小霞",              url: "/music/蠢货/蠢货.mp3",              pic: "/music/蠢货/蠢货.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><h2 id="2023-5-19">2023/5/19</h2><h3 id="23-12">23:12</h3><p>一直觉着自己是个幸运的小孩。</p><p>明明有很多事情是自己不能决定的，但往往都能有个不错的结局。</p><p>就比如：</p><img src="/img/dream-7.assets/dcbc3ab12c8718d42bca5bc03e6f6db.png" alt="dcbc3ab12c8718d42bca5bc03e6f6db" style="zoom: 33%;" /><p>遇到的人都对我很好。</p><p>许下的愿望莫名都能完成。</p><p>即使是犯过的错也往往有补救的余地。</p><p>有什么事情能让我伤心？</p><p>那些人和事是我直面生活的力量来源。</p>        <div id="aplayer-kRDZBFeI" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-kRDZBFeI"),            narrow: false,            autoplay: true,            showlrc: false,            music: {              title: "完美生活",              author: "许巍",              url: "/music/完美生活/完美生活.mp3",              pic: "/music/完美生活/完美生活.webp",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><blockquote><p>靠，我的freemp3网站寄了，暂时拿网易云的外链播放器顶上了</p></blockquote><blockquote><p>现在改了.</p></blockquote><blockquote><p>但其实原来我想放《旅行》的</p></blockquote><blockquote><p>是谁来自山川湖海，囿于什么什么与爱？困在五道口。。怎么走都出不去。</p></blockquote><p>今天北京下了大雨，天地一片乌蒙蒙，六教楼下的杂草长势甚是喜人。吃完饭和松子在操场，get到了散步的点？大概没有。</p><img src="/img/dream-7.assets/7e9c0d3707380ddd6c96420b163df74.jpg" alt="7e9c0d3707380ddd6c96420b163df74" style="zoom:33%;" /><p>不过还是抽了些纪念品回去，开心。</p><p>今天很开心。</p><p>翰元问我要班级同学姓名照片对照表，不错，狠狠社交。</p><p>怎么又有情感故事，真的腻了。</p><p>哎呀，感觉人一开心，长得都会更好看</p>]]></content>
       
       
       <categories>
