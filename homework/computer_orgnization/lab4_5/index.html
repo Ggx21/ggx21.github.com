@@ -9,27 +9,22 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="实验四 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
+  <meta name="description" content="实验四 SRAM控制器实验 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   实验过程 sram状态机设计   flowchart LR idle--&gt;|stb_i&amp;&amp;cyc_i&amp;&amp;we_i|write--&gt;write_2--&gt;write_3--&gt;done--&gt;idle idle--&gt;|stb_i&amp;&amp;cyc_i&amp;&amp;!we_i|read--&gt;read">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lab4_5">
 <meta property="og:url" content="https://ggxloveslife.top/homework/computer_orgnization/lab4_5/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="实验四 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
+<meta property="og:description" content="实验四 SRAM控制器实验 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   实验过程 sram状态机设计   flowchart LR idle--&gt;|stb_i&amp;&amp;cyc_i&amp;&amp;we_i|write--&gt;write_2--&gt;write_3--&gt;done--&gt;idle idle--&gt;|stb_i&amp;&amp;cyc_i&amp;&amp;!we_i|read--&gt;read">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png">
-<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/d6c618512f8132fcfdfa92c76cc2c760/202311042145892.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/8cb1c6908a93fa71daf6aefa93e0c210/202311042151517.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/5986d204e51962f1521452d1c096b132/202311042240933.png">
 <meta property="article:published_time" content="2023-10-22T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-10-28T13:19:52.898Z">
+<meta property="article:modified_time" content="2023-11-04T14:50:31.314Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="cod">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/d6c618512f8132fcfdfa92c76cc2c760/202311042145892.png">
      
   <link rel="shortcut icon" href="/images/favicon.ico" />
      
@@ -133,7 +128,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/homework/computer_orgnization/lab3/"
+            href="/notes/database_intro/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -149,7 +144,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/notes/signal_processing/%E4%BA%B2%E7%88%B1%E7%9A%84%E4%B8%81%E5%A5%B3%E5%A3%AB/"
+            href="/homework/computer_orgnization/lab3/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -182,7 +177,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验四</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验四 SRAM控制器实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">实验过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sram%E7%8A%B6%E6%80%81%E6%9C%BA%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">sram状态机设计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E4%BB%BF%E7%9C%9F"><span class="toc-number">1.1.2.</span> <span class="toc-text">波形仿真</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%B9%B3%E5%8F%B0%E6%B5%8B%E8%AF%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">在线平台测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AF%BB%E5%92%8C%E5%86%99%E5%90%84%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">静态存储器的读和写各有什么特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFram%E8%8A%AF%E7%89%87%E8%BE%93%E5%87%BA%E7%9A%84%E9%AB%98%E9%98%BB%E6%80%81%EF%BC%8C%E5%AE%83%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">什么是ram芯片输出的高阻态，它的作用是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%BB%9F%E4%B8%80%E7%9A%8464%E4%BD%8D%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">如何实现统一的64位存储器</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">实验五  内存串口实验</span></a></li></ol></div>
   </span>
 </div>
 
@@ -239,83 +234,197 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>实验四</h1>
+    <h1>实验四 SRAM控制器实验</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
 <h2 id="实验报告">实验报告</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
-<h4 id="仿真截图">仿真截图</h4>
-<ul class="lvl-2">
-<li class="lvl-4">
-<p>设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。</p>
-</li>
-<li class="lvl-4">
-<p>assert(alu_a==rdata_a),assert(alu_b==rdata_b)，assert(alu_y==wdata)</p>
-</li>
-<li class="lvl-4">
-<pre><code class="language-cpp">    //验证ALU功能
-    for (int i = 1; i &lt; 32; i = i + 1) begin
-      #100;
-      rd = i;   // only lower 5 bits
-      rs1 = $urandom_range(0, 32);
-      rs2 = $urandom_range(0, 32);
-      opcode = $urandom_range(1, 11);
-      dip_sw = `inst_rtype(rd, rs1, rs2, opcode);
-      push_btn = 1;
-
-      #100;
-      push_btn = 0;
-
-      // 展示结果
-      #100;
-      rd = i;   // only lower 5 bits
-      dip_sw = `inst_peek(rd, 0);
-      push_btn = 1;
-
-      #100;
-      push_btn = 0;
-
-
-      #1000;
-</code></pre>
+<h3 id="实验过程">实验过程</h3>
+<h4 id="sram状态机设计">sram状态机设计</h4>
+<pre class="mermaid">  flowchart LR
+idle-->|stb_i&&cyc_i&&we_i|write-->write_2-->write_3-->done-->idle
+idle-->|stb_i&&cyc_i&&!we_i|read-->read_2-->done
 </li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png" alt="image-20231022000429920"></p>
-<p>此外还设计了peek指令验证每个寄存器存储值正确</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png" alt="image-20231022002957251"></p>
+<p>各个状态的功能如下：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>idle：空闲状态，等待读写请求,当接受到master的cyce和stb信号时，根据we信号判断是读还是写</p>
 </li>
 <li class="lvl-2">
-<h3 id="在线实验平台">在线实验平台</h3>
-<ul class="lvl-2">
-<li class="lvl-4">POKE imm<strong>7</strong> into r1 then PEEK r1，正常显示7</li>
-</ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png" alt="image-20231022001257034"></p>
-<ul class="lvl-2">
-<li class="lvl-4">
-<p>poke 8 into r2 ,  add r1 r2 to r3 ,then peek r3:正常得到15</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png" alt="image-20231022002321205"></p>
+<p>read：准备读取数据，按照要求输出 addr, oe_n=0, ce_n=0, we_n=1，根据sel信号选择输出的数据<code>be_n</code></p>
 </li>
-<li class="lvl-4">
-<p>not r1 to r3,peek r3结果正确</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png" alt="image-20231022002505841"></p>
+<li class="lvl-2">
+<p>read_2:把数据存到寄存器中</p>
 </li>
-<li class="lvl-4">
-<p>r1逻辑左移r2位的结果，正确</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png" alt="image-20231022002630826"></p>
+<li class="lvl-2">
+<p>write：准备写入数据，按照要求输出 addr, data, oe_n=1, ce_n=0, we_n=1，根据sel信号选择输出的数据<code>be_n</code></p>
 </li>
-<li class="lvl-4">
-<p>循环左移结果</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png" alt="image-20231022002728947"></p>
+<li class="lvl-2">
+<p>write_2:输出写使能信号we_n=0</p>
 </li>
-<li class="lvl-4">
-<p>所有操作在板子上均得到正确结果</p>
+<li class="lvl-2">
+<p>write_3:关闭写使能信号</p>
+</li>
+<li class="lvl-2">
+<p>done:输出ack信号，表示读写完成,关闭所有使能信号</p>
+</li>
+<li class="lvl-2">
+<h3 id="波形仿真">波形仿真</h3>
+<p>修改 lab4_tb.sv ，设置 dip_sw 随机种子，进行波形仿真，结果如下</p>
 </li>
 </ul>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d6c618512f8132fcfdfa92c76cc2c760/202311042145892.png" alt="cd30d22dfb3645585a31116b6e1f8eb"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h3 id="在线平台测试">在线平台测试</h3>
+<p>在线平台上使用和仿真相同的种子（32`h2）进行测试，数据地址结果和仿真一致</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/8cb1c6908a93fa71daf6aefa93e0c210/202311042151517.png" alt="image-20231104215127477"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5986d204e51962f1521452d1c096b132/202311042240933.png" alt="image-20231104224025904"></p>
 </li>
 </ul>
 <h2 id="思考题">思考题</h2>
-<p>如果读取到乘除法运算，则在decode时根据操作数的位数计算出需要的时钟周期，给CALC过程添加一个自环，每次操作CLK_CNT–，直到得0（所有位数计算完成）退出自环，进入WRITE模式</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png" alt="image-20231022004352614"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h4 id="静态存储器的读和写各有什么特点">静态存储器的读和写各有什么特点</h4>
+</li>
+</ul>
+<p>一般来说，sram需要两周期读，三周期写，因为数据可以直接从存储单元中读取，而写入操作需要额外的周期来准备和执行写入操作。</p>
+<p>两周期读：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>第一个周期：地址传递，选择要读取的存储单元。</p>
+</li>
+<li class="lvl-2">
+<p>第二个周期：直接从存储单元中读取数据。</p>
+</li>
+</ul>
+<p>三周期写：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>第一个周期：地址传递，确定数据要存储的位置。</p>
+</li>
+<li class="lvl-2">
+<p>第二个周期：数据准备，将数据加载到内部的写入寄存器。</p>
+</li>
+<li class="lvl-2">
+<p>第三个周期：执行实际的写入操作，将数据写入存储单元。</p>
+</li>
+<li class="lvl-2">
+<h4 id="什么是ram芯片输出的高阻态，它的作用是什么？">什么是ram芯片输出的高阻态，它的作用是什么？</h4>
+<p>输出为高阻态表示ram接受fpga的输入而屏蔽自身输出，处于read状态。这样一根引线即可实现输入输出，并且避免了一线两端同时输出导致短接。</p>
+</li>
+<li class="lvl-2">
+<h4 id="如何实现统一的64位存储器">如何实现统一的64位存储器</h4>
+<p>改变wb_mux实现，不再根据地址选择sram。写入时分别将高低32位和相同地址写入ext和base。读取时从相同地址读取高低32位</p>
+</li>
+</ul>
+<hr>
+<h1>实验五  内存串口实验</h1>
+<pre><code class="language-mermaid">flowchart TB
+
+IDLE --&gt;read_wait_acktion
+subgraph read_data
+    read_wait_acktion --&gt;|ack|read_wait_check --&gt;|read_checked|read_data_action --&gt;|ack|read_data_done
+end
+
+read_data_done --&gt; read_sram_action 
+
+read_sram_done--&gt;write_wait_acktion
+read_wait_check --&gt;|!read_checked|read_wait_acktion
+subgraph write_sram
+	read_sram_action --&gt;|ack|read_sram_done
+end
+
+subgraph write_data
+    write_wait_acktion --&gt;|ack|write_wait_check --&gt;|write_checked|write_data_action --&gt;|ack|write_data_done
+end
+
+write_data_done --&gt; |cnt&lt;10:cnt++|IDLE
+write_data_done --&gt; |cnt&gt;=10|DONE
+
+write_wait_check --&gt;|!write_checked|write_wait_acktion&lt;/pre&gt;
+
+1. **IDLE状态**：
+   - 在IDLE状态下，它等待启动信号。
+   - 如果启动信号有效，状态机将转移到`READ_WAIT_ACTION`状态以开始串口读写。
+2. **READ_WAIT_ACTION状态**：
+   - 这个状态是为了向串口发送读取请求。
+   - 等待串口ACK信号的确认请求已发送。
+   - 如果确认，状态机将进入`READ_WAIT_CHECK`状态。
+3. **READ_WAIT_CHECK状态**：
+   - 这个状态用于检查串口的读状态位。
+   - 如果读状态位表明串口空闲，状态机将进入`READ_DATA_ACTION`状态。
+   - 否则，状态机将保持在`READ_WAIT_ACTION`状态，以等待串口变为可用状态。
+4. **READ_DATA_ACTION状态**：
+   - 在这里，状态机向串口发送读取数据请求。
+   - 等待串口ACK信号以确认请求已发送。
+   - 一旦确认，状态机将进入`READ_DATA_DONE`状态。
+5. **READ_DATA_DONE状态**：
+   - 在这个状态，状态机从串口接收数据，并将数据存储在`uart_data`寄存器中。
+   - 然后，状态机准备将数据写入SRAM，进入`READ_SRAM_ACTION`状态。
+6. **READ_SRAM_ACTION状态**：
+   - 这个状态用于将`uart_data`写入到SRAM的地址`temp_sram_addr`中。
+   - 等待SRAM的ACK信号以确认数据已写入。
+   - 一旦确认，状态机将进入`READ_SRAM_DONE`状态。
+7. **READ_SRAM_DONE状态**：
+   - 在这个状态，状态机向SRAM发送数据，并等待SRAM的ACK信号以确认写入已完成。
+   - 一旦确认，状态机将进入`WRITE_WAIT_ACTION`状态。
+8. **WRITE_WAIT_ACTION状态**：
+   - 这个状态用于向串口发送写入数据请求。
+   - 等待串口ACK信号以确认请求已发送。
+   - 一旦确认，状态机将进入`WRITE_WAIT_CHECK`状态。
+9. **WRITE_WAIT_CHECK状态**：
+   - 这个状态用于检查串口的写状态位。
+   - 如果写状态位表明串口空闲，状态机将进入`WRITE_DATA_ACTION`状态。
+   - 否则，状态机将保持在`WRITE_WAIT_ACTION`状态，以等待串口变为可用状态。
+10. **WRITE_DATA_ACTION状态**：
+    - 这个状态用于将`uart_data`写入串口的数据位。
+    - 等待串口ACK信号以确认数据已发送。
+    - 一旦确认，状态机将进入`WRITE_DATA_DONE`状态。
+11. **WRITE_DATA_DONE状态**：
+    - 在这个状态，状态机完成了一轮的读串口、写SRAM、写串口操作。
+    - 记录操作轮数的变量`count`加1。
+    - 更新SRAM地址`temp_sram_addr`以准备下一轮操作。
+    - 如果`count`超过了4'b1000，状态机将进入`DONE`状态，否则返回到`IDLE`状态。
+12. **DONE状态**：
+    - 在这个状态下，状态机停留在DONE状态，表示操作已经完成。
+
+- ### 波形仿真
+
+  #### 仿真波形
+
+  主要关注了向sram写数据的波形，开始时因为we信号错位导致没有正确结果
+
+  ![image-20231104222753428](https://gitlab.com/ggx-blog/imglab/uploads/9bca8dd6b3ebb678eb5dfd38294522df/202311042227492.png)
+
+  #### 仿真输出
+
+  向串口正确输出十个且仅十个字节
+
+  ![image-20231104222705082](https://gitlab.com/ggx-blog/imglab/uploads/7cc6c3b7db2e173fd953e0b74fd84dad/202311042227108.png)
+
+- ### 云平台实验
+
+  拨码开关设为0x80000000（baseram地址）向串口发送10个字节数据，串口输出与内存内容均符合预期
+
+  ![image-20231104223728319](https://gitlab.com/ggx-blog/imglab/uploads/875d92f901d2e283e2f40264f46e7d41/202311042237345.png)
+
+![image-20231104223718164](https://gitlab.com/ggx-blog/imglab/uploads/fccc834e2876655f3906be9e129d8d61/202311042237192.png)
+
+### 思考题
+
+不一定
+
+`uart-controller`有两个主要的MMIO寄存器：
+
+1. **REG_DATA（地址0x00）**：这个是由Master控制的，这个寄存器用于将数据写入UART控制器的发送缓冲区，以便进行串口通信。
+2. **REG_STATUS（地址0x05）**：这个寄存器用于查询UART控制器的状态信息。通过读取该寄存器，Master可以获取`txd_busy`和`rxd_data_ready`等状态信息，以确定发送和接收是否就绪。这个是由controller自己控制与修改的
+
+Q2：
+
+为数码管和拨码开关设置与现有映射不重复的地址，并修改wb-mux使其能识别并选择数码管与拨码开关的地址，使得向wb-master中传入内存地址时，wb-master可以根据其选择数码管或拨码开关。
+</code></pre>
 
   </div>
 </article>
@@ -363,7 +472,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验四</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验四 SRAM控制器实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">实验过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#sram%E7%8A%B6%E6%80%81%E6%9C%BA%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">sram状态机设计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E4%BB%BF%E7%9C%9F"><span class="toc-number">1.1.2.</span> <span class="toc-text">波形仿真</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%B9%B3%E5%8F%B0%E6%B5%8B%E8%AF%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">在线平台测试</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%99%E6%80%81%E5%AD%98%E5%82%A8%E5%99%A8%E7%9A%84%E8%AF%BB%E5%92%8C%E5%86%99%E5%90%84%E6%9C%89%E4%BB%80%E4%B9%88%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">静态存储器的读和写各有什么特点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFram%E8%8A%AF%E7%89%87%E8%BE%93%E5%87%BA%E7%9A%84%E9%AB%98%E9%98%BB%E6%80%81%EF%BC%8C%E5%AE%83%E7%9A%84%E4%BD%9C%E7%94%A8%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">什么是ram芯片输出的高阻态，它的作用是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E7%BB%9F%E4%B8%80%E7%9A%8464%E4%BD%8D%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">如何实现统一的64位存储器</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">实验五  内存串口实验</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
