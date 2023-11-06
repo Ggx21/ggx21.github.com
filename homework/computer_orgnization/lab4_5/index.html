@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/8cb1c6908a93fa71daf6aefa93e0c210/202311042151517.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/5986d204e51962f1521452d1c096b132/202311042240933.png">
 <meta property="article:published_time" content="2023-10-22T04:25:01.000Z">
-<meta property="article:modified_time" content="2023-11-04T14:50:31.314Z">
+<meta property="article:modified_time" content="2023-11-06T15:58:10.600Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="cod">
 <meta name="twitter:card" content="summary">
@@ -128,7 +128,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/notes/database_intro/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/"
+            href="/homework/computer_orgnization/lab3/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -144,7 +144,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/homework/computer_orgnization/lab3/"
+            href="/notes/signal_processing/%E4%BA%B2%E7%88%B1%E7%9A%84%E4%B8%81%E5%A5%B3%E5%A3%AB/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -319,7 +319,6 @@ idle-->|stb_i&&cyc_i&&!we_i|read-->read_2-->done
 <p>改变wb_mux实现，不再根据地址选择sram。写入时分别将高低32位和相同地址写入ext和base。读取时从相同地址读取高低32位</p>
 </li>
 </ul>
-<hr>
 <h1>实验五  内存串口实验</h1>
 <pre><code class="language-mermaid">flowchart TB
 
@@ -344,6 +343,8 @@ write_data_done --&gt; |cnt&lt;10:cnt++|IDLE
 write_data_done --&gt; |cnt&gt;=10|DONE
 
 write_wait_check --&gt;|!write_checked|write_wait_acktion&lt;/pre&gt;
+
+# 状态描述
 
 1. **IDLE状态**：
    - 在IDLE状态下，它等待启动信号。
