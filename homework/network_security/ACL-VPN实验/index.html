@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="ACL-VPN实验 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 task1 修改拓扑图如下。 ​	为实现题目要求，需要将server1拆到另一子网，避免元老院成员直接通过switch访问。  修改后各终端ip如下    设备名称 使用人 部门 ip 备注     PC1 凯撒&#x2F;你 元老院 192.168.1.2 领导人   Server1 你 元老院 19">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ACL-VPN实验">
+<meta property="og:url" content="https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="ACL-VPN实验 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 task1 修改拓扑图如下。 ​	为实现题目要求，需要将server1拆到另一子网，避免元老院成员直接通过switch访问。  修改后各终端ip如下    设备名称 使用人 部门 ip 备注     PC1 凯撒&#x2F;你 元老院 192.168.1.2 领导人   Server1 你 元老院 19">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/7561803d2e851bf75e6c14c8ac3382d5/202311301009965.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/6810e94eb2dc74762a5ebcc51e474d70/202311301039558.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/a09cf4a8c268ef517b6340cedcc05a35/202311301039233.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/c0ef328481a57c1e30144278771d7f64/202311301040232.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/80aba9f3b41b6e29510b5362f57fc57f/202311301043353.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fc190d4424e8df6dcd280726ce67ab9b/202311301044498.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/72f5be7e3ee2e3664ed1834e8d70f347/202311301059219.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/883b2eb1b7c70c5afc8e57111597f32b/202312011303914.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/b1bee7fd7e0402d9ffdc7586c818b2aa/202312011304786.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/01cd6e52f63b1d47b2c7e9cd05640b58/202312011304974.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/07057f66c4b1ae3b17fb23f985c425d7/202312011305196.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/a49c75e35d79456eda29a5badbf8dd0c/202312011301018.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/c418142df3f036c2bb5acf9da982be67/202312011301734.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fdc0e9fac3324e68d998c85de14c8121/202312011306880.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/94f38335f9a56d1a40709b4648131fe2/202312011310784.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/3032933f9bad2df08271c0a8ee784029/202312011310159.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/0c7106db20ca808b52e409c6ed3e01f9/202312011442502.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/e00543ca5782ca7a5bc10300381772a7/202312011452710.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/1ec1785ec5fb53de85847c1eacc7c8ff/202312011404012.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/10d8f34fb8e6ed0632bad91bf0488c91/202312011405739.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/752409542b367ff64aa7f7a410ca94e3/202312011446970.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fe796fc4ac88836374a5f789897783f8/202312011457489.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/b8f24a9d198ce69712e36988d5114ee0/202312011459235.png">
+<meta property="article:published_time" content="2023-12-01T07:55:03.000Z">
+<meta property="article:modified_time" content="2023-12-01T07:57:43.014Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="homework">
+<meta property="article:tag" content="network_security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/7561803d2e851bf75e6c14c8ac3382d5/202311301009965.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>ACL-VPN实验</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/homework/vlsi/vlsi%20%E7%AC%AC%E5%9B%9B%E6%AC%A1%E4%BD%9C%E4%B8%9A/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">ACL-VPN实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#task1"><span class="toc-number">1.1.</span> <span class="toc-text">task1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8B%93%E6%89%91%E5%9B%BE%E5%A6%82%E4%B8%8B%E3%80%82"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">修改拓扑图如下。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router2-3"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">router2&amp;3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#router2"><span class="toc-number">1.1.0.3.1.</span> <span class="toc-text">router2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router3"><span class="toc-number">1.1.0.3.2.</span> <span class="toc-text">router3</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Task7"><span class="toc-number">1.2.</span> <span class="toc-text">Task7</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#router1"><span class="toc-number">1.2.0.0.1.</span> <span class="toc-text">router1</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router2-2"><span class="toc-number">1.2.0.0.2.</span> <span class="toc-text">router2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router3-2"><span class="toc-number">1.2.0.0.3.</span> <span class="toc-text">router3</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TASK8"><span class="toc-number">1.3.</span> <span class="toc-text">TASK8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E6%90%AC%E8%BF%81%E4%B9%8B%E5%90%8E%EF%BC%8C%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E7%9A%84%E6%96%B9%E6%B3%95%E5%B0%86%E6%97%A0%E6%B3%95%E8%AE%A9%E5%90%84%E4%B8%AA%E6%9D%83%E5%8A%9B%E6%9C%BA%E6%9E%84%E6%AD%A3%E5%B8%B8%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">在搬迁之后，使用配置静态路由的方法将无法让各个权力机构正常通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router1-2"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">router1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router2-3"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">router2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E8%A1%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">路由表配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#router1%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.3.0.4.1.</span> <span class="toc-text">router1使用静态路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router2%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.3.0.4.2.</span> <span class="toc-text">router2使用静态路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router3-3"><span class="toc-number">1.3.0.4.3.</span> <span class="toc-text">router3</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router4%E4%BD%BF%E7%94%A8rip%E6%A8%A1%E6%8B%9F%E5%85%AC%E7%BD%91%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.0.4.4.</span> <span class="toc-text">router4使用rip模拟公网路由配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#router1%E5%AD%90%E7%BD%91-ping-2%EF%BC%8C3%E5%AD%90%E7%BD%91"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">router1子网 ping 2，3子网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router3%E5%AD%90%E7%BD%91%E7%BB%88%E7%AB%AF-ping-router1%E5%AD%90%E7%BD%91%E7%BB%88%E7%AB%AF"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">router3子网终端 ping router1子网终端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%95%E7%A4%BArouter2-ipsec%E9%85%8D%E7%BD%AE%E7%8A%B6%E6%80%81"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">展示router2 ipsec配置状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BB%BF%E7%9C%9F%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%EF%BC%8C%E5%A6%82%E4%B8%8A%E9%85%8D%E7%BD%AE%E7%9A%84IPSec-VPN%E4%BD%BF%E7%94%A8%E4%BA%86%E9%9A%A7%E9%81%93%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">通过仿真抓包分析，如上配置的IPSec VPN使用了隧道模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bonus%E4%BB%BB%E5%8A%A1%EF%BC%9A%E5%87%AF%E6%92%92%E7%9A%84%E8%B5%8F%E8%B5%90%EF%BC%88NAT%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">Bonus任务：凯撒的赏赐（NAT）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9C%A8router1%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%8A%A8%E6%80%81NAT"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1.在router1上配置动态NAT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9C%A8router2%E4%B8%8A%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81NAT"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2.在router2上配置静态NAT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AEPAT%EF%BC%8C%E8%8A%82%E7%9C%81%E5%85%AC%E7%BD%91%E5%9C%B0%E5%9D%80"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.配置PAT，节省公网地址</span></a></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        ACL-VPN实验
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-01T07:55:03.000Z" class="dt-published" itemprop="datePublished">2023-12-01</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/network-security/">network_security</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/network-security/" rel="tag">network_security</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>ACL-VPN实验</h1>
+<p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
+<h2 id="task1">task1</h2>
+<h4 id="修改拓扑图如下。">修改拓扑图如下。</h4>
+<p>​	为实现题目要求，需要将server1拆到另一子网，避免元老院成员直接通过switch访问。</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7561803d2e851bf75e6c14c8ac3382d5/202311301009965.png" alt="image-20231130100952898"></p>
+<p>修改后各终端ip如下</p>
+<table>
+<thead>
+<tr>
+<th>设备名称</th>
+<th>使用人</th>
+<th>部门</th>
+<th>ip</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PC1</td>
+<td>凯撒/你</td>
+<td>元老院</td>
+<td>192.168.1.2</td>
+<td><strong>领导人</strong></td>
+</tr>
+<tr>
+<td>Server1</td>
+<td>你</td>
+<td>元老院</td>
+<td>192.168.4.2</td>
+<td>机密</td>
+</tr>
+<tr>
+<td>Laptop1</td>
+<td>布鲁图</td>
+<td>元老院</td>
+<td>192.168.1.3</td>
+<td>联络人</td>
+</tr>
+<tr>
+<td>PC4</td>
+<td>财务官A</td>
+<td>元老院</td>
+<td>192.168.1.5</td>
+<td>成员</td>
+</tr>
+<tr>
+<td>Laptop2</td>
+<td>庞培</td>
+<td>执政官首府</td>
+<td>192.168.2.3</td>
+<td><strong>领导人</strong></td>
+</tr>
+<tr>
+<td>PC2</td>
+<td>卡西乌斯</td>
+<td>执政官首府</td>
+<td>192.168.2.2</td>
+<td>联络人</td>
+</tr>
+<tr>
+<td>Laptop4</td>
+<td>辅助执政官B</td>
+<td>执政官首府</td>
+<td>192.168.2.4</td>
+<td>成员</td>
+</tr>
+<tr>
+<td>PC3</td>
+<td>克拉苏</td>
+<td>部族会议所</td>
+<td>192.168.3.2</td>
+<td><strong>领导人</strong></td>
+</tr>
+<tr>
+<td>Laptop3</td>
+<td>安东尼</td>
+<td>部族会议所</td>
+<td>192.168.3.3</td>
+<td>联络人</td>
+</tr>
+<tr>
+<td>PC5</td>
+<td>大祭司C</td>
+<td>部族会议所</td>
+<td>192.168.3.4</td>
+<td>成员</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li class="lvl-3">
+<p>router1设置：</p>
+<p>连接元老院总部的interface出口</p>
+<ol>
+<li class="lvl-6">
+<p>允许所有流量到Laptop1（联络人）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit ip any host 192.168.1.3</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-6">
+<p>允许其他领导人流量到本领导人</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit ip host 192.168.2.3 host 192.168.1.2</span><br><span class="line">access-list 101 permit ip host 192.168.3.2 host 192.168.1.2</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-6">
+<p>允许其他联络人与本部通信</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit ip host 192.168.2.2 any</span><br><span class="line">access-list 101 permit ip host 192.168.3.3 any</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-6">
+<p>允许Server1和凯撒通信</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit ip host 192.168.4.2 host 192.168.1.2</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-6">
+<p>绑定</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">interface FastEthernet0/1</span><br><span class="line">ip access-group 101 out</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>连接Server1的端口设置：只允许和凯撒通信</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">access-list 102 permit ip host 192.168.1.2 host 192.168.4.2</span><br><span class="line">access-list 102 permit ip host 192.168.4.2 host 192.168.1.2</span><br><span class="line"></span><br><span class="line">interface GigabitEthernet0/0</span><br><span class="line">ip access-group 102 out</span><br><span class="line">ip access-group 102 in</span><br></pre></td></tr></table></figure>
+<h4 id="结果">结果</h4>
+<ol>
+<li class="lvl-6">
+<p>其他部门领导人（PC3为例）不可以和本部非联络人非领导人联系</p>
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/6810e94eb2dc74762a5ebcc51e474d70/202311301039558.png"/>
+</li>
+<li class="lvl-6">
+<p>PC3可以和本部联络人联系</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a09cf4a8c268ef517b6340cedcc05a35/202311301039233.png" alt="image-20231130103948200"></p>
+</li>
+<li class="lvl-6">
+<p>PC3可以和本部领导人工作会议</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/c0ef328481a57c1e30144278771d7f64/202311301040232.png" alt="image-20231130104047204"></p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p>凯撒可以 ping Server1</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/80aba9f3b41b6e29510b5362f57fc57f/202311301043353.png" alt="image-20231130104304326"></p>
+<p>元老院其他人不可以</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fc190d4424e8df6dcd280726ce67ab9b/202311301044498.png" alt="image-20231130104406471"></p>
+</li>
+</ol>
+<h4 id="router2-3">router2&amp;3</h4>
+<p>router2&amp;router3的配置和router1相似（只是不需要考虑server1），只贴代码如下。</p>
+<h5 id="router2">router2</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit ip host 192.168.1.2 host 192.168.2.3</span><br><span class="line">access-list 101 permit ip host 192.168.3.2 host 192.168.2.3</span><br><span class="line">access-list 101 permit ip any host 192.168.2.2</span><br><span class="line">access-list 101 permit ip host 192.168.1.3 any</span><br><span class="line">access-list 101 permit ip host 192.168.3.3 any</span><br><span class="line"></span><br><span class="line">interface Ethernet1/0</span><br><span class="line">ip access-group 101 out</span><br></pre></td></tr></table></figure>
+<h5 id="router3">router3</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit ip host 192.168.1.2 host 192.168.3.2</span><br><span class="line">access-list 101 permit ip host 192.168.2.3 host 192.168.3.2</span><br><span class="line">access-list 101 permit ip any host 192.168.3.3</span><br><span class="line">access-list 101 permit ip host 192.168.1.3 any</span><br><span class="line">access-list 101 permit ip host 192.168.2.2 any</span><br><span class="line"></span><br><span class="line">interface FastEthernet0/1</span><br><span class="line">ip access-group 101 out</span><br></pre></td></tr></table></figure>
+<h2 id="Task7">Task7</h2>
+<p>目前PC1不能ping通其他两部门的普通成员，在router2，3中允许来自PC1的icmp报文通过即可，同时为了收到router2，3返回的icmp报文，router1要允许其通过。</p>
+<h5 id="router1">router1</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit icmp 192.168.0.0 0.0.255.255 host 192.168.1.2</span><br></pre></td></tr></table></figure>
+<h5 id="router2-2">router2</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit icmp host 192.168.1.2 any</span><br></pre></td></tr></table></figure>
+<h5 id="router3-2">router3</h5>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit icmp host 192.168.1.2 any</span><br></pre></td></tr></table></figure>
+<p>PC1成功ping到其他部门的成员<img src="https://gitlab.com/ggx-blog/imglab/uploads/72f5be7e3ee2e3664ed1834e8d70f347/202311301059219.png" alt="image-20231130105914188"></p>
+<h2 id="TASK8">TASK8</h2>
+<h4 id="在搬迁之后，使用配置静态路由的方法将无法让各个权力机构正常通信">在搬迁之后，使用配置静态路由的方法将无法让各个权力机构正常通信</h4>
+<p>这是因为我们只能配置内网的路由，不能配置公网路由。当Router1和Router2使用静态路由时，它们配置的路由信息不会自动传播给Router4，所以Router4不能也不会将内网ip添加到自己的路由表中，因而以内网ip地址为目的ip地址的ip报文在公网中不能被转发。</p>
+<h4 id="router1-2">router1</h4>
+<p>配置isakmp</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">configure terminal</span><br><span class="line">interface FastEthernet0/0</span><br><span class="line">crypto isakmp policy 1</span><br><span class="line">encryption 3des</span><br><span class="line">hash md5</span><br><span class="line">authentication pre-share</span><br><span class="line">group 2</span><br><span class="line">exit</span><br><span class="line">crypto isakmp key 123456 address 2.0.0.2</span><br></pre></td></tr></table></figure>
+<p>配置 ACL ，定义在 Router1 上需要加密的流量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255</span><br><span class="line">access-list 101 permit ip 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255</span><br><span class="line">access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.3.0 0.0.0.255</span><br><span class="line">access-list 101 permit ip 192.168.3.0 0.0.0.255 192.168.1.0 0.0.0.255</span><br></pre></td></tr></table></figure>
+<p>定义 IPsec 策略集</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">crypto ipsec transform-set exset esp-3des esp-md5-hmac</span><br></pre></td></tr></table></figure>
+<p>创建map映射表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">crypto map exmap 1 ipsec-isakmp</span><br><span class="line">set peer 2.0.0.2</span><br><span class="line">match address 101</span><br><span class="line">set transform-set exset</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>将加密图应用到应用到 Router1 与公网连接的端口</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">interface FastEthernet0/0</span><br><span class="line">crypto map exmap</span><br></pre></td></tr></table></figure>
+<h4 id="router2-3">router2</h4>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">configure terminal</span><br><span class="line">interface FastEthernet0/0</span><br><span class="line">crypto isakmp policy 1</span><br><span class="line">encryption 3des</span><br><span class="line">hash md5</span><br><span class="line">authentication pre-share</span><br><span class="line">group 2</span><br><span class="line">exit</span><br><span class="line">crypto isakmp key 123456 address 1.0.0.2</span><br><span class="line">access-list 101 permit ip 192.168.2.0 0.0.0.255 192.168.1.0 0.0.0.255</span><br><span class="line">access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255</span><br><span class="line">access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.3.0 0.0.0.255</span><br><span class="line">access-list 101 permit ip 192.168.3.0 0.0.0.255 192.168.1.0 0.0.0.255</span><br><span class="line">crypto ipsec transform-set exset esp-3des esp-md5-hmac</span><br><span class="line">crypto map exmap 1 ipsec-isakmp</span><br><span class="line">set peer 1.0.0.2</span><br><span class="line">set transform-set exset</span><br><span class="line">match address 101</span><br><span class="line">exit</span><br><span class="line">interface FastEthernet0/0</span><br><span class="line">crypto map exmap</span><br></pre></td></tr></table></figure>
+<h4 id="路由表配置">路由表配置</h4>
+<h5 id="router1使用静态路由">router1使用静态路由</h5>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/883b2eb1b7c70c5afc8e57111597f32b/202312011303914.png" alt="image-20231201130341891"></p>
+<h5 id="router2使用静态路由">router2使用静态路由</h5>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/b1bee7fd7e0402d9ffdc7586c818b2aa/202312011304786.png" alt="image-20231201130405764"></p>
+<h5 id="router3-3">router3</h5>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/01cd6e52f63b1d47b2c7e9cd05640b58/202312011304974.png" alt="image-20231201130433951"></p>
+<h5 id="router4使用rip模拟公网路由配置">router4使用rip模拟公网路由配置</h5>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/07057f66c4b1ae3b17fb23f985c425d7/202312011305196.png" alt="image-20231201130500176"></p>
+<h3 id="结果-2">结果</h3>
+<h4 id="router1子网-ping-2，3子网">router1子网 ping 2，3子网</h4>
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/a49c75e35d79456eda29a5badbf8dd0c/202312011301018.png"/>
+<h4 id="router3子网终端-ping-router1子网终端">router3子网终端 ping router1子网终端</h4>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/c418142df3f036c2bb5acf9da982be67/202312011301734.png" alt="image-20231201130159711"></p>
+<h4 id="展示router2-ipsec配置状态">展示router2 ipsec配置状态</h4>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fdc0e9fac3324e68d998c85de14c8121/202312011306880.png" alt="image-20231201130617851"></p>
+<h4 id="通过仿真抓包分析，如上配置的IPSec-VPN使用了隧道模式">通过仿真抓包分析，如上配置的IPSec VPN使用了隧道模式</h4>
+<p>当pc3 ping pc1时，在router2（公网入口处）报文的ip header源/目的ip地址从私网地址变成了公网地址，说明拥有一个新的外部IP报头  ，说明是隧道模式。</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/94f38335f9a56d1a40709b4648131fe2/202312011310784.png" alt="image-20231201131059756"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3032933f9bad2df08271c0a8ee784029/202312011310159.png" alt="image-20231201131043133"></p>
+<h3 id="Bonus任务：凯撒的赏赐（NAT）">Bonus任务：凯撒的赏赐（NAT）</h3>
+<p>由于高卢人的电信诈骗行为日益猖獗，凯撒决定监视国内流量以防止公民财产收到损害，所以不再允许使用vpn加密流量。凯撒希望我通过NAT技术将私网地址直接映射到公网ip以便通过公网与其他部门联系。（只有部门前16名领导可以和其他部门联系，其余人不行）</p>
+<h4 id="1-在router1上配置动态NAT">1.在router1上配置动态NAT</h4>
+<ol>
+<li class="lvl-3">
+<p>选择inside域</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">interface FastEthernet0/1</span><br><span class="line">ip nat inside</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-3">
+<p>选择outside域</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">interface FastEthernet0/0</span><br><span class="line">ip nat outside</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-3">
+<p>配置映射地址池( 1.0.0.3 - 1.0.0.13 )</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat pool no-overload 1.0.0.3 1.0.0.13 netmask 255.0.0.0</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-3">
+<p>配置acl：只允许ip 从 1.0.0.0-1.0.0.13的终端进行rip</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">access-list 7 permit 1.0.0.0 0.0.0.13</span><br><span class="line">ip nat inside source list 7 pool no-overload</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="2-在router2上配置静态NAT">2.在router2上配置静态NAT</h4>
+<p>由于要和执政官首府联系，所以也得给执政官首府的联络人配一下NAT，使得元老院领导可以直接通过公网ip找到执政官首府的联络人。同时为了保证执政官首府的联络人公网地址不变，这里直接使用静态NAT。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat inside source static 192.168.2.2 2.0.0.3</span><br></pre></td></tr></table></figure>
+<p>可以<code>show ip nat</code>来检查nat设置情况</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Router#show ip nat translations</span><br><span class="line">Pro  Inside global     Inside local       Outside local      Outside global</span><br><span class="line">---  2.0.0.3           192.168.2.2        ---                ---</span><br></pre></td></tr></table></figure>
+<p>设置正常，在PC1上ping 2.0.0.3，执政官首府的联络人收到报文，并正确返回。</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/0c7106db20ca808b52e409c6ed3e01f9/202312011442502.png" alt="image-20231201144237474"></p>
+<p>在router1上开启debug ip nat 可以更加清楚地展示这一过程，可以看见到时间还会expire，所以要给联络人配一个静态NAT</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e00543ca5782ca7a5bc10300381772a7/202312011452710.png" alt="image-20231201145246688"></p>
+<p>下面展示了报文在router1上的变换情况。</p>
+<p>NAT范围内，Src.ip从私网ip转变为公网ip。超过允许范围的报文没有经过NAT。由于是动态NAT，只有流量经过，router的NAT表才会建立，而且这个表是动态的。</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/1ec1785ec5fb53de85847c1eacc7c8ff/202312011404012.png" alt="image-20231201140432959"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10d8f34fb8e6ed0632bad91bf0488c91/202312011405739.png" alt="image-20231201140502698"></p>
+<p>超过允许范围的报文没有经过NAT</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/752409542b367ff64aa7f7a410ca94e3/202312011446970.png" alt="image-20231201144622933"></p>
+<h3 id="3-配置PAT，节省公网地址">3.配置PAT，节省公网地址</h3>
+<p>由于国名生活水平日益提高，元老院内终端设备爆炸增长。但是又由于常年和高卢人的征战导致国库空虚，凯撒只给我元老院组了1.0.0.3一条公网ip。我考虑使用overload模式，同时来自不同内部主机的多个连接使用不同的源端口号“<strong>多路复用</strong>”为<strong>单个</strong>注册（公共）IP地址。</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fe796fc4ac88836374a5f789897783f8/202312011457489.png" alt="image-20231201145737467"></p>
+<p>可以看到，192.168.1.2， 192.168.1.3，192.168.1.5，三个终端都映射到1.0.0.3。</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/b8f24a9d198ce69712e36988d5114ee0/202312011459235.png" alt=""></p>
+<p>此时路由器会维护来自更高级别协议（例如，TCP或UDP端口号）的足够信息，以便将全局地址转换回正确的本地地址，所以避免了冲突。</p>
+<p>如果想进一步配置，可以配置端口映射（端口重定向），使得流量在某个端口的公共ip被映射到同一个终端上。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip nat inside source static tcp 192.168.1.10 80 1.0.0.3 80</span><br></pre></td></tr></table></figure>
+<p>这样也可以通过端口来区分不同的目的。</p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">ACL-VPN实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#task1"><span class="toc-number">1.1.</span> <span class="toc-text">task1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%8B%93%E6%89%91%E5%9B%BE%E5%A6%82%E4%B8%8B%E3%80%82"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">修改拓扑图如下。</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router2-3"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">router2&amp;3</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#router2"><span class="toc-number">1.1.0.3.1.</span> <span class="toc-text">router2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router3"><span class="toc-number">1.1.0.3.2.</span> <span class="toc-text">router3</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Task7"><span class="toc-number">1.2.</span> <span class="toc-text">Task7</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#router1"><span class="toc-number">1.2.0.0.1.</span> <span class="toc-text">router1</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router2-2"><span class="toc-number">1.2.0.0.2.</span> <span class="toc-text">router2</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router3-2"><span class="toc-number">1.2.0.0.3.</span> <span class="toc-text">router3</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TASK8"><span class="toc-number">1.3.</span> <span class="toc-text">TASK8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E6%90%AC%E8%BF%81%E4%B9%8B%E5%90%8E%EF%BC%8C%E4%BD%BF%E7%94%A8%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1%E7%9A%84%E6%96%B9%E6%B3%95%E5%B0%86%E6%97%A0%E6%B3%95%E8%AE%A9%E5%90%84%E4%B8%AA%E6%9D%83%E5%8A%9B%E6%9C%BA%E6%9E%84%E6%AD%A3%E5%B8%B8%E9%80%9A%E4%BF%A1"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">在搬迁之后，使用配置静态路由的方法将无法让各个权力机构正常通信</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router1-2"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">router1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router2-3"><span class="toc-number">1.3.0.3.</span> <span class="toc-text">router2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E8%A1%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.0.4.</span> <span class="toc-text">路由表配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#router1%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.3.0.4.1.</span> <span class="toc-text">router1使用静态路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router2%E4%BD%BF%E7%94%A8%E9%9D%99%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-number">1.3.0.4.2.</span> <span class="toc-text">router2使用静态路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router3-3"><span class="toc-number">1.3.0.4.3.</span> <span class="toc-text">router3</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#router4%E4%BD%BF%E7%94%A8rip%E6%A8%A1%E6%8B%9F%E5%85%AC%E7%BD%91%E8%B7%AF%E7%94%B1%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.0.4.4.</span> <span class="toc-text">router4使用rip模拟公网路由配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-2"><span class="toc-number">1.3.1.</span> <span class="toc-text">结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#router1%E5%AD%90%E7%BD%91-ping-2%EF%BC%8C3%E5%AD%90%E7%BD%91"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">router1子网 ping 2，3子网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#router3%E5%AD%90%E7%BD%91%E7%BB%88%E7%AB%AF-ping-router1%E5%AD%90%E7%BD%91%E7%BB%88%E7%AB%AF"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">router3子网终端 ping router1子网终端</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%95%E7%A4%BArouter2-ipsec%E9%85%8D%E7%BD%AE%E7%8A%B6%E6%80%81"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">展示router2 ipsec配置状态</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E4%BB%BF%E7%9C%9F%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90%EF%BC%8C%E5%A6%82%E4%B8%8A%E9%85%8D%E7%BD%AE%E7%9A%84IPSec-VPN%E4%BD%BF%E7%94%A8%E4%BA%86%E9%9A%A7%E9%81%93%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">通过仿真抓包分析，如上配置的IPSec VPN使用了隧道模式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bonus%E4%BB%BB%E5%8A%A1%EF%BC%9A%E5%87%AF%E6%92%92%E7%9A%84%E8%B5%8F%E8%B5%90%EF%BC%88NAT%EF%BC%89"><span class="toc-number">1.3.2.</span> <span class="toc-text">Bonus任务：凯撒的赏赐（NAT）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9C%A8router1%E4%B8%8A%E9%85%8D%E7%BD%AE%E5%8A%A8%E6%80%81NAT"><span class="toc-number">1.3.2.1.</span> <span class="toc-text">1.在router1上配置动态NAT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9C%A8router2%E4%B8%8A%E9%85%8D%E7%BD%AE%E9%9D%99%E6%80%81NAT"><span class="toc-number">1.3.2.2.</span> <span class="toc-text">2.在router2上配置静态NAT</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%85%8D%E7%BD%AEPAT%EF%BC%8C%E8%8A%82%E7%9C%81%E5%85%AC%E7%BD%91%E5%9C%B0%E5%9D%80"><span class="toc-number">1.3.3.</span> <span class="toc-text">3.配置PAT，节省公网地址</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&text=ACL-VPN实验"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&title=ACL-VPN实验"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&is_video=false&description=ACL-VPN实验"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=ACL-VPN实验&body=Check out this article: https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&title=ACL-VPN实验"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&title=ACL-VPN实验"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&title=ACL-VPN实验"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&title=ACL-VPN实验"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&name=ACL-VPN实验&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/&t=ACL-VPN实验"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
