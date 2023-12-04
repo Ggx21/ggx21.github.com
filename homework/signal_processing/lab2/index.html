@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="lab2 按键音识别 郭高旭 ggx21@mails.tsinghua.edu.cn 测例与频谱图生成代码 https:&#x2F;&#x2F;github.com&#x2F;Ggx21&#x2F;dtmf_gen-for-signal-lab2 实验目的 识别dtmf音频，逐帧将其转换为按键序列 实验过程   将输入音频分成1&#x2F;64s的帧   判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）   计算当前帧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="lab2 按键音识别">
+<meta property="og:url" content="https://ggxloveslife.top/homework/signal_processing/lab2/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="lab2 按键音识别 郭高旭 ggx21@mails.tsinghua.edu.cn 测例与频谱图生成代码 https:&#x2F;&#x2F;github.com&#x2F;Ggx21&#x2F;dtmf_gen-for-signal-lab2 实验目的 识别dtmf音频，逐帧将其转换为按键序列 实验过程   将输入音频分成1&#x2F;64s的帧   判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）   计算当前帧">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png">
+<meta property="article:published_time" content="2023-12-04T05:19:12.000Z">
+<meta property="article:modified_time" content="2023-12-04T05:19:40.826Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="homework">
+<meta property="article:tag" content="signal_processing">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>lab2 按键音识别</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/homework/network_security/ACL-VPN%E5%AE%9E%E9%AA%8C/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lab2-%E6%8C%89%E9%94%AE%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">lab2 按键音识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E4%BE%8B%E4%B8%8E%E9%A2%91%E8%B0%B1%E5%9B%BE%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">测例与频谱图生成代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">实验现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">实验结论</span></a></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        lab2 按键音识别
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-04T05:19:12.000Z" class="dt-published" itemprop="datePublished">2023-12-04</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/signal-processing/">signal_processing</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/signal-processing/" rel="tag">signal_processing</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h2 id="lab2-按键音识别">lab2 按键音识别</h2>
+<p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
+<h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5>
+<p><a target="_blank" rel="noopener" href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p>
+<h2 id="实验目的">实验目的</h2>
+<p>识别dtmf音频，逐帧将其转换为按键序列</p>
+<h2 id="实验过程">实验过程</h2>
+<ol>
+<li class="lvl-3">
+<p>将输入音频分成1/64s的帧</p>
+</li>
+<li class="lvl-3">
+<p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p>
+</li>
+<li class="lvl-3">
+<p>计算当前帧的短时傅里叶变化<code>stft</code></p>
+<blockquote>
+<p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p>选择出每一帧的两个能量峰值处的频率</p>
+<blockquote>
+<p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure>
+</li>
+<li class="lvl-3">
+<p>根据找到的频率判断按键</p>
+<blockquote>
+<p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="实验现象">实验现象</h2>
+<p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, 	x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p>
+<p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p>
+<h2 id="实验结论">实验结论</h2>
+<p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p>
+<p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a target="_blank" rel="noopener" href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>
+
+        <div id="aplayer-HuHlEWbd" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+            <pre class="aplayer-lrc-content"></pre>
+        </div>
+        <script>
+          var ap = new APlayer({
+            element: document.getElementById("aplayer-HuHlEWbd"),
+            narrow: false,
+            autoplay: false,
+            showlrc: false,
+            music: {
+              title: "sample.wav",
+              author: "yux",
+              url: "/music/dtmf/sample.wav",
+              pic: "/music/dtmf/sample.png",
+              lrc: ""
+            }
+          });
+          window.aplayers || (window.aplayers = []);
+          window.aplayers.push(ap);
+        </script>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lab2-%E6%8C%89%E9%94%AE%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">lab2 按键音识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E4%BE%8B%E4%B8%8E%E9%A2%91%E8%B0%B1%E5%9B%BE%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">测例与频谱图生成代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">实验现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">实验结论</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/signal_processing/lab2/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/signal_processing/lab2/&text=lab2 按键音识别"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/signal_processing/lab2/&title=lab2 按键音识别"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/signal_processing/lab2/&is_video=false&description=lab2 按键音识别"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=lab2 按键音识别&body=Check out this article: https://ggxloveslife.top/homework/signal_processing/lab2/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/signal_processing/lab2/&title=lab2 按键音识别"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/signal_processing/lab2/&title=lab2 按键音识别"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/signal_processing/lab2/&title=lab2 按键音识别"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/signal_processing/lab2/&title=lab2 按键音识别"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/signal_processing/lab2/&name=lab2 按键音识别&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/signal_processing/lab2/&t=lab2 按键音识别"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
