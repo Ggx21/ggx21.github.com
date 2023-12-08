@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="网络层安全协议 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;6 TCP&#x2F;IP协议栈与对应的安全协议   应用层  S&#x2F;MIME Kerberos SET    传输层（TCP&#x2F;UDP）  SSL TLS SOCKS    网络层（IP）  IPsec（AH，ESP） Packet FIltering    数据链路层  L2TP PPTP L2F    IPse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络层安全协议">
+<meta property="og:url" content="https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="网络层安全协议 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;6 TCP&#x2F;IP协议栈与对应的安全协议   应用层  S&#x2F;MIME Kerberos SET    传输层（TCP&#x2F;UDP）  SSL TLS SOCKS    网络层（IP）  IPsec（AH，ESP） Packet FIltering    数据链路层  L2TP PPTP L2F    IPse">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/2d25a34e18b81e51a34179e9bad8c2a0/202312071025805.png">
+<meta property="article:published_time" content="2023-12-07T02:31:03.000Z">
+<meta property="article:modified_time" content="2023-12-08T16:00:05.568Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="notes">
+<meta property="article:tag" content="network_security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/2d25a34e18b81e51a34179e9bad8c2a0/202312071025805.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>网络层安全协议</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/homework/signal_processing/test/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网络层安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP%E5%8D%8F%E8%AE%AE%E6%A0%88%E4%B8%8E%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text">TCP&#x2F;IP协议栈与对应的安全协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPsec"><span class="toc-number">1.2.</span> <span class="toc-text">IPsec</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BE%9BIP%E7%BA%A7%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%88ip-security%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">提供IP级安全性（ip security）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPsec%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">IPsec的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPSec-%E6%8F%90%E4%BE%9B-IP-%E7%BA%A7%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9%E5%8C%85%E6%8B%AC%EF%BC%9A"><span class="toc-number">1.2.3.</span> <span class="toc-text">IPSec 提供 IP 级的安全性的关键点包括：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ipsec%E6%96%87%E6%A1%A3"><span class="toc-number">1.2.4.</span> <span class="toc-text">ipsec文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPsec%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.5.</span> <span class="toc-text">IPsec服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%85%B3%E8%81%94"><span class="toc-number">1.2.6.</span> <span class="toc-text">安全关联</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%89%E5%85%A8%E5%85%B3%E8%81%94SA%E7%94%B1%E4%B8%89%E4%B8%AA%E5%8F%82%E6%95%B0%E5%94%AF%E4%B8%80%E7%A1%AE%E5%AE%9A%EF%BC%9A"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">一个安全关联SA由三个参数唯一确定：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%85%B3%E8%81%94%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">安全关联数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5%E6%95%B0%E6%8D%AE%E5%BA%93SPDB"><span class="toc-number">1.2.6.3.</span> <span class="toc-text">安全策略数据库SPDB</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%A4%B4AH"><span class="toc-number">1.3.</span> <span class="toc-text">认证头AH</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AH%E5%AF%B9Inbound%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">AH对Inbound的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%A4%B4%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.3.2.</span> <span class="toc-text">认证头的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AH-%E5%A4%B4%E9%83%A8%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.3.3.</span> <span class="toc-text">1. AH 头部格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%84%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">1.3.4.</span> <span class="toc-text">2. 各字段说明：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-number">1.3.5.</span> <span class="toc-text">注意事项：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E5%AE%89%E5%85%A8%E8%BD%BD%E8%8D%B7ESP"><span class="toc-number">1.4.</span> <span class="toc-text">封装安全载荷ESP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE-IKE"><span class="toc-number">1.5.</span> <span class="toc-text">互联网密钥交换协议-IKE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IKE-%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.5.1.</span> <span class="toc-text">IKE 报文格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IKE%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">1.5.2.</span> <span class="toc-text">IKE的两个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9AIKE-SA"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">第一阶段：IKE SA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AIPsec-SA"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">第二阶段：IPsec SA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IKE%E7%9A%84%E4%B8%8D%E8%B6%B3"><span class="toc-number">1.6.</span> <span class="toc-text">IKE的不足</span></a></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        网络层安全协议
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-07T02:31:03.000Z" class="dt-published" itemprop="datePublished">2023-12-07</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/network-security/">network_security</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/network-security/" rel="tag">network_security</a>, <a class="p-category" href="/tags/notes/" rel="tag">notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>网络层安全协议</h1>
+<p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2023/12/6</p>
+<h2 id="TCP-IP协议栈与对应的安全协议">TCP/IP协议栈与对应的安全协议</h2>
+<ol>
+<li class="lvl-3">
+<p>应用层</p>
+<ul class="lvl-2">
+<li class="lvl-5">S/MIME</li>
+<li class="lvl-5">Kerberos</li>
+<li class="lvl-5">SET</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>传输层（TCP/UDP）</p>
+<ul class="lvl-2">
+<li class="lvl-5">SSL</li>
+<li class="lvl-5">TLS</li>
+<li class="lvl-5">SOCKS</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>网络层（IP）</p>
+<ul class="lvl-2">
+<li class="lvl-5">IPsec（AH，ESP）</li>
+<li class="lvl-5">Packet FIltering</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p>数据链路层</p>
+<ul class="lvl-2">
+<li class="lvl-5">L2TP</li>
+<li class="lvl-5">PPTP</li>
+<li class="lvl-5">L2F</li>
+</ul>
+</li>
+</ol>
+<h2 id="IPsec">IPsec</h2>
+<h3 id="提供IP级安全性（ip-security）">提供IP级安全性（ip security）</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>认证</p>
+<ul class="lvl-2">
+<li class="lvl-4">拓展报头:AH,authentication Header</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>加密</p>
+<ul class="lvl-2">
+<li class="lvl-4">封装安全载荷ESP:Encapsulating Security Payload</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>密钥管理</p>
+</li>
+</ul>
+<blockquote>
+<p>&quot;IP 协议是无状态、无连接的&quot;指的是传输层的 Internet Protocol（IP）协议的特性。在这个上下文中，&quot;无状态&quot;意味着每个数据包在传输时都是独立的，系统不会保留关于先前数据包的任何信息。而&quot;无连接&quot;表示在传输数据之前不需要在发送和接收系统之间建立持久的连接。</p>
+</blockquote>
+<h3 id="IPsec的应用">IPsec的应用</h3>
+<p>在公网上建立安全的虚拟专用网VPN</p>
+<h3 id="IPSec-提供-IP-级的安全性的关键点包括：">IPSec 提供 IP 级的安全性的关键点包括：</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>独立于传输层协议：</strong> IPSec 在 IP 层实施安全性，因此可以在不考虑传输层协议（如TCP或UDP）的情况下提供安全性。这使得它能够适用于各种传输层协议。</p>
+</li>
+<li class="lvl-3">
+<p><strong>端到端安全性：</strong> IPSec 提供端到端的安全性，</p>
+<blockquote>
+<p><strong>端到端安全性</strong>是一种安全模型，强调在通信的两端（即通信的源和目标）之间实施安全措施，以确保在整个通信路径上的数据保持机密性和完整性。这意味着只有通信的两个端点能够解密和验证数据，中间的任何节点都无法直接访问或修改数据。</p>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p><strong>透明性：</strong> 因为它在 IP 层运行，所以对应用程序而言是透明的。</p>
+<blockquote>
+<p><strong>透明性</strong>:应用程序感知不到</p>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p><strong>无状态：</strong> IPSec 在提供安全性的同时保持了 IP 协议的无状态性。每个数据包都可以独立处理，而不需要维护连接状态。</p>
+</li>
+</ol>
+<h3 id="ipsec文档">ipsec文档</h3>
+<p>todo:DOI?</p>
+<h3 id="IPsec服务">IPsec服务</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>访问控制</p>
+</li>
+<li class="lvl-2">
+<p>无连接完整性</p>
+</li>
+<li class="lvl-2">
+<p>数据源发认证</p>
+</li>
+<li class="lvl-2">
+<p>拒绝重放数据包</p>
+</li>
+<li class="lvl-2">
+<p>保密性（加密）</p>
+</li>
+<li class="lvl-2">
+<p>有限的信息流保密性</p>
+</li>
+</ul>
+<h3 id="安全关联">安全关联</h3>
+<p>安全关联SA是IPsec通信双方之间对某些要素的一种<mark>协商</mark></p>
+<blockquote>
+<p>要素:协议、操作模式、密码算法、认证算法、密钥、密钥生存期等</p>
+</blockquote>
+<p>关联是发送方和接收方之间的单向关系,如果需要双方的安全交换,那么需要建立两个安全关联(考虑地下情报网的接头方式)</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>如果需要双方安全交换，则建立两个安全关联</p>
+</li>
+<li class="lvl-2">
+<p>安全服务可由AH或者ESP提供， 但<mark>不能两者都提供</mark>,<strong>why?</strong></p>
+</li>
+</ul>
+<h4 id="一个安全关联SA由三个参数唯一确定：">一个安全关联SA由三个参数唯一确定：</h4>
+<p>注意,并不是只有下面的三个参数,下面三个参数只是<strong>Primary key group</strong></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>安全参数索引SPI(Security Parameters Index)</p>
+</li>
+<li class="lvl-2">
+<p><strong>IP 目的地址IPDA</strong></p>
+<p>primary key in ip packet</p>
+</li>
+<li class="lvl-2">
+<p>安全协议标识</p>
+</li>
+</ul>
+<p>其他参数</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>序列号计数器</p>
+</li>
+<li class="lvl-2">
+<p>序列号溢出标志</p>
+<blockquote>
+<p>发送方不允许循环计数,溢出后SA必须终止,用新的密钥协商声称新的SA</p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>反重放窗口</p>
+<blockquote>
+<p>IP是无连接的,故不能保证包的顺序传输,接收方必须实现一个大小为W的窗口,</p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>AH信息组/ESP信息组</p>
+</li>
+<li class="lvl-2">
+<p>SA的生存期</p>
+</li>
+<li class="lvl-2">
+<p>IPsec协议模式</p>
+<ul class="lvl-2">
+<li class="lvl-4">传输模式</li>
+<li class="lvl-4">隧道模式</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>Path MTU</p>
+</li>
+</ul>
+<h4 id="安全关联数据库">安全关联数据库</h4>
+<p>有一个<strong>安全关联数据库</strong>SADB,定义了SA相关联的参数</p>
+<p>对于收到的数据包，解析出三元组【SPI、目的地址、 AH /ESP】 ，并据此查找SADB：</p>
+<ol>
+<li class="lvl-3">
+<p>如果查找到一个匹配的SA条目,比较其余参数与AH或ESP头中相关域是否匹配</p>
+</li>
+<li class="lvl-3">
+<p>没有找到匹配的SA条目:</p>
+<ol>
+<li class="lvl-6">输入包丢弃</li>
+<li class="lvl-6">输出包新建SADB条目</li>
+</ol>
+</li>
+</ol>
+<h4 id="安全策略数据库SPDB">安全策略数据库SPDB</h4>
+<p>IP流量与特定SA相关是通过安全策略数据库SPDB定义的</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>定义IP流量子集的<strong>入口</strong>,指向SA的<strong>指针</strong>(<mark>选择子</mark>)</p>
+</li>
+<li class="lvl-2">
+<p>可以一对多也可以多对一</p>
+</li>
+<li class="lvl-2">
+<p>策略</p>
+<ul class="lvl-2">
+<li class="lvl-4">discard</li>
+<li class="lvl-4">bypass IPsec</li>
+<li class="lvl-4">apply IPsec</li>
+</ul>
+</li>
+</ul>
+<h2 id="认证头AH">认证头AH</h2>
+<p>提供完整性和认证,不提供机密性</p>
+<blockquote>
+<p>认证确保末端系统或者网络设备对用户或者应用程序进行认证，并提供相应的流量过滤功能，同时还能防止地址欺诈攻击和重放攻击</p>
+<p>认证基于消息认证码MAC，双方必须共享一个公钥</p>
+</blockquote>
+<h3 id="AH对Inbound的处理">AH对Inbound的处理</h3>
+<ol>
+<li class="lvl-3">
+<p>从端口收到输入的数据包，解析出其SA三元组，查找SADB</p>
+</li>
+<li class="lvl-3">
+<p>检查序列号(可选，针对重放攻击)</p>
+</li>
+<li class="lvl-3">
+<p>计算数据包的ICV，将其和数据包中的值进行比较：</p>
+<blockquote>
+<ol>
+<li class="lvl-3"><strong>选择哈希算法：</strong> AH支持多种哈希算法，例如MD5（Message Digest 5）和SHA-1（Secure Hash Algorithm 1）。在建立IPsec安全关联时，通信双方协商选择要使用的哈希算法。</li>
+<li class="lvl-3"><strong>构建完整性保护字段：</strong> 计算ICV时，将AH头中的部分字段与要进行完整性保护的数据（包括IP头部和上层协议数据）一起构建一个整体的数据块。这个数据块称为&quot;整体字段&quot;。</li>
+<li class="lvl-3"><strong>计算哈希值：</strong> 使用协商好的哈希算法对整体字段进行哈希计算，生成ICV。这个哈希值将作为认证头中的ICV字段的值。</li>
+<li class="lvl-3"><strong>填充 ICV 字段：</strong> 将计算得到的ICV填充到AH头的ICV字段中。</li>
+<li class="lvl-3"><strong>传输：</strong> 发送方将携带ICV的AH头附加到IP数据报上，并将整个IP数据报传输到接收方。</li>
+<li class="lvl-3"><strong>验证：</strong> 接收方收到数据后，使用相同的算法和密钥计算接收到的数据的ICV，并与AH头中的ICV字段进行比较。</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<h3 id="认证头的组成">认证头的组成</h3>
+<h3 id="1-AH-头部格式：">1. AH 头部格式：</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">  0                   1                   2                   3</span><br><span class="line">  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">| Next Header   |  Payload Len  |  RESERVED     | Security Param |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|              Security Parameters Index (SPI)                  |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                    Sequence Number Field                       |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                                                               |</span><br><span class="line">~                 Integrity Check Value-ICV (variable)          ~</span><br><span class="line">|                                                               |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></pre></td></tr></table></figure>
+<h3 id="2-各字段说明：">2. 各字段说明：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>Next Header (8 bits):</strong> 表示下一层协议的标识符，指示在AH之后的数据报中的下一层协议类型。</p>
+</li>
+<li class="lvl-2">
+<p><strong>Payload Length (8 bits):</strong> 指示在AH头部后面的AH数据的长度，以4字节为单位，不包括IP头和AH头的固定部分。</p>
+</li>
+<li class="lvl-2">
+<p><strong>RESERVED (16 bits):</strong> 保留字段，必须设置为零。</p>
+</li>
+<li class="lvl-2">
+<p><strong>Security Parameters Index (SPI) (32 bits):</strong> 安全参数索引，用于唯一标识一个安全关联。</p>
+</li>
+<li class="lvl-2">
+<p><strong>Sequence Number (32 bits):</strong> 序列号字段，用于防止重放攻击。</p>
+</li>
+<li class="lvl-2">
+<p><strong>Integrity Check Value (ICV) (variable):</strong> 完整性校验值，用于验证数据的完整性。</p>
+</li>
+</ul>
+<h3 id="注意事项：">注意事项：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>AH头部紧跟在IP头部之后。</p>
+</li>
+<li class="lvl-2">
+<p>AH提供对整个IP数据报的完整性保护，包括IP头部和上层协议数据。</p>
+</li>
+<li class="lvl-2">
+<p>AH不提供机密性，因此它主要用于数据完整性和源认证的需求。</p>
+</li>
+</ul>
+<h2 id="封装安全载荷ESP">封装安全载荷ESP</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">  0                   1                   2                   3</span><br><span class="line">  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|              Security Parameters Index (SPI)                  |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                    Sequence Number Field                      |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                                                               |</span><br><span class="line">~                 payload data                                  ~</span><br><span class="line">|                                                               |</span><br><span class="line">+               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|               |                  padding                      |</span><br><span class="line">+-+-+-+-+-+-+-+-+               +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                               |  pad length   | next header   |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br><span class="line">|                    Autentication Data(MAC)                    |</span><br><span class="line">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span><br></pre></td></tr></table></figure>
+<h2 id="互联网密钥交换协议-IKE">互联网密钥交换协议-IKE</h2>
+<p>IKE(Internet Key Exchange)协议为IPsec提供了自动协商交换密钥、建立安全关联SA的服务</p>
+<p>IKE的精髓在于： <mark>永远不在不安全的网络上直接传送密钥</mark></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可以在不安全的网络环境中安全地建立或更新共享密钥</p>
+</li>
+<li class="lvl-2">
+<p>通用协议，不止为了IPsec</p>
+</li>
+<li class="lvl-2">
+<p>目前IKE协议只在IPsec协议中得到了应用</p>
+</li>
+<li class="lvl-2">
+<p>前向安全性</p>
+<blockquote>
+<p>一个密钥被破解，并不影响其他密钥的安全性，这些密钥间没有派生关系</p>
+</blockquote>
+</li>
+</ul>
+<p>IKE不但可自动地为参与通信的实体协商安全关联SA，还可以维护安全关联数据库SADB</p>
+<h3 id="IKE-报文格式">IKE 报文格式</h3>
+<p>IKE的报文格式继承自ISAKMP，所以也称为ISAKMP报文，（UPD，端口500）</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>报头主要是用于标识身份的目的/源 cookie，和标记加密/认证/commit（是否需要ack）的flags</p>
+</li>
+<li class="lvl-2">
+<p>payload主要是沟通sa的各种参数</p>
+</li>
+</ul>
+<h3 id="IKE的两个阶段">IKE的两个阶段</h3>
+<ol>
+<li class="lvl-3">
+<p>协商IKE SA</p>
+</li>
+<li class="lvl-3">
+<p>协商IPsec SA</p>
+</li>
+</ol>
+<p>第一步为第二步建立了一个安全的通道</p>
+<h4 id="第一阶段：IKE-SA">第一阶段：IKE SA</h4>
+<p>主模式提供了对通信双方的身份保护，当身份保护不必要时，可以采取积极模式减少交互次数</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>主模式（6次，三来回）</p>
+<ol>
+<li class="lvl-5">
+<p>SA交换</p>
+<p>交换sa参数</p>
+</li>
+<li class="lvl-5">
+<p>密钥交换</p>
+<p>DH算法</p>
+</li>
+<li class="lvl-5">
+<p>身份和交换验证</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>​		报文头相同，但是载荷不同。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>快速/积极模式</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/2d25a34e18b81e51a34179e9bad8c2a0/202312071025805.png" alt="image-20231207102523722"></p>
+</li>
+</ul>
+<h4 id="第二阶段：IPsec-SA">第二阶段：IPsec SA</h4>
+<p>一个第一阶段可以为多个第二阶段服务</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>crypt</p>
+</li>
+<li class="lvl-2">
+<p>hash</p>
+</li>
+<li class="lvl-2">
+<p>auth</p>
+</li>
+<li class="lvl-2">
+<p>DH组</p>
+</li>
+<li class="lvl-2">
+<p>TTL</p>
+</li>
+<li class="lvl-2">
+<p>length</p>
+</li>
+<li class="lvl-2">
+<p>etc.</p>
+</li>
+</ul>
+<h2 id="IKE的不足">IKE的不足</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>标准复杂</p>
+</li>
+<li class="lvl-2">
+<p>消息交互次数过多</p>
+</li>
+<li class="lvl-2">
+<p>设计缺陷，易受攻击</p>
+</li>
+</ul>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网络层安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-IP%E5%8D%8F%E8%AE%AE%E6%A0%88%E4%B8%8E%E5%AF%B9%E5%BA%94%E7%9A%84%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.1.</span> <span class="toc-text">TCP&#x2F;IP协议栈与对应的安全协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IPsec"><span class="toc-number">1.2.</span> <span class="toc-text">IPsec</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E4%BE%9BIP%E7%BA%A7%E5%AE%89%E5%85%A8%E6%80%A7%EF%BC%88ip-security%EF%BC%89"><span class="toc-number">1.2.1.</span> <span class="toc-text">提供IP级安全性（ip security）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPsec%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.2.2.</span> <span class="toc-text">IPsec的应用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPSec-%E6%8F%90%E4%BE%9B-IP-%E7%BA%A7%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E7%9A%84%E5%85%B3%E9%94%AE%E7%82%B9%E5%8C%85%E6%8B%AC%EF%BC%9A"><span class="toc-number">1.2.3.</span> <span class="toc-text">IPSec 提供 IP 级的安全性的关键点包括：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ipsec%E6%96%87%E6%A1%A3"><span class="toc-number">1.2.4.</span> <span class="toc-text">ipsec文档</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IPsec%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.5.</span> <span class="toc-text">IPsec服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%85%B3%E8%81%94"><span class="toc-number">1.2.6.</span> <span class="toc-text">安全关联</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E5%AE%89%E5%85%A8%E5%85%B3%E8%81%94SA%E7%94%B1%E4%B8%89%E4%B8%AA%E5%8F%82%E6%95%B0%E5%94%AF%E4%B8%80%E7%A1%AE%E5%AE%9A%EF%BC%9A"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">一个安全关联SA由三个参数唯一确定：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%85%B3%E8%81%94%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">安全关联数据库</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%AD%96%E7%95%A5%E6%95%B0%E6%8D%AE%E5%BA%93SPDB"><span class="toc-number">1.2.6.3.</span> <span class="toc-text">安全策略数据库SPDB</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%A4%B4AH"><span class="toc-number">1.3.</span> <span class="toc-text">认证头AH</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#AH%E5%AF%B9Inbound%E7%9A%84%E5%A4%84%E7%90%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">AH对Inbound的处理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%A4%B4%E7%9A%84%E7%BB%84%E6%88%90"><span class="toc-number">1.3.2.</span> <span class="toc-text">认证头的组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AH-%E5%A4%B4%E9%83%A8%E6%A0%BC%E5%BC%8F%EF%BC%9A"><span class="toc-number">1.3.3.</span> <span class="toc-text">1. AH 头部格式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%90%84%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E%EF%BC%9A"><span class="toc-number">1.3.4.</span> <span class="toc-text">2. 各字段说明：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%EF%BC%9A"><span class="toc-number">1.3.5.</span> <span class="toc-text">注意事项：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%81%E8%A3%85%E5%AE%89%E5%85%A8%E8%BD%BD%E8%8D%B7ESP"><span class="toc-number">1.4.</span> <span class="toc-text">封装安全载荷ESP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%92%E8%81%94%E7%BD%91%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E5%8D%8F%E8%AE%AE-IKE"><span class="toc-number">1.5.</span> <span class="toc-text">互联网密钥交换协议-IKE</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IKE-%E6%8A%A5%E6%96%87%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.5.1.</span> <span class="toc-text">IKE 报文格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IKE%E7%9A%84%E4%B8%A4%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="toc-number">1.5.2.</span> <span class="toc-text">IKE的两个阶段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5%EF%BC%9AIKE-SA"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">第一阶段：IKE SA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5%EF%BC%9AIPsec-SA"><span class="toc-number">1.5.2.2.</span> <span class="toc-text">第二阶段：IPsec SA</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IKE%E7%9A%84%E4%B8%8D%E8%B6%B3"><span class="toc-number">1.6.</span> <span class="toc-text">IKE的不足</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&text=网络层安全协议"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=网络层安全协议"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&is_video=false&description=网络层安全协议"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=网络层安全协议&body=Check out this article: https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=网络层安全协议"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=网络层安全协议"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=网络层安全协议"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=网络层安全协议"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&name=网络层安全协议&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&t=网络层安全协议"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
