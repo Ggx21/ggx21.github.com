@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="hw-5 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 1. 门阵列和标准单元设计方法的特征比较   是否制备母片：  门阵列：事先制备母片，使设计周期缩短。 标准单元：对芯片的制作过程不加限制，不采用母片预制的方式。    设计灵活性：  门阵列：相对不够灵活，对设计有一定限制，布通率不能达到100%。 标准单元：具有更加灵活的布图方式，可以解决布通率问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hw-5">
+<meta property="og:url" content="https://ggxloveslife.top/homework/vlsi/hw5/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="hw-5 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 1. 门阵列和标准单元设计方法的特征比较   是否制备母片：  门阵列：事先制备母片，使设计周期缩短。 标准单元：对芯片的制作过程不加限制，不采用母片预制的方式。    设计灵活性：  门阵列：相对不够灵活，对设计有一定限制，布通率不能达到100%。 标准单元：具有更加灵活的布图方式，可以解决布通率问题">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-13T05:47:05.000Z">
+<meta property="article:modified_time" content="2023-12-15T16:00:05.500Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="homework">
+<meta property="article:tag" content="vlsi">
+<meta name="twitter:card" content="summary">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>hw-5</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/homework/signal_processing/hw9/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/learning_cpp/effective_cpp/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">hw-5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%97%A8%E9%98%B5%E5%88%97%E5%92%8C%E6%A0%87%E5%87%86%E5%8D%95%E5%85%83%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E5%BE%81%E6%AF%94%E8%BE%83"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 门阵列和标准单元设计方法的特征比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%99%E8%BF%B0-FPGA-%E5%99%A8%E4%BB%B6%E7%9A%84%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84%E5%92%8C%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95%EF%BC%8C%E5%B9%B6%E4%B8%8E%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E5%99%A8%E4%BB%B6%E5%92%8C%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%E3%80%82"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.叙述 FPGA 器件的典型结构和编程方法，并与可编程逻辑器件和编程方法进行比较。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95%E4%B8%8A"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">编程方法上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%A8%E5%AE%9A%E5%88%B6%E7%94%B5%E8%B7%AF%E5%92%8C%E5%8D%8A%E5%AE%9A%E5%88%B6%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.全定制电路和半定制电路设计的主要区别</span></a></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        hw-5
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-13T05:47:05.000Z" class="dt-published" itemprop="datePublished">2023-12-13</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/vlsi/">vlsi</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/vlsi/" rel="tag">vlsi</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>hw-5</h1>
+<p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
+<h3 id="1-门阵列和标准单元设计方法的特征比较">1. 门阵列和标准单元设计方法的特征比较</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>是否制备母片：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">门阵列：事先制备母片，使设计周期缩短。</li>
+<li class="lvl-5">标准单元：对芯片的制作过程不加限制，不采用母片预制的方式。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>设计灵活性：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">门阵列：相对不够灵活，对设计有一定限制，布通率不能达到100%。</li>
+<li class="lvl-5">标准单元：具有更加灵活的布图方式，可以解决布通率问题，达到100%布通率。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>价格和适用范围：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">门阵列：价格低，适合小批量 ASIC 设计。</li>
+<li class="lvl-5">标准单元：制造费用较高，设计复杂，适用于高密度设计。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>布图方式变化：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">门阵列：采用高度规范的门阵列模式，设计自动化程度高。</li>
+<li class="lvl-5">标准单元：布图方式不断改进，引入新技术和层次，增加了不规则性。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>芯片利用率：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">门阵列：芯片利用率相对低。</li>
+<li class="lvl-5">标准单元：芯片利用率较高。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>单元库更新：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">门阵列：单元库相对稳定，事先设计好的母片和库单元。</li>
+<li class="lvl-5">标准单元：单元库需要随工艺更新而更新，是一项繁重的工作。</li>
+</ul>
+</li>
+</ol>
+<h3 id="2-叙述-FPGA-器件的典型结构和编程方法，并与可编程逻辑器件和编程方法进行比较。">2.叙述 FPGA 器件的典型结构和编程方法，并与可编程逻辑器件和编程方法进行比较。</h3>
+<p>一个FPGA芯片由若干个可编程的逻辑模块组成包括</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可配置逻辑块（Configurable Logic Block，CLB）</p>
+</li>
+<li class="lvl-2">
+<p>输入/输出模块（Input/Output Block，IOB）</p>
+</li>
+<li class="lvl-2">
+<p>和可编程互连线（Programmable Interconnect，PI）</p>
+</li>
+</ul>
+<p>CPLD的三块结构分为</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>宏单元</p>
+</li>
+<li class="lvl-2">
+<p>可编程连线</p>
+</li>
+<li class="lvl-2">
+<p>I/O控制块</p>
+</li>
+</ul>
+<p>FPGA内部使用查找表（LUT）代替CPLD中的与或逻辑结构</p>
+<h4 id="编程方法上">编程方法上</h4>
+<p>FPGA比CPLD具有更大的灵活性。CPLD通过修改具有固定内连电路的逻辑功能来编程，FPGA主要通过改变内部连线的布线来编程；FPGA可在逻辑门上编程，而CPLD是在逻辑块上编程。</p>
+<p>CPLD主要是基于EEPROM或FLASH存储器编程，编程次数可达上万次，优点是系统断电时编程信息也不丢失。FPGA大部分是基于SRAM编程，编程信息在系统断电时丢失，每次上电时，需从器件外部将编程数据重新写入SRAM中。其优点是可以编程任意次，并可在工作中快速编程。</p>
+<h3 id="3-全定制电路和半定制电路设计的主要区别">3.全定制电路和半定制电路设计的主要区别</h3>
+<p>全定制电路：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>设计自由度高：</strong> 每个部分都可以完全按照设计者需求进行定制。</p>
+</li>
+<li class="lvl-2">
+<p><strong>制造复杂性高：</strong> 定制化导致制造流程复杂，成本相对较高。</p>
+</li>
+<li class="lvl-2">
+<p><strong>设计周期长：</strong> 因为高度的定制，设计时间相对较长。</p>
+</li>
+<li class="lvl-2">
+<p>性能理想：芯片面积小，集成度高</p>
+</li>
+</ul>
+<p>半定制电路：</p>
+<p>半定制集成电路的设计分为基于标准单元的设计方法和基于门阵列的设计方法。这两种方法都基于部分实现好的电路。因此制造复杂度较低，设计周期较短，成本也相对较低。但是集成度，性能，芯片面积以及设计自由度等都不如全定制。</p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">hw-5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%97%A8%E9%98%B5%E5%88%97%E5%92%8C%E6%A0%87%E5%87%86%E5%8D%95%E5%85%83%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%E7%9A%84%E7%89%B9%E5%BE%81%E6%AF%94%E8%BE%83"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. 门阵列和标准单元设计方法的特征比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%8F%99%E8%BF%B0-FPGA-%E5%99%A8%E4%BB%B6%E7%9A%84%E5%85%B8%E5%9E%8B%E7%BB%93%E6%9E%84%E5%92%8C%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95%EF%BC%8C%E5%B9%B6%E4%B8%8E%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E5%99%A8%E4%BB%B6%E5%92%8C%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95%E8%BF%9B%E8%A1%8C%E6%AF%94%E8%BE%83%E3%80%82"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.叙述 FPGA 器件的典型结构和编程方法，并与可编程逻辑器件和编程方法进行比较。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%96%E7%A8%8B%E6%96%B9%E6%B3%95%E4%B8%8A"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">编程方法上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%A8%E5%AE%9A%E5%88%B6%E7%94%B5%E8%B7%AF%E5%92%8C%E5%8D%8A%E5%AE%9A%E5%88%B6%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1%E7%9A%84%E4%B8%BB%E8%A6%81%E5%8C%BA%E5%88%AB"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.全定制电路和半定制电路设计的主要区别</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/vlsi/hw5/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/vlsi/hw5/&text=hw-5"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/vlsi/hw5/&title=hw-5"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/vlsi/hw5/&is_video=false&description=hw-5"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=hw-5&body=Check out this article: https://ggxloveslife.top/homework/vlsi/hw5/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/vlsi/hw5/&title=hw-5"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/vlsi/hw5/&title=hw-5"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/vlsi/hw5/&title=hw-5"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/vlsi/hw5/&title=hw-5"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/vlsi/hw5/&name=hw-5&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/vlsi/hw5/&t=hw-5"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
