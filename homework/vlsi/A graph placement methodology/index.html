@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="A graph placement methodology intro problem chip floorplanning, a challenging problem2 that has long defied automation outcome under 6 h  VS months by human experts (baseline) 前置知识    芯片由多个模块组成，比如内存子系">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A graph placement methodology">
+<meta property="og:url" content="https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="A graph placement methodology intro problem chip floorplanning, a challenging problem2 that has long defied automation outcome under 6 h  VS months by human experts (baseline) 前置知识    芯片由多个模块组成，比如内存子系">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/09ed174520742311b847b254c5873001/202312181542961.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/8403252532275a2ea573caa8a6c9ddb3/202312181543995.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/e4126d867d4c7d3a2d28e263a0b75fae/202312181548700.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fe4c7357af1ad4f71591fe165bff42e4/202312181835251.png">
+<meta property="article:published_time" content="2023-12-18T13:04:45.000Z">
+<meta property="article:modified_time" content="2023-12-18T16:00:06.640Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="homework">
+<meta property="article:tag" content="vlsi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/09ed174520742311b847b254c5873001/202312181542961.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>A graph placement methodology</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/homework/signal_processing/hw9/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">A graph placement methodology</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-number">1.1.</span> <span class="toc-text">intro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outcome"><span class="toc-number">1.1.2.</span> <span class="toc-text">outcome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E4%BA%BA%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text">前人局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text">人类是怎么做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chip-floorplanning-is-a-game"><span class="toc-number">1.1.6.</span> <span class="toc-text">Chip floorplanning is a game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%B7%B1%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.7.</span> <span class="toc-text">更深层的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-Chip-floorplanning-as-a-learning-problem"><span class="toc-number">1.2.</span> <span class="toc-text">第二节:Chip floorplanning as a learning problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Markov-decision-process-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%AE%83%E6%98%AF%E4%B8%8D%E6%98%AF%E5%B8%B8%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%88contextual%EF%BC%89%E8%B5%8C%E5%8D%9A%E6%9C%BA%EF%BC%88bandits%EF%BC%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OUR-MDP"><span class="toc-number">1.2.1.</span> <span class="toc-text">OUR MDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loss-function"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">loss function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Designing-domain-adaptive-policies"><span class="toc-number">1.3.</span> <span class="toc-text">Designing domain-adaptive policies</span></a></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        A graph placement methodology
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-18T13:04:45.000Z" class="dt-published" itemprop="datePublished">2023-12-18</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/homework/">homework</a> › <a class="category-link" href="/categories/homework/vlsi/">vlsi</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/homework/" rel="tag">homework</a>, <a class="p-category" href="/tags/vlsi/" rel="tag">vlsi</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>A graph placement methodology</h1>
+<h2 id="intro">intro</h2>
+<h3 id="problem">problem</h3>
+<p><strong>chip floorplanning</strong>, a challenging problem2 that has long defied automation</p>
+<h3 id="outcome">outcome</h3>
+<p>under 6 h  VS months by human experts (baseline)</p>
+<h3 id="前置知识">前置知识</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/09ed174520742311b847b254c5873001/202312181542961.png" alt="image-20231218154221817"></p>
+<ol>
+<li class="lvl-3">
+<p>芯片由多个模块组成，比如内存子系统、计算单元和控制逻辑系统。</p>
+</li>
+<li class="lvl-3">
+<p>这些模块可以通过电路组件的（<mark>netlist</mark>）来描述，其中包括宏和标准单元。</p>
+<blockquote>
+<p>Netlist是一个描述电子系统中组件（如电阻、电容、晶体管等）以及它们之间连接关系的列表。</p>
+<p>Netlist包含了电路的逻辑信息,但是不包括布局信息.我们的工作本质上就是把netlist转化为布局信息</p>
+</blockquote>
+<p><mark>TODO</mark>: netlist 在代码中是如何体现的?</p>
+</li>
+<li class="lvl-3">
+<p>芯片平面布局的目标是在遵循密度和布线拥塞的硬约束的情况下，优化功耗、时序、面积和导线长度等性能指标。</p>
+</li>
+</ol>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/8403252532275a2ea573caa8a6c9ddb3/202312181543995.png" alt="image-20231218154315934"></p>
+<h3 id="前人局限性">前人局限性</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e4126d867d4c7d3a2d28e263a0b75fae/202312181548700.png" alt="image-20231218154833627"></p>
+<ol>
+<li class="lvl-3">
+<p><strong>划分：</strong> 对局部的关注牺牲了全局解的质量.因此不适用于大规模<we fixed></p>
+<blockquote>
+<p>实质上就是分治算法</p>
+<p>将整个电路网表划分成若干个较小的子块,对每个子块进行独立的优化处理,将优化后的子块重新组合，形成整体的电路优化结果。</p>
+</blockquote>
+</li>
+<li class="lvl-3">
+<p><strong>退火</strong>:尽管能得到最优解,但是对于大型电路,收敛太慢<we fixed></p>
+</li>
+<li class="lvl-3">
+<p><strong>统计方法</strong>:Routing congestion（布线拥塞）和timing violations（时序违例）之所以不容易用可微分的方式进行优化.</p>
+<blockquote>
+<p>布线拥塞指的是芯片特定区域对路由资源（例如金属轨道或通道）的需求很高，导致拥塞和潜在的性能问题。</p>
+<p>因为这两个经常需要用到<strong>离散</strong>的决策,难以用可微的方式优化(比如线长)<we fixed></p>
+</blockquote>
+</li>
+</ol>
+<h3 id="人类是怎么做的">人类是怎么做的</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>生成</p>
+</li>
+<li class="lvl-2">
+<p>打回上级</p>
+</li>
+</ul>
+<h3 id="Chip-floorplanning-is-a-game">Chip floorplanning is a game</h3>
+<p>Chip floorplanning is analogous to a game with varying pieces (for example, netlist topologies,macro counts, macro sizes and aspect ratios), boards (varying canvas sizesand aspect ratios) and win conditions (relative importance of differentevaluation metrics or different density and routing congestion constraints).</p>
+<h3 id="更深层的意义">更深层的意义</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">In addition to the immediate impact on chip floorplanning, the ability</span><br><span class="line">of our method to generalize and quickly generate high-quality solutions</span><br><span class="line">has major implications, unlocking opportunities for co-optimization</span><br><span class="line">with earlier stages of the chip design process. Large-scale architectural</span><br><span class="line">explorations were previously impossible, because it took months of</span><br><span class="line">human effort to accurately evaluate a given architectural candidate.</span><br><span class="line">However, modifying the architectural design can have an outsized</span><br><span class="line">impact on performance, and would facilitate full automation of the</span><br><span class="line">chip design process. Automating and accelerating the chip design</span><br><span class="line">process can also enable co-design of AI and hardware, yielding</span><br><span class="line">high-performance chips customized to important workloads, such</span><br><span class="line">as autonomous vehicles, medical devices and data centres.</span><br><span class="line">At an abstract level, our method learns to map the nodes of a hypergraph onto a limited set of resources, subject to constraints. Placement optimizations of this form appear in a wide range of science and</span><br><span class="line">engineering applications, including hardware design1, city planning16,</span><br><span class="line">vaccine testing and distribution17, and cerebral cortex layout18. Therefore, we believe that our placement optimization methodology can be</span><br><span class="line">applied to impactful placement problems beyond chip design.</span><br><span class="line">Beyond the experimental results reported here, our method is</span><br><span class="line">already having real-world impact, and our floorplan solutions are in</span><br><span class="line">the product tapeout of a recent-generation Google tensor processing</span><br><span class="line">unit (TPU) accelerator.  </span><br></pre></td></tr></table></figure>
+<h2 id="第二节-Chip-floorplanning-as-a-learning-problem">第二节:Chip floorplanning as a learning problem</h2>
+<p>The underlying problem is a high-dimensional contextual banditsproblem</p>
+<blockquote>
+<p>我们在开题报告中的论文里谈到这个优化问题实际上是一个多臂老虎机问题,而进一步地,<strong>Chip floorplanning</strong>是一个高维上下文多臂老虎机</p>
+<ol>
+<li class="lvl-3"><strong>上下文赌博机问题：</strong> 传统的赌博机问题是一个多臂老虎机问题，其中有多个拉杆（臂），每个拉杆都对应于一个潜在的奖励分布。在上下文赌博机问题中，每次选择拉杆不仅取决于拉杆的历史回报，还取决于当前的环境或上下文。这个上下文可以是一个向量，包含描述当前状态的多个特征。</li>
+<li class="lvl-3"><strong>高维度：</strong> 高维度表示有很多特征或维度。在上下文赌博机问题中，高维度上下文意味着上下文向量中包含了大量的特征，每个特征都可能影响到在某一时刻选择哪个拉杆。</li>
+</ol>
+<p>高维上下文赌博机问题涉及在每个时间步骤选择拉杆时，需要考虑一个包含大量特征的上下文向量。</p>
+</blockquote>
+<h4 id="Markov-decision-process-是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题">Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</h4>
+<p>Markov Decision Process（MDP，马尔可夫决策过程）是一种数学框架，用于建模决策问题，特别是在涉及随机性和不确定性的情境中。MDP是强化学习的一部分，其核心思想是通过在不同状态下采取不同的动作来最大化期望累积奖励。</p>
+<p>MDP 的基本要素包括：</p>
+<ol>
+<li class="lvl-3">
+<p><strong>状态（States）：</strong> 描述系统可能处于的不同情况或状态。</p>
+</li>
+<li class="lvl-3">
+<p><strong>动作（Actions）：</strong> 描述在给定状态下可以采取的决策或动作。</p>
+</li>
+<li class="lvl-3">
+<p><strong>转移概率（Transition Probabilities）：</strong> 描述在执行某个动作后系统从一个状态转移到另一个状态的概率。</p>
+</li>
+<li class="lvl-3">
+<p><strong>奖励函数（Reward Function）：</strong> 描述在执行某个动作后系统获得的奖励。</p>
+</li>
+</ol>
+<p>MDP 是一种用于制定强化学习问题的框架，其中代理（agent）通过在不同状态下执行不同动作来学习如何最大化累积奖励。这种框架在许多领域都有应用，例如机器人控制、游戏策略、资源管理等。</p>
+<p>关于上下文赌博机问题，MDP 可以与上下文结合，形成上下文MDP（Contextual MDP）来处理带有上下文信息的决策问题。在上下文MDP中，每个状态不仅包括环境的内在状态，还包括外部上下文信息。这种方法可以很自然地扩展到上下文赌博机问题，其中上下文信息被视为状态的一部分。</p>
+<p>因此，MDP提供了一个通用的数学框架，可以用于建模并解决包括上下文赌博机在内的各种强化学习问题。</p>
+<h3 id="OUR-MDP">OUR MDP</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>状态（States）：</strong> 包含有关部分布局的信息，包括电路图、节点和边的特征，当前待放置的节点以及电路图的元数据。</p>
+</li>
+<li class="lvl-3">
+<p><strong>动作（Actions）：</strong> 当前宏可以放置在网格单元(grid cells of the chip canvas canvas)上的所有可能位置。</p>
+</li>
+<li class="lvl-3">
+<p>**转移概率（Transition Probabilities）：**在给定状态下执行某个动作后,所有可能的下一状态的概率分布</p>
+<p>==TODO:==这个转移是确定的吗?</p>
+</li>
+<li class="lvl-3">
+<p><strong>奖励函数（Reward Function）：</strong> 奖励是代理导线长度、拥塞和密度的负权重和。每次迭代只关心最终结果的情况(因此中间状态的奖励函数简单置零)</p>
+</li>
+</ol>
+<h3 id="具体实现">具体实现</h3>
+<h4 id="loss-function">loss function</h4>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fe4c7357af1ad4f71591fe165bff42e4/202312181835251.png" alt="image-20231218183504210"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>θ: RL agent</p>
+</li>
+<li class="lvl-2">
+<p>G: dataset of netlists of size K</p>
+</li>
+<li class="lvl-2">
+<p>g: one netlist in G</p>
+</li>
+<li class="lvl-2">
+<p>$R_{p.g}$: reward of placement p for netlist g</p>
+</li>
+<li class="lvl-2">
+<p>E: expected</p>
+</li>
+<li class="lvl-2">
+<p>πθ: policy distribution 具体而言，πθ描述了在每个可能的状态下，代理选择每个可能动作的概率。我们的强化学习过程实际上就是调整策略的过程.</p>
+</li>
+</ul>
+<h2 id="Designing-domain-adaptive-policies">Designing domain-adaptive policies</h2>
+<ol>
+<li class="lvl-3">
+<p>we first focused on learning rich representations of the state space.</p>
+</li>
+</ol>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">A graph placement methodology</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-number">1.1.</span> <span class="toc-text">intro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outcome"><span class="toc-number">1.1.2.</span> <span class="toc-text">outcome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E4%BA%BA%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text">前人局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text">人类是怎么做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chip-floorplanning-is-a-game"><span class="toc-number">1.1.6.</span> <span class="toc-text">Chip floorplanning is a game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%B7%B1%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.7.</span> <span class="toc-text">更深层的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-Chip-floorplanning-as-a-learning-problem"><span class="toc-number">1.2.</span> <span class="toc-text">第二节:Chip floorplanning as a learning problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Markov-decision-process-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%AE%83%E6%98%AF%E4%B8%8D%E6%98%AF%E5%B8%B8%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%88contextual%EF%BC%89%E8%B5%8C%E5%8D%9A%E6%9C%BA%EF%BC%88bandits%EF%BC%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OUR-MDP"><span class="toc-number">1.2.1.</span> <span class="toc-text">OUR MDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loss-function"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">loss function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Designing-domain-adaptive-policies"><span class="toc-number">1.3.</span> <span class="toc-text">Designing domain-adaptive policies</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&text=A graph placement methodology"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&title=A graph placement methodology"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&is_video=false&description=A graph placement methodology"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=A graph placement methodology&body=Check out this article: https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&title=A graph placement methodology"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&title=A graph placement methodology"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&title=A graph placement methodology"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&title=A graph placement methodology"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&name=A graph placement methodology&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/&t=A graph placement methodology"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
