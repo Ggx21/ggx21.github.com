@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="网络安全总复习 只要反重放攻击，就想到滑动窗口就看到序列号 课程大纲   密码   认证   安全协议   前置知识 无处不在的通信  &#x3D;&#x3D;&gt; 无处不在的网络安全   通信的基本要素：信源、信道、信宿  从哪来,往哪去,怎么去    所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网   hash码的产生不需要key,mac需要key checksum不是认证 攻击方法 1.蛮力破">
+<meta property="og:type" content="article">
+<meta property="og:title" content="网络安全总复习">
+<meta property="og:url" content="https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="网络安全总复习 只要反重放攻击，就想到滑动窗口就看到序列号 课程大纲   密码   认证   安全协议   前置知识 无处不在的通信  &#x3D;&#x3D;&gt; 无处不在的网络安全   通信的基本要素：信源、信道、信宿  从哪来,往哪去,怎么去    所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网   hash码的产生不需要key,mac需要key checksum不是认证 攻击方法 1.蛮力破">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-20T13:44:44.000Z">
+<meta property="article:modified_time" content="2023-12-20T16:00:06.875Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="network_security">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>网络安全总复习</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/computer_orgnization/%E5%AD%98%E5%82%A8/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/Somniloquy/%E6%9C%9F%E6%9C%AB%E8%87%AA%E6%95%91%E8%AE%A1%E5%88%92/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网络安全总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.1.</span> <span class="toc-text">课程大纲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%9B%AE%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.蛮力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.中间人攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">3.拒绝服务攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%97%85%E6%AF%92-%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">4.病毒(恶意软件)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E5%AE%88%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">防守方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enigma"><span class="toc-number">1.2.3.</span> <span class="toc-text">Enigma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.3.</span> <span class="toc-text">密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E5%AF%86%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">初识密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81-%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.</span> <span class="toc-text">认证&#x3D;比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.</span> <span class="toc-text">消息认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.2.</span> <span class="toc-text">身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87%EF%BC%9ACIA"><span class="toc-number">1.4.3.</span> <span class="toc-text">网路安全目标：CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">无线局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E7%BD%91VPN"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">虚拟专用网VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%83%BD%E6%8F%90%E4%BE%9B"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text">vpn能提供</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text">vpn解决方案</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text">安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.5.1.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">1.5.2.</span> <span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssl"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">ssl</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.5.3.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#https"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">https</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SET%EF%BC%9A%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93%E5%AE%89%E5%85%A8"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">SET：电子交易安全</span></a></li></ol></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        网络安全总复习
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-20T13:44:44.000Z" class="dt-published" itemprop="datePublished">2023-12-20</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/network-security/">network_security</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/network-security/" rel="tag">network_security</a>, <a class="p-category" href="/tags/notes/" rel="tag">notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>网络安全总复习</h1>
+<p>只要反重放攻击，就想到滑动窗口就看到序列号</p>
+<h2 id="课程大纲">课程大纲</h2>
+<ol>
+<li class="lvl-3">
+<p>密码</p>
+</li>
+<li class="lvl-3">
+<p>认证</p>
+</li>
+<li class="lvl-3">
+<p>安全协议</p>
+</li>
+</ol>
+<h2 id="前置知识">前置知识</h2>
+<p>无处不在的通信  ==&gt; 无处不在的网络安全</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>通信的基本要素：信源、信道、信宿</p>
+<blockquote>
+<p>从哪来,往哪去,怎么去</p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网</p>
+</li>
+</ul>
+<p>hash码的产生不需要key,mac需要key</p>
+<p>checksum不是认证</p>
+<h3 id="攻击方法">攻击方法</h3>
+<h4 id="1-蛮力破解">1.蛮力破解</h4>
+<p>使用数字和字母的任意组合，猜出用户名和口令</p>
+<p><strong>字典文件</strong>:将人们常用的密码组合作为探测口令</p>
+<p><strong>撞库攻击</strong></p>
+<h4 id="2-中间人攻击">2.中间人攻击</h4>
+<p>在两个受害者网络链路之间进行数据监听和数据篡改的攻击方式</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据监听</p>
+</li>
+<li class="lvl-2">
+<p>数据篡改</p>
+</li>
+</ul>
+<h4 id="3-拒绝服务攻击">3.拒绝服务攻击</h4>
+<p>企图通过使计算机崩溃或把它压跨来阻止提供服务</p>
+<p>拒绝服务攻击是最容易实施的且最为有效的攻击行为，也是目前网络上存在最多的攻击</p>
+<p>常见攻击方式:</p>
+<p>​	SYN洪泛 (SYN flood) /UDP洪泛(UDP flood) /DNS反射攻击</p>
+<h4 id="4-病毒-恶意软件">4.病毒(恶意软件)</h4>
+<h3 id="防守方法">防守方法</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>加解密技术</p>
+</li>
+<li class="lvl-2">
+<p>访问控制和身份认证</p>
+</li>
+<li class="lvl-2">
+<p>防火墙技术</p>
+</li>
+<li class="lvl-2">
+<p>防病毒技术</p>
+</li>
+<li class="lvl-2">
+<p>补丁技术</p>
+</li>
+</ul>
+<h3 id="Enigma">Enigma</h3>
+<h2 id="密码学基础">密码学基础</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Enigma</p>
+</li>
+<li class="lvl-2">
+<p>凯撒</p>
+</li>
+<li class="lvl-2">
+<p>playfair</p>
+</li>
+<li class="lvl-2">
+<p>hill</p>
+</li>
+<li class="lvl-2">
+<p>vigenere</p>
+</li>
+<li class="lvl-2">
+<p>transportition</p>
+</li>
+<li class="lvl-2">
+<p>S-des</p>
+</li>
+<li class="lvl-2">
+<p>RSA</p>
+</li>
+<li class="lvl-2">
+<p>Diffie-Hellman</p>
+<p>都得会</p>
+</li>
+</ul>
+<h3 id="初识密码">初识密码</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>什么是加密</p>
+</li>
+<li class="lvl-2">
+<p>什么是解密</p>
+</li>
+<li class="lvl-2">
+<p>密码发展历程</p>
+<ol>
+<li class="lvl-5">
+<p>古典密码</p>
+<p>代换和置换，破译不会考</p>
+<p><mark>代换置换必考</mark></p>
+<p>enigma使用的就是代换技术</p>
+</li>
+<li class="lvl-5">
+<p>计算机密码</p>
+</li>
+<li class="lvl-5">
+<p>1976非对称密码的出现</p>
+</li>
+</ol>
+<p>对称密码加密解密用的相同密码</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>对称密码：加密k1，k2，k3.</p>
+<p>S-DES必考，公式不用背，校验对算法的理解和现场计算二进制的能力。</p>
+<p>其他算法了解特性，</p>
+</li>
+<li class="lvl-4">
+<p>非对称密码：</p>
+<p>公钥Ku，私钥Kr</p>
+<ul class="lvl-4">
+<li class="lvl-6">
+<p>加密</p>
+</li>
+<li class="lvl-6">
+<p>签名</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>密钥分配</p>
+<ul class="lvl-2">
+<li class="lvl-4">概述</li>
+<li class="lvl-4">三个不同情况</li>
+</ul>
+</li>
+</ul>
+<h2 id="认证-比较">认证=比较</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>MAC</p>
+</li>
+<li class="lvl-2">
+<p>HASH</p>
+</li>
+<li class="lvl-2">
+<p>MD5</p>
+</li>
+</ul>
+<p>不会有计算，懂原理会分析，出现在简答中</p>
+<p>凡认证，必加密</p>
+<p>认证是单向的，并不一定需要解密</p>
+<h3 id="消息认证">消息认证</h3>
+<ol>
+<li class="lvl-3">
+<p>基本概念</p>
+</li>
+<li class="lvl-3">
+<p>三种认证函数</p>
+</li>
+<li class="lvl-3">
+<p>hash</p>
+<p>多次压缩</p>
+</li>
+<li class="lvl-3">
+<p>常用hash算法</p>
+<p>md5/sha-1（不会现场算）但是要讲清楚md5的基本原理，其他算法的基本原理</p>
+</li>
+<li class="lvl-3">
+<p>数字签名算法稍作了解</p>
+</li>
+</ol>
+<h3 id="身份认证">身份认证</h3>
+<p>消息认证的应用</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>电子身份认证技术</p>
+</li>
+<li class="lvl-2">
+<p>网站身份认证</p>
+</li>
+</ul>
+<h3 id="网路安全目标：CIA">网路安全目标：CIA</h3>
+<h4 id="无线局域网">无线局域网</h4>
+<p>从夏威夷大学的aloha发展而来</p>
+<p>对网络技术要求不是很高</p>
+<p>要求：无线局域网加密认证技术是如何体现的。</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>无加密认证（ssid，Mac）</p>
+</li>
+<li class="lvl-2">
+<p>有线等效加密技术WEP</p>
+</li>
+<li class="lvl-2">
+<p>WPA（WIFI proteted Access）</p>
+</li>
+</ul>
+<h4 id="虚拟专用网VPN">虚拟专用网VPN</h4>
+<h5 id="vpn能提供">vpn能提供</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据机密性</p>
+</li>
+<li class="lvl-2">
+<p>数据完整性</p>
+</li>
+<li class="lvl-2">
+<p>数据源身份认证</p>
+</li>
+<li class="lvl-2">
+<p>重放攻击保护</p>
+</li>
+</ul>
+<h5 id="vpn解决方案">vpn解决方案</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>基于数据链路层的l2tp/pptp/l2f(现在不用了，我猜也不是重点，知道为什么不用了)</p>
+</li>
+<li class="lvl-2">
+<p>基于网络层的IPsec/IKE</p>
+<p>IPsec实际干活，IKE用来管理</p>
+</li>
+<li class="lvl-2">
+<p>基于传输层的SSL</p>
+<p>在传输层操作与网络层操作有什么区别？传输层更加灵活</p>
+</li>
+</ul>
+<h2 id="安全协议">安全协议</h2>
+<h3 id="网络层">网络层</h3>
+<p>IPsec：ip+security</p>
+<blockquote>
+<p>认证和加密</p>
+<p>认证头AH</p>
+<p>封装安全载荷ESP</p>
+<p>SA：安全关联</p>
+<p>传输模式与隧道模式</p>
+</blockquote>
+<p>IKE：IPsec管理密钥</p>
+<blockquote>
+<p>帮助IPsec维护数据</p>
+<p>与其他终端交换信息</p>
+</blockquote>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>sadb</p>
+</li>
+<li class="lvl-2">
+<p>spdb</p>
+</li>
+<li class="lvl-2">
+<p>报文格式</p>
+</li>
+<li class="lvl-2">
+<p>两个阶段三个模式</p>
+</li>
+</ul>
+<h3 id="传输层">传输层</h3>
+<h4 id="ssl">ssl</h4>
+<p>为应用层服务</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可以选择协议通过</p>
+</li>
+<li class="lvl-2">
+<p>ssl报头是记录协议还是握手协议？</p>
+<blockquote>
+<p><mark>记录协议，我上课在听天书，这两个概念是什么意思？</mark></p>
+</blockquote>
+</li>
+<li class="lvl-2">
+<p>握手协议的基本原理</p>
+</li>
+</ul>
+<h3 id="应用层">应用层</h3>
+<h4 id="https">https</h4>
+<p>http+ssl</p>
+<p>http的安全性分析，http的工作原理</p>
+<h4 id="SET：电子交易安全">SET：电子交易安全</h4>
+<p>关键就是双签名，<mark>双签名必考</mark></p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网络安全总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.1.</span> <span class="toc-text">课程大纲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%9B%AE%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.蛮力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.中间人攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">3.拒绝服务攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%97%85%E6%AF%92-%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">4.病毒(恶意软件)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E5%AE%88%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">防守方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enigma"><span class="toc-number">1.2.3.</span> <span class="toc-text">Enigma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.3.</span> <span class="toc-text">密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E5%AF%86%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">初识密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81-%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.</span> <span class="toc-text">认证&#x3D;比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.</span> <span class="toc-text">消息认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.2.</span> <span class="toc-text">身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87%EF%BC%9ACIA"><span class="toc-number">1.4.3.</span> <span class="toc-text">网路安全目标：CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">无线局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E7%BD%91VPN"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">虚拟专用网VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%83%BD%E6%8F%90%E4%BE%9B"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text">vpn能提供</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text">vpn解决方案</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text">安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.5.1.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">1.5.2.</span> <span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssl"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">ssl</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.5.3.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#https"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">https</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SET%EF%BC%9A%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93%E5%AE%89%E5%85%A8"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">SET：电子交易安全</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&text=网络安全总复习"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&title=网络安全总复习"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&is_video=false&description=网络安全总复习"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=网络安全总复习&body=Check out this article: https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&title=网络安全总复习"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&title=网络安全总复习"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&title=网络安全总复习"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&title=网络安全总复习"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&name=网络安全总复习&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/network_security/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/&t=网络安全总复习"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
