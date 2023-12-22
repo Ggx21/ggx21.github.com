@@ -9,20 +9,21 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="存储 层次化存储   DRAM : 动态随机访问存储   SRAM : 静态随机访问存储   flash ：闪存   disk ：磁盘   SRAM feature   一个读写端口   读写访问时间不同   对于任意位置的数据，SRAM访问时间固定   一般集成在芯片上   DRAM   分两次送行列   dram以bank方式来组织，一个bank有很多行，一个行有很多列   dram缓存行数据">
+  <meta name="description" content="存储 两个经常混淆的词汇：   可靠性：设备出现故障的几率来衡量。  改善使用环境 减少组成部件 提高部件可靠性    可用性：系统能正常运行的几率来衡量。  增加校验码（硬件冗余）     可用性的提高可能带来可靠性的降低 $$ 你正常 \neq 你没问题 $$  层次化存储   DRAM : 动态随机访问存储   SRAM : 静态随机访问存储   flash ：闪存   disk ：磁盘">
 <meta property="og:type" content="article">
 <meta property="og:title" content="存储">
 <meta property="og:url" content="https://ggxloveslife.top/notes/computer_orgnization/%E5%AD%98%E5%82%A8/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="存储 层次化存储   DRAM : 动态随机访问存储   SRAM : 静态随机访问存储   flash ：闪存   disk ：磁盘   SRAM feature   一个读写端口   读写访问时间不同   对于任意位置的数据，SRAM访问时间固定   一般集成在芯片上   DRAM   分两次送行列   dram以bank方式来组织，一个bank有很多行，一个行有很多列   dram缓存行数据">
+<meta property="og:description" content="存储 两个经常混淆的词汇：   可靠性：设备出现故障的几率来衡量。  改善使用环境 减少组成部件 提高部件可靠性    可用性：系统能正常运行的几率来衡量。  增加校验码（硬件冗余）     可用性的提高可能带来可靠性的降低 $$ 你正常 \neq 你没问题 $$  层次化存储   DRAM : 动态随机访问存储   SRAM : 静态随机访问存储   flash ：闪存   disk ：磁盘">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/81da87d65c19d73de349013ebaa100a3/202312201413838.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/13c3834bab98e872fe97e99bbed9861f/202312201424172.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/9dce4c1f0f4fa6120d3c6ff68a07010b/202312211037177.png">
 <meta property="article:published_time" content="2023-12-20T14:25:17.000Z">
-<meta property="article:modified_time" content="2023-12-20T16:00:06.864Z">
+<meta property="article:modified_time" content="2023-12-21T03:26:20.909Z">
 <meta property="article:author" content="Andy Gao">
-<meta property="article:tag" content="computer_orgnization">
 <meta property="article:tag" content="notes">
+<meta property="article:tag" content="computer_orgnization">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/81da87d65c19d73de349013ebaa100a3/202312201413838.png">
      
@@ -123,6 +124,22 @@
             >回到主页</span
           >
         </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/compiler_construction/error/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
          
         <li>
           <a
@@ -161,7 +178,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">存储</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E5%AD%98%E5%82%A8"><span class="toc-number">1.1.</span> <span class="toc-text">层次化存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SRAM"><span class="toc-number">1.2.</span> <span class="toc-text">SRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#feature"><span class="toc-number">1.2.1.</span> <span class="toc-text">feature</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DRAM"><span class="toc-number">1.3.</span> <span class="toc-text">DRAM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cache"><span class="toc-number">1.4.</span> <span class="toc-text">cache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84"><span class="toc-number">1.4.2.</span> <span class="toc-text">直接映射</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">映射方法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.3.</span> <span class="toc-text">全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%EF%BC%9A%E7%BB%93%E5%90%88%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E5%92%8C%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.4.</span> <span class="toc-text">组相联：结合直接映射和全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.4.5.</span> <span class="toc-text">块大小的影响?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E5%A4%B1%E6%95%88"><span class="toc-number">1.4.6.</span> <span class="toc-text">cache失效</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E7%BB%8F%E5%B8%B8%E6%B7%B7%E6%B7%86%E7%9A%84%E8%AF%8D%E6%B1%87%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">两个经常混淆的词汇：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E5%AD%98%E5%82%A8"><span class="toc-number">1.1.</span> <span class="toc-text">层次化存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SRAM"><span class="toc-number">1.2.</span> <span class="toc-text">SRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#feature"><span class="toc-number">1.2.1.</span> <span class="toc-text">feature</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DRAM"><span class="toc-number">1.3.</span> <span class="toc-text">DRAM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cache"><span class="toc-number">1.4.</span> <span class="toc-text">cache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84"><span class="toc-number">1.4.2.</span> <span class="toc-text">直接映射</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">映射方法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.3.</span> <span class="toc-text">全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%EF%BC%9A%E7%BB%93%E5%90%88%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E5%92%8C%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.4.</span> <span class="toc-text">组相联：结合直接映射和全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.4.5.</span> <span class="toc-text">块大小的影响?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E5%A4%B1%E6%95%88"><span class="toc-number">1.4.6.</span> <span class="toc-text">cache失效</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cache%E7%BC%BA%E5%A4%B1%E7%9A%84%E5%9B%9B%E7%B1%BB%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">cache缺失的四类原因：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E7%9A%84%E6%8E%A5%E5%85%A5"><span class="toc-number">1.4.7.</span> <span class="toc-text">cache的接入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%A7%E6%8E%A5%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.7.1.</span> <span class="toc-text">侧接法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%94%E6%96%AD%E6%B3%95"><span class="toc-number">1.4.7.2.</span> <span class="toc-text">隔断法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-number">1.4.8.</span> <span class="toc-text">应用：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DISK"><span class="toc-number">1.5.</span> <span class="toc-text">DISK</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%AE%BF%E9%97%AE"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">磁盘访问</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA%EF%BC%9A"><span class="toc-number">1.5.1.</span> <span class="toc-text">结论：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAID%EF%BC%9A"><span class="toc-number">1.5.2.</span> <span class="toc-text">RAID：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -219,6 +236,29 @@
 
   <div class="content e-content" itemprop="articleBody">
     <h1>存储</h1>
+<h3 id="两个经常混淆的词汇：">两个经常混淆的词汇：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>可靠性：设备出现故障的几率来衡量。</p>
+<ul class="lvl-2">
+<li class="lvl-4">改善使用环境</li>
+<li class="lvl-4">减少组成部件</li>
+<li class="lvl-4">提高部件可靠性</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>可用性：系统能正常运行的几率来衡量。</p>
+<ul class="lvl-2">
+<li class="lvl-4">增加校验码（硬件冗余）</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>可用性的提高可能带来可靠性的降低<br>
+$$<br>
+你正常 \neq 你没问题<br>
+$$</p>
+</blockquote>
 <h2 id="层次化存储">层次化存储</h2>
 <ul class="lvl-0">
 <li class="lvl-2">
@@ -281,6 +321,9 @@
 <p>组相联</p>
 </li>
 </ul>
+<div class="tips">
+<p>相联度每增加一倍，cache的组数减少一半，索引的长度也增加一位</p>
+</div>
 <h3 id="直接映射">直接映射</h3>
 <h4 id="映射方法：">映射方法：</h4>
 <p>例子：五位地址01101，cache有8项，那么地址第三位是索引，剩下两项是tag</p>
@@ -325,6 +368,188 @@ $$<br>
 </li>
 </ul>
 <h3 id="cache失效">cache失效</h3>
+<h4 id="cache缺失的四类原因：">cache缺失的四类原因：</h4>
+<ol>
+<li class="lvl-3">
+<p>必然缺失</p>
+<p>对策：预取</p>
+</li>
+<li class="lvl-3">
+<p>容量缺失</p>
+<p>增加cache容量</p>
+</li>
+<li class="lvl-3">
+<p>冲突缺失</p>
+<p>增加cache容量</p>
+<p>增加相联的路数</p>
+</li>
+<li class="lvl-3">
+<p>无效缺失</p>
+<p>其他进程修改了主存数据块</p>
+</li>
+</ol>
+<h3 id="cache的接入">cache的接入</h3>
+<h4 id="侧接法：">侧接法：</h4>
+<p>像入出设备似的连接到总线上，优点是结构简单，成本低，缺点是不利于降低总线占用率。</p>
+<h4 id="隔断法">隔断法</h4>
+<p>把原来的总线打断为两段</p>
+<h3 id="应用：">应用：</h3>
+<p>注意c语言是行优先的，其中<br>
+$$<br>
+C[i+j*n]=C[i][j]<br>
+$$</p>
+<h2 id="DISK">DISK</h2>
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/9dce4c1f0f4fa6120d3c6ff68a07010b/202312211037177.png" alt="image-20231221103751115" style="zoom: 50%;" />
+<h4 id="磁盘访问">磁盘访问</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>寻道（tracks）</p>
+<p>磁头径向移动</p>
+</li>
+<li class="lvl-2">
+<p>寻扇</p>
+<p>等待磁盘旋转</p>
+</li>
+<li class="lvl-2">
+<p>数据传输</p>
+</li>
+</ul>
+<p>磁盘访问时间 = 寻道时间 + 旋转延迟 + 传输时间 + 磁盘控制器延迟</p>
+<p>其中旋转延迟等于磁盘旋转半周的时间</p>
+<p>传输时间就是读取大小/读取速度</p>
+<h3 id="结论：">结论：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>额外开销在总开销中比例较大 =&gt;一次传输大量数据比较有效</p>
+</li>
+<li class="lvl-2">
+<p>将页面存放在相邻扇区中可以避免额外的寻道开销</p>
+</li>
+</ul>
+<h3 id="RAID：">RAID：</h3>
+<p>RAID，即冗余阵列独立磁盘（Redundant Array of Independent Disks），是一种将多个硬盘驱动器组合在一起以提供性能、冗余或两者兼而有之的存储技术。RAID技术旨在通过在多个硬盘之间分发或复制数据，提高系统性能、数据可用性和/或容错能力。</p>
+<h4 id="定义">定义</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>廉价磁盘的冗余阵列（Redundant Arrays of Inexpensive Disks）</p>
+</li>
+<li class="lvl-2">
+<p>用N 个低价磁盘构成一个统一管理的阵列，以取代特贵单一磁盘</p>
+</li>
+</ul>
+<ol>
+<li class="lvl-3">
+<p><strong>RAID 0（条带化）：</strong></p>
+<ol>
+<li class="lvl-6">
+<p><strong>概念：</strong> 数据被分割成strip，然后分别存储在不同的硬盘上。</p>
+</li>
+<li class="lvl-6">
+<p><strong>性能：</strong> 提供良好的读写性能，因为数据被分割并同时写入多个硬盘。</p>
+</li>
+<li class="lvl-6">
+<p><strong>冗余：</strong> 无冗余，一个硬盘故障将导致数据丢失。</p>
+</li>
+<li class="lvl-6">
+<p><strong>用途：</strong> 适用于对性能要求较高而对数据冗余要求较低的场景。</p>
+</li>
+<li class="lvl-6">
+<p><strong>示意图：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|-----------------|      |-----------------|</span><br><span class="line">| Data Block 1    |      | Data Block 2    |</span><br><span class="line">|-----------------|      |-----------------|</span><br><span class="line">| Data Block 3    |      | Data Block 4    |</span><br><span class="line">|-----------------|      |-----------------|</span><br></pre></td></tr></table></figure>
+<p>在这个示意图中，数据块1和2同时写入硬盘1和硬盘2，数据块3和4同时写入硬盘3和硬盘4，以此类推。</p>
+</li>
+</ol>
+</li>
+<li class="lvl-3">
+<p><strong>RAID 1（镜像）：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p><strong>性能：</strong> 读性能可能比单个硬盘更好，写性能通常比RAID 0差。</p>
+</li>
+<li class="lvl-5">
+<p><strong>冗余：</strong> 数据被完全复制到两个硬盘上，其中一个硬盘失效时，另一个仍然可用。</p>
+</li>
+<li class="lvl-5">
+<p><strong>用途：</strong> 适用于对数据冗余要求高而对性能要求适中的场景。</p>
+</li>
+<li class="lvl-5">
+<p><strong>概念：</strong> 数据被完全复制到两个硬盘上。</p>
+</li>
+<li class="lvl-5">
+<p><strong>示意图：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|-----------------|      |-----------------|</span><br><span class="line">|   Data Block    |      |   Data Block    |</span><br><span class="line">|-----------------|      |-----------------|</span><br></pre></td></tr></table></figure>
+<p>在这个示意图中，相同的数据块被同时写入硬盘1和硬盘2，实现数据的冗余备份。</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>RAID 5：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p><strong>性能：</strong> 提供较好的读性能，写性能比RAID 1好。</p>
+</li>
+<li class="lvl-5">
+<p><strong>冗余：</strong> 通过分布式冗余校验（Parity）实现数据冗余，其中一个硬盘失效时，可以通过其他硬盘的数据和校验信息进行恢复。</p>
+</li>
+<li class="lvl-5">
+<p><strong>用途：</strong> 平衡了性能和冗余需求，适用于中等负载的通用情况。</p>
+</li>
+<li class="lvl-5">
+<p><strong>概念：</strong> 数据和校验信息被分布式存储在多个硬盘上。</p>
+</li>
+<li class="lvl-5">
+<p><strong>示意图：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">|-----------------|      |-----------------|</span><br><span class="line">|    Data 1      |      |   Parity 1      |</span><br><span class="line">|-----------------|      |-----------------|</span><br><span class="line">|    Data 2      |      |   Parity 2      |</span><br><span class="line">|-----------------|      |-----------------|</span><br><span class="line">|    Data 3      |      |   Parity 3      |</span><br><span class="line">|-----------------|      |-----------------|</span><br></pre></td></tr></table></figure>
+<p>在这个示意图中，数据块和校验信息（通过异或运算产生）交替存储在不同的硬盘上，允许一个硬盘失效时通过其他硬盘的数据和校验信息进行恢复。</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>RAID 6：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p><strong>性能：</strong> 类似于RAID 5，但写性能可能稍差。</p>
+</li>
+<li class="lvl-5">
+<p><strong>冗余：</strong> 使用双分布式冗余校验，允许两个硬盘同时失效而不导致数据丢失。</p>
+</li>
+<li class="lvl-5">
+<p><strong>用途：</strong> 针对更高的冗余需求，适用于大容量硬盘阵列。</p>
+</li>
+<li class="lvl-5">
+<p><strong>概念：</strong> 类似于RAID 5，但使用双分布式冗余校验。</p>
+</li>
+<li class="lvl-5">
+<p><strong>示意图：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">|-----------------|      |-----------------|</span><br><span class="line">|    Data 1      |      |   Parity 1      |</span><br><span class="line">|-----------------|      |-----------------|</span><br><span class="line">|    Data 2      |      |   Parity 2      |</span><br><span class="line">|-----------------|      |-----------------|</span><br><span class="line">|    Data 3      |      |   Parity 3      |</span><br><span class="line">|-----------------|      |   Parity 4      |</span><br><span class="line">|-----------------|      |-----------------|</span><br></pre></td></tr></table></figure>
+<p>在这个示意图中，除了数据块和校验信息外，还有第二份校验信息，允许两个硬盘失效时进行数据恢复。</p>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>RAID 10（1+0）：</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p><strong>性能：</strong> 提供很好的读写性能。</p>
+</li>
+<li class="lvl-5">
+<p><strong>冗余：</strong> 数据被镜像，允许多个硬盘失效，只要不是同一镜像组内的两个硬盘。</p>
+</li>
+<li class="lvl-5">
+<p><strong>用途：</strong> 结合了RAID 1和RAID 0的优点，适用于对性能和冗余都有高要求的应用。</p>
+</li>
+<li class="lvl-5">
+<p><strong>概念：</strong> 结合了RAID 1和RAID 0的优点，数据被同时条带化和镜像。</p>
+</li>
+<li class="lvl-5">
+<p><strong>示意图：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|-----------------|      |-----------------|</span><br><span class="line">| Data Block 1    |      | Data Block 1    |</span><br><span class="line">|-----------------|      |-----------------|</span><br><span class="line">| Data Block 2    |      | Data Block 2    |</span><br><span class="line">|-----------------|      |-----------------|</span><br></pre></td></tr></table></figure>
+<p>在这个示意图中，数据块1和2同时写入硬盘1和硬盘2，同时也被复制到硬盘3和硬盘4，实现数据的冗余备份和提高读写性能。</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>选择合适的RAID级别通常取决于对性能、冗余和成本的特定需求。RAID技术提供了在硬盘阵列中平衡这些要求的选项。</p>
 
   </div>
 </article>
@@ -372,7 +597,7 @@ $$<br>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">存储</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E5%AD%98%E5%82%A8"><span class="toc-number">1.1.</span> <span class="toc-text">层次化存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SRAM"><span class="toc-number">1.2.</span> <span class="toc-text">SRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#feature"><span class="toc-number">1.2.1.</span> <span class="toc-text">feature</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DRAM"><span class="toc-number">1.3.</span> <span class="toc-text">DRAM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cache"><span class="toc-number">1.4.</span> <span class="toc-text">cache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84"><span class="toc-number">1.4.2.</span> <span class="toc-text">直接映射</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">映射方法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.3.</span> <span class="toc-text">全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%EF%BC%9A%E7%BB%93%E5%90%88%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E5%92%8C%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.4.</span> <span class="toc-text">组相联：结合直接映射和全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.4.5.</span> <span class="toc-text">块大小的影响?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E5%A4%B1%E6%95%88"><span class="toc-number">1.4.6.</span> <span class="toc-text">cache失效</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E7%BB%8F%E5%B8%B8%E6%B7%B7%E6%B7%86%E7%9A%84%E8%AF%8D%E6%B1%87%EF%BC%9A"><span class="toc-number">1.0.1.</span> <span class="toc-text">两个经常混淆的词汇：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%82%E6%AC%A1%E5%8C%96%E5%AD%98%E5%82%A8"><span class="toc-number">1.1.</span> <span class="toc-text">层次化存储</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SRAM"><span class="toc-number">1.2.</span> <span class="toc-text">SRAM</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#feature"><span class="toc-number">1.2.1.</span> <span class="toc-text">feature</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DRAM"><span class="toc-number">1.3.</span> <span class="toc-text">DRAM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cache"><span class="toc-number">1.4.</span> <span class="toc-text">cache</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">1.4.1.</span> <span class="toc-text">结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84"><span class="toc-number">1.4.2.</span> <span class="toc-text">直接映射</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%A0%E5%B0%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">映射方法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.3.</span> <span class="toc-text">全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%9B%B8%E8%81%94%EF%BC%9A%E7%BB%93%E5%90%88%E7%9B%B4%E6%8E%A5%E6%98%A0%E5%B0%84%E5%92%8C%E5%85%A8%E7%9B%B8%E8%81%94"><span class="toc-number">1.4.4.</span> <span class="toc-text">组相联：结合直接映射和全相联</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97%E5%A4%A7%E5%B0%8F%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">1.4.5.</span> <span class="toc-text">块大小的影响?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E5%A4%B1%E6%95%88"><span class="toc-number">1.4.6.</span> <span class="toc-text">cache失效</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cache%E7%BC%BA%E5%A4%B1%E7%9A%84%E5%9B%9B%E7%B1%BB%E5%8E%9F%E5%9B%A0%EF%BC%9A"><span class="toc-number">1.4.6.1.</span> <span class="toc-text">cache缺失的四类原因：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cache%E7%9A%84%E6%8E%A5%E5%85%A5"><span class="toc-number">1.4.7.</span> <span class="toc-text">cache的接入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%A7%E6%8E%A5%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.7.1.</span> <span class="toc-text">侧接法：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%94%E6%96%AD%E6%B3%95"><span class="toc-number">1.4.7.2.</span> <span class="toc-text">隔断法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%EF%BC%9A"><span class="toc-number">1.4.8.</span> <span class="toc-text">应用：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DISK"><span class="toc-number">1.5.</span> <span class="toc-text">DISK</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E8%AE%BF%E9%97%AE"><span class="toc-number">1.5.0.1.</span> <span class="toc-text">磁盘访问</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA%EF%BC%9A"><span class="toc-number">1.5.1.</span> <span class="toc-text">结论：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RAID%EF%BC%9A"><span class="toc-number">1.5.2.</span> <span class="toc-text">RAID：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">定义</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
