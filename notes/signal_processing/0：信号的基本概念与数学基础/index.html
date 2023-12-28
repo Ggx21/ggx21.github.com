@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="0：信号的基本概念与数学基础 基本概念 信号就是随时间变化的物理量   模拟信号与数字信号:  模拟信号：连续变化的信号，可以在任何时间点上取任何值。 数字信号：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。    采样：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。   量化：将连续幅度的信号转换为离散幅度的过程。   时域与频域：  时域分析：直接在时间轴上考察">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0：信号的基本概念与数学基础">
+<meta property="og:url" content="https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="0：信号的基本概念与数学基础 基本概念 信号就是随时间变化的物理量   模拟信号与数字信号:  模拟信号：连续变化的信号，可以在任何时间点上取任何值。 数字信号：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。    采样：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。   量化：将连续幅度的信号转换为离散幅度的过程。   时域与频域：  时域分析：直接在时间轴上考察">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-12-28T02:24:47.000Z">
+<meta property="article:modified_time" content="2023-12-28T16:00:07.173Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="signal_processing">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>0：信号的基本概念与数学基础</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/Somniloquy/%E6%97%A0%E8%81%8A%E7%9A%84%E4%B8%80%E5%A4%A9/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">0：信号的基本概念与数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.0.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8D%B7%E7%A7%AF%EF%BC%88%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.2.</span> <span class="toc-text">函数卷积（连续时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8D%B7%E7%A7%AF%EF%BC%88%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.3.</span> <span class="toc-text">序列卷积（离散时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text">理解卷积</span></a></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        0：信号的基本概念与数学基础
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-28T02:24:47.000Z" class="dt-published" itemprop="datePublished">2023-12-28</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/signal-processing/">signal_processing</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/notes/" rel="tag">notes</a>, <a class="p-category" href="/tags/signal-processing/" rel="tag">signal_processing</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>0：信号的基本概念与数学基础</h1>
+<h3 id="基本概念">基本概念</h3>
+<p>信号就是随时间变化的物理量</p>
+<ol>
+<li class="lvl-3">
+<p><strong>模拟信号与数字信号</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>模拟信号</strong>：连续变化的信号，可以在任何时间点上取任何值。</li>
+<li class="lvl-5"><strong>数字信号</strong>：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>采样</strong>：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。</p>
+</li>
+<li class="lvl-3">
+<p><strong>量化</strong>：将连续幅度的信号转换为离散幅度的过程。</p>
+</li>
+<li class="lvl-3">
+<p><strong>时域与频域</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>时域分析</strong>：直接在时间轴上考察信号，观察其随时间变化的特性。</li>
+<li class="lvl-5"><strong>频域分析</strong>：通过数学变换，如傅里叶变换，将信号转换到频域进行分析，观察信号的频率成分。</li>
+</ul>
+</li>
+</ol>
+<p>当然，函数卷积和序列卷积是信号处理中的基本运算，它们描述了两个信号或函数结合产生第三个信号的过程，通常在系统响应和滤波等应用中非常关键。下面是这两种卷积的定义和公式：</p>
+<h3 id="函数卷积（连续时间卷积）">函数卷积（连续时间卷积）</h3>
+<p>对于两个连续时间函数( f(t) )和( g(t) )，它们的卷积表示为( f(t) * g(t) )，定义为：</p>
+<p>$$<br>
+(f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t - \tau) d\tau<br>
+$$<br>
+这个积分表达式计算了在所有可能的时间偏移下，一个函数翻转并平移后与另一个函数的乘积的总和。</p>
+<h3 id="序列卷积（离散时间卷积）">序列卷积（离散时间卷积）</h3>
+<p>对于两个离散时间序列( x[n] )和( h[n] )，它们的卷积表示为( x[n] * h[n] )，定义为：</p>
+<p>$$<br>
+(x * h)[n] = \sum_{k=-\infty}^{\infty} x[k]h[n - k]<br>
+$$<br>
+在离散时间卷积中，我们对所有可能的时间偏移的乘积求和。</p>
+<h3 id="理解卷积">理解卷积</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>物理意义</strong>：在物理或工程上，卷积常常被解释为一个系统对输入信号的响应。其中一个函数通常代表系统的冲击响应，而另一个函数代表输入信号。</p>
+</li>
+<li class="lvl-2">
+<p><strong>应用</strong>：卷积在信号处理、图像处理、概率、统计和物理学等许多领域有广泛应用。在信号处理中，卷积用于描述线性时不变系统的输出。</p>
+</li>
+</ul>
+<p>在实际应用中，卷积可以通过各种算法实现，包括直接计算、快速傅里叶变换（FFT）等方法。理解卷积的概念和掌握其计算对于深入学习数字信号处理至关重要。</p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">0：信号的基本概念与数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.0.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8D%B7%E7%A7%AF%EF%BC%88%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.2.</span> <span class="toc-text">函数卷积（连续时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8D%B7%E7%A7%AF%EF%BC%88%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.3.</span> <span class="toc-text">序列卷积（离散时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text">理解卷积</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&text=0：信号的基本概念与数学基础"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&title=0：信号的基本概念与数学基础"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&is_video=false&description=0：信号的基本概念与数学基础"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=0：信号的基本概念与数学基础&body=Check out this article: https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&title=0：信号的基本概念与数学基础"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&title=0：信号的基本概念与数学基础"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&title=0：信号的基本概念与数学基础"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&title=0：信号的基本概念与数学基础"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&name=0：信号的基本概念与数学基础&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/&t=0：信号的基本概念与数学基础"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2023 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
