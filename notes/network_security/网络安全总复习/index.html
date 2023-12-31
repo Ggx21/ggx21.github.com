@@ -17,7 +17,7 @@
 <meta property="og:description" content="网络安全总复习 只要反重放攻击，就想到滑动窗口就看到序列号 课程大纲   密码   认证   安全协议   前置知识 无处不在的通信  &#x3D;&#x3D;&gt; 无处不在的网络安全   通信的基本要素：信源、信道、信宿  从哪来,往哪去,怎么去    所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网   hash码的产生不需要key,mac需要key checksum不是认证 攻击方法 1.蛮力破">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-20T13:44:44.000Z">
-<meta property="article:modified_time" content="2023-12-29T02:56:50.102Z">
+<meta property="article:modified_time" content="2023-12-31T12:48:31.893Z">
 <meta property="article:author" content="Andy Gao">
 <meta property="article:tag" content="network_security">
 <meta property="article:tag" content="notes">
@@ -397,8 +397,8 @@
 </li>
 </ul>
 <p>不会有计算，懂原理会分析，出现在简答中</p>
-<p>凡认证，必加密</p>
-<p>认证是单向的，并不一定需要解密</p>
+<p>凡认证，必比较</p>
+<p>认证是单向的，并不一定需要解密，只要 同一个方向算两遍就可以比较了</p>
 <h3 id="消息认证">消息认证</h3>
 <ol>
 <li class="lvl-3">
@@ -420,7 +420,8 @@
 </li>
 </ol>
 <h3 id="身份认证">身份认证</h3>
-<p>消息认证的应用</p>
+<p>消息认证可以保证通信双方不受第三方的攻击，但是它不能处理通信双方自身发生的攻击</p>
+<p>身份认证的应用</p>
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>电子身份认证技术</p>
@@ -430,6 +431,11 @@
 </li>
 </ul>
 <h3 id="网路安全目标：CIA">网路安全目标：CIA</h3>
+<div class="tips">
+<p>加密仅保证机密性，不保证完整性。</p>
+<p>认证保证完整性</p>
+<p>仅仅公钥加密只能提供保密性，不能提供认证</p>
+</div>
 <h4 id="无线局域网">无线局域网</h4>
 <p>从夏威夷大学的aloha发展而来</p>
 <p>对网络技术要求不是很高</p>
@@ -465,6 +471,7 @@
 <ul class="lvl-0">
 <li class="lvl-2">
 <p>基于数据链路层的l2tp/pptp/l2f(现在不用了，我猜也不是重点，知道为什么不用了)</p>
+<p>数据链路层的VPN技术在认证、数据完整性以及密钥管理等方面的不足，现在已经很少应用</p>
 </li>
 <li class="lvl-2">
 <p>基于网络层的IPsec/IKE</p>
@@ -611,7 +618,7 @@ $$<br>
         
         <footer id="footer">
   <div class="footer-left">
-    Copyright &copy;   2020-2023 Andy Gao
+    Copyright &copy;   2020-2024 Andy Gao
   </div>
   <div class="footer-right">
     <nav>

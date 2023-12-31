@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="信任之旅：心理课程总结  一切烦恼都是人际关系的烦恼。——阿德勒  我的大学生活其实比较顺利。在课堂上的每一个小测试中，我都好像被归类到“正常”的那一派：我是非常纯粹的满足者，我热爱着我所拥有的，我习惯于表达需求与不满，我得心应手地面对压力……。不仅如此，有时和同学聊起天来，我也能感受到同学们对我生活的羡慕：说我是“令人安心的”，“成熟的”，“自信的”…… 但几周前的某一段时间，我感到一阵强烈的挫">
+<meta property="og:type" content="article">
+<meta property="og:title" content="信任之旅：心理课程总结">
+<meta property="og:url" content="https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="信任之旅：心理课程总结  一切烦恼都是人际关系的烦恼。——阿德勒  我的大学生活其实比较顺利。在课堂上的每一个小测试中，我都好像被归类到“正常”的那一派：我是非常纯粹的满足者，我热爱着我所拥有的，我习惯于表达需求与不满，我得心应手地面对压力……。不仅如此，有时和同学聊起天来，我也能感受到同学们对我生活的羡慕：说我是“令人安心的”，“成熟的”，“自信的”…… 但几周前的某一段时间，我感到一阵强烈的挫">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/acc9f452f0ecd535c64062f12c755666/202312310208343.png">
+<meta property="article:published_time" content="2023-12-30T19:03:24.000Z">
+<meta property="article:modified_time" content="2023-12-31T16:00:07.322Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="signal_processing">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/acc9f452f0ecd535c64062f12c755666/202312310208343.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>信任之旅：心理课程总结</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/network_security/%E8%AE%A4%E8%AF%81/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">信任之旅：心理课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%A1%8C%E4%B8%BA"><span class="toc-number">1.1.</span> <span class="toc-text">具体行为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%85%E7%BB%AA%E6%84%9F%E5%8F%97"><span class="toc-number">1.2.</span> <span class="toc-text">情绪感受</span></a></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        信任之旅：心理课程总结
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-30T19:03:24.000Z" class="dt-published" itemprop="datePublished">2023-12-31</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/signal-processing/">signal_processing</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/notes/" rel="tag">notes</a>, <a class="p-category" href="/tags/signal-processing/" rel="tag">signal_processing</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>信任之旅：心理课程总结</h1>
+<blockquote>
+<p>一切烦恼都是人际关系的烦恼。——阿德勒</p>
+</blockquote>
+<p>我的大学生活其实比较顺利。在课堂上的每一个小测试中，我都好像被归类到“正常”的那一派：我是非常纯粹的满足者，我热爱着我所拥有的，我习惯于表达需求与不满，我得心应手地面对压力……。不仅如此，有时和同学聊起天来，我也能感受到同学们对我生活的羡慕：说我是“令人安心的”，“成熟的”，“自信的”……</p>
+<p>但几周前的某一段时间，我感到一阵强烈的挫败感和失落，这让我认识到我内心的不稳定。我突然发现，我也许只是习惯被自己要求变得正常，其实我远没有表现的那样自信与成熟，我需要更深入地探索和改善这些部分。尤其是在人际关系方面，或许我仍然还是一个缺乏安全感的小男孩。我会因为我的好朋友偷偷约了另一个共同好友吃火锅而对他们大为光火，也会为了朋友托辞“没写完”而不借我作业抄而上纲上线到“背叛”。那些日子的晚上我突然想不通了，在床上翻来覆去地想找到我焦虑的根本来源，最终我发现一切烦恼都是人际关系的烦恼。</p>
+<h2 id="具体行为">具体行为</h2>
+<p>所以我决定按照课上学到的方法，和她聊聊。在校门口一家火锅店里，酒过三巡，复杂的情绪在胸中翻腾。面对着我，她显得有些无措，大概是因为这是我们第一次这样正面深入地讨论彼此的不满和误解。</p>
+<p>我深呼吸了一下，开始按照课堂上学到的沟通技巧开启对话。我首先承认了自己的情绪——我告诉她，当我知道她和另一个朋友秘密吃火锅，没有邀请我时，我感到被排斥和忽视，这让我非常难过。我解释说，这不仅是对那顿饭的失望，更是一种深层次的不安全感和被遗弃的恐惧。不过故事并没有像课上给我的希望那样顺利走向互相理解的大结局。在一顿互相指责与争执中，我们趟过一道道记忆中的雷区，一直走向最初的矛盾。我终于得到了那个问题的一个解……</p>
+<h2 id="情绪感受">情绪感受</h2>
+<p>这大概就是课上提到的意外收获。我们关系中的潘多拉盒子被打开了，释放出了所有隐藏的情感和未言之言。我感到一种复杂的情绪涌上心头，惊讶、愧疚、温柔、欣慰……它们交织在一起，形成了一股强烈的情感波动。</p>
+<p>从那里开始，我突然发现刚才那些故事好像都不太重要了，好像什么都不太重要了，我们开始回想起为何当初会成为好朋友，那些共同的价值观、互相的支持和理解，虽然我们实在是没有任何共同爱好与共同特征，不过至少有一点是一样的，她也和我一样渴望得到信任。最后的最后她想要的也只有一句“我100%地相信你”。于是过去的遗憾和误会都放下了，我开始尝试去继续信任一个人。</p>
+<img src="https://gitlab.com/ggx-blog/imglab/uploads/acc9f452f0ecd535c64062f12c755666/202312310208343.png" alt="image-20231231020817204" style="zoom: 67%;" />
+<p>后来证明，100%地相信一个人，不仅能让被相信的人感到幸福，这种感觉也让我自己感到安心。我们现在仍是战友，合作着许多的大作业，为着共同的目标而奋斗。我正是借着刚才成功合作解决一项任务的兴奋劲写下这篇总结。100%的信任，让我能把后背安心地交给她。这种100%的信任不仅影响了我和她的关系，它也慢慢地改变了我对待其他人的方式。我开始更加开放和宽容，不再那么轻易地对人怀疑或者产生误解。这种相信进一步对我自己产生了正向的反馈，我感受到他人反过来对我的信任，进一步地，这让我更加相信自己，我想这种正反馈作用下的信任，是真正的自信。最终我发现，我愿意相信的事我就全力去相信，能否相信一个人，说到底就是你能不能相信自己，就这么简单。</p>
+<p>我在这门课上得到的最大的收获，就是它给了我自己一个理由真的去做。而一旦我真的去做了，就真的能有收获。现在，当我回望这段经历，我感到一种深深的满足和感激。虽然我确实有些遗憾，如果我大一选这门课或许在当时能更加轻松应对学业上的压力与挑战；而不是像现在一样被捶打成“无可救药的老油条”。但对我来说更重要的是，这门课启发了我去实践一些人际关系方面的理论，并让我在实践中获得了真正的成长和改变。我相信，这些收获将会伴随我走过未来的日子，帮助我在面对挑战和机遇时，能100%地去相信，100%地相信他人，也100%地相信自己。</p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">信任之旅：心理课程总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E8%A1%8C%E4%B8%BA"><span class="toc-number">1.1.</span> <span class="toc-text">具体行为</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%83%85%E7%BB%AA%E6%84%9F%E5%8F%97"><span class="toc-number">1.2.</span> <span class="toc-text">情绪感受</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&text=信任之旅：心理课程总结"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&title=信任之旅：心理课程总结"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&is_video=false&description=信任之旅：心理课程总结"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=信任之旅：心理课程总结&body=Check out this article: https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&title=信任之旅：心理课程总结"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&title=信任之旅：心理课程总结"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&title=信任之旅：心理课程总结"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&title=信任之旅：心理课程总结"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&name=信任之旅：心理课程总结&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/signal_processing/%E4%BF%A1%E4%BB%BB%E4%B9%8B%E6%97%85%EF%BC%9A%E5%BF%83%E7%90%86%E8%AF%BE%E7%A8%8B%E6%80%BB%E7%BB%93/&t=信任之旅：心理课程总结"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2024 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>

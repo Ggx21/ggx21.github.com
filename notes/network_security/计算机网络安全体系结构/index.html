@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="计算机网络安全体系结构 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;7 算法、实现–&gt;安全机制–&gt;安全服务–&gt;安全目标 我们需要阻止被动攻击，检测出主动攻击 安全目标 CIA   Confidentiality:保密性 防止被动攻击（内容泄露给未授权的实体）   一方面是防止内容泄露   另一方面是防止流量分析     Integrity:完整">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络安全体系结构">
+<meta property="og:url" content="https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="计算机网络安全体系结构 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;7 算法、实现–&gt;安全机制–&gt;安全服务–&gt;安全目标 我们需要阻止被动攻击，检测出主动攻击 安全目标 CIA   Confidentiality:保密性 防止被动攻击（内容泄露给未授权的实体）   一方面是防止内容泄露   另一方面是防止流量分析     Integrity:完整">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231163139090.png">
+<meta property="article:published_time" content="2023-12-31T12:20:51.000Z">
+<meta property="article:modified_time" content="2023-12-31T16:00:07.313Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="network_security">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231163139090.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>计算机网络安全体系结构</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/network_security/%E8%AE%A4%E8%AF%81/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">计算机网络安全体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87-CIA"><span class="toc-number">1.1.</span> <span class="toc-text">安全目标 CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Confidentiality-%E4%BF%9D%E5%AF%86%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">Confidentiality:保密性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integrity-%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">Integrity:完整性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Availability-%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">Availability:可用性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%9B%AE%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text">OSI安全体系目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">安全服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">普通安全机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">特定安全机制</span></a></li></ol></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        计算机网络安全体系结构
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-31T12:20:51.000Z" class="dt-published" itemprop="datePublished">2023-12-31</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/network-security/">network_security</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/network-security/" rel="tag">network_security</a>, <a class="p-category" href="/tags/notes/" rel="tag">notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>计算机网络安全体系结构</h1>
+<p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2023/12/7</p>
+<p><code>算法、实现</code>–&gt;<code>安全机制</code>–&gt;<code>安全服务</code>–&gt;<code>安全目标</code></p>
+<p>我们需要<strong>阻止</strong>被动攻击，<strong>检测</strong>出主动攻击</p>
+<h2 id="安全目标-CIA">安全目标 CIA</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h4 id="Confidentiality-保密性">Confidentiality:保密性</h4>
+<p>防止被动攻击（内容泄露给未授权的实体）</p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>一方面是防止内容泄露</p>
+</li>
+<li class="lvl-4">
+<p>另一方面是防止流量分析</p>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
+<h4 id="Integrity-完整性">Integrity:完整性</h4>
+<p>防止主动攻击，篡改，插入，重放（通过要求序列号，Nonce等的完整性）</p>
+<p>我们更关心检测攻击而不是阻止攻击。</p>
+</li>
+<li class="lvl-2">
+<h4 id="Availability-可用性">Availability:可用性</h4>
+<p>抵抗Dos攻击以及其他对网络处理能力的攻击</p>
+</li>
+</ul>
+<h2 id="OSI安全体系目标">OSI安全体系目标</h2>
+<p>ITU-T推荐方案X.800， 即OSI安全框架，定义了一种系统方法，为网络管理员提供了一种安全的组织方法</p>
+<p>OSI安全框架主要关注<strong>安全服务</strong>、<strong>安全机制</strong>和<strong>安全攻击</strong></p>
+<ol>
+<li class="lvl-3">
+<p><strong>安全服务（Security Services）</strong>：旨在提供数据传输的保密性、完整性、身份认证、访问控制等，确保网络通信的安全性和可靠性。</p>
+</li>
+<li class="lvl-3">
+<p><strong>安全机制（Security Mechanisms）</strong>：是实施安全服务的具体方法和工具，如加密、数字签名、安全协议等，用于防御威胁和攻击。</p>
+</li>
+<li class="lvl-3">
+<p><strong>安全攻击（Security Attacks）</strong>：指针对网络系统的任何行为，旨在破坏数据的保密性、完整性或可用性，如窃听、篡改、拒绝服务等。</p>
+<ul class="lvl-2">
+<li class="lvl-5">主动攻击：篡改系统资源，影响系统运行</li>
+<li class="lvl-5">被动：sniffer/traffic analysis</li>
+</ul>
+</li>
+</ol>
+<img src="C:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231163139090.png" alt="image-20231231163139090" style="zoom:67%;" />
+<h3 id="安全服务">安全服务</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>认证（Authentication）</strong>：确保通信实体是声称的身份。</p>
+<ul class="lvl-2">
+<li class="lvl-5">对等实体认证–&gt;面向连接的应用（一个实体不能在会话过程中伪装/重放）</li>
+<li class="lvl-5">数据源认证–&gt;对数据的来源提供确认，但是对数据的复制和修改不提供保护 面向无连接的应用</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>访问控制（Access Control）</strong>：限制资源访问到授权用户。</p>
+</li>
+<li class="lvl-3">
+<p><strong>数据保密性（Data Confidentiality）</strong>：保护数据不被未授权访问。</p>
+</li>
+<li class="lvl-3">
+<p><strong>数据完整性（Data Integrity）</strong>：确保数据未被未授权地改动。</p>
+<ul class="lvl-2">
+<li class="lvl-5">面向连接的完整性服务保证收到的消息和发出的消息一致</li>
+<li class="lvl-5">面向无连接的完整性服务仅保证单条消息不被修改</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>非否认性（Non-Repudiation）</strong>：防止任一通信方否认已发送或接收的消息。</p>
+</li>
+<li class="lvl-3">
+<p><strong>服务可用性（Service Availability）</strong>：确保服务对授权用户始终可用。</p>
+</li>
+</ol>
+<h3 id="安全机制">安全机制</h3>
+<h4 id="普通安全机制">普通安全机制</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>不属于任何协议层或者安全服务的安全机制</p>
+</li>
+</ul>
+<h4 id="特定安全机制">特定安全机制</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在特定的协议层实现的安全机制</p>
+</li>
+</ul>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">计算机网络安全体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87-CIA"><span class="toc-number">1.1.</span> <span class="toc-text">安全目标 CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Confidentiality-%E4%BF%9D%E5%AF%86%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">Confidentiality:保密性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integrity-%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">Integrity:完整性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Availability-%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">Availability:可用性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%9B%AE%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text">OSI安全体系目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">安全服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">普通安全机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">特定安全机制</span></a></li></ol></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&text=计算机网络安全体系结构"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&title=计算机网络安全体系结构"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&is_video=false&description=计算机网络安全体系结构"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=计算机网络安全体系结构&body=Check out this article: https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&title=计算机网络安全体系结构"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&title=计算机网络安全体系结构"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&title=计算机网络安全体系结构"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&title=计算机网络安全体系结构"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&name=计算机网络安全体系结构&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/&t=计算机网络安全体系结构"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2024 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>

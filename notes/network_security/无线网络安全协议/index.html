@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="无线网络安全协议 基础知识   无线接入点（Access Point）  AP是一个无线网络的创建者，是网络的中心结点 一般无线路由器就是一个AP    STA站点  每一个连接到无线网络的终端都是一个站点    SSID  实际上就是wifi名 AP通常会广播SSID，如果想要提高安全性，就disable      无加密认证：这是最基本的形式，很少提供安全保护。通常涉及SSID（服务集标识符）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="无线网络安全协议">
+<meta property="og:url" content="https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="无线网络安全协议 基础知识   无线接入点（Access Point）  AP是一个无线网络的创建者，是网络的中心结点 一般无线路由器就是一个AP    STA站点  每一个连接到无线网络的终端都是一个站点    SSID  实际上就是wifi名 AP通常会广播SSID，如果想要提高安全性，就disable      无加密认证：这是最基本的形式，很少提供安全保护。通常涉及SSID（服务集标识符）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231204331274.png">
+<meta property="og:image" content="c:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231204623566.png">
+<meta property="article:published_time" content="2023-12-31T12:53:16.000Z">
+<meta property="article:modified_time" content="2023-12-31T16:00:07.310Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="network_security">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231204331274.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>无线网络安全协议</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/network_security/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">无线网络安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%BA%BF%E7%AD%89%E6%95%88%E5%8A%A0%E5%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">有线等效加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WEP%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">WEP加密过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEP%E8%A7%A3%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">WEP解密过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">1.2.3.</span> <span class="toc-text">安全性问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WPA1%EF%BC%9A"><span class="toc-number">1.2.4.</span> <span class="toc-text">WPA1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WPA2%EF%BC%9A"><span class="toc-number">1.2.5.</span> <span class="toc-text">WPA2：</span></a></li></ol></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        无线网络安全协议
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2023-12-31T12:53:16.000Z" class="dt-published" itemprop="datePublished">2023-12-31</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/network-security/">network_security</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/network-security/" rel="tag">network_security</a>, <a class="p-category" href="/tags/notes/" rel="tag">notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>无线网络安全协议</h1>
+<h2 id="基础知识">基础知识</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>无线接入点（Access Point）</p>
+<ul class="lvl-2">
+<li class="lvl-4">AP是一个无线网络的创建者，是网络的中心结点</li>
+<li class="lvl-4">一般无线路由器就是一个AP</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>STA站点</p>
+<ul class="lvl-2">
+<li class="lvl-4">每一个连接到无线网络的终端都是一个站点</li>
+</ul>
+</li>
+<li class="lvl-2">
+<p>SSID</p>
+<ul class="lvl-2">
+<li class="lvl-4">实际上就是wifi名</li>
+<li class="lvl-4">AP通常会广播SSID，如果想要提高安全性，就disable</li>
+</ul>
+</li>
+</ul>
+<ol>
+<li class="lvl-3">
+<p><strong>无加密认证</strong>：这是最基本的形式，很少提供安全保护。通常涉及SSID（服务集标识符）和MAC地址过滤，但这些都容易被绕过。</p>
+</li>
+<li class="lvl-3">
+<p><strong>有线等效加密（WEP）</strong>（Wired Equivalent Privacy）  ：早期的加密标准，旨在为无线网络提供与有线网络相似的安全性。但是，由于密钥管理和其他安全漏洞，它很快就被证明是不安全的。</p>
+<ul class="lvl-2">
+<li class="lvl-5">采用RC4流加密算法</li>
+<li class="lvl-5">AP启用WEP，创建密钥；每个无线客户端输入密钥</li>
+</ul>
+<p><strong>安全措施</strong></p>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>认证：对请求认证的任何人提供明文认证</p>
+</li>
+<li class="lvl-5">
+<p>保密性：RC4流密码加密</p>
+</li>
+<li class="lvl-5">
+<p>完整性：循环冗余校验CRC32</p>
+</li>
+<li class="lvl-5">
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>Wi-Fi Protected Access（WPA和WPA2）</strong>：为了解决WEP的安全问题，WPA被引入，使用了更强大的加密技术和密钥管理。WPA2是WPA的升级版本，提供更加强健的安全性，使用了高级加密标准（AES）和802.1x认证。</p>
+</li>
+</ol>
+<h2 id="有线等效加密">有线等效加密</h2>
+<h3 id="WEP加密过程：">WEP加密过程：</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>秘钥与初始化向量（IV）</strong>：WEP使用固定大小的秘钥（通常是40位或104位）与一个24位的初始化向量（IV）结合，生成密钥流。（总共64/128位）</p>
+</li>
+<li class="lvl-3">
+<p><strong>密钥流的生成</strong>：使用RC4算法，结合秘钥和IV生成一个密钥流。</p>
+</li>
+<li class="lvl-3">
+<p><strong>完整性检查</strong>：WEP还提供了一种简单的完整性检查，称为ICV（Integrity Check Value）。它是通过对原始数据进行CRC-32（循环冗余校验）计算得到的。然后将ICV附加到数据的末尾，一起进行加密。</p>
+</li>
+<li class="lvl-3">
+<p><strong>加密</strong>：使用生成的密钥流对数据进行加密。WEP采用流加密方式，即将数据的每个比特与密钥流的对应比特进行XOR（异或）运算。</p>
+</li>
+<li class="lvl-3">
+<p><strong>发送</strong>：最后，将IV和加密后的数据（包括ICV）一起发送给接收方。</p>
+</li>
+</ol>
+<h3 id="WEP解密过程：">WEP解密过程：</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>接收IV和加密数据</strong>：接收方收到IV和加密后的数据。</p>
+</li>
+<li class="lvl-3">
+<p><strong>密钥流的生成</strong>：接收方使用相同的秘钥和收到的IV，通过RC4生成密钥流。</p>
+</li>
+<li class="lvl-3">
+<p><strong>解密</strong>：使用生成的密钥流对加密数据进行解密（再次进行XOR操作）。</p>
+</li>
+<li class="lvl-3">
+<p><strong>完整性验证</strong>：解密后，从数据末尾分离ICV，并对解密后的数据再次进行CRC-32计算，验证ICV是否匹配，以确认数据的完整性。</p>
+</li>
+</ol>
+<h3 id="安全性问题：">安全性问题：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>IV重用</strong>：由于IV的长度只有24位，可能会导致IV的重复使用，进而导致密钥流的重复。这给攻击者提供了攻击的机会，能够分析两段使用相同密钥流加密的数据，找到秘钥。</p>
+</li>
+<li class="lvl-2">
+<p><strong>密钥管理和更新</strong>：WEP没有提供一种安全的机制来管理和更新密钥，这通常需要手动操作，增加了安全漏洞。</p>
+</li>
+<li class="lvl-2">
+<p><strong>算法弱点</strong>：RC4本身存在一些已知的弱点，结合WEP的实现方式，使得它更容易受到攻击。</p>
+</li>
+<li class="lvl-2">
+<p>CRC-32是非加密的线性运算，主要用于检测消息中的随机错误，<strong>无法实现消息认证。</strong></p>
+</li>
+<li class="lvl-2">
+<p>wep协议中不含序列号，<strong>无法提供抗重放攻击</strong></p>
+</li>
+</ul>
+<h3 id="WPA1：">WPA1：</h3>
+<p>是wep的升级</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>WPA 使用的消息认证码 MIC 中 包含了帧计数器，可以防范重放攻击</p>
+</li>
+<li class="lvl-2">
+<p>密钥长度128位</p>
+</li>
+<li class="lvl-2">
+<p>使用TKIP：动态变化每个数据包使用的密钥（通过多种因素混合在一起生成）</p>
+</li>
+<li class="lvl-2">
+<p>IEEE 802.1x认证过程</p>
+<p><img src="C:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231204331274.png" alt="image-20231231204331274"></p>
+<p>相比于802.11b，用户需要经过认证后才能访问网络资源</p>
+<p><img src="C:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231231204623566.png" alt="image-20231231204623566"></p>
+</li>
+</ul>
+<h3 id="WPA2：">WPA2：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>更安全的CCMP消息认证代替了Michael算法</p>
+</li>
+<li class="lvl-2">
+<p>AES对称加密算法代替了RC4流密码</p>
+</li>
+<li class="lvl-2">
+<p>WPA2支持802.11g或以上的无线网卡</p>
+</li>
+</ul>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">无线网络安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.</span> <span class="toc-text">基础知识</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%89%E7%BA%BF%E7%AD%89%E6%95%88%E5%8A%A0%E5%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">有线等效加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#WEP%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">WEP加密过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WEP%E8%A7%A3%E5%AF%86%E8%BF%87%E7%A8%8B%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">WEP解密过程：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%80%A7%E9%97%AE%E9%A2%98%EF%BC%9A"><span class="toc-number">1.2.3.</span> <span class="toc-text">安全性问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WPA1%EF%BC%9A"><span class="toc-number">1.2.4.</span> <span class="toc-text">WPA1：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WPA2%EF%BC%9A"><span class="toc-number">1.2.5.</span> <span class="toc-text">WPA2：</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&text=无线网络安全协议"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=无线网络安全协议"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&is_video=false&description=无线网络安全协议"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=无线网络安全协议&body=Check out this article: https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=无线网络安全协议"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=无线网络安全协议"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=无线网络安全协议"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&title=无线网络安全协议"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&name=无线网络安全协议&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/network_security/%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/&t=无线网络安全协议"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2024 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
