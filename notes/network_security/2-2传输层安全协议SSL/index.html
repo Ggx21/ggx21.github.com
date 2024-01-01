@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="2-2传输层安全协议SSL what is ssl？ 安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信 why ssl？ 网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足这些要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2-2传输层安全协议SSL">
+<meta property="og:url" content="https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="2-2传输层安全协议SSL what is ssl？ 安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信 why ssl？ 网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足这些要">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/36d07a5e1613b54fa9707f555036b77b/202401011351164.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/905fa0e717bf4e247cc420d07c2ab2ca/202401011354018.png">
+<meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/55ec20739d9b493f54e7b836fb5284ae/202401011425409.png">
+<meta property="article:published_time" content="2024-01-01T08:45:39.000Z">
+<meta property="article:modified_time" content="2024-01-01T08:46:17.681Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="network_security">
+<meta property="article:tag" content="notes">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/36d07a5e1613b54fa9707f555036b77b/202401011351164.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>2-2传输层安全协议SSL</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="上一篇"
+            href="/notes/network_security/2-3%E5%BA%94%E7%94%A8%E5%B1%82%E5%AE%89%E5%85%A8%E4%BE%8B%E5%AD%90SET/"
+            ><i
+              class="fa-solid fa-chevron-left"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-prev').style.display = 'inline';"
+              onmouseout="document.getElementById('i-prev').style.display = 'none';"
+            ></i></a
+          ><span id="i-prev" class="info" style="display: none"
+            >上一篇</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/network_security/1-2%E6%97%A0%E7%BA%BF%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">2-2传输层安全协议SSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#what-is-ssl%EF%BC%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">what is ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why-ssl%EF%BC%9F"><span class="toc-number">1.0.2.</span> <span class="toc-text">why ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text">安全服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94ipsec%EF%BC%9A"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">对比ipsec：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E7%89%B9%E7%82%B9"><span class="toc-number">1.0.4.</span> <span class="toc-text">ssl特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.5.</span> <span class="toc-text">SSL体系结构详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E8%AE%B0%E5%BD%95%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.6.</span> <span class="toc-text">SSL记录协议工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.7.</span> <span class="toc-text">SSL握手协议工作流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS-HTTP-SSL"><span class="toc-number">1.1.</span> <span class="toc-text">HTTPS&#x3D;HTTP+SSL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"></span></a></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        2-2传输层安全协议SSL
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-01-01T08:45:39.000Z" class="dt-published" itemprop="datePublished">2024-01-01</time>
+        
+      
+    </div>
+
+ 
+    <div class="article-category">
+        <i class="fa-solid fa-archive"></i>
+        <a class="category-link" href="/categories/notes/">notes</a> › <a class="category-link" href="/categories/notes/network-security/">network_security</a>
+    </div>
+
+ 
+    <div class="article-tag">
+        <i class="fa-solid fa-tag"></i>
+        <a class="p-category" href="/tags/network-security/" rel="tag">network_security</a>, <a class="p-category" href="/tags/notes/" rel="tag">notes</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>2-2传输层安全协议SSL</h1>
+<h3 id="what-is-ssl？">what is ssl？</h3>
+<p>安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信</p>
+<h3 id="why-ssl？">why ssl？</h3>
+<p>网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足这些要求</p>
+<h3 id="安全服务">安全服务</h3>
+<p>SSL提供了三个基本的安全服务：</p>
+<ol>
+<li class="lvl-3">
+<p><strong>加密</strong>：保证数据传输的机密性，确保只有授权的接收方可以阅读信息。</p>
+</li>
+<li class="lvl-3">
+<p><strong>认证</strong>：确保通信双方都是他们声称的那个人，通常通过证书和密钥来实现。</p>
+</li>
+<li class="lvl-3">
+<p><strong>数据完整性</strong>：确保数据在传输过程中没有被更改。</p>
+</li>
+<li class="lvl-3">
+<p><strong>反重放</strong>：</p>
+<blockquote>
+<p>ssl会话参数里实际上也有序列号，所以应该也能提供反重放服务.</p>
+<p>SSL协议为每次安全连接产生一个128位长的随机数“连接序号”，攻击者无法提前预测此连接序号，因此不能对服务器请求做出正确应答</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="对比ipsec：">对比ipsec：</h4>
+<p><strong>IPsec</strong> 是一个协议套件，旨在保护IP通信，通过对每个IP数据包进行加密和认证来实现。它提供的安全服务主要包括：</p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>数据加密</strong>：确保数据的机密性，使得即使数据包被拦截，也无法被未授权者阅读。</p>
+</li>
+<li class="lvl-2">
+<p><strong>数据完整性</strong>：确保数据在传输过程中没有被更改。</p>
+</li>
+<li class="lvl-2">
+<p><strong>认证</strong>：验证数据包来源的真实性，确保数据包是由实际发送者发送的。</p>
+</li>
+<li class="lvl-2">
+<p><strong>反重放</strong>：防止旧的或重复的数据包被用于攻击。</p>
+</li>
+</ul>
+<h3 id="ssl特点">ssl特点</h3>
+<p>SSL工作在TCP协议上<mark>不支持UDP</mark>，对应用层透明，为应用层的流量提前搭建安全信道（提前完成了客户端和服务器的身份认证、加密算法和密钥的协商  ）</p>
+<p>SSL先握手建立会话（session），一个会话可能由多个连接共享</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/36d07a5e1613b54fa9707f555036b77b/202401011351164.png" alt="image-20240101134610600"></p>
+<h3 id="SSL体系结构详解">SSL体系结构详解</h3>
+<ol>
+<li class="lvl-3">
+<p><strong>SSL记录协议（SSL Record Protocol）</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>功能</strong>：它位于SSL协议栈的最底层，负责接收应用层的数据，进行必要的分割、压缩、加密处理，然后发送给对方。同时，它也会处理接收的数据，进行解密、验证、重组等，然后交给应用层。</li>
+<li class="lvl-5"><strong>重要性</strong>：记录协议是保障数据机密性和完整性的基础，它确保传输的数据对外是安全的，没有被篡改。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>SSL握手协议（SSL Handshake Protocol）</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>功能</strong>：在通信双方开始传输加密数据之前，握手协议负责建立安全连接的详细参数，包括协商加密算法、交换密钥信息和相互验证身份。</li>
+<li class="lvl-5"><strong>重要性</strong>：握手协议是建立安全通信信道的关键，它确保双方都使用相同的密钥和算法，并且都是可信的。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>SSL警告协议（SSL Alert Protocol）</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>功能</strong>：用于在出现错误时，传递警告和错误信息给对方。比如，如果一个证书无效或者密钥交换失败，警告协议会被用来通知对方。</li>
+<li class="lvl-5"><strong>重要性</strong>：警告协议使得通信双方可以在安全通信出现问题时，及时得到通知并采取相应措施。</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>SSL变更密码规格协议（SSL Change Cipher Spec Protocol）</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>功能</strong>：用于在握手过程中，告诉对方将要更改加密算法或密钥。</li>
+<li class="lvl-5"><strong>重要性</strong>：它是握手协议的一个辅助部分，确保双方能同步转换到新的加密参数，维护通信的安全性。</li>
+</ul>
+</li>
+</ol>
+<h3 id="SSL记录协议工作流程">SSL记录协议工作流程</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/905fa0e717bf4e247cc420d07c2ab2ca/202401011354018.png" alt="image-20240101135441982"></p>
+<h3 id="SSL握手协议工作流程">SSL握手协议工作流程</h3>
+<p><strong>SSL握手协议</strong> 主要负责在SSL通信开始之前，建立安全通信的基本参数。整个握手过程包括几个重要步骤，喵~：</p>
+<ol>
+<li class="lvl-3">
+<p><strong>客户端和服务器的问候</strong>：交换协议版本号，选择加密和压缩方法。</p>
+<ul class="lvl-2">
+<li class="lvl-5">Cipher suite：加密方法的参数包括
+<ul class="lvl-4">
+<li class="lvl-7">密钥交换方法：那些公钥算法比如DH，RSA，</li>
+<li class="lvl-7">加密算法：RC4，RC2，DES，3DES……</li>
+<li class="lvl-7">MAC算法：MD5，SHA-1</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="lvl-3">
+<p><strong>服务器身份认证和密钥交换</strong>：服务器发送证书给客户端，客户端验证服务器证书的有效性。</p>
+</li>
+<li class="lvl-3">
+<p><strong>客户端身份认证和密钥交换</strong>：客户端可能也会发送证书给服务器，并且双方会协商一个共享的密钥。</p>
+<p>先协商出一个pre_master_key,在finish阶段客户端用来计算出master_key</p>
+</li>
+<li class="lvl-3">
+<p><strong>握手完成</strong>：握手协议的最后阶段，客户端将master secrete派生为所有的密钥，和服务器确认握手过程结束，开始加密的数据传输。</p>
+<ul class="lvl-2">
+<li class="lvl-5">MAC</li>
+<li class="lvl-5">加密</li>
+<li class="lvl-5">IV</li>
+</ul>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/55ec20739d9b493f54e7b836fb5284ae/202401011425409.png" alt="image-20240101142552375"></p>
+</li>
+<li class="lvl-3">
+<p>client server hello，这一过程主要是client向server发出建立ssl的请求，并协商一些加密方法</p>
+</li>
+<li class="lvl-3">
+<p>server certificate and key exchange：server向用户提供证书，并要求用户返回证书和确认</p>
+</li>
+<li class="lvl-3">
+<p>client certificate and key exchange：用户确认证书，并根据证书中server的公钥加密传输pre_master_secret用于下一步生成主密钥，并返回自己的证书</p>
+</li>
+<li class="lvl-3">
+<p>finish：用户用主密钥生成所有密钥并和服务器确认</p>
+</li>
+</ol>
+<h2 id="HTTPS-HTTP-SSL">HTTPS=HTTP+SSL</h2>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>HTTP</th>
+<th>HTTPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>传输方式</td>
+<td>明文传输</td>
+<td>SSL协议加密传输</td>
+</tr>
+<tr>
+<td>端口号</td>
+<td>80</td>
+<td>443</td>
+</tr>
+<tr>
+<td>协议复杂性</td>
+<td>简单</td>
+<td>由SSL+HTTP构建</td>
+</tr>
+<tr>
+<td>连接状态</td>
+<td>无状态</td>
+<td>无状态（会话之间无状态）</td>
+</tr>
+<tr>
+<td>安全性</td>
+<td>无</td>
+<td>加密传输、身份认证</td>
+</tr>
+</tbody>
+</table>
+<div class="tips">
+<ul class="lvl-1">
+<li class="lvl-2">
+<p>HTTP明文传输，不能提供加密</p>
+</li>
+<li class="lvl-2">
+<p>HTTP无状态，不能认证双方（中间人攻击，DNS欺诈，ARP欺诈等）</p>
+</li>
+</ul>
+<p>HTTPS就是为了解决上述痛点</p>
+</div>
+<h2 id=""></h2>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">2-2传输层安全协议SSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#what-is-ssl%EF%BC%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">what is ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why-ssl%EF%BC%9F"><span class="toc-number">1.0.2.</span> <span class="toc-text">why ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text">安全服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94ipsec%EF%BC%9A"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">对比ipsec：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E7%89%B9%E7%82%B9"><span class="toc-number">1.0.4.</span> <span class="toc-text">ssl特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.5.</span> <span class="toc-text">SSL体系结构详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E8%AE%B0%E5%BD%95%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.6.</span> <span class="toc-text">SSL记录协议工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.7.</span> <span class="toc-text">SSL握手协议工作流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS-HTTP-SSL"><span class="toc-number">1.1.</span> <span class="toc-text">HTTPS&#x3D;HTTP+SSL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"></span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&text=2-2传输层安全协议SSL"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&title=2-2传输层安全协议SSL"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&is_video=false&description=2-2传输层安全协议SSL"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=2-2传输层安全协议SSL&body=Check out this article: https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&title=2-2传输层安全协议SSL"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&title=2-2传输层安全协议SSL"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&title=2-2传输层安全协议SSL"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&title=2-2传输层安全协议SSL"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&name=2-2传输层安全协议SSL&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/&t=2-2传输层安全协议SSL"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2024 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
