@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <!-- so meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=5"
+  />
+  <meta name="description" content="课程报告 1.文献综述 我们调研了若干机器学习在芯片布局中相关应用的论文，其中针对传统的布线方法进行了分析，得出的结论都包括传统布线方法存在很大局限性这一问题。 芯片布线即设计电脑芯片的物理排布，将网表排布在二维的“画布”上，优化性能指标（功耗、时序、面积、线长），同时满足密度及布线拥塞的硬约束。 二十世纪六十年代以来，已经提出过大量布线方法，主要分为划分、模拟退火及统计方法三大类，但如今这三种方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hello From YUX">
+<meta property="og:url" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/index.html">
+<meta property="og:site_name" content="Hello From YUX">
+<meta property="og:description" content="课程报告 1.文献综述 我们调研了若干机器学习在芯片布局中相关应用的论文，其中针对传统的布线方法进行了分析，得出的结论都包括传统布线方法存在很大局限性这一问题。 芯片布线即设计电脑芯片的物理排布，将网表排布在二维的“画布”上，优化性能指标（功耗、时序、面积、线长），同时满足密度及布线拥塞的硬约束。 二十世纪六十年代以来，已经提出过大量布线方法，主要分为划分、模拟退火及统计方法三大类，但如今这三种方">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/image-1.png">
+<meta property="og:image" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/image.png">
+<meta property="og:image" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/image-2.png">
+<meta property="og:image" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/image-3.png">
+<meta property="og:image" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/image-4.png">
+<meta property="og:image" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/image-5.png">
+<meta property="article:published_time" content="2024-01-13T11:08:13.918Z">
+<meta property="article:modified_time" content="2024-01-11T13:29:26.978Z">
+<meta property="article:author" content="Andy Gao">
+<meta property="article:tag" content="生活、代码、思考、技术、创新、灵感、分享、教程、个人成长、文化、娱乐、社交">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/image-1.png">
+     
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+     
+  <link
+    rel="icon"
+    type="image/png"
+    href="/images/favicon-192x192.png"
+    sizes="192x192"
+  />
+     
+  <link
+    rel="apple-touch-icon"
+    sizes="180x180"
+    href="/images/apple-touch-icon.png"
+  />
+    
+  <!-- title -->
+  <title>Hello From YUX</title>
+  <!-- async scripts -->
+  <!-- Google Analytics -->
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-86660611-1"></script>
+  <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-86660611-1');
+  </script>
+
+ <!-- Umami Analytics -->
+
+
+  <!-- styles -->
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <!-- persian styles -->
+  
+  <!-- rss -->
+   
+  <!-- mathjax -->
+  
+  <script type="text/x-mathjax-config">
+     MathJax.Hub.Config({
+    tex2jax: {
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+      inlineMath: [['$','$']]
+    }
+     });
+  </script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML"
+    async
+  ></script>
+  
+   
+  <meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="\css\APlayer.min.css" class="aplayer-style-marker">
+  <script src="\js\APlayer.min.js" class="aplayer-script-marker"></script>
+  
+</head>
+
+
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.4.0/dist/echarts.min.js"></script>
+
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a id="menu-icon-tablet" href="#" aria-label="目录"
+    ><i class="fa-solid fa-bars fa-lg"></i
+  ></a>
+  <a
+    id="top-icon-tablet"
+    href="#"
+    aria-label="顶部"
+    onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+    style="display: none"
+    ><i class="fa-solid fa-chevron-up fa-lg"></i
+  ></a>
+  <span id="menu">
+    <br />
+    <span id="actions">
+      <ul>
+        <li>
+          <a class="icon" aria-label="homepage" href="/"
+            ><i
+              class="fa-solid fa-home"
+              aria-hidden="true"
+              onmouseover="document.getElementById('homepage').style.display = 'inline';"
+              onmouseout="document.getElementById('homepage').style.display = 'none';"
+            ></i></a
+          ><span id="homepage" class="info" style="display: none"
+            >回到主页</span
+          >
+        </li>
+         
+        <li>
+          <a
+            class="icon"
+            aria-label="下一篇"
+            href="/notes/network_security/0%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B9%A0%E9%A2%98/"
+            ><i
+              class="fa-solid fa-chevron-right"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-next').style.display = 'inline';"
+              onmouseout="document.getElementById('i-next').style.display = 'none';"
+            ></i></a
+          ><span id="i-next" class="info" style="display: none"
+            >下一篇</span
+          >
+        </li>
+        
+        <li>
+          <a
+            class="icon"
+            aria-label="返回顶部"
+            href="#"
+            onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"
+            ><i
+              class="fa-solid fa-chevron-up"
+              aria-hidden="true"
+              onmouseover="document.getElementById('i-top').style.display = 'inline';"
+              onmouseout="document.getElementById('i-top').style.display = 'none';"
+            ></i></a
+          ><span id="i-top" class="info" style="display: none"
+            >返回顶部</span
+          >
+        </li>
+      </ul>
+    </span>
+    <br />
+    <div id="share" style="display: none">
+    </div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">课程报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1.文献综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">2.问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.</span> <span class="toc-text">3.算法设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-number">1.4.</span> <span class="toc-text">4.结果分析</span></a></li></ol></li></ol></div>
+  </span>
+</div>
+
+    
+    <div class="content index py4 ">
+        
+        <article
+  class="post h-entry"
+  itemscope
+  itemtype="http://schema.org/BlogPosting"
+>
+  <header>
+    
+    <h1 class="posttitle p-name" itemprop="name headline">
+        
+    </h1>
+
+
+
+    <div class="meta">
+      <span
+        class="author p-author h-card"
+        itemprop="author"
+        itemscope
+        itemtype="http://schema.org/Person"
+      >
+        <span class="p-name" itemprop="name"
+          >Andy Gao</span
+        >
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2024-01-13T11:08:13.918Z" class="dt-published" itemprop="datePublished">2024-01-13</time>
+        
+      
+    </div>
+
+ 
+ 
+
+    </div>
+  </header>
+  
+
+  <div class="content e-content" itemprop="articleBody">
+    <h1>课程报告</h1>
+<h2 id="1-文献综述">1.文献综述</h2>
+<p>我们调研了若干机器学习在芯片布局中相关应用的论文，其中针对传统的布线方法进行了分析，得出的结论都包括传统布线方法存在很大局限性这一问题。<br>
+芯片布线即设计电脑芯片的物理排布，将网表排布在二维的“画布”上，优化性能指标（功耗、时序、面积、线长），同时满足密度及布线拥塞的硬约束。<br>
+二十世纪六十年代以来，已经提出过大量布线方法，主要分为划分、模拟退火及统计方法三大类，但如今这三种方法均存在不同的局限性，不能达到手工排布的性能。<br>
+基于划分的方法处理现代大规模电路时需要进行大量划分，追求局部解质量时会牺牲全局解质量，同时早期划分不理想可能会导致结果过分追求局部最优而完全无法使用；基于模拟退火的方法收敛慢，不适用于有上百万，上亿结点的现代芯片；统计方法只能优化可微的损失函数，不能有效的优化布线拥塞，时序违规等关键指标。目前通用的手工布线的方法可以取得最好的性能，但需要设计师使用EDA工具迭代数月，从RTL开始设计布线，等待EDA至多72小时来评估生成的布局。基于得到的评估，设计师可能认定已经达到了设计指标；更新布局并再次进行评估；或是向上游RTL设计师反馈，修改RTL代码以解决时序违规等问题。由此可见，传统布局方法均存在不同的问题。</p>
+<h2 id="2-问题分析">2.问题分析</h2>
+<p>在研究的布局中，所需要排版的除了标准单元（与非、或非、异或等逻辑门），还包括宏单元（如存储单元）。<br>
+将芯片布局问题与下棋类比，则棋子（网表拓扑，宏的数量，大小，形状……），棋盘（芯片大小，形状……），胜利条件（采用不同的评价指标或是调节权重同时采用多个，密度和布线拥塞的硬约束的不同取值）均是可变的，导致每一次布线都有巨大的状态空间。最简单的情况考虑，1000个结点放在有1000个可能位置的芯片上的状态空间有<code>1000!</code>（4.0*10^2567）的数量级，相比之下围棋的状态空间为<code>10^360</code>。<br>
+对此，将此布局问题作为一个高维上下文老虎机 <strong>(High-dimensional Contextual Bandits Problem)</strong> 问题来解决，使用马尔可夫链 <strong>(MDP)</strong>。其中对应的，状态 <strong>(States)</strong> 表示部分布线的信息，包括整个线网的邻接矩阵，各个结点的长宽、类型特征，边特征，当前待放置的结点，以及线网图的元数据（布局分配，线、宏、标准单元的总数）；动作 <strong>(Actions)</strong> 为当前的宏不违反密度或障碍的硬约束的所有可能的摆放位置；状态转移 <strong>(State transitions)</strong> 为下个状态的概率分布；奖励 <strong>(Rewards)</strong> 除了最后一个动作以外都是<code>0</code>,最后一步的奖励为代理线长，拥塞及密度的负加权和。<br>
+为了简化，将网格离散化，最多<code>128*128</code>。在摆放时先按照大小降序摆放宏单元，避免出现后期有宏没有位置摆放；大小相同的宏用拓扑排序，确保相关结点靠近彼此。标准单元使用<strong>hMETIS</strong>聚合成簇（数量及从百万下降到千）。</p>
+<h2 id="3-算法设计">3.算法设计</h2>
+<p>最后实现的设计主要包含两部分网络：状态描述网络和策略网络。<br>
+<img src="image-1.png" alt="Alt text">状态描述网络输入线网的图，当前宏id及特征，输出由这些信息生成的状态的表示。为了使网络输出的状态的特征的描述最适用于后面进行奖励预测，将这个<strong>基于边的图神经网络(Edge-GNN)</strong> 先按照分类预测进行训练，使其能够提取出输入信息中最重要的特征，再移除网络中的预测层，直接输出这些信息。<br>
+策略网络负责生成动作的概率分布，由多个反卷积层组成。通过反卷积层，模型可以将经过嵌入和前馈神经网络处理后的低维状态表示扩展为更高维的表示。这种高维表示能够更好地捕捉状态中的细节信息，并为策略网络提供更多的上下文和特征。通过使用多个反卷积层，可以逐渐扩展和丰富状态的表示，使得网络更能够理解输入状态的复杂性和层次结构。输出为<code>128*128</code>，对应最大允许的<code>128*128</code>的芯片。在反卷积得到Policy后要与Mask进行点积，Mask用于进行约束，如禁止超过密度的硬约束的动作。对于更小的芯片，在Mask中将超出的部分的值全部设成0，点积之后就可以得到对应于更小芯片的概率分布。<br>
+奖励由如下方程给出：<br>
+<img src="image.png" alt="Alt text">其中线长(Wirelength)由HPWL半周长线长计算，同时为了进一步简化，认为连线起止于器件的中心；拥塞(Congestion)计算前10%的平均拥塞，使用MAPLE方法；密度(Density)通过划分网格单元格后每个分别计算每个单元格的元素数量和总容量之比得到。此外密度作为硬约束，禁止摆放后超过最大密度(0.6)的动作，缩小搜索空间。</p>
+<h2 id="4-结果分析">4.结果分析</h2>
+<p>原文对该模型进行了多种对比测试<img src="image-2.png" alt="Alt text"><br>
+<img src="image-3.png" alt="Alt text"><br>
+不同训练时间得到的模型的对比显示预训练过的模型优于从零开始训练。收敛明显更快在使用目标芯片微调12小时后就可以达到超过从零开始训练24小时的效果。预训练用了48小时，但因为只需要预训练一次，此后使用模型时都可以更快地进行微调以适应目标芯片，显示出模型有很好的适应性。<img src="image-4.png" alt="Alt text"><br>
+使用不同大小的预训练样本集显示更大的样本（此处为20种）可以得到更快的收敛时间及更高的布局质量。接触更多样化的样本使模型不容易过拟合，对新的芯片设计更加适应。<img src="image-5.png" alt="Alt text"><br>
+在上市的芯片设计上与已有的人工布局及用于学术的统计方法<strong>RePlAce</strong>对比。在达到设计要求方面由于RePlAce。与人工布局相比面积，功耗，线长指标效果类似或更好，但使用的时间远小于人工。</p>
+
+  </div>
+</article>
+<script
+  async
+  src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"
+></script>
+<br />
+<br />
+<hr />
+<span id="busuanzi_container_page_pv">
+  本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</span>
+
+
+    <div class="blog-post-comments">
+        <div id="utterances_thread">
+            <noscript>加载评论需要在浏览器启用 JavaScript 脚本支持。</noscript>
+        </div>
+    </div>
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+        
+          <li><a href="/">首页</a></li>
+        
+          <li><a href="/search/">搜索</a></li>
+        
+          <li><a href="/tags/">标签</a></li>
+        
+          <li><a href="/categories/">分类</a></li>
+        
+          <li><a href="/archives/">归档</a></li>
+        
+          <li><a href="/about/">关于</a></li>
+        
+          <li><a target="_blank" rel="noopener" href="http://github.com/ggx21">项目</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">课程报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%96%87%E7%8C%AE%E7%BB%BC%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">1.文献综述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">2.问题分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.</span> <span class="toc-text">3.算法设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E7%BB%93%E6%9E%9C%E5%88%86%E6%9E%90"><span class="toc-number">1.4.</span> <span class="toc-text">4.结果分析</span></a></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&text="><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&title="><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&is_video=false&description="><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=&body=Check out this article: https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/"><i class="fa-solid fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&title="><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&title="><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&title="><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&title="><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&name=&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://ggxloveslife.top/homework/vlsi/%E8%AF%BE%E7%A8%8B%E6%8A%A5%E5%91%8A/&t="><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa-solid fa-bars fa-lg" aria-hidden="true"></i> 菜单</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa-solid fa-list fa-lg" aria-hidden="true"></i> 目录</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa-solid fa-share-alt fa-lg" aria-hidden="true"></i> 分享</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa-solid fa-chevron-up fa-lg" aria-hidden="true"></i> 返回顶部</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;   2020-2024 Andy Gao
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       -->
+        <li>
+          <a href="/"
+            >首页</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/search/"
+            >搜索</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/tags/"
+            >标签</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/categories/"
+            >分类</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/archives/"
+            >归档</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a href="/about/"
+            >关于</a
+          >
+        </li>
+        <!--
+     --><!--
+       -->
+        <li>
+          <a target="_blank" rel="noopener" href="http://github.com/ggx21"
+            >项目</a
+          >
+        </li>
+        <!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script>
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script>
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"复制到粘贴板！\">";
+    btn += '<i class="fa-regular fa-clone"></i>';
+    btn += '</span>';
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "复制成功！");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+    <script type="text/javascript">
+      var utterances_repo = 'Ggx21/comments.github.io';
+      var utterances_issue_term = 'pathname';
+      var utterances_label = '✨';
+      var utterances_theme = 'github-dark';
+
+      (function(){
+          var script = document.createElement('script');
+
+          script.src = 'https://utteranc.es/client.js';
+          script.setAttribute('repo', utterances_repo);
+          script.setAttribute('issue-term', 'pathname');
+          script.setAttribute('label', utterances_label);
+          script.setAttribute('theme', utterances_theme);
+          script.setAttribute('crossorigin', 'anonymous');
+          script.async = true;
+          (document.getElementById('utterances_thread')).appendChild(script);
+      }());
+  </script>
+
+
+
+  <script src='https://unpkg.com/mermaid@9.0.0/dist/mermaid.min.js'></script>
+  <script>
+    mermaid.initialize({theme: 'forest'});
+  </script>
+
+
+
+</body>
+</html>
