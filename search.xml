@@ -163,9 +163,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -192,9 +192,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -221,9 +221,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -250,9 +250,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -279,9 +279,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -308,9 +308,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -337,9 +337,9 @@
       
         <tags>
             
-            <tag> signal_processing </tag>
-            
             <tag> notes </tag>
+            
+            <tag> signal_processing </tag>
             
         </tags>
       
@@ -482,9 +482,9 @@
       
         <tags>
             
-            <tag> computer_orgnization </tag>
-            
             <tag> notes </tag>
+            
+            <tag> computer_orgnization </tag>
             
         </tags>
       
@@ -511,9 +511,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -685,9 +685,9 @@
       
         <tags>
             
-            <tag> network_security </tag>
-            
             <tag> notes </tag>
+            
+            <tag> network_security </tag>
             
         </tags>
       
@@ -787,7 +787,7 @@
       <link href="/homework/signal_processing/lab2/"/>
       <url>/homework/signal_processing/lab2/</url>
       
-        <content type="html"><![CDATA[<h2 id="lab2-按键音识别">lab2 按键音识别</h2><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5><p><a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p><h2 id="实验目的">实验目的</h2><p>识别dtmf音频，逐帧将其转换为按键序列</p><h2 id="实验过程">实验过程</h2><ol><li class="lvl-3"><p>将输入音频分成1/64s的帧</p></li><li class="lvl-3"><p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p></li><li class="lvl-3"><p>计算当前帧的短时傅里叶变化<code>stft</code></p><blockquote><p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p></blockquote></li><li class="lvl-3"><p>选择出每一帧的两个能量峰值处的频率</p><blockquote><p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>根据找到的频率判断按键</p><blockquote><p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure></li></ol><h2 id="实验现象">实验现象</h2><p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p><p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p><h2 id="实验结论">实验结论</h2><p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p><p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>        <div id="aplayer-ZWMKTgSl" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-ZWMKTgSl"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "sample.wav",              author: "yux",              url: "/music/dtmf/sample.wav",              pic: "/music/dtmf/sample.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="lab2-按键音识别">lab2 按键音识别</h2><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5><p><a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p><h2 id="实验目的">实验目的</h2><p>识别dtmf音频，逐帧将其转换为按键序列</p><h2 id="实验过程">实验过程</h2><ol><li class="lvl-3"><p>将输入音频分成1/64s的帧</p></li><li class="lvl-3"><p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p></li><li class="lvl-3"><p>计算当前帧的短时傅里叶变化<code>stft</code></p><blockquote><p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p></blockquote></li><li class="lvl-3"><p>选择出每一帧的两个能量峰值处的频率</p><blockquote><p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>根据找到的频率判断按键</p><blockquote><p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure></li></ol><h2 id="实验现象">实验现象</h2><p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p><p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p><h2 id="实验结论">实验结论</h2><p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p><p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>        <div id="aplayer-ScvxGjJz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-ScvxGjJz"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "sample.wav",              author: "yux",              url: "/music/dtmf/sample.wav",              pic: "/music/dtmf/sample.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>]]></content>
       
       
       <categories>
@@ -1067,35 +1067,6 @@
     
     
     <entry>
-      <title>课程论文</title>
-      <link href="/homework/flower_identification/%E6%A4%8D%E7%89%A9%E4%B9%9F%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%B5%85%E8%B0%88%E6%A4%8D%E7%89%A9%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%A4%E6%B5%81/"/>
-      <url>/homework/flower_identification/%E6%A4%8D%E7%89%A9%E4%B9%9F%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%B5%85%E8%B0%88%E6%A4%8D%E7%89%A9%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%A4%E6%B5%81/</url>
-      
-        <content type="html"><![CDATA[<h1>植物也会说话？浅谈植物之间的交流</h1><p>交流是人类乃至动物日常生活中不可缺少的一部分。通过交流，动物与周遭世界进行互动：分享思想、交配求偶、宣告领地、报告危险······动物之间的交流是生态系统中不可或缺的一部分，它有助于维持物种的生存和生态平衡。但是，看似安安静静的植物，其实也在通过这样或那样的方式与它的邻居们产生着精彩纷呈的交流互动。</p><p>下面将深入探讨几种典型的植物间交流方式，令我们更加深刻地理解这个神奇的植物世界。不同植物之间的交流并不同于动物的语言，但它们通过挥发性有机化合物、根系互动、甚至寄生植物等方式，建立其自己的“通讯网络”，以自己独特的方式传递信息、合作共生，甚至进行竞争。这种微妙的植物交流对于生态系统的平衡和植物自身的生存至关重要。让我们一起探索这个植物王国中隐藏的奇妙交流世界。</p><h2 id="VOCs">VOCs</h2><p>释放挥发性气体 （volatile organic compounds VOCs）是植物间进行交流的重要方式。有些挥发性气体可能是植物生长发育过程中产生的代谢废物，但也有许多挥发性气体具有重要的信号功能作用。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>这些气体分子通常承担重要的角色，其中一种用途是作为警告信号，告知其他植物有潜在的威胁。它们还可以起到吸引天敌昆虫的作用，以保护自身免受害虫的侵害。此外，这些气体分子还可以用来驱避食草昆虫或病原菌，帮助植物保持健康。<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p><h4 id="vocs信号在植物间的传递过程">vocs信号在植物间的传递过程</h4><p>vocs信号在植物间的传递包括以下4个步骤：首先，植物会释放VOCS，这些化合物散发到周围的空气中。VOCS的释放分为两种方式：组成型化合物在植物受到机械损伤后被动释放，而诱导型化合物在植物受到昆虫为害（包括由昆虫为害导致的病原体侵染）后主动释放。<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup>随后，这些挥发性有机化合物在大气中传输，随风飘荡，或者通过水流在地表或地下传播，将植物的信息携带到远处。然后，这些气体在其他植物表面进行吸附，落在叶片和茎上，等待着下一步的事件。在光照条件下，接受植物气孔增大，气体进入植物体过程中浓度降低很少，促进了信号传播。最后，接收植株会感知这些VOCS，解读它们所携带的信息，以在基因表达或者代谢层面采取适当的响应措施。这一过程展示了植物之间复杂而微妙的交流方式，通过挥发性有机化合物在大自然中传递信息和互动。</p><h4 id="vocs信号的作用机制">vocs信号的作用机制</h4><p>一些植物在受到胁迫时（创伤，植食性昆虫捕食，或环境胁迫等），释放创伤诱导型挥发物（wound-inducible volatiles WIVs）如茉莉酸甲酯以及水杨酸甲酯等。这些挥发物可帮助植物防御昆虫，提高抗病性，并传递信息给健康植株，诱导它们对未来可能到来的侵害及时做好准备。<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 另一类挥发性气体是绿色植物叶片气孔释放的绿叶挥发物（Green leaf volatiles，GLVs）。茉莉酸和乙烯可以通过作用于植物抗病性基因，提高植物抗病性。$H_2S$也是重要的一类挥发性物质，在提高应对多种胁迫能力以及加速某些植物种子萌发，根形态建成， 幼苗叶绿素含量和光合作用相关基因表达方面有重要作用。<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p><p>有趣的是，VOCs的释放还具有特异性。同一种昆虫取食不同类群的植物时，VOCs的成分构成与释放浓度不同。不同种昆虫乃至同种昆虫不同龄期的幼虫取食同种植物时，植物的反应也不同，如菜豆被成年潜叶蝇与其二龄幼虫为害后诱导释放的 VOCs有明显的不同。接受信号的植物可以分辨出不同的VOCs信号，进而采取特异性的防御策略。</p><h3 id="丛枝菌根">丛枝菌根</h3><p>在植物世界中，还有一种非常重要的互动方式，涉及到根系、分泌物和微小的土壤生物。这种互动方式被认为在植物相互交流中扮演着重要的角色。首先，要了解这个过程，我们需要认识一下菌根真菌，它们是一类特殊的微生物，存在于土壤中。其中一种叫做丛枝菌根真菌（Arbuscular mycorrhizal fungi，AMF）的微生物在陆地生态系统中非常常见。这个有趣的事实是，绝大多数陆地上的植物都可以与这种丛枝菌根真菌建立一种合作关系，这种合作关系被称为互惠共生关系。这种互惠共生关系是怎么运作的呢？首先，植物的根系与这些菌根真菌的细长丝状结构相互交织在一起，就像植物的根和真菌之间建立了一种由菌丝网络微小的桥梁。这种微小桥梁不仅可以供营养物质的转运，比如丛枝菌根真菌可以促进植物磷和氮的吸收，植物为真菌提供糖和脂质营养物质等。</p><p>由于AMF可以无性繁殖且不具备宿主特异性，它们可以与不同种植物建立互惠共生关系，而同种或不同种植物之间的AMF菌丝可以相互连接，形成公共菌丝网络（CMNs）<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。CMNs在植物间的竞争、养分资源的再分配以及地下化学信号传递等方面扮演着不可替代的角色。因此，CMNs已经引起了科学家的广泛研究兴趣。<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p><h4 id="CMNs的形成">CMNs的形成</h4><p>CMNs是一种复杂的菌丝网络，由AMF（丛枝菌根真菌）的外生菌丝与植物根系形成。在自然生态系统中，植物和AMF之间没有特异性的互相识别，因此，当AMF的外生菌丝接触到其他植物根系时，它们可以再次侵染并形成植物之间的菌丝联系。这样，每棵植物就像一个供给站，AMF的菌丝不断向外延伸，最终形成密集的菌丝网络。<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p><h4 id="CMNs作用机制的例子">CMNs作用机制的例子</h4><h5 id="1-CMNs-在植物间取食预警信号交流中的作用机制">1.CMNs 在植物间取食预警信号交流中的作用机制</h5><p>CMNs作为信号传导通道，参与植物间的取食预警信号传递。Babikova 等<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>发现，当植物被蚜虫啃食时，通过CMNs相连的，未被啃食的植物也能够释放出前面提到的一些具有抗虫作用的VOCs。此外，Song 等<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>研究发现，仅仅移植丛枝菌根真菌并不能增强系统防御反应，但是CMNs的存在可以激活叶片中的系统反应区，这说明CMNs具备在植物之间传递防御信号的作用。</p><h5 id="2-CMNs在植物间竞争信号交流中的作用机制">2.CMNs在植物间竞争信号交流中的作用机制</h5><p>不同的植物之间存在竞争，往往通过化感物质（ allelochemicals）干扰其他植物的生长。通常情况下土壤会阻拦化感物质的扩散，而CMNs可以穿过土壤，防止化感物质在土壤中被稀释，这突出了 CMNs 在植物间竞争信号物质运输的重要性。Barto等研究了一种名为万寿菊的植物释放的一种名为噻吩的化感物质。他们发现这种化感物质能够通过地下的菌丝网络，也就是CMNs，传输到附近的莴苣植物。这导致了莴苣植物的死亡率明显增加。在自然环境中，CMNs的存在也在促进另一种名为胡桃醌的化感物质的传播方面发挥了重要作用。胡桃醌对目标植物的生长产生了抑制作用。这意味着CMNs可以在植物间传输化感物质，改变周围植物的生长状况，甚至导致某些植物的死亡。</p><h5 id="3-CMNs-在植物间病害预警信号交流中的作用机制">3.CMNs 在植物间病害预警信号交流中的作用机制</h5><p>CMNs还可以激活在邻近的未受感染的植物防御系统。Alaux等的研究表明，当一株马铃薯患上了某种病原菌感染，例如晚疫病原菌，它会通过CMNs释放一种信号，这个信号可以在短短的24小时内传递给周围的未受感染的马铃薯植株。这个信号激活了健康植物内部的一些特殊基因，这些基因与VOCs途径相关。这个过程使未受感染的植物准备好，以防备病原菌的攻击。此外，其他研究还发现，CMNs不仅可以增强受到特定病原菌（比如Alternaria solani）侵染的植株的抵抗力，还可以提高附近健康植物中一些重要酶的活性，如3-葡聚糖酶、苯丙氨酸氨解酶和脂氧合酶，同时激活相关的防御系统基因的表达。这意味着CMNs可以帮助植物增强其免疫系统，使它们更有能力对抗病原菌的入侵，从而保护整个植物群体的健康。</p><h3 id="寄生植物与寄主植物的信息交流">寄生植物与寄主植物的信息交流</h3><p>大多数植物都是自养植物。它们通过光合作用将大气中的CO2固定为它们的生长和发育的唯一碳源。然而，一些自养植物已经进化成寄生植物，这些寄生植物从其他植物获取水和养分。一些寄生植物，被称为全寄生植物，不再能够进行光合作用，因此不含叶绿素，而另一些被称为半寄生植物，是绿色的且仍能够进行光合作用。菟丝子属（Cuscuta，旋花科），它们几乎没有或没有光合活动，通常被认为是全寄生植物，通过吸器（haustorium），来附着并侵入寄主组织。在单个植物中，韧皮部在运输信号分子方面起着重要作用<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>，菟丝子会在它们的吸器和寄主茎或根之间形成韧皮部融合。因此，非常有可能在吸器-寄主界面之间发生植物间系统信号传递，影响寄生植物及其寄主的生理和生态。<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup></p><h4 id="3-2-寄主与寄生植物之间的植物间信号传递">3.2. 寄主与寄生植物之间的植物间信号传递</h4><p>食草动物在菟丝子上的取食可以激活寄主植物中的防御性反应。Zhuang等人<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup>发现，绿桃蚜（Myzus persicae）在菟丝子上的侵害导致大豆寄主中超过1,000个差异表达基因（DEGs），当随后受到蚜虫或毛虫的侵害时，大豆寄主表现出增强的抵抗力。有趣的是，寄主表达抵抗力基因对菟丝子对昆虫取食的正常反应是必需的，这表明在昆虫取食期间，菟丝子和它的寄主植物可能存在双向信号传递，也就是说，不仅受胁迫的植物不仅向其他植物发送信号，而且其他植物也向受胁迫的植物发送信号，这种信号的双向交换被认为是连续和动态的。</p><h4 id="3-3通过寄生植物连接的不同寄主植物间的信号传递">3.3通过寄生植物连接的不同寄主植物间的信号传递</h4><p>在一株菟丝子生长期间，如果距离足够近，它的茎上会形成许多分枝，这些分枝可以寄生到附近的植物上。因此，很多时候，一株菟丝子可以同时寄生多个寄主，形成菟丝子连接的植物群。通过菟丝子连接，植物被虫害诱发的系统信号被发现可以从受虫害的植物传播到其他寄主。Hettenhausen等人<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup>使用一株菟丝子（Cuscuta australis）将两株大豆植物连接起来，当斑潜蝇（Spodoptera litura）昆虫袭扰其中一株大豆植物时，这种袭扰导致另一株完好的大豆植物中有550多个差异表达的基因（DEGs），表明来自受虫害的大豆植物的系统信号能够传播到未受虫害的大豆植物。Lei等人创建了由植物对组成的菟丝子连接的植物群，这些植物对在系统发育上差异很大。这些内容都说明菟丝子可以在不同寄主之间传递生态上有意义的移动信号。</p><h3 id="总结与展望">总结与展望</h3><p>挥发性有机化合物（VOCs）在植物间起到了多种作用，包括警告信号、吸引天敌昆虫、防御昆虫和病原菌等。VOCs的传递过程包括释放、传输、吸附和感知，这一复杂的过程展示了植物之间微妙的交流方式。不同种类的植物可以分辨出不同的VOCs信号，采取特异性的防御策略，这有助于它们在生态系统中适应和竞争。丛枝菌根真菌（AMF）在植物根系中建立的互惠共生关系通过形成菌丝网络促进了养分交换和信号传递。这种网络可以在植物间传递取食预警信号、竞争信号和病害预警信号。它有助于植物增强抵抗力，保护植物群体的健康。寄生植物与寄主植物之间也存在复杂的信息交流。受虫害的植物可以通过菟丝子与其他寄主植物共享系统信号，这种双向信号传递在植物群体中是连续和动态的。这种信号传递还可以跨越不同寄主植物之间的连接，影响生态系统中的多个植物。</p><p>在未来，这些研究对农业生产和生态系统管理可能具有重大帮助。例如，了解植物之间的交流方式可以帮助优化植物的防御机制，提高抗病虫害的能力，从而减少农业化学农药的使用。此外，利用丛枝菌根真菌的合作关系，可以改善植物的养分吸收效率，提高作物产量。对寄生植物与寄主植物之间的信息交流的深入了解，有望帮助管理寄生植物的传播和影响。</p><p>总之，植物之间的交流研究为农业、生态系统保护和可持续农业生产提供了重要的见解和展望，有望在未来的农业和环境管理中发挥关键作用。</p><h3 id="交流的不同方式：">交流的不同方式：</h3><p>VOCs，根系分泌物，地下菌群，菟丝子。</p><h3 id="交流的目的">交流的目的</h3><p>防御虫害，抵抗异种植物入侵，</p><p>作用，通过研究植物之间的交流来促进农业生产：Root ethylene mediates rhizosphere microbial community reconstruction when chemically detecting cyanide produced by neighbouring plants</p><p>空气中挥发性有机物(VOCs)与植物根系分泌物之间的化学相互作用在植物之间的相互作用中起着重要作用。对这些化学信号的反应，一株植物可以表现出多种适应性反应。豚草(Ambrosia artemesiifolia L.)是当今农业生产中最为棘手的外来入侵物种之一，给各种作物造成了严重的产量损失。鉴于对这种入侵者的化学线索如何促进其入侵性知之甚少，我们研究了普通豚草释放的空气中 VOCs 和根分泌物对小麦、大豆和玉米生长和分配模式的影响，以及这些作物对普通豚草的影响。豚草释放的挥发性有机物使大豆和小麦的地上干物质显著减少，而玉米的生物量产量没有变化。相比之下，豚草本身在接触作物或同种植物时完全不受影响。结果表明，豚草的挥发性有机物(VOCs)对植物的生物量、比叶面积、叶绿素含量等性状有显著影响，这些性状的变化可能与逆境胁迫的增加有关。根系选择试验表明，所有作物和豚草均显著避免了普通豚草根系的分泌物，表明根系分泌物作为地下线索在豚草和作物化学反应中起着重要作用。本研究表明，植物对地上或地下化学线索的反应不仅高度依赖于存在，而且依赖于指出植物-植物交流复杂性的邻居的同一性。</p><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>植物挥发性气体研究进展 <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>植物创伤诱导的挥发物及其信号功能 <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p>Tscharntke T， Thiessen S， Dolch Ｒ， et al． Herbivory， induced resistance， and interplant signal transfer in Alnus <a href="#fnref3" class="footnote-backref">↩︎</a></p></li><li id="fn4" class="footnote-item"><p>Zhang H， Tang J， Liu X P， et al． Hydrogen sulfide promotes root organogenesis in Ipomoea batatas， Salix matsudana and Glycine max［J］ ． Journal of Integrative Plant Biology， 2009， 51( 12) : 1086 － 1094 <a href="#fnref4" class="footnote-backref">↩︎</a></p></li><li id="fn5" class="footnote-item"><p>H 2 S 作为植物个体间交流的气体信号分子 <a href="#fnref5" class="footnote-backref">↩︎</a></p></li><li id="fn6" class="footnote-item"><p>Steidinger BS， Crowther TW， Liang J， et al． Climatic controls of decomposition drive the global biogeography of forest-tree symbioses． Nature， 2019， 571: 404－408 <a href="#fnref6" class="footnote-backref">↩︎</a></p></li><li id="fn7" class="footnote-item"><p>丛枝菌根菌丝网络在植物互作中的 作用机制研究进展 <a href="#fnref7" class="footnote-backref">↩︎</a></p></li><li id="fn8" class="footnote-item"><p>Heijden MGAVD， Horton TＲ． Socialism in soil? The importance of mycorrhizal fungal networks for facilitation in natural ecosystems． Journal of Ecology， 2010， 97: 1139－1150 <a href="#fnref8" class="footnote-backref">↩︎</a></p></li><li id="fn9" class="footnote-item"><p>Babikova Z， Gilbert L， Bruce TJA， et al． Underground signals carried through common mycelial networks warn neighbouring plants of aphid attack． Ecology Letters， 2013， 16: 835－843 <a href="#fnref9" class="footnote-backref">↩︎</a></p></li><li id="fn10" class="footnote-item"><p>Song YY， Ye M， Li CY， et al． Hijacking commonmycorrhizal networks for herbivore-induced defence signal transfer between tomato plants． Scientific Ｒeports， 2014，4， doi: 10．1038/srep03915 <a href="#fnref10" class="footnote-backref">↩︎</a></p></li><li id="fn11" class="footnote-item"><p>Notaguchi M, Okamoto S. 2015. Dynamics of long-distance signaling via plant vascular tissues. Front. Plant Sci. 6:161 <a href="#fnref11" class="footnote-backref">↩︎</a></p></li><li id="fn12" class="footnote-item"><p>Between-Plant Signaling <a href="#fnref12" class="footnote-backref">↩︎</a></p></li><li id="fn13" class="footnote-item"><p>Zhuang H, Li J, Song J, Hettenhausen C, Schuman MC, et al. 2018. Aphid (Myzus persicae) feeding on the parasitic plant dodder (Cuscuta australis) activates defense responses in both the parasite and soybean host. New Phytol. 218:1586–96 <a href="#fnref13" class="footnote-backref">↩︎</a></p></li><li id="fn14" class="footnote-item"><p>Hettenhausen C, Li J, Zhuang H, Sun H, Xu Y, et al. 2017. Stem parasitic plant Cuscuta australis(dodder) transfers herbivory-induced signals among plants. PNAS 114:E6703–9 <a href="#fnref14" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> 花卉鉴赏 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> 花卉鉴赏 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>组成原理笔记</title>
       <link href="/notes/computer_orgnization/bus/"/>
       <url>/notes/computer_orgnization/bus/</url>
@@ -1123,18 +1094,18 @@
     
     
     <entry>
-      <title>hw1</title>
-      <link href="/homework/vlsi/hw2/"/>
-      <url>/homework/vlsi/hw2/</url>
+      <title>课程论文</title>
+      <link href="/homework/flower_identification/%E6%A4%8D%E7%89%A9%E4%B9%9F%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%B5%85%E8%B0%88%E6%A4%8D%E7%89%A9%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%A4%E6%B5%81/"/>
+      <url>/homework/flower_identification/%E6%A4%8D%E7%89%A9%E4%B9%9F%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%B5%85%E8%B0%88%E6%A4%8D%E7%89%A9%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%A4%E6%B5%81/</url>
       
-        <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
+        <content type="html"><![CDATA[<h1>植物也会说话？浅谈植物之间的交流</h1><p>交流是人类乃至动物日常生活中不可缺少的一部分。通过交流，动物与周遭世界进行互动：分享思想、交配求偶、宣告领地、报告危险······动物之间的交流是生态系统中不可或缺的一部分，它有助于维持物种的生存和生态平衡。但是，看似安安静静的植物，其实也在通过这样或那样的方式与它的邻居们产生着精彩纷呈的交流互动。</p><p>下面将深入探讨几种典型的植物间交流方式，令我们更加深刻地理解这个神奇的植物世界。不同植物之间的交流并不同于动物的语言，但它们通过挥发性有机化合物、根系互动、甚至寄生植物等方式，建立其自己的“通讯网络”，以自己独特的方式传递信息、合作共生，甚至进行竞争。这种微妙的植物交流对于生态系统的平衡和植物自身的生存至关重要。让我们一起探索这个植物王国中隐藏的奇妙交流世界。</p><h2 id="VOCs">VOCs</h2><p>释放挥发性气体 （volatile organic compounds VOCs）是植物间进行交流的重要方式。有些挥发性气体可能是植物生长发育过程中产生的代谢废物，但也有许多挥发性气体具有重要的信号功能作用。<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>这些气体分子通常承担重要的角色，其中一种用途是作为警告信号，告知其他植物有潜在的威胁。它们还可以起到吸引天敌昆虫的作用，以保护自身免受害虫的侵害。此外，这些气体分子还可以用来驱避食草昆虫或病原菌，帮助植物保持健康。<sup class="footnote-ref"><a href="#fn2" id="fnref2">[2]</a></sup></p><h4 id="vocs信号在植物间的传递过程">vocs信号在植物间的传递过程</h4><p>vocs信号在植物间的传递包括以下4个步骤：首先，植物会释放VOCS，这些化合物散发到周围的空气中。VOCS的释放分为两种方式：组成型化合物在植物受到机械损伤后被动释放，而诱导型化合物在植物受到昆虫为害（包括由昆虫为害导致的病原体侵染）后主动释放。<sup class="footnote-ref"><a href="#fn1" id="fnref1:1">[1:1]</a></sup>随后，这些挥发性有机化合物在大气中传输，随风飘荡，或者通过水流在地表或地下传播，将植物的信息携带到远处。然后，这些气体在其他植物表面进行吸附，落在叶片和茎上，等待着下一步的事件。在光照条件下，接受植物气孔增大，气体进入植物体过程中浓度降低很少，促进了信号传播。最后，接收植株会感知这些VOCS，解读它们所携带的信息，以在基因表达或者代谢层面采取适当的响应措施。这一过程展示了植物之间复杂而微妙的交流方式，通过挥发性有机化合物在大自然中传递信息和互动。</p><h4 id="vocs信号的作用机制">vocs信号的作用机制</h4><p>一些植物在受到胁迫时（创伤，植食性昆虫捕食，或环境胁迫等），释放创伤诱导型挥发物（wound-inducible volatiles WIVs）如茉莉酸甲酯以及水杨酸甲酯等。这些挥发物可帮助植物防御昆虫，提高抗病性，并传递信息给健康植株，诱导它们对未来可能到来的侵害及时做好准备。<sup class="footnote-ref"><a href="#fn3" id="fnref3">[3]</a></sup> 另一类挥发性气体是绿色植物叶片气孔释放的绿叶挥发物（Green leaf volatiles，GLVs）。茉莉酸和乙烯可以通过作用于植物抗病性基因，提高植物抗病性。$H_2S$也是重要的一类挥发性物质，在提高应对多种胁迫能力以及加速某些植物种子萌发，根形态建成， 幼苗叶绿素含量和光合作用相关基因表达方面有重要作用。<sup class="footnote-ref"><a href="#fn4" id="fnref4">[4]</a></sup><sup class="footnote-ref"><a href="#fn5" id="fnref5">[5]</a></sup></p><p>有趣的是，VOCs的释放还具有特异性。同一种昆虫取食不同类群的植物时，VOCs的成分构成与释放浓度不同。不同种昆虫乃至同种昆虫不同龄期的幼虫取食同种植物时，植物的反应也不同，如菜豆被成年潜叶蝇与其二龄幼虫为害后诱导释放的 VOCs有明显的不同。接受信号的植物可以分辨出不同的VOCs信号，进而采取特异性的防御策略。</p><h3 id="丛枝菌根">丛枝菌根</h3><p>在植物世界中，还有一种非常重要的互动方式，涉及到根系、分泌物和微小的土壤生物。这种互动方式被认为在植物相互交流中扮演着重要的角色。首先，要了解这个过程，我们需要认识一下菌根真菌，它们是一类特殊的微生物，存在于土壤中。其中一种叫做丛枝菌根真菌（Arbuscular mycorrhizal fungi，AMF）的微生物在陆地生态系统中非常常见。这个有趣的事实是，绝大多数陆地上的植物都可以与这种丛枝菌根真菌建立一种合作关系，这种合作关系被称为互惠共生关系。这种互惠共生关系是怎么运作的呢？首先，植物的根系与这些菌根真菌的细长丝状结构相互交织在一起，就像植物的根和真菌之间建立了一种由菌丝网络微小的桥梁。这种微小桥梁不仅可以供营养物质的转运，比如丛枝菌根真菌可以促进植物磷和氮的吸收，植物为真菌提供糖和脂质营养物质等。</p><p>由于AMF可以无性繁殖且不具备宿主特异性，它们可以与不同种植物建立互惠共生关系，而同种或不同种植物之间的AMF菌丝可以相互连接，形成公共菌丝网络（CMNs）<sup class="footnote-ref"><a href="#fn6" id="fnref6">[6]</a></sup>。CMNs在植物间的竞争、养分资源的再分配以及地下化学信号传递等方面扮演着不可替代的角色。因此，CMNs已经引起了科学家的广泛研究兴趣。<sup class="footnote-ref"><a href="#fn7" id="fnref7">[7]</a></sup></p><h4 id="CMNs的形成">CMNs的形成</h4><p>CMNs是一种复杂的菌丝网络，由AMF（丛枝菌根真菌）的外生菌丝与植物根系形成。在自然生态系统中，植物和AMF之间没有特异性的互相识别，因此，当AMF的外生菌丝接触到其他植物根系时，它们可以再次侵染并形成植物之间的菌丝联系。这样，每棵植物就像一个供给站，AMF的菌丝不断向外延伸，最终形成密集的菌丝网络。<sup class="footnote-ref"><a href="#fn8" id="fnref8">[8]</a></sup></p><h4 id="CMNs作用机制的例子">CMNs作用机制的例子</h4><h5 id="1-CMNs-在植物间取食预警信号交流中的作用机制">1.CMNs 在植物间取食预警信号交流中的作用机制</h5><p>CMNs作为信号传导通道，参与植物间的取食预警信号传递。Babikova 等<sup class="footnote-ref"><a href="#fn9" id="fnref9">[9]</a></sup>发现，当植物被蚜虫啃食时，通过CMNs相连的，未被啃食的植物也能够释放出前面提到的一些具有抗虫作用的VOCs。此外，Song 等<sup class="footnote-ref"><a href="#fn10" id="fnref10">[10]</a></sup>研究发现，仅仅移植丛枝菌根真菌并不能增强系统防御反应，但是CMNs的存在可以激活叶片中的系统反应区，这说明CMNs具备在植物之间传递防御信号的作用。</p><h5 id="2-CMNs在植物间竞争信号交流中的作用机制">2.CMNs在植物间竞争信号交流中的作用机制</h5><p>不同的植物之间存在竞争，往往通过化感物质（ allelochemicals）干扰其他植物的生长。通常情况下土壤会阻拦化感物质的扩散，而CMNs可以穿过土壤，防止化感物质在土壤中被稀释，这突出了 CMNs 在植物间竞争信号物质运输的重要性。Barto等研究了一种名为万寿菊的植物释放的一种名为噻吩的化感物质。他们发现这种化感物质能够通过地下的菌丝网络，也就是CMNs，传输到附近的莴苣植物。这导致了莴苣植物的死亡率明显增加。在自然环境中，CMNs的存在也在促进另一种名为胡桃醌的化感物质的传播方面发挥了重要作用。胡桃醌对目标植物的生长产生了抑制作用。这意味着CMNs可以在植物间传输化感物质，改变周围植物的生长状况，甚至导致某些植物的死亡。</p><h5 id="3-CMNs-在植物间病害预警信号交流中的作用机制">3.CMNs 在植物间病害预警信号交流中的作用机制</h5><p>CMNs还可以激活在邻近的未受感染的植物防御系统。Alaux等的研究表明，当一株马铃薯患上了某种病原菌感染，例如晚疫病原菌，它会通过CMNs释放一种信号，这个信号可以在短短的24小时内传递给周围的未受感染的马铃薯植株。这个信号激活了健康植物内部的一些特殊基因，这些基因与VOCs途径相关。这个过程使未受感染的植物准备好，以防备病原菌的攻击。此外，其他研究还发现，CMNs不仅可以增强受到特定病原菌（比如Alternaria solani）侵染的植株的抵抗力，还可以提高附近健康植物中一些重要酶的活性，如3-葡聚糖酶、苯丙氨酸氨解酶和脂氧合酶，同时激活相关的防御系统基因的表达。这意味着CMNs可以帮助植物增强其免疫系统，使它们更有能力对抗病原菌的入侵，从而保护整个植物群体的健康。</p><h3 id="寄生植物与寄主植物的信息交流">寄生植物与寄主植物的信息交流</h3><p>大多数植物都是自养植物。它们通过光合作用将大气中的CO2固定为它们的生长和发育的唯一碳源。然而，一些自养植物已经进化成寄生植物，这些寄生植物从其他植物获取水和养分。一些寄生植物，被称为全寄生植物，不再能够进行光合作用，因此不含叶绿素，而另一些被称为半寄生植物，是绿色的且仍能够进行光合作用。菟丝子属（Cuscuta，旋花科），它们几乎没有或没有光合活动，通常被认为是全寄生植物，通过吸器（haustorium），来附着并侵入寄主组织。在单个植物中，韧皮部在运输信号分子方面起着重要作用<sup class="footnote-ref"><a href="#fn11" id="fnref11">[11]</a></sup>，菟丝子会在它们的吸器和寄主茎或根之间形成韧皮部融合。因此，非常有可能在吸器-寄主界面之间发生植物间系统信号传递，影响寄生植物及其寄主的生理和生态。<sup class="footnote-ref"><a href="#fn12" id="fnref12">[12]</a></sup></p><h4 id="3-2-寄主与寄生植物之间的植物间信号传递">3.2. 寄主与寄生植物之间的植物间信号传递</h4><p>食草动物在菟丝子上的取食可以激活寄主植物中的防御性反应。Zhuang等人<sup class="footnote-ref"><a href="#fn13" id="fnref13">[13]</a></sup>发现，绿桃蚜（Myzus persicae）在菟丝子上的侵害导致大豆寄主中超过1,000个差异表达基因（DEGs），当随后受到蚜虫或毛虫的侵害时，大豆寄主表现出增强的抵抗力。有趣的是，寄主表达抵抗力基因对菟丝子对昆虫取食的正常反应是必需的，这表明在昆虫取食期间，菟丝子和它的寄主植物可能存在双向信号传递，也就是说，不仅受胁迫的植物不仅向其他植物发送信号，而且其他植物也向受胁迫的植物发送信号，这种信号的双向交换被认为是连续和动态的。</p><h4 id="3-3通过寄生植物连接的不同寄主植物间的信号传递">3.3通过寄生植物连接的不同寄主植物间的信号传递</h4><p>在一株菟丝子生长期间，如果距离足够近，它的茎上会形成许多分枝，这些分枝可以寄生到附近的植物上。因此，很多时候，一株菟丝子可以同时寄生多个寄主，形成菟丝子连接的植物群。通过菟丝子连接，植物被虫害诱发的系统信号被发现可以从受虫害的植物传播到其他寄主。Hettenhausen等人<sup class="footnote-ref"><a href="#fn14" id="fnref14">[14]</a></sup>使用一株菟丝子（Cuscuta australis）将两株大豆植物连接起来，当斑潜蝇（Spodoptera litura）昆虫袭扰其中一株大豆植物时，这种袭扰导致另一株完好的大豆植物中有550多个差异表达的基因（DEGs），表明来自受虫害的大豆植物的系统信号能够传播到未受虫害的大豆植物。Lei等人创建了由植物对组成的菟丝子连接的植物群，这些植物对在系统发育上差异很大。这些内容都说明菟丝子可以在不同寄主之间传递生态上有意义的移动信号。</p><h3 id="总结与展望">总结与展望</h3><p>挥发性有机化合物（VOCs）在植物间起到了多种作用，包括警告信号、吸引天敌昆虫、防御昆虫和病原菌等。VOCs的传递过程包括释放、传输、吸附和感知，这一复杂的过程展示了植物之间微妙的交流方式。不同种类的植物可以分辨出不同的VOCs信号，采取特异性的防御策略，这有助于它们在生态系统中适应和竞争。丛枝菌根真菌（AMF）在植物根系中建立的互惠共生关系通过形成菌丝网络促进了养分交换和信号传递。这种网络可以在植物间传递取食预警信号、竞争信号和病害预警信号。它有助于植物增强抵抗力，保护植物群体的健康。寄生植物与寄主植物之间也存在复杂的信息交流。受虫害的植物可以通过菟丝子与其他寄主植物共享系统信号，这种双向信号传递在植物群体中是连续和动态的。这种信号传递还可以跨越不同寄主植物之间的连接，影响生态系统中的多个植物。</p><p>在未来，这些研究对农业生产和生态系统管理可能具有重大帮助。例如，了解植物之间的交流方式可以帮助优化植物的防御机制，提高抗病虫害的能力，从而减少农业化学农药的使用。此外，利用丛枝菌根真菌的合作关系，可以改善植物的养分吸收效率，提高作物产量。对寄生植物与寄主植物之间的信息交流的深入了解，有望帮助管理寄生植物的传播和影响。</p><p>总之，植物之间的交流研究为农业、生态系统保护和可持续农业生产提供了重要的见解和展望，有望在未来的农业和环境管理中发挥关键作用。</p><h3 id="交流的不同方式：">交流的不同方式：</h3><p>VOCs，根系分泌物，地下菌群，菟丝子。</p><h3 id="交流的目的">交流的目的</h3><p>防御虫害，抵抗异种植物入侵，</p><p>作用，通过研究植物之间的交流来促进农业生产：Root ethylene mediates rhizosphere microbial community reconstruction when chemically detecting cyanide produced by neighbouring plants</p><p>空气中挥发性有机物(VOCs)与植物根系分泌物之间的化学相互作用在植物之间的相互作用中起着重要作用。对这些化学信号的反应，一株植物可以表现出多种适应性反应。豚草(Ambrosia artemesiifolia L.)是当今农业生产中最为棘手的外来入侵物种之一，给各种作物造成了严重的产量损失。鉴于对这种入侵者的化学线索如何促进其入侵性知之甚少，我们研究了普通豚草释放的空气中 VOCs 和根分泌物对小麦、大豆和玉米生长和分配模式的影响，以及这些作物对普通豚草的影响。豚草释放的挥发性有机物使大豆和小麦的地上干物质显著减少，而玉米的生物量产量没有变化。相比之下，豚草本身在接触作物或同种植物时完全不受影响。结果表明，豚草的挥发性有机物(VOCs)对植物的生物量、比叶面积、叶绿素含量等性状有显著影响，这些性状的变化可能与逆境胁迫的增加有关。根系选择试验表明，所有作物和豚草均显著避免了普通豚草根系的分泌物，表明根系分泌物作为地下线索在豚草和作物化学反应中起着重要作用。本研究表明，植物对地上或地下化学线索的反应不仅高度依赖于存在，而且依赖于指出植物-植物交流复杂性的邻居的同一性。</p><hr class="footnotes-sep"><section class="footnotes"><ol class="footnotes-list"><li id="fn1" class="footnote-item"><p>植物挥发性气体研究进展 <a href="#fnref1" class="footnote-backref">↩︎</a> <a href="#fnref1:1" class="footnote-backref">↩︎</a></p></li><li id="fn2" class="footnote-item"><p>植物创伤诱导的挥发物及其信号功能 <a href="#fnref2" class="footnote-backref">↩︎</a></p></li><li id="fn3" class="footnote-item"><p>Tscharntke T， Thiessen S， Dolch Ｒ， et al． Herbivory， induced resistance， and interplant signal transfer in Alnus <a href="#fnref3" class="footnote-backref">↩︎</a></p></li><li id="fn4" class="footnote-item"><p>Zhang H， Tang J， Liu X P， et al． Hydrogen sulfide promotes root organogenesis in Ipomoea batatas， Salix matsudana and Glycine max［J］ ． Journal of Integrative Plant Biology， 2009， 51( 12) : 1086 － 1094 <a href="#fnref4" class="footnote-backref">↩︎</a></p></li><li id="fn5" class="footnote-item"><p>H 2 S 作为植物个体间交流的气体信号分子 <a href="#fnref5" class="footnote-backref">↩︎</a></p></li><li id="fn6" class="footnote-item"><p>Steidinger BS， Crowther TW， Liang J， et al． Climatic controls of decomposition drive the global biogeography of forest-tree symbioses． Nature， 2019， 571: 404－408 <a href="#fnref6" class="footnote-backref">↩︎</a></p></li><li id="fn7" class="footnote-item"><p>丛枝菌根菌丝网络在植物互作中的 作用机制研究进展 <a href="#fnref7" class="footnote-backref">↩︎</a></p></li><li id="fn8" class="footnote-item"><p>Heijden MGAVD， Horton TＲ． Socialism in soil? The importance of mycorrhizal fungal networks for facilitation in natural ecosystems． Journal of Ecology， 2010， 97: 1139－1150 <a href="#fnref8" class="footnote-backref">↩︎</a></p></li><li id="fn9" class="footnote-item"><p>Babikova Z， Gilbert L， Bruce TJA， et al． Underground signals carried through common mycelial networks warn neighbouring plants of aphid attack． Ecology Letters， 2013， 16: 835－843 <a href="#fnref9" class="footnote-backref">↩︎</a></p></li><li id="fn10" class="footnote-item"><p>Song YY， Ye M， Li CY， et al． Hijacking commonmycorrhizal networks for herbivore-induced defence signal transfer between tomato plants． Scientific Ｒeports， 2014，4， doi: 10．1038/srep03915 <a href="#fnref10" class="footnote-backref">↩︎</a></p></li><li id="fn11" class="footnote-item"><p>Notaguchi M, Okamoto S. 2015. Dynamics of long-distance signaling via plant vascular tissues. Front. Plant Sci. 6:161 <a href="#fnref11" class="footnote-backref">↩︎</a></p></li><li id="fn12" class="footnote-item"><p>Between-Plant Signaling <a href="#fnref12" class="footnote-backref">↩︎</a></p></li><li id="fn13" class="footnote-item"><p>Zhuang H, Li J, Song J, Hettenhausen C, Schuman MC, et al. 2018. Aphid (Myzus persicae) feeding on the parasitic plant dodder (Cuscuta australis) activates defense responses in both the parasite and soybean host. New Phytol. 218:1586–96 <a href="#fnref13" class="footnote-backref">↩︎</a></p></li><li id="fn14" class="footnote-item"><p>Hettenhausen C, Li J, Zhuang H, Sun H, Xu Y, et al. 2017. Stem parasitic plant Cuscuta australis(dodder) transfers herbivory-induced signals among plants. PNAS 114:E6703–9 <a href="#fnref14" class="footnote-backref">↩︎</a></p></li></ol></section>]]></content>
       
       
       <categories>
           
           <category> homework </category>
           
-          <category> vlsi </category>
+          <category> 花卉鉴赏 </category>
           
       </categories>
       
@@ -1143,7 +1114,7 @@
             
             <tag> homework </tag>
             
-            <tag> vlsi </tag>
+            <tag> 花卉鉴赏 </tag>
             
         </tags>
       
@@ -1182,8 +1153,8 @@
     
     <entry>
       <title>hw1</title>
-      <link href="/homework/vlsi/hw3/"/>
-      <url>/homework/vlsi/hw3/</url>
+      <link href="/homework/vlsi/hw2/"/>
+      <url>/homework/vlsi/hw2/</url>
       
         <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
       
@@ -1213,6 +1184,35 @@
       <title>hw1</title>
       <link href="/homework/vlsi/hw4/"/>
       <url>/homework/vlsi/hw4/</url>
+      
+        <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> vlsi </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> vlsi </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hw1</title>
+      <link href="/homework/vlsi/hw3/"/>
+      <url>/homework/vlsi/hw3/</url>
       
         <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
       
@@ -1616,9 +1616,9 @@
       
         <tags>
             
-            <tag> flower_identification </tag>
-            
             <tag> notes </tag>
+            
+            <tag> flower_identification </tag>
             
         </tags>
       
@@ -1631,7 +1631,7 @@
       <link href="/homework/ddls-2023%E7%A7%8B/"/>
       <url>/homework/ddls-2023%E7%A7%8B/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><div class="danger"><ul class="lvl-1"><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">bug</label></p></li></ul></div><hr><div class="warning"><ul class="lvl-1"><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">计原大实验——12/15</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox18"><label for="checkbox18">计原lab3——10/24</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">计原lab4——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox20"><label for="checkbox20">计原lab5——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox21"><label for="checkbox21">计原lab6——11/21</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox22"><label for="checkbox22">编原stage2实验报告——10/29</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox23"><label for="checkbox23">编原stage3实验报告——11/12</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox24"><label for="checkbox24">编原stage4实验报告——11/26</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox25"><label for="checkbox25">编原stage5——12/24</label></p></li></ul></div><hr><div class="tips"><ul class="lvl-1"><li class="lvl-2"><p><input type="checkbox" id="checkbox26"><label for="checkbox26">花卉调查报告——11/05</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox27"><label for="checkbox27">课程论文——10/22</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox28"><label for="checkbox28">每日花卉赏析——10/19</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox29"><label for="checkbox29">鹅掌楸的果实–C楼附近</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox30"><label for="checkbox30">拍点清楚的紫荆</label></p></li></ul></div><hr><div class="success"><ul class="lvl-1"><li class="lvl-2"><p>[ ]</p></li></ul></div>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><div class="danger"><ul class="lvl-1"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">bug</label></p></li></ul></div><hr><div class="warning"><ul class="lvl-1"><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">计原大实验——12/15</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">计原lab3——10/24</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">计原lab4——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">计原lab5——11/7</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5"><label for="checkbox5">计原lab6——11/21</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6"><label for="checkbox6">编原stage2实验报告——10/29</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7"><label for="checkbox7">编原stage3实验报告——11/12</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">编原stage4实验报告——11/26</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">编原stage5——12/24</label></p></li></ul></div><hr><div class="tips"><ul class="lvl-1"><li class="lvl-2"><p><input type="checkbox" id="checkbox10"><label for="checkbox10">花卉调查报告——11/05</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11"><label for="checkbox11">课程论文——10/22</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12"><label for="checkbox12">每日花卉赏析——10/19</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13"><label for="checkbox13">鹅掌楸的果实–C楼附近</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14"><label for="checkbox14">拍点清楚的紫荆</label></p></li></ul></div><hr><div class="success"><ul class="lvl-1"><li class="lvl-2"><p>[ ]</p></li></ul></div>]]></content>
       
       
       <categories>
@@ -1816,11 +1816,11 @@
     
     
     <entry>
-      <title>week1</title>
-      <link href="/homework/computer_orgnization/week1-2/"/>
-      <url>/homework/computer_orgnization/week1-2/</url>
+      <title>week1-2</title>
+      <link href="/notes/computer_orgnization/week1-2/"/>
+      <url>/notes/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -1843,11 +1843,11 @@
     
     
     <entry>
-      <title>week1-2</title>
-      <link href="/notes/computer_orgnization/week1-2/"/>
-      <url>/notes/computer_orgnization/week1-2/</url>
+      <title>week1</title>
+      <link href="/homework/computer_orgnization/week1-2/"/>
+      <url>/homework/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
       
       
       <categories>
@@ -2306,7 +2306,7 @@
       <link href="/homework/deadlines/"/>
       <url>/homework/deadlines/</url>
       
-        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox0"><label for="checkbox0">毛概案例分析 十二周周日 </label><mark>周末再说吧</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox1"><label for="checkbox1">第12周DLCE</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox2"><label for="checkbox2">数电12周作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox3"><label for="checkbox3">网原大作业(联机实验部分)</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox4"><label for="checkbox4">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox5" checked="true"><label for="checkbox5">网原实验3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox6" checked="true"><label for="checkbox6">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox7" checked="true"><label for="checkbox7">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox8"><label for="checkbox8">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox9"><label for="checkbox9">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox10" checked="true"><label for="checkbox10">希腊语第三次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox11" checked="true"><label for="checkbox11">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox12" checked="true"><label for="checkbox12">人智导第二次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox13" checked="true"><label for="checkbox13">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox14" checked="true"><label for="checkbox14">网原第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox15" checked="true"><label for="checkbox15">概统第十次作业</label></p></li><li class="lvl-2"><p>[ ]</p></li></ul></div></details>]]></content>
+        <content type="html"><![CDATA[<blockquote><p>日拱一卒未有尽，​      功不唐捐终到海。</p></blockquote><details> <summary><b>图例</summary><div class="danger"><p>时间紧，任务重，I’m f**ked up</p></div><div class="warning"><p>时间不多了,under pressure</p></div><div class="tips"><p>时间还早,totally under control</p></div><div class="success"><p>写完了😄</p></div></details><h2 id="发现红框没有被check，可以来压力我😄">发现红框没有被check，可以来压力我😄</h2><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="danger"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox15"><label for="checkbox15">毛概案例分析 十二周周日 </label><mark>周末再说吧</mark></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox16"><label for="checkbox16">第12周DLCE</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox17"><label for="checkbox17">数电12周作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="warning"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox18"><label for="checkbox18">网原大作业(联机实验部分)</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox19"><label for="checkbox19">计图pa3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox20" checked="true"><label for="checkbox20">网原实验3</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox21" checked="true"><label for="checkbox21">数电实验报告</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox22" checked="true"><label for="checkbox22">数电作业</label></p></li></ul></div></details><hr><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="tips"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox23"><label for="checkbox23">习概作业 17周周日</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox24"><label for="checkbox24">计图大作业</label></p></li></ul></div></details><details open><summary><span class="pre-summary">&nbsp;</span>点击折叠</summary><div class="success"><ul class="lvl-2"><li class="lvl-2"><p><input type="checkbox" id="checkbox25" checked="true"><label for="checkbox25">希腊语第三次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox26" checked="true"><label for="checkbox26">计图pa2</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox27" checked="true"><label for="checkbox27">人智导第二次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox28" checked="true"><label for="checkbox28">网原第九次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox29" checked="true"><label for="checkbox29">网原第十次作业</label></p></li><li class="lvl-2"><p><input type="checkbox" id="checkbox30" checked="true"><label for="checkbox30">概统第十次作业</label></p></li><li class="lvl-2"><p>[ ]</p></li></ul></div></details>]]></content>
       
       
       <categories>
@@ -2610,6 +2610,33 @@
     
     
     <entry>
+      <title>DLC12</title>
+      <link href="/notes/DLC/week12/"/>
+      <url>/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>network-E3</title>
       <link href="/homework/network/network-E3/"/>
       <url>/homework/network/network-E3/</url>
@@ -2660,33 +2687,6 @@
             <tag> homework </tag>
             
             <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC12</title>
-      <link href="/notes/DLC/week12/"/>
-      <url>/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -2799,6 +2799,33 @@
     
     
     <entry>
+      <title>DLC</title>
+      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>four-adder</title>
       <link href="/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -2820,33 +2847,6 @@
             <tag> homework </tag>
             
             <tag> DLCE </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>DLC</title>
-      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
             
         </tags>
       
@@ -3113,35 +3113,6 @@
     
     
     <entry>
-      <title>network-homework-5</title>
-      <link href="/homework/network/network5/"/>
-      <url>/homework/network/network5/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>hello world</title>
       <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
@@ -3190,6 +3161,35 @@
         <tags>
             
             <tag> ελληνικά </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>network-homework-5</title>
+      <link href="/homework/network/network5/"/>
+      <url>/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
             
         </tags>
       
