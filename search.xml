@@ -163,9 +163,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -192,9 +192,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -221,9 +221,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -250,9 +250,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -279,9 +279,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -308,9 +308,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -337,9 +337,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> signal_processing </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -482,9 +482,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> computer_orgnization </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -511,9 +511,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -685,9 +685,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> network_security </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -787,7 +787,7 @@
       <link href="/homework/signal_processing/lab2/"/>
       <url>/homework/signal_processing/lab2/</url>
       
-        <content type="html"><![CDATA[<h2 id="lab2-按键音识别">lab2 按键音识别</h2><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5><p><a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p><h2 id="实验目的">实验目的</h2><p>识别dtmf音频，逐帧将其转换为按键序列</p><h2 id="实验过程">实验过程</h2><ol><li class="lvl-3"><p>将输入音频分成1/64s的帧</p></li><li class="lvl-3"><p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p></li><li class="lvl-3"><p>计算当前帧的短时傅里叶变化<code>stft</code></p><blockquote><p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p></blockquote></li><li class="lvl-3"><p>选择出每一帧的两个能量峰值处的频率</p><blockquote><p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>根据找到的频率判断按键</p><blockquote><p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure></li></ol><h2 id="实验现象">实验现象</h2><p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p><p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p><h2 id="实验结论">实验结论</h2><p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p><p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>        <div id="aplayer-ZpYhmMPz" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-ZpYhmMPz"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "sample.wav",              author: "yux",              url: "/music/dtmf/sample.wav",              pic: "/music/dtmf/sample.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="lab2-按键音识别">lab2 按键音识别</h2><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5><p><a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p><h2 id="实验目的">实验目的</h2><p>识别dtmf音频，逐帧将其转换为按键序列</p><h2 id="实验过程">实验过程</h2><ol><li class="lvl-3"><p>将输入音频分成1/64s的帧</p></li><li class="lvl-3"><p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p></li><li class="lvl-3"><p>计算当前帧的短时傅里叶变化<code>stft</code></p><blockquote><p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p></blockquote></li><li class="lvl-3"><p>选择出每一帧的两个能量峰值处的频率</p><blockquote><p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>根据找到的频率判断按键</p><blockquote><p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure></li></ol><h2 id="实验现象">实验现象</h2><p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p><p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p><h2 id="实验结论">实验结论</h2><p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p><p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>        <div id="aplayer-dAmUIIjm" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-dAmUIIjm"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "sample.wav",              author: "yux",              url: "/music/dtmf/sample.wav",              pic: "/music/dtmf/sample.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>]]></content>
       
       
       <categories>
@@ -1013,33 +1013,6 @@
     
     
     <entry>
-      <title>lab3</title>
-      <link href="/homework/computer_orgnization/lab3/"/>
-      <url>/homework/computer_orgnization/lab3/</url>
-      
-        <content type="html"><![CDATA[<h1>实验三</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="仿真截图">仿真截图</h4><ul class="lvl-2"><li class="lvl-4"><p>设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。</p></li><li class="lvl-4"><p>assert(alu_a==rdata_a),assert(alu_b==rdata_b)，assert(alu_y==wdata)</p></li><li class="lvl-4"><pre><code class="language-cpp">    //验证ALU功能    for (int i = 1; i &lt; 32; i = i + 1) begin      #100;      rd = i;   // only lower 5 bits      rs1 = $urandom_range(0, 32);      rs2 = $urandom_range(0, 32);      opcode = $urandom_range(1, 11);      dip_sw = `inst_rtype(rd, rs1, rs2, opcode);      push_btn = 1;      #100;      push_btn = 0;      // 展示结果      #100;      rd = i;   // only lower 5 bits      dip_sw = `inst_peek(rd, 0);      push_btn = 1;      #100;      push_btn = 0;      #1000;</code></pre></li></ul><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png" alt="image-20231022000429920"></p><p>此外还设计了peek指令验证每个寄存器存储值正确</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png" alt="image-20231022002957251"></p></li><li class="lvl-2"><h3 id="在线实验平台">在线实验平台</h3><ul class="lvl-2"><li class="lvl-4">POKE imm<strong>7</strong> into r1 then PEEK r1，正常显示7</li></ul><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png" alt="image-20231022001257034"></p><ul class="lvl-2"><li class="lvl-4"><p>poke 8 into r2 ,  add r1 r2 to r3 ,then peek r3:正常得到15</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png" alt="image-20231022002321205"></p></li><li class="lvl-4"><p>not r1 to r3,peek r3结果正确</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png" alt="image-20231022002505841"></p></li><li class="lvl-4"><p>r1逻辑左移r2位的结果，正确</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png" alt="image-20231022002630826"></p></li><li class="lvl-4"><p>循环左移结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png" alt="image-20231022002728947"></p></li><li class="lvl-4"><p>所有操作在板子上均得到正确结果</p></li></ul></li></ul><h2 id="思考题">思考题</h2><p>如果读取到乘除法运算，则在decode时根据操作数的位数计算出需要的时钟周期，给CALC过程添加一个自环，每次操作CLK_CNT–，直到得0（所有位数计算完成）退出自环，进入WRITE模式</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png" alt="image-20231022004352614"></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> cod </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> cod </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>lab4_5</title>
       <link href="/homework/computer_orgnization/lab4_5/"/>
       <url>/homework/computer_orgnization/lab4_5/</url>
@@ -1067,16 +1040,16 @@
     
     
     <entry>
-      <title>组成原理笔记</title>
-      <link href="/notes/computer_orgnization/bus/"/>
-      <url>/notes/computer_orgnization/bus/</url>
+      <title>lab3</title>
+      <link href="/homework/computer_orgnization/lab3/"/>
+      <url>/homework/computer_orgnization/lab3/</url>
       
-        <content type="html"><![CDATA[<h1>总线协议</h1><p>用 Master 和 Slave 来表示总线上的发送方和接收方：</p><ul class="lvl-0"><li class="lvl-2"><p>Master 设置 valid_o=1，等待 Slave 设置 ready_i=1</p></li><li class="lvl-2"><p>Slave 完成操作后，设置 ready_i=1</p></li><li class="lvl-2"><p>valid_o=1 &amp;&amp; ready_i=1 表示完成了一次请求</p></li></ul><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ee8a59eb78d38c6f075225d00413dae/202310202053601.png" alt="RISC-V 指令格式"></p>]]></content>
+        <content type="html"><![CDATA[<h1>实验三</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="仿真截图">仿真截图</h4><ul class="lvl-2"><li class="lvl-4"><p>设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。</p></li><li class="lvl-4"><p>assert(alu_a==rdata_a),assert(alu_b==rdata_b)，assert(alu_y==wdata)</p></li><li class="lvl-4"><pre><code class="language-cpp">    //验证ALU功能    for (int i = 1; i &lt; 32; i = i + 1) begin      #100;      rd = i;   // only lower 5 bits      rs1 = $urandom_range(0, 32);      rs2 = $urandom_range(0, 32);      opcode = $urandom_range(1, 11);      dip_sw = `inst_rtype(rd, rs1, rs2, opcode);      push_btn = 1;      #100;      push_btn = 0;      // 展示结果      #100;      rd = i;   // only lower 5 bits      dip_sw = `inst_peek(rd, 0);      push_btn = 1;      #100;      push_btn = 0;      #1000;</code></pre></li></ul><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png" alt="image-20231022000429920"></p><p>此外还设计了peek指令验证每个寄存器存储值正确</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png" alt="image-20231022002957251"></p></li><li class="lvl-2"><h3 id="在线实验平台">在线实验平台</h3><ul class="lvl-2"><li class="lvl-4">POKE imm<strong>7</strong> into r1 then PEEK r1，正常显示7</li></ul><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png" alt="image-20231022001257034"></p><ul class="lvl-2"><li class="lvl-4"><p>poke 8 into r2 ,  add r1 r2 to r3 ,then peek r3:正常得到15</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png" alt="image-20231022002321205"></p></li><li class="lvl-4"><p>not r1 to r3,peek r3结果正确</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png" alt="image-20231022002505841"></p></li><li class="lvl-4"><p>r1逻辑左移r2位的结果，正确</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png" alt="image-20231022002630826"></p></li><li class="lvl-4"><p>循环左移结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png" alt="image-20231022002728947"></p></li><li class="lvl-4"><p>所有操作在板子上均得到正确结果</p></li></ul></li></ul><h2 id="思考题">思考题</h2><p>如果读取到乘除法运算，则在decode时根据操作数的位数计算出需要的时钟周期，给CALC过程添加一个自环，每次操作CLK_CNT–，直到得0（所有位数计算完成）退出自环，进入WRITE模式</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png" alt="image-20231022004352614"></p>]]></content>
       
       
       <categories>
           
-          <category> notes </category>
+          <category> homework </category>
           
           <category> cod </category>
           
@@ -1115,6 +1088,33 @@
             <tag> homework </tag>
             
             <tag> 花卉鉴赏 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>组成原理笔记</title>
+      <link href="/notes/computer_orgnization/bus/"/>
+      <url>/notes/computer_orgnization/bus/</url>
+      
+        <content type="html"><![CDATA[<h1>总线协议</h1><p>用 Master 和 Slave 来表示总线上的发送方和接收方：</p><ul class="lvl-0"><li class="lvl-2"><p>Master 设置 valid_o=1，等待 Slave 设置 ready_i=1</p></li><li class="lvl-2"><p>Slave 完成操作后，设置 ready_i=1</p></li><li class="lvl-2"><p>valid_o=1 &amp;&amp; ready_i=1 表示完成了一次请求</p></li></ul><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ee8a59eb78d38c6f075225d00413dae/202310202053601.png" alt="RISC-V 指令格式"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> cod </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cod </tag>
             
         </tags>
       
@@ -1182,8 +1182,8 @@
     
     <entry>
       <title>hw1</title>
-      <link href="/homework/vlsi/hw3/"/>
-      <url>/homework/vlsi/hw3/</url>
+      <link href="/homework/vlsi/hw4/"/>
+      <url>/homework/vlsi/hw4/</url>
       
         <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
       
@@ -1211,8 +1211,8 @@
     
     <entry>
       <title>hw1</title>
-      <link href="/homework/vlsi/hw4/"/>
-      <url>/homework/vlsi/hw4/</url>
+      <link href="/homework/vlsi/hw3/"/>
+      <url>/homework/vlsi/hw3/</url>
       
         <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
       
@@ -1267,62 +1267,35 @@
     
     <entry>
       <title>内容预览</title>
-      <link href="/notes/compiler_construction/%E5%86%85%E5%AE%B9%E9%A2%84%E8%A7%88/"/>
-      <url>/notes/compiler_construction/%E5%86%85%E5%AE%B9%E9%A2%84%E8%A7%88/</url>
-      
-        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> compiler </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> compiler </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>内容预览</title>
-      <link href="/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/"/>
-      <url>/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/</url>
-      
-        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> compiler </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> compiler </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>内容预览</title>
       <link href="/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/"/>
       <url>/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> compiler </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> compiler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内容预览</title>
+      <link href="/notes/compiler_construction/%E5%86%85%E5%AE%B9%E9%A2%84%E8%A7%88/"/>
+      <url>/notes/compiler_construction/%E5%86%85%E5%AE%B9%E9%A2%84%E8%A7%88/</url>
       
         <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
       
@@ -1352,6 +1325,33 @@
       <url>/notes/compiler_construction/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%BB%84%E7%BB%87/</url>
       
         <content type="html"><![CDATA[<h1>词法分析</h1><p>识别单词<code>Lexemes </code> ，返回单词记录<code>tokens&amp;attrs</code></p><h3 id="常用工具">常用工具</h3><ul class="lvl-0"><li class="lvl-2"><p>EBNF</p></li><li class="lvl-2"><p>状态转移图</p></li><li class="lvl-2"><p>正规表达式</p></li><li class="lvl-2"><p>有限状态自动机</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> compiler </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> compiler </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>内容预览</title>
+      <link href="/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/"/>
+      <url>/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/</url>
+      
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
       
       
       <categories>
@@ -1616,9 +1616,9 @@
       
         <tags>
             
-            <tag> notes </tag>
-            
             <tag> flower_identification </tag>
+            
+            <tag> notes </tag>
             
         </tags>
       
@@ -1816,11 +1816,11 @@
     
     
     <entry>
-      <title>week1-2</title>
-      <link href="/notes/computer_orgnization/week1-2/"/>
-      <url>/notes/computer_orgnization/week1-2/</url>
+      <title>week1</title>
+      <link href="/homework/computer_orgnization/week1-2/"/>
+      <url>/homework/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
       
       
       <categories>
@@ -1843,11 +1843,11 @@
     
     
     <entry>
-      <title>week1</title>
-      <link href="/homework/computer_orgnization/week1-2/"/>
-      <url>/homework/computer_orgnization/week1-2/</url>
+      <title>week1-2</title>
+      <link href="/notes/computer_orgnization/week1-2/"/>
+      <url>/notes/computer_orgnization/week1-2/</url>
       
-        <content type="html"><![CDATA[<h1>实验一</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="实验一">实验一</h4><ul class="lvl-2"><li class="lvl-4"><p>代码</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure></li><li class="lvl-4"><p>结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p></li></ul></li><li class="lvl-2"><h4 id="实验二">实验二</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p></li></ul></li><li class="lvl-2"><h4 id="实验三">实验三</h4><ul class="lvl-2"><li class="lvl-4"><p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p></li></ul></li></ul><h3 id="代码分析：">代码分析：</h3><h4 id="term：">term：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ol><li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li><li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li><li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li><li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li><li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li><li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li><li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li><li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li></ol></li><li class="lvl-2"><p>交互：见思考题第五问</p></li></ul><h4 id="kernel：">kernel：</h4><ul class="lvl-0"><li class="lvl-2"><p>结构</p><ul class="lvl-2"><li class="lvl-4"><pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码init.S #初始化,主要工作是为kernel分配资源kernel32.ldkernel64.ldshell.S #主要功能实现test.S #trap.S #定义了一些报错的消息utils.S #读写串口的功能<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 交互:同样见思考题的4,5问</span><br><span class="line"></span><br><span class="line">## 思考题</span><br><span class="line"></span><br><span class="line">### 1.risc-v与x86寻址方式异同</span><br><span class="line"></span><br><span class="line">#### 异</span><br><span class="line"></span><br><span class="line">1. **复杂寻址模式：** RV32I省略了x86-32中存在的复杂寻址模式。x86-32提供了多种寻址模式，例如基址寻址、间接寻址等，而RV32I采用了更简单的模式，只支持基地址寄存器和立即数的组合。</span><br><span class="line">2. **歧视数据类型：** RV32I的寻址模式不会歧视任何数据类型，可以用于加载和存储不同类型的数据，而x86-32的寻址模式可能需要根据数据类型进行调整。</span><br><span class="line">3. **堆栈指令：** x86-32提供了特殊的堆栈指令，例如push和pop，用于堆栈操作。相比之下，RV32I没有专门的堆栈指令，而是借助通用寄存器来实现堆栈操作。</span><br><span class="line"></span><br><span class="line">#### 同</span><br><span class="line"></span><br><span class="line">加载和存储的支持寻址模式是符号扩展 12 位立即数到基地址寄存器(在risc-v中是唯一支持的寻址模式)</span><br><span class="line"></span><br><span class="line">### 2.阅读监控程序，列出监控程序的 19 条指令，请根据自己的理解对用到的指令进行分类，并说明分类原因。</span><br><span class="line"></span><br><span class="line">- 运算类</span><br><span class="line"></span><br><span class="line">  ADD: ADDI, AND, ANDI, OR, ORI, SLLI, SRLI, XOR，AUIPC</span><br><span class="line"></span><br><span class="line">- 跳转控制类</span><br><span class="line"></span><br><span class="line">  BEQ: BNE，JAL，JALR</span><br><span class="line"></span><br><span class="line">- save&amp;load类</span><br><span class="line"></span><br><span class="line">  LB: LW，LUI，SB，SW</span><br><span class="line"></span><br><span class="line">  lui主要是为了构造一个足够大的立即数</span><br><span class="line"></span><br><span class="line">- 分类原因</span><br><span class="line"></span><br><span class="line">  分类方法对应着冯诺依曼架构计算机**（运算器、控制器、存储器、输入设备、输出设备）**，不考虑输入输出设备，运算类对应运算器，跳转控制类对应控制器，sl类对应存储器</span><br><span class="line"></span><br><span class="line">### 3.term 是如何实现用户程序计时的。</span><br><span class="line"></span><br><span class="line">在term.py的run_G函数是在kernel中执行用户risc-v汇编程序的主要代码</span><br><span class="line"></span><br><span class="line">```python</span><br><span class="line">def run_G(addr):</span><br><span class="line">    # ...</span><br><span class="line">    time_start = timer()</span><br><span class="line">    while True:</span><br><span class="line">        ret = inp.read(1)</span><br><span class="line">        if ret == b&#x27;\x07&#x27;:</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x81&#x27;:</span><br><span class="line">            print(&#x27;killed timeout program.&#x27;)</span><br><span class="line">            break</span><br><span class="line">        elif ret == b&#x27;\x80&#x27;:</span><br><span class="line">            trap()</span><br><span class="line">        output_binary(ret)</span><br><span class="line">    print(&#x27;&#x27;) #just a new line</span><br><span class="line">    elapse = timer() - time_start</span><br><span class="line">    print(&#x27;elapsed time: %.3fs&#x27; % (elapse))</span><br></pre></td></tr></table></figure></code></pre></li></ul></li></ul><p>在kernel/common.h处定义了如下几个信号</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure><p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p><ul class="lvl-0"><li class="lvl-2"><p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p></li><li class="lvl-2"><p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p></li><li class="lvl-2"><p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p></li><li class="lvl-2"><p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p></li><li class="lvl-2"><p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p></li><li class="lvl-2"><p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p></li></ul><h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3><p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p><ul class="lvl-0"><li class="lvl-2"><p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p></li><li class="lvl-2"><p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p></li></ul><p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p><h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3><ul class="lvl-0"><li class="lvl-2"><h4 id="判断正确连入">判断正确连入</h4><ol><li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li><li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li><li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li><li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li><li class="lvl-5">进入主循环(读取用户终端输入)</li></ol></li><li class="lvl-2"><h4 id="检查代码在term中的位置">检查代码在term中的位置</h4><p>主要是test_program和main两个函数</p></li><li class="lvl-2"><h4 id="在kernel中的位置">在kernel中的位置</h4><p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>week1-2</h1><p>malloc出来的动态数据放在heap中</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQD9WcsWyYPepXxB9/uB7XCzrr06XIxhsh97M358hCDb2u/B30cvcHrNnnrZWy9dReblhLNoqGT2SrtfIz3SeYmO3u2fHerfChGp0ey3UCW1j8BbLcA1LMbVtHl5t8MPQ8RAalhIDIN3A20r0S79V8artkQcb8TN9unHG3MKzbnyxW1W5VMBXGVL4UXJgD3L1mYM30V/Ud3yCgBVnL4BVYthBo7Ad6XX5BJcp15VtL2KcFsrRCDLsrYGTCxnzezX/8KPe/d8wzr2hanVL/VVXvqMJ6PsJSG3s7i8RJe1YGbX3qQSgWWBdQr6BLHPewu2Un8Vq2saEEAKDan2eOiMEtpzqv4/gPPMk5qEYJZ14tBp8yxPf0wMEtd49f7iMpJiXyoRQ7/GA/MFuZuGh31cYPxjNLBbWfIQB1NfPqLwgSpPxt9NSGLM8T0lYcHoBV4MCOs/LbZFky1u36E12A9wvqsOOCeF/eNyAzO8b9fJz3MneujsaWT+RBgzAw5stVKy+Kk= 18344@ggx0803</span><br><span class="line">&quot; &gt;&gt; ~/.ssh/authorized_keys</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -2163,11 +2163,11 @@
     
     
     <entry>
-      <title>概率论部分（单变量）</title>
-      <link href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"/>
-      <url>/notes/gaitong/%E9%9A%8F%E6%9C%BA/</url>
+      <title>统计5：拟合优度检验</title>
+      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
+      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
       
-        <content type="html"><![CDATA[<h1>概率论部分（单变量）</h1><h2 id="一、-随机现象的数学描述和概率论的基本思想">一、 随机现象的数学描述和概率论的基本思想</h2><ol><li class="lvl-3"><p>随机事件之间的关系和事件的基本运算。</p></li><li class="lvl-3"><p>理解条件概率的直观含义和数学定义，掌握条件概率在概率计算中的应用（乘法公式、全概率公式、Bayes 公式）。</p><p>乘法公式：<br>$$<br>P(A \cap B) = P(B|A) \cdot P(A)<br>$$<br>全概率公式：<br>$$<br>P(B) = \sum_i P(B|A_i) \cdot P(A_i)<br>$$<br>Bayes公式：设$A_1,\dots,A_n$为样本空间的一个分割<br>$$<br>P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum_j P(B|A_j) \cdot P(A_j)}<br>$$<br>其中，A和B是事件，P(A)表示事件A发生的概率，P(B)表示事件B发生的概率，P(B|A)表示在事件A发生的条件下事件B发生的概率，A_i表示一系列互斥且完备的事件。</p></li><li class="lvl-3"><p>理解事件的独立性的定义和有关性质。</p><p>事件独立性的定义： 事件A和事件B被称为独立事件，如果满足以下条件：P(A∩B)=P(A)⋅P(B)</p><p>否则称A与B不独立或相关</p><p>如果事件A和事件B是独立事件，则事件A与事件B的并集的概率等于事件A的概率加上事件B的概率减去事件A和事件B的交集的概率：P*(<em>A</em>∪<em>B</em>)=<em>P</em>(<em>A</em>)+<em>P</em>(<em>B</em>)−<em>P</em>(<em>A</em>∩*B)</p></li></ol><h3 id="tips：">tips：</h3><p>抽签模型与次序无关：第一次抽中白球的概率和第二次抽中白球的概率是相同的，无论放不放回。</p><h2 id="随机变量的概率分布">随机变量的概率分布</h2><ol><li class="lvl-3"><p>理解随机变量及其概率分布函数的定义，理解随机变量概率分布函数的性质，掌握概率分布函数的计算。</p><p>分布函数：$F(x)=P(X\leq x)$</p></li><li class="lvl-3"><p>理解离散型随机变量、连续型随机变量的定义，掌握概率分布列、概率密度函数及概率分布函数的关系，掌握有关的计算。</p></li><li class="lvl-3"><p>理解多维随机变量的定义，理解联合概率分布（分布函数、分布列、概率密度）与边缘分布（分布函数、分布列、概率密度），掌握有关计算。</p></li><li class="lvl-3"><p>理解随机变量的独立性的定义和性质，掌握判断独立和不独立的方法</p></li></ol><h2 id="三、-随机变量的数字特征">三、 随机变量的数字特征</h2><ol><li class="lvl-3"><h3 id="单个随机变量的数字特征">单个随机变量的数字特征</h3></li></ol><p>a) 数学期望和方差：<br>i. 理解数学期望的定义，理解数学期望的存在性，掌握数学期望的性质和计算。<br>ii. 理解方差的定义和直观含义，掌握方差的性质和计算。<br>iii. 理解如何线性变换对随机变量进行期望=0，方差=1 的标准化。<br>iv. 理解期望、方差的下述性质：<br>b) 原点矩和中心矩。<br>c) 切比雪夫（Chebyshev）不等式。</p><p>对于任意随机变量X，具有有限方差E[(X-μ)²] = σ²，其中μ是X的均值，σ²是X的方差。对于任意正数ε &gt; 0，切比雪夫不等式给出：</p><p>$$<br>P(|X - \mu| \geq \epsilon) \leq \frac<br>$$<br>即随机变量X偏离其均值μ超过ε的概率不会超过方差σ²除以ε²。</p><ol start="2"><li class="lvl-3"><h3 id="涉及多个随机变量的数字特征">涉及多个随机变量的数字特征</h3></li></ol><p>a) 协方差：理解协方差的定义和性质，掌握协方差的计算。</p><p>b) 相关系数：理解相关系数的定义和性质，掌握有关计算。正确理解不相关和独立的联系与区别。知道线性相关系数为 1 或-1 时的概率含义。</p><p>当涉及到协方差和相关系数时，以下是它们的公式：</p><p>协方差（Covariance）的公式：<br>$$<br>\text{Cov}(X, Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right]=E(XY)-E(X)E(Y)<br>$$<br>相关系数（Correlation coefficient）的公式：<br>$$</p><p>$$<br>其中，$\text{Cov}(X, Y)$ 表示随机变量X和Y的协方差，$\mu_X 和 \mu_Y$ 分别是X和Y的均值(期望)，($\sigma_X$) 和 ($\sigma_Y$) 分别是X和Y的标准差。($\rho(X, Y)$) 表示随机变量X和Y的相关系数。</p><p>c) 条件数学期望：理解定义和有关计算，掌握全（重）期望公式，包括随机和（指求和的随机变量的个数为某随机变量）的期望。<br>$$<br>E(X) = E(X|B) \cdot P(B) + E(X|B^c) \cdot P(B^c)<br>$$</p><h2 id="四、-常见的概率分布">四、 常见的概率分布</h2><h3 id="离散型分布">离散型分布</h3><p><strong>a) 二项分布</strong>：分布列，期望、方差。<br><strong>b) 几何分布</strong>：分布列，期望、方差，无记忆性。<br><strong>c) 泊松分布</strong>：分布列，期望、方差，泊松定理（特殊二项分布的泊松近似）。</p><p>当二项分布中的试验次数<em>n</em>趋向于无穷大，且成功概率<em>p</em>趋向于0，但同时满足np接近一个常数λ时，二项分布可以近似为泊松分布。</p><p><strong>d) 负二项分布</strong>：定义，与几何分布的关系，期望，方差。</p><p>定义：单次成功概率为p成功次数达r时失败次数的<a href="https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">离散概率分布</a>。注意当r取1时即为几何分布</p><table><thead><tr><th>分布</th><th>分布列</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>二项分布</td><td>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</td><td>$np$</td><td>$np(1-p)$</td></tr><tr><td>几何分布</td><td>$P(X=k) = (1-p)^{k-1} p$</td><td>$\frac{1}{p}$</td><td>$\frac{1-p}{p^2}$</td></tr><tr><td>泊松分布</td><td>$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$</td><td>$\lambda$</td><td>$\lambda$</td></tr><tr><td>负二项分布</td><td>$P(X=k+r) = \binom{k+r-1}{r-1} p^r (1-p)^{k}$</td><td>$\frac{r}{p}$</td><td>$\frac{r(1-p)}{p^2}$</td></tr></tbody></table><h3 id="连续型分布">连续型分布</h3><p>a) 均匀分布：一维均匀分布的分布函数、概率密度、期望和方差；多维均匀分布与几何概型的关系。<br>b) 指数分布：分布函数、概率密度、期望、方差，无记忆性。<br>c) 正态分布：一维正态分布的概率密度、期望、方差、标准化；二维正态分布的概率密度及参数的概率含义。正态分布的独立可加性，二元正态分布随机变量相互独立和不相关等价的性质。</p><h2 id="五、-极限定理">五、 极限定理</h2><ol><li class="lvl-3"><p>（伯努利、切比雪夫）（弱）大数定律，依概率收敛的定义，利用切比雪夫不等式验证依概率收敛。</p><p><strong>伯努利大数定律</strong>：伯努利实验中，随着试验次数增加，频率落在概率附近的概率趋于1</p><p><strong>切比雪夫大数定律</strong>：利用切比雪夫不等式，两两不相关的随机变量序列，方差有界，随着序列项数增加，随机变量均值落在期望附近的概率趋于1</p><p>切比雪夫的</p><img src="/img/gaitong//%E5%8D%95%E5%8F%98%E9%87%8F%E9%9A%8F%E6%9C%BA.assets/image-20230607163414308.png" alt="image-20230607163414308" style="zoom:80%;" /><p>$$Var(\frac 1 n \sum X_k)\rarr0$$为马尔可夫条件</p><p><strong>依概率收敛</strong></p><p>当一个随机变量序列以概率1逐渐接近另一个随机变量时，我们称该序列依概率收敛于该随机变量。</p></li><li class="lvl-3"><p>中心极限定理（掌握独立同分布情形 De Moivre-Laplace，林德伯格-勒维）及应用</p><h5 id="中心极限定理">中心极限定理</h5><p>$X_1, X_2, \ldots, X_k$是独立同分布（iid）<br>$$<br>X_1+X_2+ \ldots+X_k\overset{.}{\sim}N(n\mu,n\sigma^2)\<br>\frac {X_1+X_2+ \ldots+X_k -n\mu}{\sigma\sqrt n}\overset{.}{\sim}N(0,1)<br>$$<br>一般地,$b(n,p)\overset{.}{\sim}N(np,npq)$</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
       
       
       <categories>
@@ -2190,11 +2190,11 @@
     
     
     <entry>
-      <title>统计5：拟合优度检验</title>
-      <link href="/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/"/>
-      <url>/notes/gaitong/%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C/</url>
+      <title>概率论部分（单变量）</title>
+      <link href="/notes/gaitong/%E9%9A%8F%E6%9C%BA/"/>
+      <url>/notes/gaitong/%E9%9A%8F%E6%9C%BA/</url>
       
-        <content type="html"><![CDATA[<h1>统计5:拟合优度检验</h1><p>我的拟合是否合理?</p><h3 id="K-Pearson的χ2检验（拟合优度检验）">K.Pearson的χ2检验（拟合优度检验）</h3><p>χ² = $\sum \limits _{i=1}^k$ [(观察值 - 期望值)² / 期望值],近似服从自由度为k-1的χ²分布</p><p>若需要通过样本估计s个参数,则服从自由度为k-s-1的卡方分布</p><h3 id="独立性检验">独立性检验</h3><p>列联表检验</p><img src="/img/gaitong//%E7%BB%9F%E8%AE%A15-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C.assets/image-20230607210438587.png" alt="image-20230607210438587" style="zoom:80%;" />]]></content>
+        <content type="html"><![CDATA[<h1>概率论部分（单变量）</h1><h2 id="一、-随机现象的数学描述和概率论的基本思想">一、 随机现象的数学描述和概率论的基本思想</h2><ol><li class="lvl-3"><p>随机事件之间的关系和事件的基本运算。</p></li><li class="lvl-3"><p>理解条件概率的直观含义和数学定义，掌握条件概率在概率计算中的应用（乘法公式、全概率公式、Bayes 公式）。</p><p>乘法公式：<br>$$<br>P(A \cap B) = P(B|A) \cdot P(A)<br>$$<br>全概率公式：<br>$$<br>P(B) = \sum_i P(B|A_i) \cdot P(A_i)<br>$$<br>Bayes公式：设$A_1,\dots,A_n$为样本空间的一个分割<br>$$<br>P(A_i|B) = \frac{P(B|A_i) \cdot P(A_i)}{\sum_j P(B|A_j) \cdot P(A_j)}<br>$$<br>其中，A和B是事件，P(A)表示事件A发生的概率，P(B)表示事件B发生的概率，P(B|A)表示在事件A发生的条件下事件B发生的概率，A_i表示一系列互斥且完备的事件。</p></li><li class="lvl-3"><p>理解事件的独立性的定义和有关性质。</p><p>事件独立性的定义： 事件A和事件B被称为独立事件，如果满足以下条件：P(A∩B)=P(A)⋅P(B)</p><p>否则称A与B不独立或相关</p><p>如果事件A和事件B是独立事件，则事件A与事件B的并集的概率等于事件A的概率加上事件B的概率减去事件A和事件B的交集的概率：P*(<em>A</em>∪<em>B</em>)=<em>P</em>(<em>A</em>)+<em>P</em>(<em>B</em>)−<em>P</em>(<em>A</em>∩*B)</p></li></ol><h3 id="tips：">tips：</h3><p>抽签模型与次序无关：第一次抽中白球的概率和第二次抽中白球的概率是相同的，无论放不放回。</p><h2 id="随机变量的概率分布">随机变量的概率分布</h2><ol><li class="lvl-3"><p>理解随机变量及其概率分布函数的定义，理解随机变量概率分布函数的性质，掌握概率分布函数的计算。</p><p>分布函数：$F(x)=P(X\leq x)$</p></li><li class="lvl-3"><p>理解离散型随机变量、连续型随机变量的定义，掌握概率分布列、概率密度函数及概率分布函数的关系，掌握有关的计算。</p></li><li class="lvl-3"><p>理解多维随机变量的定义，理解联合概率分布（分布函数、分布列、概率密度）与边缘分布（分布函数、分布列、概率密度），掌握有关计算。</p></li><li class="lvl-3"><p>理解随机变量的独立性的定义和性质，掌握判断独立和不独立的方法</p></li></ol><h2 id="三、-随机变量的数字特征">三、 随机变量的数字特征</h2><ol><li class="lvl-3"><h3 id="单个随机变量的数字特征">单个随机变量的数字特征</h3></li></ol><p>a) 数学期望和方差：<br>i. 理解数学期望的定义，理解数学期望的存在性，掌握数学期望的性质和计算。<br>ii. 理解方差的定义和直观含义，掌握方差的性质和计算。<br>iii. 理解如何线性变换对随机变量进行期望=0，方差=1 的标准化。<br>iv. 理解期望、方差的下述性质：<br>b) 原点矩和中心矩。<br>c) 切比雪夫（Chebyshev）不等式。</p><p>对于任意随机变量X，具有有限方差E[(X-μ)²] = σ²，其中μ是X的均值，σ²是X的方差。对于任意正数ε &gt; 0，切比雪夫不等式给出：</p><p>$$<br>P(|X - \mu| \geq \epsilon) \leq \frac<br>$$<br>即随机变量X偏离其均值μ超过ε的概率不会超过方差σ²除以ε²。</p><ol start="2"><li class="lvl-3"><h3 id="涉及多个随机变量的数字特征">涉及多个随机变量的数字特征</h3></li></ol><p>a) 协方差：理解协方差的定义和性质，掌握协方差的计算。</p><p>b) 相关系数：理解相关系数的定义和性质，掌握有关计算。正确理解不相关和独立的联系与区别。知道线性相关系数为 1 或-1 时的概率含义。</p><p>当涉及到协方差和相关系数时，以下是它们的公式：</p><p>协方差（Covariance）的公式：<br>$$<br>\text{Cov}(X, Y) = E\left[(X - \mu_X)(Y - \mu_Y)\right]=E(XY)-E(X)E(Y)<br>$$<br>相关系数（Correlation coefficient）的公式：<br>$$</p><p>$$<br>其中，$\text{Cov}(X, Y)$ 表示随机变量X和Y的协方差，$\mu_X 和 \mu_Y$ 分别是X和Y的均值(期望)，($\sigma_X$) 和 ($\sigma_Y$) 分别是X和Y的标准差。($\rho(X, Y)$) 表示随机变量X和Y的相关系数。</p><p>c) 条件数学期望：理解定义和有关计算，掌握全（重）期望公式，包括随机和（指求和的随机变量的个数为某随机变量）的期望。<br>$$<br>E(X) = E(X|B) \cdot P(B) + E(X|B^c) \cdot P(B^c)<br>$$</p><h2 id="四、-常见的概率分布">四、 常见的概率分布</h2><h3 id="离散型分布">离散型分布</h3><p><strong>a) 二项分布</strong>：分布列，期望、方差。<br><strong>b) 几何分布</strong>：分布列，期望、方差，无记忆性。<br><strong>c) 泊松分布</strong>：分布列，期望、方差，泊松定理（特殊二项分布的泊松近似）。</p><p>当二项分布中的试验次数<em>n</em>趋向于无穷大，且成功概率<em>p</em>趋向于0，但同时满足np接近一个常数λ时，二项分布可以近似为泊松分布。</p><p><strong>d) 负二项分布</strong>：定义，与几何分布的关系，期望，方差。</p><p>定义：单次成功概率为p成功次数达r时失败次数的<a href="https://zh.wikipedia.org/wiki/%E7%A6%BB%E6%95%A3%E6%A6%82%E7%8E%87%E5%88%86%E5%B8%83">离散概率分布</a>。注意当r取1时即为几何分布</p><table><thead><tr><th>分布</th><th>分布列</th><th>期望</th><th>方差</th></tr></thead><tbody><tr><td>二项分布</td><td>$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$</td><td>$np$</td><td>$np(1-p)$</td></tr><tr><td>几何分布</td><td>$P(X=k) = (1-p)^{k-1} p$</td><td>$\frac{1}{p}$</td><td>$\frac{1-p}{p^2}$</td></tr><tr><td>泊松分布</td><td>$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$</td><td>$\lambda$</td><td>$\lambda$</td></tr><tr><td>负二项分布</td><td>$P(X=k+r) = \binom{k+r-1}{r-1} p^r (1-p)^{k}$</td><td>$\frac{r}{p}$</td><td>$\frac{r(1-p)}{p^2}$</td></tr></tbody></table><h3 id="连续型分布">连续型分布</h3><p>a) 均匀分布：一维均匀分布的分布函数、概率密度、期望和方差；多维均匀分布与几何概型的关系。<br>b) 指数分布：分布函数、概率密度、期望、方差，无记忆性。<br>c) 正态分布：一维正态分布的概率密度、期望、方差、标准化；二维正态分布的概率密度及参数的概率含义。正态分布的独立可加性，二元正态分布随机变量相互独立和不相关等价的性质。</p><h2 id="五、-极限定理">五、 极限定理</h2><ol><li class="lvl-3"><p>（伯努利、切比雪夫）（弱）大数定律，依概率收敛的定义，利用切比雪夫不等式验证依概率收敛。</p><p><strong>伯努利大数定律</strong>：伯努利实验中，随着试验次数增加，频率落在概率附近的概率趋于1</p><p><strong>切比雪夫大数定律</strong>：利用切比雪夫不等式，两两不相关的随机变量序列，方差有界，随着序列项数增加，随机变量均值落在期望附近的概率趋于1</p><p>切比雪夫的</p><img src="/img/gaitong//%E5%8D%95%E5%8F%98%E9%87%8F%E9%9A%8F%E6%9C%BA.assets/image-20230607163414308.png" alt="image-20230607163414308" style="zoom:80%;" /><p>$$Var(\frac 1 n \sum X_k)\rarr0$$为马尔可夫条件</p><p><strong>依概率收敛</strong></p><p>当一个随机变量序列以概率1逐渐接近另一个随机变量时，我们称该序列依概率收敛于该随机变量。</p></li><li class="lvl-3"><p>中心极限定理（掌握独立同分布情形 De Moivre-Laplace，林德伯格-勒维）及应用</p><h5 id="中心极限定理">中心极限定理</h5><p>$X_1, X_2, \ldots, X_k$是独立同分布（iid）<br>$$<br>X_1+X_2+ \ldots+X_k\overset{.}{\sim}N(n\mu,n\sigma^2)\<br>\frac {X_1+X_2+ \ldots+X_k -n\mu}{\sigma\sqrt n}\overset{.}{\sim}N(0,1)<br>$$<br>一般地,$b(n,p)\overset{.}{\sim}N(np,npq)$</p></li></ol>]]></content>
       
       
       <categories>
@@ -2359,11 +2359,11 @@
     
     
     <entry>
-      <title>network-E4</title>
-      <link href="/homework/network/network-E4/"/>
-      <url>/homework/network/network-E4/</url>
+      <title>network-homework-12</title>
+      <link href="/homework/network/network12/"/>
+      <url>/homework/network/network12/</url>
       
-        <content type="html"><![CDATA[<h1>网原第三次小实验</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="抓包实验-1：">抓包实验 1：</h2><h3 id="1-UDP-数据包在-IP-层的类型编号是17">1.UDP 数据包在 IP 层的类型编号是17</h3><p><img src="/img/network-E4.assets/image-20230522233420722.png" alt="image-20230522233420722"></p><h3 id="2-UDP-数据包头字段依次是">2.UDP 数据包头字段依次是</h3><p><img src="/img/network-E4.assets/image-20230522233509382.png" alt="image-20230522233509382"></p><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">0</span>                   <span class="number">1</span>                   <span class="number">2</span>                   <span class="number">3</span></span><br><span class="line"> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>          <span class="variable">Source</span> <span class="variable">Port</span>          <span class="operator">|</span>       <span class="variable">Destination</span> <span class="variable">Port</span>        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>            <span class="built_in">Length</span>             <span class="operator">|</span>           <span class="variable">Checksum</span>            <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                             <span class="variable">Data</span>                              <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br></pre></td></tr></table></figure><p>源端口号(16bit)，目的端口号(16bit)， UDP 包总长(16bit)，校验和(16bit)</p><h2 id="抓包实验2：">抓包实验2：</h2><h3 id="1-TCP-数据包在-IP-层的类型编号是-6">1.TCP 数据包在 IP 层的类型编号是  6</h3><p><img src="/img/network-E4.assets/image-20230522234307449.png" alt="image-20230522234307449"></p><h3 id="2-TCP-数据包头字段依次是？">2. TCP 数据包头字段依次是？</h3><p><img src="/img/network-E4.assets/image-20230522234759931.png" alt="image-20230522234759931"></p><p>源端口号(16bit)，目的端口号(16bit)，报文序列号(32bit)，报文确认序列号(32bit)，包头长度(4bit)，保留位和标记位(12bit)，窗口大小(16bit)，校验和(16bit)，紧急指针(16bit)，选项</p><h4 id="以下是一个使用RFC标准格式的TCP头的示例代码块：">以下是一个使用RFC标准格式的TCP头的示例代码块：</h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">0</span>                   <span class="number">1</span>                   <span class="number">2</span>                   <span class="number">3</span></span><br><span class="line"> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>          <span class="variable">Source</span> <span class="variable">Port</span>          <span class="operator">|</span>       <span class="variable">Destination</span> <span class="variable">Port</span>        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                        <span class="built_in">Sequence</span> <span class="built_in">Number</span>                        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                    <span class="variable">Acknowledgment</span> <span class="built_in">Number</span>                      <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>  <span class="variable">Data</span> <span class="operator">|</span>           <span class="operator">|</span><span class="variable">U</span><span class="operator">|</span><span class="variable">A</span><span class="operator">|</span><span class="variable">P</span><span class="operator">|</span><span class="variable">R</span><span class="operator">|</span><span class="variable">S</span><span class="operator">|</span><span class="variable">F</span><span class="operator">|</span>                               <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> <span class="built_in">Offset</span><span class="operator">|</span> <span class="variable">Reserved</span>  <span class="operator">|</span><span class="variable">R</span><span class="operator">|</span><span class="built_in">C</span><span class="operator">|</span><span class="variable">S</span><span class="operator">|</span><span class="variable">S</span><span class="operator">|</span><span class="variable">Y</span><span class="operator">|</span><span class="built_in">I</span><span class="operator">|</span>            <span class="variable">Window</span>             <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>       <span class="operator">|</span>           <span class="operator">|</span><span class="variable">G</span><span class="operator">|</span><span class="built_in">K</span><span class="operator">|</span><span class="variable">H</span><span class="operator">|</span><span class="variable">T</span><span class="operator">|</span><span class="built_in">N</span><span class="operator">|</span><span class="built_in">N</span><span class="operator">|</span>                               <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>           <span class="variable">Checksum</span>            <span class="operator">|</span>         <span class="variable">Urgent</span> <span class="variable">Pointer</span>        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                    <span class="built_in">Options</span>                    <span class="operator">|</span>    <span class="built_in">Padding</span>    <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br></pre></td></tr></table></figure><p>在上述代码块中，我们可以看到TCP头的结构，具体字段如下：</p><ul class="lvl-0"><li class="lvl-2"><p>Source Port：16位字段，表示源端口号，标识发送方的应用程序或进程。</p></li><li class="lvl-2"><p>Destination Port：16位字段，表示目标端口号，标识接收方的应用程序或进程。</p></li><li class="lvl-2"><p>Sequence Number：32位字段，用于对TCP数据流中的字节进行编号，用于排序和重组数据。</p></li><li class="lvl-2"><p>Acknowledgment Number：32位字段，表示期望接收方接收到的下一个字节的编号。用于确认已经成功接收到的数据。</p></li><li class="lvl-2"><p>Data Offset：4位字段，表示TCP头的长度，以32位字（4字节）为单位。</p></li><li class="lvl-2"><p>Reserved：6位字段，保留位，未使用，必须为0。</p></li><li class="lvl-2"><p>Control Flags：6位字段，包括URG（紧急数据标志）、ACK（确认标志）、PSH（推送标志）、RST（重置标志）、SYN（同步标志）和FIN（结束标志）。</p></li><li class="lvl-2"><p>Window：16位字段，表示接收窗口大小，用于流量控制。</p></li><li class="lvl-2"><p>Checksum：16位字段，用于校验TCP头和数据的完整性。校验和的计算涉及TCP头、TCP数据以及伪首部的部分。</p></li><li class="lvl-2"><p>Urgent Pointer：16位字段，指示紧急数据的位置，仅在URG标志被设置时有效。</p></li><li class="lvl-2"><p>Options：可变长度字段，用于携带可选的TCP选项，如最大段大小（MSS）、窗口扩大因子等。</p></li><li class="lvl-2"><p>Padding：可变长度字段，用于填充，以保证TCP头长度是32位字的倍数。</p></li></ul><h3 id="3-TCP-三次握手过程使用三个数据包">3.TCP 三次握手过程使用三个数据包</h3><p><img src="/img/network-E4.assets/image-20230522235654303.png" alt="image-20230522235654303"></p><p>第一次(A-&gt;B,SYN,SEQ=X,ACK=0)  此处X=0</p><p><img src="/img/network-E4.assets/image-20230522235805183.png" alt="image-20230522235805183"></p><p>第二次 (B-&gt;A,SYN||ACK,SEQ=Y,ACK=X+1)  这里Y=0，X=0</p><p><img src="/img/network-E4.assets/image-20230522235908626.png" alt="image-20230522235908626"></p><p>第三次(A-&gt;B,ACK,SEQ=X+1,ACK=Y+1)  这里Y=0，X=0</p><p><img src="/img/network-E4.assets/image-20230523000024878.png" alt="image-20230523000024878"></p><p>协商options：Maximum segement size等等</p><h3 id="4-序列号增长和包长关系是什么？">4.序列号增长和包长关系是什么？</h3><p><img src="/img/network-E4.assets/image-20230523000445206.png" alt="image-20230523000445206"></p><p>由图可知，next sequence number = sequence number + TCP segment len\TCP 序列号的增长差值与前一个包的 TCP 段长度(TCP 数据字段)相等；</p><p><img src="/img/network-E4.assets/image-20230523000720575.png" alt="image-20230523000720575"></p><p>观察这组数据与对应确认包，数据包对应确认包中，确认序列号与(原包序列号+段长)相等</p><h2 id="简答">简答</h2><h3 id="1-TCP-选项还支持什么特殊的功能？">1.TCP 选项还支持什么特殊的功能？</h3><ol><li class="lvl-3"><p>窗口扩大（Window Scale）：允许发送方和接收方扩大TCP窗口的大小，以适应更高的带宽延迟乘积（BDP）和更大的网络拥塞窗口。</p></li><li class="lvl-3"><p>时间戳（Timestamps）：用于测量和估计网络往返时间（RTT），从而改善拥塞控制算法的性能和精度。</p></li><li class="lvl-3"><p>选择确认（Selective Acknowledgment，SACK）：允许接收方向发送方报告丢失和乱序的数据段的具体位置，以便发送方只重传丢失的数据段，而不是整个窗口的数据。</p></li><li class="lvl-3"><p>最大报文段长度（Maximum Segment Size，MSS）：用于协商TCP报文段的最大有效载荷大小，以便在网络中避免分片和重组。</p></li><li class="lvl-3"><p>无延迟确认（No Delayed Acknowledgment）：用于在接收方立即发送确认，而不等待延迟确认定时器的到期。</p></li><li class="lvl-3"><p>紧急数据指针（Urgent Pointer）：用于指示TCP报文段中的紧急数据的起始位置，以便在应用层处理紧急数据。</p></li></ol><h3 id="什么此反射-DoS-攻击大多使用基于-UDP-的公共-服务，而不是基于-TCP-呢">什么此反射 DoS 攻击大多使用基于 UDP 的公共 服务，而不是基于 TCP 呢</h3><ul class="lvl-0"><li class="lvl-2"><p>**UDP 协议是无连接的，不需要握手过程，也不验证源 IP 地址，因此更容易进行 IP 欺骗。**TCP 协议则需要三次握手才能建立连接，如果源 IP 地址被伪造，攻击者无法收到目标服务器的 SYN-ACK 包，也就无法完成连接。</p></li><li class="lvl-2"><p>**UDP 协议有一些服务可以产生放大效应，即请求包的大小远小于响应包的大小，从而增加攻击的效力。**例如，NTP、DNS、SSDP、Memcached 等服务都可以被用作放大器，将请求包的大小放大数十倍甚至数百倍。TCP 协议则没有这样的放大效应，因为它有拥塞控制和流量控制机制，会根据网络状况和接收方能力调整发送速率和窗口大小。</p></li><li class="lvl-2"><p>**UDP 协议有更多的公共服务可以被利用，而且这些服务往往没有安全配置或认证机制。**互联网上存在大量的开放的 UDP 服务，如 NTP、DNS、SSDP、Memcached 等，这些服务通常会响应所有 IP 的请求，而不进行任何过滤或限制。TCP 协议则有较少的公共服务可以被利用，而且这些服务往往有更好的安全配置或认证机制，如 HTTP、SMTP、FTP 等。</p></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>网原第12次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点</p></blockquote><ol><li class="lvl-3"><p>延迟反应：基于丢包的拥塞控制算法在判断链路拥塞时需要等待丢包事件的发生，然后才能采取相应的措施。这意味着它们的反应时间相对较慢。</p></li><li class="lvl-3"><p>误判和误解退：基于丢包的拥塞控制算法可能会误判某些丢包事件。丢包并不总是意味着链路发生了拥塞。例如，丢包可能是由于网络噪声、传输错误或临时网络抖动等原因引起的。</p></li><li class="lvl-3"><p>面临丢包恢复问题：基于丢包判断链路拥塞的算法通常采用的策略是减小发送速度以降低拥塞，即减小拥塞窗口（CWND）。然而，一旦发生丢包，发送方会降低发送速率，这可能导致网络带宽未被充分利用。</p></li></ol><blockquote><p>BBR忽略丢包信号，但主动探测什么其他指标来判断链路状态</p></blockquote><p>瓶颈带宽与时延</p><h2 id="第二题">第二题</h2><ol><li class="lvl-3"><p>TCP多流复用加剧了队头阻塞,QUIC建立相互独立的多个子流,一个子流数据包丢失不影响其他子流</p></li><li class="lvl-3"><p>TCP的重传包使用和原包相同的序号,返回的ACK不能确定是对原包还是重传包,导致RTT计算错误.</p><p>QUIC的packet number单调递增，对于重传包也会递增packet number， 避免RTO</p></li><li class="lvl-3"><p>TCP基于ip:端口,QUIC基于connection id,支持ip/端口切换</p></li><li class="lvl-3"><p>整个QUIC包被加密传输</p></li></ol><h2 id="第三题">第三题</h2><ol><li class="lvl-3"><p>多径带宽聚合  可以利用设备的多个网口实现多路径传输,带来更好的带宽与吞吐量</p></li><li class="lvl-3"><p>负载均衡：MPTCP可以将数据流分散到多个路径上，实现负载均衡。它可以动态选择和调整数据传输路径，根据路径的质量和拥塞情况来决定发送数据的路径，从而均衡地利用可用的网络资源。</p></li><li class="lvl-3"><p>更加可靠,一条路径故障可以在其他路径上继续传输数据</p></li><li class="lvl-3"><p>将属于同一个数据流的数据包调度到不同的路径上传输.,降低数据乱序到达对网络性能产生的不利影响</p></li><li class="lvl-3"><p>支持链路的平滑切换,多路径传输方式允许终端在不同接入网络间快速、平滑地切换 选取链路质量最好的路径传输数据</p></li></ol><h2 id="第四题">第四题:</h2><p>小流关心延迟,大流关心带宽.</p><p>根据拥塞程度精细调整发送窗口</p><p>DCTCP: 𝑐𝑤𝑛𝑑 ← 𝑐𝑤𝑛𝑑 × (1 - 𝛼/2),  𝛼: 使用显示拥塞信号得到的“拥塞程度”</p><p>DCTCP通过交换机标记超出阈值的流量ACK来控制发送端的发送速率，进而保证了接收端队列维持在较短的长度，使得小流有较低的延迟，同时大流仍保持较⾼的带宽</p>]]></content>
       
       
       <categories>
@@ -2388,11 +2388,11 @@
     
     
     <entry>
-      <title>network-homework-12</title>
-      <link href="/homework/network/network12/"/>
-      <url>/homework/network/network12/</url>
+      <title>network-E4</title>
+      <link href="/homework/network/network-E4/"/>
+      <url>/homework/network/network-E4/</url>
       
-        <content type="html"><![CDATA[<h1>网原第12次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="第一题">第一题</h2><blockquote><p>Tahoe,Reno,Cubic等拥塞控制协议均基于丢包信号调整发送速度,基于丢包判断链路拥塞有什么缺点</p></blockquote><ol><li class="lvl-3"><p>延迟反应：基于丢包的拥塞控制算法在判断链路拥塞时需要等待丢包事件的发生，然后才能采取相应的措施。这意味着它们的反应时间相对较慢。</p></li><li class="lvl-3"><p>误判和误解退：基于丢包的拥塞控制算法可能会误判某些丢包事件。丢包并不总是意味着链路发生了拥塞。例如，丢包可能是由于网络噪声、传输错误或临时网络抖动等原因引起的。</p></li><li class="lvl-3"><p>面临丢包恢复问题：基于丢包判断链路拥塞的算法通常采用的策略是减小发送速度以降低拥塞，即减小拥塞窗口（CWND）。然而，一旦发生丢包，发送方会降低发送速率，这可能导致网络带宽未被充分利用。</p></li></ol><blockquote><p>BBR忽略丢包信号，但主动探测什么其他指标来判断链路状态</p></blockquote><p>瓶颈带宽与时延</p><h2 id="第二题">第二题</h2><ol><li class="lvl-3"><p>TCP多流复用加剧了队头阻塞,QUIC建立相互独立的多个子流,一个子流数据包丢失不影响其他子流</p></li><li class="lvl-3"><p>TCP的重传包使用和原包相同的序号,返回的ACK不能确定是对原包还是重传包,导致RTT计算错误.</p><p>QUIC的packet number单调递增，对于重传包也会递增packet number， 避免RTO</p></li><li class="lvl-3"><p>TCP基于ip:端口,QUIC基于connection id,支持ip/端口切换</p></li><li class="lvl-3"><p>整个QUIC包被加密传输</p></li></ol><h2 id="第三题">第三题</h2><ol><li class="lvl-3"><p>多径带宽聚合  可以利用设备的多个网口实现多路径传输,带来更好的带宽与吞吐量</p></li><li class="lvl-3"><p>负载均衡：MPTCP可以将数据流分散到多个路径上，实现负载均衡。它可以动态选择和调整数据传输路径，根据路径的质量和拥塞情况来决定发送数据的路径，从而均衡地利用可用的网络资源。</p></li><li class="lvl-3"><p>更加可靠,一条路径故障可以在其他路径上继续传输数据</p></li><li class="lvl-3"><p>将属于同一个数据流的数据包调度到不同的路径上传输.,降低数据乱序到达对网络性能产生的不利影响</p></li><li class="lvl-3"><p>支持链路的平滑切换,多路径传输方式允许终端在不同接入网络间快速、平滑地切换 选取链路质量最好的路径传输数据</p></li></ol><h2 id="第四题">第四题:</h2><p>小流关心延迟,大流关心带宽.</p><p>根据拥塞程度精细调整发送窗口</p><p>DCTCP: 𝑐𝑤𝑛𝑑 ← 𝑐𝑤𝑛𝑑 × (1 - 𝛼/2),  𝛼: 使用显示拥塞信号得到的“拥塞程度”</p><p>DCTCP通过交换机标记超出阈值的流量ACK来控制发送端的发送速率，进而保证了接收端队列维持在较短的长度，使得小流有较低的延迟，同时大流仍保持较⾼的带宽</p>]]></content>
+        <content type="html"><![CDATA[<h1>网原第三次小实验</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h2 id="抓包实验-1：">抓包实验 1：</h2><h3 id="1-UDP-数据包在-IP-层的类型编号是17">1.UDP 数据包在 IP 层的类型编号是17</h3><p><img src="/img/network-E4.assets/image-20230522233420722.png" alt="image-20230522233420722"></p><h3 id="2-UDP-数据包头字段依次是">2.UDP 数据包头字段依次是</h3><p><img src="/img/network-E4.assets/image-20230522233509382.png" alt="image-20230522233509382"></p><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">0</span>                   <span class="number">1</span>                   <span class="number">2</span>                   <span class="number">3</span></span><br><span class="line"> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>          <span class="variable">Source</span> <span class="variable">Port</span>          <span class="operator">|</span>       <span class="variable">Destination</span> <span class="variable">Port</span>        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>            <span class="built_in">Length</span>             <span class="operator">|</span>           <span class="variable">Checksum</span>            <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                             <span class="variable">Data</span>                              <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br></pre></td></tr></table></figure><p>源端口号(16bit)，目的端口号(16bit)， UDP 包总长(16bit)，校验和(16bit)</p><h2 id="抓包实验2：">抓包实验2：</h2><h3 id="1-TCP-数据包在-IP-层的类型编号是-6">1.TCP 数据包在 IP 层的类型编号是  6</h3><p><img src="/img/network-E4.assets/image-20230522234307449.png" alt="image-20230522234307449"></p><h3 id="2-TCP-数据包头字段依次是？">2. TCP 数据包头字段依次是？</h3><p><img src="/img/network-E4.assets/image-20230522234759931.png" alt="image-20230522234759931"></p><p>源端口号(16bit)，目的端口号(16bit)，报文序列号(32bit)，报文确认序列号(32bit)，包头长度(4bit)，保留位和标记位(12bit)，窗口大小(16bit)，校验和(16bit)，紧急指针(16bit)，选项</p><h4 id="以下是一个使用RFC标准格式的TCP头的示例代码块：">以下是一个使用RFC标准格式的TCP头的示例代码块：</h4><figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> <span class="number">0</span>                   <span class="number">1</span>                   <span class="number">2</span>                   <span class="number">3</span></span><br><span class="line"> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">0</span> <span class="number">1</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>          <span class="variable">Source</span> <span class="variable">Port</span>          <span class="operator">|</span>       <span class="variable">Destination</span> <span class="variable">Port</span>        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                        <span class="built_in">Sequence</span> <span class="built_in">Number</span>                        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                    <span class="variable">Acknowledgment</span> <span class="built_in">Number</span>                      <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>  <span class="variable">Data</span> <span class="operator">|</span>           <span class="operator">|</span><span class="variable">U</span><span class="operator">|</span><span class="variable">A</span><span class="operator">|</span><span class="variable">P</span><span class="operator">|</span><span class="variable">R</span><span class="operator">|</span><span class="variable">S</span><span class="operator">|</span><span class="variable">F</span><span class="operator">|</span>                               <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span> <span class="built_in">Offset</span><span class="operator">|</span> <span class="variable">Reserved</span>  <span class="operator">|</span><span class="variable">R</span><span class="operator">|</span><span class="built_in">C</span><span class="operator">|</span><span class="variable">S</span><span class="operator">|</span><span class="variable">S</span><span class="operator">|</span><span class="variable">Y</span><span class="operator">|</span><span class="built_in">I</span><span class="operator">|</span>            <span class="variable">Window</span>             <span class="operator">|</span></span><br><span class="line"><span class="operator">|</span>       <span class="operator">|</span>           <span class="operator">|</span><span class="variable">G</span><span class="operator">|</span><span class="built_in">K</span><span class="operator">|</span><span class="variable">H</span><span class="operator">|</span><span class="variable">T</span><span class="operator">|</span><span class="built_in">N</span><span class="operator">|</span><span class="built_in">N</span><span class="operator">|</span>                               <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>           <span class="variable">Checksum</span>            <span class="operator">|</span>         <span class="variable">Urgent</span> <span class="variable">Pointer</span>        <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br><span class="line"><span class="operator">|</span>                    <span class="built_in">Options</span>                    <span class="operator">|</span>    <span class="built_in">Padding</span>    <span class="operator">|</span></span><br><span class="line"><span class="operator">+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+</span></span><br></pre></td></tr></table></figure><p>在上述代码块中，我们可以看到TCP头的结构，具体字段如下：</p><ul class="lvl-0"><li class="lvl-2"><p>Source Port：16位字段，表示源端口号，标识发送方的应用程序或进程。</p></li><li class="lvl-2"><p>Destination Port：16位字段，表示目标端口号，标识接收方的应用程序或进程。</p></li><li class="lvl-2"><p>Sequence Number：32位字段，用于对TCP数据流中的字节进行编号，用于排序和重组数据。</p></li><li class="lvl-2"><p>Acknowledgment Number：32位字段，表示期望接收方接收到的下一个字节的编号。用于确认已经成功接收到的数据。</p></li><li class="lvl-2"><p>Data Offset：4位字段，表示TCP头的长度，以32位字（4字节）为单位。</p></li><li class="lvl-2"><p>Reserved：6位字段，保留位，未使用，必须为0。</p></li><li class="lvl-2"><p>Control Flags：6位字段，包括URG（紧急数据标志）、ACK（确认标志）、PSH（推送标志）、RST（重置标志）、SYN（同步标志）和FIN（结束标志）。</p></li><li class="lvl-2"><p>Window：16位字段，表示接收窗口大小，用于流量控制。</p></li><li class="lvl-2"><p>Checksum：16位字段，用于校验TCP头和数据的完整性。校验和的计算涉及TCP头、TCP数据以及伪首部的部分。</p></li><li class="lvl-2"><p>Urgent Pointer：16位字段，指示紧急数据的位置，仅在URG标志被设置时有效。</p></li><li class="lvl-2"><p>Options：可变长度字段，用于携带可选的TCP选项，如最大段大小（MSS）、窗口扩大因子等。</p></li><li class="lvl-2"><p>Padding：可变长度字段，用于填充，以保证TCP头长度是32位字的倍数。</p></li></ul><h3 id="3-TCP-三次握手过程使用三个数据包">3.TCP 三次握手过程使用三个数据包</h3><p><img src="/img/network-E4.assets/image-20230522235654303.png" alt="image-20230522235654303"></p><p>第一次(A-&gt;B,SYN,SEQ=X,ACK=0)  此处X=0</p><p><img src="/img/network-E4.assets/image-20230522235805183.png" alt="image-20230522235805183"></p><p>第二次 (B-&gt;A,SYN||ACK,SEQ=Y,ACK=X+1)  这里Y=0，X=0</p><p><img src="/img/network-E4.assets/image-20230522235908626.png" alt="image-20230522235908626"></p><p>第三次(A-&gt;B,ACK,SEQ=X+1,ACK=Y+1)  这里Y=0，X=0</p><p><img src="/img/network-E4.assets/image-20230523000024878.png" alt="image-20230523000024878"></p><p>协商options：Maximum segement size等等</p><h3 id="4-序列号增长和包长关系是什么？">4.序列号增长和包长关系是什么？</h3><p><img src="/img/network-E4.assets/image-20230523000445206.png" alt="image-20230523000445206"></p><p>由图可知，next sequence number = sequence number + TCP segment len\TCP 序列号的增长差值与前一个包的 TCP 段长度(TCP 数据字段)相等；</p><p><img src="/img/network-E4.assets/image-20230523000720575.png" alt="image-20230523000720575"></p><p>观察这组数据与对应确认包，数据包对应确认包中，确认序列号与(原包序列号+段长)相等</p><h2 id="简答">简答</h2><h3 id="1-TCP-选项还支持什么特殊的功能？">1.TCP 选项还支持什么特殊的功能？</h3><ol><li class="lvl-3"><p>窗口扩大（Window Scale）：允许发送方和接收方扩大TCP窗口的大小，以适应更高的带宽延迟乘积（BDP）和更大的网络拥塞窗口。</p></li><li class="lvl-3"><p>时间戳（Timestamps）：用于测量和估计网络往返时间（RTT），从而改善拥塞控制算法的性能和精度。</p></li><li class="lvl-3"><p>选择确认（Selective Acknowledgment，SACK）：允许接收方向发送方报告丢失和乱序的数据段的具体位置，以便发送方只重传丢失的数据段，而不是整个窗口的数据。</p></li><li class="lvl-3"><p>最大报文段长度（Maximum Segment Size，MSS）：用于协商TCP报文段的最大有效载荷大小，以便在网络中避免分片和重组。</p></li><li class="lvl-3"><p>无延迟确认（No Delayed Acknowledgment）：用于在接收方立即发送确认，而不等待延迟确认定时器的到期。</p></li><li class="lvl-3"><p>紧急数据指针（Urgent Pointer）：用于指示TCP报文段中的紧急数据的起始位置，以便在应用层处理紧急数据。</p></li></ol><h3 id="什么此反射-DoS-攻击大多使用基于-UDP-的公共-服务，而不是基于-TCP-呢">什么此反射 DoS 攻击大多使用基于 UDP 的公共 服务，而不是基于 TCP 呢</h3><ul class="lvl-0"><li class="lvl-2"><p>**UDP 协议是无连接的，不需要握手过程，也不验证源 IP 地址，因此更容易进行 IP 欺骗。**TCP 协议则需要三次握手才能建立连接，如果源 IP 地址被伪造，攻击者无法收到目标服务器的 SYN-ACK 包，也就无法完成连接。</p></li><li class="lvl-2"><p>**UDP 协议有一些服务可以产生放大效应，即请求包的大小远小于响应包的大小，从而增加攻击的效力。**例如，NTP、DNS、SSDP、Memcached 等服务都可以被用作放大器，将请求包的大小放大数十倍甚至数百倍。TCP 协议则没有这样的放大效应，因为它有拥塞控制和流量控制机制，会根据网络状况和接收方能力调整发送速率和窗口大小。</p></li><li class="lvl-2"><p>**UDP 协议有更多的公共服务可以被利用，而且这些服务往往没有安全配置或认证机制。**互联网上存在大量的开放的 UDP 服务，如 NTP、DNS、SSDP、Memcached 等，这些服务通常会响应所有 IP 的请求，而不进行任何过滤或限制。TCP 协议则有较少的公共服务可以被利用，而且这些服务往往有更好的安全配置或认证机制，如 HTTP、SMTP、FTP 等。</p></li></ul>]]></content>
       
       
       <categories>
@@ -2610,33 +2610,6 @@
     
     
     <entry>
-      <title>DLC12</title>
-      <link href="/notes/DLC/week12/"/>
-      <url>/notes/DLC/week12/</url>
-      
-        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>network-E3</title>
       <link href="/homework/network/network-E3/"/>
       <url>/homework/network/network-E3/</url>
@@ -2687,6 +2660,33 @@
             <tag> homework </tag>
             
             <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DLC12</title>
+      <link href="/notes/DLC/week12/"/>
+      <url>/notes/DLC/week12/</url>
+      
+        <content type="html"><![CDATA[<h1>t</h1><h1>同步时序电路的分析与设计方法</h1><ul class="lvl-0"><li class="lvl-2"><p>作原始状态表👈</p><blockquote><p>就是一大状态机？</p></blockquote></li><li class="lvl-2"><p>化简原始状态表</p><blockquote><p>就是自动机化简?</p></blockquote></li><li class="lvl-2"><p>求出激励函数</p><blockquote><p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p><p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p><p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p><p>卡诺图,给出$D_i与input,Q_i$之间的关系</p></blockquote></li><li class="lvl-2"><p>画逻辑图</p><blockquote><p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p></blockquote></li></ul><h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3><ul class="lvl-0"><li class="lvl-2"><p>将技术循环外的状态修改后,自动进入计数循环/</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
             
         </tags>
       
@@ -2799,33 +2799,6 @@
     
     
     <entry>
-      <title>DLC</title>
-      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
-      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
-      
-        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
-      
-      
-      <categories>
-          
-          <category> notes </category>
-          
-          <category> DLC </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> DLC </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>four-adder</title>
       <link href="/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/"/>
       <url>/homework/DLCE/%E5%9B%9B%E4%BD%8D%E5%8A%A0%E6%B3%95%E5%99%A8REPORT/</url>
@@ -2855,6 +2828,33 @@
     
     
     <entry>
+      <title>DLC</title>
+      <link href="/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/"/>
+      <url>/notes/DLC/%E8%A7%A6%E5%8F%91%E5%99%A8/</url>
+      
+        <content type="html"><![CDATA[<h2 id="触发器">触发器</h2><h3 id="基本R-S触发器">基本R-S触发器</h3><h3 id="电位触发方式的触发器">电位触发方式的触发器</h3><h3 id="边沿触发方式的触发器">边沿触发方式的触发器</h3><ul class="lvl-0"><li class="lvl-2"><p>正边沿触发方式？</p><blockquote><p>分析电路？我还不会。什么阻塞不阻塞的</p></blockquote></li><li class="lvl-2"><p>负边沿触发方式？jk触发</p><blockquote><p>可以等同于jk触发方式吗?讨厌jk,完全不会</p></blockquote></li></ul><h3 id="主－从触发方式的触发器">主－从触发方式的触发器</h3><p>由两级电位触发器（主触发器和从触发器）串连而成</p><ul class="lvl-0"><li class="lvl-2"><p>CP=1期间，主触发器接收数据，从触发器封锁</p></li><li class="lvl-2"><p>在负跳变到来时，主触发器封锁，从触发器将接收CP负跳变时主触发器的状态。</p></li></ul><h4 id="主从R-S触发器的功能表">主从R-S触发器的功能表</h4><p>和基本R-S一样，（cp一个正脉冲，一个负脉冲）。大概只是为了保证触发器的稳定。</p><h2 id="同步时序逻辑电路的分析">同步时序逻辑电路的分析</h2><ol><li class="lvl-3"><p>列出状态关系</p><p>大概就是列出${Q_i}_{n+1}与{Q_i}_n$之间的递推关系</p><blockquote><ul class="lvl-3"><li class="lvl-2"><p>对于D触发器来说$Q_i’=D_i$</p></li><li class="lvl-2"><p>对于JK触发器来说$Q_i’=J\bar Q+\bar KQ$</p><blockquote><p>因为我并不会jk触发器,这一条实在是难以理解.死记硬背吧</p></blockquote></li><li class="lvl-2"><p>至于D\J\K等于什么就再说了</p><blockquote><p>你D可以和输入以及$Q_i$有关.J和K有必要吗?有.下标漏掉了应该是$Q_i’=J\bar Q_i+\bar KQ_i$还有$Q_j$呢</p></blockquote></li></ul></blockquote></li><li class="lvl-3"><p>列出状态表</p><p>根据上面内容可以列出状态表</p></li><li class="lvl-3"><p>画出状态图</p><ul class="lvl-2"><li class="lvl-5">如果有输入,那么就是一个状态机(自动机)</li><li class="lvl-5">否则就是一个退化了的状态机(每个结点只有一个出边)</li></ul></li><li class="lvl-3"><p>画出时序图</p><ul class="lvl-2"><li class="lvl-5">每一帧CP都是高低</li><li class="lvl-5">每一帧输入最多变一次</li><li class="lvl-5">根据状态图画时序图</li></ul><blockquote><p>这又不考虑延迟.都是理想状态,大概还挺简单的</p></blockquote></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> DLC </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> DLC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>留言板</title>
       <link href="/others/comment/"/>
       <url>/others/comment/</url>
@@ -2872,35 +2872,6 @@
         <tags>
             
             <tag> comment </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-9</title>
-      <link href="/homework/network/network9/"/>
-      <url>/homework/network/network9/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
             
         </tags>
       
@@ -2938,6 +2909,35 @@
     
     
     <entry>
+      <title>network-homework-9</title>
+      <link href="/homework/network/network9/"/>
+      <url>/homework/network/network9/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第九次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><p>区域边界路由器ABR是跨越区域的，而自治系统边界路由器ASBR则不跨越AS</p><h2 id="第一题">第一题</h2><p>一个路由器刚接收到如下新的 IP 地址： 57.6.96.0/21, 57.6.104.0/21, 57.6.112.0/21 和<br>57.6.120.0/21。如果所有这些地址都使用同一条出境线路，试问它们可以被聚合吗？如果可以，它们被聚合到哪个地址上？如果不可以，请问为什么？</p><table><thead><tr><th>00111001</th><th>00000110</th><th>01100000</th><th>00000000</th></tr></thead><tbody><tr><td>00111001</td><td>00000110</td><td>01101000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01110000</td><td>00000000</td></tr><tr><td>00111001</td><td>00000110</td><td>01111000</td><td>00000000</td></tr></tbody></table><p>这几个地址的最长公共前缀为19，又公用一条出境线路，因此可以被聚合成57.6.96.0/19</p><h2 id="第二题">第二题</h2><ul class="lvl-0"><li class="lvl-2"><p>更新后的路由表</p><table><thead><tr><th>目的网络</th><th>距离</th><th>下一跳</th></tr></thead><tbody><tr><td>N1</td><td>7</td><td>A</td></tr><tr><td>N3</td><td>3</td><td>C</td></tr><tr><td>N4</td><td>9</td><td>C</td></tr><tr><td>N6</td><td>8</td><td>F</td></tr><tr><td>N7</td><td>5</td><td>C</td></tr><tr><td>N8</td><td>3</td><td>C</td></tr><tr><td>N9</td><td>4</td><td>D</td></tr></tbody></table><ol><li class="lvl-5"><p>路由器 B 接收到路由器 C 发送的距离向量报文，该报文包含了目的网络 N2、N3、N4、N7 和 N8 的距离信息，以及这些网络的下一跳路由器 C 的信息。</p></li><li class="lvl-5"><p>路由器 B 在更新它的路由表前，需要计算距离向量。</p></li><li class="lvl-5"><p>$$<br>\pi(i){\leftarrow} min[\pi(i),min(\pi(i)+w_{ji})]<br>$$</p></li></ol></li><li class="lvl-2"><p>路由器 B 收到从路由器 C 发往网络 N2 的 IP 分组时，会发现距离 N2 的距离为 16，显然这已经超出了最大跳数（默认最大跳数为 15），因此路由器 B 会丢弃该分组。路由器 B 会将这条信息告知其它相邻路由器，以便它们也能更新自己的路由表。</p></li></ul><h2 id="第三题">第三题</h2><table><thead><tr><th>目的网络</th><th>下一跳</th><th>接口</th></tr></thead><tbody><tr><td>AS1</td><td>153.14.3.2</td><td>S0</td></tr><tr><td>194.17.5.128/25</td><td></td><td>E0</td></tr><tr><td>194.17.20.0/23</td><td>194.17.24.2</td><td>S1</td></tr></tbody></table><ul class="lvl-0"><li class="lvl-2"><p>根据最长前缀匹配原则，通过E0接口</p></li><li class="lvl-2"><p>BGP（eBGP），TCP协议，</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>有趣的事</title>
       <link href="/articles/funny-things/"/>
       <url>/articles/funny-things/</url>
@@ -2955,6 +2955,33 @@
         <tags>
             
             <tag> nsfw </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello YUX</title>
+      <link href="/articles/hello-YUX/"/>
+      <url>/articles/hello-YUX/</url>
+      
+        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
+      
+      
+      <categories>
+          
+          <category> articles </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> THU </tag>
+            
+            <tag> THU-daily </tag>
             
         </tags>
       
@@ -2984,33 +3011,6 @@
             <tag> 美羊羊 </tag>
             
             <tag> gpt </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>hello YUX</title>
-      <link href="/articles/hello-YUX/"/>
-      <url>/articles/hello-YUX/</url>
-      
-        <content type="html"><![CDATA[<h1>我在华清大学的“快乐”</h1><p>如果你问我在华清大学是否很快乐，那么我要告诉你，非常快乐。当然，这种快乐并不是所有人都能理解的。</p><p>在华清大学，我曾经快乐地熬了一个通宵写论文，因为我很享受那种极度的疲惫和奋斗的感觉。我还快乐地经历了一场期末考试，因为我发现自己完全不懂老师讲的内容，这让我有机会尝试新的解题方法。</p><p>当然，我在华清大学也曾经快乐地经历了各种各样的挫折，比如我一次考试只得了50分，就当做了一次锻炼自己的心态。还有一次莫名其妙被拒绝的实习机会，就让我意识到了自己要更加努力才能达到期望。</p><p>总之，在华清大学的这几年，我真的很快乐。虽然每天都要面对各种形形色色的压力和不确定性，但这些经历让我成长了许多。所以，我要感谢华清大学这个“快乐”的地方，让我有机会成为更好的自己。</p><!-- About Me --><div class="container">    <div class="row">        <div class="col-md-12">            <h2>About Me</h2>        </div>    </div>    <div class="row">        <div class="col-md-4">            <img src="/img/profile.png" alt="Profile Image">        </div>        <div class="col-md-8">            <p>Hi, I am YUX and I am passionate about NOTHING. </p>        </div>    </div></div>]]></content>
-      
-      
-      <categories>
-          
-          <category> articles </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> THU </tag>
-            
-            <tag> THU-daily </tag>
             
         </tags>
       
@@ -3113,6 +3113,35 @@
     
     
     <entry>
+      <title>network-homework-5</title>
+      <link href="/homework/network/network5/"/>
+      <url>/homework/network/network5/</url>
+      
+        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> network </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> homework </tag>
+            
+            <tag> network </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hello world</title>
       <link href="/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/"/>
       <url>/notes/greece/%CE%B5%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/</url>
@@ -3161,35 +3190,6 @@
         <tags>
             
             <tag> ελληνικά </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>network-homework-5</title>
-      <link href="/homework/network/network5/"/>
-      <url>/homework/network/network5/</url>
-      
-        <content type="html"><![CDATA[<h1>网原第五次作业</h1><p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h3 id="1-地球与一个遥远行星通信">1.地球与一个遥远行星通信</h3><ol><li class="lvl-3"><p>路线单向延时<br>$$<br>T=9\frac{10<sup>{10}}{3\times10</sup>8}=300s<br>$$<br>采用停等协议，利用率为<br>$$<br>32 * 1000 * 86/(32 * 1000 * 8b + 2 * 64 * 1000000bps * 300s) = 6.66\times10^{-6}<br>$$</p></li><li class="lvl-3"><p>采用滑动窗口协议：</p><p>n = 2 * 300s/(32 * 1000 * 8b/64 * 1000000bps) + 1 = 150001</p></li></ol><h3 id="2-地球同步卫星的最大信道利用率">2.地球同步卫星的最大信道利用率</h3><ol><li class="lvl-3"><p>停等式</p><p>1000/(1000 + 2 * 1000000 * 270 + 1000) = 1/542</p></li><li class="lvl-3"><p>协议5</p><p>7 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li><li class="lvl-3"><p>协议6</p><p>4 * 1000/(1000 + 2 * 1000000 * 270 + 1000) = 7/542</p></li></ol><h3 id="3-卫星信道最大吞吐量">3.卫星信道最大吞吐量</h3><p>512字节占⽤信道时间为T = 512 * 86/(64 * 1000bps) = 0.064s</p><ul class="lvl-0"><li class="lvl-2"><p>窗口大小为1</p><p>512 * 86/(0.064 + 0.270 * 2) = 6781bps</p></li><li class="lvl-2"><p>窗口大小为7</p><p>7 * 512 * 86/(0.064 + 0.270 * 2) = 47467bps</p></li><li class="lvl-2"><p>窗口大小15</p><p>由于信道最多容量为n = [(0.270 * 2 + 0.064)/0.064] =9  故吞吐量为64kbps</p></li><li class="lvl-2"><p>窗口大小127</p><p>同上，吞吐量为64kbs</p></li></ul><h3 id="4-主机之间帧序号的比特数">4.主机之间帧序号的比特数</h3><p>数据帧传输时间范围：$t_{min}$=$128\times{8b/32kbps}=0.032s$ ;$t_{max}$=$512\times{8b/32kbps}=0.128s$</p><p>最小窗口大小范围<br>$$<br>l_{min}=2\times0.3s/t_{max}=6;l_{max}=2\times0.3s/t_{min}=20<br>$$<br>故帧序号最少需要5个比特</p>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> network </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> homework </tag>
-            
-            <tag> network </tag>
             
         </tags>
       
