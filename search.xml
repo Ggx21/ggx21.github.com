@@ -4,9 +4,42 @@
   
     
     <entry>
+      <title>期中复习：chap1~chap7</title>
+      <link href="/notes/2024-Spr/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/"/>
+      <url>/notes/2024-Spr/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url>
+      
+        <content type="html"><![CDATA[<h1>期中复习：chap1~chap7</h1><h2 id="chap1：操作系统概述">chap1：操作系统概述</h2><h3 id="1-2-什么是操作系统">1.2 什么是操作系统</h3><ul class="lvl-0"><li class="lvl-2"><p>操作系统内核的特征：</p><ul class="lvl-2"><li class="lvl-4">并发、共享、虚拟、异步</li></ul></li></ul><h3 id="1-3-操作系统历史演化">1.3 操作系统历史演化</h3><ul class="lvl-0"><li class="lvl-2"><p>单用户系统</p></li><li class="lvl-2"><p>批处理系统</p></li><li class="lvl-2"><p>多道程序系统</p></li><li class="lvl-2"><p>分时系统</p></li><li class="lvl-2"><h6 id="……">……</h6></li></ul><h4 id="1-3-2：从实验的角度看">1.3.2：从实验的角度看</h4><ul class="lvl-0"><li class="lvl-2"><p>libOS：第一次尝试编写裸机程序</p></li><li class="lvl-2"><p>批处理OS：内存支持单个程序驻留：特权级与异常</p></li><li class="lvl-2"><p>多道程序OS：支持多个程序同时驻留内存，依次执行:内存空间划分与调度</p></li><li class="lvl-2"><p>分时多任务OS：多个程序轮流执行：<strong>中断处理</strong>，上下文切换，抢占式调度</p></li><li class="lvl-2"><p>OS的地址空间抽象：</p><ol><li class="lvl-5">物理内存空间隔离</li><li class="lvl-5">虚拟内存</li></ol></li><li class="lvl-2"><p>OS的进程抽象</p><ol><li class="lvl-5">动态创建程序：进程管理与调度</li><li class="lvl-5">多处理器并行：多处理器，多核</li></ol></li><li class="lvl-2"><p>OS的文件抽象</p></li><li class="lvl-2"><p>OS的进程间通信</p></li><li class="lvl-2"><p>OS的并发</p></li><li class="lvl-2"><p>OS的IO</p></li></ul><h3 id="1-4-操作系统结构">1.4 操作系统结构</h3><ul class="lvl-0"><li class="lvl-2"><p>简单结构：应用和OS混在一起</p></li><li class="lvl-2"><p>单体分层结构：单体操作系统划分为多层，每层仅建立在低一层之上：从硬件驱动一直到高层用户界面</p></li><li class="lvl-2"><p>微内核结构：尽可能把内核功能移动到用户空间，网络等功能以模块形式用户空间可选引入（操作系统最小化）</p></li><li class="lvl-2"><p>外核结构：与宏内核和微内核不同，外核结构的操作系统几乎不提供任何预定义的服务。它仅仅提供一个平台，允许用户程序直接管理硬件资源和提供服务。<strong>保护与控制分离</strong></p></li><li class="lvl-2"></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> notes </category>
+          
+          <category> 2024-Spr </category>
+          
+          <category> 操作系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 操作系统 </tag>
+            
+            <tag> notes </tag>
+            
+            <tag> 2024-Spr </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>chap2 指令系统的设计</title>
-      <link href="/notes/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/chap2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1/"/>
-      <url>/notes/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/chap2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1/</url>
+      <link href="/notes/2024-Spr/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/chap2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1/"/>
+      <url>/notes/2024-Spr/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/chap2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1/</url>
       
         <content type="html"><![CDATA[<h1>chap2 指令系统的设计</h1><p>[TOC]</p><h2 id="2-1-指令系统结构的分类">2.1 指令系统结构的分类</h2><h3 id="区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型">区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型</h3><ul class="lvl-0"><li class="lvl-2"><h5 id="堆栈：">堆栈：</h5><p>隐式给出操作数</p></li><li class="lvl-2"><h5 id="累加器">累加器</h5><p>专门存放算术或逻辑运算的一个操作数和运算结果的寄存器。是唯一的暂存器，开销巨大</p><img src="https://gitlab.com/ggx-blog/imglab/uploads/f855336eda1e3be8a49a518cabf5184d/202403161059058.png" alt="image-20240316105920019" style="zoom:50%;" /></li><li class="lvl-2"><h5 id="通用寄存器组">通用寄存器组</h5><p>根据结构划分两种形式：</p><ul class="lvl-2"><li class="lvl-4"><p>寄存器-存储器结构：（一边的操作数总是来自于存储器）</p></li><li class="lvl-4"><p>寄存器-寄存器结构：（RR结构）</p><ul class="lvl-4"><li class="lvl-6">现代主流，灵活高性能</li><li class="lvl-6"><code>Load-Store</code>结构，只有Load和Store能够访问存储器（优点：各种指令的时钟周期相近；缺点：目标代码不够紧凑）</li></ul></li></ul><p>根据ALU指令的操作数</p><ul class="lvl-2"><li class="lvl-4"><p>3操作数：2src1dst</p></li><li class="lvl-4"><p>2操作数：1src1dst</p></li></ul></li></ul><div class="tips"><p>对于不同结构，操作数的位置、个数以及操作数的给出方式不同</p><ul class="lvl-1"><li class="lvl-2">显示给出：用指令字中的操作数字段给出</li><li class="lvl-2">隐式给出：用事先约定好的单元</li></ul></div><h2 id="2-2-寻址方式">2.2 寻址方式</h2><h3 id="寻址">寻址</h3><ul class="lvl-0"><li class="lvl-2"><p>任意存储</p></li><li class="lvl-2"><p>不能跨边界：信息在主存中存放的起始地址必须是该信息宽度（字节数）的整数倍  如<code>双字信息的起始地址为：×…×０００</code></p><p>存在空间浪费，但是保证访问速度</p></li></ul><blockquote><ul class="lvl-1"><li class="lvl-2"><p>存储效率：数据本身所需的存储量和整个数据所占的存储量之比</p></li><li class="lvl-2"><p>寻址方式：指令系统中如何形成所要访问的数据的地址</p><ul class="lvl-3"><li class="lvl-4"><p>将寻址方式编码于操作码中</p></li><li class="lvl-4"><p>在指令字中设置专门的寻址字段</p><p>灵活，操作码短。但是操作码和寻址方式字段合起来所需要的总位数可能会比隐含方法的总位数多</p></li></ul></li></ul></blockquote><ul class="lvl-0"><li class="lvl-2"><table><thead><tr><th>寻址方式</th><th>指令实例</th><th>含义</th></tr></thead><tbody><tr><td>立即值寻址</td><td>ADD R3 , #6</td><td>Regs[R3]←Regs[R3]＋6</td></tr><tr><td>直接寻址或绝对寻址</td><td>ADD R4 , (1010)</td><td>Regs[R4]←Regs[R4]＋Mem[1010]</td></tr><tr><td>寄存器寻址</td><td>ADD R1 , R2</td><td>Regs[R1]←Regs[R1]＋Regs[R2]</td></tr><tr><td>寄存器间接寻址</td><td>ADD R4 , (R2)</td><td>Regs[R4]←Regs[R4]＋Mem[Regs[R2]]</td></tr><tr><td>偏移寻址 （寄存器相对寻址）</td><td>ADD R3 , 120(R2)</td><td>Regs[R3]←Regs[R3]＋Mem[120+Regs[R2]]</td></tr><tr><td>索引寻址 （基址变址寻址）</td><td>ADD R4 , (R2 + R3)</td><td>Regs[R4]←Regs[R4]＋Mem[Regs[R2]+Regs[R3]]</td></tr><tr><td>相对基址变址寻址：</td><td>ADD R4 , 120(R2 + R3)</td><td>Regs[R4]←Regs[R4]＋Mem[Regs[R2]+Regs[R3]+120]</td></tr><tr><td>存储器间接寻址</td><td>ADD R2 , @(R4)</td><td>Regs[R2]←Regs[R2]＋Mem[Mem[Regs[R4]]]</td></tr><tr><td>自增寻址</td><td>ADD R1 , (R2)+</td><td>Regs[R1]←Regs[R1]＋Mem[Regs[R2]] Regs[R2]←Regs[R2]＋d</td></tr><tr><td>自减寻址</td><td>ADD R1, -(R2)</td><td>Regs[R2]←Regs[R2]－d Regs[R1]←Regs[R1]+Mem[Regs[R2]]</td></tr><tr><td>缩放寻址</td><td>ADD R1 , 80(R2)[R3]</td><td>Regs[R1]←Regs[R1]＋Mem[80＋Regs[R2]＋Regs[R3]*d]</td></tr></tbody></table></li></ul><h3 id="编址：">编址：</h3><h3 id="定位">定位</h3><h2 id="2-3-指令系统的设计与优化">2.3 指令系统的设计与优化</h2><h3 id="指令系统设计">指令系统设计</h3><h4 id="基本原则：">基本原则：</h4><p>完整性、规整性、正交性、高效率、兼容性</p><h4 id="分支条件的方法及其优缺点">分支条件的方法及其优缺点</h4><table><thead><tr><th>名 称</th><th>检测分支条件的方法</th><th>优 点</th><th>缺 点</th></tr></thead><tbody><tr><td>条件码 （CC）</td><td>检测由ALU操作设置的一些特殊的 位（即CC）</td><td>可以自由 设置 分支条件</td><td>条件码是增设的状态。而且它 限制了指令的执行顺序，因为 要保证条件码能顺利地传送给 分支指令。</td></tr><tr><td>条件寄存器</td><td>比较指令把比较结果放入任何一个 寄存器，检测时就检测该寄存器。</td><td>简单</td><td>占用了一个寄存器</td></tr><tr><td>比较与分支</td><td>比较操作是分支指令的一部分，通 常这种比较是受到一定限制的。</td><td>用 一 条 指 令 （而不是两条） 就能实现分支</td><td>当采用流水方式时，该指令的 操作可能太多，在一拍内做不 完。</td></tr></tbody></table><div class="tips"><h4 id="指令操作码码长的计算">指令操作码码长的计算</h4><p>用二进制编码表示n个码点时，理论上的最短平均编码长度<br>$$<br>H=-\Sigma_{i=1}^{n}p_ilog_2p_i<br>$$<br>信息冗余量，$\frac {L-H}{L}$</p></div><h4 id="指令操作码（长）的优化">指令操作码（长）的优化</h4><ol><li class="lvl-3"><p>哈夫曼编码：构建哈夫曼树，$L=\Sigma_{i=1}^np_il_i$</p></li><li class="lvl-3"><p>扩展操作码：高概率的用短码、低概率用长码的哈夫曼压缩思想</p><ul class="lvl-2"><li class="lvl-5">采用2-4的扩展操作码：用两位的00、01、10分别用于表示使用频度高的I1、I2、I3，然后用11作为高位扩展出4个4位的二进制编码，用于表示剩下的4条指令</li></ul></li><li class="lvl-3"><p>等长扩展码（便于分级译码）</p><img src="https://gitlab.com/ggx-blog/imglab/uploads/9d469a2714b7936d9df791cfa7ee1cc6/202403181305633.png" alt="image-20240318130528491" style="zoom: 67%;" /></li><li class="lvl-3"><p>定长操作码：所有指令的操作码都是统一的长度</p></li></ol><h4 id="指令字格式的优化">指令字格式的优化</h4><p>在指令系统的设计中，要在指令字长与寄存器个数以及寻址方式的个数之间进行折中</p><p>正常的risc都把寻址方式编进了操作码中，所以不需要考虑这个问题。但也可以让操作码尽可能短，在每一个<code>地址码</code>之前加上用于确定寻址方式的<code>地址描述符</code></p><h2 id="2-4-指令系统的发展和改进">2.4 指令系统的发展和改进</h2><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/85717dd8f0effe0f12c7b57fa4694f74/202403181310242.png" alt="image-20240318131019214"></p><h3 id="CISC方向优化：">CISC方向优化：</h3><ol><li class="lvl-3"><p>面向目标程序（将程序中常出现的片段提取成为一条指令）</p></li><li class="lvl-3"><p>面向高级语言（提取将高级语言的语法或者直接将高级语言作为机器语言）</p></li><li class="lvl-3"><p>面向操作系统：支持操作系统的功能</p></li></ol><h3 id="RISC方向：">RISC方向：</h3><p>强调优化编译器等</p><p>2.5 操作数类型和大小<br>2.6 典型指令系统（RISC-V）</p>]]></content>
       
@@ -787,7 +820,7 @@
       <link href="/homework/signal_processing/lab2/"/>
       <url>/homework/signal_processing/lab2/</url>
       
-        <content type="html"><![CDATA[<h2 id="lab2-按键音识别">lab2 按键音识别</h2><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5><p><a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p><h2 id="实验目的">实验目的</h2><p>识别dtmf音频，逐帧将其转换为按键序列</p><h2 id="实验过程">实验过程</h2><ol><li class="lvl-3"><p>将输入音频分成1/64s的帧</p></li><li class="lvl-3"><p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p></li><li class="lvl-3"><p>计算当前帧的短时傅里叶变化<code>stft</code></p><blockquote><p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p></blockquote></li><li class="lvl-3"><p>选择出每一帧的两个能量峰值处的频率</p><blockquote><p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>根据找到的频率判断按键</p><blockquote><p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure></li></ol><h2 id="实验现象">实验现象</h2><p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p><p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p><h2 id="实验结论">实验结论</h2><p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p><p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>        <div id="aplayer-ZzUskfWh" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-ZzUskfWh"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "sample.wav",              author: "yux",              url: "/music/dtmf/sample.wav",              pic: "/music/dtmf/sample.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="lab2-按键音识别">lab2 按键音识别</h2><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p><h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5><p><a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p><h2 id="实验目的">实验目的</h2><p>识别dtmf音频，逐帧将其转换为按键序列</p><h2 id="实验过程">实验过程</h2><ol><li class="lvl-3"><p>将输入音频分成1/64s的帧</p></li><li class="lvl-3"><p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p></li><li class="lvl-3"><p>计算当前帧的短时傅里叶变化<code>stft</code></p><blockquote><p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p></blockquote></li><li class="lvl-3"><p>选择出每一帧的两个能量峰值处的频率</p><blockquote><p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>根据找到的频率判断按键</p><blockquote><p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure></li></ol><h2 id="实验现象">实验现象</h2><p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p><p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p><h2 id="实验结论">实验结论</h2><p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p><p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>        <div id="aplayer-PruLfpsT" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">            <pre class="aplayer-lrc-content"></pre>        </div>        <script>          var ap = new APlayer({            element: document.getElementById("aplayer-PruLfpsT"),            narrow: false,            autoplay: false,            showlrc: false,            music: {              title: "sample.wav",              author: "yux",              url: "/music/dtmf/sample.wav",              pic: "/music/dtmf/sample.png",              lrc: ""            }          });          window.aplayers || (window.aplayers = []);          window.aplayers.push(ap);        </script><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>]]></content>
       
       
       <categories>
@@ -1124,10 +1157,10 @@
     
     <entry>
       <title>hw1</title>
-      <link href="/homework/vlsi/hw2/"/>
-      <url>/homework/vlsi/hw2/</url>
+      <link href="/homework/vlsi/hw1/"/>
+      <url>/homework/vlsi/hw1/</url>
       
-        <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
+        <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h3 id="vlsi的发展，vlsi设计的发展，EDA发展阶段、特点、三者之间的关系">vlsi的发展，vlsi设计的发展，EDA发展阶段、特点、三者之间的关系</h3><h5 id="vlsi的发展：">vlsi的发展：</h5><p>自1959年集成电路在TI和Fairchild诞生以来，经历了SSI，MSI，LSi，VLSI，ULSI的发展历程，目前已进入SOC时代。基本遵循摩尔定律，集成电路的集成度每3年翻一番，集成电路技术正在迅速地向着更高集成度、超小型化、高性能、高可靠性的方向发展。</p><h5 id="vlsi设计的发展：">vlsi设计的发展：</h5><ol><li class="lvl-3"><p>20 世纪 60 70 年代的初级集成电路硬件设计时期：针对SSI，MSI的，可设计各种逻辑门、触发器、计数器、寄存器和编译码器等</p></li><li class="lvl-3"><p>20 世纪 70 80 年代的集成电路的软件编程设计时期：集成电路设计主要是微处理器、随机存储器和只读存储器，使用由汇编语言或高级语言编制的程序去调试系统。</p></li><li class="lvl-3"><p>20世纪80 90年代的专用集成电路和系统集成设计时期。  借助于电子产品自动化设计工具</p></li></ol><h5 id="EDA的发展">EDA的发展</h5><ul class="lvl-0"><li class="lvl-2"><p>1970年代：最早的EDA工具出现，用于原理图设计和模拟。</p></li><li class="lvl-2"><p>1980年代：EDA工具开始支持综合、布局和时序分析。自动综合器的出现是EDA技术的第二次突破性进展</p></li><li class="lvl-2"><p>1990年代：EDA工具变得更加综合和集成，支持更复杂的设计流程。全面支持电子系统设计自动化.</p></li><li class="lvl-2"><p>2000年代以及之后：EDA工具不断进化，支持了深亚微米和纳米技术的设计挑战，如多核处理器和低功耗设计。</p></li></ul><h5 id="三者之间的关系：">三者之间的关系：</h5><ul class="lvl-0"><li class="lvl-2"><p>集成电路设计技术要适应工艺技术的发展，VLSI和VLSI设计的发展推动了EDA工具的不断演进。EDA工具为VLSI设计提供了必要的自动化和分析工具，使得设计更容易、更快速，同时也更可靠。</p></li><li class="lvl-2"><p>EDA工具在不同设计阶段提供支持，包括逻辑设计、综合、布局和时序分析。设计者使用这些工具来验证和优化其电路设计。</p></li><li class="lvl-2"><p>EDA工具还在VLSI设计和制造之间建立了桥梁，协助将设计转化为实际的硅片。</p></li></ul><h3 id="集成电路的层次设计步骤">集成电路的层次设计步骤</h3><p>集成电路的层次设计分为自顶向下的设计和自底向上的设计两种</p><p>自顶向下的设计可以分为下面6步</p><ol><li class="lvl-3"><p>行为级设计</p><p>将用户需求转换为系统设计说明的过程</p></li><li class="lvl-3"><p>算法描述</p><p>将系统功能借助于硬件描述语言进行算法设计和描述</p></li><li class="lvl-3"><p>寄存器传输级</p><p>将子系统或模块的算法描述转换成实现其功能所采用的实际硬件</p></li><li class="lvl-3"><p>门级</p><p>转换成只包含基本门与触发器的逻辑电路</p></li><li class="lvl-3"><p>电路级</p><p>转换成晶体管、电阻、电容等基本元件及连线</p></li><li class="lvl-3"><p>版图级</p><p>转换成物理版图</p></li></ol><p>自底向上是相反的过程</p><h3 id="vlsi的设计描述形式有几类？各自适合于哪个范畴？">vlsi的设计描述形式有几类？各自适合于哪个范畴？</h3><p>四类</p><ul class="lvl-0"><li class="lvl-2"><p>行为描述：适合于功能级，寄存器传输级，门级，晶体管级，版图级</p></li><li class="lvl-2"><p>结构描述：适合于功能级，寄存器传输级，门级，晶体管级，版图级</p></li><li class="lvl-2"><p>几何描述：适合于门级，晶体管级，版图级</p></li><li class="lvl-2"><p>计算机描述：适合于功能级，寄存器传输级，门级，晶体管级，版图级</p></li></ul><h3 id="自顶向下实现两位全加器">自顶向下实现两位全加器</h3><ol><li class="lvl-3"><p>系统级：</p><p>自然语言描述：输入两个2位二进制数，输出它们的和（2位），以及进位</p></li><li class="lvl-3"><p>算法级：</p><p>使用vhdl语言编写实现上述功能的算法,下面是伪代码</p><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module TwoBitAdder(input A, B, Cin, output Sum, Cout);</span><br><span class="line">    Sum = (A <span class="keyword">XOR</span> B) <span class="keyword">XOR</span> Cin;</span><br><span class="line">    Cout = (A <span class="keyword">AND</span> B) <span class="keyword">OR</span> ((A <span class="keyword">XOR</span> B) <span class="keyword">AND</span> Cin);</span><br><span class="line"><span class="keyword">end</span> module;</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>寄存器传输级</p><p>用组合逻辑电路翻译上述算法中的模块与接线</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7103b4bc4b7554daa93b131e3ee42a37/202310171228530.png" alt="image-20231017122808415"></p></li></ol><pre class="mermaid">graph TB    A[开始] --> B[行为级设计]    B --> C[算法描述]    C --> D[寄存器传输级]    D --> E[门级设计]    E --> F[电路级设计]    F --> G[版图级设计]    G --> H[结束]</pre><h3 id="估算以下情况下一个芯片内能够集成的门数。">估算以下情况下一个芯片内能够集成的门数。</h3><ol><li class="lvl-3"><p>15625</p></li><li class="lvl-3"><p>140625</p></li><li class="lvl-3"><p>1150000</p></li></ol>]]></content>
       
       
       <categories>
@@ -1153,10 +1186,10 @@
     
     <entry>
       <title>hw1</title>
-      <link href="/homework/vlsi/hw1/"/>
-      <url>/homework/vlsi/hw1/</url>
+      <link href="/homework/vlsi/hw2/"/>
+      <url>/homework/vlsi/hw2/</url>
       
-        <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h3 id="vlsi的发展，vlsi设计的发展，EDA发展阶段、特点、三者之间的关系">vlsi的发展，vlsi设计的发展，EDA发展阶段、特点、三者之间的关系</h3><h5 id="vlsi的发展：">vlsi的发展：</h5><p>自1959年集成电路在TI和Fairchild诞生以来，经历了SSI，MSI，LSi，VLSI，ULSI的发展历程，目前已进入SOC时代。基本遵循摩尔定律，集成电路的集成度每3年翻一番，集成电路技术正在迅速地向着更高集成度、超小型化、高性能、高可靠性的方向发展。</p><h5 id="vlsi设计的发展：">vlsi设计的发展：</h5><ol><li class="lvl-3"><p>20 世纪 60 70 年代的初级集成电路硬件设计时期：针对SSI，MSI的，可设计各种逻辑门、触发器、计数器、寄存器和编译码器等</p></li><li class="lvl-3"><p>20 世纪 70 80 年代的集成电路的软件编程设计时期：集成电路设计主要是微处理器、随机存储器和只读存储器，使用由汇编语言或高级语言编制的程序去调试系统。</p></li><li class="lvl-3"><p>20世纪80 90年代的专用集成电路和系统集成设计时期。  借助于电子产品自动化设计工具</p></li></ol><h5 id="EDA的发展">EDA的发展</h5><ul class="lvl-0"><li class="lvl-2"><p>1970年代：最早的EDA工具出现，用于原理图设计和模拟。</p></li><li class="lvl-2"><p>1980年代：EDA工具开始支持综合、布局和时序分析。自动综合器的出现是EDA技术的第二次突破性进展</p></li><li class="lvl-2"><p>1990年代：EDA工具变得更加综合和集成，支持更复杂的设计流程。全面支持电子系统设计自动化.</p></li><li class="lvl-2"><p>2000年代以及之后：EDA工具不断进化，支持了深亚微米和纳米技术的设计挑战，如多核处理器和低功耗设计。</p></li></ul><h5 id="三者之间的关系：">三者之间的关系：</h5><ul class="lvl-0"><li class="lvl-2"><p>集成电路设计技术要适应工艺技术的发展，VLSI和VLSI设计的发展推动了EDA工具的不断演进。EDA工具为VLSI设计提供了必要的自动化和分析工具，使得设计更容易、更快速，同时也更可靠。</p></li><li class="lvl-2"><p>EDA工具在不同设计阶段提供支持，包括逻辑设计、综合、布局和时序分析。设计者使用这些工具来验证和优化其电路设计。</p></li><li class="lvl-2"><p>EDA工具还在VLSI设计和制造之间建立了桥梁，协助将设计转化为实际的硅片。</p></li></ul><h3 id="集成电路的层次设计步骤">集成电路的层次设计步骤</h3><p>集成电路的层次设计分为自顶向下的设计和自底向上的设计两种</p><p>自顶向下的设计可以分为下面6步</p><ol><li class="lvl-3"><p>行为级设计</p><p>将用户需求转换为系统设计说明的过程</p></li><li class="lvl-3"><p>算法描述</p><p>将系统功能借助于硬件描述语言进行算法设计和描述</p></li><li class="lvl-3"><p>寄存器传输级</p><p>将子系统或模块的算法描述转换成实现其功能所采用的实际硬件</p></li><li class="lvl-3"><p>门级</p><p>转换成只包含基本门与触发器的逻辑电路</p></li><li class="lvl-3"><p>电路级</p><p>转换成晶体管、电阻、电容等基本元件及连线</p></li><li class="lvl-3"><p>版图级</p><p>转换成物理版图</p></li></ol><p>自底向上是相反的过程</p><h3 id="vlsi的设计描述形式有几类？各自适合于哪个范畴？">vlsi的设计描述形式有几类？各自适合于哪个范畴？</h3><p>四类</p><ul class="lvl-0"><li class="lvl-2"><p>行为描述：适合于功能级，寄存器传输级，门级，晶体管级，版图级</p></li><li class="lvl-2"><p>结构描述：适合于功能级，寄存器传输级，门级，晶体管级，版图级</p></li><li class="lvl-2"><p>几何描述：适合于门级，晶体管级，版图级</p></li><li class="lvl-2"><p>计算机描述：适合于功能级，寄存器传输级，门级，晶体管级，版图级</p></li></ul><h3 id="自顶向下实现两位全加器">自顶向下实现两位全加器</h3><ol><li class="lvl-3"><p>系统级：</p><p>自然语言描述：输入两个2位二进制数，输出它们的和（2位），以及进位</p></li><li class="lvl-3"><p>算法级：</p><p>使用vhdl语言编写实现上述功能的算法,下面是伪代码</p><figure class="highlight vhdl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">module TwoBitAdder(input A, B, Cin, output Sum, Cout);</span><br><span class="line">    Sum = (A <span class="keyword">XOR</span> B) <span class="keyword">XOR</span> Cin;</span><br><span class="line">    Cout = (A <span class="keyword">AND</span> B) <span class="keyword">OR</span> ((A <span class="keyword">XOR</span> B) <span class="keyword">AND</span> Cin);</span><br><span class="line"><span class="keyword">end</span> module;</span><br></pre></td></tr></table></figure></li><li class="lvl-3"><p>寄存器传输级</p><p>用组合逻辑电路翻译上述算法中的模块与接线</p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7103b4bc4b7554daa93b131e3ee42a37/202310171228530.png" alt="image-20231017122808415"></p></li></ol><pre class="mermaid">graph TB    A[开始] --> B[行为级设计]    B --> C[算法描述]    C --> D[寄存器传输级]    D --> E[门级设计]    E --> F[电路级设计]    F --> G[版图级设计]    G --> H[结束]</pre><h3 id="估算以下情况下一个芯片内能够集成的门数。">估算以下情况下一个芯片内能够集成的门数。</h3><ol><li class="lvl-3"><p>15625</p></li><li class="lvl-3"><p>140625</p></li><li class="lvl-3"><p>1150000</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<h1>hw-1</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>]]></content>
       
       
       <categories>
@@ -1240,8 +1273,8 @@
     
     <entry>
       <title>内容预览</title>
-      <link href="/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/"/>
-      <url>/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/</url>
+      <link href="/notes/compiler_construction/%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/"/>
+      <url>/notes/compiler_construction/%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/</url>
       
         <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
       
@@ -1267,8 +1300,8 @@
     
     <entry>
       <title>内容预览</title>
-      <link href="/notes/compiler_construction/%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/"/>
-      <url>/notes/compiler_construction/%E4%B8%AD%E9%97%B4%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90/</url>
+      <link href="/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/"/>
+      <url>/notes/compiler_construction/%E5%85%B6%E4%BB%96%E5%86%85%E5%AE%B9/</url>
       
         <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
       
@@ -1374,11 +1407,11 @@
     
     
     <entry>
-      <title>内容预览</title>
-      <link href="/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/"/>
-      <url>/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/</url>
+      <title>语法分析</title>
+      <link href="/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/"/>
+      <url>/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</url>
       
-        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
+        <content type="html"><![CDATA[<h1>语法分析</h1><p>核心问题是<strong>识别</strong>，<strong>解析</strong>上下文无关文法G = (V ， T ， P， S )</p><h3 id="两种实现途径">两种实现途径</h3><ul class="lvl-0"><li class="lvl-2"><p>自顶向下（从S到句子）</p></li><li class="lvl-2"><p>自底向上</p></li></ul><h2 id="自顶向下的语法分析">自顶向下的语法分析</h2><p>问题是容易出现回溯</p><h4 id="两类非确定性">两类非确定性</h4><ul class="lvl-0"><li class="lvl-2"><p>非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）</p></li><li class="lvl-2"><p>仅有产生式选择是非确定的</p></li></ul><h4 id="解决产生式选择的不确定性：lookahead">解决产生式选择的不确定性：lookahead</h4><p>唯一目的就是避免回溯，所以要看得足够多</p><h4 id="一个不太好的例子">一个不太好的例子</h4><p>考虑下列文法识别 $ba^n$ 的分析过程,  <code>S → Sa  ,S → b  </code></p><div class="tips"><p>看到下一个是a,然后选择<code>S → Sa</code>是不够的,因为a后可能还有a,要确定还要不要a只能继续向后看,所以无论向前看多远,这个句子后面总可能还是有a,所以还是不能确定.</p></div><blockquote><p>这启发我们lookahead的表现需要依赖于文法</p></blockquote><h3 id="LL-1-文法">LL(1)文法</h3><p>文法 G 是 LL（1）文法，当且仅当下面的条件成立：</p><div class="warning"><p>对于每一个生成符,其所有产生式的预测集合不相交</p></div><p>First集合与Follow集合,$G =（V_T， V_N， P， S）$ 是上下文无关文法</p><h4 id="First集合">First集合</h4><p>first集合是求下述符号可能产生的<strong>首终结符</strong></p><p>first集合针对的是在LL推导中可能出现的三类符号的并集</p><ol><li class="lvl-3"><p>终结符与$\epsilon$</p></li><li class="lvl-3"><p>生成符</p></li><li class="lvl-3"><p>文法右边的符号串</p></li></ol><h5 id="计算方法">计算方法</h5><ol><li class="lvl-3"><p>1类集合元素为本身,剩下的是空集</p></li><li class="lvl-3"><p>如果生成符能生成$\epsilon$,则其集合加入$\epsilon$</p></li><li class="lvl-3"><p>对于3类符号串,首先加入串首符号对应集合元素</p></li><li class="lvl-3"><p>从左向右分析,如果first集合中有$\epsilon$,则集合并上此处符号的后继符号的first集合</p></li><li class="lvl-3"><p>如果停止,则3类符号串first集中删去$\epsilon$</p></li><li class="lvl-3"><p>如果生成符能生成3,则集合取并</p></li><li class="lvl-3"><p>重复3-6,直到所有集合不变</p></li></ol><h4 id="Follow集合">Follow集合</h4><p>follow集合是在求$V_N$的直接后继终结符</p><h5 id="计算-Follow-集合">计算 Follow 集合</h5><ol><li class="lvl-3"><p>置 Follow(S) =</p></li></ol>]]></content>
       
       
       <categories>
@@ -1401,11 +1434,11 @@
     
     
     <entry>
-      <title>语法分析</title>
-      <link href="/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/"/>
-      <url>/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/</url>
+      <title>内容预览</title>
+      <link href="/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/"/>
+      <url>/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%B6%E5%AF%BC%E7%9A%84%E8%AF%AD%E4%B9%89%E8%AE%A1%E7%AE%97%E5%9F%BA%E7%A1%80/</url>
       
-        <content type="html"><![CDATA[<h1>语法分析</h1><p>核心问题是<strong>识别</strong>，<strong>解析</strong>上下文无关文法G = (V ， T ， P， S )</p><h3 id="两种实现途径">两种实现途径</h3><ul class="lvl-0"><li class="lvl-2"><p>自顶向下（从S到句子）</p></li><li class="lvl-2"><p>自底向上</p></li></ul><h2 id="自顶向下的语法分析">自顶向下的语法分析</h2><p>问题是容易出现回溯</p><h4 id="两类非确定性">两类非确定性</h4><ul class="lvl-0"><li class="lvl-2"><p>非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）</p></li><li class="lvl-2"><p>仅有产生式选择是非确定的</p></li></ul><h4 id="解决产生式选择的不确定性：lookahead">解决产生式选择的不确定性：lookahead</h4><p>唯一目的就是避免回溯，所以要看得足够多</p><h4 id="一个不太好的例子">一个不太好的例子</h4><p>考虑下列文法识别 $ba^n$ 的分析过程,  <code>S → Sa  ,S → b  </code></p><div class="tips"><p>看到下一个是a,然后选择<code>S → Sa</code>是不够的,因为a后可能还有a,要确定还要不要a只能继续向后看,所以无论向前看多远,这个句子后面总可能还是有a,所以还是不能确定.</p></div><blockquote><p>这启发我们lookahead的表现需要依赖于文法</p></blockquote><h3 id="LL-1-文法">LL(1)文法</h3><p>文法 G 是 LL（1）文法，当且仅当下面的条件成立：</p><div class="warning"><p>对于每一个生成符,其所有产生式的预测集合不相交</p></div><p>First集合与Follow集合,$G =（V_T， V_N， P， S）$ 是上下文无关文法</p><h4 id="First集合">First集合</h4><p>first集合是求下述符号可能产生的<strong>首终结符</strong></p><p>first集合针对的是在LL推导中可能出现的三类符号的并集</p><ol><li class="lvl-3"><p>终结符与$\epsilon$</p></li><li class="lvl-3"><p>生成符</p></li><li class="lvl-3"><p>文法右边的符号串</p></li></ol><h5 id="计算方法">计算方法</h5><ol><li class="lvl-3"><p>1类集合元素为本身,剩下的是空集</p></li><li class="lvl-3"><p>如果生成符能生成$\epsilon$,则其集合加入$\epsilon$</p></li><li class="lvl-3"><p>对于3类符号串,首先加入串首符号对应集合元素</p></li><li class="lvl-3"><p>从左向右分析,如果first集合中有$\epsilon$,则集合并上此处符号的后继符号的first集合</p></li><li class="lvl-3"><p>如果停止,则3类符号串first集中删去$\epsilon$</p></li><li class="lvl-3"><p>如果生成符能生成3,则集合取并</p></li><li class="lvl-3"><p>重复3-6,直到所有集合不变</p></li></ol><h4 id="Follow集合">Follow集合</h4><p>follow集合是在求$V_N$的直接后继终结符</p><h5 id="计算-Follow-集合">计算 Follow 集合</h5><ol><li class="lvl-3"><p>置 Follow(S) =</p></li></ol>]]></content>
+        <content type="html"><![CDATA[<ul class="lvl-0"><li class="lvl-2"><h3 id="词法分析">词法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="词法分析基础">词法分析基础</h4></li></ul></li><li class="lvl-2"><h3 id="符号表组织">符号表组织</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="强调作用域及其组织方式">强调作用域及其组织方式</h4></li></ul></li><li class="lvl-2"><h3 id="语法分析">语法分析</h3><ul class="lvl-2"><li class="lvl-4"><h4 id="自顶向下语法分析">自顶向下语法分析</h4></li><li class="lvl-4"><h4 id="自底向上语法分析">自底向上语法分析</h4></li></ul></li><li class="lvl-2"><h3 id="语法制导的语义计算基础">语法制导的语义计算基础</h3><p>基于属性文法和翻译模式进行语义计算的基本原理及实现技术</p></li><li class="lvl-2"><h3 id="语义分析">语义分析</h3><p>以类型检查程序设计为重点</p></li><li class="lvl-2"><h3 id="中间代码生成">中间代码生成</h3><p>以常用语言机制的实现技术为主线</p></li><li class="lvl-2"><h3 id="运行时存储组织">运行时存储组织</h3><p>存储布局,存储分配策略,活动记录,过程实现,面向对象程序存储组织,</p></li><li class="lvl-2"><h3 id="代码优化">代码优化</h3></li><li class="lvl-2"><h3 id="目标代码生成">目标代码生成</h3></li></ul>]]></content>
       
       
       <categories>
@@ -1679,6 +1712,33 @@
     
     
     <entry>
+      <title>lab2</title>
+      <link href="/homework/computer_orgnization/lab2/"/>
+      <url>/homework/computer_orgnization/lab2/</url>
+      
+        <content type="html"><![CDATA[<h1>实验二</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="仿真截图">仿真截图</h4><img src="https://gitlab.com/ggx-blog/imglab/uploads/c17e96e795aff020dcc4ea8c0d80ca73/202310021713613.png" alt="image-20231002145428181" style="zoom: 50%;" /></li><li class="lvl-2"><h3 id="在线实验平台">在线实验平台</h3><img src="https://gitlab.com/ggx-blog/imglab/uploads/51e50fc87612f90a9ae1c529704ffd0e/202310021458363.png" alt="image-20231002145843251" style="zoom: 50%;" /></li></ul><h2 id="思考题">思考题</h2><ul class="lvl-0"><li class="lvl-2"><h3 id="同步逻辑的电路原理图">同步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/913ac109bd94ea7abf17f78b9278a05b/202310021619164.png" alt=""></p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a0c159e24a93fca321af418a21732ae1/202310021622970.png" alt="image-20231002162245902"></p></li><li class="lvl-2"><h3 id="异步逻辑的电路原理图">异步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ba129e270f1b57944dc06edf1e90730a/202310021628504.png" alt="image-20231002162808433"></p></li><li class="lvl-2"><h3 id="异步逻辑和同步逻辑的异同">异步逻辑和同步逻辑的异同</h3><p>从图像中可以看出，两种逻辑实现经 Vivado 综合后的电路原理图有较大不同。同步逻辑实现中，counter模块和trigger模块<strong>并联</strong>同时接受clock_gen生成的clk信号驱动，这意味着它们在同一个时钟域中操作，所有的触发器在时钟的上升沿或下降沿触发，确保了时序一致性。；而异步实现中，则是类似于<strong>串联</strong>结构，clockgen并不直接接入counter模块，而是通过驱动trigger模块，再有trigger模块产生的trigger信号接入counter模块。</p><p><strong>异步逻辑设计</strong>，没有全局统一时钟驱动的逻辑设计。异步逻辑在复杂的项目中，会导致静态时序分析失败，造成在硬件上难以调试的时序问题，此外，在异步逻辑中，通常需要使用额外的逻辑电路（如触发器或者双边缘触发器）来协调计数器模块和触发器模块之间的时序关系。这可能导致电路结构更加复杂，需要特殊的电路设计技巧来解决时序问题。</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> homework </category>
+          
+          <category> cod </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> cod </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>stage1</title>
       <link href="/homework/compiler_construction/stage1/"/>
       <url>/homework/compiler_construction/stage1/</url>
@@ -1700,33 +1760,6 @@
             <tag> lab </tag>
             
             <tag> 编原 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>lab2</title>
-      <link href="/homework/computer_orgnization/lab2/"/>
-      <url>/homework/computer_orgnization/lab2/</url>
-      
-        <content type="html"><![CDATA[<h1>实验二</h1><p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p><h2 id="实验报告">实验报告</h2><ul class="lvl-0"><li class="lvl-2"><h4 id="仿真截图">仿真截图</h4><img src="https://gitlab.com/ggx-blog/imglab/uploads/c17e96e795aff020dcc4ea8c0d80ca73/202310021713613.png" alt="image-20231002145428181" style="zoom: 50%;" /></li><li class="lvl-2"><h3 id="在线实验平台">在线实验平台</h3><img src="https://gitlab.com/ggx-blog/imglab/uploads/51e50fc87612f90a9ae1c529704ffd0e/202310021458363.png" alt="image-20231002145843251" style="zoom: 50%;" /></li></ul><h2 id="思考题">思考题</h2><ul class="lvl-0"><li class="lvl-2"><h3 id="同步逻辑的电路原理图">同步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/913ac109bd94ea7abf17f78b9278a05b/202310021619164.png" alt=""></p><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a0c159e24a93fca321af418a21732ae1/202310021622970.png" alt="image-20231002162245902"></p></li><li class="lvl-2"><h3 id="异步逻辑的电路原理图">异步逻辑的电路原理图</h3><p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ba129e270f1b57944dc06edf1e90730a/202310021628504.png" alt="image-20231002162808433"></p></li><li class="lvl-2"><h3 id="异步逻辑和同步逻辑的异同">异步逻辑和同步逻辑的异同</h3><p>从图像中可以看出，两种逻辑实现经 Vivado 综合后的电路原理图有较大不同。同步逻辑实现中，counter模块和trigger模块<strong>并联</strong>同时接受clock_gen生成的clk信号驱动，这意味着它们在同一个时钟域中操作，所有的触发器在时钟的上升沿或下降沿触发，确保了时序一致性。；而异步实现中，则是类似于<strong>串联</strong>结构，clockgen并不直接接入counter模块，而是通过驱动trigger模块，再有trigger模块产生的trigger信号接入counter模块。</p><p><strong>异步逻辑设计</strong>，没有全局统一时钟驱动的逻辑设计。异步逻辑在复杂的项目中，会导致静态时序分析失败，造成在硬件上难以调试的时序问题，此外，在异步逻辑中，通常需要使用额外的逻辑电路（如触发器或者双边缘触发器）来协调计数器模块和触发器模块之间的时序关系。这可能导致电路结构更加复杂，需要特殊的电路设计技巧来解决时序问题。</p></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> homework </category>
-          
-          <category> cod </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> cod </tag>
             
         </tags>
       
