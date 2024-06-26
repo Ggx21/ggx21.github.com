@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="大实验报告 CPU 的结构图  功能模块功能   immu段  immu：将虚拟指令地址转换为物理地址    if：  icache：隔断法接入，取指    id：  decode：指令译码 regfile：寄存器堆    exe：  alu：完成算术、逻辑运算    dmmu：  dmmu：将mem段虚拟地址转换为物理地址    其他  hazard_controller: 控制stall，fl">
+  <meta name="description" content="大实验报告  CPU 的结构图   功能模块功能  immu段  immu：将虚拟指令地址转换为物理地址   if：  icache：隔断法接入，取指   id：  decode：指令译码 regfile：寄存器堆   exe：  alu：完成算术、逻辑运算   dmmu：  dmmu：将mem段虚拟地址转换为物理地址   其他  hazard_controller: 控制stall，flush">
 <meta property="og:type" content="article">
 <meta property="og:title" content="大实验报告">
 <meta property="og:url" content="https://ggxloveslife.top/homework/computer_orgnization/%E5%A4%A7%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="大实验报告 CPU 的结构图  功能模块功能   immu段  immu：将虚拟指令地址转换为物理地址    if：  icache：隔断法接入，取指    id：  decode：指令译码 regfile：寄存器堆    exe：  alu：完成算术、逻辑运算    dmmu：  dmmu：将mem段虚拟地址转换为物理地址    其他  hazard_controller: 控制stall，fl">
+<meta property="og:description" content="大实验报告  CPU 的结构图   功能模块功能  immu段  immu：将虚拟指令地址转换为物理地址   if：  icache：隔断法接入，取指   id：  decode：指令译码 regfile：寄存器堆   exe：  alu：完成算术、逻辑运算   dmmu：  dmmu：将mem段虚拟地址转换为物理地址   其他  hazard_controller: 控制stall，flush">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/06cdb5db476cc3b7d55c5c22a4768cae/202312241204415.svg">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/e02b6cde7bab915b69aba3dcc0727095/202312241231138.png">
@@ -180,7 +180,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">大实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU-%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">CPU 的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text">功能模块功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%89%8D%E4%BC%A0"><span class="toc-number">1.2.</span> <span class="toc-text">数据前传</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">冲突检测：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">冲突例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E5%9B%BE%E5%B1%95%E7%A4%BA"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">波形图展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%89%A9%E5%B1%95%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text">实现的扩展功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uCore"><span class="toc-number">1.4.</span> <span class="toc-text">uCore</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cache"><span class="toc-number">1.4.1.</span> <span class="toc-text">cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E8%A1%A8-TLB"><span class="toc-number">1.4.2.</span> <span class="toc-text">页表&amp;TLB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94"><span class="toc-number">1.4.3.</span> <span class="toc-text">性能对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">思考题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B7%A5%E8%A1%A8"><span class="toc-number">1.6.</span> <span class="toc-text">分工表</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%A7%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.</span> <span class="toc-text"> 大实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cpu-%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text"> CPU 的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 功能模块功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%89%8D%E4%BC%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 数据前传</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> 冲突检测：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.0.2.</span> <span class="toc-text"> 冲突例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E5%9B%BE%E5%B1%95%E7%A4%BA"><span class="toc-number">1.2.0.3.</span> <span class="toc-text"> 波形图展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%89%A9%E5%B1%95%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text"> 实现的扩展功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ucore"><span class="toc-number">1.4.</span> <span class="toc-text"> uCore</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cache"><span class="toc-number">1.4.1.</span> <span class="toc-text"> cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E8%A1%A8tlb"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 页表&amp;TLB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 性能对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B7%A5%E8%A1%A8"><span class="toc-number">1.6.</span> <span class="toc-text"> 分工表</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -237,159 +237,136 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>大实验报告</h1>
-<h2 id="CPU-的结构图">CPU 的结构图</h2>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/06cdb5db476cc3b7d55c5c22a4768cae/202312241204415.svg" alt="new"></p>
-<h3 id="功能模块功能">功能模块功能</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>immu段</p>
-<ul class="lvl-2">
-<li class="lvl-4">immu：将虚拟指令地址转换为物理地址</li>
+    <h1 id="大实验报告"><a class="markdownIt-Anchor" href="#大实验报告"></a> 大实验报告</h1>
+<h2 id="cpu-的结构图"><a class="markdownIt-Anchor" href="#cpu-的结构图"></a> CPU 的结构图</h2>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/06cdb5db476cc3b7d55c5c22a4768cae/202312241204415.svg" alt="new" /></p>
+<h3 id="功能模块功能"><a class="markdownIt-Anchor" href="#功能模块功能"></a> 功能模块功能</h3>
+<ul>
+<li>immu段
+<ul>
+<li>immu：将虚拟指令地址转换为物理地址</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p>if：</p>
-<ul class="lvl-2">
-<li class="lvl-4">icache：<strong>隔断法</strong>接入，取指</li>
+<li>if：
+<ul>
+<li>icache：<strong>隔断法</strong>接入，取指</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p>id：</p>
-<ul class="lvl-2">
-<li class="lvl-4">decode：指令译码</li>
-<li class="lvl-4">regfile：寄存器堆</li>
+<li>id：
+<ul>
+<li>decode：指令译码</li>
+<li>regfile：寄存器堆</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p>exe：</p>
-<ul class="lvl-2">
-<li class="lvl-4">alu：完成算术、逻辑运算</li>
+<li>exe：
+<ul>
+<li>alu：完成算术、逻辑运算</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p>dmmu：</p>
-<ul class="lvl-2">
-<li class="lvl-4">dmmu：将mem段虚拟地址转换为物理地址</li>
+<li>dmmu：
+<ul>
+<li>dmmu：将mem段虚拟地址转换为物理地址</li>
 </ul>
 </li>
-<li class="lvl-2">
-<p>其他</p>
-<ul class="lvl-2">
-<li class="lvl-4">hazard_controller: 控制stall，flush</li>
-<li class="lvl-4">csr_trap:处理中断异常</li>
+<li>其他
+<ul>
+<li>hazard_controller: 控制stall，flush</li>
+<li>csr_trap:处理中断异常</li>
 </ul>
 </li>
 </ul>
-<h2 id="数据前传">数据前传</h2>
-<h4 id="冲突检测："><strong>冲突检测</strong>：</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在每个可能产生数据相关性的阶段，检测是否有需要向后传递的数据。</p>
-</li>
-<li class="lvl-2">
-<p>这些阶段包括执行阶段（EX，ALU 输出）、访存阶段（MEM，内存读输出）、写回阶段（WB，CSR输出和PC+4）。</p>
-</li>
-<li class="lvl-2">
-<p>hazard_controller模块根据指令的数据相关性情况和优先级，选择合适的数据前传路径。</p>
-</li>
-<li class="lvl-2">
-<p>按照指令从新到老的顺序，判定需要前传的数据的优先级。</p>
-</li>
-<li class="lvl-2">
-<p>根据优先级判定，决定是否进行数据前传。如果检测到数据相关性且前一条指令的执行结果已经准备好，就进行数据前传。</p>
-</li>
+<h2 id="数据前传"><a class="markdownIt-Anchor" href="#数据前传"></a> 数据前传</h2>
+<h4 id="冲突检测"><a class="markdownIt-Anchor" href="#冲突检测"></a> <strong>冲突检测</strong>：</h4>
+<ul>
+<li>在每个可能产生数据相关性的阶段，检测是否有需要向后传递的数据。</li>
+<li>这些阶段包括执行阶段（EX，ALU 输出）、访存阶段（MEM，内存读输出）、写回阶段（WB，CSR输出和PC+4）。</li>
+<li>hazard_controller模块根据指令的数据相关性情况和优先级，选择合适的数据前传路径。</li>
+<li>按照指令从新到老的顺序，判定需要前传的数据的优先级。</li>
+<li>根据优先级判定，决定是否进行数据前传。如果检测到数据相关性且前一条指令的执行结果已经准备好，就进行数据前传。</li>
 </ul>
-<h4 id="冲突例子">冲突例子</h4>
+<h4 id="冲突例子"><a class="markdownIt-Anchor" href="#冲突例子"></a> 冲突例子</h4>
 <ol>
-<li class="lvl-3">
-<p>指令1：<code>ADD R1, R2, R3</code>（将R2和R3的值相加，结果存储到R1）</p>
-</li>
-<li class="lvl-3">
-<p>指令2：<code>SUB R4, R1, R5</code>（将R1和R5的值相减，结果存储到R4）</p>
-</li>
+<li>指令1：<code>ADD R1, R2, R3</code>（将R2和R3的值相加，结果存储到R1）</li>
+<li>指令2：<code>SUB R4, R1, R5</code>（将R1和R5的值相减，结果存储到R4）</li>
 </ol>
 <p>如果没有数据前传机制，指令2在ID阶段检测到要读取R1寄存器的时候，R1的值尚未被指令1写回。这将导致指令2必须等待指令1进入WB阶段，才能在下一个时钟周期读取R1的值。</p>
-<h4 id="波形图展示">波形图展示</h4>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e02b6cde7bab915b69aba3dcc0727095/202312241231138.png" alt="image-20231224123103091"></p>
-<h2 id="实现的扩展功能">实现的扩展功能</h2>
-<h2 id="uCore">uCore</h2>
+<h4 id="波形图展示"><a class="markdownIt-Anchor" href="#波形图展示"></a> 波形图展示</h4>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e02b6cde7bab915b69aba3dcc0727095/202312241231138.png" alt="image-20231224123103091" /></p>
+<h2 id="实现的扩展功能"><a class="markdownIt-Anchor" href="#实现的扩展功能"></a> 实现的扩展功能</h2>
+<h2 id="ucore"><a class="markdownIt-Anchor" href="#ucore"></a> uCore</h2>
 <p>我们组最终成功运行uCore：部分测例截图如下</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7ab2b77d81e99d019dbcbc268a251449/202312241244122.png" alt="4d3e953ebaf08ae3abd30e2c5a69b4c"></p>
-<h3 id="cache">cache</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7ab2b77d81e99d019dbcbc268a251449/202312241244122.png" alt="4d3e953ebaf08ae3abd30e2c5a69b4c" /></p>
+<h3 id="cache"><a class="markdownIt-Anchor" href="#cache"></a> cache</h3>
 <p>隔断法，仅仅icache</p>
 <ol>
-<li class="lvl-3">
-<p>Cache存储结构：</p>
-<ul class="lvl-2">
-<li class="lvl-5">Cache使用64个缓存条目（cache entry），每个缓存条目有57位，其中包括一个有效位、24位标签、和一个32位数据。（24位标签是由于只做了icache，总是4地址对齐，因此忽略低二位）</li>
-<li class="lvl-5"><code>cache_regs</code>是一个包含64个缓存条目的寄存器数组。</li>
+<li>Cache存储结构：
+<ul>
+<li>Cache使用64个缓存条目（cache entry），每个缓存条目有57位，其中包括一个有效位、24位标签、和一个32位数据。（24位标签是由于只做了icache，总是4地址对齐，因此忽略低二位）</li>
+<li><code>cache_regs</code>是一个包含64个缓存条目的寄存器数组。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>Cache地址结构：</p>
-<ul class="lvl-2">
-<li class="lvl-5">Cache采用直接映射方式，使用6位索引（cache index）和24位标签（cache tag）。</li>
+<li>Cache地址结构：
+<ul>
+<li>Cache采用直接映射方式，使用6位索引（cache index）和24位标签（cache tag）。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>Cache逻辑</p>
-<ul class="lvl-2">
-<li class="lvl-5">在<code>CACHE_IDLE</code>状态，如果发生缓存命中，则立即提供数据，否则向存储器发出读请求。</li>
-<li class="lvl-5">在<code>CACHE_MEM_READ</code>状态，等待存储器的响应，将数据写入缓存。</li>
+<li>Cache逻辑
+<ul>
+<li>在<code>CACHE_IDLE</code>状态，如果发生缓存命中，则立即提供数据，否则向存储器发出读请求。</li>
+<li>在<code>CACHE_MEM_READ</code>状态，等待存储器的响应，将数据写入缓存。</li>
 </ul>
 </li>
 </ol>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a6c7d2dcb9fd502fb7ae67a691c87a21/202312241247742.png" alt="image-20231224124747700"></p>
-<h3 id="页表-TLB">页表&amp;TLB</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a6c7d2dcb9fd502fb7ae67a691c87a21/202312241247742.png" alt="image-20231224124747700" /></p>
+<h3 id="页表tlb"><a class="markdownIt-Anchor" href="#页表tlb"></a> 页表&amp;TLB</h3>
 <ol>
-<li class="lvl-3">
+<li>
 <p><strong>TLB和页表结构：</strong></p>
-<ul class="lvl-2">
-<li class="lvl-5">MMU包含TLB和两级页表。TLB用于高效缓存最近的虚拟地址到物理地址的映射。</li>
-<li class="lvl-5">两级页表包括Level-1（LV1）和Level-2（LV2）。、</li>
-<li class="lvl-5">TLB一项（陈康老师课上的建议），实际测试仍有较高命中率。</li>
+<ul>
+<li>MMU包含TLB和两级页表。TLB用于高效缓存最近的虚拟地址到物理地址的映射。</li>
+<li>两级页表包括Level-1（LV1）和Level-2（LV2）。、</li>
+<li>TLB一项（陈康老师课上的建议），实际测试仍有较高命中率。</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>虚拟地址结构：</strong></p>
-<ul class="lvl-2">
-<li class="lvl-5">输入的虚拟地址<code>va_i</code>包括32位，分为偏移(<code>va_offset</code>)、LV2 VPN(<code>va_vpn_2</code>)、LV1 VPN(<code>va_vpn_1</code>)。</li>
+<ul>
+<li>输入的虚拟地址<code>va_i</code>包括32位，分为偏移(<code>va_offset</code>)、LV2 VPN(<code>va_vpn_2</code>)、LV1 VPN(<code>va_vpn_1</code>)。</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>物理地址结构：</strong></p>
-<ul class="lvl-2">
-<li class="lvl-5">输出的物理地址<code>pa_o</code>包括32位，由LV2页表的PTE中的PPN和虚拟地址的偏移组成。</li>
+<ul>
+<li>输出的物理地址<code>pa_o</code>包括32位，由LV2页表的PTE中的PPN和虚拟地址的偏移组成。</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>TLB命中检测：</strong></p>
-<ul class="lvl-2">
-<li class="lvl-5">通过<code>tlb_hit</code>信号判断是否发生TLB命中，通过比较TLB的有效位、标签和VPN。</li>
+<ul>
+<li>通过<code>tlb_hit</code>信号判断是否发生TLB命中，通过比较TLB的有效位、标签和VPN。</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>页表访问：</strong></p>
-<ul class="lvl-2">
-<li class="lvl-5">根据状态机状态，在<code>mmu_lv1</code>和<code>mmu_lv2</code>状态下，向存储器发出读请求，获取对应的PTE。</li>
+<ul>
+<li>根据状态机状态，在<code>mmu_lv1</code>和<code>mmu_lv2</code>状态下，向存储器发出读请求，获取对应的PTE。</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>TLB更新：</strong></p>
-<ul class="lvl-2">
-<li class="lvl-5">在<code>mmu_lv2</code>状态下，如果访问成功，更新TLB的标签和PTE。</li>
+<ul>
+<li>在<code>mmu_lv2</code>状态下，如果访问成功，更新TLB的标签和PTE。</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>异常处理：</strong></p>
-<ul class="lvl-2">
-<li class="lvl-5">在状态机中，如果发生页错误，设置<code>page_fault_o</code>为1，通知上层。</li>
+<ul>
+<li>在状态机中，如果发生页错误，设置<code>page_fault_o</code>为1，通知上层。</li>
 </ul>
-<p><img src="C:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231224124804221.png" alt="image-20231224124804221"></p>
+<p><img src="C:/Users/18344/AppData/Roaming/Typora/typora-user-images/image-20231224124804221.png" alt="image-20231224124804221" /></p>
 </li>
 </ol>
-<h3 id="性能对比">性能对比</h3>
+<h3 id="性能对比"><a class="markdownIt-Anchor" href="#性能对比"></a> 性能对比</h3>
 <p>我们小组没有太关注性能优化，最终只通过了CRYPTONIGHT</p>
 <table>
 <thead>
@@ -421,38 +398,32 @@
 </tr>
 </tbody>
 </table>
-<h2 id="思考题">思考题</h2>
+<h2 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h2>
 <ol>
-<li class="lvl-3">
+<li>
 <p><strong>流水线 CPU 设计与多周期 CPU 设计的异同</strong></p>
 <p>流水线 CPU 将指令执行过程划分为多个阶段，并允许同时执行多个指令的不同阶段，以提高整体执行效率。多周期 CPU 则将指令执行划分为多个较大的时钟周期，每个周期内完成特定阶段的操作。总体而言，流水线 CPU 具有更高的吞吐量和效率，但可能会面临数据冲突和流水线停顿等问题。而多周期 CPU 相对简单，更容易实现，但在同一时刻只能执行一条指令，效率相对较低。</p>
 <p><strong>插入等待周期（气泡）和数据旁路在处理数据冲突的性能上有什么差异。</strong></p>
 <p>插入等待周期（气泡）是为了解决数据冲突而在流水线中插入空操作周期，以防止数据错误。这种方法会导致性能下降，因为处理器在等待周期内无法执行实际操作。相比之下，数据旁路允许处理器从其他可用的数据来源获取数据，而不是等待数据准备就绪。这样可以避免插入等待周期，提高性能。因此，数据旁路在处理数据冲突时通常比插入等待周期更有效，因为它允许处理器更灵活地继续执行指令，而不是被迫等待。</p>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>如何使用 Flash 作为外存，如果要求 CPU 在启动时，能够将存放在 Flash 上固定位置的监控程序读入内存，CPU 应当做什么样的改动？</strong></p>
 <ol>
-<li class="lvl-6"><strong>引导程序修改：</strong> 需要修改系统引导程序，以支持从 Flash 中加载监控程序。引导程序负责在系统启动时初始化硬件，并将监控程序加载到内存中的指定位置。</li>
-<li class="lvl-6"><strong>Flash 接口初始化：</strong> CPU 需要初始化 Flash 存储器的接口，确保能够正确地读取数据。这可能涉及到配置 Flash 控制器、设置时序参数等操作，以确保稳定和可靠的数据传输。</li>
-<li class="lvl-6"><strong>地址映射：</strong> 确保监控程序的固定位置在内存地址空间中有正确的映射。这意味着需要在内存地址映射表或者其他相应的机制中指定 Flash 存储器的地址范围，以便 CPU 能够正确访问其中的数据。</li>
+<li><strong>引导程序修改：</strong> 需要修改系统引导程序，以支持从 Flash 中加载监控程序。引导程序负责在系统启动时初始化硬件，并将监控程序加载到内存中的指定位置。</li>
+<li><strong>Flash 接口初始化：</strong> CPU 需要初始化 Flash 存储器的接口，确保能够正确地读取数据。这可能涉及到配置 Flash 控制器、设置时序参数等操作，以确保稳定和可靠的数据传输。</li>
+<li><strong>地址映射：</strong> 确保监控程序的固定位置在内存地址空间中有正确的映射。这意味着需要在内存地址映射表或者其他相应的机制中指定 Flash 存储器的地址范围，以便 CPU 能够正确访问其中的数据。</li>
 </ol>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>如何将 DVI 作为系统的输出设备，从而在屏幕上显示文字？</strong></p>
 <p>将部分内存地址映射给DVI</p>
 </li>
 </ol>
-<h2 id="分工表">分工表</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>郭高旭：页表及虚拟地址转换、TLB  、指令缓存、verilator配置</p>
-</li>
-<li class="lvl-2">
-<p>zyz</p>
-</li>
-<li class="lvl-2">
-<p>szn</p>
-</li>
+<h2 id="分工表"><a class="markdownIt-Anchor" href="#分工表"></a> 分工表</h2>
+<ul>
+<li>郭高旭：页表及虚拟地址转换、TLB  、指令缓存、verilator配置</li>
+<li>zyz</li>
+<li>szn</li>
 </ul>
 
   </div>
@@ -501,7 +472,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">大实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CPU-%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">CPU 的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text">功能模块功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%89%8D%E4%BC%A0"><span class="toc-number">1.2.</span> <span class="toc-text">数据前传</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B%EF%BC%9A"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">冲突检测：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">冲突例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E5%9B%BE%E5%B1%95%E7%A4%BA"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">波形图展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%89%A9%E5%B1%95%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text">实现的扩展功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#uCore"><span class="toc-number">1.4.</span> <span class="toc-text">uCore</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cache"><span class="toc-number">1.4.1.</span> <span class="toc-text">cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E8%A1%A8-TLB"><span class="toc-number">1.4.2.</span> <span class="toc-text">页表&amp;TLB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94"><span class="toc-number">1.4.3.</span> <span class="toc-text">性能对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">思考题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B7%A5%E8%A1%A8"><span class="toc-number">1.6.</span> <span class="toc-text">分工表</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%A7%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.</span> <span class="toc-text"> 大实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cpu-%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text"> CPU 的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97%E5%8A%9F%E8%83%BD"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 功能模块功能</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%89%8D%E4%BC%A0"><span class="toc-number">1.2.</span> <span class="toc-text"> 数据前传</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E6%A3%80%E6%B5%8B"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> 冲突检测：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%B2%E7%AA%81%E4%BE%8B%E5%AD%90"><span class="toc-number">1.2.0.2.</span> <span class="toc-text"> 冲突例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A2%E5%BD%A2%E5%9B%BE%E5%B1%95%E7%A4%BA"><span class="toc-number">1.2.0.3.</span> <span class="toc-text"> 波形图展示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%9A%84%E6%89%A9%E5%B1%95%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text"> 实现的扩展功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ucore"><span class="toc-number">1.4.</span> <span class="toc-text"> uCore</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cache"><span class="toc-number">1.4.1.</span> <span class="toc-text"> cache</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E8%A1%A8tlb"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 页表&amp;TLB</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E5%AF%B9%E6%AF%94"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 性能对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text"> 思考题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B7%A5%E8%A1%A8"><span class="toc-number">1.6.</span> <span class="toc-text"> 分工表</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

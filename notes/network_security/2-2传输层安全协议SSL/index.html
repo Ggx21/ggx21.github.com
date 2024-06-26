@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="2-2传输层安全协议SSL what is ssl？ 安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信 why ssl？ 网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足这些要">
+  <meta name="description" content="2-2传输层安全协议SSL  what is ssl？ 安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信  why ssl？ 网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-2传输层安全协议SSL">
 <meta property="og:url" content="https://ggxloveslife.top/notes/network_security/2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AESSL/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="2-2传输层安全协议SSL what is ssl？ 安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信 why ssl？ 网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足这些要">
+<meta property="og:description" content="2-2传输层安全协议SSL  what is ssl？ 安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信  why ssl？ 网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/36d07a5e1613b54fa9707f555036b77b/202401011351164.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/905fa0e717bf4e247cc420d07c2ab2ca/202401011354018.png">
@@ -178,7 +178,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">2-2传输层安全协议SSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#what-is-ssl%EF%BC%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">what is ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why-ssl%EF%BC%9F"><span class="toc-number">1.0.2.</span> <span class="toc-text">why ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text">安全服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94ipsec%EF%BC%9A"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">对比ipsec：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E7%89%B9%E7%82%B9"><span class="toc-number">1.0.4.</span> <span class="toc-text">ssl特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.5.</span> <span class="toc-text">SSL体系结构详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E8%AE%B0%E5%BD%95%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.6.</span> <span class="toc-text">SSL记录协议工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.7.</span> <span class="toc-text">SSL握手协议工作流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS-HTTP-SSL"><span class="toc-number">1.1.</span> <span class="toc-text">HTTPS&#x3D;HTTP+SSL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"></span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AEssl"><span class="toc-number">1.</span> <span class="toc-text"> 2-2传输层安全协议SSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#what-is-ssl"><span class="toc-number">1.0.1.</span> <span class="toc-text"> what is ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why-ssl"><span class="toc-number">1.0.2.</span> <span class="toc-text"> why ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 安全服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94ipsec"><span class="toc-number">1.0.3.1.</span> <span class="toc-text"> 对比ipsec：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E7%89%B9%E7%82%B9"><span class="toc-number">1.0.4.</span> <span class="toc-text"> ssl特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.5.</span> <span class="toc-text"> SSL体系结构详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E8%AE%B0%E5%BD%95%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.6.</span> <span class="toc-text"> SSL记录协议工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.7.</span> <span class="toc-text"> SSL握手协议工作流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpshttpssl"><span class="toc-number">1.1.</span> <span class="toc-text"> HTTPS&#x3D;HTTP+SSL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"> </span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -235,24 +235,24 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>2-2传输层安全协议SSL</h1>
-<h3 id="what-is-ssl？">what is ssl？</h3>
+    <h1 id="2-2传输层安全协议ssl"><a class="markdownIt-Anchor" href="#2-2传输层安全协议ssl"></a> 2-2传输层安全协议SSL</h1>
+<h3 id="what-is-ssl"><a class="markdownIt-Anchor" href="#what-is-ssl"></a> what is ssl？</h3>
 <p>安全套接层协议SSL(Security Socket Layer)是Netscape公司设计开发的（最初是为了保护他们的浏览器），专门用于保护基于WEB的通信</p>
-<h3 id="why-ssl？">why ssl？</h3>
+<h3 id="why-ssl"><a class="markdownIt-Anchor" href="#why-ssl"></a> why ssl？</h3>
 <p>网络层安全协议IPSec可以提供端到端的网络层安全传输， 但是无法处理位于同一端系统之中的不同应用的安全需求，因此需要在传输层和更高层提供网络安全传输服务，来满足这些要求</p>
-<h3 id="安全服务">安全服务</h3>
+<h3 id="安全服务"><a class="markdownIt-Anchor" href="#安全服务"></a> 安全服务</h3>
 <p>SSL提供了三个基本的安全服务：</p>
 <ol>
-<li class="lvl-3">
+<li>
 <p><strong>加密</strong>：保证数据传输的机密性，确保只有授权的接收方可以阅读信息。</p>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>认证</strong>：确保通信双方都是他们声称的那个人，通常通过证书和密钥来实现。</p>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>数据完整性</strong>：确保数据在传输过程中没有被更改。</p>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>反重放</strong>：</p>
 <blockquote>
 <p>ssl会话参数里实际上也有序列号，所以应该也能提供反重放服务.</p>
@@ -260,104 +260,92 @@
 </blockquote>
 </li>
 </ol>
-<h4 id="对比ipsec：">对比ipsec：</h4>
+<h4 id="对比ipsec"><a class="markdownIt-Anchor" href="#对比ipsec"></a> 对比ipsec：</h4>
 <p><strong>IPsec</strong> 是一个协议套件，旨在保护IP通信，通过对每个IP数据包进行加密和认证来实现。它提供的安全服务主要包括：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>数据加密</strong>：确保数据的机密性，使得即使数据包被拦截，也无法被未授权者阅读。</p>
-</li>
-<li class="lvl-2">
-<p><strong>数据完整性</strong>：确保数据在传输过程中没有被更改。</p>
-</li>
-<li class="lvl-2">
-<p><strong>认证</strong>：验证数据包来源的真实性，确保数据包是由实际发送者发送的。</p>
-</li>
-<li class="lvl-2">
-<p><strong>反重放</strong>：防止旧的或重复的数据包被用于攻击。</p>
-</li>
+<ul>
+<li><strong>数据加密</strong>：确保数据的机密性，使得即使数据包被拦截，也无法被未授权者阅读。</li>
+<li><strong>数据完整性</strong>：确保数据在传输过程中没有被更改。</li>
+<li><strong>认证</strong>：验证数据包来源的真实性，确保数据包是由实际发送者发送的。</li>
+<li><strong>反重放</strong>：防止旧的或重复的数据包被用于攻击。</li>
 </ul>
-<h3 id="ssl特点">ssl特点</h3>
+<h3 id="ssl特点"><a class="markdownIt-Anchor" href="#ssl特点"></a> ssl特点</h3>
 <p>SSL工作在TCP协议上<mark>不支持UDP</mark>，对应用层透明，为应用层的流量提前搭建安全信道（提前完成了客户端和服务器的身份认证、加密算法和密钥的协商  ）</p>
 <p>SSL先握手建立会话（session），一个会话可能由多个连接共享</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/36d07a5e1613b54fa9707f555036b77b/202401011351164.png" alt="image-20240101134610600"></p>
-<h3 id="SSL体系结构详解">SSL体系结构详解</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/36d07a5e1613b54fa9707f555036b77b/202401011351164.png" alt="image-20240101134610600" /></p>
+<h3 id="ssl体系结构详解"><a class="markdownIt-Anchor" href="#ssl体系结构详解"></a> SSL体系结构详解</h3>
 <ol>
-<li class="lvl-3">
-<p><strong>SSL记录协议（SSL Record Protocol）</strong>：</p>
-<ul class="lvl-2">
-<li class="lvl-5"><strong>功能</strong>：它位于SSL协议栈的最底层，负责接收应用层的数据，进行必要的分割、压缩、加密处理，然后发送给对方。同时，它也会处理接收的数据，进行解密、验证、重组等，然后交给应用层。</li>
-<li class="lvl-5"><strong>重要性</strong>：记录协议是保障数据机密性和完整性的基础，它确保传输的数据对外是安全的，没有被篡改。</li>
+<li><strong>SSL记录协议（SSL Record Protocol）</strong>：
+<ul>
+<li><strong>功能</strong>：它位于SSL协议栈的最底层，负责接收应用层的数据，进行必要的分割、压缩、加密处理，然后发送给对方。同时，它也会处理接收的数据，进行解密、验证、重组等，然后交给应用层。</li>
+<li><strong>重要性</strong>：记录协议是保障数据机密性和完整性的基础，它确保传输的数据对外是安全的，没有被篡改。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p><strong>SSL握手协议（SSL Handshake Protocol）</strong>：</p>
-<ul class="lvl-2">
-<li class="lvl-5"><strong>功能</strong>：在通信双方开始传输加密数据之前，握手协议负责建立安全连接的详细参数，包括协商加密算法、交换密钥信息和相互验证身份。</li>
-<li class="lvl-5"><strong>重要性</strong>：握手协议是建立安全通信信道的关键，它确保双方都使用相同的密钥和算法，并且都是可信的。</li>
+<li><strong>SSL握手协议（SSL Handshake Protocol）</strong>：
+<ul>
+<li><strong>功能</strong>：在通信双方开始传输加密数据之前，握手协议负责建立安全连接的详细参数，包括协商加密算法、交换密钥信息和相互验证身份。</li>
+<li><strong>重要性</strong>：握手协议是建立安全通信信道的关键，它确保双方都使用相同的密钥和算法，并且都是可信的。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p><strong>SSL警告协议（SSL Alert Protocol）</strong>：</p>
-<ul class="lvl-2">
-<li class="lvl-5"><strong>功能</strong>：用于在出现错误时，传递警告和错误信息给对方。比如，如果一个证书无效或者密钥交换失败，警告协议会被用来通知对方。</li>
-<li class="lvl-5"><strong>重要性</strong>：警告协议使得通信双方可以在安全通信出现问题时，及时得到通知并采取相应措施。</li>
+<li><strong>SSL警告协议（SSL Alert Protocol）</strong>：
+<ul>
+<li><strong>功能</strong>：用于在出现错误时，传递警告和错误信息给对方。比如，如果一个证书无效或者密钥交换失败，警告协议会被用来通知对方。</li>
+<li><strong>重要性</strong>：警告协议使得通信双方可以在安全通信出现问题时，及时得到通知并采取相应措施。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p><strong>SSL变更密码规格协议（SSL Change Cipher Spec Protocol）</strong>：</p>
-<ul class="lvl-2">
-<li class="lvl-5"><strong>功能</strong>：用于在握手过程中，告诉对方将要更改加密算法或密钥。</li>
-<li class="lvl-5"><strong>重要性</strong>：它是握手协议的一个辅助部分，确保双方能同步转换到新的加密参数，维护通信的安全性。</li>
+<li><strong>SSL变更密码规格协议（SSL Change Cipher Spec Protocol）</strong>：
+<ul>
+<li><strong>功能</strong>：用于在握手过程中，告诉对方将要更改加密算法或密钥。</li>
+<li><strong>重要性</strong>：它是握手协议的一个辅助部分，确保双方能同步转换到新的加密参数，维护通信的安全性。</li>
 </ul>
 </li>
 </ol>
-<h3 id="SSL记录协议工作流程">SSL记录协议工作流程</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/905fa0e717bf4e247cc420d07c2ab2ca/202401011354018.png" alt="image-20240101135441982"></p>
-<h3 id="SSL握手协议工作流程">SSL握手协议工作流程</h3>
+<h3 id="ssl记录协议工作流程"><a class="markdownIt-Anchor" href="#ssl记录协议工作流程"></a> SSL记录协议工作流程</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/905fa0e717bf4e247cc420d07c2ab2ca/202401011354018.png" alt="image-20240101135441982" /></p>
+<h3 id="ssl握手协议工作流程"><a class="markdownIt-Anchor" href="#ssl握手协议工作流程"></a> SSL握手协议工作流程</h3>
 <p><strong>SSL握手协议</strong> 主要负责在SSL通信开始之前，建立安全通信的基本参数。整个握手过程包括几个重要步骤，喵~：</p>
 <ol>
-<li class="lvl-3">
+<li>
 <p><strong>客户端和服务器的问候</strong>：交换协议版本号，选择加密和压缩方法。</p>
-<ul class="lvl-2">
-<li class="lvl-5">Cipher suite：加密方法的参数包括
-<ul class="lvl-4">
-<li class="lvl-7">密钥交换方法：那些公钥算法比如DH，RSA，</li>
-<li class="lvl-7">加密算法：RC4，RC2，DES，3DES……</li>
-<li class="lvl-7">MAC算法：MD5，SHA-1</li>
+<ul>
+<li>Cipher suite：加密方法的参数包括
+<ul>
+<li>密钥交换方法：那些公钥算法比如DH，RSA，</li>
+<li>加密算法：RC4，RC2，DES，3DES……</li>
+<li>MAC算法：MD5，SHA-1</li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>服务器身份认证和密钥交换</strong>：服务器发送证书给客户端，客户端验证服务器证书的有效性。</p>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>客户端身份认证和密钥交换</strong>：客户端可能也会发送证书给服务器，并且双方会协商一个共享的密钥。</p>
 <p>先协商出一个pre_master_key,在finish阶段客户端用来计算出master_key</p>
 </li>
-<li class="lvl-3">
+<li>
 <p><strong>握手完成</strong>：握手协议的最后阶段，客户端将master secrete派生为所有的密钥，和服务器确认握手过程结束，开始加密的数据传输。</p>
-<ul class="lvl-2">
-<li class="lvl-5">MAC</li>
-<li class="lvl-5">加密</li>
-<li class="lvl-5">IV</li>
+<ul>
+<li>MAC</li>
+<li>加密</li>
+<li>IV</li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/55ec20739d9b493f54e7b836fb5284ae/202401011425409.png" alt="image-20240101142552375"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/55ec20739d9b493f54e7b836fb5284ae/202401011425409.png" alt="image-20240101142552375" /></p>
 </li>
-<li class="lvl-3">
+<li>
 <p>client server hello，这一过程主要是client向server发出建立ssl的请求，并协商一些加密方法</p>
 </li>
-<li class="lvl-3">
+<li>
 <p>server certificate and key exchange：server向用户提供证书，并要求用户返回证书和确认</p>
 </li>
-<li class="lvl-3">
+<li>
 <p>client certificate and key exchange：用户确认证书，并根据证书中server的公钥加密传输pre_master_secret用于下一步生成主密钥，并返回自己的证书</p>
 </li>
-<li class="lvl-3">
+<li>
 <p>finish：用户用主密钥生成所有密钥并和服务器确认</p>
 </li>
 </ol>
-<h2 id="HTTPS-HTTP-SSL">HTTPS=HTTP+SSL</h2>
+<h2 id="httpshttpssl"><a class="markdownIt-Anchor" href="#httpshttpssl"></a> HTTPS=HTTP+SSL</h2>
 <table>
 <thead>
 <tr>
@@ -394,18 +382,14 @@
 </tr>
 </tbody>
 </table>
-<div class="tips">
-<ul class="lvl-1">
-<li class="lvl-2">
-<p>HTTP明文传输，不能提供加密</p>
-</li>
-<li class="lvl-2">
-<p>HTTP无状态，不能认证双方（中间人攻击，DNS欺诈，ARP欺诈等）</p>
-</li>
+<p>:::tips</p>
+<ul>
+<li>HTTP明文传输，不能提供加密</li>
+<li>HTTP无状态，不能认证双方（中间人攻击，DNS欺诈，ARP欺诈等）</li>
 </ul>
 <p>HTTPS就是为了解决上述痛点</p>
-</div>
-<h2 id=""></h2>
+<p>:::</p>
+<h2 id=""><a class="markdownIt-Anchor" href="#"></a> </h2>
 
   </div>
 </article>
@@ -453,7 +437,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">2-2传输层安全协议SSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#what-is-ssl%EF%BC%9F"><span class="toc-number">1.0.1.</span> <span class="toc-text">what is ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why-ssl%EF%BC%9F"><span class="toc-number">1.0.2.</span> <span class="toc-text">why ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text">安全服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94ipsec%EF%BC%9A"><span class="toc-number">1.0.3.1.</span> <span class="toc-text">对比ipsec：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E7%89%B9%E7%82%B9"><span class="toc-number">1.0.4.</span> <span class="toc-text">ssl特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.5.</span> <span class="toc-text">SSL体系结构详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E8%AE%B0%E5%BD%95%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.6.</span> <span class="toc-text">SSL记录协议工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SSL%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.7.</span> <span class="toc-text">SSL握手协议工作流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTPS-HTTP-SSL"><span class="toc-number">1.1.</span> <span class="toc-text">HTTPS&#x3D;HTTP+SSL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"></span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-2%E4%BC%A0%E8%BE%93%E5%B1%82%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AEssl"><span class="toc-number">1.</span> <span class="toc-text"> 2-2传输层安全协议SSL</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#what-is-ssl"><span class="toc-number">1.0.1.</span> <span class="toc-text"> what is ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#why-ssl"><span class="toc-number">1.0.2.</span> <span class="toc-text"> why ssl？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 安全服务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94ipsec"><span class="toc-number">1.0.3.1.</span> <span class="toc-text"> 对比ipsec：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E7%89%B9%E7%82%B9"><span class="toc-number">1.0.4.</span> <span class="toc-text"> ssl特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E8%AF%A6%E8%A7%A3"><span class="toc-number">1.0.5.</span> <span class="toc-text"> SSL体系结构详解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E8%AE%B0%E5%BD%95%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.6.</span> <span class="toc-text"> SSL记录协议工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ssl%E6%8F%A1%E6%89%8B%E5%8D%8F%E8%AE%AE%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.0.7.</span> <span class="toc-text"> SSL握手协议工作流程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#httpshttpssl"><span class="toc-number">1.1.</span> <span class="toc-text"> HTTPS&#x3D;HTTP+SSL</span></a></li><li class="toc-item toc-level-2"><a class="toc-link"><span class="toc-number">1.2.</span> <span class="toc-text"> </span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

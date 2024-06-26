@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="第2次课后练习 郭高旭  2021010803 下面是我机器strace echo.out ooooooooosssssssss的输出结果（WSL2,ubuntu 22.04） 1234567891011121314151617181920212223242526272829303132333435363738execve(&quot;.&#x2F;a.out&quot;, [&quot;.&#x2F;a.out&amp;q">
+  <meta name="description" content="第2次课后练习 郭高旭  2021010803 下面是我机器strace echo.out ooooooooosssssssss的输出结果（WSL2,ubuntu 22.04） 1234567891011121314151617181920212223242526272829303132333435363738execve(&quot;.&#x2F;a.out&quot;, [&quot;.&#x2F;a.out&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="第2次课后练习">
 <meta property="og:url" content="https://ggxloveslife.top/homework/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E7%AC%AC2%E6%AC%A1%E8%AF%BE%E5%90%8E%E7%BB%83%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="第2次课后练习 郭高旭  2021010803 下面是我机器strace echo.out ooooooooosssssssss的输出结果（WSL2,ubuntu 22.04） 1234567891011121314151617181920212223242526272829303132333435363738execve(&quot;.&#x2F;a.out&quot;, [&quot;.&#x2F;a.out&amp;q">
+<meta property="og:description" content="第2次课后练习 郭高旭  2021010803 下面是我机器strace echo.out ooooooooosssssssss的输出结果（WSL2,ubuntu 22.04） 1234567891011121314151617181920212223242526272829303132333435363738execve(&quot;.&#x2F;a.out&quot;, [&quot;.&#x2F;a.out&amp;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-03-04T08:19:30.000Z">
 <meta property="article:modified_time" content="2024-03-08T01:35:56.262Z">
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第2次课后练习</span></a></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E6%AC%A1%E8%AF%BE%E5%90%8E%E7%BB%83%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text"> 第2次课后练习</span></a></li></ol></div>
   </span>
 </div>
 
@@ -231,63 +231,29 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>第2次课后练习</h1>
+    <h1 id="第2次课后练习"><a class="markdownIt-Anchor" href="#第2次课后练习"></a> 第2次课后练习</h1>
 <p>郭高旭  2021010803</p>
 <p>下面是我机器<code>strace echo.out ooooooooosssssssss</code>的输出结果（WSL2,ubuntu 22.04）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">execve(<span class="string">&quot;./a.out&quot;</span>, [<span class="string">&quot;./a.out&quot;</span>, <span class="string">&quot;ooooooooooooooooosssssssssssssss&quot;</span>...], 0x7ffcaa9a2218 /* 36 vars */) = 0</span><br><span class="line">brk(NULL)                               = 0x55c596d21000</span><br><span class="line">arch_prctl(0x3001 /* ARCH_??? */, 0x7ffc3320c950) = -1 EINVAL (Invalid argument)</span><br><span class="line">mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1228025000</span><br><span class="line">access(<span class="string">&quot;/etc/ld.so.preload&quot;</span>, R_OK)      = -1 ENOENT (No such file or directory)</span><br><span class="line">openat(AT_FDCWD, <span class="string">&quot;/etc/ld.so.cache&quot;</span>, O_RDONLY|O_CLOEXEC) = 3</span><br><span class="line">newfstatat(3, <span class="string">&quot;&quot;</span>, &#123;st_mode=S_IFREG|0644, st_size=62739, ...&#125;, AT_EMPTY_PATH) = 0</span><br><span class="line">mmap(NULL, 62739, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1228015000</span><br><span class="line">close(3)                                = 0</span><br><span class="line">openat(AT_FDCWD, <span class="string">&quot;/lib/x86_64-linux-gnu/libc.so.6&quot;</span>, O_RDONLY|O_CLOEXEC) = 3</span><br><span class="line"><span class="built_in">read</span>(3, <span class="string">&quot;\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0&gt;\0\1\0\0\0P\237\2\0\0\0\0\0&quot;</span>..., 832) = 832</span><br><span class="line">pread64(3, <span class="string">&quot;\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0&quot;</span>..., 784, 64) = 784</span><br><span class="line">pread64(3, <span class="string">&quot;\4\0\0\0 \0\0\0\5\0\0\0GNU\0\2\0\0\300\4\0\0\0\3\0\0\0\0\0\0\0&quot;</span>..., 48, 848) = 48</span><br><span class="line">pread64(3, <span class="string">&quot;\4\0\0\0\24\0\0\0\3\0\0\0GNU\0\302\211\332Pq\2439\235\350\223\322\257\201\326\243\f&quot;</span>..., 68, 896) = 68</span><br><span class="line">newfstatat(3, <span class="string">&quot;&quot;</span>, &#123;st_mode=S_IFREG|0755, st_size=2220400, ...&#125;, AT_EMPTY_PATH) = 0</span><br><span class="line">pread64(3, <span class="string">&quot;\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0&quot;</span>..., 784, 64) = 784</span><br><span class="line">mmap(NULL, 2264656, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1227dec000</span><br><span class="line">mprotect(0x7f1227e14000, 2023424, PROT_NONE) = 0</span><br><span class="line">mmap(0x7f1227e14000, 1658880, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7f1227e14000</span><br><span class="line">mmap(0x7f1227fa9000, 360448, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1bd000) = 0x7f1227fa9000</span><br><span class="line">mmap(0x7f1228002000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x215000) = 0x7f1228002000</span><br><span class="line">mmap(0x7f1228008000, 52816, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1228008000</span><br><span class="line">close(3)                                = 0</span><br><span class="line">mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1227de9000</span><br><span class="line">arch_prctl(ARCH_SET_FS, 0x7f1227de9740) = 0</span><br><span class="line">set_tid_address(0x7f1227de9a10)         = 2438</span><br><span class="line">set_robust_list(0x7f1227de9a20, 24)     = 0</span><br><span class="line">rseq(0x7f1227dea0e0, 0x20, 0, 0x53053053) = 0</span><br><span class="line">mprotect(0x7f1228002000, 16384, PROT_READ) = 0</span><br><span class="line">mprotect(0x55c596980000, 4096, PROT_READ) = 0</span><br><span class="line">mprotect(0x7f122805f000, 8192, PROT_READ) = 0</span><br><span class="line">prlimit64(0, RLIMIT_STACK, NULL, &#123;rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY&#125;) = 0</span><br><span class="line">munmap(0x7f1228015000, 62739)           = 0</span><br><span class="line">write(1, <span class="string">&quot;ooooooooooooooooosssssssssssssss&quot;</span>..., 35ooooooooooooooooossssssssssssssssss) = 35</span><br><span class="line">write(1, <span class="string">&quot;\n&quot;</span>, 1</span><br><span class="line">)                       = 1</span><br><span class="line">exit_group(0)                           = ?</span><br><span class="line">+++ exited with 0 +++</span><br></pre></td></tr></table></figure>
 <p>将所有系统调用以及查询得到的功能列在下面。</p>
 <ol>
-<li class="lvl-3">
-<p><code>execve</code>：加载并执行新程序。</p>
-</li>
-<li class="lvl-3">
-<p><code>brk</code>：调整进程的数据段大小（通常用于动态内存分配）。</p>
-</li>
-<li class="lvl-3">
-<p><code>arch_prctl</code>：控制进程的内存映射和调试行为（这里出现了一个错误）。</p>
-</li>
-<li class="lvl-3">
-<p><code>mmap</code>：映射文件或设备到进程的内存空间。</p>
-</li>
-<li class="lvl-3">
-<p><code>access</code>：检查文件是否可访问。</p>
-</li>
-<li class="lvl-3">
-<p><code>openat</code>：打开文件或目录。</p>
-</li>
-<li class="lvl-3">
-<p><code>newfstatat</code>：获取文件状态信息。</p>
-</li>
-<li class="lvl-3">
-<p><code>read</code>：读取文件内容。</p>
-</li>
-<li class="lvl-3">
-<p><code>mprotect</code>：修改内存页的保护方式。</p>
-</li>
-<li class="lvl-4">
-<p><code>write</code>：向文件描述符写入数据。</p>
-</li>
-<li class="lvl-4">
-<p><code>close</code>：关闭文件描述符。</p>
-</li>
-<li class="lvl-4">
-<p><code>set_tid_address</code>：设置线程ID地址。</p>
-</li>
-<li class="lvl-4">
-<p><code>set_robust_list</code>：设置鲁棒性列表。</p>
-</li>
-<li class="lvl-4">
-<p><code>rseq</code>：Linux下的原子序列化操作。</p>
-</li>
-<li class="lvl-4">
-<p><code>prlimit64</code>：获取或修改进程资源限制。</p>
-</li>
-<li class="lvl-4">
-<p><code>munmap</code>：取消内存映射。</p>
-</li>
-<li class="lvl-4">
-<p><code>exit_group</code>：终止所有线程并退出进程。</p>
-</li>
+<li><code>execve</code>：加载并执行新程序。</li>
+<li><code>brk</code>：调整进程的数据段大小（通常用于动态内存分配）。</li>
+<li><code>arch_prctl</code>：控制进程的内存映射和调试行为（这里出现了一个错误）。</li>
+<li><code>mmap</code>：映射文件或设备到进程的内存空间。</li>
+<li><code>access</code>：检查文件是否可访问。</li>
+<li><code>openat</code>：打开文件或目录。</li>
+<li><code>newfstatat</code>：获取文件状态信息。</li>
+<li><code>read</code>：读取文件内容。</li>
+<li><code>mprotect</code>：修改内存页的保护方式。</li>
+<li><code>write</code>：向文件描述符写入数据。</li>
+<li><code>close</code>：关闭文件描述符。</li>
+<li><code>set_tid_address</code>：设置线程ID地址。</li>
+<li><code>set_robust_list</code>：设置鲁棒性列表。</li>
+<li><code>rseq</code>：Linux下的原子序列化操作。</li>
+<li><code>prlimit64</code>：获取或修改进程资源限制。</li>
+<li><code>munmap</code>：取消内存映射。</li>
+<li><code>exit_group</code>：终止所有线程并退出进程。</li>
 </ol>
 
   </div>
@@ -336,7 +302,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">第2次课后练习</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC2%E6%AC%A1%E8%AF%BE%E5%90%8E%E7%BB%83%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text"> 第2次课后练习</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

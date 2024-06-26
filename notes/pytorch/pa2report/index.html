@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="作业仓库   pytorch学习笔记   代码文件   本次实验实现了下面的module    模型名称 测试准确率 测试f值     CNN_simple 83.46% 0.8322   CNN_complex 81.75% 0.8167   RNN 82.54% 0.8247   DenseNet 75.95% 0.7546   ResNet 77.43% 0.7725   LSTM 80">
+  <meta name="description" content="作业仓库 pytorch学习笔记 代码文件  本次实验实现了下面的module    模型名称 测试准确率 测试f值     CNN_simple 83.46% 0.8322   CNN_complex 81.75% 0.8167   RNN 82.54% 0.8247   DenseNet 75.95% 0.7546   ResNet 77.43% 0.7725   LSTM 80.21% 0">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人智导PA2实验报告">
 <meta property="og:url" content="https://ggxloveslife.top/notes/pytorch/pa2report/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="作业仓库   pytorch学习笔记   代码文件   本次实验实现了下面的module    模型名称 测试准确率 测试f值     CNN_simple 83.46% 0.8322   CNN_complex 81.75% 0.8167   RNN 82.54% 0.8247   DenseNet 75.95% 0.7546   ResNet 77.43% 0.7725   LSTM 80">
+<meta property="og:description" content="作业仓库 pytorch学习笔记 代码文件  本次实验实现了下面的module    模型名称 测试准确率 测试f值     CNN_simple 83.46% 0.8322   CNN_complex 81.75% 0.8167   RNN 82.54% 0.8247   DenseNet 75.95% 0.7546   ResNet 77.43% 0.7725   LSTM 80.21% 0">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ggxloveslife.top/img/ai_pa2/image-20230505190124084.png">
 <meta property="og:image" content="https://ggxloveslife.top/img/ai_pa2/image-20230505191146457.png">
@@ -187,7 +187,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%AE%9E%E9%AA%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">0.实验流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">文件结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86-DataProcesser-%E7%B1%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text">一.数据预处理:DataProcesser()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-%E8%8E%B7%E5%BE%97%E6%A8%A1%E5%9E%8BGetModule-%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text">二.获得模型GetModule()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89-%E4%B8%BB%E5%87%BD%E6%95%B0DLongpu-py"><span class="toc-number">1.2.3.</span> <span class="toc-text">三.主函数DLongpu.py</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">1.模型的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CNN-simple"><span class="toc-number">2.0.1.</span> <span class="toc-text">CNN_simple</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CNN-complex"><span class="toc-number">2.0.2.</span> <span class="toc-text">CNN_complex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RNN-%E6%88%91%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B9%9F%E5%B0%B1%E6%98%AF%E5%8D%95%E5%B1%82%E7%9A%84LSTM"><span class="toc-number">2.0.3.</span> <span class="toc-text">RNN(我的实现也就是单层的LSTM)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MLP"><span class="toc-number">2.0.4.</span> <span class="toc-text">MLP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GoogLeNet"><span class="toc-number">2.0.5.</span> <span class="toc-text">GoogLeNet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DenseNet-ResNet%E7%AD%89%E4%B8%8D%E5%86%8D%E7%94%BB%E5%87%BA-%E5%AE%8C%E5%85%A8%E5%8F%82%E7%85%A7ppt"><span class="toc-number">2.0.6.</span> <span class="toc-text">DenseNet\ResNet等不再画出,完全参照ppt</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text">2.实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%A8%A1%E5%9E%8B%E6%9C%80%E7%BB%88%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A%E8%A1%A8%E7%8E%B0%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-number">3.0.1.</span> <span class="toc-text">所有模型最终在测试集上表现的结果.</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%8D%E5%90%8C%E5%8F%82%E6%95%B0%E6%95%88%E6%9E%9C%EF%BC%8C%E5%B9%B6%E5%88%86%E6%9E%90%E5%8E%9F%E5%9B%A0"><span class="toc-number">4.</span> <span class="toc-text">3.使用的不同参数效果，并分析原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%B8%8D%E5%90%8C%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E7%AE%80%E8%A6%81%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text">4.不同模型之间的简要比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text">5.问题思考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%AD%E7%BB%83%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%81%9C%E6%AD%A2%E6%98%AF%E6%9C%80%E5%90%88%E9%80%82%E7%9A%84%EF%BC%9F"><span class="toc-number">6.0.1.</span> <span class="toc-text">实验训练什么时候停止是最合适的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E6%95%B0%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84%EF%BC%9F"><span class="toc-number">6.0.2.</span> <span class="toc-text">实验参数的初始化是怎么做的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E6%96%B9%E5%BC%8F%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B%E9%99%B7%E5%85%A5%E8%BF%87%E6%8B%9F%E5%90%88%E3%80%82"><span class="toc-number">6.0.3.</span> <span class="toc-text">有什么方法可以方式训练过程陷入过拟合。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AF%95%E5%88%86%E6%9E%90CNN%EF%BC%8CRNN%EF%BC%8C%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88MLP%EF%BC%89%E4%B8%89%E8%80%85%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%E3%80%82"><span class="toc-number">7.</span> <span class="toc-text">6.试分析CNN，RNN，全连接神经网络（MLP）三者的优缺点。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%AE%9E%E9%AA%8C%E5%BF%83%E5%BE%97"><span class="toc-number">8.</span> <span class="toc-text">7.实验心得</span></a></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0%E5%AE%9E%E9%AA%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> 0.实验流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text"> 文件结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86dataprocesser%E7%B1%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一.数据预处理:DataProcesser()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%8E%B7%E5%BE%97%E6%A8%A1%E5%9E%8Bgetmodule%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 二.获得模型GetModule()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E4%B8%BB%E5%87%BD%E6%95%B0dlongpupy"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 三.主函数DLongpu.py</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text"> 1.模型的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cnn_simple"><span class="toc-number">2.0.1.</span> <span class="toc-text"> CNN_simple</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cnn_complex"><span class="toc-number">2.0.2.</span> <span class="toc-text"> CNN_complex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rnn%E6%88%91%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B9%9F%E5%B0%B1%E6%98%AF%E5%8D%95%E5%B1%82%E7%9A%84lstm"><span class="toc-number">2.0.3.</span> <span class="toc-text"> RNN(我的实现也就是单层的LSTM)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mlp"><span class="toc-number">2.0.4.</span> <span class="toc-text"> MLP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#googlenet"><span class="toc-number">2.0.5.</span> <span class="toc-text"> GoogLeNet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#densenetresnet%E7%AD%89%E4%B8%8D%E5%86%8D%E7%94%BB%E5%87%BA%E5%AE%8C%E5%85%A8%E5%8F%82%E7%85%A7ppt"><span class="toc-number">2.0.6.</span> <span class="toc-text"> DenseNet\ResNet等不再画出,完全参照ppt</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text"> 2.实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%A8%A1%E5%9E%8B%E6%9C%80%E7%BB%88%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A%E8%A1%A8%E7%8E%B0%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 所有模型最终在测试集上表现的结果.</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%8D%E5%90%8C%E5%8F%82%E6%95%B0%E6%95%88%E6%9E%9C%E5%B9%B6%E5%88%86%E6%9E%90%E5%8E%9F%E5%9B%A0"><span class="toc-number">4.</span> <span class="toc-text"> 3.使用的不同参数效果，并分析原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E4%B8%8D%E5%90%8C%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E7%AE%80%E8%A6%81%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text"> 4.不同模型之间的简要比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text"> 5.问题思考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%AD%E7%BB%83%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%81%9C%E6%AD%A2%E6%98%AF%E6%9C%80%E5%90%88%E9%80%82%E7%9A%84"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 实验训练什么时候停止是最合适的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E6%95%B0%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">6.0.2.</span> <span class="toc-text"> 实验参数的初始化是怎么做的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E6%96%B9%E5%BC%8F%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B%E9%99%B7%E5%85%A5%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">6.0.3.</span> <span class="toc-text"> 有什么方法可以方式训练过程陷入过拟合。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E8%AF%95%E5%88%86%E6%9E%90cnnrnn%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Cmlp%E4%B8%89%E8%80%85%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text"> 6.试分析CNN，RNN，全连接神经网络（MLP）三者的优缺点。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E5%AE%9E%E9%AA%8C%E5%BF%83%E5%BE%97"><span class="toc-number">8.</span> <span class="toc-text"> 7.实验心得</span></a></li></ol></div>
   </span>
 </div>
 
@@ -244,16 +244,10 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <ul class="lvl-0">
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/Ggx21/IAI2">作业仓库</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://ggx21.github.io/2023/05/03/notes/pytorch/learn_torch/">pytorch学习笔记</a></p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://cloud.tsinghua.edu.cn/f/91b9791557cb4e1f9821/">代码文件</a></p>
-</li>
+    <ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/Ggx21/IAI2">作业仓库</a></li>
+<li><a target="_blank" rel="noopener" href="https://ggx21.github.io/2023/05/03/notes/pytorch/learn_torch/">pytorch学习笔记</a></li>
+<li><a target="_blank" rel="noopener" href="https://cloud.tsinghua.edu.cn/f/91b9791557cb4e1f9821/">代码文件</a></li>
 </ul>
 <p>本次实验实现了下面的module</p>
 <table>
@@ -317,80 +311,68 @@
 </tr>
 </tbody>
 </table>
-<h2 id="0-实验流程">0.实验流程</h2>
-<h3 id="文件结构图">文件结构图</h3>
+<h2 id="0实验流程"><a class="markdownIt-Anchor" href="#0实验流程"></a> 0.实验流程</h2>
+<h3 id="文件结构图"><a class="markdownIt-Anchor" href="#文件结构图"></a> 文件结构图</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">D:.</span><br><span class="line"></span><br><span class="line">│  dataprocess.py#------数据预处理</span><br><span class="line">│  DLongpu.py#-----------main.py</span><br><span class="line">│  module.py#---储存,调用module的类</span><br><span class="line">│</span><br><span class="line">├─Dataset#提供的数据</span><br><span class="line">│      test.txt</span><br><span class="line">│      train.txt</span><br><span class="line">│      validation.txt</span><br><span class="line">│      wiki_word2vec_50.bin</span><br><span class="line">│      word_freq.txt</span><br><span class="line">├─input#预处理后的数据</span><br><span class="line">│      test_input.pkl</span><br><span class="line">│      train_input.pkl</span><br><span class="line">│      validation_input.pkl</span><br><span class="line">│      word2vec.pkl</span><br><span class="line">│</span><br><span class="line">├─module#储存的模型</span><br><span class="line">│      BiLSTM.pkl</span><br><span class="line">│      CNN_complex.pkl</span><br><span class="line">│      CNN_simple.pkl</span><br><span class="line">│      ...</span><br><span class="line">|</span><br><span class="line">├─plot#生成的图片</span><br><span class="line">│      all_acc_F1.png</span><br><span class="line">|		...</span><br></pre></td></tr></table></figure>
-<h3 id="执行过程">执行过程</h3>
-<h4 id="一-数据预处理-DataProcesser-类">一.数据预处理:<strong>DataProcesser</strong>()类</h4>
+<h3 id="执行过程"><a class="markdownIt-Anchor" href="#执行过程"></a> 执行过程</h3>
+<h4 id="一数据预处理dataprocesser类"><a class="markdownIt-Anchor" href="#一数据预处理dataprocesser类"></a> 一.数据预处理:<strong>DataProcesser</strong>()类</h4>
 <ol>
-<li class="lvl-3">
-<p>构建词表vocab:</p>
-<ul class="lvl-2">
-<li class="lvl-5">取得词频表,保留出现频率高于treshold(我取了10,一共获得8072个词)的词</li>
-<li class="lvl-5">为词频表中的词建立索引</li>
-<li class="lvl-5">对于词频表中每一个词,利用提供的转换文件,转换为50维词向量(如果转换表中没有这个词,我的做法是随机一个,实际上由于我们只保留了一定出现频率的词,没有出现过的词占比很少,对结果影响不大)</li>
+<li>构建词表vocab:
+<ul>
+<li>取得词频表,保留出现频率高于treshold(我取了10,一共获得8072个词)的词</li>
+<li>为词频表中的词建立索引</li>
+<li>对于词频表中每一个词,利用提供的转换文件,转换为50维词向量(如果转换表中没有这个词,我的做法是随机一个,实际上由于我们只保留了一定出现频率的词,没有出现过的词占比很少,对结果影响不大)</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>读取句子:</p>
-<ul class="lvl-2">
-<li class="lvl-5">读取句子,记录label与commet</li>
-<li class="lvl-5">通过索引,将comment从词列表转化为索引列表(如果没有索引,转换成pad_char对应的id,这里把中性词&quot;把&quot;作为pad_char)</li>
-<li class="lvl-5">统一句子长度:
-<ul class="lvl-4">
-<li class="lvl-7">通过统计手段,97.5%的评论次数在96个词以内,统一句子长度为96(当然也可以是别的长度)</li>
-<li class="lvl-7">超过96的句子则截断</li>
-<li class="lvl-7">低于96的句子,我的操作是重复这个句子直到长度为96.(另一种方法是填充pad_id,但是要注意不要训练pad_id)</li>
+<li>读取句子:
+<ul>
+<li>读取句子,记录label与commet</li>
+<li>通过索引,将comment从词列表转化为索引列表(如果没有索引,转换成pad_char对应的id,这里把中性词&quot;把&quot;作为pad_char)</li>
+<li>统一句子长度:
+<ul>
+<li>通过统计手段,97.5%的评论次数在96个词以内,统一句子长度为96(当然也可以是别的长度)</li>
+<li>超过96的句子则截断</li>
+<li>低于96的句子,我的操作是重复这个句子直到长度为96.(另一种方法是填充pad_id,但是要注意不要训练pad_id)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>转换为词向量</p>
-<ul class="lvl-2">
-<li class="lvl-5">在构建词表时已经完成了索引,根据词的索引找到词向量即可.</li>
+<li>转换为词向量
+<ul>
+<li>在构建词表时已经完成了索引,根据词的索引找到词向量即可.</li>
 </ul>
 </li>
 </ol>
 <p><strong>DataProcesser</strong>使用方法,执行该类示例的<code>run</code>方法即可.最终生成了<code>input</code>文件夹下转换成词向量列表的句子.(分别有训练集,测试集,验证集,和word2vec的索引)</p>
-<h4 id="二-获得模型GetModule-类">二.获得模型<strong>GetModule</strong>()类</h4>
+<h4 id="二获得模型getmodule类"><a class="markdownIt-Anchor" href="#二获得模型getmodule类"></a> 二.获得模型<strong>GetModule</strong>()类</h4>
 <p>module.py文件中定义了<strong>GetModule</strong>()类,它会调用参数<code>module_name</code>对应的模型,并用我调整过的参数初始化这个模型,对于某些模型起到adapter的作用,对输入加以处理,使得可以在主函数中使用统一的输入模式而不加以修改.可以在module.py文件中方便地注册更多的模型</p>
-<h4 id="三-主函数DLongpu-py"><a target="_blank" rel="noopener" href="http://xn--ehq.xn--DLongpu-m73kj3zuw4c.py">三.主函数DLongpu.py</a></h4>
+<h4 id="三主函数dlongpupy"><a class="markdownIt-Anchor" href="#三主函数dlongpupy"></a> <a target="_blank" rel="noopener" href="http://xn--ehq.xn--DLongpu-m73kj3zuw4c.py">三.主函数DLongpu.py</a></h4>
 <p>主要是定义了<strong>PredictClass</strong>()</p>
 <ol>
-<li class="lvl-3">
-<p>通过上述<strong>GetModule</strong>()初始化自己的模型(包括了对应的<em>损失函数和优化器</em>)</p>
-</li>
-<li class="lvl-3">
-<p>读取预处理的数据,并通过pytorch的Dataset和Dataloader准备好数据</p>
-</li>
-<li class="lvl-3">
-<p>开始训练epoch次数</p>
+<li>通过上述<strong>GetModule</strong>()初始化自己的模型(包括了对应的<em>损失函数和优化器</em>)</li>
+<li>读取预处理的数据,并通过pytorch的Dataset和Dataloader准备好数据</li>
+<li>开始训练epoch次数
 <ol>
-<li class="lvl-6">分batch训练：将训练数据随机划分为多个batch，每个batch被输入到模型中进行训练。(Dataloader的功能)</li>
-<li class="lvl-6">正向传播：将当前batch的数据输入到模型中，进行正向传播计算得到输出结果。</li>
-<li class="lvl-6">计算loss：根据输出结果和标签，计算模型的损失函数（loss）。</li>
-<li class="lvl-6">反向传播：根据损失函数，使用链式法则计算每个参数的梯度，然后传回模型中更新参数，以减小损失函数。</li>
-<li class="lvl-6">重复迭代：重复以上步骤直到所有batch都被训练过一遍，一个epoch训练结束。</li>
-<li class="lvl-6">训练结束后开启eval模式,利用验证集对效果进行验证</li>
+<li>分batch训练：将训练数据随机划分为多个batch，每个batch被输入到模型中进行训练。(Dataloader的功能)</li>
+<li>正向传播：将当前batch的数据输入到模型中，进行正向传播计算得到输出结果。</li>
+<li>计算loss：根据输出结果和标签，计算模型的损失函数（loss）。</li>
+<li>反向传播：根据损失函数，使用链式法则计算每个参数的梯度，然后传回模型中更新参数，以减小损失函数。</li>
+<li>重复迭代：重复以上步骤直到所有batch都被训练过一遍，一个epoch训练结束。</li>
+<li>训练结束后开启eval模式,利用验证集对效果进行验证</li>
 </ol>
 </li>
-<li class="lvl-3">
-<p>训练结束后展示在测试集的效果</p>
-</li>
-<li class="lvl-3">
-<p>储存模型</p>
-</li>
+<li>训练结束后展示在测试集的效果</li>
+<li>储存模型</li>
 </ol>
 <p>实际上,可以通过main函数中的Mode标签,切换成test模式,读取已经储存的模型.</p>
 <p>此外,还可使用<strong>PredictClass</strong>()中的real_test方法,利用了jieba分词对用户真实的输入进行预测.经过我的实验,效果还挺不错的.</p>
-<p><img src="/img/ai_pa2/image-20230505190124084.png" alt="image-20230505190124084"></p>
+<p><img src="/img/ai_pa2/image-20230505190124084.png" alt="image-20230505190124084" /></p>
 <p>​	效果还是不错的</p>
-<h2 id="1-模型的结构图">1.模型的结构图</h2>
+<h2 id="1模型的结构图"><a class="markdownIt-Anchor" href="#1模型的结构图"></a> 1.模型的结构图</h2>
 <p>下面分别介绍模型的结构图</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<h4 id="CNN-simple">CNN_simple</h4>
+<ul>
+<li>
+<h4 id="cnn_simple"><a class="markdownIt-Anchor" href="#cnn_simple"></a> CNN_simple</h4>
 <pre class="mermaid">  graph TB
     A(batch_X) -->|Conv2d| C(Batch,通道数=卷积核数目,)
     C -->|BatchNorm2d| D(Batch,对每一通道数据归一化处理)
@@ -402,27 +384,19 @@
 </ul>
 <img src="/img/ai_pa2/image-20230505191146457.png" alt="image-20230505191146457" style="zoom:50%;" />
 <p>注意我和课本不同的是我使用了n个相同大小卷积核,在池化的时候由于卷积后仍是2维,所以是二维的最大池化(图源课件ppt,稍作修改)</p>
-<h4 id="CNN-complex">CNN_complex</h4>
+<h4 id="cnn_complex"><a class="markdownIt-Anchor" href="#cnn_complex"></a> CNN_complex</h4>
 <p>使用了ppt中原始cnn模型前半部分作为一个模块cnn_net</p>
 <img src="/img/ai_pa2/image-20230505191959273.png" alt="image-20230505191959273" style="zoom: 33%;" />
 <pre class="mermaid">graph LR
     A(batch_X) -->C(cnn_net1)-->E(flattern)-->G(maxpool1D)-->I(view拼接)
     A-->B(cnn_net2)-->F(flattern)-->H(maxpool1D)-->I-->Z(全连接+softmax)</pre>
 <ol>
-<li class="lvl-3">
-<p><em>将两个形状是(批量大小, 词数, 词向量维度)的嵌入层的输出按词向量连结</em></p>
-</li>
-<li class="lvl-3">
-<p><em>根据Conv1D要求的输入格式，将词向量维，即一维卷积层的通道维(即词向量那一维)，变换到前一维</em></p>
-</li>
-<li class="lvl-3">
-<p><em>对于每个一维卷积层，在时序最大池化后会得到一个形状为(批量大小, 通道大小, 1)的</em> <em>Tensor。</em></p>
-</li>
-<li class="lvl-3">
-<p>拼接在一起后通过全连接层得到输出</p>
-</li>
+<li><em>将两个形状是(批量大小, 词数, 词向量维度)的嵌入层的输出按词向量连结</em></li>
+<li><em>根据Conv1D要求的输入格式，将词向量维，即一维卷积层的通道维(即词向量那一维)，变换到前一维</em></li>
+<li><em>对于每个一维卷积层，在时序最大池化后会得到一个形状为(批量大小, 通道大小, 1)的</em> <em>Tensor。</em></li>
+<li>拼接在一起后通过全连接层得到输出</li>
 </ol>
-<h4 id="RNN-我的实现也就是单层的LSTM">RNN(我的实现也就是单层的LSTM)</h4>
+<h4 id="rnn我的实现也就是单层的lstm"><a class="markdownIt-Anchor" href="#rnn我的实现也就是单层的lstm"></a> RNN(我的实现也就是单层的LSTM)</h4>
 <pre class="mermaid">graph LR
 input[Input] --> encoder[LSTM layer]
 encoder --> output[Output]
@@ -430,123 +404,89 @@ encoder --> concatenation[Concatenation]
 concatenation --> decoder[Linear layer]
 decoder --> result[Result]</pre>
 <p>具体结构解释：</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>输入：输入数据，形状为 $batch \times seq_length \times embed_size$</p>
-</li>
-<li class="lvl-2">
-<p>LSTM layer：包含多层LSTM的编码器，将输入数据序列传入编码器后，得到输出序列和最终时间步的隐藏状态 -</p>
-</li>
-<li class="lvl-3">
-<p>输出：输出序列 $output_seq$，形状为 $seq_length \times batch \times num_hiddens$</p>
-</li>
-<li class="lvl-4">
-<p>Concatenation：将最终时间步的隐藏状态 $h$ 和初始时间步的隐藏状态 $c$ 沿最后一个维度拼接起来，形状为 $batch \times 2*num_hiddens$</p>
-</li>
-<li class="lvl-4">
-<p>Linear layer：线性层，将拼接后的向量输入，输出一个二元向量</p>
-</li>
-<li class="lvl-4">
-<p>Result：模型的输出，输出层的结果，形状为 $batch \times 2$</p>
-</li>
+<ul>
+<li>输入：输入数据，形状为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi><mo>×</mo><mi>s</mi><mi>e</mi><mi>q</mi><mi mathvariant="normal">_</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>e</mi><mi>m</mi><mi>b</mi><mi>e</mi><mi>d</mi><mi mathvariant="normal">_</mi><mi>s</mi><mi>i</mi><mi>z</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">batch \times seq\_length \times embed\_size</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.00444em;vertical-align:-0.31em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.00444em;vertical-align:-0.31em;"></span><span class="mord mathdefault">e</span><span class="mord mathdefault">m</span><span class="mord mathdefault">b</span><span class="mord mathdefault">e</span><span class="mord mathdefault">d</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">s</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mord mathdefault">e</span></span></span></span></li>
+<li>LSTM layer：包含多层LSTM的编码器，将输入数据序列传入编码器后，得到输出序列和最终时间步的隐藏状态 -</li>
+<li>输出：输出序列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>o</mi><mi>u</mi><mi>t</mi><mi>p</mi><mi>u</mi><mi>t</mi><mi mathvariant="normal">_</mi><mi>s</mi><mi>e</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">output\_seq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9250799999999999em;vertical-align:-0.31em;"></span><span class="mord mathdefault">o</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord mathdefault">p</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span>，形状为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>e</mi><mi>q</mi><mi mathvariant="normal">_</mi><mi>l</mi><mi>e</mi><mi>n</mi><mi>g</mi><mi>t</mi><mi>h</mi><mo>×</mo><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi><mo>×</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi mathvariant="normal">_</mi><mi>h</mi><mi>i</mi><mi>d</mi><mi>d</mi><mi>e</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">seq\_length \times batch \times num\_hiddens</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.00444em;vertical-align:-0.31em;"></span><span class="mord mathdefault">s</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">t</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.00444em;vertical-align:-0.31em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span></span></span></span></li>
+<li>Concatenation：将最终时间步的隐藏状态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">h</span></span></span></span> 和初始时间步的隐藏状态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">c</span></span></span></span> 沿最后一个维度拼接起来，形状为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi><mo>×</mo><mn>2</mn><mo>∗</mo><mi>n</mi><mi>u</mi><mi>m</mi><mi mathvariant="normal">_</mi><mi>h</mi><mi>i</mi><mi>d</mi><mi>d</mi><mi>e</mi><mi>n</mi><mi>s</mi></mrow><annotation encoding="application/x-tex">batch \times 2*num\_hiddens</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.00444em;vertical-align:-0.31em;"></span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault">m</span><span class="mord" style="margin-right:0.02778em;">_</span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault">d</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">s</span></span></span></span></li>
+<li>Linear layer：线性层，将拼接后的向量输入，输出一个二元向量</li>
+<li>Result：模型的输出，输出层的结果，形状为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>a</mi><mi>t</mi><mi>c</mi><mi>h</mi><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">batch \times 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.77777em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">b</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">c</span><span class="mord mathdefault">h</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span></li>
 </ul>
 <img src="/img/ai_pa2/image-20230505192857489.png" alt="image-20230505192857489" style="zoom:50%;" />
 <p>其中depth为1,如果在torch中设置<code>bidirectional==true</code>,可以得到双向RNN</p>
-<h4 id="MLP">MLP</h4>
+<h4 id="mlp"><a class="markdownIt-Anchor" href="#mlp"></a> MLP</h4>
 <img src="/img/ai_pa2/image-20230505193124875.png" alt="image-20230505193124875" style="zoom:50%;" />
 <p>很多层的全连接+激活函数.</p>
 <p>激活函数是必要的,否则多层会退化为单层</p>
-<h4 id="GoogLeNet">GoogLeNet</h4>
+<h4 id="googlenet"><a class="markdownIt-Anchor" href="#googlenet"></a> GoogLeNet</h4>
 <p>主要是inception模块</p>
 <img src="/img/ai_pa2/image-20230505193239795.png" alt="image-20230505193239795" style="zoom:33%;" />
 <p>串联多个inception模块,最后池化+全连接</p>
-<h4 id="DenseNet-ResNet等不再画出-完全参照ppt">DenseNet\ResNet等不再画出,完全参照ppt</h4>
-<h2 id="2-实验结果">2.实验结果</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<h4 id="所有模型最终在测试集上表现的结果">所有模型最终在测试集上表现的结果.</h4>
+<h4 id="densenetresnet等不再画出完全参照ppt"><a class="markdownIt-Anchor" href="#densenetresnet等不再画出完全参照ppt"></a> DenseNet\ResNet等不再画出,完全参照ppt</h4>
+<h2 id="2实验结果"><a class="markdownIt-Anchor" href="#2实验结果"></a> 2.实验结果</h2>
+<ul>
+<li>
+<h4 id="所有模型最终在测试集上表现的结果"><a class="markdownIt-Anchor" href="#所有模型最终在测试集上表现的结果"></a> 所有模型最终在测试集上表现的结果.</h4>
 </li>
 </ul>
 <img src="/img/ai_pa2/all_acc_F1.png" alt="all_acc_F1" style="zoom: 67%;" />
 <p>​	可以看见CNN,RNN都达到了f值高于0.8的要求</p>
-<ul class="lvl-0">
-<li class="lvl-2">
+<ul>
+<li>
 <p>所有模型训练准确率随epoch的变化</p>
 <img src="/img/ai_pa2/train_acc.png" alt="train_acc" style="zoom:72%;" />
 </li>
-<li class="lvl-2">
+<li>
 <p>所有模型训练f值随epoch的变化</p>
 <img src="/img/ai_pa2/train_f1.png" alt="train_f1" style="zoom:67%;" />
 <p>本题给的数据中正负标签的比例差不多,而且我的模型看上去对正负完全不敏感.所以最终f值的计算结果和准确率差别不大.</p>
 </li>
-<li class="lvl-2">
+<li>
 <p>所有模型训练f值随epoch的变化</p>
 <img src="/img/ai_pa2/train_loss.png" alt="train_loss" style="zoom:72%;" />
 </li>
 </ul>
 <p>处于对计算力和时间的综合考虑,还有对我可怜的1650的保护,我选取的epoch比较小(16)可以看见各种模型的loss值仍有下降趋势,在对单个模型的测试过程中,增加epoch数确实可能增加训练准确率,减小loss.但有的模型已经出现比较明显的过拟合现象</p>
-<ul class="lvl-0">
-<li class="lvl-2">
+<ul>
+<li>
 <p>所有模型验证准确率随epoch的变化</p>
 <img src="/img/ai_pa2/val_acc.png" alt="val_acc" style="zoom:72%;" />
 </li>
-<li class="lvl-2">
+<li>
 <p>所有模型验证准确率随epoch的变化</p>
 <img src="/img/ai_pa2/val_f1.png" alt="val_f1" style="zoom:67%;" />
 <p>明显地,在验证集上,随epoch增加,准确率并不一定增加,甚至不升反降</p>
 </li>
 </ul>
-<h2 id="3-使用的不同参数效果，并分析原因">3.使用的不同参数效果，并分析原因</h2>
+<h2 id="3使用的不同参数效果并分析原因"><a class="markdownIt-Anchor" href="#3使用的不同参数效果并分析原因"></a> 3.使用的不同参数效果，并分析原因</h2>
 <p>主要的参数</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>epoch：太低达不到效果，太高出现过拟合</p>
-</li>
-<li class="lvl-2">
-<p>learrning-rate：太高波动太大，表现为准确率根本不能提升。设太低学习太慢，训练需epoch轮数多</p>
-</li>
-<li class="lvl-2">
-<p>Dropout：Dropout是指在模型训练时，随机将一部分神经元输出设置为0，从而防止模型过拟合的一种技术。在PyTorch中，我们可以通过调整Dropout概率来控制每个神经元输出为0的概率。Dropout概率过低可能会导致过拟合，而概率过高则可能会影响模型的表现。</p>
-</li>
-<li class="lvl-2">
-<p>Batch Size：指每次模型训练时参与训练的样本数量。如果Batch Size设置过小，可能会出现训练时间过长的问题；而如果Batch Size过大，可能会出现内存不足的问题。</p>
-</li>
-<li class="lvl-2">
-<p>kernel_nums：对于我表现最好的cnn-simple。我的卷积核数目增加（100–&gt;256），准确率提升较明显</p>
-</li>
+<ul>
+<li>epoch：太低达不到效果，太高出现过拟合</li>
+<li>learrning-rate：太高波动太大，表现为准确率根本不能提升。设太低学习太慢，训练需epoch轮数多</li>
+<li>Dropout：Dropout是指在模型训练时，随机将一部分神经元输出设置为0，从而防止模型过拟合的一种技术。在PyTorch中，我们可以通过调整Dropout概率来控制每个神经元输出为0的概率。Dropout概率过低可能会导致过拟合，而概率过高则可能会影响模型的表现。</li>
+<li>Batch Size：指每次模型训练时参与训练的样本数量。如果Batch Size设置过小，可能会出现训练时间过长的问题；而如果Batch Size过大，可能会出现内存不足的问题。</li>
+<li>kernel_nums：对于我表现最好的cnn-simple。我的卷积核数目增加（100–&gt;256），准确率提升较明显</li>
 </ul>
-<h2 id="4-不同模型之间的简要比较">4.不同模型之间的简要比较</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在我对每个模型分别进行测试时,达到最高效果的实际上是CNN-complex模型</p>
-</li>
-<li class="lvl-2">
-<p>我实现的CNN,RNN模型确实在测试时表现比Baseline模型(MLP模型)强</p>
-</li>
-<li class="lvl-2">
-<p>但是MLP模型在训练集上的表现非常好,很快到达了95%+</p>
-</li>
-<li class="lvl-2">
-<p>认为MLP模型太容易过拟合,因此给他加上几个dropout,确实有点用,在测试集上表现略有变好</p>
-</li>
-<li class="lvl-2">
-<p>在我没有实现MLP的时候,实验表明我DenseNet,GoogleNet等几个复杂模型过拟合程度比较高</p>
-</li>
-<li class="lvl-2">
-<p>但是最简单的MLP的训练与测试表现差异反而最大.</p>
-</li>
+<h2 id="4不同模型之间的简要比较"><a class="markdownIt-Anchor" href="#4不同模型之间的简要比较"></a> 4.不同模型之间的简要比较</h2>
+<ul>
+<li>在我对每个模型分别进行测试时,达到最高效果的实际上是CNN-complex模型</li>
+<li>我实现的CNN,RNN模型确实在测试时表现比Baseline模型(MLP模型)强</li>
+<li>但是MLP模型在训练集上的表现非常好,很快到达了95%+</li>
+<li>认为MLP模型太容易过拟合,因此给他加上几个dropout,确实有点用,在测试集上表现略有变好</li>
+<li>在我没有实现MLP的时候,实验表明我DenseNet,GoogleNet等几个复杂模型过拟合程度比较高</li>
+<li>但是最简单的MLP的训练与测试表现差异反而最大.</li>
 </ul>
-<h2 id="5-问题思考">5.问题思考</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<h4 id="实验训练什么时候停止是最合适的？">实验训练什么时候停止是最合适的？</h4>
+<h2 id="5问题思考"><a class="markdownIt-Anchor" href="#5问题思考"></a> 5.问题思考</h2>
+<ul>
+<li>
+<h4 id="实验训练什么时候停止是最合适的"><a class="markdownIt-Anchor" href="#实验训练什么时候停止是最合适的"></a> 实验训练什么时候停止是最合适的？</h4>
 <p><strong>Early Stop</strong>:理论上讲可以通过验证集动态调整停止时间,在验证集效果达到最好时就停止训练.操作上可以在验证集几轮epoch都没有增长时停止.</p>
 <p>但是earlystop有几个问题:</p>
-<ul class="lvl-2">
-<li class="lvl-4">
+<ul>
+<li>
 <p>比较复杂,不方便我实验框架下统一的实现.</p>
 </li>
-<li class="lvl-4">
+<li>
 <p>有时候模型准确率会突变,比如googleNet</p>
 <img src="/img/ai_pa2/The%20accuracy%20of%20GoogLeNet%20module.png" alt="The accuracy of GoogLeNet module" style="zoom: 50%;" />
 <p>所以我最终采用了固定epoch数的方式.</p>
@@ -554,107 +494,101 @@ decoder --> result[Result]</pre>
 </li>
 </ul>
 </li>
-<li class="lvl-2">
-<h4 id="实验参数的初始化是怎么做的？">实验参数的初始化是怎么做的？</h4>
-<ul class="lvl-2">
-<li class="lvl-4">
+<li>
+<h4 id="实验参数的初始化是怎么做的"><a class="markdownIt-Anchor" href="#实验参数的初始化是怎么做的"></a> 实验参数的初始化是怎么做的？</h4>
+<ul>
+<li>
 <p>模型的参数基本上是pytorch默认方法.</p>
 </li>
-<li class="lvl-4">
-<p>例如：nn.Linear 和 nn.Conv2D，都是在 [-limit, limit] 之间的均匀分布（Uniform distribution），其中 limit 是 $1. / sqrt(fan_{in}) ，fan_{in}$ 是指参数张量（<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=tensor&amp;spm=1001.2101.3001.7020">tensor</a>）的输入单元的数量。</p>
+<li>
+<p>例如：nn.Linear 和 nn.Conv2D，都是在 [-limit, limit] 之间的均匀分布（Uniform distribution），其中 limit 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1.</mn><mi mathvariant="normal">/</mi><mi>s</mi><mi>q</mi><mi>r</mi><mi>t</mi><mo stretchy="false">(</mo><mi>f</mi><mi>a</mi><msub><mi>n</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub><mo stretchy="false">)</mo><mi mathvariant="normal">，</mi><mi>f</mi><mi>a</mi><msub><mi>n</mi><mrow><mi>i</mi><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">1. / sqrt(fan_{in}) ，fan_{in}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">.</span><span class="mord">/</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">a</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord cjk_fallback">，</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mord mathdefault">a</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 是指参数张量（<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=tensor&amp;spm=1001.2101.3001.7020">tensor</a>）的输入单元的数量。</p>
 </li>
-<li class="lvl-4">
+<li>
 <p>此外对于RNN可以考虑正交初始化（Orthogonal Initialization）</p>
 <p>主要用以解决深度网络下的梯度消失、梯度爆炸问题，是在RNN中经常使用的参数初始化方法。<code>nn.init.orthogonal</code>但实际上差别没有感觉</p>
 </li>
 </ul>
 </li>
-<li class="lvl-2">
-<h4 id="有什么方法可以方式训练过程陷入过拟合。">有什么方法可以方式训练过程陷入过拟合。</h4>
+<li>
+<h4 id="有什么方法可以方式训练过程陷入过拟合"><a class="markdownIt-Anchor" href="#有什么方法可以方式训练过程陷入过拟合"></a> 有什么方法可以方式训练过程陷入过拟合。</h4>
 <p>下面是按照我实验中的效果明显程度排序</p>
 <ol>
-<li class="lvl-5">
+<li>
 <p>选取更加合适的模型:</p>
 <p>这个是</p>
 </li>
-<li class="lvl-5">
+<li>
 <p>调整epoch,在合理时机停止</p>
 </li>
-<li class="lvl-5">
+<li>
 <p>增加dropout层,调整dropout概率</p>
 <p>看baseline模型,认为MLP模型太容易过拟合,因此给他加上几个dropout,确实有点用,在测试集上表现确实略有变好.但是对其他比较复杂的模型来说,dropout影响有限</p>
 </li>
-<li class="lvl-5">
+<li>
 <p>参数正则化</p>
 <p>计算loss时添加正则化项</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">L1_reg = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> param <span class="keyword">in</span> self.module.parameters():</span><br><span class="line">     L1_reg += torch.<span class="built_in">sum</span>(torch.<span class="built_in">abs</span>(param))</span><br><span class="line">loss += <span class="number">0.001</span> * L1_reg  <span class="comment"># lambda=0.001</span></span><br></pre></td></tr></table></figure>
 <p>这样可以惩罚某些较大的参数.按照我的理解就是防止考试偏科.</p>
 <p>但实在是没什么用</p>
 </li>
-<li class="lvl-5">
+<li>
 <p>调整参数.</p>
 <p>dropout\learning-rate等等都会影响过拟合</p>
 </li>
-<li class="lvl-5">
+<li>
 <p>增加训练集大小</p>
 <p>一个操作是可以通过k-折,将原有训练集与验证集合并后随机分成k份.这样可以增加训练集大小</p>
 </li>
-<li class="lvl-5">
+<li>
 <p>动态停止epoch</p>
 </li>
-<li class="lvl-5">
+<li>
 <p>动态调整</p>
 </li>
 </ol>
-<h2 id="6-试分析CNN，RNN，全连接神经网络（MLP）三者的优缺点。">6.试分析CNN，RNN，全连接神经网络（MLP）三者的优缺点。</h2>
+<h2 id="6试分析cnnrnn全连接神经网络mlp三者的优缺点"><a class="markdownIt-Anchor" href="#6试分析cnnrnn全连接神经网络mlp三者的优缺点"></a> 6.试分析CNN，RNN，全连接神经网络（MLP）三者的优缺点。</h2>
 </li>
 </ul>
 <p>多层感知机在单层神经网络的基础上引入了一到多个隐藏层（hidden layer）。隐藏层位于输入层和输出层之间。</p>
 <p>如果把CNN的核的大小看成和输入一样,那么实际上MLP可以看作是CNN的一个特例.</p>
-<ul class="lvl-0">
-<li class="lvl-2">
+<ul>
+<li>
 <p>MLP</p>
-<ul class="lvl-2">
-<li class="lvl-4">全连接神经网络（MLP）的优点在于比较简单,它可以捕捉到输入数据的非线性关系，能够应用于各种领域。</li>
-<li class="lvl-4">参数较多,单层计算起来比较复杂,容易过拟合…正则化等技术在MLP上的效果比较好</li>
-<li class="lvl-4">单层只能表示一个维度的信息.对空间的敏感性不如CNN</li>
+<ul>
+<li>全连接神经网络（MLP）的优点在于比较简单,它可以捕捉到输入数据的非线性关系，能够应用于各种领域。</li>
+<li>参数较多,单层计算起来比较复杂,容易过拟合…正则化等技术在MLP上的效果比较好</li>
+<li>单层只能表示一个维度的信息.对空间的敏感性不如CNN</li>
 </ul>
 </li>
-<li class="lvl-2">
+<li>
 <p>RNN</p>
-<ul class="lvl-2">
-<li class="lvl-4">
+<ul>
+<li>
 <p>对于序列数据的处理具有很强的能力，尤其在语音识别、自然语言处理和语音合成等任务中表现优异。</p>
 </li>
-<li class="lvl-4">
+<li>
 <p>RNN具有记忆能力，它可以传递信息并保留之前输入的状态，从而在处理时序信息时取得较好的效果。</p>
 </li>
-<li class="lvl-4">
+<li>
 <p>RNN的缺点在于，训练复杂度高，而且受梯度消失/爆炸问题的限制，其在长序列的语音和自然语言任务中表现可能较差。</p>
 </li>
 </ul>
 </li>
-<li class="lvl-2">
+<li>
 <p>CNN</p>
-<ul class="lvl-2">
-<li class="lvl-4">单层计算量比全连接小</li>
-<li class="lvl-4">参数共享和稀疏交通,能够以较小的计算和储存成本生成大量参数。</li>
-<li class="lvl-4">可以捕捉到多个层级的特征,比如宽高.对空间敏感性更好,因此常常应用在计算机视觉中</li>
-<li class="lvl-4">但是CNN还是有两个非常危险的缺陷：平移不变性和池化层。我的理解是CNN对位置太敏感了,一个卷积核的神经元识别一只猫,猫动一动就认不出来了.池化层虽然可以一定程度上削弱这个问题,但是带来了数据信息丢失等新问题.</li>
+<ul>
+<li>单层计算量比全连接小</li>
+<li>参数共享和稀疏交通,能够以较小的计算和储存成本生成大量参数。</li>
+<li>可以捕捉到多个层级的特征,比如宽高.对空间敏感性更好,因此常常应用在计算机视觉中</li>
+<li>但是CNN还是有两个非常危险的缺陷：平移不变性和池化层。我的理解是CNN对位置太敏感了,一个卷积核的神经元识别一只猫,猫动一动就认不出来了.池化层虽然可以一定程度上削弱这个问题,但是带来了数据信息丢失等新问题.</li>
 </ul>
 </li>
 </ul>
-<h2 id="7-实验心得">7.实验心得</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>利用五一假期,我从零认真学习了一波pytorch,所有的心得体会记录在了我的<a target="_blank" rel="noopener" href="https://ggx21.github.io/2023/05/03/notes/pytorch/learn_torch/">这篇博客</a>里</p>
-</li>
-<li class="lvl-2">
-<p>感觉这个实验解释性实在是有点低,哪个参数更好,哪个模型更好,什么层可以解决什么问题,基本上还是要靠实验.书本的知识往往并不一定适用</p>
-</li>
-<li class="lvl-2">
-<p><a target="_blank" rel="noopener" href="https://github.com/Ggx21/IAI2">作业仓库</a></p>
-</li>
+<h2 id="7实验心得"><a class="markdownIt-Anchor" href="#7实验心得"></a> 7.实验心得</h2>
+<ul>
+<li>利用五一假期,我从零认真学习了一波pytorch,所有的心得体会记录在了我的<a target="_blank" rel="noopener" href="https://ggx21.github.io/2023/05/03/notes/pytorch/learn_torch/">这篇博客</a>里</li>
+<li>感觉这个实验解释性实在是有点低,哪个参数更好,哪个模型更好,什么层可以解决什么问题,基本上还是要靠实验.书本的知识往往并不一定适用</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Ggx21/IAI2">作业仓库</a></li>
 </ul>
 
   </div>
@@ -703,7 +637,7 @@ decoder --> result[Result]</pre>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0-%E5%AE%9E%E9%AA%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">0.实验流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">文件结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80-%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86-DataProcesser-%E7%B1%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text">一.数据预处理:DataProcesser()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C-%E8%8E%B7%E5%BE%97%E6%A8%A1%E5%9E%8BGetModule-%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text">二.获得模型GetModule()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89-%E4%B8%BB%E5%87%BD%E6%95%B0DLongpu-py"><span class="toc-number">1.2.3.</span> <span class="toc-text">三.主函数DLongpu.py</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">1.模型的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CNN-simple"><span class="toc-number">2.0.1.</span> <span class="toc-text">CNN_simple</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CNN-complex"><span class="toc-number">2.0.2.</span> <span class="toc-text">CNN_complex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RNN-%E6%88%91%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B9%9F%E5%B0%B1%E6%98%AF%E5%8D%95%E5%B1%82%E7%9A%84LSTM"><span class="toc-number">2.0.3.</span> <span class="toc-text">RNN(我的实现也就是单层的LSTM)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MLP"><span class="toc-number">2.0.4.</span> <span class="toc-text">MLP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GoogLeNet"><span class="toc-number">2.0.5.</span> <span class="toc-text">GoogLeNet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DenseNet-ResNet%E7%AD%89%E4%B8%8D%E5%86%8D%E7%94%BB%E5%87%BA-%E5%AE%8C%E5%85%A8%E5%8F%82%E7%85%A7ppt"><span class="toc-number">2.0.6.</span> <span class="toc-text">DenseNet\ResNet等不再画出,完全参照ppt</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text">2.实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%A8%A1%E5%9E%8B%E6%9C%80%E7%BB%88%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A%E8%A1%A8%E7%8E%B0%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-number">3.0.1.</span> <span class="toc-text">所有模型最终在测试集上表现的结果.</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%8D%E5%90%8C%E5%8F%82%E6%95%B0%E6%95%88%E6%9E%9C%EF%BC%8C%E5%B9%B6%E5%88%86%E6%9E%90%E5%8E%9F%E5%9B%A0"><span class="toc-number">4.</span> <span class="toc-text">3.使用的不同参数效果，并分析原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%B8%8D%E5%90%8C%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E7%AE%80%E8%A6%81%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text">4.不同模型之间的简要比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text">5.问题思考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%AD%E7%BB%83%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%81%9C%E6%AD%A2%E6%98%AF%E6%9C%80%E5%90%88%E9%80%82%E7%9A%84%EF%BC%9F"><span class="toc-number">6.0.1.</span> <span class="toc-text">实验训练什么时候停止是最合适的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E6%95%B0%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84%EF%BC%9F"><span class="toc-number">6.0.2.</span> <span class="toc-text">实验参数的初始化是怎么做的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E6%96%B9%E5%BC%8F%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B%E9%99%B7%E5%85%A5%E8%BF%87%E6%8B%9F%E5%90%88%E3%80%82"><span class="toc-number">6.0.3.</span> <span class="toc-text">有什么方法可以方式训练过程陷入过拟合。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E8%AF%95%E5%88%86%E6%9E%90CNN%EF%BC%8CRNN%EF%BC%8C%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%88MLP%EF%BC%89%E4%B8%89%E8%80%85%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9%E3%80%82"><span class="toc-number">7.</span> <span class="toc-text">6.试分析CNN，RNN，全连接神经网络（MLP）三者的优缺点。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-%E5%AE%9E%E9%AA%8C%E5%BF%83%E5%BE%97"><span class="toc-number">8.</span> <span class="toc-text">7.实验心得</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#0%E5%AE%9E%E9%AA%8C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text"> 0.实验流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text"> 文件结构图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text"> 执行过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86dataprocesser%E7%B1%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 一.数据预处理:DataProcesser()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%8E%B7%E5%BE%97%E6%A8%A1%E5%9E%8Bgetmodule%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 二.获得模型GetModule()类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E4%B8%BB%E5%87%BD%E6%95%B0dlongpupy"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 三.主函数DLongpu.py</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text"> 1.模型的结构图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#cnn_simple"><span class="toc-number">2.0.1.</span> <span class="toc-text"> CNN_simple</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#cnn_complex"><span class="toc-number">2.0.2.</span> <span class="toc-text"> CNN_complex</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#rnn%E6%88%91%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B9%9F%E5%B0%B1%E6%98%AF%E5%8D%95%E5%B1%82%E7%9A%84lstm"><span class="toc-number">2.0.3.</span> <span class="toc-text"> RNN(我的实现也就是单层的LSTM)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mlp"><span class="toc-number">2.0.4.</span> <span class="toc-text"> MLP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#googlenet"><span class="toc-number">2.0.5.</span> <span class="toc-text"> GoogLeNet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#densenetresnet%E7%AD%89%E4%B8%8D%E5%86%8D%E7%94%BB%E5%87%BA%E5%AE%8C%E5%85%A8%E5%8F%82%E7%85%A7ppt"><span class="toc-number">2.0.6.</span> <span class="toc-text"> DenseNet\ResNet等不再画出,完全参照ppt</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-number">3.</span> <span class="toc-text"> 2.实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%80%E6%9C%89%E6%A8%A1%E5%9E%8B%E6%9C%80%E7%BB%88%E5%9C%A8%E6%B5%8B%E8%AF%95%E9%9B%86%E4%B8%8A%E8%A1%A8%E7%8E%B0%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-number">3.0.1.</span> <span class="toc-text"> 所有模型最终在测试集上表现的结果.</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E4%BD%BF%E7%94%A8%E7%9A%84%E4%B8%8D%E5%90%8C%E5%8F%82%E6%95%B0%E6%95%88%E6%9E%9C%E5%B9%B6%E5%88%86%E6%9E%90%E5%8E%9F%E5%9B%A0"><span class="toc-number">4.</span> <span class="toc-text"> 3.使用的不同参数效果，并分析原因</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4%E4%B8%8D%E5%90%8C%E6%A8%A1%E5%9E%8B%E4%B9%8B%E9%97%B4%E7%9A%84%E7%AE%80%E8%A6%81%E6%AF%94%E8%BE%83"><span class="toc-number">5.</span> <span class="toc-text"> 4.不同模型之间的简要比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5%E9%97%AE%E9%A2%98%E6%80%9D%E8%80%83"><span class="toc-number">6.</span> <span class="toc-text"> 5.问题思考</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%AD%E7%BB%83%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E5%81%9C%E6%AD%A2%E6%98%AF%E6%9C%80%E5%90%88%E9%80%82%E7%9A%84"><span class="toc-number">6.0.1.</span> <span class="toc-text"> 实验训练什么时候停止是最合适的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%8F%82%E6%95%B0%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">6.0.2.</span> <span class="toc-text"> 实验参数的初始化是怎么做的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%89%E4%BB%80%E4%B9%88%E6%96%B9%E6%B3%95%E5%8F%AF%E4%BB%A5%E6%96%B9%E5%BC%8F%E8%AE%AD%E7%BB%83%E8%BF%87%E7%A8%8B%E9%99%B7%E5%85%A5%E8%BF%87%E6%8B%9F%E5%90%88"><span class="toc-number">6.0.3.</span> <span class="toc-text"> 有什么方法可以方式训练过程陷入过拟合。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6%E8%AF%95%E5%88%86%E6%9E%90cnnrnn%E5%85%A8%E8%BF%9E%E6%8E%A5%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9Cmlp%E4%B8%89%E8%80%85%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">7.</span> <span class="toc-text"> 6.试分析CNN，RNN，全连接神经网络（MLP）三者的优缺点。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7%E5%AE%9E%E9%AA%8C%E5%BF%83%E5%BE%97"><span class="toc-number">8.</span> <span class="toc-text"> 7.实验心得</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

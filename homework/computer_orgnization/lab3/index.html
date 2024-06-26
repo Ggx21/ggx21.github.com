@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="实验三 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
+  <meta name="description" content="实验三 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验报告    仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lab3">
 <meta property="og:url" content="https://ggxloveslife.top/homework/computer_orgnization/lab3/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="实验三 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
+<meta property="og:description" content="实验三 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验报告    仿真截图   设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。   assert(alu_a&#x3D;&#x3D;rdata_a),assert(alu_b&#x3D;&#x3D;rdata_b)，assert(alu_y&#x3D;&#x3D;wdata)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png">
@@ -182,7 +182,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89"><span class="toc-number">1.</span> <span class="toc-text"> 实验三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> 仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 思考题</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -239,83 +239,83 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>实验三</h1>
+    <h1 id="实验三"><a class="markdownIt-Anchor" href="#实验三"></a> 实验三</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
-<h2 id="实验报告">实验报告</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<h4 id="仿真截图">仿真截图</h4>
-<ul class="lvl-2">
-<li class="lvl-4">
+<h2 id="实验报告"><a class="markdownIt-Anchor" href="#实验报告"></a> 实验报告</h2>
+<ul>
+<li>
+<h4 id="仿真截图"><a class="markdownIt-Anchor" href="#仿真截图"></a> 仿真截图</h4>
+<ul>
+<li>
 <p>设计了验证ALU功能与展示结果的测试，随机测试各种运算操作。主要是通过观察寄存器堆读出的运算数、alu计算后的运算数是否和预期一致。</p>
 </li>
-<li class="lvl-4">
+<li>
 <p>assert(alu_a==rdata_a),assert(alu_b==rdata_b)，assert(alu_y==wdata)</p>
 </li>
-<li class="lvl-4">
-<pre><code class="language-cpp">    //验证ALU功能
-    for (int i = 1; i &lt; 32; i = i + 1) begin
-      #100;
-      rd = i;   // only lower 5 bits
-      rs1 = $urandom_range(0, 32);
-      rs2 = $urandom_range(0, 32);
-      opcode = $urandom_range(1, 11);
+<li>
+<pre class="highlight"><code class="cpp">    <span class="hljs-comment">//验证ALU功能</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">32</span>; i = i + <span class="hljs-number">1</span>) begin
+      #<span class="hljs-number">100</span>;
+      rd = i;   <span class="hljs-comment">// only lower 5 bits</span>
+      rs1 = $urandom_range(<span class="hljs-number">0</span>, <span class="hljs-number">32</span>);
+      rs2 = $urandom_range(<span class="hljs-number">0</span>, <span class="hljs-number">32</span>);
+      opcode = $urandom_range(<span class="hljs-number">1</span>, <span class="hljs-number">11</span>);
       dip_sw = `inst_rtype(rd, rs1, rs2, opcode);
-      push_btn = 1;
+      push_btn = <span class="hljs-number">1</span>;
 
-      #100;
-      push_btn = 0;
+      #<span class="hljs-number">100</span>;
+      push_btn = <span class="hljs-number">0</span>;
 
-      // 展示结果
-      #100;
-      rd = i;   // only lower 5 bits
-      dip_sw = `inst_peek(rd, 0);
-      push_btn = 1;
+      <span class="hljs-comment">// 展示结果</span>
+      #<span class="hljs-number">100</span>;
+      rd = i;   <span class="hljs-comment">// only lower 5 bits</span>
+      dip_sw = `inst_peek(rd, <span class="hljs-number">0</span>);
+      push_btn = <span class="hljs-number">1</span>;
 
-      #100;
-      push_btn = 0;
+      #<span class="hljs-number">100</span>;
+      push_btn = <span class="hljs-number">0</span>;
 
 
-      #1000;
+      #<span class="hljs-number">1000</span>;
 </code></pre>
 </li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png" alt="image-20231022000429920"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fd7871b4f346101be0ede9ad0b158017/202310220004076.png" alt="image-20231022000429920" /></p>
 <p>此外还设计了peek指令验证每个寄存器存储值正确</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png" alt="image-20231022002957251"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/ad0d2595c95aff2c8cce6e6c7d34fead/202310220029373.png" alt="image-20231022002957251" /></p>
 </li>
-<li class="lvl-2">
-<h3 id="在线实验平台">在线实验平台</h3>
-<ul class="lvl-2">
-<li class="lvl-4">POKE imm<strong>7</strong> into r1 then PEEK r1，正常显示7</li>
+<li>
+<h3 id="在线实验平台"><a class="markdownIt-Anchor" href="#在线实验平台"></a> 在线实验平台</h3>
+<ul>
+<li>POKE imm<strong>7</strong> into r1 then PEEK r1，正常显示7</li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png" alt="image-20231022001257034"></p>
-<ul class="lvl-2">
-<li class="lvl-4">
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cd1c6d956c33c3f816d015c6bf525d43/202310220012085.png" alt="image-20231022001257034" /></p>
+<ul>
+<li>
 <p>poke 8 into r2 ,  add r1 r2 to r3 ,then peek r3:正常得到15</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png" alt="image-20231022002321205"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/676384fae5030febd0fd5a8430233424/202310220023249.png" alt="image-20231022002321205" /></p>
 </li>
-<li class="lvl-4">
+<li>
 <p>not r1 to r3,peek r3结果正确</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png" alt="image-20231022002505841"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/9ac791ff3e687d394b9520177a185b76/202310220025884.png" alt="image-20231022002505841" /></p>
 </li>
-<li class="lvl-4">
+<li>
 <p>r1逻辑左移r2位的结果，正确</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png" alt="image-20231022002630826"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e99b6bad399a40e9627c590be68de676/202310220026873.png" alt="image-20231022002630826" /></p>
 </li>
-<li class="lvl-4">
+<li>
 <p>循环左移结果</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png" alt="image-20231022002728947"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b800c361a2c964994c438d5d7a44787/202310220027990.png" alt="image-20231022002728947" /></p>
 </li>
-<li class="lvl-4">
+<li>
 <p>所有操作在板子上均得到正确结果</p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="思考题">思考题</h2>
+<h2 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h2>
 <p>如果读取到乘除法运算，则在decode时根据操作数的位数计算出需要的时钟周期，给CALC过程添加一个自环，每次操作CLK_CNT–，直到得0（所有位数计算完成）退出自环，进入WRITE模式</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png" alt="image-20231022004352614"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/57198dc24172f3ca34d2c0960996325e/202310220043661.png" alt="image-20231022004352614" /></p>
 
   </div>
 </article>
@@ -363,7 +363,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text">在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89"><span class="toc-number">1.</span> <span class="toc-text"> 实验三</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E6%88%AA%E5%9B%BE"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> 仿真截图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E7%BA%BF%E5%AE%9E%E9%AA%8C%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 在线实验平台</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 思考题</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

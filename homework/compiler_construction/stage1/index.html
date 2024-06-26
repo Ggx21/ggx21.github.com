@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="stage-1 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 跟着文档阅读学习实验框架代码. 实验步骤：通过例子学习编译全流程 - Step1   词法分析 &amp; 语法分析  使用lex&#x2F;yacc库将C程序字符流转化为AST。    语义分析  检查是否存在主函数。    中间代码生成  将AST翻译为三地址码（TAC），提取返回语句的常量。">
+  <meta name="description" content="stage-1 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验内容 跟着文档阅读学习实验框架代码. 实验步骤：通过例子学习编译全流程 - Step1  词法分析 &amp; 语法分析  使用lex&#x2F;yacc库将C程序字符流转化为AST。   语义分析  检查是否存在主函数。   中间代码生成  将AST翻译为三地址码（TAC），提取返回语句的常量。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stage1">
 <meta property="og:url" content="https://ggxloveslife.top/homework/compiler_construction/stage1/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="stage-1 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 跟着文档阅读学习实验框架代码. 实验步骤：通过例子学习编译全流程 - Step1   词法分析 &amp; 语法分析  使用lex&#x2F;yacc库将C程序字符流转化为AST。    语义分析  检查是否存在主函数。    中间代码生成  将AST翻译为三地址码（TAC），提取返回语句的常量。">
+<meta property="og:description" content="stage-1 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验内容 跟着文档阅读学习实验框架代码. 实验步骤：通过例子学习编译全流程 - Step1  词法分析 &amp; 语法分析  使用lex&#x2F;yacc库将C程序字符流转化为AST。   语义分析  检查是否存在主函数。   中间代码生成  将AST翻译为三地址码（TAC），提取返回语句的常量。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/a8aab4e8ed73cb1ce1a702dc25b11452/202310051745547.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/5d7e1297e51785ef74e93b6690eb618a/202310051747958.png">
@@ -178,7 +178,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stage-1"><span class="toc-number">1.1.1.</span> <span class="toc-text">stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">实验思路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-1"><span class="toc-number">1.2.</span> <span class="toc-text">step-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B2%A1%E6%9C%89namer-transform-typer-transform%E6%AD%A5%E9%AA%A4%EF%BC%8C%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E8%83%BD%E6%AD%A3%E5%B8%B8%E7%BC%96%E8%AF%91%E5%90%97"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1.没有namer.transform, typer.transform步骤，以下代码能正常编译吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AF%B9%E4%BA%8Emain%E5%87%BD%E6%95%B0%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E6%83%85%E5%86%B5%E6%98%AF%E5%9C%A8%E5%93%AA%E4%B8%80%E6%AD%A5%E5%A4%84%E7%90%86%E7%9A%84%EF%BC%9F%E6%8A%A5%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%E9%94%99%EF%BC%9F"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2.对于main函数没有返回值的情况是在哪一步处理的？报的是什么错？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6%E5%AE%9A%E4%B9%89%E4%BA%86-Unary%E3%80%81TacUnaryOp%E3%80%81RvUnaryOp-%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">3.为什么框架定义了 Unary、TacUnaryOp、RvUnaryOp 三种不同的一元运算符类型？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-2"><span class="toc-number">1.3.</span> <span class="toc-text">step-2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-3"><span class="toc-number">1.4.</span> <span class="toc-text">step-3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-4"><span class="toc-number">1.5.</span> <span class="toc-text">step-4</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#stage-1"><span class="toc-number">1.</span> <span class="toc-text"> stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stage-1-2"><span class="toc-number">1.1.1.</span> <span class="toc-text"> stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 实验思路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-1"><span class="toc-number">1.2.</span> <span class="toc-text"> step-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E6%B2%A1%E6%9C%89namertransform-typertransform%E6%AD%A5%E9%AA%A4%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E8%83%BD%E6%AD%A3%E5%B8%B8%E7%BC%96%E8%AF%91%E5%90%97"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> 1.没有namer.transform, typer.transform步骤，以下代码能正常编译吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%AF%B9%E4%BA%8Emain%E5%87%BD%E6%95%B0%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E6%83%85%E5%86%B5%E6%98%AF%E5%9C%A8%E5%93%AA%E4%B8%80%E6%AD%A5%E5%A4%84%E7%90%86%E7%9A%84%E6%8A%A5%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%E9%94%99"><span class="toc-number">1.2.0.2.</span> <span class="toc-text"> 2.对于main函数没有返回值的情况是在哪一步处理的？报的是什么错？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6%E5%AE%9A%E4%B9%89%E4%BA%86-unary-tacunaryop-rvunaryop-%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.0.3.</span> <span class="toc-text"> 3.为什么框架定义了 Unary、TacUnaryOp、RvUnaryOp 三种不同的一元运算符类型？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-2"><span class="toc-number">1.3.</span> <span class="toc-text"> step-2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-3"><span class="toc-number">1.4.</span> <span class="toc-text"> step-3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-4"><span class="toc-number">1.5.</span> <span class="toc-text"> step-4</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -235,116 +235,90 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>stage-1</h1>
+    <h1 id="stage-1"><a class="markdownIt-Anchor" href="#stage-1"></a> stage-1</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
-<h2 id="实验内容">实验内容</h2>
+<h2 id="实验内容"><a class="markdownIt-Anchor" href="#实验内容"></a> 实验内容</h2>
 <p>跟着文档阅读学习实验框架代码.</p>
 <p><strong>实验步骤：通过例子学习编译全流程 - Step1</strong></p>
 <ol>
-<li class="lvl-3">
-<p>词法分析 &amp; 语法分析</p>
-<ul class="lvl-2">
-<li class="lvl-5">使用lex/yacc库将C程序字符流转化为AST。</li>
+<li>词法分析 &amp; 语法分析
+<ul>
+<li>使用lex/yacc库将C程序字符流转化为AST。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>语义分析</p>
-<ul class="lvl-2">
-<li class="lvl-5">检查是否存在主函数。</li>
+<li>语义分析
+<ul>
+<li>检查是否存在主函数。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>中间代码生成</p>
-<ul class="lvl-2">
-<li class="lvl-5">将AST翻译为三地址码（TAC），提取返回语句的常量。</li>
+<li>中间代码生成
+<ul>
+<li>将AST翻译为三地址码（TAC），提取返回语句的常量。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>目标代码生成</p>
-<ul class="lvl-2">
-<li class="lvl-5">将TAC翻译为32位RISC-V汇编代码，设置返回值为2023。</li>
+<li>目标代码生成
+<ul>
+<li>将TAC翻译为32位RISC-V汇编代码，设置返回值为2023。</li>
 </ul>
 </li>
 </ol>
-<h3 id="stage-1">stage-1</h3>
+<h3 id="stage-1-2"><a class="markdownIt-Anchor" href="#stage-1-2"></a> stage-1</h3>
 <p>整个stage-1的实验内容就是完成常量表达式<code>expression</code>的语法编译.具体而言包括</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>一元表达式</p>
-</li>
-<li class="lvl-2">
-<p>二元表达式</p>
-</li>
-<li class="lvl-2">
-<p>比较和逻辑表达式</p>
-</li>
+<ul>
+<li>一元表达式</li>
+<li>二元表达式</li>
+<li>比较和逻辑表达式</li>
 </ul>
-<h4 id="实验思路">实验思路</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
+<h4 id="实验思路"><a class="markdownIt-Anchor" href="#实验思路"></a> 实验思路</h4>
+<ul>
+<li>
 <p>定义 新增的<code>Unary</code>、<code>TacUnaryOp</code>、<code>RvUnaryOp</code> (以及BinaryOp)三种不同的一元(二元)运算符类型,如下例所示</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a8aab4e8ed73cb1ce1a702dc25b11452/202310051745547.png" alt="image-20231005174527404"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a8aab4e8ed73cb1ce1a702dc25b11452/202310051745547.png" alt="image-20231005174527404" /></p>
 </li>
-<li class="lvl-2">
+<li>
 <p>确定<code>astOp</code>–<code>tacOp</code>–<code>risvOp</code>的对应关系</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5d7e1297e51785ef74e93b6690eb618a/202310051747958.png" alt="image-20231005174712927"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5d7e1297e51785ef74e93b6690eb618a/202310051747958.png" alt="image-20231005174712927" /></p>
 </li>
-<li class="lvl-2">
+<li>
 <p>frontend/tacgen时设计中间代码(TAC)表示</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/6ed25b55c0bcb0d24882d849e49a9230/202310051752123.png" alt="image-20231005175230094"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/6ed25b55c0bcb0d24882d849e49a9230/202310051752123.png" alt="image-20231005175230094" /></p>
 </li>
-<li class="lvl-2">
+<li>
 <p>后端代码生成:</p>
 <p>我将 riscv和ast不能一一对应的语法提前在上一步TAC表示时处理好,所以TAC生成后端代码时只需要添加操作符并构建好操作符间一一对应关系即可.</p>
 </li>
 </ul>
-<h2 id="step-1">step-1</h2>
-<h4 id="1-没有namer-transform-typer-transform步骤，以下代码能正常编译吗">1.没有<code>namer.transform</code>, <code>typer.transform</code>步骤，以下代码能正常编译吗</h4>
+<h2 id="step-1"><a class="markdownIt-Anchor" href="#step-1"></a> step-1</h2>
+<h4 id="1没有namertransform-typertransform步骤以下代码能正常编译吗"><a class="markdownIt-Anchor" href="#1没有namertransform-typertransform步骤以下代码能正常编译吗"></a> 1.没有<code>namer.transform</code>, <code>typer.transform</code>步骤，以下代码能正常编译吗</h4>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>答：可以正常编译，<code>namer</code>和<code>typer</code>的作用分别是符号表构建和类型检查,而上述代码根本没有用到变量也没有额外<code>scope</code>,故不需要构建符号表,也不需要类型检查.所以仍然能正常编译出tac结果如下</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FUNCTION&lt;main&gt;:</span><br><span class="line">    _T0 = 233</span><br><span class="line">    return _T0</span><br></pre></td></tr></table></figure>
-<h4 id="2-对于main函数没有返回值的情况是在哪一步处理的？报的是什么错？">2.对于main函数没有返回值的情况是在哪一步处理的？报的是什么错？</h4>
+<h4 id="2对于main函数没有返回值的情况是在哪一步处理的报的是什么错"><a class="markdownIt-Anchor" href="#2对于main函数没有返回值的情况是在哪一步处理的报的是什么错"></a> 2.对于main函数没有返回值的情况是在哪一步处理的？报的是什么错？</h4>
 <p><code>main.py</code>，调用 <code>frontend.parser.parser</code>来完成语法分析的工作.<code>parser</code>模块中定义了return语句的语法结构,如下所示</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">p_return</span>(<span class="params">p</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    statement_matched : Return expression Semi</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    p[<span class="number">0</span>] = Return(p[<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 <p>这一函数的docstring中定义了return的语法结构,要求<code>return+expression+&quot;;&quot;</code>缺失expression将报错Syntax error</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Syntax error: line 1, column 20</span><br><span class="line">int main() &#123; return; &#125;</span><br><span class="line">Syntax error: line 1, column 22</span><br><span class="line">int main() &#123; return; &#125;</span><br><span class="line">Syntax error: EOF</span><br></pre></td></tr></table></figure>
-<h4 id="3-为什么框架定义了-Unary、TacUnaryOp、RvUnaryOp-三种不同的一元运算符类型？">3.为什么框架定义了 <code>Unary</code>、<code>TacUnaryOp</code>、<code>RvUnaryOp</code> 三种不同的一元运算符类型？</h4>
+<h4 id="3为什么框架定义了-unary-tacunaryop-rvunaryop-三种不同的一元运算符类型"><a class="markdownIt-Anchor" href="#3为什么框架定义了-unary-tacunaryop-rvunaryop-三种不同的一元运算符类型"></a> 3.为什么框架定义了 <code>Unary</code>、<code>TacUnaryOp</code>、<code>RvUnaryOp</code> 三种不同的一元运算符类型？</h4>
 <p>这对应了MiniDecaf 编译器的三个部分：前端、中端、后端。每种运算符用来构造不同部分的语法树的结点.</p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p><strong>Unary</strong>:通过编译器前端，可以读入 MiniDecaf 源程序，然后通过<strong>词法分析</strong>和<strong>语法分析</strong>将源程序转化为一个<strong>抽象语法树(AST)</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>TacUnaryOp</strong>:中端通过扫描 AST 生成中间代码 —— <strong>三地址码(TAC)</strong></p>
-</li>
-<li class="lvl-2">
-<p><strong>RvUnaryOp</strong>:后端将三地址码转换为 <strong>RISC-V 汇编代码</strong></p>
-</li>
+<ul>
+<li><strong>Unary</strong>:通过编译器前端，可以读入 MiniDecaf 源程序，然后通过<strong>词法分析</strong>和<strong>语法分析</strong>将源程序转化为一个<strong>抽象语法树(AST)</strong></li>
+<li><strong>TacUnaryOp</strong>:中端通过扫描 AST 生成中间代码 —— <strong>三地址码(TAC)</strong></li>
+<li><strong>RvUnaryOp</strong>:后端将三地址码转换为 <strong>RISC-V 汇编代码</strong></li>
 </ul>
-<h2 id="step-2">step-2</h2>
+<h2 id="step-2"><a class="markdownIt-Anchor" href="#step-2"></a> step-2</h2>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-(~2147483647)</span><br></pre></td></tr></table></figure>
-<h2 id="step-3">step-3</h2>
+<h2 id="step-3"><a class="markdownIt-Anchor" href="#step-3"></a> step-3</h2>
 <p>左操作数<code>-2147483648</code>,右操作数<code>-1</code>,此时RISCV-32 的 qemu 模拟器运行结果是</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">2021010803@compiler-lab:~/lab/minidecaf-2021010803/test$ qemu-riscv32 a.out</span><br><span class="line">-2147483648</span><br></pre></td></tr></table></figure>
 <p>在我x86-64的系统中报错</p>
 <p><code>Floating point exception</code></p>
-<h2 id="step-4">step-4</h2>
+<h2 id="step-4"><a class="markdownIt-Anchor" href="#step-4"></a> step-4</h2>
 <ol>
-<li class="lvl-3">
-<p><strong>性能优化</strong>：短路求值可以在某个条件已经确定的情况下避免不必要的计算。如果在逻辑表达式中的某个条件已经能够确定整个表达式的值，那么后续的条件将不会被计算，从而提高了程序的性能和效率。</p>
-</li>
-<li class="lvl-3">
-<p><strong>避免副作用</strong>：在某些情况下，逻辑表达式中的条件可能包含副作用，例如函数调用或变量修改。通过短路求值，可以确保只有在必要时才会执行这些副作用，避免不必要的操作，从而增强了程序的可维护性和可预测性。</p>
-</li>
-<li class="lvl-3">
-<p><strong>代码简洁性</strong>：使用短路求值可以编写更简洁、更具可读性的代码。程序员可以使用逻辑表达式来表达条件，而无需手动添加额外的控制结构，例如if语句。</p>
-</li>
-<li class="lvl-3">
-<p><strong>错误避免</strong>：通过短路求值，可以避免一些潜在的错误，例如除以零或访问未初始化的变量。如果某个条件可以确定表达式的结果，那么不会发生这些错误。</p>
-</li>
-<li class="lvl-3">
-<p><strong>逻辑简化</strong>：在某些情况下，短路求值可以使逻辑更简单和更直观。程序员可以使用短路求值来表达逻辑条件，而无需手动构建复杂的条件组合。</p>
-</li>
+<li><strong>性能优化</strong>：短路求值可以在某个条件已经确定的情况下避免不必要的计算。如果在逻辑表达式中的某个条件已经能够确定整个表达式的值，那么后续的条件将不会被计算，从而提高了程序的性能和效率。</li>
+<li><strong>避免副作用</strong>：在某些情况下，逻辑表达式中的条件可能包含副作用，例如函数调用或变量修改。通过短路求值，可以确保只有在必要时才会执行这些副作用，避免不必要的操作，从而增强了程序的可维护性和可预测性。</li>
+<li><strong>代码简洁性</strong>：使用短路求值可以编写更简洁、更具可读性的代码。程序员可以使用逻辑表达式来表达条件，而无需手动添加额外的控制结构，例如if语句。</li>
+<li><strong>错误避免</strong>：通过短路求值，可以避免一些潜在的错误，例如除以零或访问未初始化的变量。如果某个条件可以确定表达式的结果，那么不会发生这些错误。</li>
+<li><strong>逻辑简化</strong>：在某些情况下，短路求值可以使逻辑更简单和更直观。程序员可以使用短路求值来表达逻辑条件，而无需手动构建复杂的条件组合。</li>
 </ol>
 
   </div>
@@ -393,7 +367,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stage-1"><span class="toc-number">1.1.1.</span> <span class="toc-text">stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">实验思路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-1"><span class="toc-number">1.2.</span> <span class="toc-text">step-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B2%A1%E6%9C%89namer-transform-typer-transform%E6%AD%A5%E9%AA%A4%EF%BC%8C%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E8%83%BD%E6%AD%A3%E5%B8%B8%E7%BC%96%E8%AF%91%E5%90%97"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">1.没有namer.transform, typer.transform步骤，以下代码能正常编译吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AF%B9%E4%BA%8Emain%E5%87%BD%E6%95%B0%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E6%83%85%E5%86%B5%E6%98%AF%E5%9C%A8%E5%93%AA%E4%B8%80%E6%AD%A5%E5%A4%84%E7%90%86%E7%9A%84%EF%BC%9F%E6%8A%A5%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%E9%94%99%EF%BC%9F"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">2.对于main函数没有返回值的情况是在哪一步处理的？报的是什么错？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6%E5%AE%9A%E4%B9%89%E4%BA%86-Unary%E3%80%81TacUnaryOp%E3%80%81RvUnaryOp-%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%EF%BC%9F"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">3.为什么框架定义了 Unary、TacUnaryOp、RvUnaryOp 三种不同的一元运算符类型？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-2"><span class="toc-number">1.3.</span> <span class="toc-text">step-2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-3"><span class="toc-number">1.4.</span> <span class="toc-text">step-3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-4"><span class="toc-number">1.5.</span> <span class="toc-text">step-4</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#stage-1"><span class="toc-number">1.</span> <span class="toc-text"> stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stage-1-2"><span class="toc-number">1.1.1.</span> <span class="toc-text"> stage-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%80%9D%E8%B7%AF"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> 实验思路</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-1"><span class="toc-number">1.2.</span> <span class="toc-text"> step-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E6%B2%A1%E6%9C%89namertransform-typertransform%E6%AD%A5%E9%AA%A4%E4%BB%A5%E4%B8%8B%E4%BB%A3%E7%A0%81%E8%83%BD%E6%AD%A3%E5%B8%B8%E7%BC%96%E8%AF%91%E5%90%97"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> 1.没有namer.transform, typer.transform步骤，以下代码能正常编译吗</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E5%AF%B9%E4%BA%8Emain%E5%87%BD%E6%95%B0%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC%E7%9A%84%E6%83%85%E5%86%B5%E6%98%AF%E5%9C%A8%E5%93%AA%E4%B8%80%E6%AD%A5%E5%A4%84%E7%90%86%E7%9A%84%E6%8A%A5%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%E9%94%99"><span class="toc-number">1.2.0.2.</span> <span class="toc-text"> 2.对于main函数没有返回值的情况是在哪一步处理的？报的是什么错？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E4%B8%BA%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6%E5%AE%9A%E4%B9%89%E4%BA%86-unary-tacunaryop-rvunaryop-%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E4%B8%80%E5%85%83%E8%BF%90%E7%AE%97%E7%AC%A6%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.2.0.3.</span> <span class="toc-text"> 3.为什么框架定义了 Unary、TacUnaryOp、RvUnaryOp 三种不同的一元运算符类型？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-2"><span class="toc-number">1.3.</span> <span class="toc-text"> step-2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-3"><span class="toc-number">1.4.</span> <span class="toc-text"> step-3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#step-4"><span class="toc-number">1.5.</span> <span class="toc-text"> step-4</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

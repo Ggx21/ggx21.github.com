@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="chap2 指令系统的设计 [TOC] 2.1 指令系统结构的分类 区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型   堆栈： 隐式给出操作数   累加器 专门存放算术或逻辑运算的一个操作数和运算结果的寄存器。是唯一的暂存器，开销巨大    通用寄存器组 根据结构划分两种形式：   寄存器-存储器结构：（一边的操作数总是来自于存储器）   寄存器-寄存器结构：（RR结构）  现代主">
+  <meta name="description" content="chap2 指令系统的设计 [TOC]  2.1 指令系统结构的分类  区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型    堆栈： 隐式给出操作数    累加器 专门存放算术或逻辑运算的一个操作数和运算结果的寄存器。是唯一的暂存器，开销巨大     通用寄存器组 根据结构划分两种形式：  寄存器-存储器结构：（一边的操作数总是来自于存储器） 寄存器-寄存器结构：（RR结构）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="chap2 指令系统的设计">
 <meta property="og:url" content="https://ggxloveslife.top/notes/2024-Spr/%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/chap2%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="chap2 指令系统的设计 [TOC] 2.1 指令系统结构的分类 区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型   堆栈： 隐式给出操作数   累加器 专门存放算术或逻辑运算的一个操作数和运算结果的寄存器。是唯一的暂存器，开销巨大    通用寄存器组 根据结构划分两种形式：   寄存器-存储器结构：（一边的操作数总是来自于存储器）   寄存器-寄存器结构：（RR结构）  现代主">
+<meta property="og:description" content="chap2 指令系统的设计 [TOC]  2.1 指令系统结构的分类  区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型    堆栈： 隐式给出操作数    累加器 专门存放算术或逻辑运算的一个操作数和运算结果的寄存器。是唯一的暂存器，开销巨大     通用寄存器组 根据结构划分两种形式：  寄存器-存储器结构：（一边的操作数总是来自于存储器） 寄存器-寄存器结构：（RR结构）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/f855336eda1e3be8a49a518cabf5184d/202403161059058.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/9d469a2714b7936d9df791cfa7ee1cc6/202403181305633.png">
@@ -178,7 +178,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">chap2 指令系统的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">2.1 指令系统结构的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E4%B8%8D%E5%90%8C%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%9B%A0%E7%B4%A0%EF%BC%9ACPU%E7%94%A8%E6%9D%A5%E5%AD%98%E5%82%A8%E6%93%8D%E4%BD%9C%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86%E6%A0%88%EF%BC%9A"><span class="toc-number">1.1.1.0.1.</span> <span class="toc-text">堆栈：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8"><span class="toc-number">1.1.1.0.2.</span> <span class="toc-text">累加器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%84"><span class="toc-number">1.1.1.0.3.</span> <span class="toc-text">通用寄存器组</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">2.2 寻址方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80"><span class="toc-number">1.2.1.</span> <span class="toc-text">寻址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%9D%80%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">编址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.2.3.</span> <span class="toc-text">定位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">2.3 指令系统的设计与优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">指令系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%EF%BC%9A"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">基本原则：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">分支条件的方法及其优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%E7%A0%81%E9%95%BF%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">指令操作码码长的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%EF%BC%88%E9%95%BF%EF%BC%89%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">指令操作码（长）的优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%AD%97%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.5.</span> <span class="toc-text">指令字格式的优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%92%8C%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.</span> <span class="toc-text">2.4 指令系统的发展和改进</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CISC%E6%96%B9%E5%90%91%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-number">1.4.1.</span> <span class="toc-text">CISC方向优化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC%E6%96%B9%E5%90%91%EF%BC%9A"><span class="toc-number">1.4.2.</span> <span class="toc-text">RISC方向：</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#chap2-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text"> chap2 指令系统的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 指令系统结构的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E4%B8%8D%E5%90%8C%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%9B%A0%E7%B4%A0cpu%E7%94%A8%E6%9D%A5%E5%AD%98%E5%82%A8%E6%93%8D%E4%BD%9C%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-number">1.1.1.0.1.</span> <span class="toc-text"> 堆栈：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8"><span class="toc-number">1.1.1.0.2.</span> <span class="toc-text"> 累加器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%84"><span class="toc-number">1.1.1.0.3.</span> <span class="toc-text"> 通用寄存器组</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.2 寻址方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 寻址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%9D%80"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 编址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 定位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text"> 2.3 指令系统的设计与优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 指令系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> 基本原则：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.3.1.2.</span> <span class="toc-text"> 分支条件的方法及其优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%E7%A0%81%E9%95%BF%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.1.3.</span> <span class="toc-text"> 指令操作码码长的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%E9%95%BF%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.4.</span> <span class="toc-text"> 指令操作码（长）的优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%AD%97%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.5.</span> <span class="toc-text"> 指令字格式的优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%92%8C%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.</span> <span class="toc-text"> 2.4 指令系统的发展和改进</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cisc%E6%96%B9%E5%90%91%E4%BC%98%E5%8C%96"><span class="toc-number">1.4.1.</span> <span class="toc-text"> CISC方向优化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#risc%E6%96%B9%E5%90%91"><span class="toc-number">1.4.2.</span> <span class="toc-text"> RISC方向：</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -235,76 +235,69 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>chap2 指令系统的设计</h1>
+    <h1 id="chap2-指令系统的设计"><a class="markdownIt-Anchor" href="#chap2-指令系统的设计"></a> chap2 指令系统的设计</h1>
 <p>[TOC]</p>
-<h2 id="2-1-指令系统结构的分类">2.1 指令系统结构的分类</h2>
-<h3 id="区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型">区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<h5 id="堆栈：">堆栈：</h5>
+<h2 id="21-指令系统结构的分类"><a class="markdownIt-Anchor" href="#21-指令系统结构的分类"></a> 2.1 指令系统结构的分类</h2>
+<h3 id="区别不同指令系统的主要因素cpu用来存储操作数的存储单元类型"><a class="markdownIt-Anchor" href="#区别不同指令系统的主要因素cpu用来存储操作数的存储单元类型"></a> 区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型</h3>
+<ul>
+<li>
+<h5 id="堆栈"><a class="markdownIt-Anchor" href="#堆栈"></a> 堆栈：</h5>
 <p>隐式给出操作数</p>
 </li>
-<li class="lvl-2">
-<h5 id="累加器">累加器</h5>
+<li>
+<h5 id="累加器"><a class="markdownIt-Anchor" href="#累加器"></a> 累加器</h5>
 <p>专门存放算术或逻辑运算的一个操作数和运算结果的寄存器。是唯一的暂存器，开销巨大</p>
 <img src="https://gitlab.com/ggx-blog/imglab/uploads/f855336eda1e3be8a49a518cabf5184d/202403161059058.png" alt="image-20240316105920019" style="zoom:50%;" />
 </li>
-<li class="lvl-2">
-<h5 id="通用寄存器组">通用寄存器组</h5>
+<li>
+<h5 id="通用寄存器组"><a class="markdownIt-Anchor" href="#通用寄存器组"></a> 通用寄存器组</h5>
 <p>根据结构划分两种形式：</p>
-<ul class="lvl-2">
-<li class="lvl-4">
-<p>寄存器-存储器结构：（一边的操作数总是来自于存储器）</p>
-</li>
-<li class="lvl-4">
-<p>寄存器-寄存器结构：（RR结构）</p>
-<ul class="lvl-4">
-<li class="lvl-6">现代主流，灵活高性能</li>
-<li class="lvl-6"><code>Load-Store</code>结构，只有Load和Store能够访问存储器（优点：各种指令的时钟周期相近；缺点：目标代码不够紧凑）</li>
+<ul>
+<li>寄存器-存储器结构：（一边的操作数总是来自于存储器）</li>
+<li>寄存器-寄存器结构：（RR结构）
+<ul>
+<li>现代主流，灵活高性能</li>
+<li><code>Load-Store</code>结构，只有Load和Store能够访问存储器（优点：各种指令的时钟周期相近；缺点：目标代码不够紧凑）</li>
 </ul>
 </li>
 </ul>
 <p>根据ALU指令的操作数</p>
-<ul class="lvl-2">
-<li class="lvl-4">
-<p>3操作数：2src1dst</p>
-</li>
-<li class="lvl-4">
-<p>2操作数：1src1dst</p>
-</li>
+<ul>
+<li>3操作数：2src1dst</li>
+<li>2操作数：1src1dst</li>
 </ul>
 </li>
 </ul>
-<div class="tips">
+<p>:::tips</p>
 <p>对于不同结构，操作数的位置、个数以及操作数的给出方式不同</p>
-<ul class="lvl-1">
-<li class="lvl-2">显示给出：用指令字中的操作数字段给出</li>
-<li class="lvl-2">隐式给出：用事先约定好的单元</li>
+<ul>
+<li>显示给出：用指令字中的操作数字段给出</li>
+<li>隐式给出：用事先约定好的单元</li>
 </ul>
-</div>
-<h2 id="2-2-寻址方式">2.2 寻址方式</h2>
-<h3 id="寻址">寻址</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
+<p>:::</p>
+<h2 id="22-寻址方式"><a class="markdownIt-Anchor" href="#22-寻址方式"></a> 2.2 寻址方式</h2>
+<h3 id="寻址"><a class="markdownIt-Anchor" href="#寻址"></a> 寻址</h3>
+<ul>
+<li>
 <p>任意存储</p>
 </li>
-<li class="lvl-2">
+<li>
 <p>不能跨边界：信息在主存中存放的起始地址必须是该信息宽度（字节数）的整数倍  如<code>双字信息的起始地址为：×…×０００</code></p>
 <p>存在空间浪费，但是保证访问速度</p>
 </li>
 </ul>
 <blockquote>
-<ul class="lvl-1">
-<li class="lvl-2">
+<ul>
+<li>
 <p>存储效率：数据本身所需的存储量和整个数据所占的存储量之比</p>
 </li>
-<li class="lvl-2">
+<li>
 <p>寻址方式：指令系统中如何形成所要访问的数据的地址</p>
-<ul class="lvl-3">
-<li class="lvl-4">
+<ul>
+<li>
 <p>将寻址方式编码于操作码中</p>
 </li>
-<li class="lvl-4">
+<li>
 <p>在指令字中设置专门的寻址字段</p>
 <p>灵活，操作码短。但是操作码和寻址方式字段合起来所需要的总位数可能会比隐含方法的总位数多</p>
 </li>
@@ -312,8 +305,8 @@
 </li>
 </ul>
 </blockquote>
-<ul class="lvl-0">
-<li class="lvl-2">
+<ul>
+<li>
 <table>
 <thead>
 <tr>
@@ -382,13 +375,13 @@
 </table>
 </li>
 </ul>
-<h3 id="编址：">编址：</h3>
-<h3 id="定位">定位</h3>
-<h2 id="2-3-指令系统的设计与优化">2.3 指令系统的设计与优化</h2>
-<h3 id="指令系统设计">指令系统设计</h3>
-<h4 id="基本原则：">基本原则：</h4>
+<h3 id="编址"><a class="markdownIt-Anchor" href="#编址"></a> 编址：</h3>
+<h3 id="定位"><a class="markdownIt-Anchor" href="#定位"></a> 定位</h3>
+<h2 id="23-指令系统的设计与优化"><a class="markdownIt-Anchor" href="#23-指令系统的设计与优化"></a> 2.3 指令系统的设计与优化</h2>
+<h3 id="指令系统设计"><a class="markdownIt-Anchor" href="#指令系统设计"></a> 指令系统设计</h3>
+<h4 id="基本原则"><a class="markdownIt-Anchor" href="#基本原则"></a> 基本原则：</h4>
 <p>完整性、规整性、正交性、高效率、兼容性</p>
-<h4 id="分支条件的方法及其优缺点">分支条件的方法及其优缺点</h4>
+<h4 id="分支条件的方法及其优缺点"><a class="markdownIt-Anchor" href="#分支条件的方法及其优缺点"></a> 分支条件的方法及其优缺点</h4>
 <table>
 <thead>
 <tr>
@@ -419,53 +412,46 @@
 </tr>
 </tbody>
 </table>
-<div class="tips">
-<h4 id="指令操作码码长的计算">指令操作码码长的计算</h4>
-<p>用二进制编码表示n个码点时，理论上的最短平均编码长度<br>
-$$<br>
-H=-\Sigma_{i=1}^{n}p_ilog_2p_i<br>
-$$<br>
-信息冗余量，$\frac {L-H}{L}$</p>
-</div>
-<h4 id="指令操作码（长）的优化">指令操作码（长）的优化</h4>
+<p>:::tips</p>
+<h4 id="指令操作码码长的计算"><a class="markdownIt-Anchor" href="#指令操作码码长的计算"></a> 指令操作码码长的计算</h4>
+<p>用二进制编码表示n个码点时，理论上的最短平均编码长度</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mo>−</mo><msubsup><mi mathvariant="normal">Σ</mi><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>p</mi><mi>i</mi></msub><mi>l</mi><mi>o</mi><msub><mi>g</mi><mn>2</mn></msub><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">H=-\Sigma_{i=1}^{n}p_ilog_2p_i
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.9613919999999999em;vertical-align:-0.247em;"></span><span class="mord">−</span><span class="mord"><span class="mord">Σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7143919999999999em;"><span style="top:-2.4530000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.247em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span></p>
+<p>信息冗余量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>L</mi><mo>−</mo><mi>H</mi></mrow><mi>L</mi></mfrac></mrow><annotation encoding="application/x-tex">\frac {L-H}{L}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.217331em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.872331em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">L</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">L</span><span class="mbin mtight">−</span><span class="mord mathdefault mtight" style="margin-right:0.08125em;">H</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p>:::</p>
+<h4 id="指令操作码长的优化"><a class="markdownIt-Anchor" href="#指令操作码长的优化"></a> 指令操作码（长）的优化</h4>
 <ol>
-<li class="lvl-3">
-<p>哈夫曼编码：构建哈夫曼树，$L=\Sigma_{i=1}^np_il_i$</p>
+<li>
+<p>哈夫曼编码：构建哈夫曼树，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><msubsup><mi mathvariant="normal">Σ</mi><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>p</mi><mi>i</mi></msub><msub><mi>l</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">L=\Sigma_{i=1}^np_il_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.953104em;vertical-align:-0.258664em;"></span><span class="mord"><span class="mord">Σ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-2.441336em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.258664em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.01968em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
 </li>
-<li class="lvl-3">
+<li>
 <p>扩展操作码：高概率的用短码、低概率用长码的哈夫曼压缩思想</p>
-<ul class="lvl-2">
-<li class="lvl-5">采用2-4的扩展操作码：用两位的00、01、10分别用于表示使用频度高的I1、I2、I3，然后用11作为高位扩展出4个4位的二进制编码，用于表示剩下的4条指令</li>
+<ul>
+<li>采用2-4的扩展操作码：用两位的00、01、10分别用于表示使用频度高的I1、I2、I3，然后用11作为高位扩展出4个4位的二进制编码，用于表示剩下的4条指令</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p>等长扩展码（便于分级译码）</p>
 <img src="https://gitlab.com/ggx-blog/imglab/uploads/9d469a2714b7936d9df791cfa7ee1cc6/202403181305633.png" alt="image-20240318130528491" style="zoom: 67%;" />
 </li>
-<li class="lvl-3">
+<li>
 <p>定长操作码：所有指令的操作码都是统一的长度</p>
 </li>
 </ol>
-<h4 id="指令字格式的优化">指令字格式的优化</h4>
+<h4 id="指令字格式的优化"><a class="markdownIt-Anchor" href="#指令字格式的优化"></a> 指令字格式的优化</h4>
 <p>在指令系统的设计中，要在指令字长与寄存器个数以及寻址方式的个数之间进行折中</p>
 <p>正常的risc都把寻址方式编进了操作码中，所以不需要考虑这个问题。但也可以让操作码尽可能短，在每一个<code>地址码</code>之前加上用于确定寻址方式的<code>地址描述符</code></p>
-<h2 id="2-4-指令系统的发展和改进">2.4 指令系统的发展和改进</h2>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/85717dd8f0effe0f12c7b57fa4694f74/202403181310242.png" alt="image-20240318131019214"></p>
-<h3 id="CISC方向优化：">CISC方向优化：</h3>
+<h2 id="24-指令系统的发展和改进"><a class="markdownIt-Anchor" href="#24-指令系统的发展和改进"></a> 2.4 指令系统的发展和改进</h2>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/85717dd8f0effe0f12c7b57fa4694f74/202403181310242.png" alt="image-20240318131019214" /></p>
+<h3 id="cisc方向优化"><a class="markdownIt-Anchor" href="#cisc方向优化"></a> CISC方向优化：</h3>
 <ol>
-<li class="lvl-3">
-<p>面向目标程序（将程序中常出现的片段提取成为一条指令）</p>
-</li>
-<li class="lvl-3">
-<p>面向高级语言（提取将高级语言的语法或者直接将高级语言作为机器语言）</p>
-</li>
-<li class="lvl-3">
-<p>面向操作系统：支持操作系统的功能</p>
-</li>
+<li>面向目标程序（将程序中常出现的片段提取成为一条指令）</li>
+<li>面向高级语言（提取将高级语言的语法或者直接将高级语言作为机器语言）</li>
+<li>面向操作系统：支持操作系统的功能</li>
 </ol>
-<h3 id="RISC方向：">RISC方向：</h3>
+<h3 id="risc方向"><a class="markdownIt-Anchor" href="#risc方向"></a> RISC方向：</h3>
 <p>强调优化编译器等</p>
-<p>2.5 操作数类型和大小<br>
+<p>2.5 操作数类型和大小<br />
 2.6 典型指令系统（RISC-V）</p>
 
   </div>
@@ -514,7 +500,7 @@ $$<br>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">chap2 指令系统的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text">2.1 指令系统结构的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E4%B8%8D%E5%90%8C%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%9B%A0%E7%B4%A0%EF%BC%9ACPU%E7%94%A8%E6%9D%A5%E5%AD%98%E5%82%A8%E6%93%8D%E4%BD%9C%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text">区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86%E6%A0%88%EF%BC%9A"><span class="toc-number">1.1.1.0.1.</span> <span class="toc-text">堆栈：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8"><span class="toc-number">1.1.1.0.2.</span> <span class="toc-text">累加器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%84"><span class="toc-number">1.1.1.0.3.</span> <span class="toc-text">通用寄存器组</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">2.2 寻址方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80"><span class="toc-number">1.2.1.</span> <span class="toc-text">寻址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%9D%80%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">编址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.2.3.</span> <span class="toc-text">定位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-3-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text">2.3 指令系统的设计与优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text">指令系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99%EF%BC%9A"><span class="toc-number">1.3.1.1.</span> <span class="toc-text">基本原则：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.3.1.2.</span> <span class="toc-text">分支条件的方法及其优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%E7%A0%81%E9%95%BF%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.1.3.</span> <span class="toc-text">指令操作码码长的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%EF%BC%88%E9%95%BF%EF%BC%89%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.4.</span> <span class="toc-text">指令操作码（长）的优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%AD%97%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.5.</span> <span class="toc-text">指令字格式的优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-4-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%92%8C%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.</span> <span class="toc-text">2.4 指令系统的发展和改进</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CISC%E6%96%B9%E5%90%91%E4%BC%98%E5%8C%96%EF%BC%9A"><span class="toc-number">1.4.1.</span> <span class="toc-text">CISC方向优化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RISC%E6%96%B9%E5%90%91%EF%BC%9A"><span class="toc-number">1.4.2.</span> <span class="toc-text">RISC方向：</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#chap2-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text"> chap2 指令系统的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#21-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.</span> <span class="toc-text"> 2.1 指令系统结构的分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E5%88%AB%E4%B8%8D%E5%90%8C%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%B8%BB%E8%A6%81%E5%9B%A0%E7%B4%A0cpu%E7%94%A8%E6%9D%A5%E5%AD%98%E5%82%A8%E6%93%8D%E4%BD%9C%E6%95%B0%E7%9A%84%E5%AD%98%E5%82%A8%E5%8D%95%E5%85%83%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 区别不同指令系统的主要因素：CPU用来存储操作数的存储单元类型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A0%86%E6%A0%88"><span class="toc-number">1.1.1.0.1.</span> <span class="toc-text"> 堆栈：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%B4%AF%E5%8A%A0%E5%99%A8"><span class="toc-number">1.1.1.0.2.</span> <span class="toc-text"> 累加器</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8%E7%BB%84"><span class="toc-number">1.1.1.0.3.</span> <span class="toc-text"> 通用寄存器组</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#22-%E5%AF%BB%E5%9D%80%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 2.2 寻址方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%BB%E5%9D%80"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 寻址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%96%E5%9D%80"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 编址：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%BD%8D"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 定位</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#23-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AE%BE%E8%AE%A1%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.</span> <span class="toc-text"> 2.3 指令系统的设计与优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 指令系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%8E%9F%E5%88%99"><span class="toc-number">1.3.1.1.</span> <span class="toc-text"> 基本原则：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%94%AF%E6%9D%A1%E4%BB%B6%E7%9A%84%E6%96%B9%E6%B3%95%E5%8F%8A%E5%85%B6%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">1.3.1.2.</span> <span class="toc-text"> 分支条件的方法及其优缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%E7%A0%81%E9%95%BF%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-number">1.3.1.3.</span> <span class="toc-text"> 指令操作码码长的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E6%93%8D%E4%BD%9C%E7%A0%81%E9%95%BF%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.4.</span> <span class="toc-text"> 指令操作码（长）的优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E5%AD%97%E6%A0%BC%E5%BC%8F%E7%9A%84%E4%BC%98%E5%8C%96"><span class="toc-number">1.3.1.5.</span> <span class="toc-text"> 指令字格式的优化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#24-%E6%8C%87%E4%BB%A4%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%8F%91%E5%B1%95%E5%92%8C%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.</span> <span class="toc-text"> 2.4 指令系统的发展和改进</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cisc%E6%96%B9%E5%90%91%E4%BC%98%E5%8C%96"><span class="toc-number">1.4.1.</span> <span class="toc-text"> CISC方向优化：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#risc%E6%96%B9%E5%90%91"><span class="toc-number">1.4.2.</span> <span class="toc-text"> RISC方向：</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

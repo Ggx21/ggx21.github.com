@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="网原第三次小实验 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 抓包实验 1：  Type字段为11，Code字段为0 抓包实验2 观察ICMPv4请求  Type字段是8，Code是0 观察回显数据包头  Type字段为0，Code字段也为0 观察一对请求和回显  标识符，序号，Data都相等 抓包实验 3： 观察 ARP 分组各式    ARP 协议在以">
+  <meta name="description" content="网原第三次小实验 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn  抓包实验 1：  Type字段为11，Code字段为0  抓包实验2  观察ICMPv4请求  Type字段是8，Code是0  观察回显数据包头  Type字段为0，Code字段也为0  观察一对请求和回显  标识符，序号，Data都相等  抓包实验 3： 观察 ARP 分组各式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="network-E3">
 <meta property="og:url" content="https://ggxloveslife.top/homework/network/network-E3/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="网原第三次小实验 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 抓包实验 1：  Type字段为11，Code字段为0 抓包实验2 观察ICMPv4请求  Type字段是8，Code是0 观察回显数据包头  Type字段为0，Code字段也为0 观察一对请求和回显  标识符，序号，Data都相等 抓包实验 3： 观察 ARP 分组各式    ARP 协议在以">
+<meta property="og:description" content="网原第三次小实验 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn  抓包实验 1：  Type字段为11，Code字段为0  抓包实验2  观察ICMPv4请求  Type字段是8，Code是0  观察回显数据包头  Type字段为0，Code字段也为0  观察一对请求和回显  标识符，序号，Data都相等  抓包实验 3： 观察 ARP 分组各式">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ggxloveslife.top/img/homeworks/network-E3.assets/image-20230508182726680.png">
 <meta property="og:image" content="https://ggxloveslife.top/img/homeworks/network-E3.assets/image-20230508184458514.png">
@@ -185,7 +185,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第三次小实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-1%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">抓包实验 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C2"><span class="toc-number">1.2.</span> <span class="toc-text">抓包实验2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9FICMPv4%E8%AF%B7%E6%B1%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">观察ICMPv4请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E5%9B%9E%E6%98%BE%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4"><span class="toc-number">1.2.2.</span> <span class="toc-text">观察回显数据包头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E4%B8%80%E5%AF%B9%E8%AF%B7%E6%B1%82%E5%92%8C%E5%9B%9E%E6%98%BE"><span class="toc-number">1.2.3.</span> <span class="toc-text">观察一对请求和回显</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-3%EF%BC%9A-%E8%A7%82%E5%AF%9F-ARP-%E5%88%86%E7%BB%84%E5%90%84%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">抓包实验 3： 观察 ARP 分组各式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.1.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E9%A2%98%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">简述题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#icmpv4%E7%9A%84%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-number">1.4.1.</span> <span class="toc-text">icmpv4的安全隐患</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping-%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E5%A4%96%E7%9A%84%E4%B8%BB%E6%9C%BA%E4%BA%A7%E7%94%9F%E7%9A%84arp%E6%8A%A5%E6%96%87%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C"><span class="toc-number">1.4.2.</span> <span class="toc-text">ping 局域网内外的主机产生的arp报文有何不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E5%8D%B1%E5%AE%B3%E5%8F%8A%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.</span> <span class="toc-text">arp滥用的危害及预防</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">arp滥用的例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">预防</span></a></li></ol></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%8E%9F%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%8F%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.</span> <span class="toc-text"> 网原第三次小实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-1"><span class="toc-number">1.1.</span> <span class="toc-text"> 抓包实验 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C2"><span class="toc-number">1.2.</span> <span class="toc-text"> 抓包实验2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9Ficmpv4%E8%AF%B7%E6%B1%82"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 观察ICMPv4请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E5%9B%9E%E6%98%BE%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 观察回显数据包头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E4%B8%80%E5%AF%B9%E8%AF%B7%E6%B1%82%E5%92%8C%E5%9B%9E%E6%98%BE"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 观察一对请求和回显</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-3-%E8%A7%82%E5%AF%9F-arp-%E5%88%86%E7%BB%84%E5%90%84%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 抓包实验 3： 观察 ARP 分组各式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#image-20230508185440661"><span class="toc-number">1.3.1.</span> <span class="toc-text"> </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text"> 简述题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#icmpv4%E7%9A%84%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-number">1.4.1.</span> <span class="toc-text"> icmpv4的安全隐患</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping-%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E5%A4%96%E7%9A%84%E4%B8%BB%E6%9C%BA%E4%BA%A7%E7%94%9F%E7%9A%84arp%E6%8A%A5%E6%96%87%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C"><span class="toc-number">1.4.2.</span> <span class="toc-text"> ping 局域网内外的主机产生的arp报文有何不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E5%8D%B1%E5%AE%B3%E5%8F%8A%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.</span> <span class="toc-text"> arp滥用的危害及预防</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> arp滥用的例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> 预防</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -242,131 +242,87 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>网原第三次小实验</h1>
+    <h1 id="网原第三次小实验"><a class="markdownIt-Anchor" href="#网原第三次小实验"></a> 网原第三次小实验</h1>
 <p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
-<h2 id="抓包实验-1：">抓包实验 1：</h2>
+<h2 id="抓包实验-1"><a class="markdownIt-Anchor" href="#抓包实验-1"></a> 抓包实验 1：</h2>
 <img src="/img/homeworks/network-E3.assets/image-20230508182726680.png" alt="image-20230508182726680" style="zoom: 80%;" />
 <p>Type字段为11，Code字段为0</p>
-<h2 id="抓包实验2">抓包实验2</h2>
-<h3 id="观察ICMPv4请求">观察ICMPv4请求</h3>
+<h2 id="抓包实验2"><a class="markdownIt-Anchor" href="#抓包实验2"></a> 抓包实验2</h2>
+<h3 id="观察icmpv4请求"><a class="markdownIt-Anchor" href="#观察icmpv4请求"></a> 观察ICMPv4请求</h3>
 <img src="/img/homeworks/network-E3.assets/image-20230508184458514.png" alt="image-20230508184458514" style="zoom:67%;" />
 <p>Type字段是8，Code是0</p>
-<h3 id="观察回显数据包头">观察回显数据包头</h3>
+<h3 id="观察回显数据包头"><a class="markdownIt-Anchor" href="#观察回显数据包头"></a> 观察回显数据包头</h3>
 <img src="/img/homeworks/network-E3.assets/image-20230508184710176.png" alt="image-20230508184710176" style="zoom:67%;" />
 <p>Type字段为0，Code字段也为0</p>
-<h3 id="观察一对请求和回显">观察一对请求和回显</h3>
+<h3 id="观察一对请求和回显"><a class="markdownIt-Anchor" href="#观察一对请求和回显"></a> 观察一对请求和回显</h3>
 <img src="/img/homeworks/network-E3.assets/image-20230508185019527.png" alt="image-20230508185019527" style="zoom:67%;" />
 <p>标识符，序号，Data都相等</p>
-<h2 id="抓包实验-3：-观察-ARP-分组各式">抓包实验 3： 观察 ARP 分组各式</h2>
-<h3 id=""><img src="/img/homeworks/network-E3.assets/image-20230508185440661.png" alt="image-20230508185440661"></h3>
+<h2 id="抓包实验-3-观察-arp-分组各式"><a class="markdownIt-Anchor" href="#抓包实验-3-观察-arp-分组各式"></a> 抓包实验 3： 观察 ARP 分组各式</h2>
+<h3 id="image-20230508185440661"><a class="markdownIt-Anchor" href="#image-20230508185440661"></a> <img src="/img/homeworks/network-E3.assets/image-20230508185440661.png" alt="image-20230508185440661" /></h3>
 <ol>
-<li class="lvl-3">
+<li>
 <p>ARP 协议在以太网帧头中载荷类型的编号是 ？</p>
 <img src="/img/homeworks/network-E3.assets/image-20230508185700796.png" alt="image-20230508185700796" style="zoom:67%;" />
 <p>答：0x0806</p>
 </li>
-<li class="lvl-3">
+<li>
 <p>ARP 分组头中，以太网硬件类型编号和 IP 协议类型编号分别是？</p>
 <img src="/img/homeworks/network-E3.assets/image-20230508185717796.png" alt="image-20230508185717796" style="zoom:67%;" />
 <p>答：   arp.hw.type（Hardware type）：1；protocol type 0x0800</p>
 </li>
-<li class="lvl-3">
+<li>
 <p>ARP 请求分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p>
   <img src="/img/homeworks/network-E3.assets/image-20230508185831466.png" alt="image-20230508185831466" style="zoom:67%;" />
-<ul class="lvl-2">
-<li class="lvl-5">
-<p>Opcode是1，</p>
-</li>
-<li class="lvl-5">
-<p>源IP和MAC地址是本机地址</p>
-</li>
-<li class="lvl-5">
-<p>目的IP地址是请求的IP地址；MAC地址是广播地址</p>
-</li>
+<ul>
+<li>Opcode是1，</li>
+<li>源IP和MAC地址是本机地址</li>
+<li>目的IP地址是请求的IP地址；MAC地址是广播地址</li>
 </ul>
 </li>
-<li class="lvl-3">
+<li>
 <p>ARP 回复分组中，操作码（Opcode）值是？源 IP 地址及 MAC地址，目的 IP 地址及 MAC 地址是多少？</p>
 <img src="/img/homeworks/network-E3.assets/image-20230508185731913.png" alt="image-20230508185731913" style="zoom:80%;" />
 <p>答：</p>
-<ul class="lvl-2">
-<li class="lvl-5">
-<p>Opcode是2</p>
-</li>
-<li class="lvl-5">
-<p>源IP和MAC是请求的IP地址和回复的MAC</p>
-</li>
-<li class="lvl-5">
-<p>目的IP和MAC是本机</p>
-</li>
+<ul>
+<li>Opcode是2</li>
+<li>源IP和MAC是请求的IP地址和回复的MAC</li>
+<li>目的IP和MAC是本机</li>
 </ul>
 </li>
 </ol>
-<h2 id="简述题：">简述题：</h2>
-<h3 id="icmpv4的安全隐患">icmpv4的安全隐患</h3>
+<h2 id="简述题"><a class="markdownIt-Anchor" href="#简述题"></a> 简述题：</h2>
+<h3 id="icmpv4的安全隐患"><a class="markdownIt-Anchor" href="#icmpv4的安全隐患"></a> icmpv4的安全隐患</h3>
 <ol>
-<li class="lvl-3">
-<p>Ping Flood 攻击：黑客可以发送大量的 Ping 请求（ICMP Echo Request），导致被攻击的目标主机网络堵塞，以至于无法正常通信。</p>
-</li>
-<li class="lvl-3">
-<p>Smurf 攻击：黑客可以利用广播地址发送 ICMPv4 Request，让目标网络中的所有主机都回应，导致目标网络瘫痪。</p>
-</li>
-<li class="lvl-3">
-<p>ICMPv4 Redirect 攻击：黑客可以伪造 ICMPv4 Redirect 消息，使目标主机将数据包发送到攻击者的设备上，从而实现中间人攻击。</p>
-</li>
-<li class="lvl-3">
-<p>ICMPv4 Time Exceeded 攻击：黑客可以发送大量 ICMPv4 Time Exceeded 消息，让目标网络的路由器被迫处理大量无用信息而瘫痪。</p>
-</li>
-<li class="lvl-3">
-<p>Ping of Death 攻击：黑客可以向目标主机发送一个特别制作的超大 ICMPv4 报文（超过 65536 字节），导致目标主机崩溃或者重启。</p>
-</li>
+<li>Ping Flood 攻击：黑客可以发送大量的 Ping 请求（ICMP Echo Request），导致被攻击的目标主机网络堵塞，以至于无法正常通信。</li>
+<li>Smurf 攻击：黑客可以利用广播地址发送 ICMPv4 Request，让目标网络中的所有主机都回应，导致目标网络瘫痪。</li>
+<li>ICMPv4 Redirect 攻击：黑客可以伪造 ICMPv4 Redirect 消息，使目标主机将数据包发送到攻击者的设备上，从而实现中间人攻击。</li>
+<li>ICMPv4 Time Exceeded 攻击：黑客可以发送大量 ICMPv4 Time Exceeded 消息，让目标网络的路由器被迫处理大量无用信息而瘫痪。</li>
+<li>Ping of Death 攻击：黑客可以向目标主机发送一个特别制作的超大 ICMPv4 报文（超过 65536 字节），导致目标主机崩溃或者重启。</li>
 </ol>
 <p>处于上述安全问题，很多系统都默认禁止发送某些icmpv4消息。比如</p>
 <ol>
-<li class="lvl-3">
-<p>Cisco 路由器默认情况下会禁止发送 ICMP Redirect 消息，以避免中间人攻击。</p>
-</li>
-<li class="lvl-3">
-<p>Solaris 操作系统默认情况下会禁止发送 ICMPv4 Timestamp 和 ICMPv4 Address Mask 消息。</p>
-</li>
-<li class="lvl-3">
-<p>Windows 防火墙默认情况下会阻止多个 ICMPv4 消息，比如 ICMP Echo Request（ping）、ICMP Timestamp，ICMP Traceroute 等。</p>
-</li>
+<li>Cisco 路由器默认情况下会禁止发送 ICMP Redirect 消息，以避免中间人攻击。</li>
+<li>Solaris 操作系统默认情况下会禁止发送 ICMPv4 Timestamp 和 ICMPv4 Address Mask 消息。</li>
+<li>Windows 防火墙默认情况下会阻止多个 ICMPv4 消息，比如 ICMP Echo Request（ping）、ICMP Timestamp，ICMP Traceroute 等。</li>
 </ol>
-<h3 id="ping-局域网内外的主机产生的arp报文有何不同">ping 局域网内外的主机产生的arp报文有何不同</h3>
+<h3 id="ping-局域网内外的主机产生的arp报文有何不同"><a class="markdownIt-Anchor" href="#ping-局域网内外的主机产生的arp报文有何不同"></a> ping 局域网内外的主机产生的arp报文有何不同</h3>
 <p>这是我ping局域网内（连接到我同一个路由器的ipad设备）的arp</p>
-<p><img src="/img/homeworks/network-E3.assets/image-20230508192914176.png" alt="image-20230508192914176"></p>
+<p><img src="/img/homeworks/network-E3.assets/image-20230508192914176.png" alt="image-20230508192914176" /></p>
 <p>ping局域网外的主机不会产生arp报文。arp的作用范围在局域网内。</p>
-<h3 id="arp滥用的危害及预防">arp滥用的危害及预防</h3>
-<h4 id="arp滥用的例子">arp滥用的例子</h4>
+<h3 id="arp滥用的危害及预防"><a class="markdownIt-Anchor" href="#arp滥用的危害及预防"></a> arp滥用的危害及预防</h3>
+<h4 id="arp滥用的例子"><a class="markdownIt-Anchor" href="#arp滥用的例子"></a> arp滥用的例子</h4>
 <ol>
-<li class="lvl-3">
-<p>网络拥塞：过量的 ARP 请求会增加网络的负载，导致网络拥塞，从而影响网络性能和吞吐量。</p>
-</li>
-<li class="lvl-3">
-<p>ARP 洪泛攻击：攻击者利用大量伪造的 ARP 请求数据包向网络广播，欺骗物理地址表中的信息，从而导致网络拥塞或服务故障，影响网络安全。</p>
-</li>
-<li class="lvl-3">
-<p>ARP 欺骗攻击：攻击者伪造 ARP 请求数据包，使其包含正确的 IP 地址和错误的 MAC 地址。当 ARP 请求被接收并响应时，攻击者就能欺骗网络设备，从而执行中间人攻击，获取敏感信息，甚至劫持通信。</p>
-</li>
+<li>网络拥塞：过量的 ARP 请求会增加网络的负载，导致网络拥塞，从而影响网络性能和吞吐量。</li>
+<li>ARP 洪泛攻击：攻击者利用大量伪造的 ARP 请求数据包向网络广播，欺骗物理地址表中的信息，从而导致网络拥塞或服务故障，影响网络安全。</li>
+<li>ARP 欺骗攻击：攻击者伪造 ARP 请求数据包，使其包含正确的 IP 地址和错误的 MAC 地址。当 ARP 请求被接收并响应时，攻击者就能欺骗网络设备，从而执行中间人攻击，获取敏感信息，甚至劫持通信。</li>
 </ol>
-<h4 id="预防">预防</h4>
+<h4 id="预防"><a class="markdownIt-Anchor" href="#预防"></a> 预防</h4>
 <ol>
-<li class="lvl-3">
-<p>监控网络流量：使用网络分析工具监测网络流量，识别异常的 ARP 请求和响应，判断是否存在 ARP 洪泛攻击或 ARP 欺骗攻击。</p>
-</li>
-<li class="lvl-3">
-<p>过滤不必要的广播：在网络设备上设置合理的 ACL（访问控制列表），过滤不必要的广播。例如，可以限制 ARP 请求的范围，只允许目标设备响应有效的 ARP 请求。</p>
-</li>
-<li class="lvl-3">
-<p>配置静态 ARP 表项：在网络设备上配置静态 ARP 表项，避免频繁地进行 ARP 请求，降低网络负载和运行的安全风险。</p>
-</li>
-<li class="lvl-3">
-<p>使用防火墙：在网络的边界处使用防火墙，限制不必要的 ARP 请求和回应，防止 ARP 洪泛攻击和 ARP 欺骗攻击。</p>
-</li>
-<li class="lvl-3">
-<p>更新网络设备和操作系统：最新版本的网络设备和操作系统中会修复已知的安全漏洞，更新这些设备和系统可以降低不必要的攻击和风险。</p>
-</li>
+<li>监控网络流量：使用网络分析工具监测网络流量，识别异常的 ARP 请求和响应，判断是否存在 ARP 洪泛攻击或 ARP 欺骗攻击。</li>
+<li>过滤不必要的广播：在网络设备上设置合理的 ACL（访问控制列表），过滤不必要的广播。例如，可以限制 ARP 请求的范围，只允许目标设备响应有效的 ARP 请求。</li>
+<li>配置静态 ARP 表项：在网络设备上配置静态 ARP 表项，避免频繁地进行 ARP 请求，降低网络负载和运行的安全风险。</li>
+<li>使用防火墙：在网络的边界处使用防火墙，限制不必要的 ARP 请求和回应，防止 ARP 洪泛攻击和 ARP 欺骗攻击。</li>
+<li>更新网络设备和操作系统：最新版本的网络设备和操作系统中会修复已知的安全漏洞，更新这些设备和系统可以降低不必要的攻击和风险。</li>
 </ol>
 
   </div>
@@ -415,7 +371,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第三次小实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-1%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">抓包实验 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C2"><span class="toc-number">1.2.</span> <span class="toc-text">抓包实验2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9FICMPv4%E8%AF%B7%E6%B1%82"><span class="toc-number">1.2.1.</span> <span class="toc-text">观察ICMPv4请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E5%9B%9E%E6%98%BE%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4"><span class="toc-number">1.2.2.</span> <span class="toc-text">观察回显数据包头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E4%B8%80%E5%AF%B9%E8%AF%B7%E6%B1%82%E5%92%8C%E5%9B%9E%E6%98%BE"><span class="toc-number">1.2.3.</span> <span class="toc-text">观察一对请求和回显</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-3%EF%BC%9A-%E8%A7%82%E5%AF%9F-ARP-%E5%88%86%E7%BB%84%E5%90%84%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text">抓包实验 3： 观察 ARP 分组各式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">1.3.1.</span> <span class="toc-text"></span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E9%A2%98%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">简述题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#icmpv4%E7%9A%84%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-number">1.4.1.</span> <span class="toc-text">icmpv4的安全隐患</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping-%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E5%A4%96%E7%9A%84%E4%B8%BB%E6%9C%BA%E4%BA%A7%E7%94%9F%E7%9A%84arp%E6%8A%A5%E6%96%87%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C"><span class="toc-number">1.4.2.</span> <span class="toc-text">ping 局域网内外的主机产生的arp报文有何不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E5%8D%B1%E5%AE%B3%E5%8F%8A%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.</span> <span class="toc-text">arp滥用的危害及预防</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">arp滥用的例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">预防</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%8E%9F%E7%AC%AC%E4%B8%89%E6%AC%A1%E5%B0%8F%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.</span> <span class="toc-text"> 网原第三次小实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-1"><span class="toc-number">1.1.</span> <span class="toc-text"> 抓包实验 1：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C2"><span class="toc-number">1.2.</span> <span class="toc-text"> 抓包实验2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9Ficmpv4%E8%AF%B7%E6%B1%82"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 观察ICMPv4请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E5%9B%9E%E6%98%BE%E6%95%B0%E6%8D%AE%E5%8C%85%E5%A4%B4"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 观察回显数据包头</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E4%B8%80%E5%AF%B9%E8%AF%B7%E6%B1%82%E5%92%8C%E5%9B%9E%E6%98%BE"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 观察一对请求和回显</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%93%E5%8C%85%E5%AE%9E%E9%AA%8C-3-%E8%A7%82%E5%AF%9F-arp-%E5%88%86%E7%BB%84%E5%90%84%E5%BC%8F"><span class="toc-number">1.3.</span> <span class="toc-text"> 抓包实验 3： 观察 ARP 分组各式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#image-20230508185440661"><span class="toc-number">1.3.1.</span> <span class="toc-text"> </span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text"> 简述题：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#icmpv4%E7%9A%84%E5%AE%89%E5%85%A8%E9%9A%90%E6%82%A3"><span class="toc-number">1.4.1.</span> <span class="toc-text"> icmpv4的安全隐患</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ping-%E5%B1%80%E5%9F%9F%E7%BD%91%E5%86%85%E5%A4%96%E7%9A%84%E4%B8%BB%E6%9C%BA%E4%BA%A7%E7%94%9F%E7%9A%84arp%E6%8A%A5%E6%96%87%E6%9C%89%E4%BD%95%E4%B8%8D%E5%90%8C"><span class="toc-number">1.4.2.</span> <span class="toc-text"> ping 局域网内外的主机产生的arp报文有何不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E5%8D%B1%E5%AE%B3%E5%8F%8A%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.</span> <span class="toc-text"> arp滥用的危害及预防</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#arp%E6%BB%A5%E7%94%A8%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> arp滥用的例子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%84%E9%98%B2"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> 预防</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

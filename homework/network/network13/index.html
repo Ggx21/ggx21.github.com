@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="网原第13次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 1. B 2. 如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？   可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。   客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，">
+  <meta name="description" content="网原第13次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn  1. B  2. 如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？  可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。 客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="network-homework-13">
 <meta property="og:url" content="https://ggxloveslife.top/homework/network/network13/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="网原第13次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 1. B 2. 如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？   可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。   客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，">
+<meta property="og:description" content="网原第13次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn  1. B  2. 如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？  可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。 客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-31T04:25:01.000Z">
 <meta property="article:modified_time" content="2023-05-31T16:24:53.822Z">
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第13次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-C"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.C</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%EF%BC%9AD"><span class="toc-number">1.0.5.</span> <span class="toc-text">思考题：D</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%8E%9F%E7%AC%AC13%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="toc-number">1.</span> <span class="toc-text"> 网原第13次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-b"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 1. B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 2.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 3.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4c"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 4.C</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98d"><span class="toc-number">1.0.5.</span> <span class="toc-text"> 思考题：D</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -231,33 +231,23 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>网原第13次作业</h1>
+    <h1 id="网原第13次作业"><a class="markdownIt-Anchor" href="#网原第13次作业"></a> 网原第13次作业</h1>
 <p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
-<h3 id="1-B">1. B</h3>
-<h3 id="2">2.</h3>
+<h3 id="1-b"><a class="markdownIt-Anchor" href="#1-b"></a> 1. B</h3>
+<h3 id="2"><a class="markdownIt-Anchor" href="#2"></a> 2.</h3>
 <p>如果一个DNS分组丢失且没有自动恢复， 这是否会导致什么问题？应该如何解决？</p>
 <ol>
-<li class="lvl-3">
-<p>可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。</p>
-</li>
-<li class="lvl-3">
-<p>客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，使查询更可靠</p>
-</li>
+<li>可能会导致不完整的或无法解析的查询结过，客户端无法解析或获得错误的DNS记录，导致延迟或超时。</li>
+<li>客户端重试，如果在指定时间内未收到可以正确解析的响应则重新请求DNS。可以设置更多的DNS服务器，使查询更可靠</li>
 </ol>
-<h3 id="3">3.</h3>
+<h3 id="3"><a class="markdownIt-Anchor" href="#3"></a> 3.</h3>
 <ol>
-<li class="lvl-3">
-<p>SMTP，http</p>
-</li>
-<li class="lvl-3">
-<p>SMTP</p>
-</li>
-<li class="lvl-3">
-<p>POP3，IMAP，webmail，http</p>
-</li>
+<li>SMTP，http</li>
+<li>SMTP</li>
+<li>POP3，IMAP，webmail，http</li>
 </ol>
-<h3 id="4-C">4.C</h3>
-<h3 id="思考题：D">思考题：D</h3>
+<h3 id="4c"><a class="markdownIt-Anchor" href="#4c"></a> 4.C</h3>
+<h3 id="思考题d"><a class="markdownIt-Anchor" href="#思考题d"></a> 思考题：D</h3>
 <p>最短时间：本地存有域名到ip的记录。只需要TCP建立连接与请求资源两个RTT</p>
 <p>最长时间：加上主机到本地域名服务器，本地域名服务器迭代查找根、顶级、次级的3个rtt</p>
 
@@ -307,7 +297,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第13次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-B"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.0.2.</span> <span class="toc-text">2.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.0.3.</span> <span class="toc-text">3.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-C"><span class="toc-number">1.0.4.</span> <span class="toc-text">4.C</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98%EF%BC%9AD"><span class="toc-number">1.0.5.</span> <span class="toc-text">思考题：D</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%8E%9F%E7%AC%AC13%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="toc-number">1.</span> <span class="toc-text"> 网原第13次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-b"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 1. B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 2.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 3.</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4c"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 4.C</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98d"><span class="toc-number">1.0.5.</span> <span class="toc-text"> 思考题：D</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

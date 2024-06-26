@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="四子棋实验报告 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 最终版本的对抗结果 胜率稳定在93%以上。 实验方法 实现了α-β剪枝算法。 原理 α-β剪枝算法是基于max-min算法实现的。与蒙特卡洛对棋局随机模拟不同，max-min算法需要对棋局进行形势判断,由此给出max-min决策树上每一点的分值. 所以max-min算法的成功率不仅取决于计算量,也">
+  <meta name="description" content="四子棋实验报告 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  最终版本的对抗结果 胜率稳定在93%以上。  实验方法 实现了α-β剪枝算法。  原理 α-β剪枝算法是基于max-min算法实现的。与蒙特卡洛对棋局随机模拟不同，max-min算法需要对棋局进行形势判断,由此给出max-min决策树上每一点的分值. 所以max-min算法的成功率不仅取决于计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="人智导PA3实验报告">
 <meta property="og:url" content="https://ggxloveslife.top/notes/pytorch/connect-4/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="四子棋实验报告 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 最终版本的对抗结果 胜率稳定在93%以上。 实验方法 实现了α-β剪枝算法。 原理 α-β剪枝算法是基于max-min算法实现的。与蒙特卡洛对棋局随机模拟不同，max-min算法需要对棋局进行形势判断,由此给出max-min决策树上每一点的分值. 所以max-min算法的成功率不仅取决于计算量,也">
+<meta property="og:description" content="四子棋实验报告 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  最终版本的对抗结果 胜率稳定在93%以上。  实验方法 实现了α-β剪枝算法。  原理 α-β剪枝算法是基于max-min算法实现的。与蒙特卡洛对棋局随机模拟不同，max-min算法需要对棋局进行形势判断,由此给出max-min决策树上每一点的分值. 所以max-min算法的成功率不仅取决于计">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-30T08:25:01.000Z">
 <meta property="article:modified_time" content="2023-05-30T13:03:30.038Z">
@@ -173,7 +173,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">四子棋实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%89%88%E6%9C%AC%E7%9A%84%E5%AF%B9%E6%8A%97%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.</span> <span class="toc-text">最终版本的对抗结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">实验方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#max-min%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">max-min算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%CE%B1-%CE%B2%E5%89%AA%E6%9E%9D"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">α-β剪枝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">形势判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">补丁</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E9%83%A8%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text">创新部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%AD%90%E6%A3%8B%E5%B0%8F%E7%9F%A5%E8%AF%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">四子棋小知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-%E5%8F%AF%E8%83%BD%E7%9A%84-%E9%95%BF%E5%BA%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text">计算(可能的)长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text">新的形势判断函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.4.</span> <span class="toc-text">新的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E8%83%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.5.</span> <span class="toc-text">追胜的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81-2"><span class="toc-number">1.3.6.</span> <span class="toc-text">补丁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">时间控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.8.</span> <span class="toc-text">内存控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%84%9F%E6%83%B3"><span class="toc-number">1.4.</span> <span class="toc-text">致谢与实验感想</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E5%AD%90%E6%A3%8B%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.</span> <span class="toc-text"> 四子棋实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%89%88%E6%9C%AC%E7%9A%84%E5%AF%B9%E6%8A%97%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.</span> <span class="toc-text"> 最终版本的对抗结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text"> 实验方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#max-min%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> max-min算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%CE%B1-%CE%B2%E5%89%AA%E6%9E%9D"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> α-β剪枝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.2.3.</span> <span class="toc-text"> 形势判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81"><span class="toc-number">1.2.2.4.</span> <span class="toc-text"> 补丁</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E9%83%A8%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text"> 创新部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%AD%90%E6%A3%8B%E5%B0%8F%E7%9F%A5%E8%AF%86"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 四子棋小知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%83%BD%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 计算(可能的)长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 新的形势判断函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 新的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E8%83%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 追胜的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81-2"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 补丁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text"> 时间控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.8.</span> <span class="toc-text"> 内存控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%84%9F%E6%83%B3"><span class="toc-number">1.4.</span> <span class="toc-text"> 致谢与实验感想</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -230,147 +230,116 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>四子棋实验报告</h1>
+    <h1 id="四子棋实验报告"><a class="markdownIt-Anchor" href="#四子棋实验报告"></a> 四子棋实验报告</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
-<h2 id="最终版本的对抗结果">最终版本的对抗结果</h2>
+<h2 id="最终版本的对抗结果"><a class="markdownIt-Anchor" href="#最终版本的对抗结果"></a> 最终版本的对抗结果</h2>
 <p>胜率稳定在93%以上。</p>
-<h2 id="实验方法">实验方法</h2>
+<h2 id="实验方法"><a class="markdownIt-Anchor" href="#实验方法"></a> 实验方法</h2>
 <p>实现了α-β剪枝算法。</p>
-<h3 id="原理">原理</h3>
+<h3 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h3>
 <p>α-β剪枝算法是基于max-min算法实现的。与蒙特卡洛对棋局随机模拟不同，max-min算法需要对棋局进行<mark>形势判断</mark>,由此给出max-min决策树上每一点的分值.</p>
 <p>所以max-min算法的成功率不仅取决于计算量,也取决于形势判断函数的精度.</p>
 <p>α-β剪枝的作用是:<em>对方已经有了更好的选择，不需要再继续搜索，因为对方会选择让我方分数最小的点</em>.</p>
 <p>所以整个α-β剪枝算法相比于蒙特卡洛而言更加类似于人类棋手的思维模式:</p>
 <ol>
-<li class="lvl-3">
-<p>拓展决策树到目的深度(实际上是dfs的过程)</p>
-</li>
-<li class="lvl-3">
-<p>给出叶子结点的形势判断</p>
-</li>
-<li class="lvl-3">
-<p>上层的opponent选择对当前层player最不利的下法(返回分值)</p>
-</li>
-<li class="lvl-3">
-<p>其中进行a-b剪枝,如果祖父层的player发现下过某一步后,opponent给出了比祖父player目前最优选择的结果更差的一步,祖父player不需要知道自己走的这一步究竟多差,放弃选择这一步.</p>
-</li>
+<li>拓展决策树到目的深度(实际上是dfs的过程)</li>
+<li>给出叶子结点的形势判断</li>
+<li>上层的opponent选择对当前层player最不利的下法(返回分值)</li>
+<li>其中进行a-b剪枝,如果祖父层的player发现下过某一步后,opponent给出了比祖父player目前最优选择的结果更差的一步,祖父player不需要知道自己走的这一步究竟多差,放弃选择这一步.</li>
 </ol>
-<h3 id="具体实现">具体实现</h3>
-<h4 id="max-min算法">max-min算法</h4>
+<h3 id="具体实现"><a class="markdownIt-Anchor" href="#具体实现"></a> 具体实现</h3>
+<h4 id="max-min算法"><a class="markdownIt-Anchor" href="#max-min算法"></a> max-min算法</h4>
 <p>原理1-3部分实际上就是算法的基本实现过程，其中player（我）是max结点，会选择对我最有利的局面；opponent是min结点，会选择对我最不利的结点。</p>
-<h4 id="α-β剪枝">α-β剪枝</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
+<h4 id="α-β剪枝"><a class="markdownIt-Anchor" href="#α-β剪枝"></a> α-β剪枝</h4>
+<ul>
+<li>
 <p>player结点：更新<code>alpha = max(alpha, temp_score);</code>如果发现alpha超过了父opponent结点已知的分分数上界beta,由于opponent一定不会选择下这一步,故放弃搜索</p>
 </li>
-<li class="lvl-2">
+<li>
 <p>opponent结点：更新<code>beta = min(beta, temp_score);</code>如果发现beta小于了父player结点已知的分分数下界alpha,由于player一定不会选择下这一步,故放弃搜索</p>
 </li>
 </ul>
-<h4 id="形势判断">形势判断</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>最naive的版本是，遍历每一个空点，计算这个点八个方向能够连成的最大长度。給（1，2，3，4）分别一个分数例如（1，10，100，1000）最终这个点的得分是player的长度分-opponent的长度分。整个盘面的形势分就是所有点的得分之和。</p>
-</li>
-<li class="lvl-2">
-<p>这样可以简单地看到，如果对手有更多马上能够连成4个的点，那么局面对我不利，否则对我有利。</p>
-</li>
-<li class="lvl-2">
-<p>这样的形势判断大概能获得50+%的得分</p>
-</li>
+<h4 id="形势判断"><a class="markdownIt-Anchor" href="#形势判断"></a> 形势判断</h4>
+<ul>
+<li>最naive的版本是，遍历每一个空点，计算这个点八个方向能够连成的最大长度。給（1，2，3，4）分别一个分数例如（1，10，100，1000）最终这个点的得分是player的长度分-opponent的长度分。整个盘面的形势分就是所有点的得分之和。</li>
+<li>这样可以简单地看到，如果对手有更多马上能够连成4个的点，那么局面对我不利，否则对我有利。</li>
+<li>这样的形势判断大概能获得50+%的得分</li>
 </ul>
-<h4 id="补丁">补丁</h4>
+<h4 id="补丁"><a class="markdownIt-Anchor" href="#补丁"></a> 补丁</h4>
 <p>如果发现自己能连成4个子，则直接落子。</p>
 <p>接下来，如果发现对手能连成四个子，则堵住。</p>
-<h2 id="创新部分">创新部分</h2>
+<h2 id="创新部分"><a class="markdownIt-Anchor" href="#创新部分"></a> 创新部分</h2>
 <p>本次实验完全自己完成，所以尝试了各种正常的不正常的创新方法提升我的胜率。</p>
 <p>但是对于α-β剪枝来说，若想提升胜率，我尝试引入一些专家知识，所以我学习了四子棋的一些基本下法</p>
-<h3 id="四子棋小知识">四子棋小知识</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
+<h3 id="四子棋小知识"><a class="markdownIt-Anchor" href="#四子棋小知识"></a> 四子棋小知识</h3>
+<ul>
+<li>
 <p>迫手：类似于五子棋连成4个子，如果四子棋下一步可以连成四个子，则称形成了迫手（逼迫对手一定要走这里）</p>
-<ul class="lvl-2">
-<li class="lvl-4">无效迫手：如果有player在棋盘较底部形成迫手，则其上的opponent迫手实际上是无效迫手，因为opponent若想获得迫手，必须要填满其下的格子，但是player已经获胜了</li>
-<li class="lvl-4">双迫手，如果player形成双迫手，则opponent无论堵哪个，都可以获胜。</li>
+<ul>
+<li>无效迫手：如果有player在棋盘较底部形成迫手，则其上的opponent迫手实际上是无效迫手，因为opponent若想获得迫手，必须要填满其下的格子，但是player已经获胜了</li>
+<li>双迫手，如果player形成双迫手，则opponent无论堵哪个，都可以获胜。</li>
 </ul>
 </li>
-<li class="lvl-2">
+<li>
 <p>劣招：容易发现，如果ai实力相当的话，实际上最后胜利总是有一方下满棋盘所有可能的位置后，不得不走在敌方迫手的下一格，导致对手下到自己的迫手而获胜。我们把这种被迫失败的招数称为劣招</p>
-<ul class="lvl-2">
-<li class="lvl-4">
+<ul>
+<li>
 <p>安全运转：如果棋盘剩下的列剩下的格子均为偶数，则后手方可以通过<code>安全运转</code>的方式控制先手方只能获得奇数格.这是7-6棋盘四子棋先手必胜的重要原因</p>
 </li>
-<li class="lvl-4">
-<p>奇偶迫手:根据上面的内容可以简单地推出下面的结论,如果局面仅剩的最后两列，白棋和黑棋在分别在不同列有且仅有一个迫手，且不会形成更多的迫手。<br>
-1、白奇黑偶，那么白胜。<br>
-2、白偶黑偶，那么黑胜。<br>
-3、白偶黑奇，那么平。<br>
+<li>
+<p>奇偶迫手:根据上面的内容可以简单地推出下面的结论,如果局面仅剩的最后两列，白棋和黑棋在分别在不同列有且仅有一个迫手，且不会形成更多的迫手。<br />
+1、白奇黑偶，那么白胜。<br />
+2、白偶黑偶，那么黑胜。<br />
+3、白偶黑奇，那么平。<br />
 4、白奇黑奇，那么平。</p>
 <p>其中黑棋表示后手方.奇/偶表示在某一列的从下往上数的奇/偶行存在迫手</p>
 </li>
 </ul>
 </li>
-<li class="lvl-2">
+<li>
 <p>追胜:这里引入五子棋的概念.可以通过一系列的迫手,让对手不停被迫落子,直到自己获得双迫手,或者对手被迫落子后自己连成四子.</p>
 </li>
 </ul>
 <p>学习过上面的四子棋小知识后引入我的创新尝试.</p>
-<h3 id="计算-可能的-长度">计算(可能的)长度</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
+<h3 id="计算可能的长度"><a class="markdownIt-Anchor" href="#计算可能的长度"></a> 计算(可能的)长度</h3>
+<ul>
+<li>
 <p>希望如果这个点和周围自己的棋子之间即使有空位,比如[黑][白][-][+][白][黑] 这时[+]应该记为3而不是2</p>
 </li>
-<li class="lvl-2">
+<li>
 <p>希望给出可能的长度,如果某一方向不可能形成4个字,返回-1比如[黑][白][+][白][黑] [+]不可能横向成4子横向长度记为-1</p>
 </li>
-<li class="lvl-2">
+<li>
 <p>实现方案:</p>
-<ul class="lvl-2">
-<li class="lvl-4">采取窗口滑动来计算某一点的大小,用一个长度为4的窗口在包含[+]的四个方向滑动,如果中间有禁入点或者对手棋子,则这个窗口长度记为0,最后找到含有最多本方棋子的窗口.</li>
+<ul>
+<li>采取窗口滑动来计算某一点的大小,用一个长度为4的窗口在包含[+]的四个方向滑动,如果中间有禁入点或者对手棋子,则这个窗口长度记为0,最后找到含有最多本方棋子的窗口.</li>
 </ul>
 </li>
 </ul>
-<h3 id="新的形势判断函数">新的形势判断函数</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>naive的修改:不再对全局的点进行判断,而只是选择那些对局面有影响的点.具体来说只判断该点下面三个位置有棋子的点(只是为了减小计算量)</p>
-</li>
-<li class="lvl-2">
-<p>如果这个局面轮到某一player,且这个player可以连成4个,则返回无限大<code>INT-MAX</code>或者<code>intmin</code>,这方便剪枝,并且是合理的,因为无论能形成多少迫手,价值都不会比取得胜利大.</p>
-</li>
-<li class="lvl-2">
-<p>无效迫手:考虑到四子棋小知识中的无效迫手环节.如果棋盘底部有player的迫手,则迫手上方opponent的分数除以10(价值降低)</p>
-</li>
+<h3 id="新的形势判断函数"><a class="markdownIt-Anchor" href="#新的形势判断函数"></a> 新的形势判断函数</h3>
+<ul>
+<li>naive的修改:不再对全局的点进行判断,而只是选择那些对局面有影响的点.具体来说只判断该点下面三个位置有棋子的点(只是为了减小计算量)</li>
+<li>如果这个局面轮到某一player,且这个player可以连成4个,则返回无限大<code>INT-MAX</code>或者<code>intmin</code>,这方便剪枝,并且是合理的,因为无论能形成多少迫手,价值都不会比取得胜利大.</li>
+<li>无效迫手:考虑到四子棋小知识中的无效迫手环节.如果棋盘底部有player的迫手,则迫手上方opponent的分数除以10(价值降低)</li>
 </ul>
-<h3 id="新的问题">新的问题</h3>
+<h3 id="新的问题"><a class="markdownIt-Anchor" href="#新的问题"></a> 新的问题</h3>
 <ol>
-<li class="lvl-3">
-<p>不知道双迫手,常常被对手形成两个迫手而输掉</p>
-</li>
-<li class="lvl-3">
-<p>赢了开浪,判断自己要获胜后(得分为’INT-max’)不会选择最简明的取胜方法,而是认为自己下哪里都能赢.可是由于我不能保证我的算法永远work,常常浪输比赛</p>
-</li>
-<li class="lvl-3">
-<p>输了开摆,当判断自己无论走哪里都会输时(无论走哪里得分都是<code>int-min</code>),不会挣扎</p>
-</li>
+<li>不知道双迫手,常常被对手形成两个迫手而输掉</li>
+<li>赢了开浪,判断自己要获胜后(得分为’INT-max’)不会选择最简明的取胜方法,而是认为自己下哪里都能赢.可是由于我不能保证我的算法永远work,常常浪输比赛</li>
+<li>输了开摆,当判断自己无论走哪里都会输时(无论走哪里得分都是<code>int-min</code>),不会挣扎</li>
 </ol>
 <p>因此我引入了更多专家知识,比如<strong>追胜</strong></p>
 <p>如果我落子时,判断对方可以通过追胜的方法取得胜利,则禁止下到这一点.</p>
 <p>如果我落子时,发现自己可以通过追胜取得胜利,则直接追胜.</p>
-<h3 id="追胜的实现">追胜的实现</h3>
+<h3 id="追胜的实现"><a class="markdownIt-Anchor" href="#追胜的实现"></a> 追胜的实现</h3>
 <p>简单来说就是递归地模拟落子</p>
 <ol>
-<li class="lvl-3">
-<p>遍历棋盘上所有可能的落子点</p>
-</li>
-<li class="lvl-3">
-<p>如果可以取得胜利，返回<code>胜利</code></p>
-</li>
-<li class="lvl-3">
-<p>否则如果可以形成迫手,则落子</p>
-<ul class="lvl-2">
-<li class="lvl-5">如果对手能直接取得胜利,不考虑这个落子点</li>
-<li class="lvl-5">否则对手必然要堵住我的迫手,继续模拟落子,直到胜利/不能形成新的迫手</li>
+<li>遍历棋盘上所有可能的落子点</li>
+<li>如果可以取得胜利，返回<code>胜利</code></li>
+<li>否则如果可以形成迫手,则落子
+<ul>
+<li>如果对手能直接取得胜利,不考虑这个落子点</li>
+<li>否则对手必然要堵住我的迫手,继续模拟落子,直到胜利/不能形成新的迫手</li>
 </ul>
 </li>
 </ol>
@@ -378,33 +347,25 @@
 <p>对于追胜来说还有更多的边界条件,写在我的代码注释里.</p>
 <p>在每次模拟落子时，首先检测自己是否能够追胜，这样大大提高了剪枝效率</p>
 <p>经过实验我发现,仅仅使用追胜判断+形势判断(如果能追胜就追胜,如果对手追胜则禁止,其余情况下使得自己局面分数最高的点)已经可以实现<strong>70%的胜率</strong></p>
-<h3 id="补丁-2">补丁</h3>
+<h3 id="补丁-2"><a class="markdownIt-Anchor" href="#补丁-2"></a> 补丁</h3>
 <p>对于输了开摆,我采取的方式是,降低搜索深度,选择比较低深度下最佳的点,这样ai不知道自己要输,就会认真下.</p>
 <p>如果还是输,则继续降低深度,</p>
 <p>(如果看一眼就知道走哪都要输了,那就开摆吧…随机下一个)</p>
-<h3 id="时间控制">时间控制</h3>
+<h3 id="时间控制"><a class="markdownIt-Anchor" href="#时间控制"></a> 时间控制</h3>
 <p>首版本的α-β剪枝用时几乎都在500ms以内，虽然能够达到90%左右胜率，但是我难以控制搜索深度，深度为6（每人走三步）.时经常超时,深度为5,则用时太少,而且由于我使用了递归,棋盘大小对我用时的影响非常大</p>
 <p>所以最终采取的方案是,初始深度限制为7(一个较大的数)如果到了50%的time-limit,则深度限制减一,80%的limit,继续减一.95%的limit,不再继续搜索,直接返回形势判断值.</p>
 <p>但是这样其实也有问题,就是前面几列搜索深度较深,后面较浅,不平衡.</p>
 <p>开局落子可能性多,中局落子可能性少,因而每步用时基本是下降趋势,但有时中局的决策更加重要</p>
-<h3 id="内存控制">内存控制</h3>
+<h3 id="内存控制"><a class="markdownIt-Anchor" href="#内存控制"></a> 内存控制</h3>
 <p>我的算法根本不需要额外内存开销（完全是在同一个棋盘上模拟），所以根本不需要控制内存。感觉很吃亏，但也没有想到好方法用上内存</p>
-<h2 id="致谢与实验感想">致谢与实验感想</h2>
+<h2 id="致谢与实验感想"><a class="markdownIt-Anchor" href="#致谢与实验感想"></a> 致谢与实验感想</h2>
 <p>本次实验代码完全是自己完成，没有参考任何往年代码。</p>
 <p>四子棋的知识来源于百度贴吧的分享<a target="_blank" rel="noopener" href="https://tieba.baidu.com/p/4941848759">【图片】屏风式四子棋获胜诀窍（先手必胜？）！【新棋吧】_百度贴吧 (baidu.com)</a></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>算法实际上有相当多的妥协,如果在每一步想要更多精度,就会损失搜索深度</p>
-</li>
-<li class="lvl-2">
-<p>我本来想引入更多专家知识,但是胜率越来越低.一方面我不能保证我的代码正确性,另一方面如果我已经下不过ai,我教他下棋只会越教越菜.</p>
-</li>
-<li class="lvl-2">
-<p>但是蒙特卡洛根本没这么多事情,它不需要形势判断,而且可以控制计算时间.我真的后悔为什么要写α-β剪枝(为什么要推荐我写)</p>
-</li>
-<li class="lvl-2">
-<p>我认为本实验最大的创新点是引入了追胜的概念，它确实有效，但是耗费了我大量时间考虑边界条件和debug。最终版本的追胜算法实际上是在我改了很多版之后改回了较为原始的版本。一方面，胜利的判断是很难的，比如加入认为自己一列上有连续两个迫手则宣称获胜，很可能对手在另一列通过追胜直接获胜；另一方面，追胜导致了更为激进的剪枝，这很容易使得ai对形势出现误判；再者，认为自己获胜或失败非常容易导致<code>赢了开浪,输了开摆</code>的结果,所以最终我限制了追胜的搜索深度.</p>
-</li>
+<ul>
+<li>算法实际上有相当多的妥协,如果在每一步想要更多精度,就会损失搜索深度</li>
+<li>我本来想引入更多专家知识,但是胜率越来越低.一方面我不能保证我的代码正确性,另一方面如果我已经下不过ai,我教他下棋只会越教越菜.</li>
+<li>但是蒙特卡洛根本没这么多事情,它不需要形势判断,而且可以控制计算时间.我真的后悔为什么要写α-β剪枝(为什么要推荐我写)</li>
+<li>我认为本实验最大的创新点是引入了追胜的概念，它确实有效，但是耗费了我大量时间考虑边界条件和debug。最终版本的追胜算法实际上是在我改了很多版之后改回了较为原始的版本。一方面，胜利的判断是很难的，比如加入认为自己一列上有连续两个迫手则宣称获胜，很可能对手在另一列通过追胜直接获胜；另一方面，追胜导致了更为激进的剪枝，这很容易使得ai对形势出现误判；再者，认为自己获胜或失败非常容易导致<code>赢了开浪,输了开摆</code>的结果,所以最终我限制了追胜的搜索深度.</li>
 </ul>
 
   </div>
@@ -453,7 +414,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">四子棋实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%89%88%E6%9C%AC%E7%9A%84%E5%AF%B9%E6%8A%97%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.</span> <span class="toc-text">最终版本的对抗结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">实验方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#max-min%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">max-min算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%CE%B1-%CE%B2%E5%89%AA%E6%9E%9D"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">α-β剪枝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">形势判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">补丁</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E9%83%A8%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text">创新部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%AD%90%E6%A3%8B%E5%B0%8F%E7%9F%A5%E8%AF%86"><span class="toc-number">1.3.1.</span> <span class="toc-text">四子棋小知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-%E5%8F%AF%E8%83%BD%E7%9A%84-%E9%95%BF%E5%BA%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text">计算(可能的)长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text">新的形势判断函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.4.</span> <span class="toc-text">新的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E8%83%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.5.</span> <span class="toc-text">追胜的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81-2"><span class="toc-number">1.3.6.</span> <span class="toc-text">补丁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text">时间控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.8.</span> <span class="toc-text">内存控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%84%9F%E6%83%B3"><span class="toc-number">1.4.</span> <span class="toc-text">致谢与实验感想</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%E5%AD%90%E6%A3%8B%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.</span> <span class="toc-text"> 四子棋实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%89%88%E6%9C%AC%E7%9A%84%E5%AF%B9%E6%8A%97%E7%BB%93%E6%9E%9C"><span class="toc-number">1.1.</span> <span class="toc-text"> 最终版本的对抗结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text"> 实验方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#max-min%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> max-min算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%CE%B1-%CE%B2%E5%89%AA%E6%9E%9D"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> α-β剪枝</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.2.3.</span> <span class="toc-text"> 形势判断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81"><span class="toc-number">1.2.2.4.</span> <span class="toc-text"> 补丁</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E9%83%A8%E5%88%86"><span class="toc-number">1.3.</span> <span class="toc-text"> 创新部分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E5%AD%90%E6%A3%8B%E5%B0%8F%E7%9F%A5%E8%AF%86"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 四子棋小知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E5%8F%AF%E8%83%BD%E7%9A%84%E9%95%BF%E5%BA%A6"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 计算(可能的)长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E5%BD%A2%E5%8A%BF%E5%88%A4%E6%96%AD%E5%87%BD%E6%95%B0"><span class="toc-number">1.3.3.</span> <span class="toc-text"> 新的形势判断函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.3.4.</span> <span class="toc-text"> 新的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%BD%E8%83%9C%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.3.5.</span> <span class="toc-text"> 追胜的实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E4%B8%81-2"><span class="toc-number">1.3.6.</span> <span class="toc-text"> 补丁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.7.</span> <span class="toc-text"> 时间控制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E6%8E%A7%E5%88%B6"><span class="toc-number">1.3.8.</span> <span class="toc-text"> 内存控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%B4%E8%B0%A2%E4%B8%8E%E5%AE%9E%E9%AA%8C%E6%84%9F%E6%83%B3"><span class="toc-number">1.4.</span> <span class="toc-text"> 致谢与实验感想</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="t 同步时序电路的分析与设计方法   作原始状态表👈  就是一大状态机？    化简原始状态表  就是自动机化简?    求出激励函数  根据化简后的状态机给出$input,Q_i与Q_i’$的关系 从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$) 给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难 卡诺图,给出$D_i与input,Q_i$之间的关系    画">
+  <meta name="description" content="t  同步时序电路的分析与设计方法   作原始状态表👈  就是一大状态机？    化简原始状态表  就是自动机化简?    求出激励函数  根据化简后的状态机给出input,Qi与Qi′input,Q_i与Q_i&amp;#x27;input,Qi​与Qi′​的关系 从而反推出DiD_iDi​,(对于JK触发器,当然是Ji,KiJ_i,K_iJi​,Ki​) 给一个JK触发器的表?–&gt;easy实">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DLC12">
 <meta property="og:url" content="https://ggxloveslife.top/notes/DLC/week12/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="t 同步时序电路的分析与设计方法   作原始状态表👈  就是一大状态机？    化简原始状态表  就是自动机化简?    求出激励函数  根据化简后的状态机给出$input,Q_i与Q_i’$的关系 从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$) 给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难 卡诺图,给出$D_i与input,Q_i$之间的关系    画">
+<meta property="og:description" content="t  同步时序电路的分析与设计方法   作原始状态表👈  就是一大状态机？    化简原始状态表  就是自动机化简?    求出激励函数  根据化简后的状态机给出input,Qi与Qi′input,Q_i与Q_i&amp;#x27;input,Qi​与Qi′​的关系 从而反推出DiD_iDi​,(对于JK触发器,当然是Ji,KiJ_i,K_iJi​,Ki​) 给一个JK触发器的表?–&gt;easy实">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-05-08T04:25:01.000Z">
 <meta property="article:modified_time" content="2023-05-08T04:29:44.152Z">
@@ -173,7 +173,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">t</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">同步时序电路的分析与设计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%AE%A1%E6%95%B0%E5%99%A8%E6%97%B6%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.0.1.</span> <span class="toc-text">设计计数器时应该注意的问题</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#t"><span class="toc-number">1.</span> <span class="toc-text"> t</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> 同步时序电路的分析与设计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%AE%A1%E6%95%B0%E5%99%A8%E6%97%B6%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 设计计数器时应该注意的问题</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -230,42 +230,40 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>t</h1>
-<h1>同步时序电路的分析与设计方法</h1>
-<ul class="lvl-0">
-<li class="lvl-2">
+    <h1 id="t"><a class="markdownIt-Anchor" href="#t"></a> t</h1>
+<h1 id="同步时序电路的分析与设计方法"><a class="markdownIt-Anchor" href="#同步时序电路的分析与设计方法"></a> 同步时序电路的分析与设计方法</h1>
+<ul>
+<li>
 <p>作原始状态表👈</p>
 <blockquote>
 <p>就是一大状态机？</p>
 </blockquote>
 </li>
-<li class="lvl-2">
+<li>
 <p>化简原始状态表</p>
 <blockquote>
 <p>就是自动机化简?</p>
 </blockquote>
 </li>
-<li class="lvl-2">
+<li>
 <p>求出激励函数</p>
 <blockquote>
-<p>根据化简后的状态机给出$input,Q_i与Q_i’$的关系</p>
-<p>从而反推出$D_i$,(对于JK触发器,当然是$J_i,K_i$)</p>
+<p>根据化简后的状态机给出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mi>n</mi><mi>p</mi><mi>u</mi><mi>t</mi><mo separator="true">,</mo><msub><mi>Q</mi><mi>i</mi></msub><mi mathvariant="normal">与</mi><msubsup><mi>Q</mi><mi>i</mi><mo mathvariant="normal">′</mo></msubsup></mrow><annotation encoding="application/x-tex">input,Q_i与Q_i&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.010556em;vertical-align:-0.258664em;"></span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">p</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">与</span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-2.441336em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.258664em;"><span></span></span></span></span></span></span></span></span></span>的关系</p>
+<p>从而反推出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">D_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>,(对于JK触发器,当然是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>J</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>K</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">J_i,K_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.09618em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>)</p>
 <p>给一个JK触发器的表?–&gt;easy实际上也就是4种情况.不难</p>
-<p>卡诺图,给出$D_i与input,Q_i$之间的关系</p>
+<p>卡诺图,给出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">与</mi><mi>i</mi><mi>n</mi><mi>p</mi><mi>u</mi><mi>t</mi><mo separator="true">,</mo><msub><mi>Q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">D_i与input,Q_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">与</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">p</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>之间的关系</p>
 </blockquote>
 </li>
-<li class="lvl-2">
+<li>
 <p>画逻辑图</p>
 <blockquote>
-<p>给出$D_i与input,Q_i$之间的关系后,用组合逻辑电路表达这个关系</p>
+<p>给出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mi>i</mi></msub><mi mathvariant="normal">与</mi><mi>i</mi><mi>n</mi><mi>p</mi><mi>u</mi><mi>t</mi><mo separator="true">,</mo><msub><mi>Q</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">D_i与input,Q_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">与</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">p</span><span class="mord mathdefault">u</span><span class="mord mathdefault">t</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>之间的关系后,用组合逻辑电路表达这个关系</p>
 </blockquote>
 </li>
 </ul>
-<h3 id="设计计数器时应该注意的问题">设计计数器时应该注意的问题</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>将技术循环外的状态修改后,自动进入计数循环/</p>
-</li>
+<h3 id="设计计数器时应该注意的问题"><a class="markdownIt-Anchor" href="#设计计数器时应该注意的问题"></a> 设计计数器时应该注意的问题</h3>
+<ul>
+<li>将技术循环外的状态修改后,自动进入计数循环/</li>
 </ul>
 
   </div>
@@ -314,7 +312,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">t</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">同步时序电路的分析与设计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%AE%A1%E6%95%B0%E5%99%A8%E6%97%B6%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.0.1.</span> <span class="toc-text">设计计数器时应该注意的问题</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#t"><span class="toc-number">1.</span> <span class="toc-text"> t</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8C%E6%AD%A5%E6%97%B6%E5%BA%8F%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text"> 同步时序电路的分析与设计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%AE%A1%E6%95%B0%E5%99%A8%E6%97%B6%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 设计计数器时应该注意的问题</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

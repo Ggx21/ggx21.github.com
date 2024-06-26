@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="计算机网络安全体系结构 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;7 算法、实现–&gt;安全机制–&gt;安全服务–&gt;安全目标 我们需要阻止被动攻击，检测出主动攻击 安全目标 CIA   Confidentiality:保密性 防止被动攻击（内容泄露给未授权的实体）   一方面是防止内容泄露   另一方面是防止流量分析     Integrity:完整">
+  <meta name="description" content="计算机网络安全体系结构 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;7 算法、实现–&gt;安全机制–&gt;安全服务–&gt;安全目标 我们需要阻止被动攻击，检测出主动攻击  安全目标 CIA    Confidentiality:保密性 防止被动攻击（内容泄露给未授权的实体）  一方面是防止内容泄露 另一方面是防止流量分析     Integrity:完整">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-0计算机网络安全体系结构">
 <meta property="og:url" content="https://ggxloveslife.top/notes/network_security/2-0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="计算机网络安全体系结构 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;7 算法、实现–&gt;安全机制–&gt;安全服务–&gt;安全目标 我们需要阻止被动攻击，检测出主动攻击 安全目标 CIA   Confidentiality:保密性 防止被动攻击（内容泄露给未授权的实体）   一方面是防止内容泄露   另一方面是防止流量分析     Integrity:完整">
+<meta property="og:description" content="计算机网络安全体系结构 郭高旭 ggx21@mails.tsinghua.edu.cn 2023&#x2F;12&#x2F;7 算法、实现–&gt;安全机制–&gt;安全服务–&gt;安全目标 我们需要阻止被动攻击，检测出主动攻击  安全目标 CIA    Confidentiality:保密性 防止被动攻击（内容泄露给未授权的实体）  一方面是防止内容泄露 另一方面是防止流量分析     Integrity:完整">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/5718c6d9c0402d9fe71f2237ff6f5985/202401011535640.png">
 <meta property="article:published_time" content="2023-12-31T12:20:51.000Z">
@@ -176,7 +176,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">计算机网络安全体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87-CIA"><span class="toc-number">1.1.</span> <span class="toc-text">安全目标 CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Confidentiality-%E4%BF%9D%E5%AF%86%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">Confidentiality:保密性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integrity-%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">Integrity:完整性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Availability-%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">Availability:可用性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%9B%AE%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text">OSI安全体系目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">安全服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">普通安全机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">特定安全机制</span></a></li></ol></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text"> 计算机网络安全体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87-cia"><span class="toc-number">1.1.</span> <span class="toc-text"> 安全目标 CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#confidentiality%E4%BF%9D%E5%AF%86%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> Confidentiality:保密性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#integrity%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.1.0.2.</span> <span class="toc-text"> Integrity:完整性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#availability%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-number">1.1.0.3.</span> <span class="toc-text"> Availability:可用性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#osi%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%9B%AE%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text"> OSI安全体系目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 安全服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 普通安全机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> 特定安全机制</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -233,94 +233,71 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>计算机网络安全体系结构</h1>
+    <h1 id="计算机网络安全体系结构"><a class="markdownIt-Anchor" href="#计算机网络安全体系结构"></a> 计算机网络安全体系结构</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2023/12/7</p>
 <p><code>算法、实现</code>–&gt;<code>安全机制</code>–&gt;<code>安全服务</code>–&gt;<code>安全目标</code></p>
 <p>我们需要<strong>阻止</strong>被动攻击，<strong>检测</strong>出主动攻击</p>
-<h2 id="安全目标-CIA">安全目标 CIA</h2>
-<ul class="lvl-0">
-<li class="lvl-2">
-<h4 id="Confidentiality-保密性">Confidentiality:保密性</h4>
+<h2 id="安全目标-cia"><a class="markdownIt-Anchor" href="#安全目标-cia"></a> 安全目标 CIA</h2>
+<ul>
+<li>
+<h4 id="confidentiality保密性"><a class="markdownIt-Anchor" href="#confidentiality保密性"></a> Confidentiality:保密性</h4>
 <p>防止被动攻击（内容泄露给未授权的实体）</p>
-<ul class="lvl-2">
-<li class="lvl-4">
-<p>一方面是防止内容泄露</p>
-</li>
-<li class="lvl-4">
-<p>另一方面是防止流量分析</p>
-</li>
+<ul>
+<li>一方面是防止内容泄露</li>
+<li>另一方面是防止流量分析</li>
 </ul>
 </li>
-<li class="lvl-2">
-<h4 id="Integrity-完整性">Integrity:完整性</h4>
+<li>
+<h4 id="integrity完整性"><a class="markdownIt-Anchor" href="#integrity完整性"></a> Integrity:完整性</h4>
 <p>防止主动攻击，篡改，插入，重放（通过要求序列号，Nonce等的完整性）</p>
 <p>我们更关心检测攻击而不是阻止攻击。</p>
 </li>
-<li class="lvl-2">
-<h4 id="Availability-可用性">Availability:可用性</h4>
+<li>
+<h4 id="availability可用性"><a class="markdownIt-Anchor" href="#availability可用性"></a> Availability:可用性</h4>
 <p>抵抗Dos攻击以及其他对网络处理能力的攻击</p>
 </li>
 </ul>
-<h2 id="OSI安全体系目标">OSI安全体系目标</h2>
+<h2 id="osi安全体系目标"><a class="markdownIt-Anchor" href="#osi安全体系目标"></a> OSI安全体系目标</h2>
 <p>ITU-T推荐方案X.800， 即OSI安全框架，定义了一种系统方法，为网络管理员提供了一种安全的组织方法</p>
 <p>OSI安全框架主要关注<strong>安全服务</strong>、<strong>安全机制</strong>和<strong>安全攻击</strong></p>
 <ol>
-<li class="lvl-3">
-<p><strong>安全服务（Security Services）</strong>：旨在提供数据传输的保密性、完整性、身份认证、访问控制等，确保网络通信的安全性和可靠性。</p>
-</li>
-<li class="lvl-3">
-<p><strong>安全机制（Security Mechanisms）</strong>：是实施安全服务的具体方法和工具，如加密、数字签名、安全协议等，用于防御威胁和攻击。</p>
-</li>
-<li class="lvl-3">
-<p><strong>安全攻击（Security Attacks）</strong>：指针对网络系统的任何行为，旨在破坏数据的保密性、完整性或可用性，如窃听、篡改、拒绝服务等。</p>
-<ul class="lvl-2">
-<li class="lvl-5">主动攻击：篡改系统资源，影响系统运行</li>
-<li class="lvl-5">被动：sniffer/traffic analysis</li>
+<li><strong>安全服务（Security Services）</strong>：旨在提供数据传输的保密性、完整性、身份认证、访问控制等，确保网络通信的安全性和可靠性。</li>
+<li><strong>安全机制（Security Mechanisms）</strong>：是实施安全服务的具体方法和工具，如加密、数字签名、安全协议等，用于防御威胁和攻击。</li>
+<li><strong>安全攻击（Security Attacks）</strong>：指针对网络系统的任何行为，旨在破坏数据的保密性、完整性或可用性，如窃听、篡改、拒绝服务等。
+<ul>
+<li>主动攻击：篡改系统资源，影响系统运行</li>
+<li>被动：sniffer/traffic analysis</li>
 </ul>
 </li>
 </ol>
 <img src="https://gitlab.com/ggx-blog/imglab/uploads/5718c6d9c0402d9fe71f2237ff6f5985/202401011535640.png" alt="image-20231231163139090" style="zoom:67%;" />
-<h3 id="安全服务">安全服务</h3>
+<h3 id="安全服务"><a class="markdownIt-Anchor" href="#安全服务"></a> 安全服务</h3>
 <ol>
-<li class="lvl-3">
-<p><strong>认证（Authentication）</strong>：确保通信实体是声称的身份。</p>
-<ul class="lvl-2">
-<li class="lvl-5">对等实体认证–&gt;面向连接的应用（一个实体不能在会话过程中伪装/重放）</li>
-<li class="lvl-5">数据源认证–&gt;对数据的来源提供确认，但是对数据的复制和修改不提供保护 面向无连接的应用</li>
+<li><strong>认证（Authentication）</strong>：确保通信实体是声称的身份。
+<ul>
+<li>对等实体认证–&gt;面向连接的应用（一个实体不能在会话过程中伪装/重放）</li>
+<li>数据源认证–&gt;对数据的来源提供确认，但是对数据的复制和修改不提供保护 面向无连接的应用</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p><strong>访问控制（Access Control）</strong>：限制资源访问到授权用户。</p>
-</li>
-<li class="lvl-3">
-<p><strong>数据保密性（Data Confidentiality）</strong>：保护数据不被未授权访问。</p>
-</li>
-<li class="lvl-3">
-<p><strong>数据完整性（Data Integrity）</strong>：确保数据未被未授权地改动。</p>
-<ul class="lvl-2">
-<li class="lvl-5">面向连接的完整性服务保证收到的消息和发出的消息一致</li>
-<li class="lvl-5">面向无连接的完整性服务仅保证单条消息不被修改</li>
+<li><strong>访问控制（Access Control）</strong>：限制资源访问到授权用户。</li>
+<li><strong>数据保密性（Data Confidentiality）</strong>：保护数据不被未授权访问。</li>
+<li><strong>数据完整性（Data Integrity）</strong>：确保数据未被未授权地改动。
+<ul>
+<li>面向连接的完整性服务保证收到的消息和发出的消息一致</li>
+<li>面向无连接的完整性服务仅保证单条消息不被修改</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p><strong>非否认性（Non-Repudiation）</strong>：防止任一通信方否认已发送或接收的消息。</p>
-</li>
-<li class="lvl-3">
-<p><strong>服务可用性（Service Availability）</strong>：确保服务对授权用户始终可用。</p>
-</li>
+<li><strong>非否认性（Non-Repudiation）</strong>：防止任一通信方否认已发送或接收的消息。</li>
+<li><strong>服务可用性（Service Availability）</strong>：确保服务对授权用户始终可用。</li>
 </ol>
-<h3 id="安全机制">安全机制</h3>
-<h4 id="普通安全机制">普通安全机制</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>不属于任何协议层或者安全服务的安全机制</p>
-</li>
+<h3 id="安全机制"><a class="markdownIt-Anchor" href="#安全机制"></a> 安全机制</h3>
+<h4 id="普通安全机制"><a class="markdownIt-Anchor" href="#普通安全机制"></a> 普通安全机制</h4>
+<ul>
+<li>不属于任何协议层或者安全服务的安全机制</li>
 </ul>
-<h4 id="特定安全机制">特定安全机制</h4>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>在特定的协议层实现的安全机制</p>
-</li>
+<h4 id="特定安全机制"><a class="markdownIt-Anchor" href="#特定安全机制"></a> 特定安全机制</h4>
+<ul>
+<li>在特定的协议层实现的安全机制</li>
 </ul>
 
   </div>
@@ -369,7 +346,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">计算机网络安全体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87-CIA"><span class="toc-number">1.1.</span> <span class="toc-text">安全目标 CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Confidentiality-%E4%BF%9D%E5%AF%86%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">Confidentiality:保密性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Integrity-%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">Integrity:完整性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Availability-%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">Availability:可用性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSI%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%9B%AE%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text">OSI安全体系目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text">安全服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text">安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">普通安全机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">特定安全机制</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.</span> <span class="toc-text"> 计算机网络安全体系结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87-cia"><span class="toc-number">1.1.</span> <span class="toc-text"> 安全目标 CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#confidentiality%E4%BF%9D%E5%AF%86%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> Confidentiality:保密性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#integrity%E5%AE%8C%E6%95%B4%E6%80%A7"><span class="toc-number">1.1.0.2.</span> <span class="toc-text"> Integrity:完整性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#availability%E5%8F%AF%E7%94%A8%E6%80%A7"><span class="toc-number">1.1.0.3.</span> <span class="toc-text"> Availability:可用性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#osi%E5%AE%89%E5%85%A8%E4%BD%93%E7%B3%BB%E7%9B%AE%E6%A0%87"><span class="toc-number">1.2.</span> <span class="toc-text"> OSI安全体系目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%8D%E5%8A%A1"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 安全服务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 安全机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%99%AE%E9%80%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> 普通安全机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%AE%9A%E5%AE%89%E5%85%A8%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.2.2.</span> <span class="toc-text"> 特定安全机制</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

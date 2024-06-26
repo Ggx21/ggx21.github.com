@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="2-3应用层安全例子：SET  购物：用户在商家的网站上选择商品或服务，并选择在线支付作为付款方式。 结账：用户点击结账，被引导到支付页面。在这里，用户输入支付信息，如信用卡号码、有效期、CVV等。 加密信息传输：支付信息通过安全的SSL连接加密后发送到商家的服务器。 商家请求支付授权：商家将支付请求和用户的支付信息通过其支付网关发送给用户的银行（发卡银行）以请求授权。 支付授权：发卡银行对交易进">
+  <meta name="description" content="2-3应用层安全例子：SET  购物：用户在商家的网站上选择商品或服务，并选择在线支付作为付款方式。 结账：用户点击结账，被引导到支付页面。在这里，用户输入支付信息，如信用卡号码、有效期、CVV等。 加密信息传输：支付信息通过安全的SSL连接加密后发送到商家的服务器。 商家请求支付授权：商家将支付请求和用户的支付信息通过其支付网关发送给用户的银行（发卡银行）以请求授权。 支付授权：发卡银行对交易">
 <meta property="og:type" content="article">
 <meta property="og:title" content="2-3应用层安全例子：SET">
 <meta property="og:url" content="https://ggxloveslife.top/notes/network_security/2-3%E5%BA%94%E7%94%A8%E5%B1%82%E5%AE%89%E5%85%A8%E4%BE%8B%E5%AD%90SET/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="2-3应用层安全例子：SET  购物：用户在商家的网站上选择商品或服务，并选择在线支付作为付款方式。 结账：用户点击结账，被引导到支付页面。在这里，用户输入支付信息，如信用卡号码、有效期、CVV等。 加密信息传输：支付信息通过安全的SSL连接加密后发送到商家的服务器。 商家请求支付授权：商家将支付请求和用户的支付信息通过其支付网关发送给用户的银行（发卡银行）以请求授权。 支付授权：发卡银行对交易进">
+<meta property="og:description" content="2-3应用层安全例子：SET  购物：用户在商家的网站上选择商品或服务，并选择在线支付作为付款方式。 结账：用户点击结账，被引导到支付页面。在这里，用户输入支付信息，如信用卡号码、有效期、CVV等。 加密信息传输：支付信息通过安全的SSL连接加密后发送到商家的服务器。 商家请求支付授权：商家将支付请求和用户的支付信息通过其支付网关发送给用户的银行（发卡银行）以请求授权。 支付授权：发卡银行对交易">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/132c10819e786dbd103044212973bb73/202401011629400.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/02cf78e58f8b64a3899ae71a54b67e93/202401011640765.jpg">
@@ -177,7 +177,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">2-3应用层安全例子：SET</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set"><span class="toc-number">1.1.</span> <span class="toc-text">set</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3%E5%BA%94%E7%94%A8%E5%B1%82%E5%AE%89%E5%85%A8%E4%BE%8B%E5%AD%90set"><span class="toc-number">1.</span> <span class="toc-text"> 2-3应用层安全例子：SET</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set"><span class="toc-number">1.1.</span> <span class="toc-text"> set</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -234,30 +234,26 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>2-3应用层安全例子：SET</h1>
+    <h1 id="2-3应用层安全例子set"><a class="markdownIt-Anchor" href="#2-3应用层安全例子set"></a> 2-3应用层安全例子：SET</h1>
 <ol>
-<li class="lvl-3"><strong>购物</strong>：用户在商家的网站上选择商品或服务，并选择在线支付作为付款方式。</li>
-<li class="lvl-3"><strong>结账</strong>：用户点击结账，被引导到支付页面。在这里，用户输入支付信息，如信用卡号码、有效期、CVV等。</li>
-<li class="lvl-3"><strong>加密信息传输</strong>：支付信息通过安全的SSL连接加密后发送到商家的服务器。</li>
-<li class="lvl-3"><strong>商家请求支付授权</strong>：商家将支付请求和用户的支付信息通过其支付网关发送给用户的银行（发卡银行）以请求授权。</li>
-<li class="lvl-3"><strong>支付授权</strong>：发卡银行对交易进行验证，确认用户的账户信息和交易金额。验证无误后，发卡银行会授权交易，并将授权码返回给商家。</li>
-<li class="lvl-3"><strong>确认交易</strong>：商家收到授权码后，完成订单处理，通常会显示一个订单确认页面给用户，并发送订单详情到用户的邮箱。</li>
-<li class="lvl-3"><strong>结算</strong>：在交易被授权后，通常在当天结束时，商家将所有授权的交易发送给其银行（收单银行）进行结算。收单银行与发卡银行之间交换资金，并将款项存入商家的账户。</li>
-<li class="lvl-3"><strong>发货</strong>：商家在收到款项确认后，开始处理发货或提供服务。</li>
+<li><strong>购物</strong>：用户在商家的网站上选择商品或服务，并选择在线支付作为付款方式。</li>
+<li><strong>结账</strong>：用户点击结账，被引导到支付页面。在这里，用户输入支付信息，如信用卡号码、有效期、CVV等。</li>
+<li><strong>加密信息传输</strong>：支付信息通过安全的SSL连接加密后发送到商家的服务器。</li>
+<li><strong>商家请求支付授权</strong>：商家将支付请求和用户的支付信息通过其支付网关发送给用户的银行（发卡银行）以请求授权。</li>
+<li><strong>支付授权</strong>：发卡银行对交易进行验证，确认用户的账户信息和交易金额。验证无误后，发卡银行会授权交易，并将授权码返回给商家。</li>
+<li><strong>确认交易</strong>：商家收到授权码后，完成订单处理，通常会显示一个订单确认页面给用户，并发送订单详情到用户的邮箱。</li>
+<li><strong>结算</strong>：在交易被授权后，通常在当天结束时，商家将所有授权的交易发送给其银行（收单银行）进行结算。收单银行与发卡银行之间交换资金，并将款项存入商家的账户。</li>
+<li><strong>发货</strong>：商家在收到款项确认后，开始处理发货或提供服务。</li>
 </ol>
-<h2 id="set">set</h2>
+<h2 id="set"><a class="markdownIt-Anchor" href="#set"></a> set</h2>
 <p>总原理图</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/132c10819e786dbd103044212973bb73/202401011629400.png" alt="image-20240101162912359"></p>
-<ul class="lvl-0">
-<li class="lvl-2">
-<p>商家只能看见OI，不能看见PI</p>
-</li>
-<li class="lvl-2">
-<p>银行只能看见PI不能看见OI</p>
-</li>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/132c10819e786dbd103044212973bb73/202401011629400.png" alt="image-20240101162912359" /></p>
+<ul>
+<li>商家只能看见OI，不能看见PI</li>
+<li>银行只能看见PI不能看见OI</li>
 </ul>
 <p><strong>双签名</strong></p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/02cf78e58f8b64a3899ae71a54b67e93/202401011640765.jpg" alt="fa6392a18e74a055c8af7bc94095812"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/02cf78e58f8b64a3899ae71a54b67e93/202401011640765.jpg" alt="fa6392a18e74a055c8af7bc94095812" /></p>
 
   </div>
 </article>
@@ -305,7 +301,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">2-3应用层安全例子：SET</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set"><span class="toc-number">1.1.</span> <span class="toc-text">set</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2-3%E5%BA%94%E7%94%A8%E5%B1%82%E5%AE%89%E5%85%A8%E4%BE%8B%E5%AD%90set"><span class="toc-number">1.</span> <span class="toc-text"> 2-3应用层安全例子：SET</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#set"><span class="toc-number">1.1.</span> <span class="toc-text"> set</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="图形学PA2 REPORT 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 曲线性质 两种曲线的异同 相同点：   都是基于控制点构造出的曲线；   都是多项式参数曲线，不能表示圆等曲线   都可以表示一条平滑的曲线。   不同点：   局部修改：  B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。 Bezier曲线&#x2F;">
+  <meta name="description" content="图形学PA2 REPORT 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  曲线性质  两种曲线的异同 相同点：  都是基于控制点构造出的曲线； 都是多项式参数曲线，不能表示圆等曲线 都可以表示一条平滑的曲线。  不同点：  局部修改：  B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。 Bezier曲线&#x2F;曲面不支">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PA2 REPORT">
 <meta property="og:url" content="https://ggxloveslife.top/homework/graphics/PA2REPORT/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="图形学PA2 REPORT 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 曲线性质 两种曲线的异同 相同点：   都是基于控制点构造出的曲线；   都是多项式参数曲线，不能表示圆等曲线   都可以表示一条平滑的曲线。   不同点：   局部修改：  B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。 Bezier曲线&#x2F;">
+<meta property="og:description" content="图形学PA2 REPORT 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  曲线性质  两种曲线的异同 相同点：  都是基于控制点构造出的曲线； 都是多项式参数曲线，不能表示圆等曲线 都可以表示一条平滑的曲线。  不同点：  局部修改：  B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。 Bezier曲线&#x2F;曲面不支">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-29T04:25:01.000Z">
 <meta property="article:modified_time" content="2023-05-01T10:12:00.561Z">
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">图形学PA2 REPORT</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text">曲线性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">1.1.1.</span> <span class="toc-text">两种曲线的异同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E9%A6%96%E5%B0%BE%E7%9B%B8%E6%8E%A5%E4%B8%94%E6%8E%A5%E7%82%B9%E5%A4%84%E4%B9%9F%E6%9C%89%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E7%9A%84-B-%E6%A0%B7%E6%9D%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%8F%82%E8%80%83"><span class="toc-number">1.3.</span> <span class="toc-text">代码参考</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%AD%A6pa2-report"><span class="toc-number">1.</span> <span class="toc-text"> 图形学PA2 REPORT</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 曲线性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 两种曲线的异同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E9%A6%96%E5%B0%BE%E7%9B%B8%E6%8E%A5%E4%B8%94%E6%8E%A5%E7%82%B9%E5%A4%84%E4%B9%9F%E6%9C%89%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E7%9A%84-b-%E6%A0%B7%E6%9D%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91"><span class="toc-number">1.2.</span> <span class="toc-text"> 代码逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%8F%82%E8%80%83"><span class="toc-number">1.3.</span> <span class="toc-text"> 代码参考</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -231,85 +231,64 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1>图形学PA2 REPORT</h1>
+    <h1 id="图形学pa2-report"><a class="markdownIt-Anchor" href="#图形学pa2-report"></a> 图形学PA2 REPORT</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
-<h2 id="曲线性质">曲线性质</h2>
-<h3 id="两种曲线的异同">两种曲线的异同</h3>
+<h2 id="曲线性质"><a class="markdownIt-Anchor" href="#曲线性质"></a> 曲线性质</h2>
+<h3 id="两种曲线的异同"><a class="markdownIt-Anchor" href="#两种曲线的异同"></a> 两种曲线的异同</h3>
 <p>相同点：</p>
 <ol>
-<li class="lvl-3">
-<p>都是基于控制点构造出的曲线；</p>
-</li>
-<li class="lvl-3">
-<p>都是多项式参数曲线，不能表示圆等曲线</p>
-</li>
-<li class="lvl-3">
-<p>都可以表示一条平滑的曲线。</p>
-</li>
+<li>都是基于控制点构造出的曲线；</li>
+<li>都是多项式参数曲线，不能表示圆等曲线</li>
+<li>都可以表示一条平滑的曲线。</li>
 </ol>
 <p>不同点：</p>
 <ol>
-<li class="lvl-3">
-<p>局部修改：</p>
-<ul class="lvl-2">
-<li class="lvl-5">B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。</li>
-<li class="lvl-5">Bezier曲线/曲面不支持局部的修改和编辑。</li>
+<li>局部修改：
+<ul>
+<li>B 样条是局部的，容易对曲线进行修改、扩展和截断，而这些修改对曲线的其他部分几乎没有影响。</li>
+<li>Bezier曲线/曲面不支持局部的修改和编辑。</li>
 </ul>
 </li>
-<li class="lvl-3">
-<p>拼接：B样条曲线可以拼接，Bezier曲线/曲面拼接时，满足几何连续性条件是十分困难的。</p>
-</li>
-<li class="lvl-3">
-<p>B样条曲线具有下面一系列好的性质</p>
-<ul class="lvl-2">
-<li class="lvl-5">仿射不变性</li>
-<li class="lvl-5">直线保持性</li>
-<li class="lvl-5">凸包性</li>
-<li class="lvl-5">变差缩减性</li>
-<li class="lvl-5">几何不变性</li>
-<li class="lvl-5">etc.</li>
+<li>拼接：B样条曲线可以拼接，Bezier曲线/曲面拼接时，满足几何连续性条件是十分困难的。</li>
+<li>B样条曲线具有下面一系列好的性质
+<ul>
+<li>仿射不变性</li>
+<li>直线保持性</li>
+<li>凸包性</li>
+<li>变差缩减性</li>
+<li>几何不变性</li>
+<li>etc.</li>
 </ul>
 </li>
 </ol>
-<h3 id="怎样绘制一个首尾相接且接点处也有连续性质的-B-样条">怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</h3>
-<ul class="lvl-0">
-<li class="lvl-2">
+<h3 id="怎样绘制一个首尾相接且接点处也有连续性质的-b-样条"><a class="markdownIt-Anchor" href="#怎样绘制一个首尾相接且接点处也有连续性质的-b-样条"></a> 怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</h3>
+<ul>
+<li>
 <p>首尾相接：</p>
 <p>将控制点复制一遍，在第一组控制点前面加入最后一组控制点，最后一组控制点后面加入第一组控制点。</p>
 </li>
-<li class="lvl-2">
+<li>
 <p>保持连续性质</p>
 <p>通过设置相邻控制顶点的位置和导数值相等来保证一阶连续性</p>
 </li>
 </ul>
-<h2 id="代码逻辑">代码逻辑</h2>
+<h2 id="代码逻辑"><a class="markdownIt-Anchor" href="#代码逻辑"></a> 代码逻辑</h2>
 <ol>
-<li class="lvl-3">
-<p>首先通过discretize获取我刚刚实现的curve（一系列点的三维坐标V以及曲线在这一点的切向量T）</p>
-</li>
-<li class="lvl-3">
-<p>指定旋转步数step，进而获得每次旋转的角度θ</p>
-</li>
-<li class="lvl-3">
-<p>旋转：</p>
+<li>首先通过discretize获取我刚刚实现的curve（一系列点的三维坐标V以及曲线在这一点的切向量T）</li>
+<li>指定旋转步数step，进而获得每次旋转的角度θ</li>
+<li>旋转：
 <ol>
-<li class="lvl-6">构造一个绕y轴（<strong>Vector3f</strong>::UP）旋转、$\theta$的rot</li>
-<li class="lvl-6">获得曲线在该点的法向</li>
-<li class="lvl-6">点的位置向量和法向量同rot进行乘法运算，得到新的点的位置向量和法向量</li>
-<li class="lvl-6">循环上述过程一周</li>
+<li>构造一个绕y轴（<strong>Vector3f</strong>::UP）旋转、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">θ</span></span></span></span>的rot</li>
+<li>获得曲线在该点的法向</li>
+<li>点的位置向量和法向量同rot进行乘法运算，得到新的点的位置向量和法向量</li>
+<li>循环上述过程一周</li>
 </ol>
 </li>
-<li class="lvl-3">
-<p>将修改后控制点坐标pnew和法向量nnew存入到新构造的曲面数组(<a target="_blank" rel="noopener" href="http://surface.xn--vvsurface-rw9o.vn/">surface.VV和surface.VN</a>)中，用于面片的绘制</p>
-</li>
-<li class="lvl-3">
-<p>生成的顶点和法向量，通过三角化将曲面中的所有三角面片存入一个面片数组(surface.VF)中</p>
-</li>
-<li class="lvl-3">
-<p>将面片数组输入opengl，就可以画出整个曲面</p>
-</li>
+<li>将修改后控制点坐标pnew和法向量nnew存入到新构造的曲面数组(<a target="_blank" rel="noopener" href="http://surface.xn--vvsurface-rw9o.vn/">surface.VV和surface.VN</a>)中，用于面片的绘制</li>
+<li>生成的顶点和法向量，通过三角化将曲面中的所有三角面片存入一个面片数组(surface.VF)中</li>
+<li>将面片数组输入opengl，就可以画出整个曲面</li>
 </ol>
-<h2 id="代码参考">代码参考</h2>
+<h2 id="代码参考"><a class="markdownIt-Anchor" href="#代码参考"></a> 代码参考</h2>
 <p>本次实验代码几乎完全仿照了提供的python代码实现。</p>
 <p>具体来说，两种曲线类has a <strong>Bernstein</strong> B；通过构造一个Bernstein类实例来进行计算。</p>
 <p>除此之外没有和其他同学进行讨论/参考其他代码。</p>
@@ -360,7 +339,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">图形学PA2 REPORT</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text">曲线性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">1.1.1.</span> <span class="toc-text">两种曲线的异同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E9%A6%96%E5%B0%BE%E7%9B%B8%E6%8E%A5%E4%B8%94%E6%8E%A5%E7%82%B9%E5%A4%84%E4%B9%9F%E6%9C%89%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E7%9A%84-B-%E6%A0%B7%E6%9D%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text">怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91"><span class="toc-number">1.2.</span> <span class="toc-text">代码逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%8F%82%E8%80%83"><span class="toc-number">1.3.</span> <span class="toc-text">代码参考</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%AD%A6pa2-report"><span class="toc-number">1.</span> <span class="toc-text"> 图形学PA2 REPORT</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B2%E7%BA%BF%E6%80%A7%E8%B4%A8"><span class="toc-number">1.1.</span> <span class="toc-text"> 曲线性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E6%9B%B2%E7%BA%BF%E7%9A%84%E5%BC%82%E5%90%8C"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 两种曲线的异同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%8E%E6%A0%B7%E7%BB%98%E5%88%B6%E4%B8%80%E4%B8%AA%E9%A6%96%E5%B0%BE%E7%9B%B8%E6%8E%A5%E4%B8%94%E6%8E%A5%E7%82%B9%E5%A4%84%E4%B9%9F%E6%9C%89%E8%BF%9E%E7%BB%AD%E6%80%A7%E8%B4%A8%E7%9A%84-b-%E6%A0%B7%E6%9D%A1"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 怎样绘制一个首尾相接且接点处也有连续性质的 B 样条</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%80%BB%E8%BE%91"><span class="toc-number">1.2.</span> <span class="toc-text"> 代码逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%8F%82%E8%80%83"><span class="toc-number">1.3.</span> <span class="toc-text"> 代码参考</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
