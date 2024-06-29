@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="实验一 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验报告    实验一   代码 123456789101112131415la a0, 0x80400000li t0, 10li t3, 1li t2, 1loop:sw t3, 0(a0)add t3, t1, t2addi a0, a0, 4addi t0, t0, -1mv t1,t2mv">
+  <meta name="description" content="实验一 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   实验一   代码 123456789101112131415la a0, 0x80400000li t0, 10li t3, 1li t2, 1loop:sw t3, 0(a0)add t3, t1, t2addi a0, a0, 4addi t0, t0, -1mv t1,t2mv t2,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="week1">
 <meta property="og:url" content="https://ggxloveslife.top/homework/computer_orgnization/week1-2/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="实验一 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验报告    实验一   代码 123456789101112131415la a0, 0x80400000li t0, 10li t3, 1li t2, 1loop:sw t3, 0(a0)add t3, t1, t2addi a0, a0, 4addi t0, t0, -1mv t1,t2mv">
+<meta property="og:description" content="实验一 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验报告   实验一   代码 123456789101112131415la a0, 0x80400000li t0, 10li t3, 1li t2, 1loop:sw t3, 0(a0)add t3, t1, t2addi a0, a0, 4addi t0, t0, -1mv t1,t2mv t2,">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png">
@@ -128,7 +128,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/notes/artificial_network/week1/"
+            href="/notes/computer_orgnization/week1-2/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -144,7 +144,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/notes/computer_orgnization/week1-2/"
+            href="/notes/flower_identification/%E8%8A%B1%E5%8D%89%E9%89%B4%E8%B5%8F%E7%AC%94%E8%AE%B01/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -177,7 +177,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text"> 实验一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-2"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> 实验一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C"><span class="toc-number">1.1.0.2.</span> <span class="toc-text"> 实验二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89"><span class="toc-number">1.1.0.3.</span> <span class="toc-text"> 实验三</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 代码分析：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#term"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> term：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kernel"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> kernel：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E8%AF%B4%E6%98%8E-kernel-%E6%98%AF%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%B2%E5%8F%A3%E7%9A%84"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 4.说明 kernel 是如何使用串口的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E8%AF%B7%E9%97%AE-term-%E5%A6%82%E4%BD%95%E6%A3%80%E6%9F%A5-kernel-%E5%B7%B2%E7%BB%8F%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5%E5%B9%B6%E5%88%86%E5%88%AB%E6%8C%87%E5%87%BA%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8-term-%E4%B8%8E-kernel-%E6%BA%90%E7%A0%81%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 判断正确连入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8term%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.2.</span> <span class="toc-text"> 检查代码在term中的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8kernel%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.3.</span> <span class="toc-text"> 在kernel中的位置</span></a></li></ol></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">实验一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">实验二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">实验三</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">代码分析：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#term%EF%BC%9A"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">term：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kernel%EF%BC%9A"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">kernel：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AF%B4%E6%98%8E-kernel-%E6%98%AF%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%B2%E5%8F%A3%E7%9A%84%E3%80%82"><span class="toc-number">1.1.2.</span> <span class="toc-text">4.说明 kernel 是如何使用串口的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%AF%B7%E9%97%AE-term-%E5%A6%82%E4%BD%95%E6%A3%80%E6%9F%A5-kernel-%E5%B7%B2%E7%BB%8F%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5%EF%BC%8C%E5%B9%B6%E5%88%86%E5%88%AB%E6%8C%87%E5%87%BA%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8-term-%E4%B8%8E-kernel-%E6%BA%90%E7%A0%81%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E3%80%82"><span class="toc-number">1.1.3.</span> <span class="toc-text">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">判断正确连入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8term%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">检查代码在term中的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8kernel%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">在kernel中的位置</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -234,66 +234,69 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="实验一"><a class="markdownIt-Anchor" href="#实验一"></a> 实验一</h1>
+    <h1>实验一</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
-<h2 id="实验报告"><a class="markdownIt-Anchor" href="#实验报告"></a> 实验报告</h2>
-<ul>
-<li>
-<h4 id="实验一-2"><a class="markdownIt-Anchor" href="#实验一-2"></a> 实验一</h4>
-<ul>
-<li>
+<h2 id="实验报告">实验报告</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h4 id="实验一">实验一</h4>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>代码</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">la a0, 0x80400000</span><br><span class="line">li t0, 10</span><br><span class="line">li t3, 1</span><br><span class="line">li t2, 1</span><br><span class="line"></span><br><span class="line">loop:</span><br><span class="line">sw t3, 0(a0)</span><br><span class="line">add t3, t1, t2</span><br><span class="line">addi a0, a0, 4</span><br><span class="line">addi t0, t0, -1</span><br><span class="line">mv t1,t2</span><br><span class="line">mv t2,t3</span><br><span class="line">bnez t0, loop</span><br><span class="line">li a7, 10</span><br><span class="line">jr ra</span><br></pre></td></tr></table></figure>
 </li>
-<li>
+<li class="lvl-4">
 <p>结果</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e9ded4b40a999d3c46159a61617989ee/202309221828154.png" alt="image-20230922182821127"></p>
 </li>
 </ul>
 </li>
-<li>
-<h4 id="实验二"><a class="markdownIt-Anchor" href="#实验二"></a> 实验二</h4>
-<ul>
-<li>
+<li class="lvl-2">
+<h4 id="实验二">实验二</h4>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>代码与结果</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a05e736febd06d9f31c4b67db8763379/202309221830179.png" alt="image-20230922183018142"></p>
 </li>
 </ul>
 </li>
-<li>
-<h4 id="实验三"><a class="markdownIt-Anchor" href="#实验三"></a> 实验三</h4>
-<ul>
-<li>
-<p>代码与结果（高八位<code>0x00000168</code>低八位<code>0x6c8312d0</code>）</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt="" /></p>
+<li class="lvl-2">
+<h4 id="实验三">实验三</h4>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>代码与结果（高八位<code>0x00000168</code>低八位<code> 0x6c8312d0</code>）</p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/10cfe5b5a7ca23a4abbf6fc6ac0685f7/202309221832365.png" alt=""></p>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="代码分析"><a class="markdownIt-Anchor" href="#代码分析"></a> 代码分析：</h3>
-<h4 id="term"><a class="markdownIt-Anchor" href="#term"></a> term：</h4>
-<ul>
-<li>结构
+<h3 id="代码分析：">代码分析：</h3>
+<h4 id="term：">term：</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>结构</p>
 <ol>
-<li><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li>
-<li><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li>
-<li><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li>
-<li><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li>
-<li><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li>
-<li><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li>
-<li><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li>
-<li><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li>
+<li class="lvl-5"><strong>test_programs函数</strong>：该函数用于检查是否可以运行所需的程序，如汇编器、反汇编器和二进制拷贝工具。</li>
+<li class="lvl-5"><strong>output_binary函数</strong>：用于将二进制数据写入标准输出，兼容Python 2和Python 3。</li>
+<li class="lvl-5"><strong>int_to_byte_string和byte_string_to_int函数</strong>：用于将整数和字节字符串相互转换。</li>
+<li class="lvl-5"><strong>multi_line_asm和single_line_disassmble函数</strong>：这两个函数用于将汇编代码转换为二进制指令和将二进制指令反汇编为汇编代码。它们使用了系统中安装的汇编器和反汇编器。</li>
+<li class="lvl-5"><strong>run_T、run_A、run_F、run_R、run_D、run_U、run_G函数</strong>：这些函数是与RISC-V处理器进行交互的主要函数。例如，<code>run_T</code>用于打印页表信息，<code>run_A</code>用于写入汇编指令，<code>run_R</code>用于读取寄存器的值，<code>run_D</code>用于显示内存内容，<code>run_U</code>用于读取内存内容并反汇编，<code>run_G</code>用于运行用户程序。</li>
+<li class="lvl-5"><strong>MainLoop函数</strong>：这是程序的主循环，用于接收用户输入的命令并执行相应的操作。</li>
+<li class="lvl-5"><strong>InitializeSerial和InitializeTCP函数</strong>：用于初始化串口或TCP连接，根据命令行参数选择不同的初始化方式。</li>
+<li class="lvl-5"><strong>Main函数</strong>：程序的入口点，根据命令行参数选择串口或TCP连接，然后进入主循环。</li>
 </ol>
 </li>
-<li>交互：见思考题第五问</li>
+<li class="lvl-2">
+<p>交互：见思考题第五问</p>
+</li>
 </ul>
-<h4 id="kernel"><a class="markdownIt-Anchor" href="#kernel"></a> kernel：</h4>
-<ul>
-<li>
+<h4 id="kernel：">kernel：</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>结构</p>
-<ul>
-<li>
-<pre class="highlight"><code class="apl">evec.s #监控程序的入口点，是最先执行的代码
+<ul class="lvl-2">
+<li class="lvl-4">
+<pre><code class="language-apl">evec.s #监控程序的入口点，是最先执行的代码
 init.S #初始化,主要工作是为kernel分配资源
 kernel32.ld
 kernel64.ld
@@ -311,39 +314,55 @@ utils.S #读写串口的功能
 <p>在kernel/common.h处定义了如下几个信号</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMERSET    0x06        <span class="comment">// ascii (ACK) 启动计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMETOKEN   0x07        <span class="comment">// ascii (BEL) 停止计时</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_FATAL       0x80        <span class="comment">// 严重错误</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SIG_TIMEOUT     0x81        <span class="comment">// 超时</span></span></span><br></pre></td></tr></table></figure>
 <p>在kernel/shell.s中的.OP_G:部分定义了kernel如何判断程序是否超时</p>
-<ul>
-<li><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</li>
-<li>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</li>
-<li>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</li>
-<li>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</li>
-<li>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</li>
-<li>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>li a0, SIG_TIMERSET(0x06)</code>,<em>写开始计时信号</em>,告诉终端用户程序开始运行</p>
+</li>
+<li class="lvl-2">
+<p>首先，它获取当前 <code>mtime</code> 计时器的值保存 <code>t1</code>（RV32）中。</p>
+</li>
+<li class="lvl-2">
+<p>然后，它将一个固定值 <code>10000000</code> 添加到 <code>mtime</code>，以表示用户程序的最大允许运行时间。</p>
+</li>
+<li class="lvl-2">
+<p>接着，它将新的值写入 <code>mtimecmp</code> 计时器比较寄存器，以设置超时时间。</p>
+</li>
+<li class="lvl-2">
+<p>如果 RV32 架构，它还会检查进位并更新高 32 位的 <code>mtimecmp</code> 寄存器。</p>
+</li>
+<li class="lvl-2">
+<p>如果超时,跳转到trap.s的userret_timeout,发送超时信号(0x81)</p>
+</li>
 </ul>
-<h3 id="4说明-kernel-是如何使用串口的"><a class="markdownIt-Anchor" href="#4说明-kernel-是如何使用串口的"></a> 4.说明 kernel 是如何使用串口的。</h3>
+<h3 id="4-说明-kernel-是如何使用串口的。">4.说明 kernel 是如何使用串口的。</h3>
 <p>主要使用了utsil.s中<code>WRITE_SERIAL</code> 和<code>read_serial</code>两个函数</p>
-<ul>
-<li><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</li>
-<li><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>WRITE_SERIAL</code> 函数负责向串口发送数据。它会不断检查串口是否就绪，一旦就绪，就将数据写入串口的传输寄存器。</p>
+</li>
+<li class="lvl-2">
+<p><code>READ_SERIAL</code> 函数用于从串口接收数据。它会不断检查串口是否有可读数据，一旦有数据可读，就将数据从串口的接收寄存器读取出来。</p>
+</li>
 </ul>
 <p>这两个函数都采用了忙等待的方式，也就是它们会一直等待串口准备好（写入或读取），然后再执行相应的操作。</p>
-<h3 id="5请问-term-如何检查-kernel-已经正确连入并分别指出检查代码在-term-与-kernel-源码中的位置"><a class="markdownIt-Anchor" href="#5请问-term-如何检查-kernel-已经正确连入并分别指出检查代码在-term-与-kernel-源码中的位置"></a> 5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3>
-<ul>
-<li>
-<h4 id="判断正确连入"><a class="markdownIt-Anchor" href="#判断正确连入"></a> 判断正确连入</h4>
+<h3 id="5-请问-term-如何检查-kernel-已经正确连入，并分别指出检查代码在-term-与-kernel-源码中的位置。">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h4 id="判断正确连入">判断正确连入</h4>
 <ol>
-<li>通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li>
-<li>在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li>
-<li>在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li>
-<li>在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li>
-<li>进入主循环(读取用户终端输入)</li>
+<li class="lvl-5">通过<strong>InitializeTCP</strong>函数与kernel建立tcp链接</li>
+<li class="lvl-5">在主函数中使用test_program检查Term 所需的三个外部程序是否可以正常使用</li>
+<li class="lvl-5">在main函数中尝试读取来自内核的前33个字节信息(欢迎消息)</li>
+<li class="lvl-5">在main函数中会使用 <code>outp.write(b'W')</code> 发送一个 <code>'W'</code> 命令，以探测内核的 XLEN（字长）设置：</li>
+<li class="lvl-5">进入主循环(读取用户终端输入)</li>
 </ol>
 </li>
-<li>
-<h4 id="检查代码在term中的位置"><a class="markdownIt-Anchor" href="#检查代码在term中的位置"></a> 检查代码在term中的位置</h4>
+<li class="lvl-2">
+<h4 id="检查代码在term中的位置">检查代码在term中的位置</h4>
 <p>主要是test_program和main两个函数</p>
 </li>
-<li>
-<h4 id="在kernel中的位置"><a class="markdownIt-Anchor" href="#在kernel中的位置"></a> 在kernel中的位置</h4>
+<li class="lvl-2">
+<h4 id="在kernel中的位置">在kernel中的位置</h4>
 <p>kernel不需要特地检查是否已经与term进行了tcp链接,kernel只是在开始或者每次成功处理指令后跳转到<code>read_serial</code>检测串口是否有输入</p>
 </li>
 </ul>
@@ -394,7 +413,7 @@ utils.S #读写串口的功能
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80"><span class="toc-number">1.</span> <span class="toc-text"> 实验一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80-2"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> 实验一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C"><span class="toc-number">1.1.0.2.</span> <span class="toc-text"> 实验二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89"><span class="toc-number">1.1.0.3.</span> <span class="toc-text"> 实验三</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 代码分析：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#term"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> term：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kernel"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> kernel：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4%E8%AF%B4%E6%98%8E-kernel-%E6%98%AF%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%B2%E5%8F%A3%E7%9A%84"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 4.说明 kernel 是如何使用串口的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5%E8%AF%B7%E9%97%AE-term-%E5%A6%82%E4%BD%95%E6%A3%80%E6%9F%A5-kernel-%E5%B7%B2%E7%BB%8F%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5%E5%B9%B6%E5%88%86%E5%88%AB%E6%8C%87%E5%87%BA%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8-term-%E4%B8%8E-kernel-%E6%BA%90%E7%A0%81%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5"><span class="toc-number">1.1.3.1.</span> <span class="toc-text"> 判断正确连入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8term%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.2.</span> <span class="toc-text"> 检查代码在term中的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8kernel%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.3.</span> <span class="toc-text"> 在kernel中的位置</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">实验一</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%8A%A5%E5%91%8A"><span class="toc-number">1.1.</span> <span class="toc-text">实验报告</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">实验一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">实验二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">实验三</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-number">1.1.1.</span> <span class="toc-text">代码分析：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#term%EF%BC%9A"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">term：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#kernel%EF%BC%9A"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">kernel：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%AF%B4%E6%98%8E-kernel-%E6%98%AF%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E4%B8%B2%E5%8F%A3%E7%9A%84%E3%80%82"><span class="toc-number">1.1.2.</span> <span class="toc-text">4.说明 kernel 是如何使用串口的。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%AF%B7%E9%97%AE-term-%E5%A6%82%E4%BD%95%E6%A3%80%E6%9F%A5-kernel-%E5%B7%B2%E7%BB%8F%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5%EF%BC%8C%E5%B9%B6%E5%88%86%E5%88%AB%E6%8C%87%E5%87%BA%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8-term-%E4%B8%8E-kernel-%E6%BA%90%E7%A0%81%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE%E3%80%82"><span class="toc-number">1.1.3.</span> <span class="toc-text">5.请问 term 如何检查 kernel 已经正确连入，并分别指出检查代码在 term 与 kernel 源码中的位置。</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E6%AD%A3%E7%A1%AE%E8%BF%9E%E5%85%A5"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">判断正确连入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A3%80%E6%9F%A5%E4%BB%A3%E7%A0%81%E5%9C%A8term%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.2.</span> <span class="toc-text">检查代码在term中的位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8kernel%E4%B8%AD%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.1.3.3.</span> <span class="toc-text">在kernel中的位置</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

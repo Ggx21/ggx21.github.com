@@ -9,18 +9,18 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="0：信号的基本概念与数学基础  基本概念 信号就是随时间变化的物理量  模拟信号与数字信号:  模拟信号：连续变化的信号，可以在任何时间点上取任何值。 数字信号：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。   采样：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。 量化：将连续幅度的信号转换为离散幅度的过程。 时域与频域：  时域分析：直接在时间轴上考察信号，观">
+  <meta name="description" content="0：信号的基本概念与数学基础 基本概念 信号就是随时间变化的物理量   模拟信号与数字信号:  模拟信号：连续变化的信号，可以在任何时间点上取任何值。 数字信号：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。    采样：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。   量化：将连续幅度的信号转换为离散幅度的过程。   时域与频域：  时域分析：直接在时间轴上考察">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0：信号的基本概念与数学基础">
 <meta property="og:url" content="https://ggxloveslife.top/notes/signal_processing/0%EF%BC%9A%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="0：信号的基本概念与数学基础  基本概念 信号就是随时间变化的物理量  模拟信号与数字信号:  模拟信号：连续变化的信号，可以在任何时间点上取任何值。 数字信号：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。   采样：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。 量化：将连续幅度的信号转换为离散幅度的过程。 时域与频域：  时域分析：直接在时间轴上考察信号，观">
+<meta property="og:description" content="0：信号的基本概念与数学基础 基本概念 信号就是随时间变化的物理量   模拟信号与数字信号:  模拟信号：连续变化的信号，可以在任何时间点上取任何值。 数字信号：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。    采样：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。   量化：将连续幅度的信号转换为离散幅度的过程。   时域与频域：  时域分析：直接在时间轴上考察">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-28T02:24:47.000Z">
 <meta property="article:modified_time" content="2023-12-28T16:00:07.173Z">
 <meta property="article:author" content="Andy Gao">
-<meta property="article:tag" content="signal_processing">
 <meta property="article:tag" content="notes">
+<meta property="article:tag" content="signal_processing">
 <meta name="twitter:card" content="summary">
      
   <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 0：信号的基本概念与数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8D%B7%E7%A7%AF%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 函数卷积（连续时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8D%B7%E7%A7%AF%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 序列卷积（离散时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 理解卷积</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">0：信号的基本概念与数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.0.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8D%B7%E7%A7%AF%EF%BC%88%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.2.</span> <span class="toc-text">函数卷积（连续时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8D%B7%E7%A7%AF%EF%BC%88%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.3.</span> <span class="toc-text">序列卷积（离散时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text">理解卷积</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -231,40 +231,52 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="0信号的基本概念与数学基础"><a class="markdownIt-Anchor" href="#0信号的基本概念与数学基础"></a> 0：信号的基本概念与数学基础</h1>
-<h3 id="基本概念"><a class="markdownIt-Anchor" href="#基本概念"></a> 基本概念</h3>
+    <h1>0：信号的基本概念与数学基础</h1>
+<h3 id="基本概念">基本概念</h3>
 <p>信号就是随时间变化的物理量</p>
 <ol>
-<li><strong>模拟信号与数字信号</strong>:
-<ul>
-<li><strong>模拟信号</strong>：连续变化的信号，可以在任何时间点上取任何值。</li>
-<li><strong>数字信号</strong>：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。</li>
+<li class="lvl-3">
+<p><strong>模拟信号与数字信号</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>模拟信号</strong>：连续变化的信号，可以在任何时间点上取任何值。</li>
+<li class="lvl-5"><strong>数字信号</strong>：离散时间、离散幅度的信号。通过对模拟信号的采样和量化得到。</li>
 </ul>
 </li>
-<li><strong>采样</strong>：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。</li>
-<li><strong>量化</strong>：将连续幅度的信号转换为离散幅度的过程。</li>
-<li><strong>时域与频域</strong>：
-<ul>
-<li><strong>时域分析</strong>：直接在时间轴上考察信号，观察其随时间变化的特性。</li>
-<li><strong>频域分析</strong>：通过数学变换，如傅里叶变换，将信号转换到频域进行分析，观察信号的频率成分。</li>
+<li class="lvl-3">
+<p><strong>采样</strong>：将连续时间信号转换为离散时间信号的过程。采样频率决定了采样的密度。</p>
+</li>
+<li class="lvl-3">
+<p><strong>量化</strong>：将连续幅度的信号转换为离散幅度的过程。</p>
+</li>
+<li class="lvl-3">
+<p><strong>时域与频域</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>时域分析</strong>：直接在时间轴上考察信号，观察其随时间变化的特性。</li>
+<li class="lvl-5"><strong>频域分析</strong>：通过数学变换，如傅里叶变换，将信号转换到频域进行分析，观察信号的频率成分。</li>
 </ul>
 </li>
 </ol>
 <p>当然，函数卷积和序列卷积是信号处理中的基本运算，它们描述了两个信号或函数结合产生第三个信号的过程，通常在系统响应和滤波等应用中非常关键。下面是这两种卷积的定义和公式：</p>
-<h3 id="函数卷积连续时间卷积"><a class="markdownIt-Anchor" href="#函数卷积连续时间卷积"></a> 函数卷积（连续时间卷积）</h3>
+<h3 id="函数卷积（连续时间卷积）">函数卷积（连续时间卷积）</h3>
 <p>对于两个连续时间函数( f(t) )和( g(t) )，它们的卷积表示为( f(t) * g(t) )，定义为：</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>f</mi><mo>∗</mo><mi>g</mi><mo stretchy="false">)</mo><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mi>f</mi><mo stretchy="false">(</mo><mi>τ</mi><mo stretchy="false">)</mo><mi>g</mi><mo stretchy="false">(</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo stretchy="false">)</mo><mi>d</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">(f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t - \tau) d\tau
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mclose">)</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.384573em;vertical-align:-0.970281em;"></span><span class="mop"><span class="mop op-symbol large-op" style="margin-right:0.44445em;position:relative;top:-0.0011249999999999316em;">∫</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.414292em;"><span style="top:-1.7880500000000001em;margin-left:-0.44445em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">∞</span></span></span></span><span style="top:-3.8129000000000004em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.970281em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span><span class="mclose">)</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mopen">(</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span><span class="mclose">)</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.1132em;">τ</span></span></span></span></span></p>
-<p>这个积分表达式计算了在所有可能的时间偏移下，一个函数翻转并平移后与另一个函数的乘积的总和。</p>
-<h3 id="序列卷积离散时间卷积"><a class="markdownIt-Anchor" href="#序列卷积离散时间卷积"></a> 序列卷积（离散时间卷积）</h3>
+<p>$$<br>
+(f * g)(t) = \int_{-\infty}^{\infty} f(\tau)g(t - \tau) d\tau<br>
+$$<br>
+这个积分表达式计算了在所有可能的时间偏移下，一个函数翻转并平移后与另一个函数的乘积的总和。</p>
+<h3 id="序列卷积（离散时间卷积）">序列卷积（离散时间卷积）</h3>
 <p>对于两个离散时间序列( x[n] )和( h[n] )，它们的卷积表示为( x[n] * h[n] )，定义为：</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>∗</mo><mi>h</mi><mo stretchy="false">)</mo><mo stretchy="false">[</mo><mi>n</mi><mo stretchy="false">]</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></munderover><mi>x</mi><mo stretchy="false">[</mo><mi>k</mi><mo stretchy="false">]</mo><mi>h</mi><mo stretchy="false">[</mo><mi>n</mi><mo>−</mo><mi>k</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">(x * h)[n] = \sum_{k=-\infty}^{\infty} x[k]h[n - k]
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mclose">)</span><span class="mopen">[</span><span class="mord mathdefault">n</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:3.0118410000000004em;vertical-align:-1.360444em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.6513970000000002em;"><span style="top:-1.8478869999999998em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span><span class="mrel mtight">=</span><span class="mord mtight">−</span><span class="mord mtight">∞</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">∑</span></span></span><span style="top:-4.300005em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">∞</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:1.360444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span><span class="mord mathdefault">h</span><span class="mopen">[</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">]</span></span></span></span></span></p>
-<p>在离散时间卷积中，我们对所有可能的时间偏移的乘积求和。</p>
-<h3 id="理解卷积"><a class="markdownIt-Anchor" href="#理解卷积"></a> 理解卷积</h3>
-<ul>
-<li><strong>物理意义</strong>：在物理或工程上，卷积常常被解释为一个系统对输入信号的响应。其中一个函数通常代表系统的冲击响应，而另一个函数代表输入信号。</li>
-<li><strong>应用</strong>：卷积在信号处理、图像处理、概率、统计和物理学等许多领域有广泛应用。在信号处理中，卷积用于描述线性时不变系统的输出。</li>
+<p>$$<br>
+(x * h)[n] = \sum_{k=-\infty}^{\infty} x[k]h[n - k]<br>
+$$<br>
+在离散时间卷积中，我们对所有可能的时间偏移的乘积求和。</p>
+<h3 id="理解卷积">理解卷积</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>物理意义</strong>：在物理或工程上，卷积常常被解释为一个系统对输入信号的响应。其中一个函数通常代表系统的冲击响应，而另一个函数代表输入信号。</p>
+</li>
+<li class="lvl-2">
+<p><strong>应用</strong>：卷积在信号处理、图像处理、概率、统计和物理学等许多领域有广泛应用。在信号处理中，卷积用于描述线性时不变系统的输出。</p>
+</li>
 </ul>
 <p>在实际应用中，卷积可以通过各种算法实现，包括直接计算、快速傅里叶变换（FFT）等方法。理解卷积的概念和掌握其计算对于深入学习数字信号处理至关重要。</p>
 
@@ -314,7 +326,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%E4%BF%A1%E5%8F%B7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 0：信号的基本概念与数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8D%B7%E7%A7%AF%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 函数卷积（连续时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8D%B7%E7%A7%AF%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 序列卷积（离散时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 理解卷积</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">0：信号的基本概念与数学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.0.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%8D%B7%E7%A7%AF%EF%BC%88%E8%BF%9E%E7%BB%AD%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.2.</span> <span class="toc-text">函数卷积（连续时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E5%88%97%E5%8D%B7%E7%A7%AF%EF%BC%88%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E5%8D%B7%E7%A7%AF%EF%BC%89"><span class="toc-number">1.0.3.</span> <span class="toc-text">序列卷积（离散时间卷积）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E8%A7%A3%E5%8D%B7%E7%A7%AF"><span class="toc-number">1.0.4.</span> <span class="toc-text">理解卷积</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

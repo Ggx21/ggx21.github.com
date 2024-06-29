@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="lab2 按键音识别 郭高旭 ggx21@mails.tsinghua.edu.cn  测例与频谱图生成代码 https:&#x2F;&#x2F;github.com&#x2F;Ggx21&#x2F;dtmf_gen-for-signal-lab2  实验目的 识别dtmf音频，逐帧将其转换为按键序列  实验过程   将输入音频分成1&#x2F;64s的帧   判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）   计">
+  <meta name="description" content="lab2 按键音识别 郭高旭 ggx21@mails.tsinghua.edu.cn 测例与频谱图生成代码 https:&#x2F;&#x2F;github.com&#x2F;Ggx21&#x2F;dtmf_gen-for-signal-lab2 实验目的 识别dtmf音频，逐帧将其转换为按键序列 实验过程   将输入音频分成1&#x2F;64s的帧   判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）   计算当前帧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="lab2 按键音识别">
 <meta property="og:url" content="https://ggxloveslife.top/homework/signal_processing/lab2/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="lab2 按键音识别 郭高旭 ggx21@mails.tsinghua.edu.cn  测例与频谱图生成代码 https:&#x2F;&#x2F;github.com&#x2F;Ggx21&#x2F;dtmf_gen-for-signal-lab2  实验目的 识别dtmf音频，逐帧将其转换为按键序列  实验过程   将输入音频分成1&#x2F;64s的帧   判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）   计">
+<meta property="og:description" content="lab2 按键音识别 郭高旭 ggx21@mails.tsinghua.edu.cn 测例与频谱图生成代码 https:&#x2F;&#x2F;github.com&#x2F;Ggx21&#x2F;dtmf_gen-for-signal-lab2 实验目的 识别dtmf音频，逐帧将其转换为按键序列 实验过程   将输入音频分成1&#x2F;64s的帧   判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）   计算当前帧">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png">
@@ -177,7 +177,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lab2-%E6%8C%89%E9%94%AE%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text"> lab2 按键音识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E4%BE%8B%E4%B8%8E%E9%A2%91%E8%B0%B1%E5%9B%BE%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"> 测例与频谱图生成代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text"> 实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text"> 实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text"> 实验现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text"> 实验结论</span></a></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lab2-%E6%8C%89%E9%94%AE%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">lab2 按键音识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E4%BE%8B%E4%B8%8E%E9%A2%91%E8%B0%B1%E5%9B%BE%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">测例与频谱图生成代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">实验现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">实验结论</span></a></li></ol></div>
   </span>
 </div>
 
@@ -234,34 +234,34 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h2 id="lab2-按键音识别"><a class="markdownIt-Anchor" href="#lab2-按键音识别"></a> lab2 按键音识别</h2>
+    <h2 id="lab2-按键音识别">lab2 按键音识别</h2>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
-<h5 id="测例与频谱图生成代码"><a class="markdownIt-Anchor" href="#测例与频谱图生成代码"></a> 测例与频谱图生成代码</h5>
+<h5 id="测例与频谱图生成代码">测例与频谱图生成代码</h5>
 <p><a target="_blank" rel="noopener" href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">https://github.com/Ggx21/dtmf_gen-for-signal-lab2</a></p>
-<h2 id="实验目的"><a class="markdownIt-Anchor" href="#实验目的"></a> 实验目的</h2>
+<h2 id="实验目的">实验目的</h2>
 <p>识别dtmf音频，逐帧将其转换为按键序列</p>
-<h2 id="实验过程"><a class="markdownIt-Anchor" href="#实验过程"></a> 实验过程</h2>
+<h2 id="实验过程">实验过程</h2>
 <ol>
-<li>
+<li class="lvl-3">
 <p>将输入音频分成1/64s的帧</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>判断每一帧是否静默（计算⼀帧的平均能量(root-mean-square)）</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>计算当前帧的短时傅里叶变化<code>stft</code></p>
 <blockquote>
 <p>STFT的输出是一个矩阵,可以同时描述频域和时域的变化.</p>
 </blockquote>
 </li>
-<li>
+<li class="lvl-3">
 <p>选择出每一帧的两个能量峰值处的频率</p>
 <blockquote>
 <p>由于每一帧只是判断一次按键,所以我直接在时域上取平均值</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#取得最大值的index</span></span><br><span class="line">max_index = mean.index(<span class="built_in">max</span>(mean))</span><br><span class="line"><span class="comment">#取得对应的频率</span></span><br><span class="line">freq_max=max_index*sr/n_fft</span><br></pre></td></tr></table></figure>
 </li>
-<li>
+<li class="lvl-3">
 <p>根据找到的频率判断按键</p>
 <blockquote>
 <p>由于添加了高斯噪声,所以可能并不能恰好命中,找到最接近的DTMF频率即可</p>
@@ -269,21 +269,21 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">closest_a = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_a - max_a))</span><br><span class="line">closest_b = np.argmin(np.<span class="built_in">abs</span>(dtmf_freqs_b - max_b))</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h2 id="实验现象"><a class="markdownIt-Anchor" href="#实验现象"></a> 实验现象</h2>
+<h2 id="实验现象">实验现象</h2>
 <p>可以通过<code>librosa.display.specshow</code>观察对样例wav进行整体的stft的频谱图</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y, sr = librosa.load(output_wav, sr=sr)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 计算STFT</span></span><br><span class="line">stft_matrix = librosa.stft(y, n_fft=<span class="number">2048</span>, hop_length=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制频谱图</span></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">6</span>))</span><br><span class="line">librosa.display.specshow(librosa.amplitude_to_db(np.<span class="built_in">abs</span>(stft_matrix), ref=np.<span class="built_in">max</span>), y_axis=<span class="string">&#x27;log&#x27;</span>, 	x_axis=<span class="string">&#x27;time&#x27;</span>, sr=sr, hop_length=<span class="number">512</span>)</span><br></pre></td></tr></table></figure>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ec7ea1f8010bc79d5d17bef43a7de32/202312041314550.png" alt="image-20231204130307718"></p>
 <p>容易看到,我们实际上就是要取到每一帧(高亮处)峰值的频率,实际上可以直接读图看出答案</p>
-<h2 id="实验结论"><a class="markdownIt-Anchor" href="#实验结论"></a> 实验结论</h2>
+<h2 id="实验结论">实验结论</h2>
 <p>通过本实验，我们成功实现了一个简单的按键声音识别系统。该系统可以判断音频是否为静默，并根据非静默帧的频谱信息判断对应的按键。然而，实际应用中可能需要更复杂的频率分析和模式匹配来提高准确性。此外，对于不同的按键声音，可能需要调整阈值和频率范围等参数。总体而言，本实验为进一步深入研究音频信号处理提供了基础。</p>
 <p>另外,我还实现了一个输入到dtmf的工具,用来生成测例,以验证代码正确性;以及一个频谱图生成器,相关代码见<a target="_blank" rel="noopener" href="https://github.com/Ggx21/dtmf_gen-for-signal-lab2">仓库</a></p>
 
-        <div id="aplayer-dMbWzkjB" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
+        <div id="aplayer-xbvWOIeY" class="aplayer aplayer-tag-marker" style="margin-bottom: 20px;">
             <pre class="aplayer-lrc-content"></pre>
         </div>
         <script>
           var ap = new APlayer({
-            element: document.getElementById("aplayer-dMbWzkjB"),
+            element: document.getElementById("aplayer-xbvWOIeY"),
             narrow: false,
             autoplay: false,
             showlrc: false,
@@ -298,7 +298,7 @@
           window.aplayers || (window.aplayers = []);
           window.aplayers.push(ap);
         </script>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d72a79c6042794afa23b24c0e9f4222b/202312041315631.png" alt="image-20231204131548586"></p>
 
   </div>
 </article>
@@ -346,7 +346,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lab2-%E6%8C%89%E9%94%AE%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text"> lab2 按键音识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E4%BE%8B%E4%B8%8E%E9%A2%91%E8%B0%B1%E5%9B%BE%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.0.1.</span> <span class="toc-text"> 测例与频谱图生成代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text"> 实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text"> 实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text"> 实验现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text"> 实验结论</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#lab2-%E6%8C%89%E9%94%AE%E9%9F%B3%E8%AF%86%E5%88%AB"><span class="toc-number">1.</span> <span class="toc-text">lab2 按键音识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8B%E4%BE%8B%E4%B8%8E%E9%A2%91%E8%B0%B1%E5%9B%BE%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">测例与频谱图生成代码</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%9B%AE%E7%9A%84"><span class="toc-number">2.</span> <span class="toc-text">实验目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-number">3.</span> <span class="toc-text">实验过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%8E%B0%E8%B1%A1"><span class="toc-number">4.</span> <span class="toc-text">实验现象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E8%AE%BA"><span class="toc-number">5.</span> <span class="toc-text">实验结论</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

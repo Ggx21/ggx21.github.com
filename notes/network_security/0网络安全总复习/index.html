@@ -9,18 +9,18 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="0网络安全总复习 只要反重放攻击，就想到滑动窗口就看到序列号  课程大纲  密码 认证 安全协议   前置知识 无处不在的通信  &#x3D;&#x3D;&gt; 无处不在的网络安全   通信的基本要素：信源、信道、信宿  从哪来,往哪去,怎么去    所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网   hash码的产生不需要key,mac需要key checksum不是认证  攻击方法  1.蛮力破">
+  <meta name="description" content="0网络安全总复习 只要反重放攻击，就想到滑动窗口就看到序列号 课程大纲   密码   认证   安全协议   前置知识 无处不在的通信  &#x3D;&#x3D;&gt; 无处不在的网络安全   通信的基本要素：信源、信道、信宿  从哪来,往哪去,怎么去    所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网   hash码的产生不需要key,mac需要key checksum不是认证 攻击方法 1.蛮力">
 <meta property="og:type" content="article">
 <meta property="og:title" content="0网络安全总复习">
 <meta property="og:url" content="https://ggxloveslife.top/notes/network_security/0%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="0网络安全总复习 只要反重放攻击，就想到滑动窗口就看到序列号  课程大纲  密码 认证 安全协议   前置知识 无处不在的通信  &#x3D;&#x3D;&gt; 无处不在的网络安全   通信的基本要素：信源、信道、信宿  从哪来,往哪去,怎么去    所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网   hash码的产生不需要key,mac需要key checksum不是认证  攻击方法  1.蛮力破">
+<meta property="og:description" content="0网络安全总复习 只要反重放攻击，就想到滑动窗口就看到序列号 课程大纲   密码   认证   安全协议   前置知识 无处不在的通信  &#x3D;&#x3D;&gt; 无处不在的网络安全   通信的基本要素：信源、信道、信宿  从哪来,往哪去,怎么去    所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网   hash码的产生不需要key,mac需要key checksum不是认证 攻击方法 1.蛮力">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-20T13:44:44.000Z">
 <meta property="article:modified_time" content="2024-01-01T08:45:03.132Z">
 <meta property="article:author" content="Andy Gao">
-<meta property="article:tag" content="network_security">
 <meta property="article:tag" content="notes">
+<meta property="article:tag" content="network_security">
 <meta name="twitter:card" content="summary">
      
   <link rel="shortcut icon" href="/images/favicon.ico" />
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text"> 0网络安全总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.1.</span> <span class="toc-text"> 课程大纲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text"> 前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%9B%AE%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 1.蛮力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 2.中间人攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 3.拒绝服务攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E7%97%85%E6%AF%92%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> 4.病毒(恶意软件)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E5%AE%88%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 防守方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#enigma"><span class="toc-number">1.2.3.</span> <span class="toc-text"> Enigma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.3.</span> <span class="toc-text"> 密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E5%AF%86%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 初识密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.</span> <span class="toc-text"> 认证&#x3D;比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 消息认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87cia"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 网路安全目标：CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> 无线局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E7%BD%91vpn"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> 虚拟专用网VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%83%BD%E6%8F%90%E4%BE%9B"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text"> vpn能提供</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text"> vpn解决方案</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text"> 安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssl"><span class="toc-number">1.5.2.1.</span> <span class="toc-text"> ssl</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#https"><span class="toc-number">1.5.3.1.</span> <span class="toc-text"> https</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93%E5%AE%89%E5%85%A8"><span class="toc-number">1.5.3.2.</span> <span class="toc-text"> SET：电子交易安全</span></a></li></ol></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">0网络安全总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.1.</span> <span class="toc-text">课程大纲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%9B%AE%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.蛮力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.中间人攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">3.拒绝服务攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%97%85%E6%AF%92-%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">4.病毒(恶意软件)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E5%AE%88%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">防守方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enigma"><span class="toc-number">1.2.3.</span> <span class="toc-text">Enigma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.3.</span> <span class="toc-text">密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E5%AF%86%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">初识密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81-%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.</span> <span class="toc-text">认证&#x3D;比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.</span> <span class="toc-text">消息认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.2.</span> <span class="toc-text">身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87%EF%BC%9ACIA"><span class="toc-number">1.4.3.</span> <span class="toc-text">网路安全目标：CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">无线局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E7%BD%91VPN"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">虚拟专用网VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%83%BD%E6%8F%90%E4%BE%9B"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text">vpn能提供</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text">vpn解决方案</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text">安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.5.1.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">1.5.2.</span> <span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssl"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">ssl</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.5.3.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#https"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">https</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SET%EF%BC%9A%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93%E5%AE%89%E5%85%A8"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">SET：电子交易安全</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -231,217 +231,265 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="0网络安全总复习"><a class="markdownIt-Anchor" href="#0网络安全总复习"></a> 0网络安全总复习</h1>
+    <h1>0网络安全总复习</h1>
 <p>只要反重放攻击，就想到滑动窗口就看到序列号</p>
-<h2 id="课程大纲"><a class="markdownIt-Anchor" href="#课程大纲"></a> 课程大纲</h2>
+<h2 id="课程大纲">课程大纲</h2>
 <ol>
-<li>密码</li>
-<li>认证</li>
-<li>安全协议</li>
+<li class="lvl-3">
+<p>密码</p>
+</li>
+<li class="lvl-3">
+<p>认证</p>
+</li>
+<li class="lvl-3">
+<p>安全协议</p>
+</li>
 </ol>
-<h2 id="前置知识"><a class="markdownIt-Anchor" href="#前置知识"></a> 前置知识</h2>
+<h2 id="前置知识">前置知识</h2>
 <p>无处不在的通信  ==&gt; 无处不在的网络安全</p>
-<ul>
-<li>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>通信的基本要素：信源、信道、信宿</p>
 <blockquote>
 <p>从哪来,往哪去,怎么去</p>
 </blockquote>
 </li>
-<li>
+<li class="lvl-2">
 <p>所谓的“三网合一”中的三网就是计算机网络、电信网和有线电视网</p>
 </li>
 </ul>
 <p>hash码的产生不需要key,mac需要key</p>
 <p>checksum不是认证</p>
-<h3 id="攻击方法"><a class="markdownIt-Anchor" href="#攻击方法"></a> 攻击方法</h3>
-<h4 id="1蛮力破解"><a class="markdownIt-Anchor" href="#1蛮力破解"></a> 1.蛮力破解</h4>
+<h3 id="攻击方法">攻击方法</h3>
+<h4 id="1-蛮力破解">1.蛮力破解</h4>
 <p>使用数字和字母的任意组合，猜出用户名和口令</p>
 <p><strong>字典文件</strong>:将人们常用的密码组合作为探测口令</p>
 <p><strong>撞库攻击</strong></p>
-<h4 id="2中间人攻击"><a class="markdownIt-Anchor" href="#2中间人攻击"></a> 2.中间人攻击</h4>
+<h4 id="2-中间人攻击">2.中间人攻击</h4>
 <p>在两个受害者网络链路之间进行数据监听和数据篡改的攻击方式</p>
-<ul>
-<li>数据监听</li>
-<li>数据篡改</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据监听</p>
+</li>
+<li class="lvl-2">
+<p>数据篡改</p>
+</li>
 </ul>
-<h4 id="3拒绝服务攻击"><a class="markdownIt-Anchor" href="#3拒绝服务攻击"></a> 3.拒绝服务攻击</h4>
+<h4 id="3-拒绝服务攻击">3.拒绝服务攻击</h4>
 <p>企图通过使计算机崩溃或把它压跨来阻止提供服务</p>
 <p>拒绝服务攻击是最容易实施的且最为有效的攻击行为，也是目前网络上存在最多的攻击</p>
 <p>常见攻击方式:</p>
 <p>​	SYN洪泛 (SYN flood) /UDP洪泛(UDP flood) /DNS反射攻击</p>
-<h4 id="4病毒恶意软件"><a class="markdownIt-Anchor" href="#4病毒恶意软件"></a> 4.病毒(恶意软件)</h4>
-<h3 id="防守方法"><a class="markdownIt-Anchor" href="#防守方法"></a> 防守方法</h3>
-<ul>
-<li>加解密技术</li>
-<li>访问控制和身份认证</li>
-<li>防火墙技术</li>
-<li>防病毒技术</li>
-<li>补丁技术</li>
+<h4 id="4-病毒-恶意软件">4.病毒(恶意软件)</h4>
+<h3 id="防守方法">防守方法</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>加解密技术</p>
+</li>
+<li class="lvl-2">
+<p>访问控制和身份认证</p>
+</li>
+<li class="lvl-2">
+<p>防火墙技术</p>
+</li>
+<li class="lvl-2">
+<p>防病毒技术</p>
+</li>
+<li class="lvl-2">
+<p>补丁技术</p>
+</li>
 </ul>
-<h3 id="enigma"><a class="markdownIt-Anchor" href="#enigma"></a> Enigma</h3>
-<h2 id="密码学基础"><a class="markdownIt-Anchor" href="#密码学基础"></a> 密码学基础</h2>
-<ul>
-<li>
+<h3 id="Enigma">Enigma</h3>
+<h2 id="密码学基础">密码学基础</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>Enigma</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>凯撒</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>playfair</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>hill</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>vigenere</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>transportition</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>S-des</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>RSA</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>Diffie-Hellman</p>
 <p>都得会</p>
 </li>
 </ul>
-<h3 id="初识密码"><a class="markdownIt-Anchor" href="#初识密码"></a> 初识密码</h3>
-<ul>
-<li>
+<h3 id="初识密码">初识密码</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>什么是加密</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>什么是解密</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>密码发展历程</p>
 <ol>
-<li>
+<li class="lvl-5">
 <p>古典密码</p>
 <p>代换和置换，破译不会考</p>
 <p><mark>代换置换必考</mark></p>
 <p>enigma使用的就是代换技术</p>
 </li>
-<li>
+<li class="lvl-5">
 <p>计算机密码</p>
 </li>
-<li>
+<li class="lvl-5">
 <p>1976非对称密码的出现</p>
 </li>
 </ol>
 <p>对称密码加密解密用的相同密码</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>对称密码：</p>
 <p>S-DES必考，公式不用背，校验对算法的理解和现场计算二进制的能力。</p>
 <p>其他算法了解特性，</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>非对称密码：</p>
 <p>公钥Ku，私钥Kr</p>
-<ul>
-<li>加密</li>
-<li>签名</li>
-</ul>
+<ul class="lvl-4">
+<li class="lvl-6">
+<p>加密</p>
+</li>
+<li class="lvl-6">
+<p>签名</p>
 </li>
 </ul>
 </li>
-<li>
+</ul>
+</li>
+<li class="lvl-2">
 <p>密钥分配</p>
-<ul>
-<li>概述</li>
-<li>三个不同情况</li>
+<ul class="lvl-2">
+<li class="lvl-4">概述</li>
+<li class="lvl-4">三个不同情况</li>
 </ul>
 </li>
 </ul>
-<h2 id="认证比较"><a class="markdownIt-Anchor" href="#认证比较"></a> 认证=比较</h2>
-<ul>
-<li>MAC</li>
-<li>HASH</li>
-<li>MD5</li>
+<h2 id="认证-比较">认证=比较</h2>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>MAC</p>
+</li>
+<li class="lvl-2">
+<p>HASH</p>
+</li>
+<li class="lvl-2">
+<p>MD5</p>
+</li>
 </ul>
 <p>不会有计算，懂原理会分析，出现在简答中</p>
 <p>凡认证，必比较</p>
 <p>认证是单向的，并不一定需要解密，只要 同一个方向算两遍就可以比较了</p>
-<h3 id="消息认证"><a class="markdownIt-Anchor" href="#消息认证"></a> 消息认证</h3>
+<h3 id="消息认证">消息认证</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p>基本概念</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>三种认证函数</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>hash</p>
 <p>多次压缩</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>常用hash算法</p>
 <p>md5/sha-1（不会现场算）但是要讲清楚md5的基本原理，其他算法的基本原理</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>数字签名算法稍作了解</p>
 </li>
 </ol>
-<h3 id="身份认证"><a class="markdownIt-Anchor" href="#身份认证"></a> 身份认证</h3>
+<h3 id="身份认证">身份认证</h3>
 <p>消息认证可以保证通信双方不受第三方的攻击，但是它不能处理通信双方自身发生的攻击</p>
 <p>身份认证的应用</p>
-<ul>
-<li>电子身份认证技术</li>
-<li>网站身份认证</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>电子身份认证技术</p>
+</li>
+<li class="lvl-2">
+<p>网站身份认证</p>
+</li>
 </ul>
-<h3 id="网路安全目标cia"><a class="markdownIt-Anchor" href="#网路安全目标cia"></a> 网路安全目标：CIA</h3>
-<p>:::tips</p>
+<h3 id="网路安全目标：CIA">网路安全目标：CIA</h3>
+<div class="tips">
 <p>加密仅保证机密性，不保证完整性。</p>
 <p>认证保证完整性</p>
 <p>仅仅公钥加密只能提供保密性，不能提供认证</p>
-<p>:::</p>
-<h4 id="无线局域网"><a class="markdownIt-Anchor" href="#无线局域网"></a> 无线局域网</h4>
+</div>
+<h4 id="无线局域网">无线局域网</h4>
 <p>从夏威夷大学的aloha发展而来</p>
 <p>对网络技术要求不是很高</p>
 <p>要求：无线局域网加密认证技术是如何体现的。</p>
-<ul>
-<li>无加密认证（ssid，Mac）</li>
-<li>有线等效加密技术WEP</li>
-<li>WPA（WIFI proteted Access）</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>无加密认证（ssid，Mac）</p>
+</li>
+<li class="lvl-2">
+<p>有线等效加密技术WEP</p>
+</li>
+<li class="lvl-2">
+<p>WPA（WIFI proteted Access）</p>
+</li>
 </ul>
-<h4 id="虚拟专用网vpn"><a class="markdownIt-Anchor" href="#虚拟专用网vpn"></a> 虚拟专用网VPN</h4>
-<h5 id="vpn能提供"><a class="markdownIt-Anchor" href="#vpn能提供"></a> vpn能提供</h5>
-<ul>
-<li>数据机密性</li>
-<li>数据完整性</li>
-<li>数据源身份认证</li>
-<li>重放攻击保护</li>
+<h4 id="虚拟专用网VPN">虚拟专用网VPN</h4>
+<h5 id="vpn能提供">vpn能提供</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据机密性</p>
+</li>
+<li class="lvl-2">
+<p>数据完整性</p>
+</li>
+<li class="lvl-2">
+<p>数据源身份认证</p>
+</li>
+<li class="lvl-2">
+<p>重放攻击保护</p>
+</li>
 </ul>
-<h5 id="vpn解决方案"><a class="markdownIt-Anchor" href="#vpn解决方案"></a> vpn解决方案</h5>
-<ul>
-<li>
+<h5 id="vpn解决方案">vpn解决方案</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>基于数据链路层的l2tp/pptp/l2f(现在不用了，我猜也不是重点，知道为什么不用了)</p>
 <p>数据链路层的VPN技术在认证、数据完整性以及密钥管理等方面的不足，现在已经很少应用</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>基于网络层的IPsec/IKE</p>
 <p>IPsec实际干活，IKE用来管理</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>基于传输层的SSL</p>
 <p>在传输层操作与网络层操作有什么区别？传输层更加灵活</p>
 </li>
 </ul>
-<h2 id="安全协议"><a class="markdownIt-Anchor" href="#安全协议"></a> 安全协议</h2>
-<p>:::tips</p>
+<h2 id="安全协议">安全协议</h2>
+<div class="tips">
 <p>数据链路层的安全协议只能提供链路层面的安全</p>
 <p>网络层的安全协议可以提供端到端的安全，但是没有办法提供同一终端不同应用的不同安全策略</p>
 <p>传输层可以处理同一端系统之中的不同应用的安全需求</p>
 <p>总而言之是一个越来越灵活的过程。</p>
-<p>:::</p>
-<h3 id="网络层"><a class="markdownIt-Anchor" href="#网络层"></a> 网络层</h3>
+</div>
+<h3 id="网络层">网络层</h3>
 <p>IPsec：ip+security</p>
 <blockquote>
 <p>认证和加密</p>
@@ -455,38 +503,47 @@
 <p>帮助IPsec维护数据</p>
 <p>与其他终端交换信息</p>
 </blockquote>
-<ul>
-<li>sadb</li>
-<li>spdb</li>
-<li>报文格式</li>
-<li>两个阶段三个模式</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>sadb</p>
+</li>
+<li class="lvl-2">
+<p>spdb</p>
+</li>
+<li class="lvl-2">
+<p>报文格式</p>
+</li>
+<li class="lvl-2">
+<p>两个阶段三个模式</p>
+</li>
 </ul>
-<h3 id="传输层"><a class="markdownIt-Anchor" href="#传输层"></a> 传输层</h3>
-<h4 id="ssl"><a class="markdownIt-Anchor" href="#ssl"></a> ssl</h4>
+<h3 id="传输层">传输层</h3>
+<h4 id="ssl">ssl</h4>
 <p>为应用层服务</p>
-<ul>
-<li>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>可以选择协议通过</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>ssl报头是记录协议还是握手协议？</p>
 <blockquote>
 <p><mark>记录协议，我上课在听天书，这两个概念是什么意思？</mark></p>
 </blockquote>
 </li>
-<li>
+<li class="lvl-2">
 <p>握手协议的基本原理</p>
 </li>
 </ul>
-<h3 id="应用层"><a class="markdownIt-Anchor" href="#应用层"></a> 应用层</h3>
-<h4 id="https"><a class="markdownIt-Anchor" href="#https"></a> https</h4>
+<h3 id="应用层">应用层</h3>
+<h4 id="https">https</h4>
 <p>http+ssl</p>
 <p>http的安全性分析，http的工作原理</p>
-<h4 id="set电子交易安全"><a class="markdownIt-Anchor" href="#set电子交易安全"></a> SET：电子交易安全</h4>
-<p>关键就是双签名，<mark>双签名必考</mark></p>
-Lcnf=Ldeduce+Lunsat+LsatL\_{\\text{cnf}} = L\_{\\text{deduce}} + L\_{\\text{unsat}} + L\_{\\text{sat}}Lcnf\=Ldeduce+Lunsat+Lsat
-
-<p>当 C[i,j]=1C[i, j] = 1C[i,j]=1 且 v[j]=1v[j] = 1v[j]=1 或者 C[i,j]=−1C[i, j] = -1C[i,j]=−1 且 v[j]=0v[j] = 0v[j]=0 时，表示第i个子句被满足。</p>
+<h4 id="SET：电子交易安全">SET：电子交易安全</h4>
+<p>关键就是双签名，<mark>双签名必考</mark><br>
+$$<br>
+Lcnf=Ldeduce+Lunsat+LsatL_{\text{cnf}} = L_{\text{deduce}} + L_{\text{unsat}} + L_{\text{sat}}Lcnf=Ldeduce+Lunsat+Lsat<br>
+$$<br>
+当 C[i,j]=1C[i, j] = 1C[i,j]=1 且 v[j]=1v[j] = 1v[j]=1 或者 C[i,j]=−1C[i, j] = -1C[i,j]=−1 且 v[j]=0v[j] = 0v[j]=0 时，表示第i个子句被满足。</p>
 
   </div>
 </article>
@@ -534,7 +591,7 @@ Lcnf=Ldeduce+Lunsat+LsatL\_{\\text{cnf}} = L\_{\\text{deduce}} + L\_{\\text{unsa
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#0%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8%E6%80%BB%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text"> 0网络安全总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.1.</span> <span class="toc-text"> 课程大纲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text"> 前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%E8%9B%AE%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> 1.蛮力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> 2.中间人攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> 3.拒绝服务攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%E7%97%85%E6%AF%92%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> 4.病毒(恶意软件)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E5%AE%88%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 防守方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#enigma"><span class="toc-number">1.2.3.</span> <span class="toc-text"> Enigma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.3.</span> <span class="toc-text"> 密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E5%AF%86%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 初识密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.</span> <span class="toc-text"> 认证&#x3D;比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 消息认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87cia"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 网路安全目标：CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-number">1.4.3.1.</span> <span class="toc-text"> 无线局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E7%BD%91vpn"><span class="toc-number">1.4.3.2.</span> <span class="toc-text"> 虚拟专用网VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%83%BD%E6%8F%90%E4%BE%9B"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text"> vpn能提供</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text"> vpn解决方案</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text"> 安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.5.1.</span> <span class="toc-text"> 网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssl"><span class="toc-number">1.5.2.1.</span> <span class="toc-text"> ssl</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.5.3.</span> <span class="toc-text"> 应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#https"><span class="toc-number">1.5.3.1.</span> <span class="toc-text"> https</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93%E5%AE%89%E5%85%A8"><span class="toc-number">1.5.3.2.</span> <span class="toc-text"> SET：电子交易安全</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">0网络安全总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%BE%E7%A8%8B%E5%A4%A7%E7%BA%B2"><span class="toc-number">1.1.</span> <span class="toc-text">课程大纲</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.2.</span> <span class="toc-text">前置知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%9B%AE%E5%8A%9B%E7%A0%B4%E8%A7%A3"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">1.蛮力破解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">2.中间人攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%8B%92%E7%BB%9D%E6%9C%8D%E5%8A%A1%E6%94%BB%E5%87%BB"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">3.拒绝服务攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%97%85%E6%AF%92-%E6%81%B6%E6%84%8F%E8%BD%AF%E4%BB%B6"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">4.病毒(恶意软件)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E5%AE%88%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">防守方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Enigma"><span class="toc-number">1.2.3.</span> <span class="toc-text">Enigma</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.3.</span> <span class="toc-text">密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E8%AF%86%E5%AF%86%E7%A0%81"><span class="toc-number">1.3.1.</span> <span class="toc-text">初识密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81-%E6%AF%94%E8%BE%83"><span class="toc-number">1.4.</span> <span class="toc-text">认证&#x3D;比较</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.</span> <span class="toc-text">消息认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.2.</span> <span class="toc-text">身份认证</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E8%B7%AF%E5%AE%89%E5%85%A8%E7%9B%AE%E6%A0%87%EF%BC%9ACIA"><span class="toc-number">1.4.3.</span> <span class="toc-text">网路安全目标：CIA</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%BA%BF%E5%B1%80%E5%9F%9F%E7%BD%91"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">无线局域网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E4%B8%93%E7%94%A8%E7%BD%91VPN"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">虚拟专用网VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%83%BD%E6%8F%90%E4%BE%9B"><span class="toc-number">1.4.3.2.1.</span> <span class="toc-text">vpn能提供</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vpn%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">1.4.3.2.2.</span> <span class="toc-text">vpn解决方案</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.</span> <span class="toc-text">安全协议</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="toc-number">1.5.1.</span> <span class="toc-text">网络层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E5%B1%82"><span class="toc-number">1.5.2.</span> <span class="toc-text">传输层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssl"><span class="toc-number">1.5.2.1.</span> <span class="toc-text">ssl</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%B1%82"><span class="toc-number">1.5.3.</span> <span class="toc-text">应用层</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#https"><span class="toc-number">1.5.3.1.</span> <span class="toc-text">https</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SET%EF%BC%9A%E7%94%B5%E5%AD%90%E4%BA%A4%E6%98%93%E5%AE%89%E5%85%A8"><span class="toc-number">1.5.3.2.</span> <span class="toc-text">SET：电子交易安全</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

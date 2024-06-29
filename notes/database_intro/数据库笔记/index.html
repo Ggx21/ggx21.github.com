@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="数据库笔记  什么是数据库 数据抽象：数据的定义与应用程序相分离。  ER图：实体与属性 可以用ER图表示数据库，包括：  实体 联系 属性    视图机制  一个视图实际上是数据库的一个子集  不是所有人都想&#x2F;应该看到数据的全部，视图机制提供：  保密级别 自定义数据库外观 程序数据独立性：数据库已经被改变，但外观仍保持一致   数据库的结构  数据表（Tables）：数据表是数据库中的主要组">
+  <meta name="description" content="数据库笔记 什么是数据库 数据抽象：数据的定义与应用程序相分离。 ER图：实体与属性 可以用ER图表示数据库，包括：   实体   联系   属性    视图机制  一个视图实际上是数据库的一个子集  不是所有人都想&#x2F;应该看到数据的全部，视图机制提供：   保密级别   自定义数据库外观   程序数据独立性：数据库已经被改变，但外观仍保持一致   数据库的结构   数据表（Tables）：数据表是">
 <meta property="og:type" content="article">
 <meta property="og:title" content="note_database">
 <meta property="og:url" content="https://ggxloveslife.top/notes/database_intro/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="数据库笔记  什么是数据库 数据抽象：数据的定义与应用程序相分离。  ER图：实体与属性 可以用ER图表示数据库，包括：  实体 联系 属性    视图机制  一个视图实际上是数据库的一个子集  不是所有人都想&#x2F;应该看到数据的全部，视图机制提供：  保密级别 自定义数据库外观 程序数据独立性：数据库已经被改变，但外观仍保持一致   数据库的结构  数据表（Tables）：数据表是数据库中的主要组">
+<meta property="og:description" content="数据库笔记 什么是数据库 数据抽象：数据的定义与应用程序相分离。 ER图：实体与属性 可以用ER图表示数据库，包括：   实体   联系   属性    视图机制  一个视图实际上是数据库的一个子集  不是所有人都想&#x2F;应该看到数据的全部，视图机制提供：   保密级别   自定义数据库外观   程序数据独立性：数据库已经被改变，但外观仍保持一致   数据库的结构   数据表（Tables）：数据表是">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/7bbd854b09125295dd310fef19a83f80/202310281537772.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/778345fba766af2c76773023cc04a8ef/202310281808982.png">
@@ -179,7 +179,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 数据库笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text"> 什么是数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#er%E5%9B%BE%E5%AE%9E%E4%BD%93%E4%B8%8E%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text"> ER图：实体与属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E6%9C%BA%E5%88%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 视图机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 数据库的结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%8E%AF%E5%A2%83"><span class="toc-number">1.2.</span> <span class="toc-text"> chap2 数据库环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ansi-sparc%E4%B8%89%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text"> ANSI-SPARC三层体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 数据库语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 基于对象的数据模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chap3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8Eweb"><span class="toc-number">1.2.4.</span> <span class="toc-text"> chap3 数据库的结构与web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dbms%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-number">1.2.5.</span> <span class="toc-text"> DBMS的组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap5%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%BC%94%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text"> chap5：关系代数与关系演算</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数据库笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">什么是数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ER%E5%9B%BE%EF%BC%9A%E5%AE%9E%E4%BD%93%E4%B8%8E%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text">ER图：实体与属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E6%9C%BA%E5%88%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">视图机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据库的结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%8E%AF%E5%A2%83"><span class="toc-number">1.2.</span> <span class="toc-text">chap2 数据库环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ANSI-SPARC%E4%B8%89%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">ANSI-SPARC三层体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.2.</span> <span class="toc-text">数据库语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text">数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">基于对象的数据模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chap3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8Eweb"><span class="toc-number">1.2.4.</span> <span class="toc-text">chap3 数据库的结构与web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DBMS%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-number">1.2.5.</span> <span class="toc-text">DBMS的组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap5%EF%BC%9A%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%BC%94%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">chap5：关系代数与关系演算</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -236,94 +236,129 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="数据库笔记"><a class="markdownIt-Anchor" href="#数据库笔记"></a> 数据库笔记</h1>
-<h2 id="什么是数据库"><a class="markdownIt-Anchor" href="#什么是数据库"></a> 什么是数据库</h2>
+    <h1>数据库笔记</h1>
+<h2 id="什么是数据库">什么是数据库</h2>
 <p>数据抽象：数据的定义与应用程序相分离。</p>
-<h3 id="er图实体与属性"><a class="markdownIt-Anchor" href="#er图实体与属性"></a> ER图：实体与属性</h3>
+<h3 id="ER图：实体与属性">ER图：实体与属性</h3>
 <p>可以用ER图表示数据库，包括：</p>
 <ol>
-<li>实体</li>
-<li>联系</li>
-<li>属性</li>
+<li class="lvl-3">
+<p>实体</p>
+</li>
+<li class="lvl-3">
+<p>联系</p>
+</li>
+<li class="lvl-3">
+<p>属性</p>
+</li>
 </ol>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7bbd854b09125295dd310fef19a83f80/202310281537772.png" alt="image-20231028153746706" /></p>
-<h3 id="视图机制"><a class="markdownIt-Anchor" href="#视图机制"></a> 视图机制</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/7bbd854b09125295dd310fef19a83f80/202310281537772.png" alt="image-20231028153746706"></p>
+<h3 id="视图机制">视图机制</h3>
 <blockquote>
 <p>一个<code>视图</code>实际上是数据库的一个<strong>子集</strong></p>
 </blockquote>
 <p>不是所有人都想/应该看到数据的全部，视图机制提供：</p>
-<ul>
-<li>保密级别</li>
-<li>自定义数据库外观</li>
-<li>程序数据独立性：数据库已经被改变，但外观仍保持一致</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>保密级别</p>
+</li>
+<li class="lvl-2">
+<p>自定义数据库外观</p>
+</li>
+<li class="lvl-2">
+<p>程序数据独立性：数据库已经被改变，但外观仍保持一致</p>
+</li>
 </ul>
-<h3 id="数据库的结构"><a class="markdownIt-Anchor" href="#数据库的结构"></a> 数据库的结构</h3>
+<h3 id="数据库的结构">数据库的结构</h3>
 <ol>
-<li>数据表（Tables）：数据表是数据库中的主要组成部分，用于存储数据。每个数据表包含多个列，用于定义数据的结构。</li>
-<li>列（Columns）：列是数据表中的字段，用于存储特定类型的数据。每列都有一个数据类型和约束，以定义它可以存储的数据内容。</li>
-<li>数据行（Rows）：数据行是实际存储在数据表中的数据记录。每一行包含了表中各列的具体数据值。</li>
-<li>主键（Primary Key）：主键是一个唯一标识数据表中每行数据的列。它确保每行都有唯一的标识符，用于快速检索和关联数据。</li>
-<li>外键（Foreign Key）：外键是一个列或一组列，用于建立不同数据表之间的关系。它们用于维护表之间的引用完整性，确保关联的数据的一致性。</li>
-<li>索引（Indexes）：索引是一种优化数据库性能的结构，它加速了数据的检索操作。索引可以建立在一个或多个列上，允许快速查找数据。</li>
-<li>视图（Views）：视图是一个虚拟表，它是基于一个或多个实际数据表的查询结果。视图可以简化数据访问，并提供安全性和数据抽象。</li>
-<li>存储过程（Stored Procedures）：存储过程是一组SQL语句的集合，可以被数据库执行。它们可以用于实现业务逻辑、数据转换和数据验证。</li>
-<li>触发器（Triggers）：触发器是与数据表相关联的一段代码，它会在表上的特定事件发生时自动触发。触发器用于实现自动化操作和数据约束。</li>
-<li>索引（Functions）：函数是数据库中可重复使用的程序代码块，用于执行特定操作或计算。数据库可以提供内置函数，也可以创建用户自定义函数。</li>
+<li class="lvl-3">
+<p>数据表（Tables）：数据表是数据库中的主要组成部分，用于存储数据。每个数据表包含多个列，用于定义数据的结构。</p>
+</li>
+<li class="lvl-3">
+<p>列（Columns）：列是数据表中的字段，用于存储特定类型的数据。每列都有一个数据类型和约束，以定义它可以存储的数据内容。</p>
+</li>
+<li class="lvl-3">
+<p>数据行（Rows）：数据行是实际存储在数据表中的数据记录。每一行包含了表中各列的具体数据值。</p>
+</li>
+<li class="lvl-3">
+<p>主键（Primary Key）：主键是一个唯一标识数据表中每行数据的列。它确保每行都有唯一的标识符，用于快速检索和关联数据。</p>
+</li>
+<li class="lvl-3">
+<p>外键（Foreign Key）：外键是一个列或一组列，用于建立不同数据表之间的关系。它们用于维护表之间的引用完整性，确保关联的数据的一致性。</p>
+</li>
+<li class="lvl-3">
+<p>索引（Indexes）：索引是一种优化数据库性能的结构，它加速了数据的检索操作。索引可以建立在一个或多个列上，允许快速查找数据。</p>
+</li>
+<li class="lvl-3">
+<p>视图（Views）：视图是一个虚拟表，它是基于一个或多个实际数据表的查询结果。视图可以简化数据访问，并提供安全性和数据抽象。</p>
+</li>
+<li class="lvl-3">
+<p>存储过程（Stored Procedures）：存储过程是一组SQL语句的集合，可以被数据库执行。它们可以用于实现业务逻辑、数据转换和数据验证。</p>
+</li>
+<li class="lvl-3">
+<p>触发器（Triggers）：触发器是与数据表相关联的一段代码，它会在表上的特定事件发生时自动触发。触发器用于实现自动化操作和数据约束。</p>
+</li>
+<li class="lvl-4">
+<p>索引（Functions）：函数是数据库中可重复使用的程序代码块，用于执行特定操作或计算。数据库可以提供内置函数，也可以创建用户自定义函数。</p>
+</li>
 </ol>
-<h2 id="chap2-数据库环境"><a class="markdownIt-Anchor" href="#chap2-数据库环境"></a> chap2 数据库环境</h2>
-<h3 id="ansi-sparc三层体系结构"><a class="markdownIt-Anchor" href="#ansi-sparc三层体系结构"></a> ANSI-SPARC三层体系结构</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/778345fba766af2c76773023cc04a8ef/202310281808982.png" alt="image-20231028180833931" /></p>
-<h3 id="数据库语言"><a class="markdownIt-Anchor" href="#数据库语言"></a> 数据库语言</h3>
-<ul>
-<li>数据定义语言（DDL）</li>
-<li>数据操作语言（DML）
-<ul>
-<li>过程化DML：检索嵌套依赖</li>
-<li>非过程化DML：一步得出结果</li>
+<h2 id="chap2-数据库环境">chap2 数据库环境</h2>
+<h3 id="ANSI-SPARC三层体系结构">ANSI-SPARC三层体系结构</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/778345fba766af2c76773023cc04a8ef/202310281808982.png" alt="image-20231028180833931"></p>
+<h3 id="数据库语言">数据库语言</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>数据定义语言（DDL）</p>
+</li>
+<li class="lvl-2">
+<p>数据操作语言（DML）</p>
+<ul class="lvl-2">
+<li class="lvl-4">过程化DML：检索嵌套依赖</li>
+<li class="lvl-4">非过程化DML：一步得出结果</li>
 </ul>
 </li>
 </ul>
-<h3 id="数据模型"><a class="markdownIt-Anchor" href="#数据模型"></a> 数据模型</h3>
-<ul>
-<li>
-<h4 id="基于对象的数据模型"><a class="markdownIt-Anchor" href="#基于对象的数据模型"></a> 基于对象的数据模型</h4>
-<ul>
-<li>实体
-<ul>
-<li>属性</li>
-<li>行为</li>
+<h3 id="数据模型">数据模型</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h4 id="基于对象的数据模型">基于对象的数据模型</h4>
+<ul class="lvl-2">
+<li class="lvl-4">实体
+<ul class="lvl-4">
+<li class="lvl-6">属性</li>
+<li class="lvl-6">行为</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-2">
 <p>基于记录的数据模型</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>关系数据模型</p>
 <p>数据按照表格组织，每个表格有Unique的列，表格间通过相同的内容可以建立间接连接，但没有显示连接。</p>
 <p>关系数据模型只适用于外部层和概念层</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>网状数据模型</p>
 <p>数据被表示为一组<code>record</code>成为图的节点,联系通常用指针实现被表示为<code>set</code>成为图的边</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>层次数据模型</p>
 <p>一个节点只能有一个父节点,成为树形结构</p>
 </li>
 </ul>
-<h3 id="chap3-数据库的结构与web"><a class="markdownIt-Anchor" href="#chap3-数据库的结构与web"></a> chap3 数据库的结构与web</h3>
-<h3 id="dbms的组件"><a class="markdownIt-Anchor" href="#dbms的组件"></a> DBMS的组件</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cdc864d6403c57ce452f6235c49fcea0/202310281857138.png" alt="image-20231028185718067" /></p>
+<h3 id="chap3-数据库的结构与web">chap3 数据库的结构与web</h3>
+<h3 id="DBMS的组件">DBMS的组件</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/cdc864d6403c57ce452f6235c49fcea0/202310281857138.png" alt="image-20231028185718067"></p>
 </li>
 </ul>
 <blockquote>
 <p>系统目录（System Catalog）是数据库管理系统（DBMS）内部的元数据（metadata）存储区域，用于描述和记录数据库中的对象、结构、关系和属性等信息。系统目录是DBMS的内部数据库，其中存储了有关数据库自身的信息，以便DBMS能够有效地管理和操作数据库。</p>
 </blockquote>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/958312d55d7d09ea025588a74cd18829/202310281906662.png" alt="image-20231028190649606" /></p>
-<h2 id="chap5关系代数与关系演算"><a class="markdownIt-Anchor" href="#chap5关系代数与关系演算"></a> chap5：关系代数与关系演算</h2>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/011919b0a47656ed0be3dbe74daa59b9/202310291454124.png" alt="image-20231029145403952" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/958312d55d7d09ea025588a74cd18829/202310281906662.png" alt="image-20231028190649606"></p>
+<h2 id="chap5：关系代数与关系演算">chap5：关系代数与关系演算</h2>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/011919b0a47656ed0be3dbe74daa59b9/202310291454124.png" alt="image-20231029145403952"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -t -p 10002 2021010803@166.111.121.61 mysql -hdb -u2021010803 -p</span><br></pre></td></tr></table></figure>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h166.111.121.61 -P10001 -u2021010803 -p fde4dbf05ccfc9234b0bf26f853fa051</span><br></pre></td></tr></table></figure>
 
@@ -373,7 +408,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%AC%94%E8%AE%B0"><span class="toc-number">1.</span> <span class="toc-text"> 数据库笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text"> 什么是数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#er%E5%9B%BE%E5%AE%9E%E4%BD%93%E4%B8%8E%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text"> ER图：实体与属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E6%9C%BA%E5%88%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 视图机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 数据库的结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%8E%AF%E5%A2%83"><span class="toc-number">1.2.</span> <span class="toc-text"> chap2 数据库环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ansi-sparc%E4%B8%89%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text"> ANSI-SPARC三层体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 数据库语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.1.</span> <span class="toc-text"> 基于对象的数据模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chap3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8Eweb"><span class="toc-number">1.2.4.</span> <span class="toc-text"> chap3 数据库的结构与web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dbms%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-number">1.2.5.</span> <span class="toc-text"> DBMS的组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap5%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%BC%94%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text"> chap5：关系代数与关系演算</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数据库笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="toc-number">1.1.</span> <span class="toc-text">什么是数据库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ER%E5%9B%BE%EF%BC%9A%E5%AE%9E%E4%BD%93%E4%B8%8E%E5%B1%9E%E6%80%A7"><span class="toc-number">1.1.1.</span> <span class="toc-text">ER图：实体与属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%86%E5%9B%BE%E6%9C%BA%E5%88%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">视图机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84"><span class="toc-number">1.1.3.</span> <span class="toc-text">数据库的结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap2-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%8E%AF%E5%A2%83"><span class="toc-number">1.2.</span> <span class="toc-text">chap2 数据库环境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ANSI-SPARC%E4%B8%89%E5%B1%82%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">ANSI-SPARC三层体系结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AF%AD%E8%A8%80"><span class="toc-number">1.2.2.</span> <span class="toc-text">数据库语言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text">数据模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">基于对象的数据模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chap3-%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8Eweb"><span class="toc-number">1.2.4.</span> <span class="toc-text">chap3 数据库的结构与web</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DBMS%E7%9A%84%E7%BB%84%E4%BB%B6"><span class="toc-number">1.2.5.</span> <span class="toc-text">DBMS的组件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#chap5%EF%BC%9A%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E4%B8%8E%E5%85%B3%E7%B3%BB%E6%BC%94%E7%AE%97"><span class="toc-number">1.3.</span> <span class="toc-text">chap5：关系代数与关系演算</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="stage-4 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验内容  step7 支持条件语句，包括 if 语句和条件表达式（又称三元&#x2F;三目表达式，ternary expression）。 由于if代码和条件表达式的前后端代码在框架中均已提供，所以这里只需要考虑条件表达式的tacgen。 由于这也是一个expression，所以模拟二元表达式以及if">
+  <meta name="description" content="stage-4 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 step7 支持条件语句，包括 if 语句和条件表达式（又称三元&#x2F;三目表达式，ternary expression）。 由于if代码和条件表达式的前后端代码在框架中均已提供，所以这里只需要考虑条件表达式的tacgen。 由于这也是一个expression，所以模拟二元表达式以及if语句，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stage4">
 <meta property="og:url" content="https://ggxloveslife.top/homework/compiler_construction/stage4/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="stage-4 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验内容  step7 支持条件语句，包括 if 语句和条件表达式（又称三元&#x2F;三目表达式，ternary expression）。 由于if代码和条件表达式的前后端代码在框架中均已提供，所以这里只需要考虑条件表达式的tacgen。 由于这也是一个expression，所以模拟二元表达式以及if">
+<meta property="og:description" content="stage-4 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 step7 支持条件语句，包括 if 语句和条件表达式（又称三元&#x2F;三目表达式，ternary expression）。 由于if代码和条件表达式的前后端代码在框架中均已提供，所以这里只需要考虑条件表达式的tacgen。 由于这也是一个expression，所以模拟二元表达式以及if语句，">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-14T04:25:01.000Z">
 <meta property="article:modified_time" content="2023-11-26T13:41:04.575Z">
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#stage-4"><span class="toc-number">1.</span> <span class="toc-text"> stage-4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#step7"><span class="toc-number">1.1.1.</span> <span class="toc-text"> step7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8"><span class="toc-number">1.1.2.</span> <span class="toc-text"> step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 前端</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#lex"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text"> lex</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#parse"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text"> parse</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E6%A3%80%E6%9F%A5"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 语义检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 中端,后端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#step7-2"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> step7</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q1"><span class="toc-number">1.2.0.2.</span> <span class="toc-text"> Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a1"><span class="toc-number">1.2.0.3.</span> <span class="toc-text"> A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.0.4.</span> <span class="toc-text"> 实验框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q2"><span class="toc-number">1.2.0.5.</span> <span class="toc-text"> Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a2"><span class="toc-number">1.2.0.6.</span> <span class="toc-text"> A2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8-2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#q1-2"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a1-2"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q2-2"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a2-2"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> A2:</span></a></li></ol></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#step7"><span class="toc-number">1.1.1.</span> <span class="toc-text">step7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8"><span class="toc-number">1.1.2.</span> <span class="toc-text">step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">前端</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#lex"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text">lex</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#parse"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text">parse</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E6%A3%80%E6%9F%A5"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">语义检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">中端,后端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#step7-2"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">step7</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q1"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A1"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">实验框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q2"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A2"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">A2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8-2"><span class="toc-number">1.2.1.</span> <span class="toc-text">step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Q1-2"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A1-2"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q2-2"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A2-2"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">A2:</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -231,52 +231,66 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="stage-4"><a class="markdownIt-Anchor" href="#stage-4"></a> stage-4</h1>
+    <h1>stage-4</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
-<h2 id="实验内容"><a class="markdownIt-Anchor" href="#实验内容"></a> 实验内容</h2>
-<h3 id="step7"><a class="markdownIt-Anchor" href="#step7"></a> step7</h3>
+<h2 id="实验内容">实验内容</h2>
+<h3 id="step7">step7</h3>
 <p>支持条件语句，包括 if 语句和条件表达式（又称三元/三目表达式，ternary expression）。</p>
 <p>由于if代码和条件表达式的前后端代码在框架中均已提供，所以这里只需要考虑条件表达式的tacgen。</p>
 <p>由于这也是一个expression，所以模拟二元表达式以及if语句，代码内容如下</p>
 <p>这段代码是一个Python函数，用于将条件表达式转换为TAC（Three-Address Code）。它的主要步骤如下：</p>
 <ol>
-<li>创建一个临时变量<code>tempVal</code>来存储条件表达式的结果。</li>
-<li>生成条件部分的TAC代码，并将结果存储在<code>tempVal</code>中。</li>
-<li>创建两个标签，<code>skipLabel</code>和<code>exitLabel</code>，用于控制流跳转。</li>
-<li>如果条件成立，执行<code>expr.then</code>的TAC代码，然后将结果赋给<code>tempVal</code>。</li>
-<li>跳转到<code>exitLabel</code>以避免执行<code>expr.otherwise</code>的TAC代码。</li>
-<li>如果条件不成立，执行<code>expr.otherwise</code>的TAC代码，然后将结果赋给<code>tempVal</code>。</li>
-<li>最后，将<code>tempVal</code>存储在<code>expr</code>中以表示条件表达式的结果。</li>
+<li class="lvl-3">
+<p>创建一个临时变量<code>tempVal</code>来存储条件表达式的结果。</p>
+</li>
+<li class="lvl-3">
+<p>生成条件部分的TAC代码，并将结果存储在<code>tempVal</code>中。</p>
+</li>
+<li class="lvl-3">
+<p>创建两个标签，<code>skipLabel</code>和<code>exitLabel</code>，用于控制流跳转。</p>
+</li>
+<li class="lvl-3">
+<p>如果条件成立，执行<code>expr.then</code>的TAC代码，然后将结果赋给<code>tempVal</code>。</p>
+</li>
+<li class="lvl-3">
+<p>跳转到<code>exitLabel</code>以避免执行<code>expr.otherwise</code>的TAC代码。</p>
+</li>
+<li class="lvl-3">
+<p>如果条件不成立，执行<code>expr.otherwise</code>的TAC代码，然后将结果赋给<code>tempVal</code>。</p>
+</li>
+<li class="lvl-3">
+<p>最后，将<code>tempVal</code>存储在<code>expr</code>中以表示条件表达式的结果。</p>
+</li>
 </ol>
-<h3 id="step8"><a class="markdownIt-Anchor" href="#step8"></a> step8</h3>
+<h3 id="step8">step8</h3>
 <p>step8可以看作是对step9的准备，让我们上手整个编译流程，包括之前没有太修改过的lex&amp;parse，增加对循环语句，以及 break/continue 的支持。</p>
-<h4 id="前端"><a class="markdownIt-Anchor" href="#前端"></a> 前端</h4>
+<h4 id="前端">前端</h4>
 <p>按照语法规范给出for，while，continue的实现，如下例（while，break已给出，continue简单）</p>
-<h5 id="lex"><a class="markdownIt-Anchor" href="#lex"></a> lex</h5>
+<h5 id="lex">lex</h5>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Reserved keywords</span></span><br><span class="line">reserved = &#123;</span><br><span class="line">    <span class="string">&quot;return&quot;</span>: <span class="string">&quot;Return&quot;</span>,</span><br><span class="line">    <span class="string">&quot;int&quot;</span>: <span class="string">&quot;Int&quot;</span>,</span><br><span class="line">    <span class="string">&quot;if&quot;</span>: <span class="string">&quot;If&quot;</span>,</span><br><span class="line">    <span class="string">&quot;else&quot;</span>: <span class="string">&quot;Else&quot;</span>,</span><br><span class="line">    <span class="string">&quot;while&quot;</span>: <span class="string">&quot;While&quot;</span>,</span><br><span class="line">    <span class="string">&quot;break&quot;</span>: <span class="string">&quot;Break&quot;</span>,</span><br><span class="line">    <span class="string">&quot;continue&quot;</span>: <span class="string">&quot;Continue&quot;</span>,</span><br><span class="line">    <span class="string">&quot;for&quot;</span>: <span class="string">&quot;For&quot;</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="parse"><a class="markdownIt-Anchor" href="#parse"></a> parse</h5>
+<h5 id="parse">parse</h5>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">p_for</span>(<span class="params">p</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    statement_matched : For LParen opt_expression Semi opt_expression Semi opt_expression RParen statement_matched</span></span><br><span class="line"><span class="string">                        | For LParen declaration Semi opt_expression Semi opt_expression RParen statement_matched</span></span><br><span class="line"><span class="string">    statement_unmatched : For LParen opt_expression Semi opt_expression Semi opt_expression RParen statement_unmatched</span></span><br><span class="line"><span class="string">                        | For LParen declaration Semi opt_expression Semi opt_expression RParen statement_unmatched</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    p[<span class="number">0</span>] = For(p[<span class="number">3</span>], p[<span class="number">5</span>], p[<span class="number">7</span>], p[<span class="number">9</span>])</span><br></pre></td></tr></table></figure>
 <p>并在<strong>tree</strong>中相应设置好上述语法结点</p>
-<h4 id="语义检查"><a class="markdownIt-Anchor" href="#语义检查"></a> 语义检查</h4>
+<h4 id="语义检查">语义检查</h4>
 <p>完成 <a target="_blank" rel="noopener" href="http://namer.py">namer.py</a> 中的 visitFor ， visitWhile ， visitContinue 和 visitBreak 方法</p>
-<ul>
-<li>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>对于visitContinue 和 visitBreak，要确定其位于的scope在循环内，这可以通过在visitFor和while中进入循环体前标记此Scope类型为LOOP实现</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>visitFor:</p>
 </li>
 </ul>
 <p>按照提示,生成代码如下</p>
   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">visitFor</span>(<span class="params">self, stmt: For, ctx: ScopeStack</span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">  </span><br><span class="line"><span class="comment"># 1. Open a local scope for stmt.init.</span></span><br><span class="line"><span class="comment"># 2. Visit stmt.init, stmt.cond, stmt.update.</span></span><br><span class="line"><span class="comment"># 3. Open a loop in ctx (for validity checking of break/continue)</span></span><br><span class="line"><span class="comment"># 4. Visit body of the loop.</span></span><br><span class="line"><span class="comment"># 5. Close the loop and the local scope.</span></span><br><span class="line">  </span><br><span class="line">    new_scope = Scope(ScopeKind.LOCAL)</span><br><span class="line">    ctx.push(new_scope)</span><br><span class="line">    stmt.init.accept(self, ctx)</span><br><span class="line">    stmt.cond.accept(self, ctx)</span><br><span class="line">    stmt.update.accept(self, ctx)</span><br><span class="line">    loop_scope = Scope(ScopeKind.LOOP)</span><br><span class="line">    loop_scope.inLoop = <span class="literal">True</span></span><br><span class="line">    ctx.push(loop_scope)</span><br><span class="line">    stmt.body.accept(self, ctx)</span><br><span class="line">    ctx.pop()</span><br><span class="line">    ctx.pop()</span><br></pre></td></tr></table></figure>
-<h4 id="中端后端"><a class="markdownIt-Anchor" href="#中端后端"></a> 中端,后端</h4>
+<h4 id="中端-后端">中端,后端</h4>
 <p>框架均已提供</p>
-<h2 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h2>
-<h4 id="step7-2"><a class="markdownIt-Anchor" href="#step7-2"></a> step7</h4>
-<h4 id="q1"><a class="markdownIt-Anchor" href="#q1"></a> Q1:</h4>
+<h2 id="思考题">思考题</h2>
+<h4 id="step7-2">step7</h4>
+<h4 id="Q1">Q1:</h4>
 <p>实验框架与你使用语言的框架里是如何处理悬吊 else 问题的?</p>
-<h4 id="a1"><a class="markdownIt-Anchor" href="#a1"></a> A1:</h4>
-<h4 id="实验框架"><a class="markdownIt-Anchor" href="#实验框架"></a> 实验框架</h4>
+<h4 id="A1">A1:</h4>
+<h4 id="实验框架">实验框架</h4>
 <p>ply在处理移入-归约冲突时，默认移入：具体来说没有 else分支的 if 语句只能由 statement unmatched 产生，而statement unmatched 只能出现在if的else 分支里。</p>
 <p>通过这样的设计，悬挂 else 问题得以解决。当遇到没有 else 分支的 if 语句时，它会被解释为 <code>If</code> 对象，其中 <code>Else</code> 分支为 None。在 AST 中，这种情况明确地表示了这个 if 语句是没有 else 分支的。</p>
 <p>在使用这个 AST 进行后续处理时，你可以检查 <code>If</code> 对象的 <code>else_branch</code> 是否为 None，从而确定是否存在 else 分支。这种明确的表示方式有助于避免悬挂 else 问题。</p>
@@ -288,51 +302,87 @@
 <p>在C语言中，<code>else</code>与最近的<code>if</code>语句相关联，这是通过花括号来实现的，它们定义了代码块的范围。通常，C语言的规则如下：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (condition) &#123;</span><br><span class="line">    <span class="comment">// if块</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// else块</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在C语言中，花括号<code>&#123;&#125;</code>用于明确定义代码块的开始和结束，因此<code>else</code>会与最近的<code>if</code>语句匹配，这就避免了悬挂else问题。</p>
-<h4 id="q2"><a class="markdownIt-Anchor" href="#q2"></a> Q2:</h4>
+<h4 id="Q2">Q2:</h4>
 <p>如果要求条件表达式不短路，在你的实现中该做何种修改？</p>
-<h4 id="a2"><a class="markdownIt-Anchor" href="#a2"></a> A2</h4>
+<h4 id="A2">A2</h4>
 <p>在tacgen的def <strong>visitCondExpr</strong>函数中:</p>
 <p>将 then.accept 与 otherwise.accept 放在mv.visitCondBranch之前,(此时不能再给then和otherwise的值设置到同一个temp里)</p>
-<h3 id="step8-2"><a class="markdownIt-Anchor" href="#step8-2"></a> step8</h3>
-<h4 id="q1-2"><a class="markdownIt-Anchor" href="#q1-2"></a> Q1:</h4>
+<h3 id="step8-2">step8</h3>
+<h4 id="Q1-2">Q1:</h4>
 <p>将循环语句翻译成 IR 有许多可行的翻译方法，例如 while 循环可以有以下两种翻译方式：</p>
 <p>第一种（即实验指导中的翻译方式）：</p>
-<ul>
-<li><code>label BEGINLOOP_LABEL</code>：开始下一轮迭代</li>
-<li><code>cond 的 IR</code></li>
-<li><code>beqz BREAK_LABEL</code>：条件不满足就终止循环</li>
-<li><code>body 的 IR</code></li>
-<li><code>label CONTINUE_LABEL</code>：continue 跳到这</li>
-<li><code>br BEGINLOOP_LABEL</code>：本轮迭代完成</li>
-<li><code>label BREAK_LABEL</code>：条件不满足，或者 break 语句都会跳到这儿</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>label BEGINLOOP_LABEL</code>：开始下一轮迭代</p>
+</li>
+<li class="lvl-2">
+<p><code>cond 的 IR</code></p>
+</li>
+<li class="lvl-2">
+<p><code>beqz BREAK_LABEL</code>：条件不满足就终止循环</p>
+</li>
+<li class="lvl-2">
+<p><code>body 的 IR</code></p>
+</li>
+<li class="lvl-2">
+<p><code>label CONTINUE_LABEL</code>：continue 跳到这</p>
+</li>
+<li class="lvl-2">
+<p><code>br BEGINLOOP_LABEL</code>：本轮迭代完成</p>
+</li>
+<li class="lvl-2">
+<p><code>label BREAK_LABEL</code>：条件不满足，或者 break 语句都会跳到这儿</p>
+</li>
 </ul>
 <p>第二种：</p>
-<ul>
-<li><code>cond 的 IR</code></li>
-<li><code>beqz BREAK_LABEL</code>：条件不满足就终止循环</li>
-<li><code>label BEGINLOOP_LABEL</code>：开始下一轮迭代</li>
-<li><code>body 的 IR</code></li>
-<li><code>label CONTINUE_LABEL</code>：continue 跳到这</li>
-<li><code>cond 的 IR</code></li>
-<li><code>bnez BEGINLOOP_LABEL</code>：本轮迭代完成，条件满足时进行下一次迭代</li>
-<li><code>label BREAK_LABEL</code>：条件不满足，或者 break 语句都会跳到这儿</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><code>cond 的 IR</code></p>
+</li>
+<li class="lvl-2">
+<p><code>beqz BREAK_LABEL</code>：条件不满足就终止循环</p>
+</li>
+<li class="lvl-2">
+<p><code>label BEGINLOOP_LABEL</code>：开始下一轮迭代</p>
+</li>
+<li class="lvl-2">
+<p><code>body 的 IR</code></p>
+</li>
+<li class="lvl-2">
+<p><code>label CONTINUE_LABEL</code>：continue 跳到这</p>
+</li>
+<li class="lvl-2">
+<p><code>cond 的 IR</code></p>
+</li>
+<li class="lvl-2">
+<p><code>bnez BEGINLOOP_LABEL</code>：本轮迭代完成，条件满足时进行下一次迭代</p>
+</li>
+<li class="lvl-2">
+<p><code>label BREAK_LABEL</code>：条件不满足，或者 break 语句都会跳到这儿</p>
+</li>
 </ul>
 <p>从执行的指令的条数这个角度（<code>label</code> 不算做指令，假设循环体至少执行了一次），请评价这两种翻译方式哪一种更好？</p>
-<h4 id="a1-2"><a class="markdownIt-Anchor" href="#a1-2"></a> A1:</h4>
+<h4 id="A1-2">A1:</h4>
 <p>第二种翻译方式更好</p>
 <p>循环体执行了一次都是经历了相同的<code>body 的 IR</code>与<code>cond 的 IR</code>.但第一种方式循环体执行了一次后判断是否终止时总是需要两条指令:<code>br BEGINLOOP_LABEL</code>与<code>beqz BREAK_LABEL</code>;但是第二种方式<code>bnez BEGINLOOP_LABEL</code>在条件不满足时直接退出循环,只需要一条指令;而条件满足时<code>beqz BREAK_LABEL</code>,<code>bnez BEGINLOOP_LABEL</code>需要两条指令.</p>
 <p>故第二种方式的指令数总是较小</p>
-<h4 id="q2-2"><a class="markdownIt-Anchor" href="#q2-2"></a> Q2:</h4>
+<h4 id="Q2-2">Q2:</h4>
 <p>我们目前的 TAC IR 中条件分支指令采用了单分支目标（标签）的设计，即该指令的操作数中只有一个是标签；如果相应的分支条件不满足，则执行流会继续向下执行。在其它 IR 中存在双目标分支（标签）的条件分支指令，其形式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">br cond, false_target, true_target</span><br></pre></td></tr></table></figure>
 <p>其中<code>cond</code>是一个临时变量，<code>false_target</code>和<code>true_target</code>是标签。其语义为：如果<code>cond</code>的值为0（假），则跳转到<code>false_target</code>处；若<code>cond</code>非0（真），则跳转到<code>true_target</code>处。它与我们的条件分支指令的区别在于执行流总是会跳转到两个标签中的一个。</p>
 <p>你认为中间表示的哪种条件分支指令设计（单目标 vs 双目标）更合理？为什么？（言之有理即可）</p>
-<h4 id="a2-2"><a class="markdownIt-Anchor" href="#a2-2"></a> A2:</h4>
+<h4 id="A2-2">A2:</h4>
 <p>我认为单目标指令更合理,原因如下</p>
 <ol>
-<li>更贴近目标语言(riscvasm)</li>
-<li>减少悬挂else问题:不需要担心其中一个target不存在</li>
-<li>简化了控制流：单目标条件分支指令可以更简单地表示控制流的分支，减少了语义上的复杂性。这使得中间表示更容易理解和优化。</li>
+<li class="lvl-3">
+<p>更贴近目标语言(riscvasm)</p>
+</li>
+<li class="lvl-3">
+<p>减少悬挂else问题:不需要担心其中一个target不存在</p>
+</li>
+<li class="lvl-3">
+<p>简化了控制流：单目标条件分支指令可以更简单地表示控制流的分支，减少了语义上的复杂性。这使得中间表示更容易理解和优化。</p>
+</li>
 </ol>
 
   </div>
@@ -381,7 +431,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#stage-4"><span class="toc-number">1.</span> <span class="toc-text"> stage-4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#step7"><span class="toc-number">1.1.1.</span> <span class="toc-text"> step7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8"><span class="toc-number">1.1.2.</span> <span class="toc-text"> step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 前端</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#lex"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text"> lex</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#parse"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text"> parse</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E6%A3%80%E6%9F%A5"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 语义检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 中端,后端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#step7-2"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> step7</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q1"><span class="toc-number">1.2.0.2.</span> <span class="toc-text"> Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a1"><span class="toc-number">1.2.0.3.</span> <span class="toc-text"> A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.0.4.</span> <span class="toc-text"> 实验框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q2"><span class="toc-number">1.2.0.5.</span> <span class="toc-text"> Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a2"><span class="toc-number">1.2.0.6.</span> <span class="toc-text"> A2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8-2"><span class="toc-number">1.2.1.</span> <span class="toc-text"> step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#q1-2"><span class="toc-number">1.2.1.1.</span> <span class="toc-text"> Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a1-2"><span class="toc-number">1.2.1.2.</span> <span class="toc-text"> A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#q2-2"><span class="toc-number">1.2.1.3.</span> <span class="toc-text"> Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#a2-2"><span class="toc-number">1.2.1.4.</span> <span class="toc-text"> A2:</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#step7"><span class="toc-number">1.1.1.</span> <span class="toc-text">step7</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8"><span class="toc-number">1.1.2.</span> <span class="toc-text">step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">前端</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#lex"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text">lex</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#parse"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text">parse</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E6%A3%80%E6%9F%A5"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">语义检查</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF-%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">中端,后端</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#step7-2"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">step7</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q1"><span class="toc-number">1.2.0.2.</span> <span class="toc-text">Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A1"><span class="toc-number">1.2.0.3.</span> <span class="toc-text">A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A1%86%E6%9E%B6"><span class="toc-number">1.2.0.4.</span> <span class="toc-text">实验框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q2"><span class="toc-number">1.2.0.5.</span> <span class="toc-text">Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A2"><span class="toc-number">1.2.0.6.</span> <span class="toc-text">A2</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#step8-2"><span class="toc-number">1.2.1.</span> <span class="toc-text">step8</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Q1-2"><span class="toc-number">1.2.1.1.</span> <span class="toc-text">Q1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A1-2"><span class="toc-number">1.2.1.2.</span> <span class="toc-text">A1:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Q2-2"><span class="toc-number">1.2.1.3.</span> <span class="toc-text">Q2:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#A2-2"><span class="toc-number">1.2.1.4.</span> <span class="toc-text">A2:</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

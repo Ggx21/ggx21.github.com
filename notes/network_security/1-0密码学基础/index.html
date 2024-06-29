@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="密码学基础  基本概念 密码是混淆，密码不是隐藏，密码也不是访问控制。  明文 密文 加密 解密 密码编码学 密码破译学 无条件安全 计算安全 s-DES:必考内容   密码编码学  密码编码学的三个特征   转换明文为密文的运算类型：加密的两个原理   置换 (transposition) 重新排列   代换 (substitution) 每个元素映射成另外的元素   原则是不允许丢失信息，即">
+  <meta name="description" content="密码学基础 基本概念 密码是混淆，密码不是隐藏，密码也不是访问控制。   明文   密文   加密   解密   密码编码学   密码破译学   无条件安全   计算安全   s-DES:必考内容   密码编码学 密码编码学的三个特征   转换明文为密文的运算类型：加密的两个原理   置换 (transposition) 重新排列   代换 (substitution) 每个元素映射成另外的元素">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-0密码学基础">
 <meta property="og:url" content="https://ggxloveslife.top/notes/network_security/1-0%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="密码学基础  基本概念 密码是混淆，密码不是隐藏，密码也不是访问控制。  明文 密文 加密 解密 密码编码学 密码破译学 无条件安全 计算安全 s-DES:必考内容   密码编码学  密码编码学的三个特征   转换明文为密文的运算类型：加密的两个原理   置换 (transposition) 重新排列   代换 (substitution) 每个元素映射成另外的元素   原则是不允许丢失信息，即">
+<meta property="og:description" content="密码学基础 基本概念 密码是混淆，密码不是隐藏，密码也不是访问控制。   明文   密文   加密   解密   密码编码学   密码破译学   无条件安全   计算安全   s-DES:必考内容   密码编码学 密码编码学的三个特征   转换明文为密文的运算类型：加密的两个原理   置换 (transposition) 重新排列   代换 (substitution) 每个元素映射成另外的元素">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/8b1d8ab2c6cd81467fa5b0a8e02153b3/202312291020959.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/c7ef774732a819fe4c5d37cec5a2cc47/202312291043371.png">
@@ -183,7 +183,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6"><span class="toc-number">1.2.</span> <span class="toc-text"> 密码编码学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 密码编码学的三个特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 密码编码学的历史</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text"> 古典密码：代换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 多表代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E7%BD%AE%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text"> 古典密码：置换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text"> 对称密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s-des"><span class="toc-number">1.5.1.</span> <span class="toc-text"> s-DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 核心思想：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#feistel-cipher-structure"><span class="toc-number">1.5.3.</span> <span class="toc-text"> Feistel Cipher Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#feistel%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.4.</span> <span class="toc-text"> feistel算法原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#des%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.5.</span> <span class="toc-text"> DES算法原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.6.</span> <span class="toc-text"> 非对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 数学原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 符号表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.3.</span> <span class="toc-text"> 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-number">1.6.4.</span> <span class="toc-text"> 数论基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rsa%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.6.5.</span> <span class="toc-text"> RSA密钥生成步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#diffie-hellman%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text"> Diffie-Hellman密钥交换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 数学基础：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dh%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.7.2.</span> <span class="toc-text"> DH密钥交换步骤：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 结果：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D"><span class="toc-number">1.8.</span> <span class="toc-text"> 密钥分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 加密位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E5%88%86%E9%85%8D"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 传统的对称密码分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E4%B8%AD%E5%BF%83kdc%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 密钥分配中心KDC模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%AD%98%E5%82%A8%E5%AF%86%E9%92%A5"><span class="toc-number">1.8.3.1.</span> <span class="toc-text"> 1. 注册与存储密钥：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AF%86%E9%92%A5%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%88%86%E5%8F%91"><span class="toc-number">1.8.3.2.</span> <span class="toc-text"> 2. 密钥请求与分发：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BC%9A%E8%AF%9D%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.3.3.</span> <span class="toc-text"> 3. 会话密钥的使用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E7%9A%84%E5%88%86%E9%85%8D"><span class="toc-number">1.8.4.</span> <span class="toc-text"> 公钥的分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%85%AC%E9%92%A5%E5%88%86%E9%85%8D%E4%BC%A0%E7%BB%9F%E5%AF%86%E7%A0%81"><span class="toc-number">1.8.5.</span> <span class="toc-text"> 利用公钥分配传统密码</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6"><span class="toc-number">1.2.</span> <span class="toc-text">密码编码学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.</span> <span class="toc-text">密码编码学的三个特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.2.2.</span> <span class="toc-text">密码编码学的历史</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%EF%BC%9A%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text">古典密码：代换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text">多表代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%EF%BC%9A%E7%BD%AE%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text">古典密码：置换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text">对称密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s-DES"><span class="toc-number">1.5.1.</span> <span class="toc-text">s-DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="toc-number">1.5.2.</span> <span class="toc-text">核心思想：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Feistel-Cipher-Structure"><span class="toc-number">1.5.3.</span> <span class="toc-text">Feistel Cipher Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#feistel%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.4.</span> <span class="toc-text">feistel算法原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DES%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.5.</span> <span class="toc-text">DES算法原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.6.</span> <span class="toc-text">非对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-number">1.6.1.</span> <span class="toc-text">数学原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.6.2.</span> <span class="toc-text">符号表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.3.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-number">1.6.4.</span> <span class="toc-text">数论基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.6.5.</span> <span class="toc-text">RSA密钥生成步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Diffie-Hellman%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text">Diffie-Hellman密钥交换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A"><span class="toc-number">1.7.1.</span> <span class="toc-text">数学基础：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DH%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.7.2.</span> <span class="toc-text">DH密钥交换步骤：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="toc-number">1.7.3.</span> <span class="toc-text">结果：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D"><span class="toc-number">1.8.</span> <span class="toc-text">密钥分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.8.1.</span> <span class="toc-text">加密位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E5%88%86%E9%85%8D"><span class="toc-number">1.8.2.</span> <span class="toc-text">传统的对称密码分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E4%B8%AD%E5%BF%83KDC%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.8.3.</span> <span class="toc-text">密钥分配中心KDC模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%AD%98%E5%82%A8%E5%AF%86%E9%92%A5%EF%BC%9A"><span class="toc-number">1.8.3.1.</span> <span class="toc-text">1. 注册与存储密钥：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AF%86%E9%92%A5%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%88%86%E5%8F%91%EF%BC%9A"><span class="toc-number">1.8.3.2.</span> <span class="toc-text">2. 密钥请求与分发：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BC%9A%E8%AF%9D%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="toc-number">1.8.3.3.</span> <span class="toc-text">3. 会话密钥的使用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E7%9A%84%E5%88%86%E9%85%8D"><span class="toc-number">1.8.4.</span> <span class="toc-text">公钥的分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%85%AC%E9%92%A5%E5%88%86%E9%85%8D%E4%BC%A0%E7%BB%9F%E5%AF%86%E7%A0%81"><span class="toc-number">1.8.5.</span> <span class="toc-text">利用公钥分配传统密码</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -240,205 +240,241 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="密码学基础"><a class="markdownIt-Anchor" href="#密码学基础"></a> 密码学基础</h1>
-<h2 id="基本概念"><a class="markdownIt-Anchor" href="#基本概念"></a> 基本概念</h2>
+    <h1>密码学基础</h1>
+<h2 id="基本概念">基本概念</h2>
 <p>密码是混淆，密码不是隐藏，密码也不是访问控制。</p>
-<ul>
-<li>明文</li>
-<li>密文</li>
-<li>加密</li>
-<li>解密</li>
-<li>密码编码学</li>
-<li>密码破译学</li>
-<li>无条件安全</li>
-<li>计算安全</li>
-<li><mark>s-DES</mark>:<strong>必考内容</strong></li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>明文</p>
+</li>
+<li class="lvl-2">
+<p>密文</p>
+</li>
+<li class="lvl-2">
+<p>加密</p>
+</li>
+<li class="lvl-2">
+<p>解密</p>
+</li>
+<li class="lvl-2">
+<p>密码编码学</p>
+</li>
+<li class="lvl-2">
+<p>密码破译学</p>
+</li>
+<li class="lvl-2">
+<p>无条件安全</p>
+</li>
+<li class="lvl-2">
+<p>计算安全</p>
+</li>
+<li class="lvl-2">
+<p><mark>s-DES</mark>:<strong>必考内容</strong></p>
+</li>
 </ul>
-<h2 id="密码编码学"><a class="markdownIt-Anchor" href="#密码编码学"></a> 密码编码学</h2>
-<h3 id="密码编码学的三个特征"><a class="markdownIt-Anchor" href="#密码编码学的三个特征"></a> 密码编码学的三个特征</h3>
+<h2 id="密码编码学">密码编码学</h2>
+<h3 id="密码编码学的三个特征">密码编码学的三个特征</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>转换明文为密文的运算类型</strong>：加密的两个原理</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-5">
 <p>置换 (transposition)</p>
 <p>重新排列</p>
 </li>
-<li>
+<li class="lvl-5">
 <p>代换 (substitution)</p>
 <p>每个元素映射成另外的元素</p>
 </li>
 </ul>
 <p>原则是不允许丢失信息，即所有的运算都是可逆的</p>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>所用密钥数</strong></p>
-<ul>
-<li>对称加密、单钥加密
-<ul>
-<li>安全性在于算法本身的保密性</li>
+<ul class="lvl-2">
+<li class="lvl-5">对称加密、单钥加密
+<ul class="lvl-4">
+<li class="lvl-7">安全性在于算法本身的保密性</li>
 </ul>
 </li>
-<li>非对称加密、公钥加密、1976年发表
-<ul>
-<li>把算法和密钥分开，算法公开，密钥保密</li>
-<li>安全性在于保持密钥的保密性</li>
+<li class="lvl-5">非对称加密、公钥加密、1976年发表
+<ul class="lvl-4">
+<li class="lvl-7">把算法和密钥分开，算法公开，密钥保密</li>
+<li class="lvl-7">安全性在于保持密钥的保密性</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>处理明文的方法</strong></p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-5">
 <p>分组密码/块密码（block cipher）</p>
 <p>每次处理一个分组</p>
 <blockquote>
 <p>现在使用的对称分组密码算法都基于Feistel分组密码结构的</p>
 </blockquote>
 </li>
-<li>
+<li class="lvl-5">
 <p>流密码 (stream cipher)</p>
 <p>每次处理一个元素</p>
 </li>
 </ul>
 </li>
 </ol>
-<h3 id="密码编码学的历史"><a class="markdownIt-Anchor" href="#密码编码学的历史"></a> 密码编码学的历史</h3>
-<ul>
-<li>
+<h3 id="密码编码学的历史">密码编码学的历史</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>古典密码：~1949</p>
 <p>1949：香农论文“保密通信的信息理论”</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>近代密码：1949~1976</p>
 <p>1976：公钥出现 Diffie and Hellman  为1977年的RSA提供了理论基础</p>
 <p>1977：DES数据加密标准公开，<mark>DES</mark>是对称加密算法</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>现代密码</p>
 </li>
 </ul>
-<h2 id="古典密码代换"><a class="markdownIt-Anchor" href="#古典密码代换"></a> 古典密码：代换</h2>
+<h2 id="古典密码：代换">古典密码：代换</h2>
 <blockquote>
 <p>古典密码都是自然语言编码</p>
 </blockquote>
 <blockquote>
 <p>代换密码必须考虑：明文的语法模式和结构有多少仍然保留在密文中，减少这种保留信息的方法有</p>
-<ul>
-<li>多个字母一起加密</li>
-<li>采用多表代换密码</li>
+<ul class="lvl-1">
+<li class="lvl-2">多个字母一起加密</li>
+<li class="lvl-2">采用多表代换密码</li>
 </ul>
 </blockquote>
-<ul>
-<li>
-<h3 id="单表代换"><a class="markdownIt-Anchor" href="#单表代换"></a> 单表代换</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h3 id="单表代换">单表代换</h3>
 <ol>
-<li>
+<li class="lvl-5">
 <p>恺撒码（+3）</p>
 <p>可以采用穷举攻击破译Caesar 密码，因为</p>
 <ol>
-<li>算法已知</li>
-<li>只有26种密钥</li>
-<li>明文所用语言已知</li>
-<li>密文中还是带有原始字母使用频率的一些统计学特征</li>
-</ol>
+<li class="lvl-8">
+<p>算法已知</p>
+</li>
+<li class="lvl-8">
+<p>只有26种密钥</p>
+</li>
+<li class="lvl-8">
+<p>明文所用语言已知</p>
+</li>
+<li class="lvl-8">
+<p>密文中还是带有原始字母使用频率的一些统计学特征</p>
 </li>
 </ol>
 </li>
-<li>
-<h3 id="多表代换"><a class="markdownIt-Anchor" href="#多表代换"></a> 多表代换</h3>
-<ul>
-<li>
+</ol>
+</li>
+<li class="lvl-2">
+<h3 id="多表代换">多表代换</h3>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>playFair：</p>
 <blockquote>
 <p>5x5码表，一个密钥词，先填密钥词再填剩下字</p>
 <p>I/J等价，同时编码两字母（如果该字母对是两个相同的字母，添加一个填充字 ），同行右移，同列下移，对角线切换</p>
 </blockquote>
-<ul>
-<li>ar-&gt;rm</li>
-<li>mu-&gt;cm</li>
-<li>hs-&gt;bp</li>
+<ul class="lvl-4">
+<li class="lvl-6">
+<p>ar-&gt;rm</p>
+</li>
+<li class="lvl-6">
+<p>mu-&gt;cm</p>
+</li>
+<li class="lvl-6">
+<p>hs-&gt;bp</p>
+</li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/8b1d8ab2c6cd81467fa5b0a8e02153b3/202312291020959.png" alt="image-20231229102016912" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/8b1d8ab2c6cd81467fa5b0a8e02153b3/202312291020959.png" alt="image-20231229102016912"></p>
 <p>但是Playfair密码依然完整地保留了明文语言的结构，几百个字母密文就足够分析出规律了</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>Hill</p>
 <blockquote>
 <p>C=KP mod26，K是nxn矩阵，同时对n个字母组成的向量加密</p>
 </blockquote>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/c7ef774732a819fe4c5d37cec5a2cc47/202312291043371.png" alt="image-20231229104344317" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/c7ef774732a819fe4c5d37cec5a2cc47/202312291043371.png" alt="image-20231229104344317"></p>
 </li>
-<li>
+<li class="lvl-4">
 <p>Vigenere</p>
 <p>多层凯撒，查表得到</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/2ae7f354195edc39c736acaa35ef4a18/202312291046844.png" alt="image-20231229104607793" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/2ae7f354195edc39c736acaa35ef4a18/202312291046844.png" alt="image-20231229104607793"></p>
 </li>
-<li>
+<li class="lvl-4">
 <p>OTP （one time pad）一次一密（基于verman，verman是基于二进制位的otp）</p>
 <p>使用与消息一样长且无重复的随机密钥来加密消息，这就是著名的一次一密（One-time Pad； OTP） ，它是不可攻破的，即无条件安全的。</p>
-<ul>
-<li>但是密钥获取、分配、保护很困难</li>
+<ul class="lvl-4">
+<li class="lvl-6">
+<p>但是密钥获取、分配、保护很困难</p>
+</li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/67e834a2fad8482bebc0347c48a75a57/202312291049901.png" alt="image-20231229104917844" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/67e834a2fad8482bebc0347c48a75a57/202312291049901.png" alt="image-20231229104917844"></p>
 </li>
 </ul>
 </li>
 </ul>
-<h2 id="古典密码置换"><a class="markdownIt-Anchor" href="#古典密码置换"></a> 古典密码：置换</h2>
+<h2 id="古典密码：置换">古典密码：置换</h2>
 <p>更复杂的方案是把消息一行一行写成矩形块，然后按列读出，同时把列的次序打乱；列的次序就是算法的密钥 。</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d5cb393fe2d8c1a9d3edd954618a7020/202312291051132.png" alt="image-20231229105134073" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/d5cb393fe2d8c1a9d3edd954618a7020/202312291051132.png" alt="image-20231229105134073"></p>
 <p>转轮机</p>
-<h2 id="对称密码"><a class="markdownIt-Anchor" href="#对称密码"></a> 对称密码</h2>
+<h2 id="对称密码">对称密码</h2>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>DES (Data Encryption Standard)</strong>: 一种早期的对称密钥算法，使用56位的密钥。它的变形包括3DES（三重DES），提供更强的安全性，通过连续三次使用DES算法来增强加密强度。</p>
 <p>3-DES:三重DES加密,密钥为k1,k2因此位数为112位</p>
 <p>加密过程:k1加密,k2解密,k1再加密一次</p>
-<ul>
-<li>3-DES速度慢,分组长度再长一些更安全</li>
+<ul class="lvl-2">
+<li class="lvl-5">
+<p>3-DES速度慢,分组长度再长一些更安全</p>
+</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>IDEA (International Data Encryption Algorithm)</strong>: 使用128位密钥的对称算法，以其高效的实现和强大的安全性而闻名。它通常用于PGP加密。</p>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>RC2, RC4, RC5</strong>:</p>
-<ul>
-<li><s><strong>RC2</strong>: 一种可变密钥长度的对称加密算法，早期在SSL协议中广泛使用。</s></li>
-<li><s><strong>RC4</strong>: 是一种流加密算法，以其简单和速度快著称，曾经广泛应用于SSL和WEP加密。</s></li>
-<li><strong>RC5</strong>: 这个算法的特点是<mark>其参数化的加密操作</mark>，允许用户自定义密钥大小、块大小和加密轮数。</li>
+<ul class="lvl-2">
+<li class="lvl-5"><s><strong>RC2</strong>: 一种可变密钥长度的对称加密算法，早期在SSL协议中广泛使用。</s></li>
+<li class="lvl-5"><s><strong>RC4</strong>: 是一种流加密算法，以其简单和速度快著称，曾经广泛应用于SSL和WEP加密。</s></li>
+<li class="lvl-5"><strong>RC5</strong>: 这个算法的特点是<mark>其参数化的加密操作</mark>，允许用户自定义密钥大小、块大小和加密轮数。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>AES (Advanced Encryption Standard)</strong>: 现代最常用的对称密钥算法，使用128、192或256位的密钥。AES的安全性很高，是很多政府和企业的标准加密算法。</p>
-<p>:::warning</p>
+<div class="warning">
 <p><mark>AES不是Feistel结构</mark></p>
-<p>:::</p>
-<ul>
-<li>
+</div>
+<ul class="lvl-2">
+<li class="lvl-5">
 <p>算法结构简单</p>
-<ul>
-<li>字节代换</li>
-<li>行移位</li>
-<li>列混淆</li>
-<li>轮密钥加(实际上是一种vernam,因此非常安全.)&lt;–从这里开始,然后执行九轮循环迭代,最后一轮没有列混淆</li>
+<ul class="lvl-4">
+<li class="lvl-7">字节代换</li>
+<li class="lvl-7">行移位</li>
+<li class="lvl-7">列混淆</li>
+<li class="lvl-7">轮密钥加(实际上是一种vernam,因此非常安全.)&lt;–从这里开始,然后执行九轮循环迭代,最后一轮没有列混淆</li>
 </ul>
 <p>三个代换,一个置换(行移位)</p>
 </li>
-<li>
+<li class="lvl-5">
 <p>密钥被扩展成44(11*4)个32位字所构成的数组,每次用4个</p>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>Blowfish</strong>: 一种块加密算法，使用可变长度的密钥，从32位到448位。它以其加密速度快和有效的资源利用著称。</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-5">
 <p>Blowfish算法的子密钥和S盒都是用Blowfish算法本身生成的</p>
 </li>
-<li>
+<li class="lvl-5">
 <p>与古典Feistel结构不同， Blowfish算法每轮运算都是对数据的左右两个部分同时执行运算</p>
 <img src="https://gitlab.com/ggx-blog/imglab/uploads/8d4af58ca47333d6e5d8e55445639395/202312291130108.png" alt="image-20231229113034067" style="zoom:50%;" />
 </li>
@@ -446,353 +482,406 @@
 </li>
 </ol>
 <p>DES已经被认为不再安全，AES是新的标准</p>
-<h3 id="s-des"><a class="markdownIt-Anchor" href="#s-des"></a> s-DES</h3>
+<h3 id="s-DES">s-DES</h3>
 <p><mark>TODO:搞懂S-DES</mark></p>
-<ul>
-<li>S-DES加密算法的输入为一个8位明文组和一个10位的密钥，输出为8位的密文组。</li>
-<li>S-DES解密算法的输入为一个8位密文组和一个10位的密钥，输出为8位的明文组。</li>
+<ul class="lvl-0">
+<li class="lvl-3">
+<p>S-DES加密算法的输入为一个8位明文组和一个10位的密钥，输出为8位的密文组。</p>
+</li>
+<li class="lvl-3">
+<p>S-DES解密算法的输入为一个8位密文组和一个10位的密钥，输出为8位的明文组。</p>
+</li>
 </ul>
-<h3 id="核心思想"><a class="markdownIt-Anchor" href="#核心思想"></a> 核心思想：</h3>
+<h3 id="核心思想：">核心思想：</h3>
 <ol>
-<li>明文拆成两个部分，各加密一次，相互参与对方的加密</li>
+<li class="lvl-3">
+<p>明文拆成两个部分，各加密一次，相互参与对方的加密</p>
+</li>
 </ol>
-<h3 id="feistel-cipher-structure"><a class="markdownIt-Anchor" href="#feistel-cipher-structure"></a> Feistel Cipher Structure</h3>
+<h3 id="Feistel-Cipher-Structure">Feistel Cipher Structure</h3>
 <blockquote>
 <p>Feistel 建议交替使用代换和置换这实际上是Claude Shannon提出的交替使用混淆(Confusion )和扩散(Diffusion)乘积密码的实际应用</p>
 </blockquote>
 <ol>
-<li><strong>混淆 (Confusion)</strong>:
-<ul>
-<li>混淆指的是使密钥与密文之间的关系尽可能复杂化，使得密文对密钥的依赖不是线性或直接的。这种方式通常是通过代换（substitution）操作来实现的，即将输入的数据的每一部分按照一定的方式替换成其他的数据。这样做的目的是为了防止攻击者能够找到密钥和明文之间的简单关系，从而保护信息。</li>
-<li>在DES这样的Feistel结构中，混淆通常是通过复杂的代换盒（S-boxes）来实现的，这些盒对输入数据进行非线性变换。</li>
+<li class="lvl-3">
+<p><strong>混淆 (Confusion)</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5">混淆指的是使密钥与密文之间的关系尽可能复杂化，使得密文对密钥的依赖不是线性或直接的。这种方式通常是通过代换（substitution）操作来实现的，即将输入的数据的每一部分按照一定的方式替换成其他的数据。这样做的目的是为了防止攻击者能够找到密钥和明文之间的简单关系，从而保护信息。</li>
+<li class="lvl-5">在DES这样的Feistel结构中，混淆通常是通过复杂的代换盒（S-boxes）来实现的，这些盒对输入数据进行非线性变换。</li>
 </ul>
 </li>
-<li><strong>扩散 (Diffusion)</strong>:
-<ul>
-<li>扩散的目的是将明文的统计结构（如频率分布）分散到输出的密文中，使得原文的每个部分都影响到密文的多个部分。这样，即使原文做了微小的改变，也会在密文中产生广泛而显著的效果，从而避免了密文中的模式可被识别。</li>
-<li>在Feistel网络和其他密码算法中，扩散通常是通过置换（permutation）或称作交换的过程来实现的，这个过程重新分布输入位，使得数据的每一部分都影响到其他多个部分。</li>
+<li class="lvl-3">
+<p><strong>扩散 (Diffusion)</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5">扩散的目的是将明文的统计结构（如频率分布）分散到输出的密文中，使得原文的每个部分都影响到密文的多个部分。这样，即使原文做了微小的改变，也会在密文中产生广泛而显著的效果，从而避免了密文中的模式可被识别。</li>
+<li class="lvl-5">在Feistel网络和其他密码算法中，扩散通常是通过置换（permutation）或称作交换的过程来实现的，这个过程重新分布输入位，使得数据的每一部分都影响到其他多个部分。</li>
 </ul>
 </li>
 </ol>
-<h3 id="feistel算法原理"><a class="markdownIt-Anchor" href="#feistel算法原理"></a> feistel算法原理</h3>
+<h3 id="feistel算法原理">feistel算法原理</h3>
 <ol>
-<li><strong>输入分割</strong>：将数据块分割为左半部(L)和右半部®。</li>
-<li><strong>迭代</strong>：对数据进行多轮迭代。在每一轮中：
-<ul>
-<li>将右半部R应用于一个轮函数F，这个函数还需要一个子密钥（每一轮一个不同的子密钥）。</li>
-<li>将函数F的输出与左半部L进行某种组合操作（通常是XOR）。</li>
-<li>交换处理过的左半部和右半部。在最后一轮后，不进行交换，以确保解密过程能正确地逆向执行。</li>
+<li class="lvl-3">
+<p><strong>输入分割</strong>：将数据块分割为左半部(L)和右半部®。</p>
+</li>
+<li class="lvl-3">
+<p><strong>迭代</strong>：对数据进行多轮迭代。在每一轮中：</p>
+<ul class="lvl-2">
+<li class="lvl-5">将右半部R应用于一个轮函数F，这个函数还需要一个子密钥（每一轮一个不同的子密钥）。</li>
+<li class="lvl-5">将函数F的输出与左半部L进行某种组合操作（通常是XOR）。</li>
+<li class="lvl-5">交换处理过的左半部和右半部。在最后一轮后，不进行交换，以确保解密过程能正确地逆向执行。</li>
 </ul>
 </li>
-<li><strong>输出合并</strong>：经过多轮处理后，合并处理过的L和R作为密文输出。</li>
+<li class="lvl-3">
+<p><strong>输出合并</strong>：经过多轮处理后，合并处理过的L和R作为密文输出。</p>
+</li>
 </ol>
 <p>Feistel网络的关键特点之一是加密和解密过程几乎相同，唯一的区别在于子密钥的应用顺序相反。这意味着相同的硬件或软件可以用于加密和解密，只需简单地反转密钥的顺序即可。</p>
-<h3 id="des算法原理"><a class="markdownIt-Anchor" href="#des算法原理"></a> DES算法原理</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/78a769700bb69846635a186f848f0870/202312291121913.png" alt="image-20231229112127861" /></p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5251c6598fd46dd84d6722819d56ee4d/202312291120619.png" alt="image-20231229112053564" /></p>
-<h2 id="非对称加密"><a class="markdownIt-Anchor" href="#非对称加密"></a> 非对称加密</h2>
-<h3 id="数学原理"><a class="markdownIt-Anchor" href="#数学原理"></a> 数学原理：</h3>
+<h3 id="DES算法原理">DES算法原理</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/78a769700bb69846635a186f848f0870/202312291121913.png" alt="image-20231229112127861"></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5251c6598fd46dd84d6722819d56ee4d/202312291120619.png" alt="image-20231229112053564"></p>
+<h2 id="非对称加密">非对称加密</h2>
+<h3 id="数学原理：">数学原理：</h3>
 <p>陷门单向函数：</p>
-<ul>
-<li>单向性：求原函数容易，求逆非常困难</li>
-<li>陷门性：在已知一附加信息<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span></span></span></span>后,求逆非常容易.<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span></span></span></span>为陷门信息</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>单向性：求原函数容易，求逆非常困难</p>
+</li>
+<li class="lvl-2">
+<p>陷门性：在已知一附加信息$\delta$后,求逆非常容易.$\delta$为陷门信息</p>
+</li>
 </ul>
-<h3 id="符号表示"><a class="markdownIt-Anchor" href="#符号表示"></a> 符号表示</h3>
+<h3 id="符号表示">符号表示</h3>
 <p>在讨论的非对称加密部分中，以下符号表示被使用来描述各种密钥和操作：</p>
 <ol>
-<li><strong>会话密钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>K</mi><mi>s</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(K_s)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07153em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></strong></li>
-<li><strong>用户A的公钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>K</mi><msub><mi>U</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(KU_a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></strong></li>
-<li><strong>用户A的私钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>K</mi><msub><mi>R</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(KR_a)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></strong></li>
-<li><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mrow><mi>K</mi><msub><mi>U</mi><mi>a</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>P</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(E_{KU_a}[P])</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0001em;vertical-align:-0.2501em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285719em;"><span style="top:-2.357em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span></strong>：表示用用户A的公钥 KU_a 对明文P进行加密。</li>
-<li><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mrow><mi>K</mi><msub><mi>R</mi><mi>a</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>P</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(E_{KR_a}[P])</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0001em;vertical-align:-0.2501em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285719em;"><span style="top:-2.357em;margin-left:-0.00773em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span></strong>：表示用用户A的私钥 KR_a 对明文P进行加密。</li>
-<li><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>D</mi><mrow><mi>K</mi><msub><mi>U</mi><mi>a</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>C</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(D_{KU_a}[C])</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0001em;vertical-align:-0.2501em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285719em;"><span style="top:-2.357em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span></strong>：表示用用户A的公钥 KU_a 对密文C进行解密。</li>
-<li><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><msub><mi>D</mi><mrow><mi>K</mi><msub><mi>R</mi><mi>a</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>C</mi><mo stretchy="false">]</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(D_{KR_a}[C])</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0001em;vertical-align:-0.2501em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285719em;"><span style="top:-2.357em;margin-left:-0.00773em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.143em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2501em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">]</span><span class="mclose">)</span></span></span></span></strong>：表示用用户A的私钥 KR_a 对密文C进行解密。</li>
+<li class="lvl-3">
+<p><strong>会话密钥 $(K_s)$</strong></p>
+</li>
+<li class="lvl-3">
+<p><strong>用户A的公钥 $(KU_a)$</strong></p>
+</li>
+<li class="lvl-3">
+<p><strong>用户A的私钥 $(KR_a)$</strong></p>
+</li>
+<li class="lvl-3">
+<p><strong>$(E_{KU_a}[P])$</strong>：表示用用户A的公钥 KU_a 对明文P进行加密。</p>
+</li>
+<li class="lvl-3">
+<p><strong>$(E_{KR_a}[P])$</strong>：表示用用户A的私钥 KR_a 对明文P进行加密。</p>
+</li>
+<li class="lvl-3">
+<p><strong>$(D_{KU_a}[C])$</strong>：表示用用户A的公钥 KU_a 对密文C进行解密。</p>
+</li>
+<li class="lvl-3">
+<p><strong>$(D_{KR_a}[C])$</strong>：表示用用户A的私钥 KR_a 对密文C进行解密。</p>
+</li>
 </ol>
-<h3 id="原理"><a class="markdownIt-Anchor" href="#原理"></a> 原理</h3>
+<h3 id="原理">原理</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>加密过程</strong>:</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-5">
 <p><strong>使用公钥加密</strong>: 当发送者想要发送一个加密消息时，他们使用接收者的公钥对消息进行加密。公钥是公开的，任何人都可以使用它来加密消息，但只有持有对应私钥的接收者能够解密这个消息。</p>
 </li>
-<li>
+<li class="lvl-5">
 <p><strong>使用私钥解密</strong>: 一旦消息被公钥加密，它就可以安全地发送给接收者。接收者然后使用他们唯一的私钥来解密这个消息。由于私钥没有公开，只有接收者可以解密这个消息，保证了信息的机密性。</p>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>数字签名和验证</strong>:</p>
-<ul>
-<li><strong>使用私钥签名</strong>: 发送者也可以使用自己的私钥对一个消息进行加密，这通常被用作数字签名。这样做不是为了保密，而是为了验证身份和消息的完整性。</li>
-<li><strong>使用公钥验证</strong>: 接收者或任何人都可以使用发送者的公钥来解密签名。如果解密后的消息与原始消息一致，那么接收者可以确认消息确实来自于声称的发送者，并且消息在传输过程中未被篡改。</li>
+<ul class="lvl-2">
+<li class="lvl-5"><strong>使用私钥签名</strong>: 发送者也可以使用自己的私钥对一个消息进行加密，这通常被用作数字签名。这样做不是为了保密，而是为了验证身份和消息的完整性。</li>
+<li class="lvl-5"><strong>使用公钥验证</strong>: 接收者或任何人都可以使用发送者的公钥来解密签名。如果解密后的消息与原始消息一致，那么接收者可以确认消息确实来自于声称的发送者，并且消息在传输过程中未被篡改。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>签名和加密同时使用</strong></p>
 <p>当数字签名和加密同时使用时，通常有两种主要的方法：一种是先签名后加密，另一种是先加密后签名。以下是使用之前的符号来表示这两种方法：</p>
 <ol>
-<li>先签名后加密（Sign-then-Encrypt）:</li>
+<li class="lvl-6">
+<p>先签名后加密（Sign-then-Encrypt）:</p>
+</li>
 </ol>
 <p>这是最常用的方法，确保了消息的机密性和身份验证。</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-5">
 <p><strong>签名</strong>:</p>
-<ul>
-<li>发送者使用自己的私钥 KR_S 对消息 P 进行签名:
-<ul>
-<li>生成的数字签名为: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>E</mi><mrow><mi>K</mi><msub><mi>R</mi><mi>S</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>P</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">S = E_{KR_S}[P]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.000305em;vertical-align:-0.250305em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.00773em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.250305em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mclose">]</span></span></span></span></li>
+<ul class="lvl-4">
+<li class="lvl-7">发送者使用自己的私钥 KR_S 对消息 P 进行签名:
+<ul class="lvl-6">
+<li class="lvl-9">生成的数字签名为: $S = E_{KR_S}[P]$</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-5">
 <p><strong>加密</strong>:</p>
-<ul>
-<li>然后发送者使用接收者的公钥 KU_R 对含签名的消息进行加密:
-<ul>
-<li>加密后的密文为: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><msub><mi>E</mi><mrow><mi>K</mi><msub><mi>U</mi><mi>R</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>P</mi><mo separator="true">,</mo><mi>S</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">C = E_{KU_R}[P, S]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.000305em;vertical-align:-0.250305em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.250305em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">]</span></span></span></span></li>
+<ul class="lvl-4">
+<li class="lvl-7">然后发送者使用接收者的公钥 KU_R 对含签名的消息进行加密:
+<ul class="lvl-6">
+<li class="lvl-9">加密后的密文为: $C = E_{KU_R}[P, S]$</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-5">
 <p><strong>解密和验证</strong>:</p>
-<ul>
-<li>接收者首先使用自己的私钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><msub><mi>R</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">KR_R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 解密密文:
-<ul>
-<li>得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span> 和 S。</li>
+<ul class="lvl-4">
+<li class="lvl-7">接收者首先使用自己的私钥 $KR_R$ 解密密文:
+<ul class="lvl-6">
+<li class="lvl-9">得到 $P$ 和 S。</li>
 </ul>
 </li>
-<li>然后使用发送者的公钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><msub><mi>U</mi><mi>S</mi></msub></mrow><annotation encoding="application/x-tex">KU_S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 验证签名:
-<ul>
-<li>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><msub><mi>D</mi><mrow><mi>K</mi><msub><mi>U</mi><mi>S</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>S</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">P = D_{KU_S}[S]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.000305em;vertical-align:-0.250305em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.250305em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">]</span></span></span></span>，则签名验证成功。</li>
+<li class="lvl-7">然后使用发送者的公钥 $KU_S$ 验证签名:
+<ul class="lvl-6">
+<li class="lvl-9">如果 $P = D_{KU_S}[S]$，则签名验证成功。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 <ol start="2">
-<li>先加密后签名（Encrypt-then-Sign）:</li>
+<li class="lvl-6">
+<p>先加密后签名（Encrypt-then-Sign）:</p>
+</li>
 </ol>
 <p>这种方法较少使用，因为它可能导致某些安全问题，但在某些特定场景下仍然有效。</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-5">
 <p><strong>加密</strong>:</p>
-<ul>
-<li>发送者使用接收者的公钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><msub><mi>U</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">KU_R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 对消息 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span> 进行加密:
-<ul>
-<li>生成的密文为: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><msub><mi>E</mi><mrow><mi>K</mi><msub><mi>U</mi><mi>R</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>P</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">C = E_{KU_R}[P]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.000305em;vertical-align:-0.250305em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.250305em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mclose">]</span></span></span></span></li>
+<ul class="lvl-4">
+<li class="lvl-7">发送者使用接收者的公钥 $KU_R$ 对消息 $P$ 进行加密:
+<ul class="lvl-6">
+<li class="lvl-9">生成的密文为: $C = E_{KU_R}[P]$</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-5">
 <p><strong>签名</strong>:</p>
-<ul>
-<li>发送者再对密文 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span> 使用自己的私钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><msub><mi>R</mi><mi>S</mi></msub></mrow><annotation encoding="application/x-tex">KR_S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 进行签名:
-<ul>
-<li>生成的签名为: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>E</mi><mrow><mi>K</mi><msub><mi>R</mi><mi>S</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>C</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">S = E_{KR_S}[C]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.000305em;vertical-align:-0.250305em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.05764em;">E</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.00773em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.250305em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mclose">]</span></span></span></span></li>
+<ul class="lvl-4">
+<li class="lvl-7">发送者再对密文 $C$ 使用自己的私钥 $KR_S$ 进行签名:
+<ul class="lvl-6">
+<li class="lvl-9">生成的签名为: $S = E_{KR_S}[C]$</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-5">
 <p><strong>验证和解密</strong>:</p>
-<ul>
-<li>接收者首先使用发送者的公钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><msub><mi>U</mi><mi>S</mi></msub></mrow><annotation encoding="application/x-tex">KU_S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 验证签名:
-<ul>
-<li>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><msub><mi>D</mi><mrow><mi>K</mi><msub><mi>U</mi><mi>S</mi></msub></mrow></msub><mo stretchy="false">[</mo><mi>S</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">C = D_{KU_S}[S]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.000305em;vertical-align:-0.250305em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.02778em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.07153em;">K</span><span class="mord mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">U</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3448em;"><span style="top:-2.3567071428571427em;margin-left:-0.10903em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mathdefault mtight" style="margin-right:0.05764em;">S</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.14329285714285717em;"><span></span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.250305em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mclose">]</span></span></span></span>，则签名验证成功。</li>
+<ul class="lvl-4">
+<li class="lvl-7">接收者首先使用发送者的公钥 $KU_S$ 验证签名:
+<ul class="lvl-6">
+<li class="lvl-9">如果 $C = D_{KU_S}[S]$，则签名验证成功。</li>
 </ul>
 </li>
-<li>然后使用自己的私钥 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><msub><mi>R</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">KR_R</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.00773em;">R</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span> 解密密文 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">C</span></span></span></span> 来获取消息 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span></span></span></span>。</li>
+<li class="lvl-7">然后使用自己的私钥 $KR_R$ 解密密文 $C$ 来获取消息 $P$。</li>
 </ul>
 </li>
 </ul>
 <p>在实际应用中，先签名后加密通常是更推荐的做法，因为它既确保了消息内容的机密性，又能验证消息的来源和完整性。</p>
 </li>
 </ol>
-<h3 id="数论基础"><a class="markdownIt-Anchor" href="#数论基础"></a> 数论基础</h3>
+<h3 id="数论基础">数论基础</h3>
 <p>欧拉函数</p>
 <p>在非对称加密系统中，尤其是在RSA算法中，密钥的生成过程是核心组成部分。以下是基于欧拉函数和其他数论概念的RSA密钥生成过程的一个概述：</p>
-<h3 id="rsa密钥生成步骤"><a class="markdownIt-Anchor" href="#rsa密钥生成步骤"></a> RSA密钥生成步骤：</h3>
+<h3 id="RSA密钥生成步骤：">RSA密钥生成步骤：</h3>
 <ol>
-<li>
-<p><strong>选择两个大的质数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span></strong>:</p>
-<ul>
-<li>这两个质数不应该公开，并且它们的选择对于系统的安全性至关重要。它们通常是随机选取的，且足够大，以使得其乘积难以被分解。</li>
+<li class="lvl-3">
+<p><strong>选择两个大的质数 $p$ 和 $q$</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5">这两个质数不应该公开，并且它们的选择对于系统的安全性至关重要。它们通常是随机选取的，且足够大，以使得其乘积难以被分解。</li>
 </ul>
 </li>
-<li>
-<p><strong>计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>p</mi><mo>⋅</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">n = p \cdot q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span></strong>:</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 是这两个质数的乘积，它将被用作公钥和私钥的一部分。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 的位数和大小是加密强度的关键。</li>
+<li class="lvl-3">
+<p><strong>计算 $n = p \cdot q$</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5">$n$ 是这两个质数的乘积，它将被用作公钥和私钥的一部分。$n$ 的位数和大小是加密强度的关键。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>计算欧拉函数 $ \phi(n) = (p-1)(q-1) $</strong>:</p>
-<ul>
-<li>这一步是利用了欧拉函数的性质。因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span> 是质数，所以每个数都分别与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">q-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 互质。</li>
+<ul class="lvl-2">
+<li class="lvl-5">这一步是利用了欧拉函数的性质。因为 $p$ 和 $q$ 是质数，所以每个数都分别与 $p-1$ 和 $q-1$ 互质。</li>
 </ul>
 </li>
-<li>
-<p><strong>选择一个公钥指数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span></strong>:</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span> 是公钥的一部分，通常可以是一个较小的质数。它必须满足$ 1 &lt; e &lt; \phi(n) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">并</mi><mi mathvariant="normal">且</mi></mrow><annotation encoding="application/x-tex">并且</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">并</span><span class="mord cjk_fallback">且</span></span></span></span> e <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">与</mi></mrow><annotation encoding="application/x-tex">与</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">与</span></span></span></span> \phi(n) $互质。常见的选择是65537，因为它满足上述条件且计算效率较高。</li>
+<li class="lvl-3">
+<p><strong>选择一个公钥指数 $e$</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5">$e$ 是公钥的一部分，通常可以是一个较小的质数。它必须满足$ 1 &lt; e &lt; \phi(n) $并且$ e $与$ \phi(n) $互质。常见的选择是65537，因为它满足上述条件且计算效率较高。</li>
 </ul>
 </li>
-<li>
-<p><strong>计算私钥指数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span></strong>:</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">d</span></span></span></span> 是满足$ de \equiv 1 \mod \phi(n) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">的</mi><mi mathvariant="normal">整</mi><mi mathvariant="normal">数</mi><mi mathvariant="normal">。</mi><mi mathvariant="normal">简</mi><mi mathvariant="normal">单</mi><mi mathvariant="normal">来</mi><mi mathvariant="normal">说</mi><mi mathvariant="normal">，</mi></mrow><annotation encoding="application/x-tex">的整数。简单来说，</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">整</span><span class="mord cjk_fallback">数</span><span class="mord cjk_fallback">。</span><span class="mord cjk_fallback">简</span><span class="mord cjk_fallback">单</span><span class="mord cjk_fallback">来</span><span class="mord cjk_fallback">说</span><span class="mord cjk_fallback">，</span></span></span></span>d$ 是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">e</span></span></span></span>在模$ \phi(n) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">下</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">乘</mi><mi mathvariant="normal">法</mi><mi mathvariant="normal">逆</mi><mi mathvariant="normal">元</mi><mi mathvariant="normal">。</mi></mrow><annotation encoding="application/x-tex">下的乘法逆元。</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">下</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">乘</span><span class="mord cjk_fallback">法</span><span class="mord cjk_fallback">逆</span><span class="mord cjk_fallback">元</span><span class="mord cjk_fallback">。</span></span></span></span>d$ 可以通过扩展欧几里得算法计算得到。</li>
+<li class="lvl-3">
+<p><strong>计算私钥指数 $d$</strong>:</p>
+<ul class="lvl-2">
+<li class="lvl-5">$d$ 是满足$ de \equiv 1 \mod \phi(n) $的整数。简单来说，$d$ 是$e$在模$ \phi(n) $下的乘法逆元。$d$ 可以通过扩展欧几里得算法计算得到。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>形成密钥对</strong>:</p>
-<ul>
-<li>公钥为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>e</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(e, n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">e</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</li>
-<li>私钥为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">(</mo><mi>d</mi><mo separator="true">,</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(d, n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">d</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>。</li>
+<ul class="lvl-2">
+<li class="lvl-5">公钥为 $(e, n)$。</li>
+<li class="lvl-5">私钥为 $(d, n)$。</li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/78c2a556e6cdfc2cad54d483616239ee/202401022352305.png" alt="image-20231231120607644" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/78c2a556e6cdfc2cad54d483616239ee/202401022352305.png" alt="image-20231231120607644"></p>
 </li>
 </ol>
-<h2 id="diffie-hellman密钥交换算法"><a class="markdownIt-Anchor" href="#diffie-hellman密钥交换算法"></a> Diffie-Hellman密钥交换算法</h2>
+<h2 id="Diffie-Hellman密钥交换算法">Diffie-Hellman密钥交换算法</h2>
 <p>算法本身也只局限于进行密钥交换</p>
 <p>Diffie-Hellman（DH）算法是一种密钥交换协议，它允许两方在没有共享秘密的前提下通过一个不安全的通信渠道建立一个共享的秘密密钥。这个共享的秘密可以用于之后的通信中作为对称加密的密钥。DH算法基于离散对数难题的数学性质。</p>
-<h3 id="数学基础"><a class="markdownIt-Anchor" href="#数学基础"></a> 数学基础：</h3>
+<h3 id="数学基础：">数学基础：</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>模运算（Modular Arithmetic）</strong>:</p>
-<ul>
-<li>DH算法在一个有限群上操作，通常是模一个大质数的乘法群。模运算就是取余运算，它定义了这个群的结构。</li>
+<ul class="lvl-2">
+<li class="lvl-5">DH算法在一个有限群上操作，通常是模一个大质数的乘法群。模运算就是取余运算，它定义了这个群的结构。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>离散对数问题（Discrete Logarithm Problem, DLP）</strong>:</p>
-<ul>
-<li>在给定一个群生成元 $ g $ 和 $ g^a $ 的情况下，离散对数问题指的是找到指数 $ a $ 的难题。在足够大的群中，这个问题是计算上不可行的。DH算法的安全性就是基于离散对数问题的难度。</li>
+<ul class="lvl-2">
+<li class="lvl-5">在给定一个群生成元 $ g $ 和 $ g^a $ 的情况下，离散对数问题指的是找到指数 $ a $ 的难题。在足够大的群中，这个问题是计算上不可行的。DH算法的安全性就是基于离散对数问题的难度。</li>
 </ul>
 </li>
 </ol>
-<h3 id="dh密钥交换步骤"><a class="markdownIt-Anchor" href="#dh密钥交换步骤"></a> DH密钥交换步骤：</h3>
+<h3 id="DH密钥交换步骤：">DH密钥交换步骤：</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>选择全局参数</strong>:</p>
-<ul>
-<li>双方协定一个大质数 $ p $ 和其原根 $ g $（在模 $ p $ 下的一个生成元）。这两个值不需要保密，可以公开。</li>
+<ul class="lvl-2">
+<li class="lvl-5">双方协定一个大质数 $ p $ 和其原根 $ g $（在模 $ p $ 下的一个生成元）。这两个值不需要保密，可以公开。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>各自选择私钥</strong>:</p>
-<ul>
-<li>Alice选择一个私钥 $ a $，Bob选择一个私钥 $ b $。这些私钥是随机选择的，并且保持秘密。</li>
+<ul class="lvl-2">
+<li class="lvl-5">Alice选择一个私钥 $ a $，Bob选择一个私钥 $ b $。这些私钥是随机选择的，并且保持秘密。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>各自计算并公开传输值</strong>:</p>
-<ul>
-<li>Alice计算 $ A = g^a \mod p $ 并将 $ A $ 发送给Bob。</li>
-<li>Bob计算 $ B = g^b \mod p $ 并将 $ B $ 发送给Alice。</li>
+<ul class="lvl-2">
+<li class="lvl-5">Alice计算 $ A = g^a \mod p $ 并将 $ A $ 发送给Bob。</li>
+<li class="lvl-5">Bob计算 $ B = g^b \mod p $ 并将 $ B $ 发送给Alice。</li>
 </ul>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>各自计算共享密钥</strong>:</p>
-<ul>
-<li>Alice接收到 $ B $ 后，计算 $ s = B^a \mod p $。</li>
-<li>Bob接收到 $ A $ 后，计算 $ s = A^b \mod p $。</li>
+<ul class="lvl-2">
+<li class="lvl-5">Alice接收到 $ B $ 后，计算 $ s = B^a \mod p $。</li>
+<li class="lvl-5">Bob接收到 $ A $ 后，计算 $ s = A^b \mod p $。</li>
 </ul>
 </li>
 </ol>
-<h3 id="结果"><a class="markdownIt-Anchor" href="#结果"></a> 结果：</h3>
-<ul>
-<li>Alice和Bob现在共享密钥 $ s <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">，</mi><mi mathvariant="normal">因</mi><mi mathvariant="normal">为</mi><mi mathvariant="normal">根</mi><mi mathvariant="normal">据</mi><mi mathvariant="normal">模</mi><mi mathvariant="normal">幂</mi><mi mathvariant="normal">运</mi><mi mathvariant="normal">算</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">性</mi><mi mathvariant="normal">质</mi><mi mathvariant="normal">，</mi></mrow><annotation encoding="application/x-tex">，因为根据模幂运算的性质，</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">因</span><span class="mord cjk_fallback">为</span><span class="mord cjk_fallback">根</span><span class="mord cjk_fallback">据</span><span class="mord cjk_fallback">模</span><span class="mord cjk_fallback">幂</span><span class="mord cjk_fallback">运</span><span class="mord cjk_fallback">算</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">性</span><span class="mord cjk_fallback">质</span><span class="mord cjk_fallback">，</span></span></span></span> B^a \mod p = A^b \mod p = g^{ab} \mod p $。</li>
-<li>这个密钥$ s $可以用作后续通信的对称密钥。</li>
+<h3 id="结果：">结果：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Alice和Bob现在共享密钥 $ s $，因为根据模幂运算的性质，$ B^a \mod p = A^b \mod p = g^{ab} \mod p $。</p>
+</li>
+<li class="lvl-2">
+<p>这个密钥$ s $可以用作后续通信的对称密钥。</p>
+</li>
 </ul>
-<p>DH算法的安全性基于离散对数问题的难度；即使攻击者知道$ p <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">，</mi></mrow><annotation encoding="application/x-tex">，</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">，</span></span></span></span> g <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">，</mi></mrow><annotation encoding="application/x-tex">，</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">，</span></span></span></span> A $，和 $ B <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">，</mi><mi mathvariant="normal">在</mi><mi mathvariant="normal">没</mi><mi mathvariant="normal">有</mi><mi mathvariant="normal">更</mi><mi mathvariant="normal">多</mi><mi mathvariant="normal">信</mi><mi mathvariant="normal">息</mi><mi mathvariant="normal">的</mi><mi mathvariant="normal">情</mi><mi mathvariant="normal">况</mi><mi mathvariant="normal">下</mi><mi mathvariant="normal">，</mi><mi mathvariant="normal">他</mi><mi mathvariant="normal">们</mi><mi mathvariant="normal">不</mi><mi mathvariant="normal">能</mi><mi mathvariant="normal">有</mi><mi mathvariant="normal">效</mi><mi mathvariant="normal">地</mi><mi mathvariant="normal">解</mi><mi mathvariant="normal">决</mi></mrow><annotation encoding="application/x-tex">，在没有更多信息的情况下，他们不能有效地解决</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">在</span><span class="mord cjk_fallback">没</span><span class="mord cjk_fallback">有</span><span class="mord cjk_fallback">更</span><span class="mord cjk_fallback">多</span><span class="mord cjk_fallback">信</span><span class="mord cjk_fallback">息</span><span class="mord cjk_fallback">的</span><span class="mord cjk_fallback">情</span><span class="mord cjk_fallback">况</span><span class="mord cjk_fallback">下</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">他</span><span class="mord cjk_fallback">们</span><span class="mord cjk_fallback">不</span><span class="mord cjk_fallback">能</span><span class="mord cjk_fallback">有</span><span class="mord cjk_fallback">效</span><span class="mord cjk_fallback">地</span><span class="mord cjk_fallback">解</span><span class="mord cjk_fallback">决</span></span></span></span> A = g^a \mod p <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">来</mi><mi mathvariant="normal">找</mi><mi mathvariant="normal">到</mi></mrow><annotation encoding="application/x-tex">来找到</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">来</span><span class="mord cjk_fallback">找</span><span class="mord cjk_fallback">到</span></span></span></span> a <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">，</mi><mi mathvariant="normal">或</mi><mi mathvariant="normal">者</mi><mi mathvariant="normal">解</mi><mi mathvariant="normal">决</mi></mrow><annotation encoding="application/x-tex">，或者解决</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">或</span><span class="mord cjk_fallback">者</span><span class="mord cjk_fallback">解</span><span class="mord cjk_fallback">决</span></span></span></span> B = g^b \mod p <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">来</mi><mi mathvariant="normal">找</mi><mi mathvariant="normal">到</mi></mrow><annotation encoding="application/x-tex">来找到</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">来</span><span class="mord cjk_fallback">找</span><span class="mord cjk_fallback">到</span></span></span></span> b <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">，</mi><mi mathvariant="normal">从</mi><mi mathvariant="normal">而</mi><mi mathvariant="normal">无</mi><mi mathvariant="normal">法</mi><mi mathvariant="normal">计</mi><mi mathvariant="normal">算</mi><mi mathvariant="normal">出</mi><mi mathvariant="normal">共</mi><mi mathvariant="normal">享</mi><mi mathvariant="normal">密</mi><mi mathvariant="normal">钥</mi></mrow><annotation encoding="application/x-tex">，从而无法计算出共享密钥</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">从</span><span class="mord cjk_fallback">而</span><span class="mord cjk_fallback">无</span><span class="mord cjk_fallback">法</span><span class="mord cjk_fallback">计</span><span class="mord cjk_fallback">算</span><span class="mord cjk_fallback">出</span><span class="mord cjk_fallback">共</span><span class="mord cjk_fallback">享</span><span class="mord cjk_fallback">密</span><span class="mord cjk_fallback">钥</span></span></span></span> s $。</p>
-<h2 id="密钥分配"><a class="markdownIt-Anchor" href="#密钥分配"></a> 密钥分配</h2>
-<h3 id="加密位置"><a class="markdownIt-Anchor" href="#加密位置"></a> 加密位置</h3>
-<ul>
-<li><strong>链路加密</strong>保护数据在网络中的每个链接上，但在每个节点都会被解密和重新加密，适合网络层的广泛数据保护。
-<ul>
-<li><strong>安全性</strong>:
-<ul>
-<li>安全性取决于网络中各个节点的安全。如果任何一个节点受到攻击，数据可能会在那个点被解密和读取。</li>
+<p>DH算法的安全性基于离散对数问题的难度；即使攻击者知道$ p $，$ g $，$ A $，和 $ B $，在没有更多信息的情况下，他们不能有效地解决$ A = g^a \mod p $来找到$ a $，或者解决$ B = g^b \mod p $来找到$ b $，从而无法计算出共享密钥$ s $。</p>
+<h2 id="密钥分配">密钥分配</h2>
+<h3 id="加密位置">加密位置</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>链路加密</strong>保护数据在网络中的每个链接上，但在每个节点都会被解密和重新加密，适合网络层的广泛数据保护。</p>
+<ul class="lvl-2">
+<li class="lvl-4"><strong>安全性</strong>:
+<ul class="lvl-4">
+<li class="lvl-6">安全性取决于网络中各个节点的安全。如果任何一个节点受到攻击，数据可能会在那个点被解密和读取。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>端到端加密</strong>保护数据从发送者到接收者的整个过程，适合保障敏感信息和个人通信的完整性和机密性。
-<ul>
-<li><strong>安全性</strong>:
-<ul>
-<li>端到端加密被认为是更安全的，因为密钥只在通信的两端持有，中间任何节点都没有密钥来解密内容。这意味着即使数据被截获，第三方也无法解读数据内容。</li>
+<li class="lvl-2">
+<p><strong>端到端加密</strong>保护数据从发送者到接收者的整个过程，适合保障敏感信息和个人通信的完整性和机密性。</p>
+<ul class="lvl-2">
+<li class="lvl-4"><strong>安全性</strong>:
+<ul class="lvl-4">
+<li class="lvl-6">端到端加密被认为是更安全的，因为密钥只在通信的两端持有，中间任何节点都没有密钥来解密内容。这意味着即使数据被截获，第三方也无法解读数据内容。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
-<h3 id="传统的对称密码分配"><a class="markdownIt-Anchor" href="#传统的对称密码分配"></a> 传统的对称密码分配</h3>
-<ul>
-<li>
+<h3 id="传统的对称密码分配">传统的对称密码分配</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>人工传送,链路加密</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>A–&gt;B</p>
 </li>
-<li>
-<p>A&lt;–C--&gt;B</p>
+<li class="lvl-4">
+<p>A&lt;–C–&gt;B</p>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-2">
 <p>A(用原有密钥加密)==不安全信道==&gt;B(解密)</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>A&lt;==安全信道==C==安全信道==&gt;B</p>
 </li>
 </ul>
-<h3 id="密钥分配中心kdc模式"><a class="markdownIt-Anchor" href="#密钥分配中心kdc模式"></a> 密钥分配中心KDC模式</h3>
-<h4 id="1-注册与存储密钥"><a class="markdownIt-Anchor" href="#1-注册与存储密钥"></a> 1. 注册与存储密钥：</h4>
-<ul>
-<li><strong>实体注册</strong>：在网络中的每个实体（用户或服务）首先需要在KDC注册。注册过程中，实体和KDC之间会共享一个初始的密钥，称为主密钥。这个密钥是保密的，只有实体和KDC知道。</li>
-<li><strong>密钥存储</strong>：KDC会安全地存储所有注册实体的主密钥信息。</li>
+<h3 id="密钥分配中心KDC模式">密钥分配中心KDC模式</h3>
+<h4 id="1-注册与存储密钥：">1. 注册与存储密钥：</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>实体注册</strong>：在网络中的每个实体（用户或服务）首先需要在KDC注册。注册过程中，实体和KDC之间会共享一个初始的密钥，称为主密钥。这个密钥是保密的，只有实体和KDC知道。</p>
+</li>
+<li class="lvl-2">
+<p><strong>密钥存储</strong>：KDC会安全地存储所有注册实体的主密钥信息。</p>
+</li>
 </ul>
-<h4 id="2-密钥请求与分发"><a class="markdownIt-Anchor" href="#2-密钥请求与分发"></a> 2. 密钥请求与分发：</h4>
-<ul>
-<li><strong>密钥请求</strong>：当一个实体（比如用户A）想要与另一个实体（比如用户B）安全通信时，它会向KDC发出一个密钥请求。这个请求通常包括请求者的标识和目标实体的标识。</li>
-<li><strong>KDC响应</strong>：KDC验证请求者的身份，并且使用与请求者和目标实体共享的主密钥生成一个会话密钥。然后，KDC将会话密钥安全地发送(用各自对应的主密钥加密)给请求者和目标实体。还会把原始请求同时告诉A,把A的id同时告诉B.</li>
+<h4 id="2-密钥请求与分发：">2. 密钥请求与分发：</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>密钥请求</strong>：当一个实体（比如用户A）想要与另一个实体（比如用户B）安全通信时，它会向KDC发出一个密钥请求。这个请求通常包括请求者的标识和目标实体的标识。</p>
+</li>
+<li class="lvl-2">
+<p><strong>KDC响应</strong>：KDC验证请求者的身份，并且使用与请求者和目标实体共享的主密钥生成一个会话密钥。然后，KDC将会话密钥安全地发送(用各自对应的主密钥加密)给请求者和目标实体。还会把原始请求同时告诉A,把A的id同时告诉B.</p>
+</li>
 </ul>
-<h4 id="3-会话密钥的使用"><a class="markdownIt-Anchor" href="#3-会话密钥的使用"></a> 3. 会话密钥的使用：</h4>
-<ul>
-<li><strong>会话建立</strong>：一旦两个实体收到了KDC发送的会话密钥，它们就可以使用这个密钥来加密通信内容，进行安全的会话。</li>
-<li><strong>会话结束</strong>：会话结束后，会话密钥可以被丢弃。对于新的会话，通常会生成新的会话密钥。</li>
+<h4 id="3-会话密钥的使用：">3. 会话密钥的使用：</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>会话建立</strong>：一旦两个实体收到了KDC发送的会话密钥，它们就可以使用这个密钥来加密通信内容，进行安全的会话。</p>
+</li>
+<li class="lvl-2">
+<p><strong>会话结束</strong>：会话结束后，会话密钥可以被丢弃。对于新的会话，通常会生成新的会话密钥。</p>
+</li>
 </ul>
-<h3 id="公钥的分配"><a class="markdownIt-Anchor" href="#公钥的分配"></a> 公钥的分配</h3>
+<h3 id="公钥的分配">公钥的分配</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p>公开发布</p>
 <p>简单,但是任何人都可以伪造</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>公开可访问目录</p>
 <p>管理员维护&lt;姓名,公钥&gt;目录</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>公钥授权</p>
 <p>比公开目录更严格,获取目录需要认证</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>公钥证书</p>
 <p>不通过管理员维护目录,而是通过传递证书</p>
 </li>
 </ol>
-<h3 id="利用公钥分配传统密码"><a class="markdownIt-Anchor" href="#利用公钥分配传统密码"></a> 利用公钥分配传统密码</h3>
+<h3 id="利用公钥分配传统密码">利用公钥分配传统密码</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>简单分配</strong>就是你能想到的最简单方法,先公开公钥,在Bob得到公钥后就可以不对称加密传递信息了.</p>
 <p>不过容易受到主动攻击,因为Alice不能确定和她聊天的就是Bob</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>存在KDC的情况下,A和B已知对方公钥,则先用公钥确定身份.握手后再传密钥</p>
 </li>
 </ol>
@@ -843,7 +932,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text"> 密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text"> 基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6"><span class="toc-number">1.2.</span> <span class="toc-text"> 密码编码学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 密码编码学的三个特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 密码编码学的历史</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text"> 古典密码：代换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text"> 单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text"> 多表代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%E7%BD%AE%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text"> 古典密码：置换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text"> 对称密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s-des"><span class="toc-number">1.5.1.</span> <span class="toc-text"> s-DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-number">1.5.2.</span> <span class="toc-text"> 核心思想：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#feistel-cipher-structure"><span class="toc-number">1.5.3.</span> <span class="toc-text"> Feistel Cipher Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#feistel%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.4.</span> <span class="toc-text"> feistel算法原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#des%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.5.</span> <span class="toc-text"> DES算法原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.6.</span> <span class="toc-text"> 非对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.1.</span> <span class="toc-text"> 数学原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.6.2.</span> <span class="toc-text"> 符号表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.3.</span> <span class="toc-text"> 原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-number">1.6.4.</span> <span class="toc-text"> 数论基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rsa%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.6.5.</span> <span class="toc-text"> RSA密钥生成步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#diffie-hellman%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text"> Diffie-Hellman密钥交换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="toc-number">1.7.1.</span> <span class="toc-text"> 数学基础：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dh%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.7.2.</span> <span class="toc-text"> DH密钥交换步骤：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-number">1.7.3.</span> <span class="toc-text"> 结果：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D"><span class="toc-number">1.8.</span> <span class="toc-text"> 密钥分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.8.1.</span> <span class="toc-text"> 加密位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E5%88%86%E9%85%8D"><span class="toc-number">1.8.2.</span> <span class="toc-text"> 传统的对称密码分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E4%B8%AD%E5%BF%83kdc%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.8.3.</span> <span class="toc-text"> 密钥分配中心KDC模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%AD%98%E5%82%A8%E5%AF%86%E9%92%A5"><span class="toc-number">1.8.3.1.</span> <span class="toc-text"> 1. 注册与存储密钥：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AF%86%E9%92%A5%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%88%86%E5%8F%91"><span class="toc-number">1.8.3.2.</span> <span class="toc-text"> 2. 密钥请求与分发：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BC%9A%E8%AF%9D%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">1.8.3.3.</span> <span class="toc-text"> 3. 会话密钥的使用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E7%9A%84%E5%88%86%E9%85%8D"><span class="toc-number">1.8.4.</span> <span class="toc-text"> 公钥的分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%85%AC%E9%92%A5%E5%88%86%E9%85%8D%E4%BC%A0%E7%BB%9F%E5%AF%86%E7%A0%81"><span class="toc-number">1.8.5.</span> <span class="toc-text"> 利用公钥分配传统密码</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">密码学基础</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.1.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6"><span class="toc-number">1.2.</span> <span class="toc-text">密码编码学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E4%B8%89%E4%B8%AA%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.</span> <span class="toc-text">密码编码学的三个特征</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E7%BC%96%E7%A0%81%E5%AD%A6%E7%9A%84%E5%8E%86%E5%8F%B2"><span class="toc-number">1.2.2.</span> <span class="toc-text">密码编码学的历史</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%EF%BC%9A%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.</span> <span class="toc-text">古典密码：代换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.1.</span> <span class="toc-text">单表代换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%A1%A8%E4%BB%A3%E6%8D%A2"><span class="toc-number">1.3.2.</span> <span class="toc-text">多表代换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%A4%E5%85%B8%E5%AF%86%E7%A0%81%EF%BC%9A%E7%BD%AE%E6%8D%A2"><span class="toc-number">1.4.</span> <span class="toc-text">古典密码：置换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81"><span class="toc-number">1.5.</span> <span class="toc-text">对称密码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#s-DES"><span class="toc-number">1.5.1.</span> <span class="toc-text">s-DES</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3%EF%BC%9A"><span class="toc-number">1.5.2.</span> <span class="toc-text">核心思想：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Feistel-Cipher-Structure"><span class="toc-number">1.5.3.</span> <span class="toc-text">Feistel Cipher Structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#feistel%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.4.</span> <span class="toc-text">feistel算法原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DES%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-number">1.5.5.</span> <span class="toc-text">DES算法原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.6.</span> <span class="toc-text">非对称加密</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="toc-number">1.6.1.</span> <span class="toc-text">数学原理：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%A4%BA"><span class="toc-number">1.6.2.</span> <span class="toc-text">符号表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.6.3.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-number">1.6.4.</span> <span class="toc-text">数论基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RSA%E5%AF%86%E9%92%A5%E7%94%9F%E6%88%90%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.6.5.</span> <span class="toc-text">RSA密钥生成步骤：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Diffie-Hellman%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E7%AE%97%E6%B3%95"><span class="toc-number">1.7.</span> <span class="toc-text">Diffie-Hellman密钥交换算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80%EF%BC%9A"><span class="toc-number">1.7.1.</span> <span class="toc-text">数学基础：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DH%E5%AF%86%E9%92%A5%E4%BA%A4%E6%8D%A2%E6%AD%A5%E9%AA%A4%EF%BC%9A"><span class="toc-number">1.7.2.</span> <span class="toc-text">DH密钥交换步骤：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="toc-number">1.7.3.</span> <span class="toc-text">结果：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D"><span class="toc-number">1.8.</span> <span class="toc-text">密钥分配</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E5%AF%86%E4%BD%8D%E7%BD%AE"><span class="toc-number">1.8.1.</span> <span class="toc-text">加密位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E7%9A%84%E5%AF%B9%E7%A7%B0%E5%AF%86%E7%A0%81%E5%88%86%E9%85%8D"><span class="toc-number">1.8.2.</span> <span class="toc-text">传统的对称密码分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E9%92%A5%E5%88%86%E9%85%8D%E4%B8%AD%E5%BF%83KDC%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.8.3.</span> <span class="toc-text">密钥分配中心KDC模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%B3%A8%E5%86%8C%E4%B8%8E%E5%AD%98%E5%82%A8%E5%AF%86%E9%92%A5%EF%BC%9A"><span class="toc-number">1.8.3.1.</span> <span class="toc-text">1. 注册与存储密钥：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%AF%86%E9%92%A5%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%88%86%E5%8F%91%EF%BC%9A"><span class="toc-number">1.8.3.2.</span> <span class="toc-text">2. 密钥请求与分发：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BC%9A%E8%AF%9D%E5%AF%86%E9%92%A5%E7%9A%84%E4%BD%BF%E7%94%A8%EF%BC%9A"><span class="toc-number">1.8.3.3.</span> <span class="toc-text">3. 会话密钥的使用：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E9%92%A5%E7%9A%84%E5%88%86%E9%85%8D"><span class="toc-number">1.8.4.</span> <span class="toc-text">公钥的分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%85%AC%E9%92%A5%E5%88%86%E9%85%8D%E4%BC%A0%E7%BB%9F%E5%AF%86%E7%A0%81"><span class="toc-number">1.8.5.</span> <span class="toc-text">利用公钥分配传统密码</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

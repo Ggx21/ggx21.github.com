@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="网原第11次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn  第一题  为什么要发明一个新的抽象ID(端口号),而不用进程ID?   答:  传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。 传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销 进程可能使用多个端口   第二题  数据报">
+  <meta name="description" content="网原第11次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  为什么要发明一个新的抽象ID(端口号),而不用进程ID?  答:   传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。   传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销   进程可能使用多个端口   第二题  数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="network-homework-11">
 <meta property="og:url" content="https://ggxloveslife.top/homework/network/network11/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="网原第11次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn  第一题  为什么要发明一个新的抽象ID(端口号),而不用进程ID?   答:  传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。 传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销 进程可能使用多个端口   第二题  数据报">
+<meta property="og:description" content="网原第11次作业 郭高旭 2021010803 ggx21@mails.tsinghua.edu.cn 第一题  为什么要发明一个新的抽象ID(端口号),而不用进程ID?  答:   传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。   传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销   进程可能使用多个端口   第二题  数">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://ggxloveslife.top/img/network11.assets/image-20230512115040962.png">
 <meta property="og:image" content="https://ggxloveslife.top/img/network11.assets/image-20230522214940743.png">
@@ -130,7 +130,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/homework/network/network12/"
+            href="/homework/network/network-E4/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -179,7 +179,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%8E%9F%E7%AC%AC11%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="toc-number">1.</span> <span class="toc-text"> 网原第11次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text"> 第一题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%94"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text"> 答:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text"> 第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text"> 第四题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 5.</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#aiad"><span class="toc-number">1.4.1.0.1.</span> <span class="toc-text"> AIAD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mimd"><span class="toc-number">1.4.1.0.2.</span> <span class="toc-text"> MIMD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#miad"><span class="toc-number">1.4.1.0.3.</span> <span class="toc-text"> MIAD</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-c"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 6. C</span></a></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第11次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%94"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">答:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5"><span class="toc-number">1.4.1.</span> <span class="toc-text">5.</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#AIAD"><span class="toc-number">1.4.1.0.1.</span> <span class="toc-text">AIAD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MIMD"><span class="toc-number">1.4.1.0.2.</span> <span class="toc-text">MIMD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MIAD"><span class="toc-number">1.4.1.0.3.</span> <span class="toc-text">MIAD</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-C"><span class="toc-number">1.4.2.</span> <span class="toc-text">6. C</span></a></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -236,38 +236,56 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="网原第11次作业"><a class="markdownIt-Anchor" href="#网原第11次作业"></a> 网原第11次作业</h1>
+    <h1>网原第11次作业</h1>
 <p>郭高旭 2021010803 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a></p>
-<h2 id="第一题"><a class="markdownIt-Anchor" href="#第一题"></a> 第一题</h2>
+<h2 id="第一题">第一题</h2>
 <blockquote>
 <p>为什么要发明一个新的抽象ID(端口号),而不用进程ID?</p>
 </blockquote>
-<h5 id="答"><a class="markdownIt-Anchor" href="#答"></a> 答:</h5>
+<h5 id="答">答:</h5>
 <ol>
-<li>传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。</li>
-<li>传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销</li>
-<li>进程可能使用多个端口</li>
+<li class="lvl-3">
+<p>传输层不需要知道进程ID，只需要知道它的目的与源端口。端口与进程的转换发生在终端系统内部。</p>
+</li>
+<li class="lvl-3">
+<p>传输层如果使用进程ID，需要维护一个端口到进程的关系表，这样增大了网络的开销</p>
+</li>
+<li class="lvl-3">
+<p>进程可能使用多个端口</p>
+</li>
 </ol>
-<h2 id="第二题"><a class="markdownIt-Anchor" href="#第二题"></a> 第二题</h2>
+<h2 id="第二题">第二题</h2>
 <blockquote>
 <p>数据报的分段和重组机制由IP层来处理，对于TCP不可见。试问,这是否意味着TCP不用担心数据错序到达的问题</p>
 </blockquote>
 <p>答:不是</p>
 <ol>
-<li>数据报的分段和重组机制由IP层来处理，ip层只是保证了数据报的完整性，</li>
-<li>TCP协议会通过TCP头的序号接收端进行有序地重组</li>
-<li>TCP协议还会使用校验和机制来检测丢弃、重传不正确的数据报，</li>
+<li class="lvl-3">
+<p>数据报的分段和重组机制由IP层来处理，ip层只是保证了数据报的完整性，</p>
+</li>
+<li class="lvl-3">
+<p>TCP协议会通过TCP头的序号接收端进行有序地重组</p>
+</li>
+<li class="lvl-3">
+<p>TCP协议还会使用校验和机制来检测丢弃、重传不正确的数据报，</p>
+</li>
 </ol>
-<h2 id="第三题"><a class="markdownIt-Anchor" href="#第三题"></a> 第三题</h2>
+<h2 id="第三题">第三题</h2>
 <blockquote>
-<p><img src="/img/network11.assets/image-20230512115040962.png" alt="image-20230512115040962" /></p>
+<p><img src="/img/network11.assets/image-20230512115040962.png" alt="image-20230512115040962"></p>
 </blockquote>
 <ol>
-<li>ABCDE同时增加，4线路到达瓶颈，BCD停止增长</li>
-<li>A，B继续增长直到1到达瓶颈</li>
-<li>变化：原有BCD流大小不变均为1/3，AE大小为1/2</li>
+<li class="lvl-3">
+<p>ABCDE同时增加，4线路到达瓶颈，BCD停止增长</p>
+</li>
+<li class="lvl-3">
+<p>A，B继续增长直到1到达瓶颈</p>
+</li>
+<li class="lvl-3">
+<p>变化：原有BCD流大小不变均为1/3，AE大小为1/2</p>
+</li>
 </ol>
-<h2 id="第四题"><a class="markdownIt-Anchor" href="#第四题"></a> 第四题</h2>
+<h2 id="第四题">第四题</h2>
 <pre class="mermaid">sequenceDiagram
     participant Client
     participant Server
@@ -282,22 +300,30 @@
 	Note over Client: established
     Note over Client, Server: 握手完成</pre>
 <ol>
-<li>listen-&gt;syc-received-&gt;established</li>
-<li>closed-&gt;syc-sent-&gt;established</li>
-<li>(1)SYN(3)SYN+ACK</li>
-<li>665,234</li>
+<li class="lvl-3">
+<p>listen-&gt;syc-received-&gt;established</p>
+</li>
+<li class="lvl-3">
+<p>closed-&gt;syc-sent-&gt;established</p>
+</li>
+<li class="lvl-3">
+<p>(1)SYN(3)SYN+ACK</p>
+</li>
+<li class="lvl-3">
+<p>665,234</p>
+</li>
 </ol>
-<h3 id="5"><a class="markdownIt-Anchor" href="#5"></a> 5.</h3>
-<h5 id="aiad"><a class="markdownIt-Anchor" href="#aiad"></a> AIAD</h5>
+<h3 id="5">5.</h3>
+<h5 id="AIAD">AIAD</h5>
 <img src="/img/network11.assets/image-20230522214940743.png" alt="image-20230522214940743" style="zoom:33%;" />
 <p>由于等速率加减,只是在某一条斜率为一的直线上来回震荡,不能到达最优(忽略左边垂直向下的线)</p>
-<h5 id="mimd"><a class="markdownIt-Anchor" href="#mimd"></a> MIMD</h5>
+<h5 id="MIMD">MIMD</h5>
 <img src="/img/network11.assets/image-20230522215252248.png" alt="image-20230522215252248" style="zoom:50%;" />
 <p>是在某条斜率为k的直线上震动,也不能趋近最优</p>
-<h5 id="miad"><a class="markdownIt-Anchor" href="#miad"></a> MIAD</h5>
+<h5 id="MIAD">MIAD</h5>
 <img src="/img/network11.assets/image-20230522215426392.png" alt="image-20230522215426392" style="zoom:50%;" />
 <p>如图所示,反而增大了不公平性</p>
-<h3 id="6-c"><a class="markdownIt-Anchor" href="#6-c"></a> 6. C</h3>
+<h3 id="6-C">6. C</h3>
 <p>慢启动:每收到X字节,翻倍</p>
 <p>拥塞避免:每收到X字节,+1</p>
 
@@ -347,7 +373,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E5%8E%9F%E7%AC%AC11%E6%AC%A1%E4%BD%9C%E4%B8%9A"><span class="toc-number">1.</span> <span class="toc-text"> 网原第11次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text"> 第一题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%94"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text"> 答:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text"> 第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text"> 第四题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 5.</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#aiad"><span class="toc-number">1.4.1.0.1.</span> <span class="toc-text"> AIAD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#mimd"><span class="toc-number">1.4.1.0.2.</span> <span class="toc-text"> MIMD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#miad"><span class="toc-number">1.4.1.0.3.</span> <span class="toc-text"> MIAD</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-c"><span class="toc-number">1.4.2.</span> <span class="toc-text"> 6. C</span></a></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">网原第11次作业</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">第一题</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AD%94"><span class="toc-number">1.1.0.0.1.</span> <span class="toc-text">答:</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">第二题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E9%A2%98"><span class="toc-number">1.3.</span> <span class="toc-text">第三题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E9%A2%98"><span class="toc-number">1.4.</span> <span class="toc-text">第四题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5"><span class="toc-number">1.4.1.</span> <span class="toc-text">5.</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#AIAD"><span class="toc-number">1.4.1.0.1.</span> <span class="toc-text">AIAD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MIMD"><span class="toc-number">1.4.1.0.2.</span> <span class="toc-text">MIMD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#MIAD"><span class="toc-number">1.4.1.0.3.</span> <span class="toc-text">MIAD</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-C"><span class="toc-number">1.4.2.</span> <span class="toc-text">6. C</span></a></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

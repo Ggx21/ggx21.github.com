@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="认证  网络攻击方法  泄密：将消息透露给没有合法密钥的接收方。这类攻击破坏了信息的保密性。 传输分析：  分析通信双方的通信模式，确定连接的频率和持续时间。 在面向连接或无连接的环境中，确定双方的消息数量和长度。这可能用来推断敏感信息或者作为其他攻击的前期准备。   伪装：  欺诈源向网络中插入一条消息，攻击者产生一条消息并声称这条消息来自某个合法实体。 非消息接收方发送关于收到或者未收到消息">
+  <meta name="description" content="认证 网络攻击方法   泄密：将消息透露给没有合法密钥的接收方。这类攻击破坏了信息的保密性。   传输分析：  分析通信双方的通信模式，确定连接的频率和持续时间。 在面向连接或无连接的环境中，确定双方的消息数量和长度。这可能用来推断敏感信息或者作为其他攻击的前期准备。    伪装：  欺诈源向网络中插入一条消息，攻击者产生一条消息并声称这条消息来自某个合法实体。 非消息接收方发送关于收到或者未收到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="1-1认证">
 <meta property="og:url" content="https://ggxloveslife.top/notes/network_security/1-1%E8%AE%A4%E8%AF%81/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="认证  网络攻击方法  泄密：将消息透露给没有合法密钥的接收方。这类攻击破坏了信息的保密性。 传输分析：  分析通信双方的通信模式，确定连接的频率和持续时间。 在面向连接或无连接的环境中，确定双方的消息数量和长度。这可能用来推断敏感信息或者作为其他攻击的前期准备。   伪装：  欺诈源向网络中插入一条消息，攻击者产生一条消息并声称这条消息来自某个合法实体。 非消息接收方发送关于收到或者未收到消息">
+<meta property="og:description" content="认证 网络攻击方法   泄密：将消息透露给没有合法密钥的接收方。这类攻击破坏了信息的保密性。   传输分析：  分析通信双方的通信模式，确定连接的频率和持续时间。 在面向连接或无连接的环境中，确定双方的消息数量和长度。这可能用来推断敏感信息或者作为其他攻击的前期准备。    伪装：  欺诈源向网络中插入一条消息，攻击者产生一条消息并声称这条消息来自某个合法实体。 非消息接收方发送关于收到或者未收到">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/6bfba3f79d243f1c666ab137c8074dc9/202401011310764.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/e93f93c372fa3959255cfa272b4df4c3/202401011310631.png">
@@ -26,8 +26,8 @@
 <meta property="article:published_time" content="2023-12-31T07:41:26.000Z">
 <meta property="article:modified_time" content="2024-01-01T08:45:13.269Z">
 <meta property="article:author" content="Andy Gao">
-<meta property="article:tag" content="network_security">
 <meta property="article:tag" content="notes">
+<meta property="article:tag" content="network_security">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitlab.com/ggx-blog/imglab/uploads/6bfba3f79d243f1c666ab137c8074dc9/202401011310764.png">
      
@@ -182,7 +182,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text"> 认证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 网络攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E4%BD%95%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E5%9C%A8%E5%8A%9F%E8%83%BD%E4%B8%8A%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E4%B8%A4%E5%B1%82"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 任何消息认证在功能上可以看作两层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%B1%BB%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 三类认证函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B01%E6%B6%88%E6%81%AF%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 认证函数1：消息加密</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#expamle%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text"> expamle：对称加密</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text"> 对称加密</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B02%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E7%A0%81mac"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 认证函数2：消息认证码MAC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B03hash"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 认证函数3：Hash</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash"><span class="toc-number">1.1.3.</span> <span class="toc-text"> Hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash%E7%AE%97%E6%B3%95md5-message-digest%E6%B6%88%E6%81%AF%E6%91%98%E8%A6%81"><span class="toc-number">1.1.4.</span> <span class="toc-text"> Hash算法：MD5 （Message Digest，消息摘要）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.4.1.</span> <span class="toc-text"> 1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.4.2.</span> <span class="toc-text"> 2. 设计目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.4.3.</span> <span class="toc-text"> 3. 算法步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash%E7%AE%97%E6%B3%95sha-1"><span class="toc-number">1.1.5.</span> <span class="toc-text"> Hash算法：sha-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA-2"><span class="toc-number">1.1.5.1.</span> <span class="toc-text"> 1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.5.2.</span> <span class="toc-text"> 2. 算法步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#step-1-%E5%A2%9E%E5%8A%A0%E5%A1%AB%E5%85%85%E4%BD%8D"><span class="toc-number">1.1.5.2.1.</span> <span class="toc-text"> Step 1: 增加填充位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-2-%E5%A1%AB%E5%85%85%E9%95%BF%E5%BA%A6"><span class="toc-number">1.1.5.2.2.</span> <span class="toc-text"> Step 2: 填充长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-3-%E5%88%9D%E5%A7%8B%E5%8C%96md%E7%BC%93%E5%AD%98"><span class="toc-number">1.1.5.2.3.</span> <span class="toc-text"> Step 3: 初始化MD缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-4-%E4%BB%A5512%E4%BD%8D%E5%88%86%E7%BB%84%E5%A4%84%E7%90%86%E6%B6%88%E6%81%AF"><span class="toc-number">1.1.5.2.4.</span> <span class="toc-text"> Step 4: 以512位分组处理消息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-5-%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.5.2.5.</span> <span class="toc-text"> Step 5: 输出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%89%B9%E7%82%B9%E5%92%8C%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.5.3.</span> <span class="toc-text"> 3. 特点和应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%A8%8D%E4%BD%9C%E4%BA%86%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text"> 数字签名（稍作了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 数字签名特征：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8Edsa%E7%9A%84%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E6%A0%87%E5%87%86dss"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 基于DSA的数字签名标准DSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.3.</span> <span class="toc-text"> 身份认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%8A%80%E6%9C%AF"><span class="toc-number">1.4.</span> <span class="toc-text"> 网站身份认证技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB-2"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#basic%E8%AE%A4%E8%AF%81%E8%B4%A6%E5%8F%B7%E9%9D%99%E6%80%81%E5%8F%A3%E4%BB%A4"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> basic认证：账号+静态口令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A1%A8%E5%8D%95%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81web%E7%9A%84session%E6%9C%BA%E5%88%B6-cookies"><span class="toc-number">1.4.1.2.</span> <span class="toc-text"> 基于表单的身份认证:Web的Session机制  (cookies)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.1.2.1.</span> <span class="toc-text"> 步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.1.2.2.</span> <span class="toc-text"> 改进</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%8F%A3%E4%BB%A4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.3.</span> <span class="toc-text"> 动态口令&#x2F;多因素认证</span></a></li></ol></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">认证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">网络攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E4%BD%95%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E5%9C%A8%E5%8A%9F%E8%83%BD%E4%B8%8A%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E4%B8%A4%E5%B1%82"><span class="toc-number">1.1.1.</span> <span class="toc-text">任何消息认证在功能上可以看作两层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%B1%BB%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">三类认证函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B01%EF%BC%9A%E6%B6%88%E6%81%AF%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">认证函数1：消息加密</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#expamle%EF%BC%9A%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text">expamle：对称加密</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text">对称加密</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B02%EF%BC%9A%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E7%A0%81MAC"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">认证函数2：消息认证码MAC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B03%EF%BC%9AHash"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">认证函数3：Hash</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash"><span class="toc-number">1.1.3.</span> <span class="toc-text">Hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash%E7%AE%97%E6%B3%95%EF%BC%9AMD5-%EF%BC%88Message-Digest%EF%BC%8C%E6%B6%88%E6%81%AF%E6%91%98%E8%A6%81%EF%BC%89"><span class="toc-number">1.1.4.</span> <span class="toc-text">Hash算法：MD5 （Message Digest，消息摘要）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">2. 设计目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">3. 算法步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash%E7%AE%97%E6%B3%95%EF%BC%9Asha-1"><span class="toc-number">1.1.5.</span> <span class="toc-text">Hash算法：sha-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA-2"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">2. 算法步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-1-%E5%A2%9E%E5%8A%A0%E5%A1%AB%E5%85%85%E4%BD%8D"><span class="toc-number">1.1.5.2.1.</span> <span class="toc-text">Step 1: 增加填充位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-2-%E5%A1%AB%E5%85%85%E9%95%BF%E5%BA%A6"><span class="toc-number">1.1.5.2.2.</span> <span class="toc-text">Step 2: 填充长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-3-%E5%88%9D%E5%A7%8B%E5%8C%96MD%E7%BC%93%E5%AD%98"><span class="toc-number">1.1.5.2.3.</span> <span class="toc-text">Step 3: 初始化MD缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-4-%E4%BB%A5512%E4%BD%8D%E5%88%86%E7%BB%84%E5%A4%84%E7%90%86%E6%B6%88%E6%81%AF"><span class="toc-number">1.1.5.2.4.</span> <span class="toc-text">Step 4: 以512位分组处理消息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-5-%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.5.2.5.</span> <span class="toc-text">Step 5: 输出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%89%B9%E7%82%B9%E5%92%8C%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">3. 特点和应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%EF%BC%88%E7%A8%8D%E4%BD%9C%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">数字签名（稍作了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%89%B9%E5%BE%81%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">数字签名特征：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EDSA%E7%9A%84%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E6%A0%87%E5%87%86DSS"><span class="toc-number">1.2.3.</span> <span class="toc-text">基于DSA的数字签名标准DSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.3.</span> <span class="toc-text">身份认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%8A%80%E6%9C%AF"><span class="toc-number">1.4.</span> <span class="toc-text">网站身份认证技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.1.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#basic%E8%AE%A4%E8%AF%81%EF%BC%9A%E8%B4%A6%E5%8F%B7-%E9%9D%99%E6%80%81%E5%8F%A3%E4%BB%A4"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">basic认证：账号+静态口令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A1%A8%E5%8D%95%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81-Web%E7%9A%84Session%E6%9C%BA%E5%88%B6-cookies"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">基于表单的身份认证:Web的Session机制  (cookies)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.1.2.1.</span> <span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.1.2.2.</span> <span class="toc-text">改进</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%8F%A3%E4%BB%A4-%E5%A4%9A%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">动态口令&#x2F;多因素认证</span></a></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -239,264 +239,384 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="认证"><a class="markdownIt-Anchor" href="#认证"></a> 认证</h1>
-<h2 id="网络攻击方法"><a class="markdownIt-Anchor" href="#网络攻击方法"></a> 网络攻击方法</h2>
+    <h1>认证</h1>
+<h2 id="网络攻击方法">网络攻击方法</h2>
 <ol>
-<li><strong>泄密</strong>：将消息透露给没有合法密钥的接收方。这类攻击破坏了信息的保密性。</li>
-<li><strong>传输分析</strong>：
-<ul>
-<li>分析通信双方的通信模式，确定连接的频率和持续时间。</li>
-<li>在面向连接或无连接的环境中，确定双方的消息数量和长度。这可能用来推断敏感信息或者作为其他攻击的前期准备。</li>
+<li class="lvl-3">
+<p><strong>泄密</strong>：将消息透露给没有合法密钥的接收方。这类攻击破坏了信息的保密性。</p>
+</li>
+<li class="lvl-3">
+<p><strong>传输分析</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5">分析通信双方的通信模式，确定连接的频率和持续时间。</li>
+<li class="lvl-5">在面向连接或无连接的环境中，确定双方的消息数量和长度。这可能用来推断敏感信息或者作为其他攻击的前期准备。</li>
 </ul>
 </li>
-<li><strong>伪装</strong>：
-<ul>
-<li>欺诈源向网络中插入一条消息，攻击者产生一条消息并声称这条消息来自某个合法实体。</li>
-<li>非消息接收方发送关于收到或者未收到消息的欺诈应答，这可能导致权限的滥用或数据的不正确。</li>
+<li class="lvl-3">
+<p><strong>伪装</strong>：</p>
+<ul class="lvl-2">
+<li class="lvl-5">欺诈源向网络中插入一条消息，攻击者产生一条消息并声称这条消息来自某个合法实体。</li>
+<li class="lvl-5">非消息接收方发送关于收到或者未收到消息的欺诈应答，这可能导致权限的滥用或数据的不正确。</li>
 </ul>
 </li>
-<li><strong>内容修改</strong>：对消息内容的修改，包括插入、删除、转换和修改。这直接破坏了信息的完整性。</li>
-<li><strong>顺序修改</strong>：对通信双方消息顺序的修改，包括插入、删除或重排。这种攻击可能导致系统逻辑混乱。</li>
-<li><strong>计时修改</strong>：对消息的延时和重放，可能用于绕过安全检查或者制造混淆。</li>
-<li><strong>发送方否认</strong>：发送方否认发送过某条消息。这种否认可以使得非法行为难以追溯。</li>
-<li><strong>接收方否认</strong>：接收方否认接收过某条消息。这同样使得通信的可靠性受到挑战。</li>
+<li class="lvl-3">
+<p><strong>内容修改</strong>：对消息内容的修改，包括插入、删除、转换和修改。这直接破坏了信息的完整性。</p>
+</li>
+<li class="lvl-3">
+<p><strong>顺序修改</strong>：对通信双方消息顺序的修改，包括插入、删除或重排。这种攻击可能导致系统逻辑混乱。</p>
+</li>
+<li class="lvl-3">
+<p><strong>计时修改</strong>：对消息的延时和重放，可能用于绕过安全检查或者制造混淆。</p>
+</li>
+<li class="lvl-3">
+<p><strong>发送方否认</strong>：发送方否认发送过某条消息。这种否认可以使得非法行为难以追溯。</p>
+</li>
+<li class="lvl-3">
+<p><strong>接收方否认</strong>：接收方否认接收过某条消息。这同样使得通信的可靠性受到挑战。</p>
+</li>
 </ol>
-<p>:::tips</p>
+<div class="tips">
 <p>消息认证就是验证所收到的消息确实是来自真正的发送方且未被修改的消息</p>
-<p>:::</p>
-<h3 id="任何消息认证在功能上可以看作两层"><a class="markdownIt-Anchor" href="#任何消息认证在功能上可以看作两层"></a> 任何消息认证在功能上可以看作两层</h3>
-<ul>
-<li>下层产生认证函数，关注的是如何生成可靠的认证符</li>
-<li>上层关注的是如何有效地使用这些认证符进行安全通信
-<ul>
-<li>对比接收到的消息计算出的认证符与传输中接收到的认证符是否一致</li>
+</div>
+<h3 id="任何消息认证在功能上可以看作两层">任何消息认证在功能上可以看作两层</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>下层产生认证函数，关注的是如何生成可靠的认证符</p>
+</li>
+<li class="lvl-2">
+<p>上层关注的是如何有效地使用这些认证符进行安全通信</p>
+<ul class="lvl-2">
+<li class="lvl-4">对比接收到的消息计算出的认证符与传输中接收到的认证符是否一致</li>
 </ul>
 </li>
 </ul>
-<h3 id="三类认证函数"><a class="markdownIt-Anchor" href="#三类认证函数"></a> 三类认证函数</h3>
-<ul>
-<li>消息加密：整个消息的密文作为认证符。</li>
-<li>消息认证码MAC： MAC是消息和密钥的公开函数，它产生定长的值，该值作为认证符。</li>
-<li>Hash函数：它是将任意长的消息映射为定长的hash值的公开函数，以该hash值作为认证符。</li>
+<h3 id="三类认证函数">三类认证函数</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>消息加密：整个消息的密文作为认证符。</p>
+</li>
+<li class="lvl-2">
+<p>消息认证码MAC： MAC是消息和密钥的公开函数，它产生定长的值，该值作为认证符。</p>
+</li>
+<li class="lvl-2">
+<p>Hash函数：它是将任意长的消息映射为定长的hash值的公开函数，以该hash值作为认证符。</p>
+</li>
 </ul>
-<p>:::tips</p>
+<div class="tips">
 <p>有的时候Mac就是会被和Hash混为一谈，Mac主要有两种算法，一种是cipher-based（CMAC），基于AES和3DES等加密算法得到；另一种是Hash-Based（HMAC）基于SHA-1，MD5等。不过二者主要区别还是看需不需要额外的Key。</p>
-<p>:::</p>
-<h4 id="认证函数1消息加密"><a class="markdownIt-Anchor" href="#认证函数1消息加密"></a> 认证函数1：消息加密</h4>
-<ul>
-<li>
-<h5 id="expamle对称加密"><a class="markdownIt-Anchor" href="#expamle对称加密"></a> expamle：对称加密</h5>
+</div>
+<h4 id="认证函数1：消息加密">认证函数1：消息加密</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h5 id="expamle：对称加密">expamle：对称加密</h5>
 <p>加密前对每个消息附加一个错误检测码，也称之为帧校验序列FCS或者校验和</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/6bfba3f79d243f1c666ab137c8074dc9/202401011310764.png" alt="image-20231231140620535" /></p>
-<ul>
-<li>先加密的危害：</li>
-</ul>
-</li>
-<li>
-<h5 id="对称加密"><a class="markdownIt-Anchor" href="#对称加密"></a> 对称加密</h5>
-<ul>
-<li><strong>提供保密性</strong>：仅当双方共享密钥K时才能保证。</li>
-<li><strong>提供认证</strong>：确保消息只能发自A，并且在传输中未被改变，需要依赖某种数据形式或冗余来完成。</li>
-<li><strong>限制</strong>：
-<ul>
-<li>不能提供数字签名，因此接收方可以伪造信息。（并声称该消息来自于发送方，你说好要给我一千块钱的）</li>
-<li>发送方可以否认信息，这可能会导致认证问题。（这可不是我说的，密钥又不是只有我一个人知道）</li>
-</ul>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/6bfba3f79d243f1c666ab137c8074dc9/202401011310764.png" alt="image-20231231140620535"></p>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>先加密的危害：</p>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-2">
+<h5 id="对称加密">对称加密</h5>
+<ul class="lvl-2">
+<li class="lvl-4"><strong>提供保密性</strong>：仅当双方共享密钥K时才能保证。</li>
+<li class="lvl-4"><strong>提供认证</strong>：确保消息只能发自A，并且在传输中未被改变，需要依赖某种数据形式或冗余来完成。</li>
+<li class="lvl-4"><strong>限制</strong>：
+<ul class="lvl-4">
+<li class="lvl-6">不能提供数字签名，因此接收方可以伪造信息。（并声称该消息来自于发送方，你说好要给我一千块钱的）</li>
+<li class="lvl-6">发送方可以否认信息，这可能会导致认证问题。（这可不是我说的，密钥又不是只有我一个人知道）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="lvl-2">
 <p>公钥加密</p>
-<ul>
-<li><strong>提供保密性</strong>：只有拥有私钥的B能解密由公钥KUb加密的消息。任何人都可以使用公钥对消息进行加密。</li>
-<li><strong>提供认证和签名</strong>：仅拥有私钥KRa的A能加密信息，因此可以提供认证和数字签名。</li>
-<li><strong>数据组织和冗余</strong>：需要某种数据组织形式或冗余来支持加密和签名。</li>
-<li><strong>广泛的验证能力</strong>：任何一方都可以使用公钥来验证签名，提供了更广泛的认证与签名验证。</li>
+<ul class="lvl-2">
+<li class="lvl-4"><strong>提供保密性</strong>：只有拥有私钥的B能解密由公钥KUb加密的消息。任何人都可以使用公钥对消息进行加密。</li>
+<li class="lvl-4"><strong>提供认证和签名</strong>：仅拥有私钥KRa的A能加密信息，因此可以提供认证和数字签名。</li>
+<li class="lvl-4"><strong>数据组织和冗余</strong>：需要某种数据组织形式或冗余来支持加密和签名。</li>
+<li class="lvl-4"><strong>广泛的验证能力</strong>：任何一方都可以使用公钥来验证签名，提供了更广泛的认证与签名验证。</li>
 </ul>
 </li>
 </ul>
-<h4 id="认证函数2消息认证码mac"><a class="markdownIt-Anchor" href="#认证函数2消息认证码mac"></a> 认证函数2：消息认证码MAC</h4>
-<p>:::tips</p>
+<h4 id="认证函数2：消息认证码MAC">认证函数2：消息认证码MAC</h4>
+<div class="tips">
 <p>MAC和消息加密的唯一区别就是MAC不要求可逆性</p>
-<p>:::</p>
+</div>
 <p>MAC提供的的是认证和完整性保护，不关注保护消息内容的机密性。</p>
-<h4 id="认证函数3hash"><a class="markdownIt-Anchor" href="#认证函数3hash"></a> 认证函数3：Hash</h4>
-<ul>
-<li>单向的hash函数是消息认证码的一种变形</li>
-<li>与消息认证码一样， hash函数的输入是大小可变的消息M，输出是固定大小的hash码H(M)</li>
-<li>与MAC不同的是， hash码并不使用密钥，它仅仅做为输入消息的函数， hash码也称为消息摘要(Message Digest， MD)</li>
-<li>用对称密码仅对hash加密：对不要求保密性的应用，这种方法会减少处理代价</li>
-<li><img src="https://gitlab.com/ggx-blog/imglab/uploads/e93f93c372fa3959255cfa272b4df4c3/202401011310631.png" alt="image-20231231142936905" /></li>
-<li>用发送方的私钥对hash码加密，可以提供签名</li>
+<h4 id="认证函数3：Hash">认证函数3：Hash</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>单向的hash函数是消息认证码的一种变形</p>
+</li>
+<li class="lvl-2">
+<p>与消息认证码一样， hash函数的输入是大小可变的消息M，输出是固定大小的hash码H(M)</p>
+</li>
+<li class="lvl-2">
+<p>与MAC不同的是， hash码并不使用密钥，它仅仅做为输入消息的函数， hash码也称为消息摘要(Message Digest， MD)</p>
+</li>
+<li class="lvl-2">
+<p>用对称密码仅对hash加密：对不要求保密性的应用，这种方法会减少处理代价</p>
+</li>
+<li class="lvl-2">
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e93f93c372fa3959255cfa272b4df4c3/202401011310631.png" alt="image-20231231142936905"></p>
+</li>
+<li class="lvl-2">
+<p>用发送方的私钥对hash码加密，可以提供签名</p>
+</li>
 </ul>
 <p>较为复杂的两种情况：</p>
-<ul>
-<li>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>用私钥对Hash加密后，再对整个消息加密。这样提供了签名，认证，新增加了保密性</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/97e22f19c04823bcd37388b74d03ec24/202401011311609.png" alt="image-20231231143322378" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/97e22f19c04823bcd37388b74d03ec24/202401011311609.png" alt="image-20231231143322378"></p>
 </li>
-<li>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/978bb22d66ef1bd7ab235122d3195b4a/202401011311872.png" alt="image-20231231143346027" /></p>
+<li class="lvl-2">
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/978bb22d66ef1bd7ab235122d3195b4a/202401011311872.png" alt="image-20231231143346027"></p>
 </li>
 </ul>
-<h3 id="hash"><a class="markdownIt-Anchor" href="#hash"></a> Hash</h3>
-<ul>
-<li>【抗弱碰撞性】给定m ，要找到m’,m’≠ m 且 H(m)=H(m’)是计算上不可行的</li>
-<li>【抗强碰撞性】  寻找任何(x,y) ， x≠y ，使得H(x) =H(y)是计算上不可行的</li>
-<li>Hash函数将输入消息分为L个固定长度的分组，每个分组长度为b位，最后一个分组不足b位时，需要填充成b位</li>
-<li>它的输入是前一步中得出的n位结果（即连接变量）和一个b位分组，输出位一个n位分组</li>
-<li>连接变量的初始值在算法开始的时候指定，其终值即为hash值。通常b&gt;n，因此称为压缩函数</li>
-<li>设计安全hash函数可以归纳为设计具有抗碰撞能力的压缩函数问题，并且该压缩函数的输入是定长的</li>
-<li><img src="https://gitlab.com/ggx-blog/imglab/uploads/c7b2c7bb11a8d27e99289fc4550e81f0/202401011311320.png" alt="image-20231231144734868" /></li>
+<h3 id="Hash">Hash</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>【抗弱碰撞性】给定m ，要找到m’,m’≠ m 且 H(m)=H(m’)是计算上不可行的</p>
+</li>
+<li class="lvl-2">
+<p>【抗强碰撞性】  寻找任何(x,y) ， x≠y ，使得H(x) =H(y)是计算上不可行的</p>
+</li>
+<li class="lvl-2">
+<p>Hash函数将输入消息分为L个固定长度的分组，每个分组长度为b位，最后一个分组不足b位时，需要填充成b位</p>
+</li>
+<li class="lvl-2">
+<p>它的输入是前一步中得出的n位结果（即连接变量）和一个b位分组，输出位一个n位分组</p>
+</li>
+<li class="lvl-2">
+<p>连接变量的初始值在算法开始的时候指定，其终值即为hash值。通常b&gt;n，因此称为压缩函数</p>
+</li>
+<li class="lvl-2">
+<p>设计安全hash函数可以归纳为设计具有抗碰撞能力的压缩函数问题，并且该压缩函数的输入是定长的</p>
+</li>
+<li class="lvl-2">
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/c7b2c7bb11a8d27e99289fc4550e81f0/202401011311320.png" alt="image-20231231144734868"></p>
+</li>
 </ul>
-<h3 id="hash算法md5-message-digest消息摘要"><a class="markdownIt-Anchor" href="#hash算法md5-message-digest消息摘要"></a> Hash算法：MD5 （Message Digest，消息摘要）</h3>
-<h4 id="1-输入和输出"><a class="markdownIt-Anchor" href="#1-输入和输出"></a> 1. 输入和输出</h4>
-<ul>
-<li><strong>输入</strong>：任意长度的消息。</li>
-<li><strong>输出</strong>：128比特的消息摘要。</li>
+<h3 id="Hash算法：MD5-（Message-Digest，消息摘要）">Hash算法：MD5 （Message Digest，消息摘要）</h3>
+<h4 id="1-输入和输出">1. 输入和输出</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>输入</strong>：任意长度的消息。</p>
+</li>
+<li class="lvl-2">
+<p><strong>输出</strong>：128比特的消息摘要。</p>
+</li>
 </ul>
-<h4 id="2-设计目标"><a class="markdownIt-Anchor" href="#2-设计目标"></a> 2. 设计目标</h4>
-<ul>
-<li><strong>安全性</strong>：计算上不可行找到两个不同的消息具有相同的摘要。</li>
-<li><strong>速度</strong>：在32位机器上有利于快速的软件实现。</li>
-<li><strong>简单性</strong>：算法简洁，易于描述和编程。</li>
+<h4 id="2-设计目标">2. 设计目标</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>安全性</strong>：计算上不可行找到两个不同的消息具有相同的摘要。</p>
+</li>
+<li class="lvl-2">
+<p><strong>速度</strong>：在32位机器上有利于快速的软件实现。</p>
+</li>
+<li class="lvl-2">
+<p><strong>简单性</strong>：算法简洁，易于描述和编程。</p>
+</li>
 </ul>
-<h4 id="3-算法步骤"><a class="markdownIt-Anchor" href="#3-算法步骤"></a> 3. 算法步骤</h4>
-<ul>
-<li>
+<h4 id="3-算法步骤">3. 算法步骤</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p><strong>Step 1：增加填充位</strong>：消息首先填充位，使其长度在模512位下等于448。填充始终发生，即使消息的长度已经等于448模512，也至少填充一个位。填充开始于一个1位，后跟若干个0位，直到满足长度条件。</p>
 </li>
-<li>
+<li class="lvl-2">
 <p><strong>Step 2：填充长度</strong>：在填充后的消息后面附加一个64位（小端表示）的长度字段，表示原始消息的长度（以位为单位）。如果长度超过了64位能表示的范围，就取其低64位。</p>
 </li>
-<li>
+<li class="lvl-2">
 <p><strong>Step 3：初始化MD缓存</strong>：算法使用了四个32位的寄存器（A，B，C，D），它们被初始化为特定的32位整数。（供128位，即hash结构里的n）</p>
 <p>寄存器初始值：</p>
-<ul>
-<li>A= 01234567</li>
-<li>B= 89ABCDEF</li>
-<li>C=FEDCBA98</li>
-<li>D=76543210</li>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>A= 01234567</p>
+</li>
+<li class="lvl-4">
+<p>B= 89ABCDEF</p>
+</li>
+<li class="lvl-4">
+<p>C=FEDCBA98</p>
+</li>
+<li class="lvl-4">
+<p>D=76543210</p>
+</li>
 </ul>
 </li>
-<li>
+<li class="lvl-2">
 <p><strong>Step 4：以512位分组为单位处理消息</strong>：处理每个512位分组，每个分组细分为16个32位的字。算法有四轮主要的运算，每轮都包含了16次操作（查表T的64个元素中的16个），每次操作对四个寄存器之一进行特定的非线性函数处理。</p>
 <p>4轮后，输出与初值相加</p>
 </li>
-<li>
+<li class="lvl-2">
 <p><strong>Step 5：输出</strong>：经过所有分组处理后，最后得到的寄存器A，B，C，D的内容拼接起来（按顺序）形成128位的MD5摘要。</p>
 </li>
 </ul>
-<h3 id="hash算法sha-1"><a class="markdownIt-Anchor" href="#hash算法sha-1"></a> Hash算法：sha-1</h3>
-<h4 id="1-输入和输出-2"><a class="markdownIt-Anchor" href="#1-输入和输出-2"></a> 1. 输入和输出</h4>
-<ul>
-<li><strong>输入</strong>：长度小于$2^{64})位的消息。</li>
-<li><strong>输出</strong>：160位的消息摘要（hash值）。</li>
+<h3 id="Hash算法：sha-1">Hash算法：sha-1</h3>
+<h4 id="1-输入和输出-2">1. 输入和输出</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p><strong>输入</strong>：长度小于$2^{64})位的消息。</p>
+</li>
+<li class="lvl-2">
+<p><strong>输出</strong>：160位的消息摘要（hash值）。</p>
+</li>
 </ul>
-<h4 id="2-算法步骤"><a class="markdownIt-Anchor" href="#2-算法步骤"></a> 2. 算法步骤</h4>
-<h5 id="step-1-增加填充位"><a class="markdownIt-Anchor" href="#step-1-增加填充位"></a> Step 1: 增加填充位</h5>
-<ul>
-<li>将原始消息填充至长度与448模512同余。即填充后的消息长度比512的整数倍少64位。填充始终包括一个&quot;1&quot;位，后跟足够数量的&quot;0&quot;位。</li>
+<h4 id="2-算法步骤">2. 算法步骤</h4>
+<h5 id="Step-1-增加填充位">Step 1: 增加填充位</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>将原始消息填充至长度与448模512同余。即填充后的消息长度比512的整数倍少64位。填充始终包括一个&quot;1&quot;位，后跟足够数量的&quot;0&quot;位。</p>
+</li>
 </ul>
-<h5 id="step-2-填充长度"><a class="markdownIt-Anchor" href="#step-2-填充长度"></a> Step 2: 填充长度</h5>
-<ul>
-<li>用一个64位的数字表示原始消息的长度（以位为单位），附加在填充后的结果后面。如果消息的长度超过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mn>64</mn></msup><mi mathvariant="normal">位</mi><mi mathvariant="normal">，</mi><mi mathvariant="normal">则</mi><mi mathvariant="normal">取</mi><mi mathvariant="normal">其</mi><mi mathvariant="normal">长</mi><mi mathvariant="normal">度</mi><mi mathvariant="normal">对</mi><msup><mn>2</mn><mn>64</mn></msup></mrow><annotation encoding="application/x-tex">2^{64}位，则取其长度对2^{64}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span><span class="mord cjk_fallback">位</span><span class="mord cjk_fallback">，</span><span class="mord cjk_fallback">则</span><span class="mord cjk_fallback">取</span><span class="mord cjk_fallback">其</span><span class="mord cjk_fallback">长</span><span class="mord cjk_fallback">度</span><span class="mord cjk_fallback">对</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">6</span><span class="mord mtight">4</span></span></span></span></span></span></span></span></span></span></span></span>的余数。</li>
+<h5 id="Step-2-填充长度">Step 2: 填充长度</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>用一个64位的数字表示原始消息的长度（以位为单位），附加在填充后的结果后面。如果消息的长度超过$2<sup>{64}位，则取其长度对2</sup>{64}$的余数。</p>
+</li>
 </ul>
-<h5 id="step-3-初始化md缓存"><a class="markdownIt-Anchor" href="#step-3-初始化md缓存"></a> Step 3: 初始化MD缓存</h5>
-<ul>
-<li>使用5个32位寄存器（通常称为ABCDE）来保存中间结果和最终的hash值。这些寄存器在算法开始前初始化为特定的值。</li>
+<h5 id="Step-3-初始化MD缓存">Step 3: 初始化MD缓存</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>使用5个32位寄存器（通常称为ABCDE）来保存中间结果和最终的hash值。这些寄存器在算法开始前初始化为特定的值。</p>
+</li>
 </ul>
-<h5 id="step-4-以512位分组处理消息"><a class="markdownIt-Anchor" href="#step-4-以512位分组处理消息"></a> Step 4: 以512位分组处理消息</h5>
-<ul>
-<li>消息被分为512位（或16个字）的分组来处理。SHA-1使用一个复杂的迭代结构，称为压缩函数，包含十轮运算。每轮运算包括80步，分成四组，每组20步。每步使用不同的逻辑函数和操作。</li>
+<h5 id="Step-4-以512位分组处理消息">Step 4: 以512位分组处理消息</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>消息被分为512位（或16个字）的分组来处理。SHA-1使用一个复杂的迭代结构，称为压缩函数，包含十轮运算。每轮运算包括80步，分成四组，每组20步。每步使用不同的逻辑函数和操作。</p>
+</li>
 </ul>
-<h5 id="step-5-输出"><a class="markdownIt-Anchor" href="#step-5-输出"></a> Step 5: 输出</h5>
-<ul>
-<li>在处理完所有的分组后，最后一个分组的输出即是最终的160位消息摘要。</li>
+<h5 id="Step-5-输出">Step 5: 输出</h5>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>在处理完所有的分组后，最后一个分组的输出即是最终的160位消息摘要。</p>
+</li>
 </ul>
-<h4 id="3-特点和应用"><a class="markdownIt-Anchor" href="#3-特点和应用"></a> 3. 特点和应用</h4>
-<ul>
-<li>SHA-1提供较强的安全性，尽管比较于其后继者如SHA-256和SHA-3有已知的弱点。</li>
-<li>它广泛应用于多种安全应用和协议，包括TLS和SSL、PGP、SSH，以及IPsec等。</li>
+<h4 id="3-特点和应用">3. 特点和应用</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>SHA-1提供较强的安全性，尽管比较于其后继者如SHA-256和SHA-3有已知的弱点。</p>
+</li>
+<li class="lvl-2">
+<p>它广泛应用于多种安全应用和协议，包括TLS和SSL、PGP、SSH，以及IPsec等。</p>
+</li>
 </ul>
 <p>SHA-1是在MD4和MD5的基础上开发的，它在设计上旨在提供更强的安全性和更高的抗碰撞性。尽管现在SHA-1被认为对于某些应用来说不够安全，它在历史上作为一种重要的密码学工具被广泛使用，并且仍在某些旧系统和应用中找到它的身影。</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/f15663b3844271f56c302c0b67c2a024/202401011311638.png" alt="image-20231231150245775" /></p>
-<h2 id="数字签名稍作了解"><a class="markdownIt-Anchor" href="#数字签名稍作了解"></a> 数字签名（稍作了解）</h2>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/f15663b3844271f56c302c0b67c2a024/202401011311638.png" alt="image-20231231150245775"></p>
+<h2 id="数字签名（稍作了解）">数字签名（稍作了解）</h2>
 <p>消息认证可以保证通信双方不受第三方的攻击，但是它不能处理通信双方自身发生的攻击</p>
-<h3 id="数字签名特征"><a class="markdownIt-Anchor" href="#数字签名特征"></a> 数字签名特征：</h3>
-<ul>
-<li>它必须能够验证签名者、签名日期和时间</li>
-<li>它必须能认证被签的消息内容</li>
-<li>签名应能由第三方仲裁，以解决争执</li>
+<h3 id="数字签名特征：">数字签名特征：</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>它必须能够验证签名者、签名日期和时间</p>
+</li>
+<li class="lvl-2">
+<p>它必须能认证被签的消息内容</p>
+</li>
+<li class="lvl-2">
+<p>签名应能由第三方仲裁，以解决争执</p>
+</li>
 </ul>
-<h3 id="分类"><a class="markdownIt-Anchor" href="#分类"></a> 分类：</h3>
+<h3 id="分类：">分类：</h3>
 <p>按照有无仲裁方分为直接数字签名和仲裁数字签名</p>
-<ul>
-<li>直接数字签名的弱点在于方法的有效性依赖于发送方私钥安全性</li>
-<li>仲裁数字签名解决上述问题</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>直接数字签名的弱点在于方法的有效性依赖于发送方私钥安全性</p>
+</li>
+<li class="lvl-2">
+<p>仲裁数字签名解决上述问题</p>
+</li>
 </ul>
-<h3 id="基于dsa的数字签名标准dss"><a class="markdownIt-Anchor" href="#基于dsa的数字签名标准dss"></a> 基于DSA的数字签名标准DSS</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b585fba973ff075e5d7951f08620298/202401011311792.png" alt="image-20231231151413071" /></p>
-<ul>
-<li>r=(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">g^k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.043548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span></span></span></span> mod p) mod q</li>
-<li>s=[<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>k</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">k^{-1}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">−</span><span class="mord mtight">1</span></span></span></span></span></span></span></span></span></span></span></span>(H(M)+xr)]mod q</li>
-<li>比较的时候不比较hash部分</li>
+<h3 id="基于DSA的数字签名标准DSS">基于DSA的数字签名标准DSS</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/5b585fba973ff075e5d7951f08620298/202401011311792.png" alt="image-20231231151413071"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>r=($g^k$ mod p) mod q</p>
+</li>
+<li class="lvl-2">
+<p>s=[$k^{-1}$(H(M)+xr)]mod q</p>
+</li>
+<li class="lvl-2">
+<p>比较的时候不比较hash部分</p>
+</li>
 </ul>
-<h2 id="身份认证"><a class="markdownIt-Anchor" href="#身份认证"></a> 身份认证</h2>
+<h2 id="身份认证">身份认证</h2>
 <p>确认用户身份的解决办法</p>
-<ul>
-<li>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>what you know：根据你所知道的信息来证明你的身份</p>
 <p>静态口令</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>what you have：根据你所拥有的东西来证明你的身份</p>
 <p>动态口令</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>who you are：直接根据独一无二的身体特征来证明身份</p>
 <p>生物信息</p>
 </li>
 </ul>
-<h2 id="网站身份认证技术"><a class="markdownIt-Anchor" href="#网站身份认证技术"></a> 网站身份认证技术</h2>
-<h3 id="分类-2"><a class="markdownIt-Anchor" href="#分类-2"></a> 分类</h3>
-<ul>
-<li>
-<h4 id="basic认证账号静态口令"><a class="markdownIt-Anchor" href="#basic认证账号静态口令"></a> <strong>basic认证：账号+静态口令</strong></h4>
+<h2 id="网站身份认证技术">网站身份认证技术</h2>
+<h3 id="分类">分类</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h4 id="basic认证：账号-静态口令"><strong>basic认证：账号+静态口令</strong></h4>
 <p>改进：</p>
 <ol>
-<li>加密：无法躲避重放攻击，攻击方重放登录认证数据包，自己也就登上了。</li>
-<li>认证：采用挑战/响应(Challenge/Response)机制，需要进行两次HTTP请求
-<ul>
-<li>确保每次通信都使用唯一的标识，使得重复的消息可以被服务器识别并拒绝。</li>
+<li class="lvl-5">
+<p>加密：无法躲避重放攻击，攻击方重放登录认证数据包，自己也就登上了。</p>
+</li>
+<li class="lvl-5">
+<p>认证：采用挑战/响应(Challenge/Response)机制，需要进行两次HTTP请求</p>
+<ul class="lvl-4">
+<li class="lvl-7">确保每次通信都使用唯一的标识，使得重复的消息可以被服务器识别并拒绝。</li>
 </ul>
 </li>
 </ol>
 </li>
-<li>
-<h4 id="基于表单的身份认证web的session机制-cookies"><a class="markdownIt-Anchor" href="#基于表单的身份认证web的session机制-cookies"></a> 基于表单的身份认证:Web的Session机制  (cookies)</h4>
+<li class="lvl-2">
+<h4 id="基于表单的身份认证-Web的Session机制-cookies">基于表单的身份认证:Web的Session机制  (cookies)</h4>
 <p>一个Session包括特定的客户端、特定的服务器端以及特定的操作时间段</p>
-<h5 id="步骤"><a class="markdownIt-Anchor" href="#步骤"></a> 步骤</h5>
+<h5 id="步骤">步骤</h5>
 <ol>
-<li><strong>用户提交信息</strong>：用户在Web表单上输入用户名和密码，然后提交到服务器。</li>
-<li><strong>服务器验证</strong>：服务器接收到认证信息，与数据库中存储的数据进行比较验证。</li>
-<li><strong>会话创建</strong>：如果验证成功，服务器创建会话并发送会话ID（通常是cookie）给用户。</li>
-<li><strong>认证失败处理</strong>：如果用户名不存在或密码不匹配，用户通常被重定向回登录页面并显示错误消息。</li>
+<li class="lvl-5">
+<p><strong>用户提交信息</strong>：用户在Web表单上输入用户名和密码，然后提交到服务器。</p>
+</li>
+<li class="lvl-5">
+<p><strong>服务器验证</strong>：服务器接收到认证信息，与数据库中存储的数据进行比较验证。</p>
+</li>
+<li class="lvl-5">
+<p><strong>会话创建</strong>：如果验证成功，服务器创建会话并发送会话ID（通常是cookie）给用户。</p>
+</li>
+<li class="lvl-5">
+<p><strong>认证失败处理</strong>：如果用户名不存在或密码不匹配，用户通常被重定向回登录页面并显示错误消息。</p>
+</li>
 </ol>
-<h5 id="改进"><a class="markdownIt-Anchor" href="#改进"></a> 改进</h5>
+<h5 id="改进">改进</h5>
 <ol>
-<li>采用挑战/响应(Challenge/Response)机制，并用口令加密明文</li>
-<li>使用传输层SSL协议传输HTTP请求</li>
-<li>存放内容加上时间戳t，加密Ek[t||U||P]  ，服务器每次需要验证时间戳</li>
+<li class="lvl-5">
+<p>采用挑战/响应(Challenge/Response)机制，并用口令加密明文</p>
+</li>
+<li class="lvl-5">
+<p>使用传输层SSL协议传输HTTP请求</p>
+</li>
+<li class="lvl-5">
+<p>存放内容加上时间戳t，加密Ek[t||U||P]  ，服务器每次需要验证时间戳</p>
+</li>
 </ol>
 </li>
-<li>
-<h4 id="动态口令多因素认证"><a class="markdownIt-Anchor" href="#动态口令多因素认证"></a> <strong>动态口令</strong>/多因素认证</h4>
+<li class="lvl-2">
+<h4 id="动态口令-多因素认证"><strong>动态口令</strong>/多因素认证</h4>
 <ol>
-<li><strong>手机短信口令</strong>：用户在尝试登录时，系统发送一个一次性的验证码到用户的手机上，用户需要输入这个验证码来完成认证过程，确保登录者拥有该手机。</li>
-<li><strong>动态口令</strong>：通常是指一次性密码（OTP），它是基于时间或计数器动态生成的，用户需要提供这个动态变化的密码才能进行认证，确保了密码的时效性和独特性。</li>
-<li><strong>USB Key</strong>：是一种物理设备，用户在登录时需要将这个设备插入计算机，它包含有助于身份验证的数字密钥或证书，为用户提供一个拥有物的认证因素。</li>
-<li><strong>数字证书</strong>：是一种数字文件，用于确认持有人的身份信息和公钥，通常由权威的证书颁发机构签发，用于验证用户身份和建立安全的电子通信。</li>
+<li class="lvl-5"><strong>手机短信口令</strong>：用户在尝试登录时，系统发送一个一次性的验证码到用户的手机上，用户需要输入这个验证码来完成认证过程，确保登录者拥有该手机。</li>
+<li class="lvl-5"><strong>动态口令</strong>：通常是指一次性密码（OTP），它是基于时间或计数器动态生成的，用户需要提供这个动态变化的密码才能进行认证，确保了密码的时效性和独特性。</li>
+<li class="lvl-5"><strong>USB Key</strong>：是一种物理设备，用户在登录时需要将这个设备插入计算机，它包含有助于身份验证的数字密钥或证书，为用户提供一个拥有物的认证因素。</li>
+<li class="lvl-5"><strong>数字证书</strong>：是一种数字文件，用于确认持有人的身份信息和公钥，通常由权威的证书颁发机构签发，用于验证用户身份和建立安全的电子通信。</li>
 </ol>
 </li>
 </ul>
@@ -547,7 +667,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81"><span class="toc-number">1.</span> <span class="toc-text"> 认证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text"> 网络攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E4%BD%95%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E5%9C%A8%E5%8A%9F%E8%83%BD%E4%B8%8A%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E4%B8%A4%E5%B1%82"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 任何消息认证在功能上可以看作两层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%B1%BB%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 三类认证函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B01%E6%B6%88%E6%81%AF%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.</span> <span class="toc-text"> 认证函数1：消息加密</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#expamle%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text"> expamle：对称加密</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text"> 对称加密</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B02%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E7%A0%81mac"><span class="toc-number">1.1.2.2.</span> <span class="toc-text"> 认证函数2：消息认证码MAC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B03hash"><span class="toc-number">1.1.2.3.</span> <span class="toc-text"> 认证函数3：Hash</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash"><span class="toc-number">1.1.3.</span> <span class="toc-text"> Hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash%E7%AE%97%E6%B3%95md5-message-digest%E6%B6%88%E6%81%AF%E6%91%98%E8%A6%81"><span class="toc-number">1.1.4.</span> <span class="toc-text"> Hash算法：MD5 （Message Digest，消息摘要）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.4.1.</span> <span class="toc-text"> 1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.4.2.</span> <span class="toc-text"> 2. 设计目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.4.3.</span> <span class="toc-text"> 3. 算法步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hash%E7%AE%97%E6%B3%95sha-1"><span class="toc-number">1.1.5.</span> <span class="toc-text"> Hash算法：sha-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA-2"><span class="toc-number">1.1.5.1.</span> <span class="toc-text"> 1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.5.2.</span> <span class="toc-text"> 2. 算法步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#step-1-%E5%A2%9E%E5%8A%A0%E5%A1%AB%E5%85%85%E4%BD%8D"><span class="toc-number">1.1.5.2.1.</span> <span class="toc-text"> Step 1: 增加填充位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-2-%E5%A1%AB%E5%85%85%E9%95%BF%E5%BA%A6"><span class="toc-number">1.1.5.2.2.</span> <span class="toc-text"> Step 2: 填充长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-3-%E5%88%9D%E5%A7%8B%E5%8C%96md%E7%BC%93%E5%AD%98"><span class="toc-number">1.1.5.2.3.</span> <span class="toc-text"> Step 3: 初始化MD缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-4-%E4%BB%A5512%E4%BD%8D%E5%88%86%E7%BB%84%E5%A4%84%E7%90%86%E6%B6%88%E6%81%AF"><span class="toc-number">1.1.5.2.4.</span> <span class="toc-text"> Step 4: 以512位分组处理消息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#step-5-%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.5.2.5.</span> <span class="toc-text"> Step 5: 输出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%89%B9%E7%82%B9%E5%92%8C%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.5.3.</span> <span class="toc-text"> 3. 特点和应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%A8%8D%E4%BD%9C%E4%BA%86%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text"> 数字签名（稍作了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%89%B9%E5%BE%81"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 数字签名特征：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8Edsa%E7%9A%84%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E6%A0%87%E5%87%86dss"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 基于DSA的数字签名标准DSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.3.</span> <span class="toc-text"> 身份认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%8A%80%E6%9C%AF"><span class="toc-number">1.4.</span> <span class="toc-text"> 网站身份认证技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB-2"><span class="toc-number">1.4.1.</span> <span class="toc-text"> 分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#basic%E8%AE%A4%E8%AF%81%E8%B4%A6%E5%8F%B7%E9%9D%99%E6%80%81%E5%8F%A3%E4%BB%A4"><span class="toc-number">1.4.1.1.</span> <span class="toc-text"> basic认证：账号+静态口令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A1%A8%E5%8D%95%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81web%E7%9A%84session%E6%9C%BA%E5%88%B6-cookies"><span class="toc-number">1.4.1.2.</span> <span class="toc-text"> 基于表单的身份认证:Web的Session机制  (cookies)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.1.2.1.</span> <span class="toc-text"> 步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.1.2.2.</span> <span class="toc-text"> 改进</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%8F%A3%E4%BB%A4%E5%A4%9A%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.3.</span> <span class="toc-text"> 动态口令&#x2F;多因素认证</span></a></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">认证</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%94%BB%E5%87%BB%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.</span> <span class="toc-text">网络攻击方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E4%BD%95%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E5%9C%A8%E5%8A%9F%E8%83%BD%E4%B8%8A%E5%8F%AF%E4%BB%A5%E7%9C%8B%E4%BD%9C%E4%B8%A4%E5%B1%82"><span class="toc-number">1.1.1.</span> <span class="toc-text">任何消息认证在功能上可以看作两层</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%B1%BB%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B0"><span class="toc-number">1.1.2.</span> <span class="toc-text">三类认证函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B01%EF%BC%9A%E6%B6%88%E6%81%AF%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">认证函数1：消息加密</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#expamle%EF%BC%9A%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.1.</span> <span class="toc-text">expamle：对称加密</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86"><span class="toc-number">1.1.2.1.2.</span> <span class="toc-text">对称加密</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B02%EF%BC%9A%E6%B6%88%E6%81%AF%E8%AE%A4%E8%AF%81%E7%A0%81MAC"><span class="toc-number">1.1.2.2.</span> <span class="toc-text">认证函数2：消息认证码MAC</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A4%E8%AF%81%E5%87%BD%E6%95%B03%EF%BC%9AHash"><span class="toc-number">1.1.2.3.</span> <span class="toc-text">认证函数3：Hash</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash"><span class="toc-number">1.1.3.</span> <span class="toc-text">Hash</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash%E7%AE%97%E6%B3%95%EF%BC%9AMD5-%EF%BC%88Message-Digest%EF%BC%8C%E6%B6%88%E6%81%AF%E6%91%98%E8%A6%81%EF%BC%89"><span class="toc-number">1.1.4.</span> <span class="toc-text">Hash算法：MD5 （Message Digest，消息摘要）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">1.1.4.2.</span> <span class="toc-text">2. 设计目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.4.3.</span> <span class="toc-text">3. 算法步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hash%E7%AE%97%E6%B3%95%EF%BC%9Asha-1"><span class="toc-number">1.1.5.</span> <span class="toc-text">Hash算法：sha-1</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BE%93%E5%85%A5%E5%92%8C%E8%BE%93%E5%87%BA-2"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">1. 输入和输出</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.1.5.2.</span> <span class="toc-text">2. 算法步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-1-%E5%A2%9E%E5%8A%A0%E5%A1%AB%E5%85%85%E4%BD%8D"><span class="toc-number">1.1.5.2.1.</span> <span class="toc-text">Step 1: 增加填充位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-2-%E5%A1%AB%E5%85%85%E9%95%BF%E5%BA%A6"><span class="toc-number">1.1.5.2.2.</span> <span class="toc-text">Step 2: 填充长度</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-3-%E5%88%9D%E5%A7%8B%E5%8C%96MD%E7%BC%93%E5%AD%98"><span class="toc-number">1.1.5.2.3.</span> <span class="toc-text">Step 3: 初始化MD缓存</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-4-%E4%BB%A5512%E4%BD%8D%E5%88%86%E7%BB%84%E5%A4%84%E7%90%86%E6%B6%88%E6%81%AF"><span class="toc-number">1.1.5.2.4.</span> <span class="toc-text">Step 4: 以512位分组处理消息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Step-5-%E8%BE%93%E5%87%BA"><span class="toc-number">1.1.5.2.5.</span> <span class="toc-text">Step 5: 输出</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E7%89%B9%E7%82%B9%E5%92%8C%E5%BA%94%E7%94%A8"><span class="toc-number">1.1.5.3.</span> <span class="toc-text">3. 特点和应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%EF%BC%88%E7%A8%8D%E4%BD%9C%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">数字签名（稍作了解）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E7%89%B9%E5%BE%81%EF%BC%9A"><span class="toc-number">1.2.1.</span> <span class="toc-text">数字签名特征：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB%EF%BC%9A"><span class="toc-number">1.2.2.</span> <span class="toc-text">分类：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8EDSA%E7%9A%84%E6%95%B0%E5%AD%97%E7%AD%BE%E5%90%8D%E6%A0%87%E5%87%86DSS"><span class="toc-number">1.2.3.</span> <span class="toc-text">基于DSA的数字签名标准DSS</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-number">1.3.</span> <span class="toc-text">身份认证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81%E6%8A%80%E6%9C%AF"><span class="toc-number">1.4.</span> <span class="toc-text">网站身份认证技术</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.4.1.</span> <span class="toc-text">分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#basic%E8%AE%A4%E8%AF%81%EF%BC%9A%E8%B4%A6%E5%8F%B7-%E9%9D%99%E6%80%81%E5%8F%A3%E4%BB%A4"><span class="toc-number">1.4.1.1.</span> <span class="toc-text">basic认证：账号+静态口令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E8%A1%A8%E5%8D%95%E7%9A%84%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81-Web%E7%9A%84Session%E6%9C%BA%E5%88%B6-cookies"><span class="toc-number">1.4.1.2.</span> <span class="toc-text">基于表单的身份认证:Web的Session机制  (cookies)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.4.1.2.1.</span> <span class="toc-text">步骤</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B"><span class="toc-number">1.4.1.2.2.</span> <span class="toc-text">改进</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A8%E6%80%81%E5%8F%A3%E4%BB%A4-%E5%A4%9A%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.1.3.</span> <span class="toc-text">动态口令&#x2F;多因素认证</span></a></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

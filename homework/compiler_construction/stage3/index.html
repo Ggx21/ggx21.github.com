@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="stage-3 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验内容 增加块语句的支持。  前端 主要是修改了重复声明的检查。只有在同一个作用域里，变量才不能重复声明 具体而言，定义了ScopeStack替换原有的单一scope，重新实现lookup，declare，使得它们仅仅在当前ScopeStack的栈顶生效  lookupCurrent:在De">
+  <meta name="description" content="stage-3 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 增加块语句的支持。 前端 主要是修改了重复声明的检查。只有在同一个作用域里，变量才不能重复声明 具体而言，定义了ScopeStack替换原有的单一scope，重新实现lookup，declare，使得它们仅仅在当前ScopeStack的栈顶生效   lookupCurrent:在Decl">
 <meta property="og:type" content="article">
 <meta property="og:title" content="stage3">
 <meta property="og:url" content="https://ggxloveslife.top/homework/compiler_construction/stage3/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="stage-3 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803  实验内容 增加块语句的支持。  前端 主要是修改了重复声明的检查。只有在同一个作用域里，变量才不能重复声明 具体而言，定义了ScopeStack替换原有的单一scope，重新实现lookup，declare，使得它们仅仅在当前ScopeStack的栈顶生效  lookupCurrent:在De">
+<meta property="og:description" content="stage-3 郭高旭 ggx21@mails.tsinghua.edu.cn 2021010803 实验内容 增加块语句的支持。 前端 主要是修改了重复声明的检查。只有在同一个作用域里，变量才不能重复声明 具体而言，定义了ScopeStack替换原有的单一scope，重新实现lookup，declare，使得它们仅仅在当前ScopeStack的栈顶生效   lookupCurrent:在Decl">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-13T04:25:01.000Z">
 <meta property="article:modified_time" content="2023-10-13T12:42:16.942Z">
@@ -174,7 +174,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#stage-3"><span class="toc-number">1.</span> <span class="toc-text"> stage-3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 前端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 思考题</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text">前端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -231,26 +231,34 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="stage-3"><a class="markdownIt-Anchor" href="#stage-3"></a> stage-3</h1>
+    <h1>stage-3</h1>
 <p>郭高旭 <a href="mailto:ggx21@mails.tsinghua.edu.cn">ggx21@mails.tsinghua.edu.cn</a> 2021010803</p>
-<h2 id="实验内容"><a class="markdownIt-Anchor" href="#实验内容"></a> 实验内容</h2>
+<h2 id="实验内容">实验内容</h2>
 <p>增加块语句的支持。</p>
-<h3 id="前端"><a class="markdownIt-Anchor" href="#前端"></a> 前端</h3>
+<h3 id="前端">前端</h3>
 <p>主要是修改了重复声明的检查。只有在同一个作用域里，变量才不能重复声明</p>
 <p>具体而言，定义了ScopeStack替换原有的单一scope，重新实现lookup，declare，使得它们仅仅在当前ScopeStack的栈顶生效</p>
-<ul>
-<li>lookupCurrent:在Declaration时,只在当前(栈顶)查找符号表</li>
-<li>lookup:在visitIdentifier等中,从栈顶反向查找,直至查找到声明或者失败,这样保证查找到最近的声明</li>
-<li>declare:在栈顶scope(当前scope)scope</li>
-<li>namer语义检查时的visitBlock中,新作用域入栈,访问结束后,此作用域出栈</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>lookupCurrent:在Declaration时,只在当前(栈顶)查找符号表</p>
+</li>
+<li class="lvl-2">
+<p>lookup:在visitIdentifier等中,从栈顶反向查找,直至查找到声明或者失败,这样保证查找到最近的声明</p>
+</li>
+<li class="lvl-2">
+<p>declare:在栈顶scope(当前scope)scope</p>
+</li>
+<li class="lvl-2">
+<p>namer语义检查时的visitBlock中,新作用域入栈,访问结束后,此作用域出栈</p>
+</li>
 </ul>
-<h3 id="中端"><a class="markdownIt-Anchor" href="#中端"></a> 中端</h3>
+<h3 id="中端">中端</h3>
 <p>本步骤中无须新增新的 TAC 指令。</p>
-<h3 id="后端"><a class="markdownIt-Anchor" href="#后端"></a> 后端</h3>
+<h3 id="后端">后端</h3>
 <p>数据流分析：新增了判断基本块是否可达的代码，为每一个BasicBlock添加reachable属性,通过dfs找到所有可达块,并更新reachable</p>
 <p>在寄存器分配函数<code>bruteregalloc.py</code>中   ，仅仅为可达的基本块分配寄存器.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> bb <span class="keyword">in</span> graph.iterator():</span><br><span class="line">    <span class="keyword">if</span> bb.label <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">        subEmitter.emitLabel(bb.label)</span><br><span class="line">    <span class="keyword">if</span> bb.reachable:</span><br><span class="line">        self.localAlloc(bb, subEmitter)</span><br></pre></td></tr></table></figure>
-<h2 id="思考题"><a class="markdownIt-Anchor" href="#思考题"></a> 思考题</h2>
+<h2 id="思考题">思考题</h2>
 <p>请画出下面 MiniDecaf 代码的控制流图。</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line"> <span class="type">int</span> a = <span class="number">2</span>;</span><br><span class="line"> <span class="keyword">if</span> (a &lt; <span class="number">3</span>) &#123;</span><br><span class="line">     &#123;</span><br><span class="line">         <span class="type">int</span> a = <span class="number">3</span>;</span><br><span class="line">         <span class="keyword">return</span> a;</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="keyword">return</span> a;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>由于控制流图是根据TACinstr构造的,所以这里先给出上述代码的TAC表示(bb为含注释行到上一注释行后)</p>
@@ -307,7 +315,7 @@ D[bb3:不可达]</pre>
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#stage-3"><span class="toc-number">1.</span> <span class="toc-text"> stage-3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text"> 实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 前端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text"> 思考题</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">stage-3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%86%85%E5%AE%B9"><span class="toc-number">1.1.</span> <span class="toc-text">实验内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF"><span class="toc-number">1.1.1.</span> <span class="toc-text">前端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E7%AB%AF"><span class="toc-number">1.1.2.</span> <span class="toc-text">中端</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8E%E7%AB%AF"><span class="toc-number">1.1.3.</span> <span class="toc-text">后端</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E8%80%83%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">思考题</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

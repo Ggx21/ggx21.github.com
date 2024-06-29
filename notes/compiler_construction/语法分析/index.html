@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="语法分析 核心问题是识别，解析上下文无关文法G &#x3D; (V ， T ， P， S )  两种实现途径  自顶向下（从S到句子） 自底向上   自顶向下的语法分析 问题是容易出现回溯  两类非确定性  非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价） 仅有产生式选择是非确定的   解决产生式选择的不确定性：lookahead 唯一目的就是避免回溯，所以要看得足够多  一个不太好的例子">
+  <meta name="description" content="语法分析 核心问题是识别，解析上下文无关文法G &#x3D; (V ， T ， P， S ) 两种实现途径   自顶向下（从S到句子）   自底向上   自顶向下的语法分析 问题是容易出现回溯 两类非确定性   非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）   仅有产生式选择是非确定的   解决产生式选择的不确定性：lookahead 唯一目的就是避免回溯，所以要看得足够多 一个不太好的例">
 <meta property="og:type" content="article">
 <meta property="og:title" content="语法分析">
 <meta property="og:url" content="https://ggxloveslife.top/notes/compiler_construction/%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="语法分析 核心问题是识别，解析上下文无关文法G &#x3D; (V ， T ， P， S )  两种实现途径  自顶向下（从S到句子） 自底向上   自顶向下的语法分析 问题是容易出现回溯  两类非确定性  非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价） 仅有产生式选择是非确定的   解决产生式选择的不确定性：lookahead 唯一目的就是避免回溯，所以要看得足够多  一个不太好的例子">
+<meta property="og:description" content="语法分析 核心问题是识别，解析上下文无关文法G &#x3D; (V ， T ， P， S ) 两种实现途径   自顶向下（从S到句子）   自底向上   自顶向下的语法分析 问题是容易出现回溯 两类非确定性   非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）   仅有产生式选择是非确定的   解决产生式选择的不确定性：lookahead 唯一目的就是避免回溯，所以要看得足够多 一个不太好的例">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-16T04:25:01.000Z">
 <meta property="article:modified_time" content="2023-10-16T14:37:02.077Z">
@@ -124,7 +124,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/notes/compiler_construction/%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%BB%84%E7%BB%87/"
+            href="/notes/compiler_construction/%E8%AF%AD%E4%B9%89%E5%88%86%E6%9E%90/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -173,7 +173,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> 语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E9%80%94%E5%BE%84"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 两种实现途径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 自顶向下的语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%B1%BB%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> 两类非确定性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%A7%E7%94%9F%E5%BC%8F%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7lookahead"><span class="toc-number">1.1.0.2.</span> <span class="toc-text"> 解决产生式选择的不确定性：lookahead</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A4%AA%E5%A5%BD%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text"> 一个不太好的例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ll1%E6%96%87%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text"> LL(1)文法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#first%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> First集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text"> 计算方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#follow%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> Follow集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-follow-%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text"> 计算 Follow 集合</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E9%80%94%E5%BE%84"><span class="toc-number">1.0.1.</span> <span class="toc-text">两种实现途径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">自顶向下的语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%B1%BB%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">两类非确定性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%A7%E7%94%9F%E5%BC%8F%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%9Alookahead"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">解决产生式选择的不确定性：lookahead</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A4%AA%E5%A5%BD%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">一个不太好的例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E6%96%87%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">LL(1)文法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#First%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">First集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">计算方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Follow%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Follow集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-Follow-%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">计算 Follow 集合</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -230,59 +230,89 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="语法分析"><a class="markdownIt-Anchor" href="#语法分析"></a> 语法分析</h1>
+    <h1>语法分析</h1>
 <p>核心问题是<strong>识别</strong>，<strong>解析</strong>上下文无关文法G = (V ， T ， P， S )</p>
-<h3 id="两种实现途径"><a class="markdownIt-Anchor" href="#两种实现途径"></a> 两种实现途径</h3>
-<ul>
-<li>自顶向下（从S到句子）</li>
-<li>自底向上</li>
+<h3 id="两种实现途径">两种实现途径</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>自顶向下（从S到句子）</p>
+</li>
+<li class="lvl-2">
+<p>自底向上</p>
+</li>
 </ul>
-<h2 id="自顶向下的语法分析"><a class="markdownIt-Anchor" href="#自顶向下的语法分析"></a> 自顶向下的语法分析</h2>
+<h2 id="自顶向下的语法分析">自顶向下的语法分析</h2>
 <p>问题是容易出现回溯</p>
-<h4 id="两类非确定性"><a class="markdownIt-Anchor" href="#两类非确定性"></a> 两类非确定性</h4>
-<ul>
-<li>非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）</li>
-<li>仅有产生式选择是非确定的</li>
+<h4 id="两类非确定性">两类非确定性</h4>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>非终结符的的选择是非确定的（这个简单，最左产生和原有文法等价）</p>
+</li>
+<li class="lvl-2">
+<p>仅有产生式选择是非确定的</p>
+</li>
 </ul>
-<h4 id="解决产生式选择的不确定性lookahead"><a class="markdownIt-Anchor" href="#解决产生式选择的不确定性lookahead"></a> 解决产生式选择的不确定性：lookahead</h4>
+<h4 id="解决产生式选择的不确定性：lookahead">解决产生式选择的不确定性：lookahead</h4>
 <p>唯一目的就是避免回溯，所以要看得足够多</p>
-<h4 id="一个不太好的例子"><a class="markdownIt-Anchor" href="#一个不太好的例子"></a> 一个不太好的例子</h4>
-<p>考虑下列文法识别 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><msup><mi>a</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">ba^n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">b</span><span class="mord"><span class="mord mathdefault">a</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span></span></span></span></span></span></span> 的分析过程,  <code>S → Sa ,S → b</code></p>
-<p>:::tips</p>
+<h4 id="一个不太好的例子">一个不太好的例子</h4>
+<p>考虑下列文法识别 $ba^n$ 的分析过程,  <code>S → Sa  ,S → b  </code></p>
+<div class="tips">
 <p>看到下一个是a,然后选择<code>S → Sa</code>是不够的,因为a后可能还有a,要确定还要不要a只能继续向后看,所以无论向前看多远,这个句子后面总可能还是有a,所以还是不能确定.</p>
-<p>:::</p>
+</div>
 <blockquote>
 <p>这启发我们lookahead的表现需要依赖于文法</p>
 </blockquote>
-<h3 id="ll1文法"><a class="markdownIt-Anchor" href="#ll1文法"></a> LL(1)文法</h3>
+<h3 id="LL-1-文法">LL(1)文法</h3>
 <p>文法 G 是 LL（1）文法，当且仅当下面的条件成立：</p>
-<p>::: warning</p>
+<div class="warning">
 <p>对于每一个生成符,其所有产生式的预测集合不相交</p>
-<p>:::</p>
-<p>First集合与Follow集合,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mi mathvariant="normal">（</mi><msub><mi>V</mi><mi>T</mi></msub><mi mathvariant="normal">，</mi><msub><mi>V</mi><mi>N</mi></msub><mi mathvariant="normal">，</mi><mi>P</mi><mi mathvariant="normal">，</mi><mi>S</mi><mi mathvariant="normal">）</mi></mrow><annotation encoding="application/x-tex">G =（V_T， V_N， P， S）</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">G</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord cjk_fallback">（</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.13889em;">T</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord cjk_fallback">，</span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord cjk_fallback">，</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord cjk_fallback">）</span></span></span></span> 是上下文无关文法</p>
-<h4 id="first集合"><a class="markdownIt-Anchor" href="#first集合"></a> First集合</h4>
+</div>
+<p>First集合与Follow集合,$G =（V_T， V_N， P， S）$ 是上下文无关文法</p>
+<h4 id="First集合">First集合</h4>
 <p>first集合是求下述符号可能产生的<strong>首终结符</strong></p>
 <p>first集合针对的是在LL推导中可能出现的三类符号的并集</p>
 <ol>
-<li>终结符与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span></li>
-<li>生成符</li>
-<li>文法右边的符号串</li>
+<li class="lvl-3">
+<p>终结符与$\epsilon$</p>
+</li>
+<li class="lvl-3">
+<p>生成符</p>
+</li>
+<li class="lvl-3">
+<p>文法右边的符号串</p>
+</li>
 </ol>
-<h5 id="计算方法"><a class="markdownIt-Anchor" href="#计算方法"></a> 计算方法</h5>
+<h5 id="计算方法">计算方法</h5>
 <ol>
-<li>1类集合元素为本身,剩下的是空集</li>
-<li>如果生成符能生成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span>,则其集合加入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span></li>
-<li>对于3类符号串,首先加入串首符号对应集合元素</li>
-<li>从左向右分析,如果first集合中有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span>,则集合并上此处符号的后继符号的first集合</li>
-<li>如果停止,则3类符号串first集中删去<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">ϵ</span></span></span></span></li>
-<li>如果生成符能生成3,则集合取并</li>
-<li>重复3-6,直到所有集合不变</li>
+<li class="lvl-3">
+<p>1类集合元素为本身,剩下的是空集</p>
+</li>
+<li class="lvl-3">
+<p>如果生成符能生成$\epsilon$,则其集合加入$\epsilon$</p>
+</li>
+<li class="lvl-3">
+<p>对于3类符号串,首先加入串首符号对应集合元素</p>
+</li>
+<li class="lvl-3">
+<p>从左向右分析,如果first集合中有$\epsilon$,则集合并上此处符号的后继符号的first集合</p>
+</li>
+<li class="lvl-3">
+<p>如果停止,则3类符号串first集中删去$\epsilon$</p>
+</li>
+<li class="lvl-3">
+<p>如果生成符能生成3,则集合取并</p>
+</li>
+<li class="lvl-3">
+<p>重复3-6,直到所有集合不变</p>
+</li>
 </ol>
-<h4 id="follow集合"><a class="markdownIt-Anchor" href="#follow集合"></a> Follow集合</h4>
-<p>follow集合是在求<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">V_N</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">V</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>的直接后继终结符</p>
-<h5 id="计算-follow-集合"><a class="markdownIt-Anchor" href="#计算-follow-集合"></a> 计算 Follow 集合</h5>
+<h4 id="Follow集合">Follow集合</h4>
+<p>follow集合是在求$V_N$的直接后继终结符</p>
+<h5 id="计算-Follow-集合">计算 Follow 集合</h5>
 <ol>
-<li>置 Follow(S) =</li>
+<li class="lvl-3">
+<p>置 Follow(S) =</p>
+</li>
 </ol>
 
   </div>
@@ -331,7 +361,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.</span> <span class="toc-text"> 语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E9%80%94%E5%BE%84"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 两种实现途径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text"> 自顶向下的语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%B1%BB%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text"> 两类非确定性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%A7%E7%94%9F%E5%BC%8F%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7lookahead"><span class="toc-number">1.1.0.2.</span> <span class="toc-text"> 解决产生式选择的不确定性：lookahead</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A4%AA%E5%A5%BD%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text"> 一个不太好的例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ll1%E6%96%87%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text"> LL(1)文法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#first%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.1.</span> <span class="toc-text"> First集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text"> 计算方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#follow%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.</span> <span class="toc-text"> Follow集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-follow-%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text"> 计算 Follow 集合</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%A7%8D%E5%AE%9E%E7%8E%B0%E9%80%94%E5%BE%84"><span class="toc-number">1.0.1.</span> <span class="toc-text">两种实现途径</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E9%A1%B6%E5%90%91%E4%B8%8B%E7%9A%84%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">自顶向下的语法分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E7%B1%BB%E9%9D%9E%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="toc-number">1.1.0.1.</span> <span class="toc-text">两类非确定性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E5%86%B3%E4%BA%A7%E7%94%9F%E5%BC%8F%E9%80%89%E6%8B%A9%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%9Alookahead"><span class="toc-number">1.1.0.2.</span> <span class="toc-text">解决产生式选择的不确定性：lookahead</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A4%AA%E5%A5%BD%E7%9A%84%E4%BE%8B%E5%AD%90"><span class="toc-number">1.1.0.3.</span> <span class="toc-text">一个不太好的例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LL-1-%E6%96%87%E6%B3%95"><span class="toc-number">1.1.1.</span> <span class="toc-text">LL(1)文法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#First%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">First集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.1.1.1.</span> <span class="toc-text">计算方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Follow%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">Follow集合</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97-Follow-%E9%9B%86%E5%90%88"><span class="toc-number">1.1.1.2.1.</span> <span class="toc-text">计算 Follow 集合</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

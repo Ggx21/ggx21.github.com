@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="NEURO-SYMBOLIC CONCEPT LEARNER 我们提出了神经符号概念学习器（Neuro-Symbolic Concept Learner，NS-CL）模型，该模型能够在不对视觉概念、单词和句子的语义解析进行明确监督的情况下进行学习；相反，我们的模型通过简单地观察图像并阅读配对的问题和答案来学习。我们的模型构建了基于对象的场景表示，并将句子转化为可执行的符号程序。为了连接两个模块的">
+  <meta name="description" content="NEURO-SYMBOLIC CONCEPT LEARNER 我们提出了神经符号概念学习器（Neuro-Symbolic Concept Learner，NS-CL）模型，该模型能够在不对视觉概念、单词和句子的语义解析进行明确监督的情况下进行学习；相反，我们的模型通过简单地观察图像并阅读配对的问题和答案来学习。我们的模型构建了基于对象的场景表示，并将句子转化为可执行的符号程序。为了连接两个模块的学">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NEURO-SYMBOLIC CONCEPT LEARNER">
 <meta property="og:url" content="https://ggxloveslife.top/notes/AI-security/NEURO-SYMBOLIC%20CONCEPT%20LEARNER/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="NEURO-SYMBOLIC CONCEPT LEARNER 我们提出了神经符号概念学习器（Neuro-Symbolic Concept Learner，NS-CL）模型，该模型能够在不对视觉概念、单词和句子的语义解析进行明确监督的情况下进行学习；相反，我们的模型通过简单地观察图像并阅读配对的问题和答案来学习。我们的模型构建了基于对象的场景表示，并将句子转化为可执行的符号程序。为了连接两个模块的">
+<meta property="og:description" content="NEURO-SYMBOLIC CONCEPT LEARNER 我们提出了神经符号概念学习器（Neuro-Symbolic Concept Learner，NS-CL）模型，该模型能够在不对视觉概念、单词和句子的语义解析进行明确监督的情况下进行学习；相反，我们的模型通过简单地观察图像并阅读配对的问题和答案来学习。我们的模型构建了基于对象的场景表示，并将句子转化为可执行的符号程序。为了连接两个模块的学">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/eb80ec2692556a8d94c0f23fea08f9dd/202312041634167.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/a0d61d2933f2b03bf08bd3e63e49978d/202312041647912.png">
@@ -178,7 +178,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#neuro-symbolic-concept-learner"><span class="toc-number">1.</span> <span class="toc-text"> NEURO-SYMBOLIC CONCEPT LEARNER</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text"> 算法</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">NEURO-SYMBOLIC CONCEPT LEARNER</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text">任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -235,20 +235,24 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="neuro-symbolic-concept-learner"><a class="markdownIt-Anchor" href="#neuro-symbolic-concept-learner"></a> NEURO-SYMBOLIC CONCEPT LEARNER</h1>
+    <h1>NEURO-SYMBOLIC CONCEPT LEARNER</h1>
 <p>我们提出了神经符号概念学习器（Neuro-Symbolic Concept Learner，NS-CL）模型，该模型能够在不对视觉概念、单词和句子的语义解析进行明确监督的情况下进行学习；相反，<strong>我们的模型通过简单地观察图像并阅读配对的问题和答案来学习</strong>。我们的模型构建了<strong>基于对象的场景表示</strong>，并将<strong>句子转化为可执行的符号程序</strong>。为了连接两个模块的学习，我们使用了<strong>神经符号推理模块</strong>，该模块执行这些程序在潜在场景表示上。类似于人类概念学习，感知模块基于对所指对象的语言描述学习视觉概念。同时，学到的视觉概念有助于学习新单词和解析新句子。我们采用课程学习来引导在图像和语言的大型组合空间中的搜索。大量实验证明了我们的模型在学习视觉概念、单词表示和句子的语义解析方面的准确性和效率。此外，我们的方法可以轻松推广到新的对象属性、组合、语言概念、场景和问题，甚至新的程序领域。它还赋予了包括视觉问答和双向图像-文本检索在内的应用程序更强大的能力。</p>
 <p>NS-CL有三个模块：一个基于神经网络的感知模块，从场景中提取物体级别的表示；一个以视觉为基础的语义解析器，将问题翻译成可执行程序；一个符号程序执行器，读取对象的感知表示，对其属性/关系进行分类，并执行程序以获得答案。</p>
-<h2 id="任务"><a class="markdownIt-Anchor" href="#任务"></a> 任务</h2>
+<h2 id="任务">任务</h2>
 <p>看图回答问题.</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/eb80ec2692556a8d94c0f23fea08f9dd/202312041634167.png" alt="image-20231204163444085" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/eb80ec2692556a8d94c0f23fea08f9dd/202312041634167.png" alt="image-20231204163444085"></p>
 <p>NS-CL是一个神经符号概念学习器，通过<strong>自然监督（图像和问答对）进行学习</strong>，无需对图像或句子的语义程序进行明确注释。它采用==<strong>课程学习方法</strong>==，从简单场景和问题开始，逐渐学习单个对象的视觉概念，如颜色和形状，然后推广到学习对象之间的关系。NS-CL的模块化设计实现了可解释、稳健和准确的视觉推理，在CLEVR数据集上达到最先进性能。最重要的是，它能够自然地学习视觉和语言概念，实现对不同场景和语义程序的多方面泛化，包括处理更复杂的场景、新的视觉属性组合、快速适应新的视觉概念，以及在新任务中迁移学习。</p>
-<h2 id="算法"><a class="markdownIt-Anchor" href="#算法"></a> 算法</h2>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a0d61d2933f2b03bf08bd3e63e49978d/202312041647912.png" alt="image-20231204164704851" /></p>
+<h2 id="算法">算法</h2>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/a0d61d2933f2b03bf08bd3e63e49978d/202312041647912.png" alt="image-20231204164704851"></p>
 <p>将对象映射到视觉语义空间</p>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/aa2f97eb14f897687b75c14f020f992f/202312041650723.png" alt="image-20231204165016657" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/aa2f97eb14f897687b75c14f020f992f/202312041650723.png" alt="image-20231204165016657"></p>
 <ol>
-<li>语义解析</li>
-<li>Symbolic Reasoning 作为图像对象概念和语义解析的桥梁</li>
+<li class="lvl-3">
+<p>语义解析</p>
+</li>
+<li class="lvl-3">
+<p>Symbolic Reasoning 作为图像对象概念和语义解析的桥梁</p>
+</li>
 </ol>
 
   </div>
@@ -297,7 +301,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#neuro-symbolic-concept-learner"><span class="toc-number">1.</span> <span class="toc-text"> NEURO-SYMBOLIC CONCEPT LEARNER</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text"> 任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text"> 算法</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">NEURO-SYMBOLIC CONCEPT LEARNER</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1"><span class="toc-number">1.1.</span> <span class="toc-text">任务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text">算法</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

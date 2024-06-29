@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="总线协议 用 Master 和 Slave 来表示总线上的发送方和接收方：  Master 设置 valid_o&#x3D;1，等待 Slave 设置 ready_i&#x3D;1 Slave 完成操作后，设置 ready_i&#x3D;1 valid_o&#x3D;1 &amp;&amp; ready_i&#x3D;1 表示完成了一次请求">
+  <meta name="description" content="总线协议 用 Master 和 Slave 来表示总线上的发送方和接收方：   Master 设置 valid_o&#x3D;1，等待 Slave 设置 ready_i&#x3D;1   Slave 完成操作后，设置 ready_i&#x3D;1   valid_o&#x3D;1 &amp;&amp; ready_i&#x3D;1 表示完成了一次请求">
 <meta property="og:type" content="article">
 <meta property="og:title" content="组成原理笔记">
 <meta property="og:url" content="https://ggxloveslife.top/notes/computer_orgnization/bus/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="总线协议 用 Master 和 Slave 来表示总线上的发送方和接收方：  Master 设置 valid_o&#x3D;1，等待 Slave 设置 ready_i&#x3D;1 Slave 完成操作后，设置 ready_i&#x3D;1 valid_o&#x3D;1 &amp;&amp; ready_i&#x3D;1 表示完成了一次请求">
+<meta property="og:description" content="总线协议 用 Master 和 Slave 来表示总线上的发送方和接收方：   Master 设置 valid_o&#x3D;1，等待 Slave 设置 ready_i&#x3D;1   Slave 完成操作后，设置 ready_i&#x3D;1   valid_o&#x3D;1 &amp;&amp; ready_i&#x3D;1 表示完成了一次请求">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/3ee8a59eb78d38c6f075225d00413dae/202310202053601.png">
 <meta property="article:published_time" content="2023-10-20T04:25:01.000Z">
@@ -126,7 +126,7 @@
           <a
             class="icon"
             aria-label="上一篇"
-            href="/homework/flower_identification/%E6%A4%8D%E7%89%A9%E4%B9%9F%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%B5%85%E8%B0%88%E6%A4%8D%E7%89%A9%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%A4%E6%B5%81/"
+            href="/homework/computer_orgnization/lab4_5/"
             ><i
               class="fa-solid fa-chevron-left"
               aria-hidden="true"
@@ -142,7 +142,7 @@
           <a
             class="icon"
             aria-label="下一篇"
-            href="/homework/vlsi/hw1/"
+            href="/homework/flower_identification/%E6%A4%8D%E7%89%A9%E4%B9%9F%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%B5%85%E8%B0%88%E6%A4%8D%E7%89%A9%E4%B9%8B%E9%97%B4%E7%9A%84%E4%BA%A4%E6%B5%81/"
             ><i
               class="fa-solid fa-chevron-right"
               aria-hidden="true"
@@ -175,7 +175,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text"> 总线协议</span></a></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">总线协议</span></a></li></ol></div>
   </span>
 </div>
 
@@ -232,14 +232,20 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="总线协议"><a class="markdownIt-Anchor" href="#总线协议"></a> 总线协议</h1>
+    <h1>总线协议</h1>
 <p>用 Master 和 Slave 来表示总线上的发送方和接收方：</p>
-<ul>
-<li>Master 设置 valid_o=1，等待 Slave 设置 ready_i=1</li>
-<li>Slave 完成操作后，设置 ready_i=1</li>
-<li>valid_o=1 &amp;&amp; ready_i=1 表示完成了一次请求</li>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>Master 设置 valid_o=1，等待 Slave 设置 ready_i=1</p>
+</li>
+<li class="lvl-2">
+<p>Slave 完成操作后，设置 ready_i=1</p>
+</li>
+<li class="lvl-2">
+<p>valid_o=1 &amp;&amp; ready_i=1 表示完成了一次请求</p>
+</li>
 </ul>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ee8a59eb78d38c6f075225d00413dae/202310202053601.png" alt="RISC-V 指令格式" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/3ee8a59eb78d38c6f075225d00413dae/202310202053601.png" alt="RISC-V 指令格式"></p>
 
   </div>
 </article>
@@ -287,7 +293,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BA%BF%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.</span> <span class="toc-text"> 总线协议</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">总线协议</span></a></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

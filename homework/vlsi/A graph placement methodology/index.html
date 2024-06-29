@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="A graph placement methodology  intro  problem chip floorplanning, a challenging problem2 that has long defied automation  outcome under 6 h  VS months by human experts (baseline)  前置知识    芯片由多个模块组成，比">
+  <meta name="description" content="A graph placement methodology intro problem chip floorplanning, a challenging problem2 that has long defied automation outcome under 6 h  VS months by human experts (baseline) 前置知识    芯片由多个模块组成，比如内存子系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="A graph placement methodology">
 <meta property="og:url" content="https://ggxloveslife.top/homework/vlsi/A%20graph%20placement%20methodology/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="A graph placement methodology  intro  problem chip floorplanning, a challenging problem2 that has long defied automation  outcome under 6 h  VS months by human experts (baseline)  前置知识    芯片由多个模块组成，比">
+<meta property="og:description" content="A graph placement methodology intro problem chip floorplanning, a challenging problem2 that has long defied automation outcome under 6 h  VS months by human experts (baseline) 前置知识    芯片由多个模块组成，比如内存子系">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/09ed174520742311b847b254c5873001/202312181542961.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/8403252532275a2ea573caa8a6c9ddb3/202312181543995.png">
@@ -180,7 +180,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#a-graph-placement-methodology"><span class="toc-number">1.</span> <span class="toc-text"> A graph placement methodology</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-number">1.1.</span> <span class="toc-text"> intro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text"> problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outcome"><span class="toc-number">1.1.2.</span> <span class="toc-text"> outcome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 前置知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E4%BA%BA%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 前人局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 人类是怎么做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chip-floorplanning-is-a-game"><span class="toc-number">1.1.6.</span> <span class="toc-text"> Chip floorplanning is a game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%B7%B1%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 更深层的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8A%82chip-floorplanning-as-a-learning-problem"><span class="toc-number">1.2.</span> <span class="toc-text"> 第二节:Chip floorplanning as a learning problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#markov-decision-process-%E6%98%AF%E4%BB%80%E4%B9%88%E5%AE%83%E6%98%AF%E4%B8%8D%E6%98%AF%E5%B8%B8%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%B8%8B%E6%96%87contextual%E8%B5%8C%E5%8D%9A%E6%9C%BAbandits%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#our-mdp"><span class="toc-number">1.2.1.</span> <span class="toc-text"> OUR MDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loss-function"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> loss function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#designing-domain-adaptive-policies"><span class="toc-number">1.3.</span> <span class="toc-text"> Designing domain-adaptive policies</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">A graph placement methodology</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-number">1.1.</span> <span class="toc-text">intro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outcome"><span class="toc-number">1.1.2.</span> <span class="toc-text">outcome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E4%BA%BA%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text">前人局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text">人类是怎么做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chip-floorplanning-is-a-game"><span class="toc-number">1.1.6.</span> <span class="toc-text">Chip floorplanning is a game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%B7%B1%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.7.</span> <span class="toc-text">更深层的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-Chip-floorplanning-as-a-learning-problem"><span class="toc-number">1.2.</span> <span class="toc-text">第二节:Chip floorplanning as a learning problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Markov-decision-process-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%AE%83%E6%98%AF%E4%B8%8D%E6%98%AF%E5%B8%B8%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%88contextual%EF%BC%89%E8%B5%8C%E5%8D%9A%E6%9C%BA%EF%BC%88bandits%EF%BC%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OUR-MDP"><span class="toc-number">1.2.1.</span> <span class="toc-text">OUR MDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loss-function"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">loss function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Designing-domain-adaptive-policies"><span class="toc-number">1.3.</span> <span class="toc-text">Designing domain-adaptive policies</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -237,19 +237,19 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="a-graph-placement-methodology"><a class="markdownIt-Anchor" href="#a-graph-placement-methodology"></a> A graph placement methodology</h1>
-<h2 id="intro"><a class="markdownIt-Anchor" href="#intro"></a> intro</h2>
-<h3 id="problem"><a class="markdownIt-Anchor" href="#problem"></a> problem</h3>
+    <h1>A graph placement methodology</h1>
+<h2 id="intro">intro</h2>
+<h3 id="problem">problem</h3>
 <p><strong>chip floorplanning</strong>, a challenging problem2 that has long defied automation</p>
-<h3 id="outcome"><a class="markdownIt-Anchor" href="#outcome"></a> outcome</h3>
+<h3 id="outcome">outcome</h3>
 <p>under 6 h  VS months by human experts (baseline)</p>
-<h3 id="前置知识"><a class="markdownIt-Anchor" href="#前置知识"></a> 前置知识</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/09ed174520742311b847b254c5873001/202312181542961.png" alt="image-20231218154221817" /></p>
+<h3 id="前置知识">前置知识</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/09ed174520742311b847b254c5873001/202312181542961.png" alt="image-20231218154221817"></p>
 <ol>
-<li>
+<li class="lvl-3">
 <p>芯片由多个模块组成，比如内存子系统、计算单元和控制逻辑系统。</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>这些模块可以通过电路组件的（<mark>netlist</mark>）来描述，其中包括宏和标准单元。</p>
 <blockquote>
 <p>Netlist是一个描述电子系统中组件（如电阻、电容、晶体管等）以及它们之间连接关系的列表。</p>
@@ -257,25 +257,25 @@
 </blockquote>
 <p><mark>TODO</mark>: netlist 在代码中是如何体现的?</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>芯片平面布局的目标是在遵循密度和布线拥塞的硬约束的情况下，优化功耗、时序、面积和导线长度等性能指标。</p>
 </li>
 </ol>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/8403252532275a2ea573caa8a6c9ddb3/202312181543995.png" alt="image-20231218154315934" /></p>
-<h3 id="前人局限性"><a class="markdownIt-Anchor" href="#前人局限性"></a> 前人局限性</h3>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e4126d867d4c7d3a2d28e263a0b75fae/202312181548700.png" alt="image-20231218154833627" /></p>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/8403252532275a2ea573caa8a6c9ddb3/202312181543995.png" alt="image-20231218154315934"></p>
+<h3 id="前人局限性">前人局限性</h3>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/e4126d867d4c7d3a2d28e263a0b75fae/202312181548700.png" alt="image-20231218154833627"></p>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>划分：</strong> 对局部的关注牺牲了全局解的质量.因此不适用于大规模<we fixed></p>
 <blockquote>
 <p>实质上就是分治算法</p>
 <p>将整个电路网表划分成若干个较小的子块,对每个子块进行独立的优化处理,将优化后的子块重新组合，形成整体的电路优化结果。</p>
 </blockquote>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>退火</strong>:尽管能得到最优解,但是对于大型电路,收敛太慢<we fixed></p>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>统计方法</strong>:Routing congestion（布线拥塞）和timing violations（时序违例）之所以不容易用可微分的方式进行优化.</p>
 <blockquote>
 <p>布线拥塞指的是芯片特定区域对路由资源（例如金属轨道或通道）的需求很高，导致拥塞和潜在的性能问题。</p>
@@ -283,69 +283,95 @@
 </blockquote>
 </li>
 </ol>
-<h3 id="人类是怎么做的"><a class="markdownIt-Anchor" href="#人类是怎么做的"></a> 人类是怎么做的</h3>
-<ul>
-<li>生成</li>
-<li>打回上级</li>
+<h3 id="人类是怎么做的">人类是怎么做的</h3>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>生成</p>
+</li>
+<li class="lvl-2">
+<p>打回上级</p>
+</li>
 </ul>
-<h3 id="chip-floorplanning-is-a-game"><a class="markdownIt-Anchor" href="#chip-floorplanning-is-a-game"></a> Chip floorplanning is a game</h3>
+<h3 id="Chip-floorplanning-is-a-game">Chip floorplanning is a game</h3>
 <p>Chip floorplanning is analogous to a game with varying pieces (for example, netlist topologies,macro counts, macro sizes and aspect ratios), boards (varying canvas sizesand aspect ratios) and win conditions (relative importance of differentevaluation metrics or different density and routing congestion constraints).</p>
-<h3 id="更深层的意义"><a class="markdownIt-Anchor" href="#更深层的意义"></a> 更深层的意义</h3>
+<h3 id="更深层的意义">更深层的意义</h3>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">In addition to the immediate impact on chip floorplanning, the ability</span><br><span class="line">of our method to generalize and quickly generate high-quality solutions</span><br><span class="line">has major implications, unlocking opportunities for co-optimization</span><br><span class="line">with earlier stages of the chip design process. Large-scale architectural</span><br><span class="line">explorations were previously impossible, because it took months of</span><br><span class="line">human effort to accurately evaluate a given architectural candidate.</span><br><span class="line">However, modifying the architectural design can have an outsized</span><br><span class="line">impact on performance, and would facilitate full automation of the</span><br><span class="line">chip design process. Automating and accelerating the chip design</span><br><span class="line">process can also enable co-design of AI and hardware, yielding</span><br><span class="line">high-performance chips customized to important workloads, such</span><br><span class="line">as autonomous vehicles, medical devices and data centres.</span><br><span class="line">At an abstract level, our method learns to map the nodes of a hypergraph onto a limited set of resources, subject to constraints. Placement optimizations of this form appear in a wide range of science and</span><br><span class="line">engineering applications, including hardware design1, city planning16,</span><br><span class="line">vaccine testing and distribution17, and cerebral cortex layout18. Therefore, we believe that our placement optimization methodology can be</span><br><span class="line">applied to impactful placement problems beyond chip design.</span><br><span class="line">Beyond the experimental results reported here, our method is</span><br><span class="line">already having real-world impact, and our floorplan solutions are in</span><br><span class="line">the product tapeout of a recent-generation Google tensor processing</span><br><span class="line">unit (TPU) accelerator.  </span><br></pre></td></tr></table></figure>
-<h2 id="第二节chip-floorplanning-as-a-learning-problem"><a class="markdownIt-Anchor" href="#第二节chip-floorplanning-as-a-learning-problem"></a> 第二节:Chip floorplanning as a learning problem</h2>
+<h2 id="第二节-Chip-floorplanning-as-a-learning-problem">第二节:Chip floorplanning as a learning problem</h2>
 <p>The underlying problem is a high-dimensional contextual banditsproblem</p>
 <blockquote>
 <p>我们在开题报告中的论文里谈到这个优化问题实际上是一个多臂老虎机问题,而进一步地,<strong>Chip floorplanning</strong>是一个高维上下文多臂老虎机</p>
 <ol>
-<li><strong>上下文赌博机问题：</strong> 传统的赌博机问题是一个多臂老虎机问题，其中有多个拉杆（臂），每个拉杆都对应于一个潜在的奖励分布。在上下文赌博机问题中，每次选择拉杆不仅取决于拉杆的历史回报，还取决于当前的环境或上下文。这个上下文可以是一个向量，包含描述当前状态的多个特征。</li>
-<li><strong>高维度：</strong> 高维度表示有很多特征或维度。在上下文赌博机问题中，高维度上下文意味着上下文向量中包含了大量的特征，每个特征都可能影响到在某一时刻选择哪个拉杆。</li>
+<li class="lvl-3"><strong>上下文赌博机问题：</strong> 传统的赌博机问题是一个多臂老虎机问题，其中有多个拉杆（臂），每个拉杆都对应于一个潜在的奖励分布。在上下文赌博机问题中，每次选择拉杆不仅取决于拉杆的历史回报，还取决于当前的环境或上下文。这个上下文可以是一个向量，包含描述当前状态的多个特征。</li>
+<li class="lvl-3"><strong>高维度：</strong> 高维度表示有很多特征或维度。在上下文赌博机问题中，高维度上下文意味着上下文向量中包含了大量的特征，每个特征都可能影响到在某一时刻选择哪个拉杆。</li>
 </ol>
 <p>高维上下文赌博机问题涉及在每个时间步骤选择拉杆时，需要考虑一个包含大量特征的上下文向量。</p>
 </blockquote>
-<h4 id="markov-decision-process-是什么它是不是常用来解决上下文contextual赌博机bandits问题"><a class="markdownIt-Anchor" href="#markov-decision-process-是什么它是不是常用来解决上下文contextual赌博机bandits问题"></a> Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</h4>
+<h4 id="Markov-decision-process-是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题">Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</h4>
 <p>Markov Decision Process（MDP，马尔可夫决策过程）是一种数学框架，用于建模决策问题，特别是在涉及随机性和不确定性的情境中。MDP是强化学习的一部分，其核心思想是通过在不同状态下采取不同的动作来最大化期望累积奖励。</p>
 <p>MDP 的基本要素包括：</p>
 <ol>
-<li><strong>状态（States）：</strong> 描述系统可能处于的不同情况或状态。</li>
-<li><strong>动作（Actions）：</strong> 描述在给定状态下可以采取的决策或动作。</li>
-<li><strong>转移概率（Transition Probabilities）：</strong> 描述在执行某个动作后系统从一个状态转移到另一个状态的概率。</li>
-<li><strong>奖励函数（Reward Function）：</strong> 描述在执行某个动作后系统获得的奖励。</li>
+<li class="lvl-3">
+<p><strong>状态（States）：</strong> 描述系统可能处于的不同情况或状态。</p>
+</li>
+<li class="lvl-3">
+<p><strong>动作（Actions）：</strong> 描述在给定状态下可以采取的决策或动作。</p>
+</li>
+<li class="lvl-3">
+<p><strong>转移概率（Transition Probabilities）：</strong> 描述在执行某个动作后系统从一个状态转移到另一个状态的概率。</p>
+</li>
+<li class="lvl-3">
+<p><strong>奖励函数（Reward Function）：</strong> 描述在执行某个动作后系统获得的奖励。</p>
+</li>
 </ol>
 <p>MDP 是一种用于制定强化学习问题的框架，其中代理（agent）通过在不同状态下执行不同动作来学习如何最大化累积奖励。这种框架在许多领域都有应用，例如机器人控制、游戏策略、资源管理等。</p>
 <p>关于上下文赌博机问题，MDP 可以与上下文结合，形成上下文MDP（Contextual MDP）来处理带有上下文信息的决策问题。在上下文MDP中，每个状态不仅包括环境的内在状态，还包括外部上下文信息。这种方法可以很自然地扩展到上下文赌博机问题，其中上下文信息被视为状态的一部分。</p>
 <p>因此，MDP提供了一个通用的数学框架，可以用于建模并解决包括上下文赌博机在内的各种强化学习问题。</p>
-<h3 id="our-mdp"><a class="markdownIt-Anchor" href="#our-mdp"></a> OUR MDP</h3>
+<h3 id="OUR-MDP">OUR MDP</h3>
 <ol>
-<li>
+<li class="lvl-3">
 <p><strong>状态（States）：</strong> 包含有关部分布局的信息，包括电路图、节点和边的特征，当前待放置的节点以及电路图的元数据。</p>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>动作（Actions）：</strong> 当前宏可以放置在网格单元(grid cells of the chip canvas canvas)上的所有可能位置。</p>
 </li>
-<li>
+<li class="lvl-3">
 <p>**转移概率（Transition Probabilities）：**在给定状态下执行某个动作后,所有可能的下一状态的概率分布</p>
 <p>==TODO:==这个转移是确定的吗?</p>
 </li>
-<li>
+<li class="lvl-3">
 <p><strong>奖励函数（Reward Function）：</strong> 奖励是代理导线长度、拥塞和密度的负权重和。每次迭代只关心最终结果的情况(因此中间状态的奖励函数简单置零)</p>
 </li>
 </ol>
-<h3 id="具体实现"><a class="markdownIt-Anchor" href="#具体实现"></a> 具体实现</h3>
-<h4 id="loss-function"><a class="markdownIt-Anchor" href="#loss-function"></a> loss function</h4>
-<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fe4c7357af1ad4f71591fe165bff42e4/202312181835251.png" alt="image-20231218183504210" /></p>
-<ul>
-<li>θ: RL agent</li>
-<li>G: dataset of netlists of size K</li>
-<li>g: one netlist in G</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mrow><mi>p</mi><mi mathvariant="normal">.</mi><mi>g</mi></mrow></msub></mrow><annotation encoding="application/x-tex">R_{p.g}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:-0.00773em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">p</span><span class="mord mtight">.</span><span class="mord mathdefault mtight" style="margin-right:0.03588em;">g</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span>: reward of placement p for netlist g</li>
-<li>E: expected</li>
-<li>πθ: policy distribution 具体而言，πθ描述了在每个可能的状态下，代理选择每个可能动作的概率。我们的强化学习过程实际上就是调整策略的过程.</li>
+<h3 id="具体实现">具体实现</h3>
+<h4 id="loss-function">loss function</h4>
+<p><img src="https://gitlab.com/ggx-blog/imglab/uploads/fe4c7357af1ad4f71591fe165bff42e4/202312181835251.png" alt="image-20231218183504210"></p>
+<ul class="lvl-0">
+<li class="lvl-2">
+<p>θ: RL agent</p>
+</li>
+<li class="lvl-2">
+<p>G: dataset of netlists of size K</p>
+</li>
+<li class="lvl-2">
+<p>g: one netlist in G</p>
+</li>
+<li class="lvl-2">
+<p>$R_{p.g}$: reward of placement p for netlist g</p>
+</li>
+<li class="lvl-2">
+<p>E: expected</p>
+</li>
+<li class="lvl-2">
+<p>πθ: policy distribution 具体而言，πθ描述了在每个可能的状态下，代理选择每个可能动作的概率。我们的强化学习过程实际上就是调整策略的过程.</p>
+</li>
 </ul>
-<h2 id="designing-domain-adaptive-policies"><a class="markdownIt-Anchor" href="#designing-domain-adaptive-policies"></a> Designing domain-adaptive policies</h2>
+<h2 id="Designing-domain-adaptive-policies">Designing domain-adaptive policies</h2>
 <ol>
-<li>we first focused on learning rich representations of the state space.</li>
+<li class="lvl-3">
+<p>we first focused on learning rich representations of the state space.</p>
+</li>
 </ol>
-<p><img src="https://github.com/openhwgroup/cva6/raw/master/docs/03_cva6_design/_static/ariane_overview.drawio.png" alt="img" /></p>
+<p><img src="https://github.com/openhwgroup/cva6/raw/master/docs/03_cva6_design/_static/ariane_overview.drawio.png" alt="img"></p>
 
   </div>
 </article>
@@ -393,7 +419,7 @@
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#a-graph-placement-methodology"><span class="toc-number">1.</span> <span class="toc-text"> A graph placement methodology</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-number">1.1.</span> <span class="toc-text"> intro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text"> problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outcome"><span class="toc-number">1.1.2.</span> <span class="toc-text"> outcome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 前置知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E4%BA%BA%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 前人局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 人类是怎么做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chip-floorplanning-is-a-game"><span class="toc-number">1.1.6.</span> <span class="toc-text"> Chip floorplanning is a game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%B7%B1%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.7.</span> <span class="toc-text"> 更深层的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8A%82chip-floorplanning-as-a-learning-problem"><span class="toc-number">1.2.</span> <span class="toc-text"> 第二节:Chip floorplanning as a learning problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#markov-decision-process-%E6%98%AF%E4%BB%80%E4%B9%88%E5%AE%83%E6%98%AF%E4%B8%8D%E6%98%AF%E5%B8%B8%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%B8%8B%E6%96%87contextual%E8%B5%8C%E5%8D%9A%E6%9C%BAbandits%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text"> Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#our-mdp"><span class="toc-number">1.2.1.</span> <span class="toc-text"> OUR MDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loss-function"><span class="toc-number">1.2.2.1.</span> <span class="toc-text"> loss function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#designing-domain-adaptive-policies"><span class="toc-number">1.3.</span> <span class="toc-text"> Designing domain-adaptive policies</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">A graph placement methodology</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#intro"><span class="toc-number">1.1.</span> <span class="toc-text">intro</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#problem"><span class="toc-number">1.1.1.</span> <span class="toc-text">problem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#outcome"><span class="toc-number">1.1.2.</span> <span class="toc-text">outcome</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%E7%9F%A5%E8%AF%86"><span class="toc-number">1.1.3.</span> <span class="toc-text">前置知识</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E4%BA%BA%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-number">1.1.4.</span> <span class="toc-text">前人局限性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E6%98%AF%E6%80%8E%E4%B9%88%E5%81%9A%E7%9A%84"><span class="toc-number">1.1.5.</span> <span class="toc-text">人类是怎么做的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Chip-floorplanning-is-a-game"><span class="toc-number">1.1.6.</span> <span class="toc-text">Chip floorplanning is a game</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9B%B4%E6%B7%B1%E5%B1%82%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">1.1.7.</span> <span class="toc-text">更深层的意义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E8%8A%82-Chip-floorplanning-as-a-learning-problem"><span class="toc-number">1.2.</span> <span class="toc-text">第二节:Chip floorplanning as a learning problem</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Markov-decision-process-%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%AE%83%E6%98%AF%E4%B8%8D%E6%98%AF%E5%B8%B8%E7%94%A8%E6%9D%A5%E8%A7%A3%E5%86%B3%E4%B8%8A%E4%B8%8B%E6%96%87%EF%BC%88contextual%EF%BC%89%E8%B5%8C%E5%8D%9A%E6%9C%BA%EF%BC%88bandits%EF%BC%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.0.1.</span> <span class="toc-text">Markov decision process 是什么？它是不是常用来解决上下文（contextual）赌博机（bandits）问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OUR-MDP"><span class="toc-number">1.2.1.</span> <span class="toc-text">OUR MDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.2.2.</span> <span class="toc-text">具体实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#loss-function"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">loss function</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Designing-domain-adaptive-policies"><span class="toc-number">1.3.</span> <span class="toc-text">Designing domain-adaptive policies</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">

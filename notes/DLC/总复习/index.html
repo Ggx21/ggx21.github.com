@@ -9,12 +9,12 @@
     name="viewport"
     content="width=device-width, initial-scale=1, maximum-scale=5"
   />
-  <meta name="description" content="数字逻辑电路总复习    全书一句话 表达式+触发器  组合逻辑:表达式 时序逻辑:表达式+触发器 集成电路(可编程逻辑):表达式+触发器的具体应用   表达式  手工化简:公式法与卡诺图 计算机化简:表格法     组合逻辑一句话 表达式≡真值表≡逻辑图表达式\equiv 真值表\equiv 逻辑图 表达式≡真值表≡逻辑图 用表达式表示全部组合逻辑   译码器   编码器   数据选择器">
+  <meta name="description" content="数字逻辑电路总复习   全书一句话 表达式+触发器   组合逻辑:表达式   时序逻辑:表达式+触发器   集成电路(可编程逻辑):表达式+触发器的具体应用   表达式   手工化简:公式法与卡诺图   计算机化简:表格法     组合逻辑一句话 $$ 表达式\equiv 真值表\equiv 逻辑图 $$ 用表达式表示全部组合逻辑   译码器   编码器   数据选择器   数据比较器   奇偶校">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DLC-总复习">
 <meta property="og:url" content="https://ggxloveslife.top/notes/DLC/%E6%80%BB%E5%A4%8D%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Hello From YUX">
-<meta property="og:description" content="数字逻辑电路总复习    全书一句话 表达式+触发器  组合逻辑:表达式 时序逻辑:表达式+触发器 集成电路(可编程逻辑):表达式+触发器的具体应用   表达式  手工化简:公式法与卡诺图 计算机化简:表格法     组合逻辑一句话 表达式≡真值表≡逻辑图表达式\equiv 真值表\equiv 逻辑图 表达式≡真值表≡逻辑图 用表达式表示全部组合逻辑   译码器   编码器   数据选择器">
+<meta property="og:description" content="数字逻辑电路总复习   全书一句话 表达式+触发器   组合逻辑:表达式   时序逻辑:表达式+触发器   集成电路(可编程逻辑):表达式+触发器的具体应用   表达式   手工化简:公式法与卡诺图   计算机化简:表格法     组合逻辑一句话 $$ 表达式\equiv 真值表\equiv 逻辑图 $$ 用表达式表示全部组合逻辑   译码器   编码器   数据选择器   数据比较器   奇偶校">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/c8aead3528634185ef5198d0465e3d82/202306172259218.png">
 <meta property="og:image" content="https://gitlab.com/ggx-blog/imglab/uploads/8c25881da02ec3efa792e32f71907890/202306172326118.png">
@@ -176,7 +176,7 @@
     <br />
     <div id="share" style="display: none">
     </div>
-    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E6%80%BB%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text"> 数字逻辑电路总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E4%B9%A6%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 全书一句话</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.0.1.1.</span> <span class="toc-text"> 表达式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 组合逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 时序逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 可编程逻辑一句话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.</span> <span class="toc-text"> 组合逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text"> 触发器结构和原理</span></a></li></ol></li></ol></div>
+    <div id="toc"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数字逻辑电路总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E4%B9%A6%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.1.</span> <span class="toc-text">全书一句话</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">表达式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.2.</span> <span class="toc-text">组合逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.3.</span> <span class="toc-text">时序逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.4.</span> <span class="toc-text">可编程逻辑一句话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.</span> <span class="toc-text">组合逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">触发器结构和原理</span></a></li></ol></li></ol></div>
   </span>
 </div>
 
@@ -233,149 +233,181 @@
   
 
   <div class="content e-content" itemprop="articleBody">
-    <h1 id="数字逻辑电路总复习"><a class="markdownIt-Anchor" href="#数字逻辑电路总复习"></a> 数字逻辑电路总复习</h1>
-<ul>
-<li>
-<h3 id="全书一句话"><a class="markdownIt-Anchor" href="#全书一句话"></a> 全书一句话</h3>
+    <h1>数字逻辑电路总复习</h1>
+<ul class="lvl-0">
+<li class="lvl-2">
+<h3 id="全书一句话">全书一句话</h3>
 <p>表达式+触发器</p>
-<ul>
-<li>组合逻辑:表达式</li>
-<li>时序逻辑:表达式+触发器</li>
-<li>集成电路(可编程逻辑):表达式+触发器的具体应用</li>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>组合逻辑:表达式</p>
+</li>
+<li class="lvl-4">
+<p>时序逻辑:表达式+触发器</p>
+</li>
+<li class="lvl-4">
+<p>集成电路(可编程逻辑):表达式+触发器的具体应用</p>
+</li>
 </ul>
-<h4 id="表达式"><a class="markdownIt-Anchor" href="#表达式"></a> 表达式</h4>
-<ul>
-<li>手工化简:公式法与卡诺图</li>
-<li>计算机化简:表格法</li>
+<h4 id="表达式">表达式</h4>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>手工化简:公式法与卡诺图</p>
+</li>
+<li class="lvl-4">
+<p>计算机化简:表格法</p>
+</li>
 </ul>
 </li>
-<li>
-<h3 id="组合逻辑一句话"><a class="markdownIt-Anchor" href="#组合逻辑一句话"></a> 组合逻辑一句话</h3>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">表</mi><mi mathvariant="normal">达</mi><mi mathvariant="normal">式</mi><mo>≡</mo><mi mathvariant="normal">真</mi><mi mathvariant="normal">值</mi><mi mathvariant="normal">表</mi><mo>≡</mo><mi mathvariant="normal">逻</mi><mi mathvariant="normal">辑</mi><mi mathvariant="normal">图</mi></mrow><annotation encoding="application/x-tex">表达式\equiv 真值表\equiv 逻辑图
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.46375em;vertical-align:0em;"></span><span class="mord cjk_fallback">表</span><span class="mord cjk_fallback">达</span><span class="mord cjk_fallback">式</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.46375em;vertical-align:0em;"></span><span class="mord cjk_fallback">真</span><span class="mord cjk_fallback">值</span><span class="mord cjk_fallback">表</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≡</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0em;vertical-align:0em;"></span><span class="mord cjk_fallback">逻</span><span class="mord cjk_fallback">辑</span><span class="mord cjk_fallback">图</span></span></span></span></span></p>
+<li class="lvl-2">
+<h3 id="组合逻辑一句话">组合逻辑一句话</h3>
+<p>$$<br>
+表达式\equiv 真值表\equiv 逻辑图<br>
+$$</p>
 <p>用表达式表示全部组合逻辑</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>译码器</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>编码器</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>数据选择器</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>数据比较器</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>奇偶校验器</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>加法器</p>
 </li>
 </ul>
 </li>
-<li>
-<h3 id="时序逻辑一句话"><a class="markdownIt-Anchor" href="#时序逻辑一句话"></a> 时序逻辑一句话</h3>
+<li class="lvl-2">
+<h3 id="时序逻辑一句话">时序逻辑一句话</h3>
 <p><strong>触发器结构和原理</strong></p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>基本RS触发器</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>电位型触发器</p>
-<ul>
-<li>
+<ul class="lvl-4">
+<li class="lvl-6">
 <p>D触发器</p>
 </li>
-<li>
+<li class="lvl-6">
 <p>RS触发器</p>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-4">
 <p>边沿触发器</p>
-<ul>
-<li>D触发器</li>
-<li>JK触发器</li>
+<ul class="lvl-4">
+<li class="lvl-6">D触发器</li>
+<li class="lvl-6">JK触发器</li>
 </ul>
 </li>
-<li>
+<li class="lvl-4">
 <p>会灵活运用以上触发器</p>
-<p>基本概念：功能表，现态Qn，次态Qn+1 ，状态<br />
-表与状态图，状态方程，激励表</p>
+<p>基本概念：功能表，现态Qn，次态Qn+1 ，状态表与状态图，状态方程，激励表</p>
 </li>
 </ul>
 </li>
-<li>
-<h3 id="可编程逻辑一句话"><a class="markdownIt-Anchor" href="#可编程逻辑一句话"></a> 可编程逻辑一句话</h3>
+<li class="lvl-2">
+<h3 id="可编程逻辑一句话">可编程逻辑一句话</h3>
 </li>
 </ul>
-<h2 id="组合逻辑"><a class="markdownIt-Anchor" href="#组合逻辑"></a> 组合逻辑</h2>
-<p>当输入线为2根（标记为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>），输出线为4根（标记为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">Y_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">Y_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">Y_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">Y_3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>）时，2-4译码器的逻辑表达式如下：</p>
-\begin{align*}
-Y_0 &= \bar{x} \cdot \bar{y} \\
-Y_1 &= \bar{x} \cdot y \\
-Y_2 &= x \cdot \bar{y} \\
-Y_3 &= x \cdot y \\
-\end{align*}
-
-<p>其中，符号 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>x</mi><mo>ˉ</mo></mover></mrow><annotation encoding="application/x-tex">\bar{x}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.56778em;vertical-align:0em;"></span><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.56778em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">x</span></span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.22222em;">ˉ</span></span></span></span></span></span></span></span></span> 表示非<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⋅</mo></mrow><annotation encoding="application/x-tex">\cdot</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.44445em;vertical-align:0em;"></span><span class="mord">⋅</span></span></span></span> 表示与，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo></mrow><annotation encoding="application/x-tex">+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">+</span></span></span></span> 表示或。</p>
-<p>这些逻辑表达式描述了译码器的输出如何根据输入进行编码。例如，当输入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span>为低电平（0），输入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span></span></span></span>为低电平（0）时，输出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">Y_0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.22222em;">Y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.22222em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为高电平（1），而其他输出线为低电平（0）。当输入信号发生变化时，输出线的状态将相应地改变，以反映输入的变化。这样，2-4译码器可以将2个输入线的组合状态映射到4个输出线上。</p>
-<h2 id="触发器结构和原理"><a class="markdownIt-Anchor" href="#触发器结构和原理"></a> <strong>触发器结构和原理</strong></h2>
-<ul>
-<li>
+<h2 id="组合逻辑">组合逻辑</h2>
+<p>当输入线为2根（标记为$x$和$y$），输出线为4根（标记为$Y_0$、$Y_1$、$Y_2$和$Y_3$）时，2-4译码器的逻辑表达式如下：</p>
+<p>$$<br>
+\begin{align*}<br>
+Y_0 &amp;= \bar{x} \cdot \bar{y} \<br>
+Y_1 &amp;= \bar{x} \cdot y \<br>
+Y_2 &amp;= x \cdot \bar{y} \<br>
+Y_3 &amp;= x \cdot y \<br>
+\end{align*}<br>
+$$<br>
+其中，符号 $\bar{x}$ 表示非$x$，$\cdot$ 表示与，$+$ 表示或。</p>
+<p>这些逻辑表达式描述了译码器的输出如何根据输入进行编码。例如，当输入$x$为低电平（0），输入$y$为低电平（0）时，输出$Y_0$为高电平（1），而其他输出线为低电平（0）。当输入信号发生变化时，输出线的状态将相应地改变，以反映输入的变化。这样，2-4译码器可以将2个输入线的组合状态映射到4个输出线上。</p>
+<h2 id="触发器结构和原理"><strong>触发器结构和原理</strong></h2>
+<ul class="lvl-0">
+<li class="lvl-2">
 <p>基本RS触发器</p>
 <img src="https://gitlab.com/ggx-blog/imglab/uploads/c8aead3528634185ef5198d0465e3d82/202306172259218.png" alt="image-20230617225904163" style="zoom: 50%;" />
-<ul>
-<li>S-R=0-1:RESET,Q’置零</li>
-<li>S-R=1-0:SET,Q’置1</li>
-<li>S-R=1-1:保持</li>
-<li>S-R=0-0:异常(Q’,<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>Q</mi><mo>ˉ</mo></mover><mo mathvariant="normal">′</mo></msup></mrow><annotation encoding="application/x-tex">\bar Q&#x27;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.0145499999999998em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8201099999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">Q</span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.16666em;">ˉ</span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">′</span></span></span></span></span></span></span></span></span></span></span></span>)=(1,1)</li>
-<li>0-0转1-1:保持?不定态!</li>
+<ul class="lvl-2">
+<li class="lvl-4">
+<p>S-R=0-1:RESET,Q’置零</p>
+</li>
+<li class="lvl-4">
+<p>S-R=1-0:SET,Q’置1</p>
+</li>
+<li class="lvl-4">
+<p>S-R=1-1:保持</p>
+</li>
+<li class="lvl-4">
+<p>S-R=0-0:异常(Q’,$\bar Q’$)=(1,1)</p>
+</li>
+<li class="lvl-4">
+<p>0-0转1-1:保持?不定态!</p>
+</li>
 </ul>
 <p>为了解决上面问题,引入控制端E:</p>
 </li>
-<li>
+<li class="lvl-2">
 <p>电位型触发器</p>
 <p>当E=0时保持,E=1时接受输入</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>RS触发器</p>
 <p><strong>两个问题</strong>:</p>
 <ol>
-<li>RS=11保持功能与控制端E重复</li>
-<li>当控制端启用的时候,RS=00仍然会异常</li>
+<li class="lvl-7">
+<p>RS=11保持功能与控制端E重复</p>
+</li>
+<li class="lvl-7">
+<p>当控制端启用的时候,RS=00仍然会异常</p>
+</li>
 </ol>
 <p>所以去掉这两个状态后,只剩下(set)与(reset);则可以只用一个输入D表示</p>
 </li>
-<li>
+<li class="lvl-4">
 <p>D触发器</p>
 </li>
 </ul>
 </li>
-<li>
+<li class="lvl-2">
 <p>边沿触发器</p>
 <p>当E上升沿时接受输入,其他状态保持</p>
-<ul>
-<li>
+<ul class="lvl-2">
+<li class="lvl-4">
 <p>D触发器</p>
-<p>:::warning</p>
+<div class="warning">
 <img src="https://gitlab.com/ggx-blog/imglab/uploads/8c25881da02ec3efa792e32f71907890/202306172326118.png" alt="image-20230617232641045" style="zoom: 50%;" />
 <p>什么是维持阻塞?</p>
-<ul>
-<li>多个触发器组成的电路最高时钟频率</li>
-<li>正沿D触发器的开关特性</li>
-<li>见第九次课件</li>
+<ul class="lvl-5">
+<li class="lvl-6">
+<p>多个触发器组成的电路最高时钟频率</p>
+</li>
+<li class="lvl-6">
+<p>正沿D触发器的开关特性</p>
+</li>
+<li class="lvl-6">
+<p>见第九次课件</p>
+</li>
 </ul>
-<p>:::</p>
+</div>
 </li>
-<li>
+<li class="lvl-4">
 <p>JK触发器</p>
-<ul>
-<li>特性方程<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Q</mi><mo>∗</mo></msup><mo>=</mo><mi>J</mi><mover accent="true"><mi>Q</mi><mo stretchy="true">‾</mo></mover><mo>+</mo><mover accent="true"><mi>K</mi><mo stretchy="true">‾</mo></mover><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q^*=J\overline Q + \overline K Q
-</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.933136em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">Q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.738696em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mbin mtight">∗</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.0777700000000001em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span><span class="mord overline"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault">Q</span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.19444em;"><span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.0777700000000001em;vertical-align:-0.19444em;"></span><span class="mord overline"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8833300000000001em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathdefault" style="margin-right:0.07153em;">K</span></span><span style="top:-3.80333em;"><span class="pstrut" style="height:3em;"></span><span class="overline-line" style="border-bottom-width:0.04em;"></span></span></span></span></span></span><span class="mord mathdefault">Q</span></span></span></span></span></p>
-</li>
+<ul class="lvl-4">
+<li class="lvl-6">特性方程<br>
+$$<br>
+Q^*=J\overline Q + \overline K Q<br>
+$$</li>
 </ul>
 </li>
 </ul>
@@ -428,7 +460,7 @@ Y_3 &= x \cdot y \\
     </div>
 
     <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E6%80%BB%E5%A4%8D%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text"> 数字逻辑电路总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E4%B9%A6%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.1.</span> <span class="toc-text"> 全书一句话</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.0.1.1.</span> <span class="toc-text"> 表达式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.2.</span> <span class="toc-text"> 组合逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.3.</span> <span class="toc-text"> 时序逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.4.</span> <span class="toc-text"> 可编程逻辑一句话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.</span> <span class="toc-text"> 组合逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text"> 触发器结构和原理</span></a></li></ol></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">数字逻辑电路总复习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E4%B9%A6%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.1.</span> <span class="toc-text">全书一句话</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">表达式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.2.</span> <span class="toc-text">组合逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E5%BA%8F%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.3.</span> <span class="toc-text">时序逻辑一句话</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E7%BC%96%E7%A8%8B%E9%80%BB%E8%BE%91%E4%B8%80%E5%8F%A5%E8%AF%9D"><span class="toc-number">1.0.4.</span> <span class="toc-text">可编程逻辑一句话</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.</span> <span class="toc-text">组合逻辑</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A6%E5%8F%91%E5%99%A8%E7%BB%93%E6%9E%84%E5%92%8C%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">触发器结构和原理</span></a></li></ol></li></ol>
     </div>
 
     <div id="share-footer" style="display: none">
